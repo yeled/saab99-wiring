@@ -33,7 +33,7 @@ cable,colour,mm2,from,to,status,evidence,notes
 11,VT,4.0,21:87,22:bar 3-6,traced,labels at both ends,ignition-switched feed into bar 3-6
 33,SV,0.75,21:85,earth,traced,label at relay 21,joins 212 SV at relay 113:85
 123,GN/VT,1.5,20:15,147 via 58 (A4) pin 4,traced,label beside switch,terminal 15 per PDF p.375; ignition switch to ballast resistor
-340,RD,0.75,20:X via 58,122:1 radio junction box,car,labels at 58 (B9) and 122; car check D1: radio dead with key out,"radio + from ignition switch X via 58 (B9); switched by the key, as the Turbo diagram shows"
+340,RD,0.75,20:X via 58,122:1 radio junction box,traced,labels at 58 (B9) and 122,"radio + from ignition switch X via 58 (B9); switched by the key, as the Turbo diagram shows"
 280,GR,1.5,22:bar 7-12,73:1,traced,labels at bar and at 73,"service outlet, always live"
 202,GR,1.5,22:bar 7-12,89:30,traced,label above fuse 7,"start relay supply, unfused"
 94,BR,0.75,22:bar 3-6,67:headlight wiper relay,traced,"label@2745,2230",unfused tap off bar 3-6
@@ -120,12 +120,12 @@ cable,colour,mm2,from,to,status,evidence,notes
 83,SV,0.75,83,earth,traced,label at 83,
 89,SV,0.75,62:1,earth,traced,label at 62,
 92,SV,1.0,63,earth,traced,label at 63,
-95a,RD,0.75,67:88,66 (via 123),car,"car check (photos): colours correct at the 123 plugs; one pin takes both reds (95a in, 95b on)",headlight wiper motor feed
-95b,RD,0.75,95a,"66 (second, via 123)",car,car check (photos): colours correct at the 123 plugs; shares a pin with 95a at the other plug,feed to the second headlight wiper motor
-97,BR,0.75,upper 123 pin 3,lower 123 pin 1,car,scan and book close-ups: runs between the two plugs; colour checked on the car,"links the two headlight wiper motors, carrying the control wire on"
-98,GL,0.75,67:88a,upper 123 pin 1,car,scan and book close-ups: relay 88a to the upper plug; colour checked on the car,"motor control wire, switched by the relay (probably)"
-99,SV,0.75,66,earth,car,car check (photos): colours correct at the 123 plugs,
-99a,SV,0.75,66,earth,car,car check (photos): colours correct at the 123 plugs,
+95a,RD,0.75,67:88,66 (via 123),traced,labels at 67 and at 123,headlight wiper motor feed
+95b,RD,0.75,95a,"66 (second, via 123)",traced,book photos 24 Sep: joins 95a at connector 123,feed to the second headlight wiper motor
+97,BR,0.75,upper 123 pin 3,lower 123 pin 1,traced,scan and book close-ups: runs between the two plugs,"links the two headlight wiper motors, carrying the control wire on"
+98,GL,0.75,67:88a,upper 123 pin 1,traced,scan and book close-ups: relay 88a to the upper plug,"motor control wire, switched by the relay (probably)"
+99,SV,0.75,66,earth,traced,label at 123,
+99a,SV,0.75,66,earth,traced,label at 123,
 100,SV,0.75,67:87,102:31 (earth),traced,scan trace; book close-up of grid 5-6,earths contact 87; probably brakes the motors at park
 111,GN,1.5,38:87,37 (via 59),traced,book photos 24 Sep: route from 38:87 to connector 59 at the fan,radiator fan motor feed; route not fully traced
 114,SV,0.75,38:85,60,traced,label at 38,relay coil to the thermostat switch
