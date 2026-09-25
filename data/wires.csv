@@ -103,8 +103,8 @@ cable,colour,mm2,from,to,status,evidence,notes
 127,BL,0.75,48 (126a feed),49,traced,book photos 24 Sep: joins the lighter feed,"clock feed, fuse 9 via 126a"
 215,SV,0.75,48,earth,traced,label at 48,lighter earth; the heated window switch lamp shares it
 128,SV,0.75,49,earth,traced,label at 49,
-73,GN,1.0,23:49a,25,traced,labels at 23 and 25,flasher output into the hazard switch
-76#hazard,GN,1.0,25,24:54,traced,book photo IMG_4724 (second digit blotted); 1977 Turbo addendum p.53 (371-2) (74 GN 1.0),hazard switch + to indicator switch 24:54; probably 74 GN 1.0: the 1979 digit is blotted and the 1977 Turbo diagram prints 74 (76 is only the rear left indicator)
+73,GN,1.0,23:49a,25:+,traced,labels at 23 and 25; book photo of the same switch from another year’s diagram (source/photos/book-other-year-hazard-switch-25.jpg) (73 GN 1.0 onto + on a diagonal),flasher output into the hazard switch
+74,GN,1.0,25:+,24:54,traced,book photo IMG_4724 (1979: second digit blotted); 1977 Turbo addendum p.53 (371-2) (74 GN 1.0); book photo of the same switch from another year’s diagram (source/photos/book-other-year-hazard-switch-25.jpg) (74 GN 1.0),"hazard switch + to indicator switch 24:54; the 1979 print’s second digit is blotted, two other prints read 74 clearly"
 67,BL/VT,1.0,25:L,24:L,traced,label between 24 and 25,hazard feed to the left side
 68,RD/VT,1.0,25:R,24:R,traced,label between 24 and 25,hazard feed to the right side
 75,BL/VT,1.0,24:L,58 (B9) via 58 (D8) pin 11,traced,book photo IMG_4723 (labelled on both sides of 58 (D8)); 1977 Turbo addendum p.53 (371-2),"indicator switch output, left; becomes 77 (front) and 76 (rear) at 58 (B9)"
