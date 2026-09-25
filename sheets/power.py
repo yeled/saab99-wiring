@@ -6,6 +6,7 @@ fuse box, with every fuse output tagged with where it goes; the horns on fuse 3
 and earth joint 158, where the earth returns of several circuits meet. Wire
 identity, colour, size and status come from data/wires.csv.
 """
+import math
 from common import *
 
 STUB = [False]              # set when this sheet draws a stub (open circle); the legend shows that sample only then
@@ -66,11 +67,62 @@ for n, outs in OUTS.items():
         if cab in NOTE: txt(end + 2.5, yy + 1, NOTE[cab], 2.3, fill='#666')
 
 # ---- ignition switch 20 and connector 58 ---------------------------------
+# The lock as book photo P8 prints it (the p.407 scan and the 1980 print on p.411 agree): a round housing, a heavy key
+# rotor across it on a star hub, shown at rest (level), fed from 30 by a line into its underside; its other positions
+# dashed (a U-ended outline up one side, three short outline pairs below the hub). 54 runs over the top to a contact
+# just above the hub; a contact above that is linked to one at the upper corner; a heavy arc below the hub is joined to
+# X. The print puts 54 upper left, 30 left, X at the bottom, 15 right and 50 upper right; drawn mirrored here (as relay
+# 21) so four leads reach the bottom-edge terminals in order and 54's crosses only 30 and X; X comes straight up into
+# the ring's lower side (not the bottom) so 54 crosses it well clear of the lock. 15's diagonal runs straight on to the
+# upper corner contact, and 50's lead crosses it to the side contact beside the hub; on the print they meet in one blot
+# (photo, p.407, p.411), so both links past the crossing are grey. This reading lets the straight rotor close 15 + 54
+# on one ray (90 deg: on) and 15 + 50 on the other (45 deg: start); the other way round, 50 would be live whenever 54
+# is. Coordinates: book-photo px about the lock centre (ring inside radius 175).
 box(18, 36, 44, 28)
-txt(21, 42.5, '20', 4, w='bold'); txt(28, 42.5, 'Ignition switch', 2.7)
-txt(21, 47, 'terminal names from the manual’s', 2.2, fill='#555'); txt(21, 50.3, 'switch table (PDF p. 375)', 2.2, fill='#555')
+txt(18, 33.4, '20', 4, w='bold'); txt(25, 33.4, 'Ignition switch', 2.7)
 IG = {'50': 23, '15': 32, '54': 41, 'X': 50, '30': 57}
-for k, x in IG.items(): dot(x, 64); txt(x, 62, k, 2.4, 'middle')
+LX, LY, LR = 44, 46.5, 9                                   # lock centre and radius (mm)
+S = LR / 175
+def Q(x, y): return (round(LX - x * S, 2), round(LY + y * S, 2))          # book px (x right, y down), mirrored
+def P(a, r=LR): return (round(LX + r * math.cos(math.radians(a)), 2), round(LY - r * math.sin(math.radians(a)), 2))
+def short(p, q, d=.8):
+    """p moved d towards q: a lead stopping at a contact circle's edge."""
+    L = math.dist(p, q); return (round(p[0] + (q[0] - p[0]) * d / L, 2), round(p[1] + (q[1] - p[1]) * d / L, 2))
+A(f'<circle cx="{LX}" cy="{LY}" r="{LR}" fill="#fff" stroke="#111" stroke-width=".6"/>')        # housing
+a0, a1 = P(210, 5.7), P(328, 5.7)                                          # X arc under the hub (book: 212°-330°)
+A(f'<path d="M{a0[0]},{a0[1]} A5.7,5.7 0 0 0 {a1[0]},{a1[1]}" fill="none" stroke="#111" stroke-width="1"/>')
+RB = 126 * S                                                               # rotor half-length (book 135; kept clear of 15)
+for a in (225, 270, 315):                                                  # the rotor's other positions, below:
+    ux, uy = math.cos(math.radians(a)), -math.sin(math.radians(a))         # one mlink dash a side, as printed
+    for k in (-.6, .6):
+        mlink([(LX + 3.4 * ux - k * uy, LY + 3.4 * uy + k * ux), (LX + 4.2 * ux - k * uy, LY + 4.2 * uy + k * ux)])
+ux, uy = math.cos(math.radians(45)), -math.sin(math.radians(45))           # and its U-ended outline (book: upper left),
+r0 = RB - 4                                                                # arms 4 mm so the dashes fall evenly
+mlink([(LX + r0 * ux + .6 * uy, LY + r0 * uy - .6 * ux), (LX + RB * ux + .6 * uy, LY + RB * uy - .6 * ux),
+       (LX + RB * ux - .6 * uy, LY + RB * uy + .6 * ux), (LX + r0 * ux - .6 * uy, LY + r0 * uy + .6 * ux)])
+b0, b1 = Q(126, 0), Q(-126, 0)
+A(f'<path d="M{b0[0]},{b0[1]} L{b1[0]},{b1[1]}" stroke="#111" stroke-width="1.1"/>')                # key rotor, at rest
+A('<path d="' + 'M' + ' L'.join(f'{round(LX + (1.6 if i % 2 == 0 else .7) * math.cos(math.pi * i / 8), 2)},'
+  f'{round(LY - (1.6 if i % 2 == 0 else .7) * math.sin(math.pi * i / 8), 2)}' for i in range(16)) + ' Z" fill="#111"/>'
+  f'<circle cx="{LX}" cy="{LY}" r=".3" fill="#fff"/>')                     # star hub
+C54, CT, CB, CP = Q(-3, -63), Q(-3, -115), Q(82, -82), Q(48, -52)         # contacts: 54, top, upper corner, side
+Y54 = LY + 10.3                                                            # 54's run under the lock
+AX = 360 - math.degrees(math.acos((IG['X'] - LX) / LR))                    # where X's riser meets the ring
+inner([(IG['30'], 64), (IG['30'], P(348)[1]), P(348), Q(-60, 11)])        # 30 into the rotor's underside
+inner([(IG['54'], 64), (IG['54'], Y54), (59.5, Y54), (59.5, P(33)[1]), P(33), Q(-80, -130), short(C54, Q(-80, -130))])
+inner([(IG['X'], 64), P(AX), P(300, 5.7)])                                 # X up to the arc
+inner([short(CT, CB), short(CB, CT)])                                      # top contact to the upper corner one
+inner([(IG['15'], 64), (IG['15'], P(197)[1]), P(197), (Q(152, 0)[0], P(197)[1]), Q(152, -23), Q(124, -46)])
+inner([Q(124, -46), short(CB, Q(124, -46))], grey=True)                     # 15 on to the upper corner contact
+inner([(IG['50'], 64), (IG['50'], P(143)[1]), P(143)])
+inner([P(143), Q(97, -42), short(CP, Q(97, -42))], grey=True)               # 50 across 15 to the side contact
+for c in (C54, CT, CB, CP): contact(*c)
+for k, x in IG.items(): dot(x, 64); txt(x + 1, 62.6, k, 2.4)
+for i, s in enumerate(('terminal names from the manual’s switch table (PDF p. 375)',   # two notes: a gap after 1
+                       'lock as book photo P8 prints it, mirrored; key rotor at rest,',
+                       'fed from 30; dashed: its other positions. Grey: 15 on to the corner',
+                       'contact, 50 across it to the side one; they meet in one blot (photo, scan)')):
+    txt(64.5, 39.5 + 3.3 * i + (1.2 if i else 0), s, 2.2, fill='#555')
 A('<rect x="64" y="70" width="4" height="8" fill="#ddd" stroke="#111" stroke-width=".5"/>'); dot(64, 74); dot(68, 74)
 txt(66, 68.5, '58', 2.4, 'middle', w='bold')
 wire('7', [(57, 64), (57, 74), (64, 74)], label=False)
