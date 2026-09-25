@@ -1151,14 +1151,16 @@
 <path d="M148,198 L208,198" fill="none" stroke="#1f5fbf" stroke-width="1.1" stroke-linejoin="round"/>
 <rect x="151.4" y="193.5" width="19.02" height="3.8" fill="#fff" opacity=".85"/>
 <text x="152" y="196.5" font-size="2.8" text-anchor="start" font-weight="normal" fill="#111">382 BL 0.75</text>
+<path d="M171.01999999999998,194.8 l0.9,1.0 l1.9,-2.4" fill="none" stroke="#1e7a3a" stroke-width="0.55" stroke-linecap="round" stroke-linejoin="round"/>
 <text x="151" y="204.5" font-size="1.9" text-anchor="start" font-weight="normal" fill="#555">on the car: on the speedometer cable, engine bay (E7)</text>
 <rect x="208" y="191" width="10" height="14" rx="1.2" fill="#fafafa" stroke="#111" stroke-width="0.8"/>
 <path d="M208.8,204.2 L217.2,191.8" stroke="#111" stroke-width=".35"/>
 <circle cx="208" cy="198" r="1.0" fill="#111"/>
 <path d="M218,198 h12 v4" stroke="#111" stroke-width=".6" fill="none"/>
 <path d="M230,202 v3 M227,205 h6 M228,206.3 h4 M229,207.6 h2" stroke="#111" stroke-width=".5" fill="none"/>
-<text x="213" y="209" font-size="2.2" text-anchor="middle" font-weight="bold" fill="#111">142 Solenoid valve (E3)</text>
-<text x="213" y="212.2" font-size="1.9" text-anchor="middle" font-weight="normal" fill="#555">on the car: front of the engine, on the control pressure line (E7)</text>
+<text x="213" y="189.3" font-size="2.2" text-anchor="middle" font-weight="bold" fill="#111">142 Solenoid valve (E3)</text>
+<text x="214" y="210.6" font-size="1.9" text-anchor="start" font-weight="normal" fill="#555">on the car: front of the engine, on the control pressure line (E7);</text>
+<text x="214" y="213.4" font-size="1.9" text-anchor="start" font-weight="normal" fill="#555">382 and 383 on one contact, earth on the other (E12)</text>
 <rect x="126" y="219" width="14" height="12" rx="1.2" fill="#fafafa" stroke="#111" stroke-width="0.8"/>
 <circle cx="126" cy="225" r="1.0" fill="#111"/>
 <circle cx="140" cy="225" r="1.0" fill="#111"/>
@@ -1172,12 +1174,12 @@
 <path d="M114,225 L126,225" fill="none" stroke="#f2c500" stroke-width="1.1" stroke-linejoin="round"/>
 <rect x="82" y="222.4" width="30.04" height="5.2" rx="1" fill="#fff" stroke="#444" stroke-width=".4"/>
 <text x="83.5" y="226" font-size="2.6" text-anchor="start" font-weight="normal" fill="#111">380a GL 1.0 <tspan font-family="Arial">←</tspan> fuse 5</text>
-<path d="M140,225 L160,225" fill="none" stroke="#222" stroke-width="1.7" stroke-linejoin="round"/>
-<path d="M140,225 L160,225" fill="none" stroke="#8a8a8a" stroke-width="1.1" stroke-linejoin="round"/>
-<circle cx="160" cy="225" r="1.3" fill="#fff" stroke="#222" stroke-width=".5"/>
-<rect x="140.4" y="220.5" width="19.02" height="3.8" fill="#fff" opacity=".85"/>
-<text x="141" y="223.5" font-size="2.8" text-anchor="start" font-weight="normal" fill="#111">383 GR 0.75</text>
-<text x="163" y="226" font-size="2.1" text-anchor="start" font-weight="normal" fill="#555">ends on the drawing (feeds 142, per the description)</text>
+<path d="M140,225 L203,225 L203,198" fill="none" stroke="#222" stroke-width="1.7" stroke-linejoin="round"/>
+<path d="M140,225 L203,225 L203,198" fill="none" stroke="#8a8a8a" stroke-width="1.1" stroke-linejoin="round"/>
+<rect x="149.4" y="220.5" width="19.02" height="3.8" fill="#fff" opacity=".85"/>
+<text x="150" y="223.5" font-size="2.8" text-anchor="start" font-weight="normal" fill="#111">383 GR 0.75</text>
+<path d="M169.01999999999998,221.8 l0.9,1.0 l1.9,-2.4" fill="none" stroke="#1e7a3a" stroke-width="0.55" stroke-linecap="round" stroke-linejoin="round"/>
+<circle cx="203" cy="198" r="1.0" fill="#111"/>
 <rect x="18" y="256" width="389" height="31" rx="1.2" fill="#fff" stroke="#111" stroke-width="0.5"/>
 <path d="M22,261 h7" stroke="#222" stroke-width="1.7"/><path d="M22,261 h7" stroke="#1f5fbf" stroke-width="1.1"/>
 <text x="31" y="262" font-size="2.5" text-anchor="start" font-weight="normal" fill="#111">BL Blue</text>
@@ -1199,6 +1201,8 @@
 <text x="33" y="273" font-size="2.4" text-anchor="start" font-weight="normal" fill="#111">traced (cable no. read)</text>
 <path d="M22,278 L31,278" fill="none" stroke="#444" stroke-width="1.1" stroke-linejoin="round"/>
 <text x="33" y="279" font-size="2.4" text-anchor="start" font-weight="normal" fill="#111">HT lead</text>
+<path d="M70,277.2 l0.9,1.0 l1.9,-2.4" fill="none" stroke="#1e7a3a" stroke-width="0.55" stroke-linecap="round" stroke-linejoin="round"/>
+<text x="74" y="279" font-size="2.4" text-anchor="start" font-weight="normal" fill="#111">checked on the car</text>
 <circle cx="23" cy="284" r=".8" fill="#fff" stroke="#888" stroke-width=".35"/>
 <circle cx="30" cy="284" r=".8" fill="#fff" stroke="#888" stroke-width=".35"/>
 <path d="M23.7,283.7 L29.6,281.6" stroke="#888" stroke-width=".75" stroke-linecap="round"/>
@@ -2725,5 +2729,5 @@
 <text x="126" y="276" font-size="2.35" text-anchor="start" font-weight="normal" fill="#333">Fuse 5 also powers the Turbo’s high-speed fuel boost (380 GL to speed transmitter, component 140; 380a GL to throttle switch 137): see the ignition sheet.</text>
 <text x="126" y="281" font-size="2.35" text-anchor="start" font-weight="normal" fill="#333">Diagram is not RHD-specific: circuits should match, but harness routing and part positions may differ.</text>
 </g></svg>
-<g font-family="Helvetica, Arial, sans-serif"><text x="20.580808080808083" y="834.0" font-size="8" font-weight="bold">Saab 99 Turbo, model 1979: wiring redrawn</text><text x="197.58080808080808" y="834.0" font-size="4.2" fill="#444">from the Saab Service Manual 1975–1980, diagram p. 371-28/29. Wires: 158 traced, 2 not traced yet, 6 end on the diagram, 0 checked on the car. Colour codes are Swedish (GL gul = yellow, SV svart = black, VT vit = white). Generated 25 September 2026.</text></g>
+<g font-family="Helvetica, Arial, sans-serif"><text x="20.580808080808083" y="834.0" font-size="8" font-weight="bold">Saab 99 Turbo, model 1979: wiring redrawn</text><text x="197.58080808080808" y="834.0" font-size="4.2" fill="#444">from the Saab Service Manual 1975–1980, diagram p. 371-28/29. Wires: 157 traced, 2 not traced yet, 5 end on the diagram, 2 checked on the car. Colour codes are Swedish (GL gul = yellow, SV svart = black, VT vit = white). Generated 25 September 2026.</text></g>
 </svg>
