@@ -152,15 +152,16 @@ wire('382', [(148, 198), (208, 198)], 152, 196.5)
 txt(151, 204.5, 'on the car: on the speedometer cable, engine bay (E7)', 1.9, fill='#555')
 # solenoid valve 142: the outline is the winding (one diagonal, no inner rectangle); drawn mirrored (manual: earth left, 382 right)
 box(208, 191, 10, 14); A('<path d="M208.8,204.2 L217.2,191.8" stroke="#111" stroke-width=".35"/>'); dot(208, 198)
-A('<path d="M218,198 h12 v4" stroke="#111" stroke-width=".6" fill="none"/>'); earth(230, 202); txt(213, 209, '142 Solenoid valve (E3)', 2.2, 'middle', w='bold')
-txt(213, 212.2, 'on the car: front of the engine, on the control pressure line (E7)', 1.9, 'middle', fill='#555')
+A('<path d="M218,198 h12 v4" stroke="#111" stroke-width=".6" fill="none"/>'); earth(230, 202); txt(213, 189.3, '142 Solenoid valve (E3)', 2.2, 'middle', w='bold')
+txt(214, 210.6, 'on the car: front of the engine, on the control pressure line (E7);', 1.9, fill='#555')
+txt(214, 213.4, '382 and 383 on one contact, earth on the other (E12)', 1.9, fill='#555')
 # throttle switch 137, turned a quarter (manual: portrait, pivot at the bottom terminal, contact at the top); open at rest
 box(126, 219, 14, 12); dot(126, 225); dot(140, 225)
 inner([(126, 225), (128.2, 225)]); contact(129, 225); contact(137, 225); inner([(137.8, 225), (140, 225)])
 blade(129.6, 224.6, 136.6, 221.6)
 txt(120, 235, '<tspan font-weight="bold">137</tspan> Throttle switch, 62°', 2.4)
 wire('380a', [(114, 225), (126, 225)], label=False); tag(82, 225, '380a GL 1.0 ← fuse 5')
-wire('383', [(140, 225), (160, 225)], 141, 223.5); txt(163, 226, 'ends on the drawing (feeds 142, per the description)', 2.1, fill='#555')
+wire('383', [(140, 225), (203, 225), (203, 198)], 150, 223.5); dot(203, 198)   # joins 382 at 142's feed terminal: one contact on the car (E12)
 
 # ---- legend and notes ----------------------------------------------------
 lx, ly = 18, 256
