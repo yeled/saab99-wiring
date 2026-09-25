@@ -100,7 +100,7 @@ def front_housing(yc, cap, ind):
     lamp_earth(xo, yc); dot(xo, yc)
     txt(64.5, yc + .8, f'{ind} indicator: signals sheet', 2.1, fill='#555')
     txt(49, yc + 13.7, cap, 2.7, 'middle')
-    txt(49, yc + 16.9, 'with an unnumbered bulb below', 2.1, 'middle', fill='#555')
+    txt(49, yc + 16.9, 'with a reversing light below', 2.1, 'middle', fill='#555')
     return (hx, edge(hx)[0]), (hx, yc - 2 * rs)
 
 
@@ -272,6 +272,7 @@ notes = ['Headlamps need the ignition on (except the flash, stalk 9); parking/ta
          'Headlamps are unfused: relay 30 is fed straight from the supply bar (20 GR 1.5).',
          'Not RHD-specific: circuits are per side, but harness routing and part positions may differ.',
          'All bulbs in a lamp housing share its one earth. Indicators, brake and reversing bulbs: signals sheet.',
-         'The front housings’ lower bulb has no number (probably corner lamp 118); its feed is not drawn.']
-for j, n in enumerate(notes): txt(lx + 3, ly + 27 + j * 3.9, n, 2.35, fill='#333')
+         'Front housings: the unnumbered lower bulb is a reversing light (on the car, E16), fed by 138 BL from switch 31 (not in the data yet).',
+         'Relay 8 prints its flash contact on 56b (dipped), but on the car the flash lights the main beams (D9).']
+for j, n in enumerate(notes): txt(lx + 3, ly + 27 + j * 3.6, n, 2.35, fill='#333')
 save('lighting.svg')
