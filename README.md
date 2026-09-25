@@ -81,3 +81,7 @@ the wire turns and ends and writes an overlay. It steps over crossings and
 bridges the scan's fold gap (x ≈ 4650–4710), but it can jump to the wrong
 line where text touches a wire, so confirm every result against the cable
 label before adding it to `wires.csv`.
+
+## Licence
+
+GPL-3.0: see `LICENSE`. The wiring itself is taken from the Saab Service Manual 1975–1980.
