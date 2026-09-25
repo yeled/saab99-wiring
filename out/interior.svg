@@ -1,34 +1,74 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="420mm" height="297mm" viewBox="0 0 420 297" font-family="Helvetica, Arial, sans-serif">
 <rect width="420" height="297" fill="#fff"/><rect x="8" y="8" width="404" height="281" fill="none" stroke="#111" stroke-width=".6"/>
 <text x="14" y="19" font-size="6" text-anchor="start" font-weight="bold" fill="#111">Saab 99 Turbo, model 1979 — Interior lights, seat heating, seat belt warning</text>
-<text x="14" y="25.5" font-size="2.8" text-anchor="start" font-weight="normal" fill="#444">Redrawn from Saab Service Manual 1975–1980, diagram p. 371-28/29 (PDF p. 406–407). Component numbers as in the manual. Dashed = not traced yet.</text>
+<text x="14" y="25.5" font-size="2.8" text-anchor="start" font-weight="normal" fill="#444">Redrawn from Saab Service Manual 1975–1980, diagram p. 371-28/29 (PDF p. 406–407). Component numbers as in the manual.</text>
 <text x="18" y="40" font-size="3.4" text-anchor="start" font-weight="bold" fill="#111">Seat heating</text>
-<rect x="18" y="55" width="32" height="14" rx="1.2" fill="#fafafa" stroke="#111" stroke-width="0.8"/>
-<text x="21" y="61" font-size="2.6" text-anchor="start" font-weight="normal" fill="#111"><tspan font-weight="bold">F5</tspan> · 8 A</text>
-<text x="21" y="65.8" font-size="2.1" text-anchor="start" font-weight="normal" fill="#555">ignition-on bar</text>
+<rect x="18" y="52" width="32" height="20" rx="1.2" fill="#fafafa" stroke="#111" stroke-width="0.8"/>
+<text x="21" y="57" font-size="2.6" text-anchor="start" font-weight="normal" fill="#111"><tspan font-weight="bold">F5</tspan> · 8 A</text>
+<path d="M24,59.5 L24,69.5" fill="none" stroke="#111" stroke-width=".4"/>
+<circle cx="24" cy="62" r=".8" fill="#fff" stroke="#111" stroke-width=".35"/>
+<text x="26" y="69" font-size="2.1" text-anchor="start" font-weight="normal" fill="#555">ignition-on bar</text>
+<rect x="30" y="60.8" width="10" height="2.4" fill="#fff" stroke="#111" stroke-width=".4"/><path d="M30,62 L40,62" stroke="#111" stroke-width=".35"/>
+<path d="M24.8,62 L30,62" fill="none" stroke="#111" stroke-width=".4"/>
+<path d="M40,62 L50,62" fill="none" stroke="#111" stroke-width=".4"/>
+<circle cx="50" cy="62" r="1.0" fill="#111"/>
+<text x="48.5" y="60.6" font-size="1.8" text-anchor="end" font-weight="normal" fill="#555">5</text>
 <path d="M50,62 L118,62" fill="none" stroke="#222" stroke-width="1.7" stroke-linejoin="round"/>
 <path d="M50,62 L118,62" fill="none" stroke="#f2c500" stroke-width="1.1" stroke-linejoin="round"/>
 <rect x="57.4" y="57.5" width="17.400000000000002" height="3.8" fill="#fff" opacity=".85"/>
 <text x="58" y="60.5" font-size="2.8" text-anchor="start" font-weight="normal" fill="#111">140 GL 1.0</text>
+<path d="M122,62 L148,62" fill="none" stroke="#222" stroke-width="1.7" stroke-linejoin="round"/>
+<path d="M122,62 L148,62" fill="none" stroke="#f2c500" stroke-width="1.1" stroke-linejoin="round"/>
+<path d="M152,62 L178,62" fill="none" stroke="#222" stroke-width="1.7" stroke-linejoin="round"/>
+<path d="M152,62 L178,62" fill="none" stroke="#f2c500" stroke-width="1.1" stroke-linejoin="round"/>
 <rect x="118" y="58.0" width="4" height="8" fill="#ddd" stroke="#111" stroke-width=".5"/>
+<path d="M118,62 L122,62" fill="none" stroke="#111" stroke-width=".4"/>
+<circle cx="118" cy="62" r="1.0" fill="#111"/>
+<circle cx="122" cy="62" r="1.0" fill="#111"/>
 <text x="120" y="56.5" font-size="2.2" text-anchor="middle" font-weight="normal" fill="#555">58 (E12)</text>
-<path d="M122,62 L178,62" fill="none" stroke="#222" stroke-width="1.7" stroke-linejoin="round"/>
-<path d="M122,62 L178,62" fill="none" stroke="#f2c500" stroke-width="1.1" stroke-linejoin="round"/>
+<rect x="148" y="58.0" width="4" height="8" fill="#ddd" stroke="#111" stroke-width=".5"/>
+<path d="M148,62 L152,62" fill="none" stroke="#111" stroke-width=".4"/>
+<circle cx="148" cy="62" r="1.0" fill="#111"/>
+<circle cx="152" cy="62" r="1.0" fill="#111"/>
+<text x="150" y="56.5" font-size="2.2" text-anchor="middle" font-weight="normal" fill="#555">60 (A7)</text>
 <rect x="178" y="58.0" width="4" height="8" fill="#ddd" stroke="#111" stroke-width=".5"/>
-<text x="180" y="56.5" font-size="2.2" text-anchor="middle" font-weight="normal" fill="#555">59</text>
+<path d="M178,62 L182,62" fill="none" stroke="#111" stroke-width=".4"/>
+<circle cx="178" cy="62" r="1.0" fill="#111"/>
+<circle cx="182" cy="62" r="1.0" fill="#111"/>
+<text x="180" y="56.5" font-size="2.2" text-anchor="middle" font-weight="normal" fill="#555">59 (A7)</text>
 <path d="M182,62 H196" stroke="#111" stroke-width=".6"/>
-<rect x="196" y="55" width="44" height="14" rx="1.2" fill="#fafafa" stroke="#111" stroke-width="0.8"/>
-<path d="M200,62 l3,-4 l3,8 l3,-8 l3,8 l3,-8 l3,8 l3,-8 l3,8 l2,-4" fill="none" stroke="#111" stroke-width=".45"/>
-<path d="M230,65 l6,-5" stroke="#111" stroke-width=".5"/>
-<text x="218" y="75" font-size="2.5" text-anchor="middle" font-weight="bold" fill="#111">64 Seat heating element with thermostat (A6)</text>
-<path d="M240,62 L250,62 L250,66" fill="none" stroke="#222" stroke-width="1.7" stroke-linejoin="round"/>
-<path d="M240,62 L250,62 L250,66" fill="none" stroke="#111111" stroke-width="1.1" stroke-linejoin="round"/>
-<path d="M250,66 v3 M247,69 h6 M248,70.3 h4 M249,71.6 h2" stroke="#111" stroke-width=".5" fill="none"/>
-<text x="254" y="69" font-size="2.2" text-anchor="start" font-weight="normal" fill="#111">141 SV 1.0</text>
-<path d="M180,66 L180,86 L196,86" fill="none" stroke="#222" stroke-width="1.7" stroke-linejoin="round"/>
-<path d="M180,66 L180,86 L196,86" fill="none" stroke="#f2c500" stroke-width="1.1" stroke-linejoin="round"/>
-<rect x="198" y="83.4" width="81.41600000000001" height="5.2" rx="1" fill="#fff" stroke="#444" stroke-width=".4"/>
-<text x="199.5" y="87" font-size="2.6" text-anchor="start" font-weight="normal" fill="#111">150 GL 0.75 via connector 60 → seat belt contacts (59, A8)</text>
+<rect x="196" y="47.5" width="55" height="19" rx="1.2" fill="#fafafa" stroke="#111" stroke-width="0.8"/>
+<rect x="217.5" y="50.9" width="11" height="12.2" rx=".6" fill="#fff" stroke="#111" stroke-width=".7"/>
+<path d="M196,62 L198.7,62" fill="none" stroke="#111" stroke-width=".4"/>
+<circle cx="199.5" cy="62" r=".8" fill="#fff" stroke="#111" stroke-width=".35"/>
+<path d="M200.3,62 L202.1,62" fill="none" stroke="#111" stroke-width=".4"/>
+<path d="M202.1,62 L202.1,60.8 L203.77,60.8 L203.77,63.8 L205.43,63.8 L205.43,60.8 L207.1,60.8 L207.1,63.8 L208.77,63.8 L208.77,60.8 L210.43,60.8 L210.43,63.8 L212.1,63.8 L212.1,62" fill="none" stroke="#111" stroke-width=".4" stroke-linejoin="round"/>
+<path d="M212.1,62 L213.9,62" fill="none" stroke="#111" stroke-width=".4"/>
+<circle cx="214.7" cy="62" r=".8" fill="#fff" stroke="#111" stroke-width=".35"/>
+<path d="M215.5,62 L222.2,62" fill="none" stroke="#111" stroke-width=".4"/>
+<circle cx="223" cy="62" r=".8" fill="#fff" stroke="#111" stroke-width=".35"/>
+<path d="M223.8,52 L230.2,52" fill="none" stroke="#111" stroke-width=".4"/>
+<circle cx="231" cy="52" r=".8" fill="#fff" stroke="#111" stroke-width=".35"/>
+<path d="M231.8,52 L233.6,52" fill="none" stroke="#111" stroke-width=".4"/>
+<path d="M233.6,52 L233.6,50.8 L235.27,50.8 L235.27,53.8 L236.93,53.8 L236.93,50.8 L238.6,50.8 L238.6,53.8 L240.27,53.8 L240.27,50.8 L241.93,50.8 L241.93,53.8 L243.6,53.8 L243.6,52" fill="none" stroke="#111" stroke-width=".4" stroke-linejoin="round"/>
+<path d="M243.6,52 L245.4,52" fill="none" stroke="#111" stroke-width=".4"/>
+<circle cx="246.2" cy="52" r=".8" fill="#fff" stroke="#111" stroke-width=".35"/>
+<path d="M247,52 L251,52" fill="none" stroke="#111" stroke-width=".4"/>
+<circle cx="223" cy="52" r=".8" fill="#fff" stroke="#111" stroke-width=".35"/>
+<path d="M223.657,52.416 L228.107,59.846 M223.143,52.724 L227.593,60.154" stroke="#111" stroke-width=".35" stroke-linecap="round"/>
+<text x="226.998" y="56.063" font-size="1.8" text-anchor="middle" font-weight="normal" fill="#555">t°</text>
+<circle cx="196" cy="62" r="1.0" fill="#111"/>
+<circle cx="251" cy="52" r="1.0" fill="#111"/>
+<text x="223.5" y="71.5" font-size="2.5" text-anchor="middle" font-weight="bold" fill="#111">64 Seat heating element with thermostat (A6)</text>
+<path d="M251,52 L261,52 L261,57" fill="none" stroke="#222" stroke-width="1.7" stroke-linejoin="round"/>
+<path d="M251,52 L261,52 L261,57" fill="none" stroke="#111111" stroke-width="1.1" stroke-linejoin="round"/>
+<path d="M261,57 v3 M258,60 h6 M259,61.3 h4 M260,62.6 h2" stroke="#111" stroke-width=".5" fill="none"/>
+<text x="265" y="60" font-size="2.2" text-anchor="start" font-weight="normal" fill="#111">141 SV 1.0</text>
+<path d="M144,62 L144,86 L196,86" fill="none" stroke="#222" stroke-width="1.7" stroke-linejoin="round"/>
+<path d="M144,62 L144,86 L196,86" fill="none" stroke="#f2c500" stroke-width="1.1" stroke-linejoin="round"/>
+<circle cx="144" cy="62" r="1.0" fill="#111"/>
+<rect x="198" y="83.4" width="65.19200000000001" height="5.2" rx="1" fill="#fff" stroke="#444" stroke-width=".4"/>
+<text x="199.5" y="87" font-size="2.6" text-anchor="start" font-weight="normal" fill="#111">150 GL 0.75 to 59 (A8): seat and belt contacts</text>
 <text x="18" y="108" font-size="3.4" text-anchor="start" font-weight="bold" fill="#111">Interior lights</text>
 <text x="18" y="114" font-size="2.4" text-anchor="start" font-weight="normal" fill="#555">Fuse 9’s 160 GL feeds 52, then 161 GL through 57 to 50 and (163 GL) 55; 164 BL, 167 SV reach 50; 162/165 SV link 50–51; doors 170/171 SV.</text>
 <circle cx="22" cy="125" r="3.2" fill="#fff" stroke="#111" stroke-width=".6"/>
@@ -88,9 +128,10 @@
 <text x="100" y="261" font-size="2.5" text-anchor="start" font-weight="normal" fill="#111">VT White</text>
 <path d="M22,267 h9" stroke="#222" stroke-width="1.2"/>
 <text x="33" y="268" font-size="2.4" text-anchor="start" font-weight="normal" fill="#111">traced (cable no. read)</text>
-<text x="126" y="256.0" font-size="2.35" text-anchor="start" font-weight="normal" fill="#333">Seat heating: fuse 5 (ignition-on bar) feeds 140 GL 1.0 through connector 58 at E12, which the manual draws as an optional pin,</text>
-<text x="126" y="261.8" font-size="2.35" text-anchor="start" font-weight="normal" fill="#333">and connector 59 to the heating element; its return is 141 SV 1.0. This resolves one of fuse 5’s open wires.</text>
-<text x="126" y="267.6" font-size="2.35" text-anchor="start" font-weight="normal" fill="#333">Interior lights and seat belt warning are listed as references only: the checks on the car (docs/car-checklist.md) will fill them in.</text>
-<text x="126" y="273.4" font-size="2.35" text-anchor="start" font-weight="normal" fill="#333">Fuse 5 also powers the Turbo’s high-speed fuel boost (speed transmitter 140 and throttle switch 137): see the ignition sheet.</text>
-<text x="126" y="279.2" font-size="2.35" text-anchor="start" font-weight="normal" fill="#333">Diagram is not RHD-specific: circuits should match, but harness routing and part positions may differ.</text>
+<text x="126" y="256" font-size="2.35" text-anchor="start" font-weight="normal" fill="#333">Seat heating: fuse 5 (ignition-on bar) feeds 140 GL 1.0 through 58 (E12), an optional pin in the manual, then 60 (A7) and 59 (A7) to seat heating 64: two</text>
+<text x="126" y="261" font-size="2.35" text-anchor="start" font-weight="normal" fill="#333">elements in series with a thermostat between them, drawn open as printed (probably warm: it closes when cold); return 141 SV 1.0. The manual draws the</text>
+<text x="126" y="266" font-size="2.35" text-anchor="start" font-weight="normal" fill="#333">two elements side by side into 59’s two rows (140 GL lower, 141 SV upper); here they run in a line and 141 is drawn straight to earth.</text>
+<text x="126" y="271" font-size="2.35" text-anchor="start" font-weight="normal" fill="#333">Interior lights and seat belt warning are listed as references only: the checks on the car (docs/car-checklist.md) will fill them in.</text>
+<text x="126" y="276" font-size="2.35" text-anchor="start" font-weight="normal" fill="#333">Fuse 5 also powers the Turbo’s high-speed fuel boost (380 GL to speed transmitter, component 140; 380a GL to throttle switch 137): see the ignition sheet.</text>
+<text x="126" y="281" font-size="2.35" text-anchor="start" font-weight="normal" fill="#333">Diagram is not RHD-specific: circuits should match, but harness routing and part positions may differ.</text>
 </svg>
