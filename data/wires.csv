@@ -53,7 +53,7 @@ cable,colour,mm2,from,to,status,evidence,notes
 260,GR,1.5,22:fuse 10,102:30,traced,"label@3300,2465",fuel pump relay
 70,RD/VT,1.0,22:fuse 11,23:49,traced,labels at both ends,indicator/hazard flasher unit
 131,RD,1.0,22:fuse 12,29,traced,label at switch 29,brake light switch
-123b,GN/VT,1.5,147,5:15,traced,label between 147 and coil,ballast resistor to coil +
+123b,GN/VT,1.5,147,5:15,traced,label between 147 and coil,"ballast resistor to coil +; probably yellow on the cars: yellow on 147’s 0.6 Ω terminal on this 1979 car and on a 1980 99 Turbo (photos, 25 Sep 2026), where the book prints GN/VT; E3 checks it reaches coil 15"
 123d,GN/VT,1.0,5:15,146:15,traced,labels at coil and at 146,control unit supply from coil +
 390,,,6:sender,146:31d,traced,label at 146,"shielded sender cable, no colour given"
 391,,,6:sender,146:7,traced,label at 146,"shielded sender cable, no colour given"
