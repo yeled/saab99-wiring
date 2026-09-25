@@ -120,7 +120,7 @@ wire('73', [(100, 58), (114, 58), (114, 43), (144, 43), (149, 48)], 118, 41.5)  
 wire('76#hazard', [(149, 48), (149, 36), (225, 36), (225, 48)], 178, 34.5)
 dot(149, 48); txt(150.6, 51.8, '+', 2.2, fill='#555')
 inner([(149, 48), (149, 57.2)]); contact(149, 58); blade(148.7, 58.64, 140.4, 76.8)
-contact(150.6, 64.8, grey=True); contact(150.6, 70.4); contact(150.6, 78)
+contact(150.6, 64.8); contact(150.6, 70.4); contact(150.6, 78)
 lamp(158.6, 64.8, r=3.2); inner([(151.4, 64.8), (155.4, 64.8)]); inner([(161.8, 64.8), (170, 64.8)]); dot(170, 64.8)
 inner([(151.4, 70.4), (160, 70.4), (160, 88)]); dot(160, 88); tlabel(161.6, 86.6, 'R')
 inner([(151.4, 78), (155, 78), (155, 88)]); dot(155, 88); tlabel(153.4, 86.6, 'L', 'end')
@@ -199,9 +199,10 @@ if DASHED[0]: A(f'<path d="M{x + 48},{ly + 17} h9" stroke="#222" stroke-width="1
 if TICKED[0]: tick(x, ly + 23.3); txt(x + 4, ly + 24, 'checked on the car', 2.4)
 probable_legend(x, ly + (29 if TICKED[0] else 23))
 notes = ['The flasher is fed from fuse 11 on the always-live bar. Its output (73 GN) goes to the hazard switch’s +, which feeds the indicator switch’s 54.',
-         'Switches are drawn at rest, as printed. Pressed, hazard switch 25 probably closes its lamp, R and L contacts together, so + feeds both sides (68 RD/VT, 67 BL/VT).',
+         'Switches are drawn at rest, as printed. Pressed, hazard switch 25 closes its lamp, R and L contacts together (lamp: on the car), so + feeds both sides (68 RD/VT, 67 BL/VT).',
          'The manual prints 25’s terminals +, R and L (none on the lamp’s) and 24’s 54, R and L. 73 GN lands on + beside the wire to 54 (probably the same terminal).',
-         'Grey: 25’s lamp contact, printed merged into the blade root, and the end of 29’s blade and its right contact, printed running together; both are probably open at rest.',
+         '25’s lamp contact prints merged into the blade root; on the car it is open at rest (the lamp stays dark with the indicators and blinks with the hazards: check D7). '
+         'Grey: the end of 29’s blade and its right contact, printed running together; probably open at rest.',
          'The + to 54 wire is shown as 76 GN, as in the data; its second digit is blotted on the page, so the clash with 76 BL/VT is not confirmed. '
          'Rear indicator wires 76 and 79 leave connector 58 (B9) on its far side; their route to the rear isn’t traced yet.',
          'Each lamp housing has one earth for all its bulbs (parking, tail and number-plate bulbs: lighting sheet). Turned for the layout: the manual prints '
