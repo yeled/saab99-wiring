@@ -52,11 +52,13 @@ A('<rect x="199" y="236" width="4" height="8" fill="#ddd" stroke="#111" stroke-w
 A('<rect x="146" y="48" width="4" height="12" fill="#ddd" stroke="#111" stroke-width=".5"/>'); dot(146, 54); dot(150, 54)
 txt(148, 46, '58', 2.4, 'middle', w='bold'); txt(148, 64, 'A4/4', 2.1, 'middle', fill='#555')
 wire('123', [(150, 54), (170, 54)], label=False)
-# ballast resistor 147 (scan only, no photo): two resistors, joined at the bottom by a link; 394 leaves at that joint
+# ballast resistor 147 (scan; car photo 25 Sep: a Bosch block stamped 0.4 and 0.6, their ends strapped at the joint): two resistors
+# joined at the bottom by a link; 394 leaves at that joint. The feed side (123) is the 0.4 Ω one, the coil side (123b) the 0.6 Ω.
 box(170, 49, 16, 16); txt(167.4, 45, '<tspan font-weight="bold">147</tspan> Ballast resistor', 2.5)   # start-anchored: cairosvg splits a middle-anchored tspan
 for x in (174, 182):
     dot(x, 65); a, b = resistor(x - 1.2, 55.5, 2.4, 4.8); inner([b, (x, 65)])
 inner([(170, 54), (174, 54), (174, 55.5)]); inner([(186, 54), (182, 54), (182, 55.5)]); inner([(174, 62.6), (182, 62.6)])
+tlabel(174, 52.6, '0.4 Ω', 'middle'); tlabel(182, 52.6, '0.6 Ω', 'middle')
 wire('123b', [(186, 54), (214, 54)], 188, 52.3); dot(206, 54); dot(170, 54); dot(186, 54)   # all four printed terminals
 wire('394', [(174, 65), (174, 126), (112, 126), (112, 122)], 172.6, 116, rot=-90)
 box(214, 46, 18, 30); txt(223, 43.5, '5 Coil', 2.7, 'middle', w='bold')
