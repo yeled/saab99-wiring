@@ -29,6 +29,9 @@
 <rect x="112" y="45" width="72" height="46" rx="1.2" fill="#fafafa" stroke="#111" stroke-width="0.8"/>
 <text x="146" y="42.6" font-size="2.7" text-anchor="middle" font-weight="bold" fill="#111">61 Wiper switch</text>
 <text x="158.5" y="42.6" font-size="2.2" text-anchor="start" font-weight="normal" fill="#555">(D9)</text>
+<path d="M120.8,74.9 L149.96,64.62 L173,56.5" fill="none" stroke="#999" stroke-width=".3" stroke-dasharray=".8 .6"/>
+<path d="M118.98,65.47 L149.96,64.62 L172.6,64" fill="none" stroke="#999" stroke-width=".3" stroke-dasharray=".8 .6"/>
+<path d="M119.99,56.72 L149.96,64.62 L173.6,70.85" fill="none" stroke="#999" stroke-width=".3" stroke-dasharray=".8 .6"/>
 <circle cx="121" cy="91" r="1.0" fill="#111"/>
 <circle cx="129" cy="91" r="1.0" fill="#111"/>
 <circle cx="136" cy="91" r="1.0" fill="#111"/>
@@ -56,21 +59,25 @@
 <circle cx="120.8" cy="74.9" r=".8" fill="#fff" stroke="#111" stroke-width=".35"/>
 <path d="M123.43,82.25 L121.07,75.65" fill="none" stroke="#111" stroke-width=".4"/>
 <path d="M124.27,82.6 L171.5,49.55" stroke="#111" stroke-width=".75" stroke-linecap="round"/>
-<circle cx="133.8" cy="72.8" r=".8" fill="#fff" stroke="#111" stroke-width=".35"/>
-<path d="M133.8,75.6 L133.8,73.7" stroke="#111" stroke-width=".75" stroke-linecap="round"/>
-<path d="M133.8,72 L133.8,47.5 L178.4,47.5 L178.4,49.5 L169.5,56.7 L169.5,63.2" fill="none" stroke="#111" stroke-width=".4"/>
+<path d="M142.34,69.95 L147.12,66.61" stroke="#fff" stroke-width=".22" stroke-linecap="round"/>
+<path d="M151.19,63.77 L157.4,59.42" stroke="#fff" stroke-width=".22" stroke-linecap="round"/>
+<circle cx="149.96" cy="64.62" r=".9" fill="#111"/><circle cx="149.96" cy="64.62" r=".3" fill="#fff"/>
+<circle cx="133.8" cy="70.3" r=".8" fill="#fff" stroke="#111" stroke-width=".35"/>
+<path d="M133.8,75.6 L133.8,71.2" stroke="#111" stroke-width=".75" stroke-linecap="round"/>
+<path d="M133.8,69.5 L133.8,47.5 L178.4,47.5 L178.4,49.5 L169.5,56.7 L169.5,63.2" fill="none" stroke="#111" stroke-width=".4"/>
 <circle cx="169.5" cy="64" r=".8" fill="#fff" stroke="#111" stroke-width=".35"/>
 <path d="M170.3,64 L172.6,64" fill="none" stroke="#888" stroke-width=".4"/>
 <path d="M163.6,60.9 L163.6,79.7" fill="none" stroke="#111" stroke-width=".4"/>
 <circle cx="163.6" cy="60.1" r=".8" fill="#fff" stroke="#111" stroke-width=".35"/>
 <circle cx="163.6" cy="64" r=".8" fill="#fff" stroke="#111" stroke-width=".35"/>
-<circle cx="163.6" cy="68.9" r=".8" fill="#fff" stroke="#111" stroke-width=".35"/>
-<path d="M164.3,59.8 L172.3,56.6" stroke="#999" stroke-width=".3" stroke-dasharray=".8 .6" stroke-dashoffset=".4"/>
+<circle cx="163.6" cy="68.21" r=".8" fill="#fff" stroke="#111" stroke-width=".35"/>
 <circle cx="163.6" cy="80.5" r=".8" fill="#fff" stroke="#111" stroke-width=".35"/>
 <text x="165.3" y="81.2" font-size="1.8" text-anchor="start" font-weight="normal" fill="#555">53a</text>
 <path d="M163.6,81.3 L163.6,85.3 L158,91" fill="none" stroke="#111" stroke-width=".4"/>
-<circle cx="160" cy="66.5" r=".8" fill="#fff" stroke="#111" stroke-width=".35"/>
-<path d="M159.49,67.11 L147.2,78.8 L147.2,80.9" fill="none" stroke="#111" stroke-width=".4"/>
+<path d="M160,66.47 L160,64.35" fill="none" stroke="#111" stroke-width=".4"/>
+<path d="M159.1,64.35 H160.9" stroke="#111" stroke-width=".45"/>
+<circle cx="160" cy="67.27" r=".8" fill="#fff" stroke="#111" stroke-width=".35"/>
+<path d="M159.41,67.81 L147.2,78.8 L147.2,80.9" fill="none" stroke="#111" stroke-width=".4"/>
 <path d="M129,91 L138.2,78.8 L147.2,78.8" fill="none" stroke="#111" stroke-width=".4"/>
 <circle cx="147.2" cy="78.8" r=".55" fill="#111"/>
 <circle cx="147.2" cy="81.7" r=".8" fill="#fff" stroke="#111" stroke-width=".35"/>
@@ -78,14 +85,92 @@
 <path d="M141.9,81.7 L146.4,81.7" fill="none" stroke="#111" stroke-width=".4"/>
 <path d="M140.7,82.4 L136,91" fill="none" stroke="#111" stroke-width=".4"/>
 <path d="M162.9,80.75 L150.4,82.1" stroke="#111" stroke-width=".75" stroke-linecap="round"/>
-<text x="66" y="52" font-size="2.1" text-anchor="start" font-weight="normal" fill="#777">Positions (probably; the manual prints none)</text>
-<text x="67.5" y="56.0" font-size="2.1" text-anchor="start" font-weight="normal" fill="#777">0 off: 31b–53 (park)</text>
-<text x="67.5" y="59.4" font-size="2.1" text-anchor="start" font-weight="normal" fill="#777">1 interval: 31b–53 and 53a–INT</text>
-<text x="67.5" y="62.8" font-size="2.1" text-anchor="start" font-weight="normal" fill="#777">2 slow: 53a–53</text>
-<text x="67.5" y="66.2" font-size="2.1" text-anchor="start" font-weight="normal" fill="#777">3 fast: 53a–53b and 53a–S</text>
-<text x="67.5" y="69.6" font-size="2.1" text-anchor="start" font-weight="normal" fill="#777">4 washer (pull): 53a–S, 54c</text>
-<path d="M67.5,72.3 h4" stroke="#999" stroke-width=".3" stroke-dasharray=".8 .6"/>
-<text x="73" y="73" font-size="2.1" text-anchor="start" font-weight="normal" fill="#777">printed position line (53a–INT)</text>
+<circle cx="120.3" cy="85.4" r="1.3" fill="#fff" stroke="#888" stroke-width=".25"/>
+<text x="120.3" y="86.12" font-size="2" text-anchor="middle" font-weight="bold" fill="#777">0</text>
+<circle cx="117.9" cy="75.9" r="1.3" fill="#fff" stroke="#888" stroke-width=".25"/>
+<text x="117.9" y="76.62" font-size="2" text-anchor="middle" font-weight="bold" fill="#777">1</text>
+<circle cx="116.2" cy="65.6" r="1.3" fill="#fff" stroke="#888" stroke-width=".25"/>
+<text x="116.2" y="66.32" font-size="2" text-anchor="middle" font-weight="bold" fill="#777">2</text>
+<circle cx="117.2" cy="56.0" r="1.3" fill="#fff" stroke="#888" stroke-width=".25"/>
+<text x="117.2" y="56.72" font-size="2" text-anchor="middle" font-weight="bold" fill="#777">3</text>
+<circle cx="153" cy="84.8" r="1.3" fill="#fff" stroke="#888" stroke-width=".25"/>
+<text x="153" y="85.52" font-size="2" text-anchor="middle" font-weight="bold" fill="#777">4</text>
+<text x="161.1" y="66.3" font-size="1.8" text-anchor="start" font-weight="normal" fill="#888">F</text>
+<text x="139.9" y="82.4" font-size="1.8" text-anchor="end" font-weight="normal" fill="#888">P</text>
+<text x="148.2" y="84.4" font-size="1.8" text-anchor="start" font-weight="normal" fill="#888">Q</text>
+<text x="51" y="45.4" font-size="2.4" text-anchor="start" font-weight="bold" fill="#333">61 positions: terminals joined</text>
+<text x="75.95" y="48.8" font-size="2.1" text-anchor="middle" font-weight="normal" fill="#333">31b</text>
+<path d="M74.35000000000001,50.6 h3.2" stroke="#222" stroke-width="1.3"/><path d="M74.35000000000001,50.6 h3.2" stroke="#1f5fbf" stroke-width=".8"/>
+<text x="80.85" y="48.8" font-size="2.1" text-anchor="middle" font-weight="normal" fill="#333">53</text>
+<path d="M79.25,50.6 h3.2" stroke="#222" stroke-width="1.3"/><path d="M79.25,50.6 h3.2" stroke="#d42020" stroke-width=".8"/>
+<text x="85.75" y="48.8" font-size="2.1" text-anchor="middle" font-weight="normal" fill="#333">53a</text>
+<path d="M84.15,50.6 h3.2" stroke="#222" stroke-width="1.3"/><path d="M84.15,50.6 h3.2" stroke="#7a4a1c" stroke-width=".8"/>
+<text x="90.65" y="48.8" font-size="2.1" text-anchor="middle" font-weight="normal" fill="#333">INT</text>
+<path d="M89.05000000000001,50.6 h3.2" stroke="#222" stroke-width="1.3"/><path d="M89.05000000000001,50.6 h3.2" stroke="#1e9e3e" stroke-width=".8"/>
+<path d="M89.05000000000001,50.6 h3.2" stroke="#ffffff" stroke-width=".4" stroke-dasharray=".8 .8"/>
+<text x="95.55" y="48.8" font-size="2.1" text-anchor="middle" font-weight="normal" fill="#333">53b</text>
+<path d="M93.95,50.6 h3.2" stroke="#222" stroke-width="1.3"/><path d="M93.95,50.6 h3.2" stroke="#1e9e3e" stroke-width=".8"/>
+<text x="100.45" y="48.8" font-size="2.1" text-anchor="middle" font-weight="normal" fill="#333">S</text>
+<text x="105.35" y="48.8" font-size="2.1" text-anchor="middle" font-weight="normal" fill="#333">54c</text>
+<path d="M103.75,50.6 h3.2" stroke="#222" stroke-width="1.3"/><path d="M103.75,50.6 h3.2" stroke="#f2c500" stroke-width=".8"/>
+<path d="M51,52.00 H107.80 M51,56.60 H107.80 M51,61.20 H107.80 M51,65.80 H107.80 M51,70.40 H107.80 M51,75.00 H107.80 M73.50,52.0 V75.00 M78.40,52.0 V75.00 M83.30,52.0 V75.00 M88.20,52.0 V75.00 M93.10,52.0 V75.00 M98.00,52.0 V75.00 M102.90,52.0 V75.00 M107.80,52.0 V75.00" stroke="#ccc" stroke-width=".2"/>
+<circle cx="52.5" cy="54.3" r="1.3" fill="#fff" stroke="#888" stroke-width=".25"/>
+<text x="52.5" y="55.019999999999996" font-size="2" text-anchor="middle" font-weight="bold" fill="#777">0</text>
+<text x="54.6" y="55.05" font-size="2.1" text-anchor="start" font-weight="normal" fill="#333">off</text>
+<path d="M75.95,54.3 H80.85" fill="none" stroke="#888" stroke-linejoin="round" stroke-width=".7"/>
+<circle cx="75.95" cy="54.3" r=".85" fill="#888"/>
+<circle cx="80.85" cy="54.3" r=".85" fill="#888"/>
+<circle cx="52.5" cy="58.9" r="1.3" fill="#fff" stroke="#888" stroke-width=".25"/>
+<text x="52.5" y="59.62" font-size="2" text-anchor="middle" font-weight="bold" fill="#777">1</text>
+<text x="54.6" y="59.65" font-size="2.1" text-anchor="start" font-weight="normal" fill="#333">intermittent</text>
+<path d="M75.95,58.9 H80.85" fill="none" stroke="#888" stroke-linejoin="round" stroke-width=".7"/>
+<path d="M85.75,58.9 H90.65" fill="none" stroke="#111" stroke-linejoin="round" stroke-width=".7"/>
+<circle cx="75.95" cy="58.9" r=".85" fill="#888"/>
+<circle cx="80.85" cy="58.9" r=".85" fill="#888"/>
+<circle cx="85.75" cy="58.9" r=".85" fill="#111"/>
+<circle cx="90.65" cy="58.9" r=".85" fill="#111"/>
+<circle cx="52.5" cy="63.5" r="1.3" fill="#fff" stroke="#888" stroke-width=".25"/>
+<text x="52.5" y="64.22" font-size="2" text-anchor="middle" font-weight="bold" fill="#777">2</text>
+<text x="54.6" y="64.25" font-size="2.1" text-anchor="start" font-weight="normal" fill="#333">slow</text>
+<path d="M80.85,63.5 H85.75" fill="none" stroke="#111" stroke-linejoin="round" stroke-width=".7"/>
+<path d="M85.75,63.5 H89.55 A1.1,1.1 0 0 1 91.75,63.5 H94.45 A1.1,1.1 0 0 1 96.65,63.5 H105.35" fill="none" stroke="#888" stroke-linejoin="round" stroke-dasharray=".05 .75" stroke-linecap="round" stroke-width=".55"/>
+<circle cx="80.85" cy="63.5" r=".85" fill="#111"/>
+<circle cx="85.75" cy="63.5" r=".85" fill="#111"/>
+<circle cx="100.45" cy="63.5" r="1" fill="#fff"/>
+<text x="100.45" y="64.25" font-size="2.1" text-anchor="middle" font-weight="bold" fill="#888">?</text>
+<circle cx="105.35" cy="63.5" r="1" fill="#fff"/>
+<text x="105.35" y="64.25" font-size="2.1" text-anchor="middle" font-weight="bold" fill="#888">?</text>
+<circle cx="52.5" cy="68.1" r="1.3" fill="#fff" stroke="#888" stroke-width=".25"/>
+<text x="52.5" y="68.82" font-size="2" text-anchor="middle" font-weight="bold" fill="#777">3</text>
+<text x="54.6" y="68.85" font-size="2.1" text-anchor="start" font-weight="normal" fill="#333">fast</text>
+<path d="M85.75,68.1 H89.55 A1.1,1.1 0 0 1 91.75,68.1 H95.55" fill="none" stroke="#111" stroke-linejoin="round" stroke-width=".7"/>
+<path d="M95.55,68.1 H100.45" fill="none" stroke="#888" stroke-linejoin="round" stroke-width=".7"/>
+<path d="M100.45,68.1 H105.35" fill="none" stroke="#888" stroke-linejoin="round" stroke-dasharray=".05 .75" stroke-linecap="round" stroke-width=".55"/>
+<circle cx="85.75" cy="68.1" r=".85" fill="#111"/>
+<circle cx="95.55" cy="68.1" r=".85" fill="#111"/>
+<circle cx="100.45" cy="68.1" r=".85" fill="#888"/>
+<circle cx="105.35" cy="68.1" r="1" fill="#fff"/>
+<text x="105.35" y="68.85" font-size="2.1" text-anchor="middle" font-weight="bold" fill="#888">?</text>
+<circle cx="52.5" cy="72.7" r="1.3" fill="#fff" stroke="#888" stroke-width=".25"/>
+<text x="52.5" y="73.42" font-size="2" text-anchor="middle" font-weight="bold" fill="#777">4</text>
+<text x="54.6" y="73.45" font-size="2.1" text-anchor="start" font-weight="normal" fill="#333">washer (pull from 0)</text>
+<path d="M75.95,72.7 H80.85" fill="none" stroke="#888" stroke-linejoin="round" stroke-width=".7"/>
+<path d="M85.75,72.7 H89.55 A1.1,1.1 0 0 1 91.75,72.7 H94.45 A1.1,1.1 0 0 1 96.65,72.7 H105.35" fill="none" stroke="#888" stroke-linejoin="round" stroke-width=".7"/>
+<circle cx="75.95" cy="72.7" r=".85" fill="#888"/>
+<circle cx="80.85" cy="72.7" r=".85" fill="#888"/>
+<circle cx="85.75" cy="72.7" r=".85" fill="#888"/>
+<circle cx="100.45" cy="72.7" r=".85" fill="#888"/>
+<circle cx="105.35" cy="72.7" r=".85" fill="#888"/>
+<circle cx="52" cy="77.2" r=".85" fill="#111"/>
+<text x="53.5" y="77.9" font-size="2" text-anchor="start" font-weight="normal" fill="#333">read</text>
+<circle cx="61" cy="77.2" r=".85" fill="#888"/>
+<text x="62.5" y="77.9" font-size="2" text-anchor="start" font-weight="normal" fill="#333">probably</text>
+<path d="M74,77.2 h3.5" stroke="#888" stroke-width=".55" stroke-dasharray=".05 .75" stroke-linecap="round"/>
+<text x="78.3" y="77.9" font-size="2" text-anchor="start" font-weight="normal" fill="#333">unsure</text>
+<path d="M88,77.2 H89.1 A1.1,1.1 0 0 1 91.3,77.2 H92.4" fill="none" stroke="#111" stroke-width=".7" stroke-linejoin="round"/>
+<text x="93.4" y="77.9" font-size="2" text-anchor="start" font-weight="normal" fill="#333">hop: not joined</text>
+<text x="51" y="80.7" font-size="2" text-anchor="start" font-weight="normal" fill="#333">?: at 2, S only if F’s flat top (printed on line 2) is a contact;</text>
+<text x="51" y="83.5" font-size="2" text-anchor="start" font-weight="normal" fill="#333">54c at 2 and 3 only through P–Q (probably a misprint).</text>
 <path d="M184,64 L392,64 L392,95 L370,95" fill="none" stroke="#222" stroke-width="1.7" stroke-linejoin="round"/>
 <path d="M184,64 L392,64 L392,95 L370,95" fill="none" stroke="#d42020" stroke-width="1.1" stroke-linejoin="round"/>
 <rect x="205.4" y="59.5" width="15.780000000000001" height="3.8" fill="#fff" opacity=".85"/>
@@ -356,12 +441,17 @@
 <circle cx="30" cy="273" r=".8" fill="#fff" stroke="#888" stroke-width=".35"/>
 <path d="M23.7,272.7 L29.6,270.6" stroke="#888" stroke-width=".75" stroke-linecap="round"/>
 <text x="33" y="274" font-size="2.4" text-anchor="start" font-weight="normal" fill="#111">grey inside a part: probably, not printed clearly</text>
+<path d="M22,279 h9" stroke="#999" stroke-width=".3" stroke-dasharray=".8 .6"/>
+<circle cx="33.3" cy="279" r="1.3" fill="#fff" stroke="#888" stroke-width=".25"/>
+<text x="33.3" y="279.72" font-size="2" text-anchor="middle" font-weight="bold" fill="#777">2</text>
+<text x="36" y="280" font-size="2.4" text-anchor="start" font-weight="normal" fill="#111">switch position line, as printed (numbered as the GLE figure)</text>
 <text x="126" y="255.3" font-size="2.3" text-anchor="start" font-weight="normal" fill="#333">Wipers run from fuse 4 on the ignition-on bar: 85 BR to the switch (53a) and two 85a BR leads, to the interval relay and to motor terminal 4.</text>
-<text x="126" y="259.5" font-size="2.3" text-anchor="start" font-weight="normal" fill="#333">The washer switch signal (91 GL) goes to the interval relay, which feeds the washer pump (91a GL), so it can wipe while washing.</text>
-<text x="126" y="263.7" font-size="2.3" text-anchor="start" font-weight="normal" fill="#333">Speed wires: 87 GN to motor terminal 3, 86 RD to terminal 5 (through connector 58 at D8); 85a feeds 4, 88a is the park contact (2).</text>
-<text x="126" y="267.90000000000003" font-size="2.3" text-anchor="start" font-weight="normal" fill="#333">Switch 61 as printed, at rest: the park line from the lever (up, over and down) stops short of 53’s contact (grey: probably joined, for park); the link between the circles on the 54c and S lines is printed closed, tying S to 54c (probably a misprint).</text>
-<text x="126" y="272.1" font-size="2.3" text-anchor="start" font-weight="normal" fill="#333">S has no wire printed (probably 96 GR to relay 67). Headlight wipers: unfused tap 94 BR from bar 3–6, a 3 A glass fuse in holder 65 (manual, PDF p. 30), relay 67.</text>
-<text x="126" y="276.3" font-size="2.3" text-anchor="start" font-weight="normal" fill="#333">Relay 67: 88 is + from the 3 A fuse; 95a RD takes it to upper plug row 2 (probably) and 95b RD on to lower row 2 (the park switches); 88a switches 98 GL to the upper motor’s diode (row 1). Rows of 123 counted from the top (none printed); 66 and 123 drawn mirrored.</text>
-<text x="126" y="280.5" font-size="2.3" text-anchor="start" font-weight="normal" fill="#333">97 BR runs from upper plug row 3 (nothing inside motor 66 uses it) to lower plug row 1, so as printed the lower motor gets no start feed; on the car both run together (E10), so the book leaves out a link, probably row 3 to row 1 inside the upper motor.</text>
-<text x="126" y="284.7" font-size="2.3" text-anchor="start" font-weight="normal" fill="#333">Diagram is not RHD-specific; the switch and relay positions (D8/D9) are drawing grid squares, not locations in the car. Light-grey terminal labels on 61 (31b, 54c, INT, 53, 53b) are probable; S and 53a are read.</text>
+<text x="126" y="259.05" font-size="2.3" text-anchor="start" font-weight="normal" fill="#333">The washer switch signal (91 GL) goes to the interval relay, which feeds the washer pump (91a GL), so it can wipe while washing.</text>
+<text x="126" y="262.8" font-size="2.3" text-anchor="start" font-weight="normal" fill="#333">Speed wires: 87 GN to motor terminal 3, 86 RD to terminal 5 (through connector 58 at D8); 85a feeds 4, 88a is the park contact (2).</text>
+<text x="126" y="266.55" font-size="2.3" text-anchor="start" font-weight="normal" fill="#333">Switch 61 as the book draws it: lever at rest (0), a dashed line per notch through the pivot, no numbers (ours as the GLE figure, p. 370; 4 its text). White slots insulate the lever’s arms: its 31b and 53a sides join apart. Pulling (4) adds S and 54c to the 53a group.</text>
+<text x="126" y="270.3" font-size="2.3" text-anchor="start" font-weight="normal" fill="#333">The park link from the lever (up, over and down) stops short of 53 (grey: probably joined; park, braking and interval need it). P–Q, between the 54c and S lines, is printed closed, so fast would run the washer: probably a misprint (GLE keeps them apart; D10).</text>
+<text x="126" y="274.05" font-size="2.3" text-anchor="start" font-weight="normal" fill="#333">S has no wire printed (probably 96 GR to relay 67). Headlight wipers: unfused tap 94 BR from bar 3–6, a 3 A glass fuse in holder 65 (manual, PDF p. 30), relay 67.</text>
+<text x="126" y="277.8" font-size="2.3" text-anchor="start" font-weight="normal" fill="#333">Relay 67: 88 is + from the 3 A fuse; 95a RD takes it to upper plug row 2 (probably) and 95b RD on to lower row 2 (the park switches); 88a switches 98 GL to the upper motor’s diode (row 1). Rows of 123 counted from the top (none printed); 66 and 123 drawn mirrored.</text>
+<text x="126" y="281.55" font-size="2.3" text-anchor="start" font-weight="normal" fill="#333">97 BR runs from upper plug row 3 (nothing inside motor 66 uses it) to lower plug row 1, so as printed the lower motor gets no start feed; on the car both run together (E10), so the book leaves out a link, probably row 3 to row 1 inside the upper motor.</text>
+<text x="126" y="285.3" font-size="2.3" text-anchor="start" font-weight="normal" fill="#333">Diagram is not RHD-specific; the switch and relay positions (D8/D9) are drawing grid squares, not locations in the car. Light-grey terminal labels on 61 (31b, 54c, INT, 53, 53b) are probable; S and 53a are read.</text>
 </svg>
