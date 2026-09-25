@@ -207,9 +207,9 @@ notes = ['The flasher is fed from fuse 11 on the always-live bar. Its output (73
          'Rear indicator wires 76 and 79 leave connector 58 (B9) on its far side; their route to the rear isn’t traced yet.',
          'Each lamp housing has one earth for all its bulbs (parking, tail and number-plate bulbs: lighting sheet). Turned for the layout: the manual prints '
          'the front housings mirrored (flat end and earth on the left) and the left rear cluster upside down.',
-         'Not in the data yet: the earth cables (front 360/361 SV; rear 189 SV, left cluster bar to right, then 189a SV to earth), drawn straight to earth here; '
-         'and 138 BL, which enters 31’s left side onto the lower contact (a short lead here).',
+         'Not in the data yet: the earth cables (front 360/361 SV; rear 189 SV, left cluster bar to right, then 189a SV to earth), drawn straight to earth here.',
+         'Also not in the data yet: 138 BL, which enters 31’s left side onto the lower contact (a short lead here). It feeds the reversing lights in the front housings (on the car, E16).',
          '58 (E12): 132 and 135 pass on its rows 2 and 3; row 1 is 140 GL (interior sheet) and row 4 is 138 BL. The manual prints no pin numbers.',
          'Diagram is not RHD-specific: circuits should match, but harness routing and part positions may differ.']
-for j, n in enumerate(notes): txt(lx + 108, ly + 6 + j * 4.5, n, 2.35, fill='#333')
+for j, n in enumerate(notes): txt(lx + 108, ly + 6 + j * 4.1, n, 2.35, fill='#333')
 save('signals.svg')
