@@ -193,7 +193,7 @@ notes = ['Wipers run from fuse 4 on the ignition-on bar: 85 BR to the switch (53
          'Relay 67: 88 is + from the 3 A fuse; 95a RD takes it to upper plug row 2 (probably) and 95b RD on to lower row 2 (the park switches); '
          '88a switches 98 GL to the upper motor’s diode (row 1). Rows of 123 counted from the top (none printed); 66 and 123 drawn mirrored.',
          '97 BR runs from upper plug row 3 (nothing inside motor 66 uses it) to lower plug row 1, so as printed the lower motor gets no start feed; '
-         'probably the manual leaves out a row 3 to row 1 link inside the upper motor.',
+         'on the car both run together (E10), so the book leaves out a link, probably row 3 to row 1 inside the upper motor.',
          'Diagram is not RHD-specific; the switch and relay positions (D8/D9) are drawing grid squares, not locations in the car. '
          'Light-grey terminal labels on 61 (31b, 54c, INT, 53, 53b) are probable; S and 53a are read.']
 for j, n in enumerate(notes): txt(lx + 108, ly + 5.3 + j * 4.2, n, 2.3, fill='#333')
