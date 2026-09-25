@@ -48,41 +48,104 @@ wire('85', [(fx, fy), (158, fy), (158, 91)], 64, fy - 1.5); dot(fx, fy)   # 85 o
 X0, Y0, W, H = 112, 45, 72, 46
 box(X0, Y0, W, H)
 txt(146, 42.6, '61 Wiper switch', 2.7, 'middle', w='bold'); txt(158.5, 42.6, '(D9)', 2.2, fill='#555')
+# printed position lines, as the book draws them: thin grey dashes through the lever's pivot, one per notch, drawn
+# first so the contacts sit on top. 1 runs from R through U to the INT finger (via the top 53a contact), 2 to the 53 finger
+# (F's flat top, middle contact, T1), 3 to the 53b finger (F, bottom contact); 2 and 3 end on nothing at the left and cross
+# U's riser without a contact. The lever itself is 0.
+PLINE = 'stroke="#999" stroke-width=".3" stroke-dasharray=".8 .6"'
+PIV = (149.96, 64.62)                                  # pivot boss on the lever
+POSLINES = {'1': [(120.8, 74.9), PIV, (173, 56.5)], '2': [(118.98, 65.47), PIV, (172.6, 64)],
+            '3': [(119.99, 56.72), PIV, (173.6, 70.85)]}
+for pts in POSLINES.values(): A(f'<path d="{path(pts)}" fill="none" {PLINE}/>')
 YB = Y0 + H                                            # bottom edge
 for x in (121, 129, 136, 158): dot(x, YB)
 glabel(119.6, YB - 1.6, '31b', 'end'); tlabel(127.6, YB - 1.6, 'S', 'end'); glabel(138.3, YB - 1.2, '54c')
 for y, t in ((56.5, 'INT'), (64, '53'), (72, '53b')):   # right edge: terminal, lead, inner circle
     dot(X0 + W, y); inner([(X0 + W, y), (178.5, y)]); contact(177.7, y); glabel(182.6, y - 1.3, t, 'end')
 inner([(176.9, 56.5), (173, 56.5)]); inner([(176.9, 64), (172.6, 64)]); inner([(177, 71.8), (173.6, 70.9)])   # fixed fingers: printed at line weight
-# lever: pivots on S0 (tied to 31b, and to R), rests on U through a short neck; its tip reaches into the inverted L, as printed
+# lever: S0 at its lower end (tied to 31b, and to R); pivots on the boss PIV; joined to U through a short neck; its tip
+# reaches into the inverted L, as printed. The white slots either side of the boss (as printed) insulate its two arms.
 contact(123.7, 83); inner([(121, YB), (123.45, 83.76)]); contact(120.8, 74.9); inner([(123.43, 82.25), (121.07, 75.65)])
 blade(124.27, 82.6, 171.5, 49.55)
-contact(133.8, 72.8); blade(133.8, 75.6, 133.8, 73.7)
+LV0, LV1 = (123.7, 83), (171.5, 49.55)                 # S0 and the tip: slots at the printed fractions of that length
+lv = lambda t: (round(LV0[0] + t * (LV1[0] - LV0[0]), 2), round(LV0[1] + t * (LV1[1] - LV0[1]), 2))
+for t0, t1 in ((.39, .49), (.575, .705)):
+    (a0, b0), (a1, b1) = lv(t0), lv(t1)
+    A(f'<path d="M{a0},{b0} L{a1},{b1}" stroke="#fff" stroke-width=".22" stroke-linecap="round"/>')
+A(f'<circle cx="{PIV[0]}" cy="{PIV[1]}" r=".9" fill="#111"/><circle cx="{PIV[0]}" cy="{PIV[1]}" r=".3" fill="#fff"/>')   # pivot boss
+contact(133.8, 70.3); blade(133.8, 75.6, 133.8, 71.2)   # U sits on line 1, as printed (line 1 runs R, U, pivot)
 # U, up and over (the inverted L) and down to T1, which faces the 53 finger across a printed gap: probably joined
-inner([(133.8, 72), (133.8, 47.5), (178.4, 47.5), (178.4, 49.5), (169.5, 56.7), (169.5, 63.2)]); contact(169.5, 64)
+inner([(133.8, 69.5), (133.8, 47.5), (178.4, 47.5), (178.4, 49.5), (169.5, 56.7), (169.5, 63.2)]); contact(169.5, 64)
 inner([(170.3, 64), (172.6, 64)], grey=True)
 # 53a stack: three fixed contacts on one upright from the 53a circle, facing INT (via line 1), T1/53 and 53b
 inner([(163.6, 60.9), (163.6, 79.7)])
-for y in (60.1, 64, 68.9): contact(163.6, y)
-# the printed position line 1 segment, so INT pairs with the top stack contact and not with the L it crosses
-PLINE = 'stroke="#999" stroke-width=".3" stroke-dasharray=".8 .6"'
-A(f'<path d="M164.3,59.8 L172.3,56.6" {PLINE} stroke-dashoffset=".4"/>')   # a dash centred where it crosses the L
+for y in (60.1, 64, 68.21): contact(163.6, y)            # on lines 1, 2 and 3
 contact(163.6, 80.5); tlabel(165.3, 81.2, '53a')
 inner([(163.6, 81.3), (163.6, 85.3), (158, YB)])      # 53a circle to its bottom terminal (85 BR)
-# F (fast, feeds S) faces the stack; F and S both run to Q; P-Q is printed closed, so 54c joins them (probably a misprint)
-contact(160, 66.5); inner([(159.49, 67.11), (147.2, 78.8), (147.2, 80.9)])
+# F (fast, feeds S) sits on line 3, facing the stack; its flat top, printed on line 2, is why S and 54c at 2 are '?'.
+# F and S both run to Q; P-Q is printed closed, so 54c joins them (probably a misprint)
+inner([(160, 66.47), (160, 64.35)]); A('<path d="M159.1,64.35 H160.9" stroke="#111" stroke-width=".45"/>')
+contact(160, 67.27); inner([(159.41, 67.81), (147.2, 78.8), (147.2, 80.9)])
 inner([(129, YB), (138.2, 78.8), (147.2, 78.8)]); jdot(147.2, 78.8)
 contact(147.2, 81.7); contact(141.1, 81.7); inner([(141.9, 81.7), (146.4, 81.7)])
 inner([(140.7, 82.4), (136, YB)])
 # washer contact: blade pivoting on the 53a circle, open, its tip facing Q
 blade(162.9, 80.75, 150.4, 82.1)
-# probable switching, from the geometry and the manual's text (the book prints no positions)
-tx, ty = 66, 52
-txt(tx, ty, 'Positions (probably; the manual prints none)', 2.1, fill='#777')
-for j, s in enumerate(['0 off: 31b–53 (park)', '1 interval: 31b–53 and 53a–INT', '2 slow: 53a–53',
-                       '3 fast: 53a–53b and 53a–S', '4 washer (pull): 53a–S, 54c']):
-    txt(tx + 1.5, ty + 4 + j * 3.4, s, 2.1, fill='#777')
-A(f'<path d="M{tx + 1.5},{ty + 20.3} h4" {PLINE}/>'); txt(tx + 7, ty + 21, 'printed position line (53a–INT)', 2.1, fill='#777')
+# position numbers at the free (S0) end of each line: 0 the lever by S0, 4 the washer blade. The 1979 page prints none;
+# 0-3 follow the GLE figure (p. 370, which puts them at the handle end), 4 its text (p. 371)
+def posnum(x, y, n):
+    A(f'<circle cx="{x}" cy="{y}" r="1.3" fill="#fff" stroke="#888" stroke-width=".25"/>'); txt(x, y + .72, n, 2, 'middle', w='bold', fill='#777')
+for n, (x, y) in (('0', (120.3, 85.4)), ('1', (117.9, 75.9)), ('2', (116.2, 65.6)), ('3', (117.2, 56.0)), ('4', (153, 84.8))):
+    posnum(x, y, n)
+for x, y, t, anc in ((161.1, 66.3, 'F', 'start'), (139.9, 82.4, 'P', 'end'), (148.2, 84.4, 'Q', 'start')):   # our names, used in the notes
+    glabel(x, y, t, anc)
+
+# ---- 61 switching table, Bosch style: a column per terminal, a row per position; dots on the terminals a position
+# joins, a bar through each group. Black = read on the 1979 print, grey = probably, dotted grey with ? = unsure.
+# From the reconciled reading (book photo, scan, GLE text p. 370-371); groups in one row stay separate bars.
+TX, TY, NW, CW, RH = 51, 52.0, 22.5, 4.9, 4.6              # left, grid top, name column, cell width, row height
+TCOL = [('31b', 'BL'), ('53', 'RD'), ('53a', 'BR'), ('INT', 'GN/VT'), ('53b', 'GN'), ('S', ''), ('54c', 'GL')]   # label, wire colour
+# headers print dark: grey in the table means a probable join (the switch symbol shows which labels are probable)
+POS61 = [('0', 'off', [(0, 1, 'p')], {0: 'p', 1: 'p'}),
+         ('1', 'intermittent', [(0, 1, 'p'), (2, 3, 'r')], {0: 'p', 1: 'p', 2: 'r', 3: 'r'}),
+         ('2', 'slow', [(1, 2, 'r'), (2, 6, 'u')], {1: 'r', 2: 'r', 5: '?', 6: '?'}),
+         ('3', 'fast', [(2, 4, 'r'), (4, 5, 'p'), (5, 6, 'u')], {2: 'r', 4: 'r', 5: 'p', 6: '?'}),
+         ('4', 'washer (pull from 0)', [(0, 1, 'p'), (2, 6, 'p')], {0: 'p', 1: 'p', 2: 'p', 5: 'p', 6: 'p'})]
+XR = TX + NW + 7 * CW                                      # right edge
+cx = lambda i: TX + NW + (i + .5) * CW
+txt(TX, TY - 6.6, '61 positions: terminals joined', 2.4, w='bold', fill='#333')
+for i, (t, c) in enumerate(TCOL):
+    txt(cx(i), TY - 3.2, t, 2.1, 'middle', fill='#333')
+    if c:                                                  # the cable's colour, as on the wires leaving the switch
+        cols = c.split('/'); sx = cx(i) - 1.6
+        A(f'<path d="M{sx},{TY - 1.4} h3.2" stroke="#222" stroke-width="1.3"/><path d="M{sx},{TY - 1.4} h3.2" stroke="{COL[cols[0]]}" stroke-width=".8"/>')
+        if len(cols) == 2: A(f'<path d="M{sx},{TY - 1.4} h3.2" stroke="{COL[cols[1]]}" stroke-width=".4" stroke-dasharray=".8 .8"/>')
+grid = [f'M{TX},{TY + j * RH:.2f} H{XR:.2f}' for j in range(6)] + [f'M{TX + NW + i * CW:.2f},{TY} V{TY + 5 * RH:.2f}' for i in range(8)]
+A(f'<path d="{" ".join(grid)}" stroke="#ccc" stroke-width=".2"/>')
+INK = {'r': '#111', 'p': '#888', 'u': '#888'}
+for j, (n, name, bars, dots) in enumerate(POS61):
+    y = round(TY + (j + .5) * RH, 2)
+    posnum(TX + 1.5, y, n); txt(TX + 3.6, y + .75, name, 2.1, fill='#333')
+    for a, b, k in bars:                                   # a bar hops over each column it passes without joining
+        dash = ' stroke-dasharray=".05 .75" stroke-linecap="round" stroke-width=".55"' if k == 'u' else ' stroke-width=".7"'
+        d = f'M{cx(a):.2f},{y}'
+        for i in range(a + 1, b):
+            if i not in dots: d += f' H{cx(i) - 1.1:.2f} A1.1,1.1 0 0 1 {cx(i) + 1.1:.2f},{y}'
+        A(f'<path d="{d} H{cx(b):.2f}" fill="none" stroke="{INK[k]}" stroke-linejoin="round"{dash}/>')
+    for i, k in dots.items():
+        if k == '?':
+            A(f'<circle cx="{cx(i):.2f}" cy="{y}" r="1" fill="#fff"/>'); txt(round(cx(i), 2), y + .75, '?', 2.1, 'middle', w='bold', fill='#888')
+        else:
+            A(f'<circle cx="{cx(i):.2f}" cy="{y}" r=".85" fill="{INK[k]}"/>')
+ky = TY + 5 * RH + 2.9
+A(f'<circle cx="{TX + 1}" cy="{ky - .7}" r=".85" fill="#111"/>'); txt(TX + 2.5, ky, 'read', 2, fill='#333')
+A(f'<circle cx="{TX + 10}" cy="{ky - .7}" r=".85" fill="#888"/>'); txt(TX + 11.5, ky, 'probably', 2, fill='#333')
+A(f'<path d="M{TX + 23},{ky - .7} h3.5" stroke="#888" stroke-width=".55" stroke-dasharray=".05 .75" stroke-linecap="round"/>')
+txt(TX + 27.3, ky, 'unsure', 2, fill='#333')
+A(f'<path d="M{TX + 37},{ky - .7} H{TX + 38.1} A1.1,1.1 0 0 1 {TX + 40.3},{ky - .7} H{TX + 41.4}" fill="none" stroke="#111" stroke-width=".7" stroke-linejoin="round"/>')
+txt(TX + 42.4, ky, 'hop: not joined', 2, fill='#333')
+txt(TX, ky + 2.8, '?: at 2, S only if F’s flat top (printed on line 2) is a contact;', 2, fill='#333')
+txt(TX, ky + 5.6, '54c at 2 and 3 only through P–Q (probably a misprint).', 2, fill='#333')
 
 wire('86', [(184, 64), (392, 64), (392, 95), (370, 95)], 206, 62.5)
 wire('87', [(184, 72), (386, 72), (386, 89), (370, 89)], 206, 70.5)
@@ -184,11 +247,15 @@ A(f'<path d="M{x},{ly + 17} h9" stroke="#222" stroke-width="1.2"/>'); txt(x + 11
 if DASHED[0]: A(f'<path d="M{x + 48},{ly + 17} h9" stroke="#222" stroke-width="1.2" stroke-dasharray="3 2"/>'); txt(x + 59, ly + 18, 'not traced yet', 2.4)
 if TICKED[0]: tick(x, ly + 23.3); txt(x + 4, ly + 24, 'checked on the car', 2.4)
 probable_legend(x, ly + (29 if TICKED[0] else 23))
+py = ly + (35 if TICKED[0] else 29)                   # switch 61's position lines and their numbers
+A(f'<path d="M{x},{py} h9" {PLINE}/>'); posnum(x + 11.3, py, '2'); txt(x + 14, py + 1, 'switch position line, as printed (numbered as the GLE figure)', 2.4)
 notes = ['Wipers run from fuse 4 on the ignition-on bar: 85 BR to the switch (53a) and two 85a BR leads, to the interval relay and to motor terminal 4.',
          'The washer switch signal (91 GL) goes to the interval relay, which feeds the washer pump (91a GL), so it can wipe while washing.',
          'Speed wires: 87 GN to motor terminal 3, 86 RD to terminal 5 (through connector 58 at D8); 85a feeds 4, 88a is the park contact (2).',
-         'Switch 61 as printed, at rest: the park line from the lever (up, over and down) stops short of 53’s contact (grey: probably joined, for park); '
-         'the link between the circles on the 54c and S lines is printed closed, tying S to 54c (probably a misprint).',
+         'Switch 61 as the book draws it: lever at rest (0), a dashed line per notch through the pivot, no numbers (ours as the GLE figure, p. 370; 4 its text). '
+         'White slots insulate the lever’s arms: its 31b and 53a sides join apart. Pulling (4) adds S and 54c to the 53a group.',
+         'The park link from the lever (up, over and down) stops short of 53 (grey: probably joined; park, braking and interval need it). '
+         'P–Q, between the 54c and S lines, is printed closed, so fast would run the washer: probably a misprint (GLE keeps them apart; D10).',
          'S has no wire printed (probably 96 GR to relay 67). Headlight wipers: unfused tap 94 BR from bar 3–6, a 3 A glass fuse in holder 65 (manual, PDF p. 30), relay 67.',
          'Relay 67: 88 is + from the 3 A fuse; 95a RD takes it to upper plug row 2 (probably) and 95b RD on to lower row 2 (the park switches); '
          '88a switches 98 GL to the upper motor’s diode (row 1). Rows of 123 counted from the top (none printed); 66 and 123 drawn mirrored.',
@@ -196,5 +263,5 @@ notes = ['Wipers run from fuse 4 on the ignition-on bar: 85 BR to the switch (53
          'on the car both run together (E10), so the book leaves out a link, probably row 3 to row 1 inside the upper motor.',
          'Diagram is not RHD-specific; the switch and relay positions (D8/D9) are drawing grid squares, not locations in the car. '
          'Light-grey terminal labels on 61 (31b, 54c, INT, 53, 53b) are probable; S and 53a are read.']
-for j, n in enumerate(notes): txt(lx + 108, ly + 5.3 + j * 4.2, n, 2.3, fill='#333')
+for j, n in enumerate(notes): txt(lx + 108, ly + 5.3 + j * 3.75, n, 2.3, fill='#333')
 save('wipers.svg')
