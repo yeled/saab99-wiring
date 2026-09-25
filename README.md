@@ -16,6 +16,7 @@ wire's status in the CSV and the sheet updates.
 | `data/fuses.csv` | One row per fuse: rating, supply bar, status, notes |
 | `data/connectors.csv` | Pin maps for in-line connectors: both sides of each pin |
 | `data/checks.csv` | Things to verify on the car; fill in `result` as you go |
+| `data/internals.csv` | What the manual prints inside each part (relay coils and contacts, switch blades, bulbs and filaments, fuses): one row per element, with rest state, confidence and the book photo it was read from |
 | `tools/checklist.py` | Writes `docs/car-checklist.md` from `checks.csv` plus every untraced wire |
 | `sheets/lighting.py` | Renders the lighting sheet to `out/lighting.svg` (A3 landscape) |
 | `sheets/power.py` | Renders the power distribution sheet to `out/power.svg` (A3 landscape) |
@@ -27,7 +28,7 @@ wire's status in the CSV and the sheet updates.
 | `sheets/climate.py` | Renders the radiator fan, heater fan and heated rear window sheet to `out/climate.svg` |
 | `sheets/interior.py` | Renders the interior lights, seat heating and seat belt sheet to `out/interior.svg` |
 | `sheets/poster.py` | Composes every sheet onto one A0 landscape poster, `out/poster.svg` (run it last) |
-| `sheets/common.py` | Drawing helpers shared by the sheets |
+| `sheets/common.py` | Drawing helpers shared by the sheets, including the symbols for parts' insides (coil, contact, blade, resistor, diode, fuse, twin-filament bulb) |
 | `tools/trace.py` | Follows a wire on the scanned page, and makes gridded crops |
 | `tools/follow.py` | Follows wires through corners, prints where they end, and makes contact sheets |
 | `source/` | Not in git: put the scanned manual (`1980-99-service-manual.pdf`) and book photos (`photos/`) here |
@@ -37,6 +38,15 @@ terminal 56a. A wire whose cable number hasn't been read yet gets an id
 starting with `?` (e.g. `?D+`) and a blank colour; it is drawn thin and grey.
 Where the manual prints the same number on two different wires, the second
 gets a `#` suffix in its id (e.g. `76#hazard`); the sheets print only the number.
+
+## Inside the parts
+
+Relays, switches, lamps and the fuse box are drawn with their insides as the
+manual prints them, with contacts in their printed rest position. Black is
+read clearly off the book photos; grey inside a part means probably (printed
+unclearly, or inferred); what can't be read isn't drawn. Mechanical links from
+a coil to its contacts are thin grey dashes. `data/internals.csv` lists every
+element with its evidence.
 
 ## Status values in `wires.csv`
 
