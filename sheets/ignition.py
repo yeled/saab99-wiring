@@ -87,42 +87,51 @@ wire('393', [(308, 45), (304.5, 45), (304.5, 35), (350, 35), (350, 39)], 318, 33
 wire('123d', [(156, 54), (156, 73), (206, 73), (206, 112), (296, 112), (296, 66), (308, 66)], 220, 110.5); dot(156, 54)
 wire('124', [(308, 80), (304.5, 80), (304.5, 87), (346, 87)], label=False); e124 = tag(348, 87, '124 BL 1.5 → coil 5, terminal 1')
 if WIRES['124']['status'] == 'car': tick(e124 + 1.2, 86.4)
-wire('284', [(308, 73), (300.5, 73), (300.5, 92), (360, 92), (360, 190), (241, 190), (241, 176)], 300, 188.5)
+wire('284', [(308, 73), (300.5, 73), (300.5, 92), (360, 92), (360, 182), (233.5, 182), (227.5, 176)], 246, 180.3)   # into 102's bottom pair
 
 # ---- fuel pump relay, overboost switch, pump and injection parts -------
-# fuel pump relay 102 (scan only, no photo): contact 30-87 open at rest and its coil fed from 15 are clear;
-# the electronic part that switches the coil is printed clearly, with 15 into its top; its 31, coil and 284 leads are not: grey
-box(220, 140, 42, 36); name(220, 137.6, '102', 'Fuel pump relay')
-for t, y in (('30', 146), ('15', 156), ('31', 166)): dot(220, y); tlabel(222, y - 1.3, t)
-dot(262, 146); tlabel(260, 144.7, '87', 'end'); dot(241, 176)       # 284's terminal: no label printed
-inner([(220, 146), (245.2, 146)]); contact(246, 146); contact(255, 146); inner([(255.8, 146), (262, 146)])
-blade(246.7, 145.6, 254.4, 142.5)                                    # 30-87: open at rest
-cl, cr, ct, cb = coil(246, 153, 8, 6); inner([(220, 156), cl]); mlink([ct, (250, 144.4)])
-def module(x, y, w, h):   # the relay's electronics: a plain box, printed clearly; the caption is ours (grey)
-    A(f'<rect x="{x}" y="{y}" width="{w}" height="{h}" fill="#fff" stroke="#111" stroke-width=".4"/>')
-    txt(x + w / 2, y + h / 2 + .7, 'electronics', 1.8, 'middle', fill='#888')
-module(231, 162.5, 16, 7)
-inner([(236, 156), (236, 162.5)])                                    # 15 into the box's top: printed clearly
-for p in ([(220, 166), (231, 166)], [cb, (250, 160.5), (242, 160.5), (242, 162.5)], [(241, 169.5), (241, 176)]):
-    inner(p, grey=True)                                              # 31, coil return and 284: not clear
-wire('260', [(220, 146), (198, 146)], label=False); tag(196, 146, '260 GR 1.5 ← fuse 10', anchor='end')
+# fuel pump relay 102 as the book prints it: 1979 foldout (book photo P6b, with Charlie's pencil FUEL) and 1980 (P6a) are
+# identical, and the scan p.407 agrees. A square; 15 and 87 on the top wall, 31 and an unlabelled circle on the left,
+# 30 and a pair of touching circles on the bottom. Everything inside is printed clearly in both photos: nothing grey.
+box(216, 140, 36, 36); txt(254.5, 157, '102', 3.2, w='bold'); txt(254.5, 161.5, 'Fuel pump relay', 2.5)
+T15, T87, T31, TLL, TP1, TP2, T30 = (224.5, 140), (242.5, 140), (216, 149.5), (216, 167.5), (224.5, 176), (227.5, 176), (242.5, 176)
+for p in (T15, T87, T31, TLL, TP1, TP2, T30): dot(*p)
+tlabel(227.2, 142.2, '15'); tlabel(241.2, 142.8, '87', 'end'); tlabel(217.3, 148.2, '31'); tlabel(241.2, 174.6, '30', 'end')
+tlabel(225.6, 171.4, '31')                                           # printed once over the bottom pair (see notes); the left circle has no label
+# electronics: a tall plain box, no caption in the book (ours, grey); its left edge runs on up to 31 and down to the spare circle
+A('<rect x="222" y="150.5" width="5" height="15" fill="#fff" stroke="#111" stroke-width=".4"/>')
+txt(225.15, 158, 'electronics', 1.8, 'middle', fill='#888', rot=-90)
+inner([T31, (222, 149.5), (222, 167.5), TLL])
+inner([T15, (224.5, 150.5)]); inner([T15, (231.5, 148.5), (231.5, 154.5)])   # both leave the 15 circle: into the box and onto the coil
+cl, cr, ct, cb = coil(227, 154.5, 9, 6.5)                            # its left side is the box's right edge: the other end is in the box
+A('<rect x="227" y="161" width="5" height="3" fill="#fff" stroke="#111" stroke-width=".4"/>')   # small plain block under the coil, no leads
+inner([T87, (242.5, 150.4)]); contact(242.5, 151.2); contact(242.5, 164.5); inner([(242.5, 165.3), T30])
+blade(242.7, 163.8, 245.5, 152.5)                                    # 30-87: open at rest
+inner([cr, (237, cr[1])]); mlink([(237, cr[1]), (244, cr[1])])
+inner([(224.5, 165.5), TP1]); inner([(224.5, 172.8), TP2])           # box to the pair; the two circles are drawn joined
+wire('260', [T30, (242.5, 190), (247, 190)], label=False); tag(249, 190, '260 GR 1.5 ← fuse 10', size=2.4)
+wire('284a', [TP1, (224.5, 183), (222, 183)], label=False); tag(220, 183, '284a BL 0.75 → 73 service outlet, pin 5', anchor='end')
 # pressure switch 144: contact drawn closed, as the manual prints it
 box(160, 151, 20, 10); inner([(160, 156), (163.2, 156)]); inner([(176.8, 156), (180, 156)])
 contact(164, 156); contact(176, 156); blade(164.7, 156, 175.2, 156)
 txt(170, 165, '144 Pressure switch (overboost)', 2.4, 'middle', w='bold')
-wire('378', [(180, 156), (220, 156)], 183, 154.3)
+wire('378', [(180, 156), (185, 156), (185, 134), (224.5, 134), T15], 189, 132.3)
 wire('377', [(160, 156), (150, 156)], label=False); tag(148, 156, '377 GN/VT 0.75 ← ignition 15 at 58/4', anchor='end')
 dot(160, 156); dot(180, 156)
-wire('263', [(220, 166), (216, 166), (216, 171.5), (212, 171.5)], label=False)   # the pump relay's 31, to relay 21's coil earth
-tag(210, 171.5, '263 SV 0.75 → relay 21:85 (power sheet)', anchor='end')
-# 100 SV: relay 67's coil earth (via 100a) and contact 87, also on 102:31 (scan: both leads leave 31 to the left; 1977 Turbo diagram)
-wire('100', [(216, 171.5), (216, 178.5), (212, 178.5)], label=False); dot(216, 171.5)
-tag(210, 178.5, '100 SV 0.75 ← relay 67:87 (wipers sheet)', anchor='end')
-wire('261', [(270, 146), (300, 146)], 272, 144.3); dot(270, 146)
+# 102:31 takes two leads (book photos P6a/P6b, scan): 100 SV straight in from the left, relay 67's coil earth (via 100a) and
+# contact 87; and 263 SV on a diagonal, to relay 21's coil earth (its end is in the border, aimed at 31)
+wire('263', [T31, (212.5, 153), (212.5, 176.5), (208, 176.5)], label=False); tag(206, 176.5, '263 SV 0.75 → relay 21:85 (power sheet)', anchor='end')
+wire('100', [T31, (209.5, 149.5), (209.5, 170), (208, 170)], label=False); tag(206, 170, '100 SV 0.75 ← relay 67:87 (wipers sheet)', anchor='end')
+dot(*T31)                                                            # 31 on top of both leads (diagonal drawn first, as at 87)
+# 87 takes two leads (P6a/P6b): one straight up, one on a diagonal. Scan p.407: the straight-up one turns left at y≈1545 and
+# again at y≈1100 onto the '261a GR 0.75' label (x≈2885–3020); so the diagonal (up x≈3390, then right at y≈1270) is 261 GR 2.5.
+# Here they cross once, without a joint (like 260 × 284). The diagonal is drawn first, so the straight lead covers its root.
+wire('261', [T87, (246, 136.5), (290, 136.5), (290, 146), (300, 146)], 252, 134.8)
 A('<circle cx="306" cy="146" r="6" fill="#fff" stroke="#111" stroke-width=".7"/>'); txt(306, 147.2, 'M', 3, 'middle', w='bold')
 txt(306, 137.5, '103 Fuel pump', 2.6, 'middle', w='bold')
 wire('262', [(312, 146), (322, 146), (322, 150)], label=False); earth(322, 150)
-wire('261a', [(262, 146), (270, 146), (270, 166), (280, 166)], 268.6, 175, rot=-90)
+wire('261a', [T87, (242.5, 130), (276, 130), (276, 166), (280, 166)], 250, 128.3)
+dot(*T87)                                                            # 87 on top of both leads
 # 95 and 96: a winding each, drawn mirrored (manual: both terminals on the right wall, feed upper, earth lower)
 def regulator(y, n, s, sub):
     box(300, y, 50, 16); dot(300, y + 4); dot(300, y + 12)
@@ -199,6 +208,7 @@ notes2 = ['263 SV (pump relay 31) goes to relay 21:85 (probably 85: hidden under
           '201 SV (relay 89’s coil) goes to 158 directly. Relay 21 and joint 158 are on the power sheet.',
           '123d GN/VT (+15 for 146) leaves pin 4 of 58 (A4) on the 147 side, before the ballast resistor;',
           'in the book it passes under the coil without joining it (IMG_4729; 1977 Turbo diagram).',
-          '124 BL: the 1979 number is unreadable; the 1977 Turbo and 1980 diagrams print 124 BL 1.5.']
+          '124 BL: the 1979 number is unreadable; the 1977 Turbo and 1980 diagrams print 124 BL 1.5.',
+          '102’s joined bottom pair is printed 31 but takes the speed signal (284, 284a): probably a misprint for 1.']
 for j, n in enumerate(notes2): txt(lx + 276, ly + 4.8 + j * 3.9, n, 2.3, fill='#333')
 save('ignition.svg')
