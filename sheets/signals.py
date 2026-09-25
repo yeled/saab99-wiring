@@ -42,17 +42,18 @@ def indicator(x, y, r, q):
     A(f'<path d="{d}" fill="#111"/><path d="M{a[0]},{a[1]} L{b[0]},{b[1]} M{a[0]},{b[1]} L{b[0]},{a[1]}" stroke="#111" stroke-width=".45"/>')
 
 
-def stub(x, y, dx=0, dy=2):
-    """Where a cable that is not in the data yet leaves a part (138 BL at 31): a short plain lead."""
-    A(f'<path d="M{x},{y} l{dx},{dy}" stroke="#111" stroke-width=".5" fill="none"/>')
+def label(lx, ly, s):
+    """A cable label in wire()'s style, for a run whose number has no row of its own in the data (75, 78)."""
+    A(f'<rect x="{lx - .6}" y="{ly - 3.0}" width="{len(s) * 1.62 + 1.2}" height="3.8" fill="#fff" opacity=".85"/>')
+    txt(lx, ly, s, 2.8)
 
 
-def to_earth(x, y, dx=0, dy=3):
-    """Where a housing's earth leaves it: its cable is not in the data yet, so it goes straight to common.earth()'s
-    symbol, as on the lighting sheet. dx: a sideways lead first (front housings), one path with the drop so the corner
-    is closed; dy: the drop, shorter under the left rear cluster, where the right front housing sits close below."""
-    ex, ey = x + dx, y + dy
-    A(f'<path d="M{x},{y} h{dx} v{dy} M{ex - 3},{ey} h6 M{ex - 2},{ey + 1.3} h4 M{ex - 1},{ey + 2.6} h2" '
+def to_earth(x, y, dy=3):
+    """Where a rear cluster's earth bar leaves it: its cable (189/189a) is not in the data yet, so it goes straight to
+    common.earth()'s symbol, as on the lighting sheet. dy: the drop, shorter under the left rear cluster, where the right
+    front housing sits close below."""
+    ey = y + dy
+    A(f'<path d="M{x},{y} v{dy} M{x - 3},{ey} h6 M{x - 2},{ey + 1.3} h4 M{x - 1},{ey + 2.6} h2" '
       f'stroke="#111" stroke-width=".5" fill="none"/>')
 
 
@@ -66,7 +67,7 @@ def front_housing(yc, n, side):
     """Front lamp housing (IMG_4714/4715), mirrored so the feed comes in through the rounded end from the left (the
     manual, and the lighting sheet, have the flat end on the left): the indicator sits in the rounded end, its earth
     runs to the flat end (the housing's one earth, shared with parking light 13 and the lower bulb on the lighting
-    sheet), crossing the thin lens chord without a join."""
+    sheet), crossing the thin lens chord without a join. The earth cable itself (360/361 SV) is drawn by the caller."""
     top, bot, xc, rc = yc - 7.5, yc + 7.5, HX0 + HR, 2.2
     d = math.hypot(HXF - xc, 7.5); a = math.atan2(-7.5, HXF - xc) - math.acos(HR / d)
     tx, ty = xc + HR * math.cos(a), HR * math.sin(a)               # where the top edge leaves the rounded end
@@ -81,9 +82,10 @@ def front_housing(yc, n, side):
     A(f'<path d="M{ch},{r2(cy + .4)} V{r2(2 * yc - cy - .4)}" stroke="#111" stroke-width=".3"/>')
     ri = 3.6
     inner([(HX0, yc), (xc + .5 - ri, yc)]); inner([(xc + .5 + ri, yc), (HXF, yc)])
-    indicator(xc + .5, yc, ri, 'lr'); dot(HX0, yc); dot(HXF, yc); to_earth(HXF, yc, 4.5)
-    txt(366, yc - .4, f'<tspan font-weight="bold">{n}</tspan> Front indicator, {side}', 2.5)
-    txt(366, yc + 3.2, 'in the front lamp housing with parking light 13', 2.0, fill='#555')
+    indicator(xc + .5, yc, ri, 'lr'); dot(HX0, yc); dot(HXF, yc)
+    # caption a little above the centre line: the earth cable's label or tag sits under it
+    txt(366, yc - 3.4, f'<tspan font-weight="bold">{n}</tspan> Front indicator, {side}', 2.5)
+    txt(366, yc + .2, 'in the front lamp housing with parking light 13', 2.0, fill='#555')
 
 
 def rear_cluster(y0, side, bulbs):
@@ -97,7 +99,7 @@ def rear_cluster(y0, side, bulbs):
         inner([(CX0, yy), (CB - CR, yy)]); dot(CX0, yy)
         if not ind: inner([(CB + CR, yy), (BAR, yy)]); jdot(BAR, yy)
         txt(359, yy + .9, f'<tspan font-weight="bold">{n}</tspan> {cap}', 2.5)
-    inner([(CB + CR, ys[0]), (BAR, ys[0]), (BAR, y0 + 27)]); dot(BAR, y0 + 27); to_earth(BAR, y0 + 27, dy=2)
+    inner([(CB + CR, ys[0]), (BAR, ys[0]), (BAR, y0 + 27)]); dot(BAR, y0 + 27); to_earth(BAR, y0 + 27, 2)
     return ys
 
 
@@ -132,23 +134,39 @@ box(210, 48, 30, 40); txt(243, 68, '24 Indicator switch', 2.4, w='bold')
 dot(225, 48); tlabel(226.5, 55, '54'); inner([(225, 48), (225, 59.2)]); contact(225, 60); blade(225, 60.7, 225, 76.8)
 contact(219, 76); inner([(219, 76.8), (219, 88)]); dot(219, 88); tlabel(217.4, 84, 'R', 'end')
 contact(231, 76); inner([(231, 76.8), (231, 88)]); dot(231, 88); tlabel(232.6, 84, 'L')
-# the hazard feeds land on 24's R and L terminals beside the lamp wires; 67 crosses 80 without a join
+# the hazard feeds land on 24's R and L terminals beside the lamp wires; 67 crosses 78 without a join
 wire('68', [(160, 88), (160, 98), (214, 98), (214, 93), (219, 88)], 170, 96.5)
 wire('67', [(155, 88), (155, 104), (226, 104), (226, 93), (231, 88)], 180, 102.5)
-wire('77', [(231, 88), (231, 110), (268, 110)], label=False); conn(270, 110, 7, '58 (B9)')
-wire('80', [(219, 88), (219, 122), (268, 122)], label=False); conn(270, 122, 7, '')
+# 24's own outputs, 75 BL/VT (L) and 78 RD/VT (R), pass 58 (D8) (pins 11 and 10) and reach 58 (B9), where 77/80 (front)
+# and 76/79 (rear) carry on.
+LB, RB = 101, 111                       # rows of 58 (D8) and 58 (B9): L (75/77/76) above R (78/80/79)
+D8, B9 = 241, 275
+wire('75', [(231, 88), (231, LB), (D8 - 2, LB)], label=False)
+wire('78', [(219, 88), (219, RB), (D8 - 2, RB)], label=False)
+conn(D8, (LB + RB) / 2, RB - LB + 7, '58 (D8)', links=(LB, RB))
+wire('75', [(D8 + 2, LB), (B9 - 2, LB)], 246, LB - 1.5)
+wire('78', [(D8 + 2, RB), (B9 - 2, RB)], 246, RB - 1.5)
+conn(B9, (LB + RB) / 2, RB - LB + 7, '58 (B9)', links=(LB, RB))
 
-# lamps: left side (front, rear cluster), then right side
+# lamps: left side (front, rear cluster), then right side. As printed, the front cables (77, 80) leave 75's and 78's pins
+# on 58 (B9)'s near side and only the rear ones (76, 79) pass it. 77 is drawn so; 80 branches off 79 past B9, since from
+# the near side it would cross 79 and the 132 and 136 feeds (the notes say so). The front housings' earths: 360 SV to
+# the main earth star, 361 SV to washer pump 63's earth terminal (and on to joint 158 through 92 SV, wipers sheet).
 front_housing(91, 27, 'left')
-wire('77', [(272, 110), (312, 110), (312, 91), (HX0, 91)], 284, 108.5)
-wire('76', [(312, 110), (CX0, 110)], 314, 108.5); dot(312, 110)
+wire('76', [(B9 + 2, LB), (323, LB), (323, 110), (CX0, 110)], 287, LB - 1.5)
+wire('77', [(268.5, LB), (268.5, 91), (HX0, 91)], 292, 89.5); dot(268.5, LB)
+wire('360', [(HXF, 91), (360.5, 91), (360.5, 94)], label=False); earth(360.5, 91)
+txt(364.5, 96.4, f"360 {WIRES['360']['colour']} {WIRES['360']['mm2']}", 2.1)
 # The manual prints the left cluster as the mirror image of the right (indicator at the bottom); here both read
 # the same way down, as on the lighting sheet.
 yl = rear_cluster(105.5, 'left', (('27', 'Rear indicator, left', True), ('30', 'Brake light, left', False),
                                   ('32', 'Reversing light, left', False)))
 front_housing(146, 28, 'right')
-wire('80', [(272, 122), (282, 122), (282, 146), (HX0, 146)], 280.4, 145.4, rot=-90)
-wire('79', [(316, 146), (316, 164.5), (CX0, 164.5)], 318.5, 163); dot(316, 146)
+wire('79', [(B9 + 2, RB), (313, RB), (313, 146)], 287, RB - 1.5)
+wire('79', [(313, 146), (313, 164.5), (CX0, 164.5)], 316.5, 163)
+wire('80', [(313, 146), (HX0, 146)], 315, 144.5); dot(313, 146)
+t361 = f"361 {WIRES['361']['colour']} {WIRES['361']['mm2']} → washer pump 63 (wipers sheet)"
+wire('361', [(HXF, 146), (359, 146), (359, 151.3), (361, 151.3)], label=False); tag(361, 151.3, t361, w=44, size=2.0)
 yr = rear_cluster(160, 'right', (('28', 'Rear indicator, right', True), ('30', 'Brake light, right', False),
                                  ('32', 'Reversing light, right', False)))
 
@@ -163,26 +181,35 @@ inner([(90, 173.5), (92.4, 173.5)]); contact(93.2, 173.5)
 blade(93.85, 173.24, 99.6, 170.9); blade(99.6, 170.9, 106, 168.33, grey=True)
 contact(111, 173.5, grey=True); inner([(111.8, 173.5), (114, 173.5)]); dot(90, 173.5); dot(114, 173.5)
 wire('132', [(114, 173.5), (158, 173.5)], 120, 172)
-conn(160, 184.25, 32.5, '58 (E12)', links=(173.5, 195))
-wire('133', [(162, 173.5), (CX0, 173.5)], 200, 172)
-wire('133', [(296, 173.5), (296, yl[1]), (CX0, yl[1])], label=False); dot(296, 173.5)
+# 58 (E12): rows 2, 3 and 4 (132, 135, 138); row 1 (140 GL, interior sheet) is not drawn
+conn(160, 195.6, 55.2, '58 (E12)', links=(173.5, 195, 217.7))
+# 132 goes on to the left brake light; 133 leaves that feed for the right one (four verticals in a row, so the
+# crossings stay three: 79 over 132 and 136, 133 over 136)
+wire('132', [(162, 173.5), (289, 173.5), (289, yl[1]), (CX0, yl[1])], 200, 172)
+wire('133', [(307, yl[1]), (307, yr[1]), (CX0, yr[1])], 317, 172); dot(307, yl[1])
 fuse_box(195, 3)
 wire('135', [(50, 195), (158, 195)], 55, 193.5)
 wire('135', [(162, 195), (202, 195), (202, 199)], label=False)
 # 31 reversing light switch as printed: portrait, blade hanging from the top terminal, open; a link from the
-# left border to the bottom terminal, where 138 BL comes in with no terminal circle (138 is not in the data yet,
-# so a short lead outside the border)
+# left border to the bottom (switched) contact, where 138 BL comes in with no terminal circle printed
 box(196, 199, 12, 21); txt(211, 211, '31 Reversing light switch', 2.4, w='bold')
 dot(202, 199); inner([(202, 199), (202, 200.7)]); contact(202, 201.5); blade(202.24, 202.16, 206.5, 214)
 contact(202, 217.7); inner([(202, 218.5), (202, 220)]); dot(202, 220); inner([(196, 217.7), (201.2, 217.7)])
-stub(196, 217.7, -2.5, 0)
-wire('136', [(202, 220), (202, 225), (306, 225), (306, yl[2]), (CX0, yl[2])], 230, 223.5)
-wire('137', [(306, yr[2]), (CX0, yr[2])], 310, 181); dot(306, yr[2])
+# 138 BL: from 31's switched side back through 58 (E12) row 4, on to 58 (E2) and the front housings' lower bulbs
+wire('138', [(196, 217.7), (162, 217.7)], 166, 216.2)
+wire('138', [(158, 217.7), (138, 217.7)], label=False)
+t138 = '→ via 58 (E2) to front side back-up lights (lighting sheet)'
+tag(138, 217.7, t138, w=67.5, anchor='end')
+# 136 goes on to the left reversing light; 137 leaves that feed for the right one
+wire('136', [(202, 220), (202, 225), (295, 225), (295, yl[2]), (CX0, yl[2])], 230, 223.5)
+wire('137', [(301, yl[2]), (301, yr[2]), (CX0, yr[2])], 317, 181); dot(301, yl[2])
 
 # terminal dots again, on top of the wire ends that meet them
 for p in ((50, 62), (70, 62), (100, 58), (80, 80), (92, 80), (149, 48), (170, 64.8), (155, 88), (160, 88), (225, 48),
-          (219, 88), (231, 88), (HX0, 91), (HX0, 146), (50, 173.5), (90, 173.5), (114, 173.5), (158, 173.5), (162, 173.5),
-          (50, 195), (158, 195), (162, 195), (202, 199), (202, 220)) + tuple((CX0, y) for y in yl + yr):
+          (219, 88), (231, 88), (D8 - 2, LB), (D8 + 2, LB), (D8 - 2, RB), (D8 + 2, RB), (B9 - 2, LB), (B9 + 2, LB),
+          (B9 - 2, RB), (B9 + 2, RB), (HX0, 91), (HX0, 146), (HXF, 91), (HXF, 146), (50, 173.5), (90, 173.5),
+          (114, 173.5), (158, 173.5), (162, 173.5), (50, 195), (158, 195), (162, 195), (158, 217.7), (162, 217.7),
+          (202, 199), (202, 220), (196, 217.7)) + tuple((CX0, y) for y in yl + yr):
     dot(*p)
 
 # ---- legend and notes ---------------------------------------------------------------
@@ -203,13 +230,15 @@ notes = ['The flasher is fed from fuse 11 on the always-live bar. Its output (73
          'The manual prints 25’s terminals +, R and L (none on the lamp’s) and 24’s 54, R and L. 73 GN lands on + beside the wire to 54 (probably the same terminal).',
          '25’s lamp contact prints merged into the blade root; on the car it is open at rest (the lamp stays dark with the indicators and blinks with the hazards: check D7). '
          'Grey: the end of 29’s blade and its right contact, printed running together; probably open at rest.',
-         'The + to 54 wire is shown as 76 GN, as in the data; its second digit is blotted on the page, so the clash with 76 BL/VT is not confirmed. '
-         'Rear indicator wires 76 and 79 leave connector 58 (B9) on its far side; their route to the rear isn’t traced yet.',
+         'The + to 54 wire is printed 7? GN 1.0 with the second digit blotted; it is shown as 76, as in the data, but is probably 74 (the 1977 Turbo diagram prints 74 GN 1.0).',
+         '24’s own outputs are 75 BL/VT and 78 RD/VT, through 58 (D8) to 58 (B9). 77/80 (front) leave on B9’s near side, as printed, and only '
+         '76/79 (rear, route not traced yet) pass it; 80 is drawn branching off 79 past it, for room.',
          'Each lamp housing has one earth for all its bulbs (parking, tail and number-plate bulbs: lighting sheet). Turned for the layout: the manual prints '
          'the front housings mirrored (flat end and earth on the left) and the left rear cluster upside down.',
-         'Not in the data yet: the earth cables (front 360/361 SV; rear 189 SV, left cluster bar to right, then 189a SV to earth), drawn straight to earth here.',
-         'Also not in the data yet: 138 BL, which enters 31’s left side onto the lower contact (a short lead here). It feeds the reversing lights in the front housings (on the car, E16).',
-         '58 (E12): 132 and 135 pass on its rows 2 and 3; row 1 is 140 GL (interior sheet) and row 4 is 138 BL. The manual prints no pin numbers.',
+         'Not in the data yet: the rear cluster earths (189 SV, left cluster bar to right, then 189a SV to earth), drawn straight to earth here.',
+         '132 and 136 run to the left cluster; 133 and 137 start at its 30 and 32 bulb feeds (inside it, probably); their dots are drawn short of it, for room. 138 BL, from 31’s '
+         'switched side, feeds the front housings’ side back-up lights (car: E16).',
+         '58 (E12): 132, 135 and 138 pass on its rows 2, 3 and 4; row 1 is 140 GL (interior sheet). The manual prints no pin numbers.',
          'Diagram is not RHD-specific: circuits should match, but harness routing and part positions may differ.']
-for j, n in enumerate(notes): txt(lx + 108, ly + 6 + j * 4.1, n, 2.35, fill='#333')
+for j, n in enumerate(notes): txt(lx + 108, ly + 5.5 + j * 3.75, n, 2.35, fill='#333')
 save('signals.svg')
