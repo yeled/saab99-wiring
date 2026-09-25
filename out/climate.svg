@@ -64,8 +64,10 @@
 <text x="228" y="86.5" font-size="2.8" text-anchor="start" font-weight="normal" fill="#111">114a BL 0.75</text>
 <rect x="262" y="82" width="20" height="12" rx="1.2" fill="#fafafa" stroke="#111" stroke-width="0.8"/>
 <path d="M266,90 l8,-5 M274,88 h6" stroke="#111" stroke-width=".5"/>
-<path d="M282,88 H290 v4" fill="none" stroke="#111" stroke-width=".6"/>
-<path d="M290,92 v3 M287,95 h6 M288,96.3 h4 M289,97.6 h2" stroke="#111" stroke-width=".5" fill="none"/>
+<path d="M282,88 L292,88" fill="none" stroke="#222" stroke-width="1.7" stroke-linejoin="round"/>
+<path d="M282,88 L292,88" fill="none" stroke="#111111" stroke-width="1.1" stroke-linejoin="round"/>
+<rect x="294" y="85.4" width="71.9" height="5.2" rx="1" fill="#fff" stroke="#444" stroke-width=".4"/>
+<text x="295.5" y="89" font-size="2.2" text-anchor="start" font-weight="normal" fill="#111">115 SV 0.75 <tspan font-family="Arial">←</tspan> left headlamp common; earth via 28 SV (lighting sheet)</text>
 <text x="262" y="104" font-size="2.5" text-anchor="start" font-weight="normal" fill="#111"><tspan font-weight="bold">39</tspan> Thermostat switch (E2): closes when hot</text>
 <text x="18" y="124" font-size="3.4" text-anchor="start" font-weight="bold" fill="#111">Heater (ventilator) fan</text>
 <rect x="18" y="139" width="36" height="20" rx="1.2" fill="#fafafa" stroke="#111" stroke-width="0.8"/>
@@ -135,8 +137,10 @@
 <path d="M258,128 L260,128 L260,149 L245,149" fill="none" stroke="#111" stroke-width=".6" stroke-linejoin="round"/>
 <path d="M245,142 L263,142" fill="none" stroke="#111" stroke-width=".6" stroke-linejoin="round"/>
 <path d="M245,156 L263,156" fill="none" stroke="#111" stroke-width=".6" stroke-linejoin="round"/>
-<path d="M237,156 L233,156 L233,158" fill="none" stroke="#111" stroke-width=".6" stroke-linejoin="round"/>
-<path d="M233,158 v3 M230,161 h6 M231,162.3 h4 M232,163.6 h2" stroke="#111" stroke-width=".5" fill="none"/>
+<path d="M237,156 L224,156" fill="none" stroke="#222" stroke-width="1.7" stroke-linejoin="round"/>
+<path d="M237,156 L224,156" fill="none" stroke="#111111" stroke-width="1.1" stroke-linejoin="round"/>
+<rect x="176.7" y="153.4" width="45.3" height="5.2" rx="1" fill="#fff" stroke="#444" stroke-width=".4"/>
+<text x="178.2" y="157" font-size="2.2" text-anchor="start" font-weight="normal" fill="#111">107 SV 2.5 <tspan font-family="Arial">→</tspan> earth joint 158 (power sheet)</text>
 <rect x="263" y="138" width="22" height="22" rx="1.2" fill="#fafafa" stroke="#111" stroke-width="0.8"/>
 <circle cx="263" cy="142" r="1.0" fill="#111"/>
 <circle cx="263" cy="156" r="1.0" fill="#111"/>
@@ -182,10 +186,18 @@
 <path d="M54,196 L116,196 L116,203" fill="none" stroke="#d42020" stroke-width="1.1" stroke-linejoin="round"/>
 <rect x="59.4" y="191.5" width="17.400000000000002" height="3.8" fill="#fff" opacity=".85"/>
 <text x="60" y="194.5" font-size="2.8" text-anchor="start" font-weight="normal" fill="#111">210 RD 2.5</text>
-<path d="M137,203 L137,198 L150,198 L150,200" fill="none" stroke="#222" stroke-width="1.7" stroke-linejoin="round"/>
-<path d="M137,203 L137,198 L150,198 L150,200" fill="none" stroke="#111111" stroke-width="1.1" stroke-linejoin="round"/>
-<path d="M150,200 v3 M147,203 h6 M148,204.3 h4 M149,205.6 h2" stroke="#111" stroke-width=".5" fill="none"/>
-<text x="154" y="204" font-size="2.2" text-anchor="start" font-weight="normal" fill="#111">212 SV 0.75</text>
+<path d="M137,203 L133,199 L133,174 L150,174" fill="none" stroke="#222" stroke-width="1.7" stroke-linejoin="round"/>
+<path d="M137,203 L133,199 L133,174 L150,174" fill="none" stroke="#111111" stroke-width="1.1" stroke-linejoin="round"/>
+<rect x="152" y="171.4" width="49.6" height="5.2" rx="1" fill="#fff" stroke="#444" stroke-width=".4"/>
+<text x="153.5" y="175" font-size="2.2" text-anchor="start" font-weight="normal" fill="#111">13 SV 0.75 <tspan font-family="Arial">←</tspan> lighting relay 8:31 (lighting sheet)</text>
+<path d="M137,203 L137,180.5 L150,180.5" fill="none" stroke="#222" stroke-width="1.7" stroke-linejoin="round"/>
+<path d="M137,203 L137,180.5 L150,180.5" fill="none" stroke="#111111" stroke-width="1.1" stroke-linejoin="round"/>
+<rect x="152" y="177.9" width="56.6" height="5.2" rx="1" fill="#fff" stroke="#444" stroke-width=".4"/>
+<text x="153.5" y="181.5" font-size="2.2" text-anchor="start" font-weight="normal" fill="#111">33 SV 0.75 <tspan font-family="Arial">←</tspan> ignition switch relay 21:85 (power sheet)</text>
+<path d="M137,203 L141,199 L141,187 L150,187" fill="none" stroke="#222" stroke-width="1.7" stroke-linejoin="round"/>
+<path d="M137,203 L141,199 L141,187 L150,187" fill="none" stroke="#111111" stroke-width="1.1" stroke-linejoin="round"/>
+<rect x="152" y="184.4" width="46.5" height="5.2" rx="1" fill="#fff" stroke="#444" stroke-width=".4"/>
+<text x="153.5" y="188" font-size="2.2" text-anchor="start" font-weight="normal" fill="#111">212 SV 0.75 <tspan font-family="Arial">→</tspan> earth joint 158 (power sheet)</text>
 <rect x="188" y="196" width="34" height="24" rx="1.2" fill="#fafafa" stroke="#111" stroke-width="0.8"/>
 <text x="205" y="193.6" font-size="2.2" text-anchor="middle" font-weight="bold" fill="#111">116 Heated window switch</text>
 <circle cx="193.9" cy="220" r="1.0" fill="#111"/>
@@ -255,11 +267,11 @@
 <text x="33" y="274" font-size="2.4" text-anchor="start" font-weight="normal" fill="#111">grey inside a part: probably, not printed clearly</text>
 <path d="M22,279 L31,279" fill="none" stroke="#111" stroke-width=".4" stroke-dasharray=".8 .6"/>
 <text x="33" y="280" font-size="2.4" text-anchor="start" font-weight="normal" fill="#111">short dashes inside a switch: its other positions, as printed</text>
-<text x="126" y="256.0" font-size="2.35" text-anchor="start" font-weight="normal" fill="#333">Radiator fan: relay 38 (drawn at rest, contact open) is fed from fuse 7 on the always-live bar, and thermostat switch 39 earths its coil, so the drawing</text>
-<text x="126" y="260.8" font-size="2.35" text-anchor="start" font-weight="normal" fill="#333">lets the fan run after the engine is switched off. Heater fan: fuse 6 is on the ignition-on bar. Switch 35 rests on its unwired terminal (probably off);</text>
-<text x="126" y="265.6" font-size="2.35" text-anchor="start" font-weight="normal" fill="#333">its short-dashed lines are its other positions, as printed: 8 feeds the motor directly; 6 goes through resistor 74, whose far lead lands on 57’s corner</text>
-<text x="126" y="270.4" font-size="2.35" text-anchor="start" font-weight="normal" fill="#333">(the pin is hidden: probably row 1, grey). The motor’s return runs through 57 to earth joint 158 (D6) in the manual; drawn here as a local earth.</text>
-<text x="126" y="275.2" font-size="2.35" text-anchor="start" font-weight="normal" fill="#333">Heated rear window: fuse 8 (always live) feeds relay 113 (at rest, open); switch 116, drawn off, energises it through 213 BL. Its right terminal takes</text>
-<text x="126" y="280.0" font-size="2.35" text-anchor="start" font-weight="normal" fill="#333">the feed 214 BL (not traced) and 203 to the tachometer; its lamp is probably the “on” indicator. In the manual 212 SV (113:85) runs to earth joint 158 (D6).</text>
+<text x="126" y="256.0" font-size="2.35" text-anchor="start" font-weight="normal" fill="#333">Radiator fan: relay 38 (drawn at rest, contact open) is fed from fuse 7 on the always-live bar; thermostat switch 39 earths its coil through 115 SV and the left</text>
+<text x="126" y="260.8" font-size="2.35" text-anchor="start" font-weight="normal" fill="#333">headlamp’s earth, 28 SV, so the drawing lets the fan run after the engine is switched off. 114a is BL in the 1979 print, SV (black) in the 1977 Turbo diagram: car check E14.</text>
+<text x="126" y="265.6" font-size="2.35" text-anchor="start" font-weight="normal" fill="#333">Heater fan: fuse 6 is on the ignition-on bar. Switch 35 rests on its unwired terminal (probably off); its short-dashed lines are its other positions, as printed: 8 feeds the</text>
+<text x="126" y="270.4" font-size="2.35" text-anchor="start" font-weight="normal" fill="#333">motor directly; 6 goes through resistor 74, whose far lead lands on 57’s corner (the pin is hidden: probably row 1, grey). The motor returns through 57 row 3 on 107 SV to joint 158.</text>
+<text x="126" y="275.2" font-size="2.35" text-anchor="start" font-weight="normal" fill="#333">Heated rear window: fuse 8 (always live) feeds relay 113 (at rest, open); switch 116, drawn off, energises it through 213 BL. Its right terminal takes the feed 214 BL (not traced)</text>
+<text x="126" y="280.0" font-size="2.35" text-anchor="start" font-weight="normal" fill="#333">and 203 to the tachometer; its lamp is probably the “on” indicator. 113:85 also takes the earths 13 SV (relay 8) and 33 SV (relay 21); 212 SV carries all three earths (relays 113, 8 and 21) to earth joint 158.</text>
 <text x="126" y="284.8" font-size="2.35" text-anchor="start" font-weight="normal" fill="#333">Diagram is not RHD-specific: circuits should match, but harness routing and part positions may differ.</text>
 </svg>

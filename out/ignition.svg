@@ -64,10 +64,10 @@
 <path d="M107.4,101.3 L108.5,110.5" stroke="#111" stroke-width=".75" stroke-linecap="round"/>
 <path d="M112.2,101.3 L113.7,110.5" stroke="#111" stroke-width=".75" stroke-linecap="round"/>
 <path d="M104,106.25 L113.4,106.25" fill="none" stroke="#999" stroke-width=".3" stroke-dasharray=".8 .6"/>
-<path d="M96,122 L96,125" fill="none" stroke="#222" stroke-width="1.7" stroke-linejoin="round"/>
-<path d="M96,122 L96,125" fill="none" stroke="#111111" stroke-width="1.1" stroke-linejoin="round"/>
-<path d="M96,125 v3 M93,128 h6 M94,129.3 h4 M95,130.6 h2" stroke="#111" stroke-width=".5" fill="none"/>
-<text x="91.5" y="129" font-size="2.2" text-anchor="end" font-weight="normal" fill="#111">201 SV</text>
+<path d="M96,122 L96,125.5 L84,125.5 L84,118 L80,118" fill="none" stroke="#222" stroke-width="1.7" stroke-linejoin="round"/>
+<path d="M96,122 L96,125.5 L84,125.5 L84,118 L80,118" fill="none" stroke="#111111" stroke-width="1.1" stroke-linejoin="round"/>
+<rect x="23" y="115.4" width="55" height="5.2" rx="1" fill="#fff" stroke="#444" stroke-width=".4"/>
+<text x="24.5" y="119" font-size="2.6" text-anchor="start" font-weight="normal" fill="#111">201 SV 0.75 <tspan font-family="Arial">→</tspan> earth joint 158 (power sheet)</text>
 <path d="M112,90 L112,84 L118,84" fill="none" stroke="#222" stroke-width="1.7" stroke-linejoin="round"/>
 <path d="M112,90 L112,84 L118,84" fill="none" stroke="#8a8a8a" stroke-width="1.1" stroke-linejoin="round"/>
 <rect x="120" y="81.4" width="50.32" height="5.2" rx="1" fill="#fff" stroke="#444" stroke-width=".4"/>
@@ -124,7 +124,6 @@
 <rect x="187.4" y="49.3" width="19.02" height="3.8" fill="#fff" opacity=".85"/>
 <text x="188" y="52.3" font-size="2.8" text-anchor="start" font-weight="normal" fill="#111">123b GL 1.5</text>
 <path d="M207.01999999999998,50.599999999999994 l0.9,1.0 l1.9,-2.4" fill="none" stroke="#1e7a3a" stroke-width="0.55" stroke-linecap="round" stroke-linejoin="round"/>
-<circle cx="206" cy="54" r="1.0" fill="#111"/>
 <circle cx="170" cy="54" r="1.0" fill="#111"/>
 <circle cx="186" cy="54" r="1.0" fill="#111"/>
 <text x="188" y="57.4" font-size="1.8" text-anchor="start" font-weight="normal" fill="#777">book: GN/VT</text>
@@ -181,11 +180,12 @@
 <rect x="317.4" y="30.5" width="17.400000000000002" height="3.8" fill="#fff" opacity=".85"/>
 <text x="318" y="33.5" font-size="2.8" text-anchor="start" font-weight="normal" fill="#111">393 SV 1.5</text>
 <path d="M350,39 v3 M347,42 h6 M348,43.3 h4 M349,44.6 h2" stroke="#111" stroke-width=".5" fill="none"/>
-<path d="M206,54 L206,112 L296,112 L296,66 L308,66" fill="none" stroke="#222" stroke-width="1.7" stroke-linejoin="round"/>
-<path d="M206,54 L206,112 L296,112 L296,66 L308,66" fill="none" stroke="#1e9e3e" stroke-width="1.1" stroke-linejoin="round"/>
-<path d="M206,54 L206,112 L296,112 L296,66 L308,66" fill="none" stroke="#ffffff" stroke-width="0.5" stroke-dasharray="1.2 1.2"/>
+<path d="M156,54 L156,73 L206,73 L206,112 L296,112 L296,66 L308,66" fill="none" stroke="#222" stroke-width="1.7" stroke-linejoin="round"/>
+<path d="M156,54 L156,73 L206,73 L206,112 L296,112 L296,66 L308,66" fill="none" stroke="#1e9e3e" stroke-width="1.1" stroke-linejoin="round"/>
+<path d="M156,54 L156,73 L206,73 L206,112 L296,112 L296,66 L308,66" fill="none" stroke="#ffffff" stroke-width="0.5" stroke-dasharray="1.2 1.2"/>
 <rect x="219.4" y="107.5" width="23.88" height="3.8" fill="#fff" opacity=".85"/>
 <text x="220" y="110.5" font-size="2.8" text-anchor="start" font-weight="normal" fill="#111">123d GN/VT 1.0</text>
+<circle cx="156" cy="54" r="1.0" fill="#111"/>
 <path d="M308,80 L304.5,80 L304.5,87 L346,87" fill="none" stroke="#222" stroke-width="1.7" stroke-linejoin="round"/>
 <path d="M308,80 L304.5,80 L304.5,87 L346,87" fill="none" stroke="#1f5fbf" stroke-width="1.1" stroke-linejoin="round"/>
 <rect x="348" y="84.4" width="44.912000000000006" height="5.2" rx="1" fill="#fff" stroke="#444" stroke-width=".4"/>
@@ -243,10 +243,15 @@
 <text x="97.828" y="157" font-size="2.6" text-anchor="start" font-weight="normal" fill="#111">377 GN/VT 0.75 <tspan font-family="Arial">←</tspan> ignition 15 at 58/4</text>
 <circle cx="160" cy="156" r="1.0" fill="#111"/>
 <circle cx="180" cy="156" r="1.0" fill="#111"/>
-<path d="M220,166 L212,166 L212,170" fill="none" stroke="#222" stroke-width="1.7" stroke-linejoin="round"/>
-<path d="M220,166 L212,166 L212,170" fill="none" stroke="#111111" stroke-width="1.1" stroke-linejoin="round"/>
-<path d="M212,170 v3 M209,173 h6 M210,174.3 h4 M211,175.6 h2" stroke="#111" stroke-width=".5" fill="none"/>
-<text x="198" y="172" font-size="2.3" text-anchor="start" font-weight="normal" fill="#111">263 SV</text>
+<path d="M220,166 L216,166 L216,171.5 L212,171.5" fill="none" stroke="#222" stroke-width="1.7" stroke-linejoin="round"/>
+<path d="M220,166 L216,166 L216,171.5 L212,171.5" fill="none" stroke="#111111" stroke-width="1.1" stroke-linejoin="round"/>
+<rect x="154.272" y="168.9" width="55.728" height="5.2" rx="1" fill="#fff" stroke="#444" stroke-width=".4"/>
+<text x="155.772" y="172.5" font-size="2.6" text-anchor="start" font-weight="normal" fill="#111">263 SV 0.75 <tspan font-family="Arial">→</tspan> relay 21:85 (power sheet)</text>
+<path d="M216,171.5 L216,178.5 L212,178.5" fill="none" stroke="#222" stroke-width="1.7" stroke-linejoin="round"/>
+<path d="M216,171.5 L216,178.5 L212,178.5" fill="none" stroke="#111111" stroke-width="1.1" stroke-linejoin="round"/>
+<circle cx="216" cy="171.5" r="1.0" fill="#111"/>
+<rect x="152.92000000000002" y="175.9" width="57.08" height="5.2" rx="1" fill="#fff" stroke="#444" stroke-width=".4"/>
+<text x="154.42000000000002" y="179.5" font-size="2.6" text-anchor="start" font-weight="normal" fill="#111">100 SV 0.75 <tspan font-family="Arial">←</tspan> relay 67:87 (wipers sheet)</text>
 <path d="M270,146 L300,146" fill="none" stroke="#222" stroke-width="1.7" stroke-linejoin="round"/>
 <path d="M270,146 L300,146" fill="none" stroke="#8a8a8a" stroke-width="1.1" stroke-linejoin="round"/>
 <rect x="271.4" y="141.3" width="17.400000000000002" height="3.8" fill="#fff" opacity=".85"/>
@@ -404,4 +409,10 @@
 <text x="126" y="276.40000000000003" font-size="2.3" text-anchor="start" font-weight="normal" fill="#333">92 also has a second meander from its upper terminal to its lower one; the print does not show what it is, so it is not drawn.</text>
 <text x="126" y="280.3" font-size="2.3" text-anchor="start" font-weight="normal" fill="#333">Sender cable 390/391 is shielded; the shield is earthed through 392 SV 0.75. 58/n = pin n of the 12-pole connector at grid A4 (data/connectors.csv).</text>
 <text x="126" y="284.2" font-size="2.3" text-anchor="start" font-weight="normal" fill="#333">Diagram is not RHD-specific: circuits should match, but harness routing and part positions may differ.</text>
+<text x="294" y="260.8" font-size="2.3" text-anchor="start" font-weight="normal" fill="#333">263 SV (pump relay 31) goes to relay 21:85 (probably 85: hidden under 21’s border); 33 and 212 SV</text>
+<text x="294" y="264.7" font-size="2.3" text-anchor="start" font-weight="normal" fill="#333">take it on to earth joint 158. 100 SV, headlight wiper relay 67’s earth, also lands on 102:31.</text>
+<text x="294" y="268.6" font-size="2.3" text-anchor="start" font-weight="normal" fill="#333">201 SV (relay 89’s coil) goes to 158 directly. Relay 21 and joint 158 are on the power sheet.</text>
+<text x="294" y="272.5" font-size="2.3" text-anchor="start" font-weight="normal" fill="#333">123d GN/VT (+15 for 146) leaves pin 4 of 58 (A4) on the 147 side, before the ballast resistor;</text>
+<text x="294" y="276.40000000000003" font-size="2.3" text-anchor="start" font-weight="normal" fill="#333">in the book it passes under the coil without joining it (IMG_4729; 1977 Turbo diagram).</text>
+<text x="294" y="280.3" font-size="2.3" text-anchor="start" font-weight="normal" fill="#333">121 BL: the 1979 number is unreadable; the 1977 Turbo diagram prints 124 BL 1.5.</text>
 </svg>
