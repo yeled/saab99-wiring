@@ -22,7 +22,7 @@ BX = 150                                   # x of the fuse supply bars
 HX = 322                                   # left face of horn 40 (E1), where 117 RD from fuse 3 ends
 
 # ---- fuse box: three supply bars, twelve fuses, outputs tagged -----------
-OUTS = {1: ['42', '43'], 2: ['44', '45'], 3: ['117', '135'], 4: ['85', '85a', '85a#relay'],
+OUTS = {1: ['42', '43'], 2: ['44', '45'], 3: ['117', '135'], 4: ['85', '85a', '85b'],
         5: ['380', '140', '380a', '220'], 6: ['103'], 7: ['110', '113'], 8: ['210'], 9: ['126'],
         10: ['260'], 11: ['70'], 12: ['131']}
 r = 0; first_row = {}
@@ -32,7 +32,7 @@ def rowy(r): return 66 + 9 * r + (9 if r >= first_row[3] else 0) + (9 if r >= fi
 DEST = {'42': '14/15 L rear lamps: tail + plate', '43': '13 L front parking light',
         '44': '14/15 R rear lamps: tail + plate', '45': '13 R front parking light',
         '135': '31 Reversing light switch (via connector 58)',
-        '85': '61 Wiper switch', '85a': '62 Wiper motor, terminal 4', '85a#relay': '83 Wiper interval relay',
+        '85': '61 Wiper switch', '85a': '62 Wiper motor, terminal 4', '85b': '83 Wiper interval relay, terminal 15',
         '380': '140 speed transmitter, fuel boost (ignition sheet)', '140': '64 Seat heating, via 58 (E12) and 59 (interior sheet)',
         '380a': '137 throttle valve switch, fuel boost', '220': '117 corner lamp switch (lighting sheet)',
         '103': '35 Ventilator fan switch',
