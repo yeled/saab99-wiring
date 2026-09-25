@@ -5,8 +5,8 @@ cable,colour,mm2,from,to,status,evidence,notes
 23,GR,1.0,8:56b,11/12 L:dip,traced,"label@4350,2742","dipped beam, left headlamp"
 27,BL/VT,0.75,8:56a,47:7a,traced,"label@4850,2165",main-beam warning lamp in instrument
 29,SV,1.0,11/12 R:earth,earth,traced,label at lamp,headlamp earth
-115,SV,0.75,11/12 L:common,39,traced,label at lamp; book photo IMG_4715; scan p.407; 1977 Turbo addendum p.53 (371-2),"earths radiator fan thermostat switch 39 (and so relay 38’s coil) through the left headlamp’s earth, 28 SV"
-28,SV,1.0,11/12 L:common,"earth (main earth star, D3)",traced,scan p.407 (label in the grid C2 bundle); 1977 Turbo addendum p.53 (371-2),the left headlamp’s own earth
+115,SV,0.75,11/12 L:common,39,traced,label at lamp; book photo IMG_4715; scan p.407; 1977 Turbo addendum p.53 (371-2); book photo P5 (source/photos/book-1979-D1-E2-horns-39-front-left.jpg),"earths radiator fan thermostat switch 39 (and so relay 38’s coil) through the left headlamp’s earth, 28 SV"
+28,SV,1.0,11/12 L:common,"earth (main earth star, D3)",traced,scan p.407 (label in the grid C2 bundle); 1977 Turbo addendum p.53 (371-2); book photo P5 (source/photos/book-1979-D1-E2-horns-39-front-left.jpg),the left headlamp’s own earth
 13,SV,0.75,8:31,113:85,traced,"label@4280,2250; book photo IMG_4722; 1977 Turbo addendum p.53 (371-2)",relay earth; meets 33 SV and 212 SV at 113:85; earth via 212 SV and joint 158
 32,VT,0.75,8:S,9,traced,"label@4850,2190",dip/main toggle pulse from stalk
 31,GL,0.75,10:1,8:86,traced,"label@4850,2140","relay coil feed, headlamp position"
@@ -38,10 +38,10 @@ cable,colour,mm2,from,to,status,evidence,notes
 280,GR,1.5,22:bar 7-12,73:1,traced,labels at bar and at 73,"service outlet, always live"
 202,GR,1.5,22:bar 7-12,89:30,traced,label above fuse 7,"start relay supply, unfused"
 94,BR,0.75,22:bar 3-6,67:headlight wiper relay,traced,"label@2745,2230",unfused tap off bar 3-6
-117,RD,1.5,22:fuse 3,40:horns,traced,"label@2640,2575",
-118,SV,1.5,40 (E1):-,41 via 58 (E2) pin 1 and 58 (D8) pin 1,traced,book photos IMG_4715 (at horn 40 and 58 (E2)) and IMG_4723 (at 58 (D8) pin 1); scan p.407; 1977 Turbo addendum p.53 (371-2),horn return; horn contact 41 earths it (horns switched on the earth side)
-119,RD,1.0,40 (E1):+,40 (D1):+,traced,book photo IMG_4715 (at 40 (E1)); scan p.407 (40 (D1)); 1977 Turbo addendum p.53 (371-2),links the two horns’ + terminals
-120,SV,1.0,40 (E1):-,40 (D1):-,traced,book photo IMG_4715 (at 40 (E1)); scan p.407 (40 (D1)); 1977 Turbo addendum p.53 (371-2),links the two horns’ − terminals
+117,RD,1.5,22:fuse 3,40:horns,traced,"label@2640,2575; book photo P5 (source/photos/book-1979-D1-E2-horns-39-front-left.jpg)",
+118,SV,1.5,40 (E1):-,41 via 58 (E2) pin 1 and 58 (D8) pin 1,traced,book photos IMG_4715 (at horn 40 and 58 (E2)) and IMG_4723 (at 58 (D8) pin 1); scan p.407; 1977 Turbo addendum p.53 (371-2); book photo P5 (source/photos/book-1979-D1-E2-horns-39-front-left.jpg),horn return; horn contact 41 earths it (horns switched on the earth side)
+119,RD,1.0,40 (E1):+,40 (D1):+,traced,book photo IMG_4715 (at 40 (E1)); scan p.407 (40 (D1)); 1977 Turbo addendum p.53 (371-2); book photo P5 (source/photos/book-1979-D1-E2-horns-39-front-left.jpg),links the two horns’ + terminals
+120,SV,1.0,40 (E1):-,40 (D1):-,traced,book photo IMG_4715 (at 40 (E1)); scan p.407 (40 (D1)); 1977 Turbo addendum p.53 (371-2); book photo P5 (source/photos/book-1979-D1-E2-horns-39-front-left.jpg),links the two horns’ − terminals
 135,VT,1.0,22:fuse 3,31:reversing light switch,traced,"label@2830,3120",via connector 58 (E12)
 85,BR,1.0,22:fuse 4,61:wiper switch,traced,label at switch 61,
 85a,BR,0.75,22:fuse 4,62:4 (wiper motor),traced,labels near fuse and at relay 83,fuse 4 has a second 85a BR to relay 83 (85a#relay)
@@ -118,10 +118,10 @@ cable,colour,mm2,from,to,status,evidence,notes
 133,RD,0.75,30 L,30 R,traced,labels at the rear clusters; book photos IMG_4727/IMG_4728; 1977 Turbo addendum p.53 (371-2) (133 runs from the left cluster to the right),
 136,VT,1.0,31,32 L,traced,labels at 31 and left cluster,
 137,VT,0.75,32 L,32 R,traced,label at right cluster; book photos IMG_4727/IMG_4728; 1977 Turbo addendum p.53 (371-2) (137 runs from the left cluster to the right),
-138,BL,1.0,"31 (switched terminal, with 136)",58 (E2) pin 4 via 58 (E12) row 4,traced,"book photo IMG_4728; scan p.407; 1977 Turbo addendum p.53 (371-2); car, checks E16 and F4 (reverse lights on fuse 3)",reversing feed to the front housings’ side back-up lights
-139,VT,0.75,58 (E2) pin 4,13 L lower bulb (side back-up light; 1977 legend 119),traced,"book photo IMG_4715; scan p.407; 1977 Turbo addendum p.53 (371-2); car, check E16",
-139a,VT,0.75,58 (E2) pin 4,13 R lower bulb,traced,"book photo IMG_4714; scan p.407; 1977 Turbo addendum p.53 (371-2); car, check E16","same pin as 139, on 138’s side of the connector"
-360,SV,0.75,13 L housing (common earth),"earth (main earth star, D3)",traced,book photo IMG_4715; scan p.407 (label in the grid C2 bundle); 1977 Turbo addendum p.53 (371-2),"earth of the left front housing: parking bulb, indicator 27 and the lower bulb"
+138,BL,1.0,"31 (switched terminal, with 136)",58 (E2) pin 4 via 58 (E12) row 4,traced,"book photo IMG_4728; scan p.407; 1977 Turbo addendum p.53 (371-2); car, checks E16 and F4 (reverse lights on fuse 3); book photo P5 (source/photos/book-1979-D1-E2-horns-39-front-left.jpg)",reversing feed to the front housings’ side back-up lights
+139,VT,0.75,58 (E2) pin 4,13 L lower bulb (side back-up light; 1977 legend 119),traced,"book photo IMG_4715; scan p.407; 1977 Turbo addendum p.53 (371-2); car, check E16; book photo P5 (source/photos/book-1979-D1-E2-horns-39-front-left.jpg)",
+139a,VT,0.75,58 (E2) pin 4,13 R lower bulb,traced,"book photo IMG_4714; scan p.407; 1977 Turbo addendum p.53 (371-2); car, check E16; book photo P5 (source/photos/book-1979-D1-E2-horns-39-front-left.jpg)","same pin as 139, on 138’s side of the connector"
+360,SV,0.75,13 L housing (common earth),"earth (main earth star, D3)",traced,book photo IMG_4715; scan p.407 (label in the grid C2 bundle); 1977 Turbo addendum p.53 (371-2); book photo P5 (source/photos/book-1979-D1-E2-horns-39-front-left.jpg),"earth of the left front housing: parking bulb, indicator 27 and the lower bulb"
 361,SV,1.0,13 R housing (common earth),"63 (earth terminal, with 92 SV)",traced,book photos IMG_4714 and IMG_4710 (label at 63); scan p.407; 1977 Turbo addendum p.53 (371-2),"earth of the right front housing: parking bulb, indicator 28 and the lower bulb; on to joint 158 through 92 SV"
 220,BR/VT,0.5,22:fuse 5,"117 (corner lamp switch, feed)",open,"1977 Turbo addendum p.53 (371-2); car, check E19 (dash switch, fuse 5; independent of the indicators)","118 is the second filament of the front parking bulb; the 1979 print omits this circuit; colours from the 1977 diagram, E19b checks them"
 221,BR/VT,0.5,117 (output),118 L via 58,open,"1977 Turbo addendum p.53 (371-2); car, check E19 (dash switch, fuse 5; independent of the indicators)","118 is the second filament of the front parking bulb; the 1979 print omits this circuit; colours from the 1977 diagram, E19b checks them"
@@ -147,7 +147,7 @@ cable,colour,mm2,from,to,status,evidence,notes
 100,SV,0.75,67:87,102:31 (earth),traced,scan trace; book close-up of grid 5-6,"relay 67’s coil earth (through 100a) and contact 87, to pump relay 102:31"
 111,GN,1.5,38:87,37 (via 59),traced,book photos 24 Sep: route from 38:87 to connector 59 at the fan,radiator fan motor feed; route not fully traced
 114,SV,0.75,38:85,60,traced,label at 38,relay coil to the thermostat switch
-114a,BL,0.75,60,39,traced,label at 39 side of connector 60; 1977 Turbo addendum p.53 (371-2) (114a SV 0.75),thermostat switch earths the relay coil; the 1977 Turbo diagram prints 114a SV (black); E14 checks the car
+114a,BL,0.75,60,39,traced,label at 39 side of connector 60; 1977 Turbo addendum p.53 (371-2) (114a SV 0.75); book photo P5 (source/photos/book-1979-D1-E2-horns-39-front-left.jpg),thermostat switch earths the relay coil; the 1977 Turbo diagram prints 114a SV (black); E14 checks the car
 105,GL,2.5,35:8,36 (via 57),traced,labels at 35; trace ends at 36,"heater fan, full speed"
 104,GR,1.0,35:6,36 via 57 and resistor 74,traced,"book photos 24 Sep: 35:6 to 57, through 74, back through 57","heater fan, low speed through resistor 74"
 107,SV,2.5,36 (via 57 (F11) row 3),158,traced,book photos IMG_4725 (at 57 (F11) row 3) and IMG_4718/IMG_4720 (label at 158); scan p.407; 1977 Turbo addendum p.53 (371-2),heater fan motor return
