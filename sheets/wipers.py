@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 """Render the 1979 Saab 99 Turbo wipers and washers sheet (A3 SVG)."""
 from common import *
+import math
 
 header('Saab 99 Turbo, model 1979 — Wipers and washers',
        'Redrawn from Saab Service Manual 1975–1980, diagram p. 371-28/29 (PDF p. 406–407). '
@@ -212,15 +213,47 @@ inner([(327, 167), (327, 169)])
 wire('92', [(327, 169), (327, 177), (331, 177)], label=False); ftag(331, 177, f'92 SV 1.0 {E158}')
 wire('361', [(327, 169), (334, 169)], label=False); ftag(334, 169, '361 SV 1.0 ← right front lamp housing (lighting sheet)')
 dot(327, 169)
-box(330, 84, 40, 30); motor(342, 99, 6); txt(350, 80.5, '62 Wiper motor (F4)', 2.7, 'middle', w='bold')
-for t, y in (('3', 89), ('5', 95), ('4', 101), ('2', 107)): dot(370, y); txt(368, y + 1, t, 2.2, 'end')
-dot(350, 114); txt(352, 112.5, '1', 2.2)
-# 89 SV loops from terminal 1 back to the housing's lower-right corner, where 90 BL leaves for joint 158
-# (label read at 62; its 1979 run crosses a scan seam, so probably; the 1977 diagram draws it)
-wire('89', [(350, 114), (350, 119), (370, 119), (370, 114)], label=False); txt(351.5, 123.2, '89 SV 0.75', 2.2)
-wire('90', [(370, 114), (376, 114), (376, 140), (372, 140)], label=False); ftag(372, 140, f'90 BL 1.0 {E158}', anchor='end')
-dot(370, 114); tlabel(368.6, 112.6, 'housing', 'end')
+# ---- 62 wiper motor, as the 1979 book prints it (book photo P8, scan p.407 at F4). All five terminals on the right wall,
+# 1 below 2. M has three brushes: 3 (fast, probably 53b) at its upper right, 5 (slow, 53: PDF p. 370 feeds 5 from 61's 53)
+# at its right, and the common at its
+# bottom, whose lead runs down into the housing (earth). The park changeover pivots on 2 and rests on 1 (earth: at park,
+# through 83 and 61, this shorts the rotor to stop it, manual PDF p. 370 "cutting in terminal 31b"), its dashed line the
+# other position, on 4 (85a, +: runs it home). The line from M's upper left to the housing's top wall is probably the
+# drive, not a wire, as 66 prints its arm. Placed from the photo (same 6 mm pitch).
+MX62, MY62, MR62 = 343.3, 94.4, 7.5
+def brush(x0, y0, a, L=2.6, w=1.5):
+    """Motor brush: a small rectangle standing on M's rim at (x0, y0), pointing out at a degrees (0 right, 90 up).
+    Returns its outer end, where the lead joins."""
+    A(f'<rect x="0" y="{-w / 2}" width="{L}" height="{w}" fill="#fff" stroke="#111" stroke-width=".4" '
+      f'transform="translate({x0} {y0}) rotate({-a})"/>')
+    return round(x0 + L * math.cos(math.radians(a)), 2), round(y0 - L * math.sin(math.radians(a)), 2)
 wire('85a', [(370, 101), (378, 101)], label=False); txt(380, 103.5, '85a', 2.1)
+# 89 SV (printed along its first run from 1) loops out and back to the housing's lower-right corner, where 90 BL leaves
+# for joint 158 (90: label read at 62; its 1979 run crosses a scan seam, so probably; the 1977 diagram draws it)
+wire('89', [(370, 113), (378.5, 113), (378.5, 118), (370, 118)], label=False); txt(370.9, 111.7, '89 SV 0.75', 2.0)
+wire('90', [(370, 118), (373.5, 121.5), (376, 121.5), (376, 140), (372, 140)], label=False); ftag(372, 140, f'90 BL 1.0 {E158}', anchor='end')
+box(330, 84, 40, 34); motor(MX62, MY62, MR62); txt(350, 80.5, '62 Wiper motor (F4)', 2.7, 'middle', w='bold')
+# the drive line: radial at 45 degrees, as printed a thin line from M's rim that steps to a round-ended thick bar over its
+# outer half, up to the housing's top wall
+k = .7071; R62 = (MX62 - MR62 * k, MY62 - MR62 * k); W62 = MX62 - (MY62 - 84)   # rim point; where it meets the top wall
+mid = (R62[0] + .45 * (W62 - R62[0]), R62[1] + .45 * (84 - R62[1]))
+inner([R62, (W62, 84)])
+A(f'<path d="M{W62:.2f},84 L{mid[0]:.2f},{mid[1]:.2f}" stroke="#111" stroke-width=".8" stroke-linecap="round"/>')
+a3 = math.degrees(math.asin((MY62 - 89) / (MR62 + 2.6)))                              # brush 3's outer end on 3's line
+b3 = brush(MX62 + MR62 * math.cos(math.radians(a3)), MY62 - MR62 * math.sin(math.radians(a3)), a3)
+b5 = brush(round(MX62 + (MR62 ** 2 - (95 - MY62) ** 2) ** .5, 2), 95, 0)
+bc = brush(MX62, MY62 + MR62, -90)
+inner([(370, 89), (b3[0], 89)]); inner([(370, 95), b5]); inner([bc, (MX62, 118)]); jdot(MX62, 118)   # common into the housing
+C4, PV62, C1 = (357.8, 101), (363.3, 107), (357.8, 113)                                # park: 4's contact, pivot (2), 1's contact
+inner([(370, 101), (C4[0] + .8, 101)]); inner([(370, 107), (PV62[0] + .8, 107)]); inner([(370, 113), (C1[0] + .8, 113)])
+for p in (C4, PV62, C1): contact(*p)
+TIP62 = (round(C1[0] - 1.15 * .62, 2), round(C1[1] - 1.15 * .78, 2))                  # blade rests on 1's contact, upper left
+ux, uy = TIP62[0] - PV62[0], TIP62[1] - PV62[1]; L = (ux * ux + uy * uy) ** .5
+blade(PV62[0] + .7 * ux / L, PV62[1] + .7 * uy / L, *TIP62)
+vx, vy = C4[0] - PV62[0], C4[1] - PV62[1]; L = (vx * vx + vy * vy) ** .5; vx, vy = vx / L, vy / L
+mlink([(PV62[0] + .9 * vx, PV62[1] + .9 * vy), (C4[0] - .9 * vx, C4[1] - .9 * vy)])   # printed dashed: the other position, on 4
+for t, y in (('3', 89), ('5', 95), ('4', 101), ('2', 107), ('1', 113)): dot(370, y); tlabel(368.6, y - 1.3, t, 'end')
+dot(370, 118); tlabel(368.6, 116.3, 'housing', 'end')
 
 # ================= headlight wipers ==================================================================================
 txt(18, 196, 'Headlight wipers', 3.4, w='bold')
@@ -310,8 +343,10 @@ notes = [f'Wipers run from fuse 4 on the ignition-on bar: 85 BR to the switch (5
          + ('' if n4 == '85b' else ' (printed 85b BR at 83, 1979 and 1980)') + '. Relay and pump earth at joint 158 (83 SV, 92 SV).',
          'Relay 83 as printed (1979 photo P7b, scan): at rest the changeover joins 88 (switch 31b) to 88a (motor park, 62:2), energised it puts 15 (+) on 88; '
          'a block (timer, probably) drives the coil. 85 takes 91 GL (54c) and 91a GL (pump): washing probably wipes too.',
-         'Speed wires: 87 GN to motor terminal 3, 86 RD to terminal 5 (through connector 58 at D8); 85a feeds 4, 88a is the park contact (2). '
-         '89 SV joins terminal 1 to the housing, which 90 BL (probably; the 1977 diagram draws it) earths at joint 158.',
+         'Motor 62 as printed (1979 photo P8, scan): 87 GN (3) and 86 RD (5), through 58 at D8, feed the fast and slow brushes (probably 53b, 53); '
+         'the third (common) brush is earthed to the housing. The line from M to the top wall is probably the drive, not a wire (as 66’s arm).',
+         'The park changeover on 2 (88a) rests on 1 (earth), which shorts the rotor to stop it (manual, PDF p. 370), and swings to 4 (85a BR, +). '
+         '89 SV loops from 1 to the housing corner; 90 BL leaves there for joint 158 (its run probably: a scan seam; the 1977 diagram draws it).',
          'Switch 61 as the book draws it: lever at rest (0), a dashed line per notch through the pivot, no numbers (ours as the GLE figure, p. 370; 4 its text). '
          'White slots insulate the lever’s arms: its 31b and 53a sides join apart. Pulling (4) adds S and 54c to the 53a group.',
          'The park link from the lever (up, over and down) stops short of 53 (grey: probably joined; park, braking and interval need it). '
@@ -326,5 +361,5 @@ notes = [f'Wipers run from fuse 4 on the ignition-on bar: 85 BR to the switch (5
          'on the car both run together (E10), so the book leaves out a link, probably row 3 to row 1 inside the upper motor.',
          'Diagram is not RHD-specific; the switch and relay positions (D8/D9) are drawing grid squares, not locations in the car. '
          'Light-grey terminal labels are probable: on 61 31b, 54c, INT, 53, 53b (S, 53a read); on 83 INT (printed, unread).']
-for j, n in enumerate(notes): txt(lx + 108, ly + 4.3 + j * 3.5, n, 2.3, fill='#333')
+for j, n in enumerate(notes): txt(lx + 108, ly + 3.45 + j * 3.25, n, 2.3, fill='#333')   # 11 lines: 3.25 pitch fits the box
 save('wipers.svg')
