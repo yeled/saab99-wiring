@@ -54,7 +54,7 @@ cable,colour,mm2,from,to,status,evidence,notes
 113,RD,0.75,22:fuse 7,38:86,traced,"label@3025,2553",radiator fan relay coil
 210,RD,2.5,22:fuse 8,113:30,traced,"label@3050,2528",heated rear window relay
 126,BL,1.0,22:fuse 9,"58 (B11): 126a BL to 48, 127 BL to 49, 160 GL to the interior lights",traced,"book photos 24 Sep: labels at fuse 9, along the route and at 58 (B11)","fuse 9 lid: cigar lighter, compartment light, clock"
-260,GR,1.5,22:fuse 10,102:30,traced,"label@3300,2465",fuel pump relay
+260,GR,1.5,22:fuse 10,102:30,traced,"label@3300,2465; book photos source/photos/book-P6b-102-pump-relay-FUEL.jpg (1979) and book-P6a-102-pump-relay.jpg (1980): straight down from 102:30 (bottom wall, under 87)",fuel pump relay
 70,RD/VT,1.0,22:fuse 11,23:49,traced,labels at both ends,indicator/hazard flasher unit
 131,RD,1.0,22:fuse 12,29,traced,label at switch 29,brake light switch
 123b,GL,1.5,147,5:15,car,"label between 147 and coil; car: yellow at 147’s 0.6 Ω end and at the coil’s + (photos source/photos/car-147-ballast-resistor.jpg and car-5-coil.jpg, 25 Sep 2026)",ballast resistor to coil +. The book prints GN/VT 1.5; on the car it is yellow at both ends (a 1980 99 Turbo has yellow there too)
@@ -64,27 +64,27 @@ cable,colour,mm2,from,to,status,evidence,notes
 392,SV,0.75,146:shield,earth,traced,label at 146,cable shield
 393,SV,1.5,146:31,earth,traced,label at 146,
 124,BL,1.5,146:16,5:1 (coil terminal 1),car,"scan, 24 Sep: zoom shows it ending at the coil shoulder marked 1; car, check E2: blue on the coil’s − (terminal 1) (25 Sep 2026); 1977 Turbo addendum p.53 (371-2) (124 BL 1.5); 1980 diagram, book photo source/photos/book-1980-146-coil-124.jpg (124 BL 1.5, clear)","coil primary, switched by the control unit; the 1979 print’s number is unreadable (read as 121 before), the 1977 Turbo and 1980 diagrams print 124 BL 1.5 clearly"
-284,BL,0.75,146:16,102,traced,labels at 146 and 102,engine-speed signal to the pump relay
+284,BL,0.75,146:16,102,traced,labels at 146 and 102; book photos source/photos/book-P6b-102-pump-relay-FUEL.jpg (1979) and book-P6a-102-pump-relay.jpg (1980): reaches the right circle of 102’s bottom pair on a diagonal,"engine-speed signal to the pump relay; 102’s bottom pair is printed with the label 31, but it is the rpm input (probably DIN 1): 146:16 switches the coil, so it cannot be earth (a misprint, probably)"
 394,GN/VT,1.0,147,89:87a,traced,label at 147,bypasses the ballast resistor while cranking (PDF p.324-325)
 122a,GL,2.5,89:87,4:50,traced,label at starter,start relay output to starter solenoid
 272,BR,0.75,4:16,94,traced,labels at starter and at 94,live while cranking; via 58 (A4) pin 3
 273,GR,0.75,92,94,traced,label at 92,the two thermo-time switch wires swap places on the drawing
 271,RD,1.0,92,89:87 via 58 (A4),traced,label at 92,"thermo-time switch heater, live while cranking; via 58 (A4) pin 1, labelled GN on the relay side"
 377,GN/VT,0.75,20:15 via 58 (A4) pin 4,144,traced,label at 144,"ignition 15 feed to the overboost switch, spliced with 123 at pin 4"
-378,GN/VT,0.75,144,102:15,traced,label at 144,overboost cut
-261,GR,2.5,102:87,103:+,traced,book photos 24 Sep: labels along the route and at the pump,via 58 (B11) and 3-pole connector 57 (C12)
+378,GN/VT,0.75,144,102:15,traced,label at 144; book photos source/photos/book-P6b-102-pump-relay-FUEL.jpg (1979) and book-P6a-102-pump-relay.jpg (1980): printed along the lead into 102:15 (top wall),overboost cut
+261,GR,2.5,102:87,103:+,traced,book photos 24 Sep: labels along the route and at the pump; scan p.407 and book photos source/photos/book-P6b-102-pump-relay-FUEL.jpg (1979) and book-P6a-102-pump-relay.jpg (1980): the diagonal from 87,via 58 (B11) and 3-pole connector 57 (C12)
 262,SV,2.5,103,earth,traced,label at pump,
-261a,GR,0.75,102:87,95 and 96 via 58 (A4) pin 2,traced,label on run,pump relay output to both injection heaters
+261a,GR,0.75,102:87,95 and 96 via 58 (A4) pin 2,traced,"label on run; scan p.407 and book photos source/photos/book-P6b-102-pump-relay-FUEL.jpg (1979) and book-P6a-102-pump-relay.jpg (1980): the lead straight up from 87, labelled 261a GR 0.75 further on",pump relay output to both injection heaters
 265,GR,0.75,261a,95:+,traced,label at 95,
 266,SV,0.75,95,earth,traced,label at 95,
 267,GR,0.75,102:87 via 58 (A4) pin 2,96:+,traced,labels at 96 and 58,shares pin 2 with 261a/265: fed from the pump relay output
 268,SV,0.75,96,earth,traced,label at 96,
-263,SV,0.75,102:31,21:85,traced,label at 102; scan p.407; book photo IMG_4720; 1977 Turbo addendum p.53 (371-2),the join is hidden under relay 21’s border (probably 85)
+263,SV,0.75,102:31,21:85,traced,label at 102; scan p.407; book photo IMG_4720; 1977 Turbo addendum p.53 (371-2); book photos source/photos/book-P6b-102-pump-relay-FUEL.jpg (1979) and book-P6a-102-pump-relay.jpg (1980): enters 102’s left wall on a diagonal aimed at the upper 31 circle,"the join is hidden under relay 21’s border (probably 85); at 102 the end is hidden in the border, probably 31, shared with 100"
 201,SV,0.75,89:85,158,traced,label at 89; 1977 Turbo addendum p.53 (371-2),coil earthed directly: no gear-selector switch; to joint 158 probably (the 1979 scan trace reaches the joint)
 282,GL,1.0,89:87,73:3,traced,"labels at 73 and 89; pin 3: book photo IMG_4717 read with a reference photo of the same TSI socket (same on 99 and 900: source/ref/c900-tsi-socket.jpg), which puts start and +15 next to each other in this order",service outlet start terminal (lets a test instrument crank)
 283,GN/VT,0.75,20:15 via 58 (A4) pin 4,73:4,traced,"label at 58; pin 4: book photo IMG_4717 read with a reference photo of the same TSI socket (same on 99 and 900: source/ref/c900-tsi-socket.jpg), which puts start and +15 next to each other in this order",ignition 15 to the service outlet
 281,SV,1.5,73:2,158,traced,book photo IMG_4717 (label at 73); ground pin per the reference photo of the TSI socket; book photo IMG_4720 (its riser on 158 T1; the label is read at 73); 1977 Turbo addendum p.53 (371-2),"service outlet earth, to earth joint 158"
-284a,BL,0.75,73:5,284 (joins it by relay 102),traced,book photo IMG_4717 (label at 73); scan trace to the 284 junction; tach pin per the reference photo of the TSI socket,engine-speed signal to the service outlet; 204 GL to the tachometer leaves the same pin
+284a,BL,0.75,73:5,102,traced,book photo IMG_4717 (label at 73); scan trace to the 284 junction; tach pin per the reference photo of the TSI socket; book photos source/photos/book-P6b-102-pump-relay-FUEL.jpg (1979) and book-P6a-102-pump-relay.jpg (1980): rises straight into the left circle of 102’s bottom pair (no splice on 284 outside the relay),"engine-speed signal to the service outlet; from 102’s bottom pair, which is drawn joined to 284’s circle; 204 GL to the tachometer leaves 73:5"
 183,GL,1.0,45,47:9,traced,labels at 45 and near 47:9,temperature gauge; via 58 (A4) pin 6
 184,BL,1.0,44,47:11,traced,labels at 44 and at 47:11,oil warning lamp; via 58 (A4) pin 5
 185,GR,0.75,46,47:3,traced,labels at 46 and at 47:3,fuel gauge; via 3-pole connector 57
@@ -144,7 +144,7 @@ cable,colour,mm2,from,to,status,evidence,notes
 98,GL,0.75,67:88a,upper 123 pin 1,traced,scan and book close-ups: relay 88a to the upper plug,"motor control wire, switched by the relay (probably)"
 99,SV,0.75,66,earth,traced,label at 123,
 99a,SV,0.75,66,earth,traced,label at 123,
-100,SV,0.75,67:87,102:31 (earth),traced,scan trace; book close-up of grid 5-6,"relay 67’s coil earth (through 100a) and contact 87, to pump relay 102:31"
+100,SV,0.75,67:87,102:31 (earth),traced,scan trace; book close-up of grid 5-6; book photos source/photos/book-P6b-102-pump-relay-FUEL.jpg (1979) and book-P6a-102-pump-relay.jpg (1980): horizontal into 102’s upper-left circle labelled 31,"relay 67’s coil earth (through 100a) and contact 87, to pump relay 102:31"
 111,GN,1.5,38:87,37 (via 59),traced,book photos 24 Sep: route from 38:87 to connector 59 at the fan,radiator fan motor feed; route not fully traced
 114,SV,0.75,38:85,60,traced,label at 38,relay coil to the thermostat switch
 114a,BL,0.75,60,39,traced,label at 39 side of connector 60; 1977 Turbo addendum p.53 (371-2) (114a SV 0.75); book photo P5 (source/photos/book-1979-D1-E2-horns-39-front-left.jpg),thermostat switch earths the relay coil; the 1977 Turbo diagram prints 114a SV (black); E14 checks the car
