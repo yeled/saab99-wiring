@@ -4,10 +4,17 @@ from common import *
 
 header('Saab 99 Turbo, model 1979 — Interior lights, seat heating, seat belt warning',
        'Redrawn from Saab Service Manual 1975–1980, diagram p. 371-28/29 (PDF p. 406–407). '
-       'Component numbers as in the manual. Dashed = not traced yet.')
-def conn(x, y, h, lab):
+       'Component numbers as in the manual.')
+def conn(x, y, h, lab, links=()):
+    """In-line connector pin; links: row heights where the manual prints a through-link (a dot on both inner edges)."""
     A(f'<rect x="{x - 2}" y="{y - h / 2}" width="4" height="{h}" fill="#ddd" stroke="#111" stroke-width=".5"/>')
+    for ry in links: inner([(x - 2, ry), (x + 2, ry)]); dot(x - 2, ry); dot(x + 2, ry)
     txt(x, y - h / 2 - 1.5, lab, 2.2, 'middle', fill='#555')
+def meander(x, y, w=10, up=1.2, down=1.8):
+    """Heating element as the manual prints it: three square humps between two open circles; x, y is its left lead end."""
+    s = w / 6
+    pts = [(x, y)] + [(round(x + (k + j) * s, 2), round(y + (-up if k % 2 == 0 else down), 2)) for k in range(6) for j in (0, 1)] + [(x + w, y)]
+    A(f'<path d="{path(pts)}" fill="none" stroke="#111" stroke-width=".4" stroke-linejoin="round"/>')
 def ref(x, y, sym, n, name, cables):
     if sym == 'lamp': lamp(x + 4, y - 1, r=3.2)
     else:
@@ -16,15 +23,30 @@ def ref(x, y, sym, n, name, cables):
     txt(x + 12, y + 4.6, cables, 2.3, fill='#555')
 
 txt(18, 40, 'Seat heating', 3.4, w='bold')
-box(18, 55, 32, 14); txt(21, 61, f'<tspan font-weight="bold">F5</tspan> · {FUSES[5]["rating"]}', 2.6); txt(21, 65.8, 'ignition-on bar', 2.1, fill='#555')
-wire('140', [(50, 62), (118, 62)], 58, 60.5); conn(120, 62, 8, '58 (E12)')
-wire('140', [(122, 62), (178, 62)], label=False); conn(180, 62, 8, '59')
+# fuse 5 of fuse box 22, turned a quarter as on the radio sheet: the ignition-on bar runs down the left, its junction
+# ring feeds the 8 A fuse, and bottom terminal 5 is the dot on the box edge
+box(18, 52, 32, 20); txt(21, 57, f'<tspan font-weight="bold">F5</tspan> · {FUSES[5]["rating"]}', 2.6)
+inner([(24, 59.5), (24, 69.5)]); contact(24, 62); txt(26, 69, 'ignition-on bar', 2.1, fill='#555')
+fa, fb = fuse(30, 60.8, 10, 2.4); inner([(24.8, 62), fa]); inner([fb, (50, 62)]); dot(50, 62); tlabel(48.5, 60.6, '5', 'end')
+# 140 runs fuse 5 → 58 (E12) → 60 (A7) → 59 (A7) → 64; 150 leaves 60's fuse-side dot (its right one in the manual)
+wire('140', [(50, 62), (118, 62)], 58, 60.5); wire('140', [(122, 62), (148, 62)], label=False); wire('140', [(152, 62), (178, 62)], label=False)
+conn(120, 62, 8, '58 (E12)', links=(62,)); conn(150, 62, 8, '60 (A7)', links=(62,)); conn(180, 62, 8, '59 (A7)', links=(62,))
 A('<path d="M182,62 H196" stroke="#111" stroke-width=".6"/>')
-box(196, 55, 44, 14); A('<path d="M200,62 l3,-4 l3,8 l3,-8 l3,8 l3,-8 l3,8 l3,-8 l3,8 l2,-4" fill="none" stroke="#111" stroke-width=".45"/>')
-A('<path d="M230,65 l6,-5" stroke="#111" stroke-width=".5"/>')
-txt(218, 75, '64 Seat heating element with thermostat (A6)', 2.5, 'middle', w='bold')
-wire('141', [(240, 62), (250, 62), (250, 66)], label=False); earth(250, 66); txt(254, 69, '141 SV 1.0', 2.2)
-wire('150', [(180, 66), (180, 86), (196, 86)], label=False); tag(198, 86, '150 GL 0.75 via connector 60 → seat belt contacts (59, A8)')
+# 64 as the manual prints it: lower element, thermostat (open), upper element, in series. The manual draws the two
+# elements side by side into both rows of 59; here they run in a line from 140 (left) to 141 (right).
+box(196, 47.5, 55, 19)
+# thermostat housing: a heavy outline as printed, not conductor weight, so it doesn't read as a loop bypassing the
+# contacts; its walls' inner edges touch the contacts (top one hangs, bottom one sits) and the blade rests on the right wall
+A('<rect x="217.5" y="50.9" width="11" height="12.2" rx=".6" fill="#fff" stroke="#111" stroke-width=".7"/>')
+inner([(196, 62), (198.7, 62)]); contact(199.5, 62); inner([(200.3, 62), (202.1, 62)]); meander(202.1, 62)
+inner([(212.1, 62), (213.9, 62)]); contact(214.7, 62); inner([(215.5, 62), (222.2, 62)]); contact(223, 62)
+inner([(223.8, 52), (230.2, 52)]); contact(231, 52); inner([(231.8, 52), (233.6, 52)]); meander(233.6, 52)
+inner([(243.6, 52), (245.4, 52)]); contact(246.2, 52); inner([(247, 52), (251, 52)]); contact(223, 52)
+bimetal(223.4, 52.57, 227.85, 60)   # hangs from the top contact and rests on the right wall (a stop), clear of the bottom contact
+dot(196, 62); dot(251, 52)
+txt(223.5, 71.5, '64 Seat heating element with thermostat (A6)', 2.5, 'middle', w='bold')
+wire('141', [(251, 52), (261, 52), (261, 57)], label=False); earth(261, 57); txt(265, 60, '141 SV 1.0', 2.2)
+wire('150', [(144, 62), (144, 86), (196, 86)], label=False); dot(144, 62); tag(198, 86, '150 GL 0.75 to 59 (A8): seat and belt contacts')
 
 txt(18, 108, 'Interior lights', 3.4, w='bold')
 txt(18, 114, 'Fuse 9’s 160 GL feeds 52, then 161 GL through 57 to 50 and (163 GL) 55; 164 BL, 167 SV reach 50; 162/165 SV link 50–51; doors 170/171 SV.', 2.4, fill='#555')
@@ -57,10 +79,12 @@ x = lx + 4
 A(f'<path d="M{x},{ly + 17} h9" stroke="#222" stroke-width="1.2"/>'); txt(x + 11, ly + 18, 'traced (cable no. read)', 2.4)
 if DASHED[0]: A(f'<path d="M{x + 48},{ly + 17} h9" stroke="#222" stroke-width="1.2" stroke-dasharray="3 2"/>'); txt(x + 59, ly + 18, 'not traced yet', 2.4)
 if TICKED[0]: tick(x, ly + 23.3); txt(x + 4, ly + 24, 'checked on the car', 2.4)
-notes = ['Seat heating: fuse 5 (ignition-on bar) feeds 140 GL 1.0 through connector 58 at E12, which the manual draws as an optional pin,',
-         'and connector 59 to the heating element; its return is 141 SV 1.0. This resolves one of fuse 5’s open wires.',
+probable_legend(x, ly + 29)
+notes = ['Seat heating: fuse 5 (ignition-on bar) feeds 140 GL 1.0 through 58 (E12), an optional pin in the manual, then 60 (A7) and 59 (A7) to seat heating 64: two',
+         'elements in series with a thermostat between them, drawn open as printed (probably warm: it closes when cold); return 141 SV 1.0. The manual draws the',
+         'two elements side by side into 59’s two rows (140 GL lower, 141 SV upper); here they run in a line and 141 is drawn straight to earth.',
          'Interior lights and seat belt warning are listed as references only: the checks on the car (docs/car-checklist.md) will fill them in.',
-         'Fuse 5 also powers the Turbo’s high-speed fuel boost (speed transmitter 140 and throttle switch 137): see the ignition sheet.',
+         'Fuse 5 also powers the Turbo’s high-speed fuel boost (380 GL to speed transmitter, component 140; 380a GL to throttle switch 137): see the ignition sheet.',
          'Diagram is not RHD-specific: circuits should match, but harness routing and part positions may differ.']
-for j, n in enumerate(notes): txt(lx + 108, ly + 6 + j * 5.8, n, 2.35, fill='#333')
+for j, n in enumerate(notes): txt(lx + 108, ly + 6 + j * 5, n, 2.35, fill='#333')
 save('interior.svg')
