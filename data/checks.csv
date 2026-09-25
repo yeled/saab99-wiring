@@ -1,7 +1,7 @@
 id,area,check,how,cables,result
 E1,Engine bay,"Connector 58 near the engine (A4): note its real pin numbers against my pins 1–6 (top to bottom on the drawing). Pin 1 should be red on one side, green on the other.",look,"271, 267, 272, 123, 184, 183",
-E2,Engine bay,Coil terminal 1: wire colour. Blue would confirm 121 BL from the ignition control unit.,look,121,
-E3,Engine bay,"Ballast resistor (147), following the photo of 25 Sep: the joint’s green/white wire (394) loops towards the relay board, and the 0.6 Ω end has a plain yellow wire (the data expects green/white 123b to the coil; a 1980 99 Turbo has yellow there too, so it is probably factory). Does the joint’s wire go to start relay 89’s socket (87a)? Does the yellow go to the coil’s + (terminal 15)?",look,"394, 123, 123b",
+E2,Engine bay,Coil terminal 1: wire colour. Blue would confirm 121 BL from the ignition control unit.,look,121,"Blue on the coil’s − (terminal 1), yellow on + (15). The coil is a Bosch marked −, + and 4 at the HT tower (25 Sep 2026, photos)."
+E3,Engine bay,"Ballast resistor (147): the joint’s green/white wire (394) loops towards the relay board. Does it go to start relay 89’s socket (87a)? (Already found: the 0.6 Ω end is yellow and the coil’s + is yellow, so that is 123b, yellow on the car; see E2.)",look,394,
 E4,Engine bay,"Wiper motor plug: the drawing puts green 87 on terminal 3, red 86 on 5, brown 85a on 4 and blue/white 88a on 2 (park). Do the colours match? Where does blue 90 go? (The new photos suggest it runs from the motor’s housing to an earth point, the joint by relay 113 on the drawing.)",look,"86, 87, 88a",
 E5,Engine bay,Headlight wipers: colours at each motor plug (123).,look,"95a, 95b, 97, 98, 99, 99a","Colours correct at both plugs: yellow 98 and red 95a at one, brown 97 and red 95b at the other. One pin takes both reds, as drawn (photos)."
 E6,Engine bay,Radiator fan motor plug: green 1.5 mm² wire (111).,look,111,
