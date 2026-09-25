@@ -117,6 +117,8 @@
 <path d="M170,54 L174,54 L174,55.5" fill="none" stroke="#111" stroke-width=".4"/>
 <path d="M186,54 L182,54 L182,55.5" fill="none" stroke="#111" stroke-width=".4"/>
 <path d="M174,62.6 L182,62.6" fill="none" stroke="#111" stroke-width=".4"/>
+<text x="174" y="52.6" font-size="1.8" text-anchor="middle" font-weight="normal" fill="#555">0.4 Ω</text>
+<text x="182" y="52.6" font-size="1.8" text-anchor="middle" font-weight="normal" fill="#555">0.6 Ω</text>
 <path d="M186,54 L214,54" fill="none" stroke="#222" stroke-width="1.7" stroke-linejoin="round"/>
 <path d="M186,54 L214,54" fill="none" stroke="#1e9e3e" stroke-width="1.1" stroke-linejoin="round"/>
 <path d="M186,54 L214,54" fill="none" stroke="#ffffff" stroke-width="0.5" stroke-dasharray="1.2 1.2"/>
