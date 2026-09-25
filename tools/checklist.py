@@ -7,7 +7,7 @@ wires = list(csv.DictReader(open(os.path.join(ROOT, 'data', 'wires.csv'))))
 o = ['# Saab 99 Turbo (1979): checks on the car', '',
      'Tick each item, note what you found in `data/checks.csv` (the `result` column), or just tell Claude',
      'the check ID and what you saw. Anything confirmed becomes `car` in `wires.csv` and gets a ✓ on the sheets.', '',
-     'Meter checks need the battery connected: probe carefully and don’t bridge terminals.', '']
+     'Voltage checks need the battery connected: probe carefully and don’t bridge terminals. Resistance and continuity checks need it disconnected.', '']
 area = None
 for c in checks:
     if c['area'] != area:
