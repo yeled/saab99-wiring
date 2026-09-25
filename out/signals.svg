@@ -50,7 +50,7 @@
 <path d="M149,48 L149,57.2" fill="none" stroke="#111" stroke-width=".4"/>
 <circle cx="149" cy="58" r=".8" fill="#fff" stroke="#111" stroke-width=".35"/>
 <path d="M148.7,58.64 L140.4,76.8" stroke="#111" stroke-width=".75" stroke-linecap="round"/>
-<circle cx="150.6" cy="64.8" r=".8" fill="#fff" stroke="#888" stroke-width=".35"/>
+<circle cx="150.6" cy="64.8" r=".8" fill="#fff" stroke="#111" stroke-width=".35"/>
 <circle cx="150.6" cy="70.4" r=".8" fill="#fff" stroke="#111" stroke-width=".35"/>
 <circle cx="150.6" cy="78" r=".8" fill="#fff" stroke="#111" stroke-width=".35"/>
 <circle cx="158.6" cy="64.8" r="3.2" fill="#fff" stroke="#111" stroke-width=".6"/>
@@ -328,9 +328,9 @@
 <path d="M23.7,262.7 L29.6,260.6" stroke="#888" stroke-width=".75" stroke-linecap="round"/>
 <text x="33" y="264" font-size="2.4" text-anchor="start" font-weight="normal" fill="#111">grey inside a part: probably, not printed clearly</text>
 <text x="126" y="246.0" font-size="2.35" text-anchor="start" font-weight="normal" fill="#333">The flasher is fed from fuse 11 on the always-live bar. Its output (73 GN) goes to the hazard switch’s +, which feeds the indicator switch’s 54.</text>
-<text x="126" y="250.5" font-size="2.35" text-anchor="start" font-weight="normal" fill="#333">Switches are drawn at rest, as printed. Pressed, hazard switch 25 probably closes its lamp, R and L contacts together, so + feeds both sides (68 RD/VT, 67 BL/VT).</text>
+<text x="126" y="250.5" font-size="2.35" text-anchor="start" font-weight="normal" fill="#333">Switches are drawn at rest, as printed. Pressed, hazard switch 25 closes its lamp, R and L contacts together (lamp: on the car), so + feeds both sides (68 RD/VT, 67 BL/VT).</text>
 <text x="126" y="255.0" font-size="2.35" text-anchor="start" font-weight="normal" fill="#333">The manual prints 25’s terminals +, R and L (none on the lamp’s) and 24’s 54, R and L. 73 GN lands on + beside the wire to 54 (probably the same terminal).</text>
-<text x="126" y="259.5" font-size="2.35" text-anchor="start" font-weight="normal" fill="#333">Grey: 25’s lamp contact, printed merged into the blade root, and the end of 29’s blade and its right contact, printed running together; both are probably open at rest.</text>
+<text x="126" y="259.5" font-size="2.35" text-anchor="start" font-weight="normal" fill="#333">25’s lamp contact prints merged into the blade root; on the car it is open at rest (the lamp stays dark with the indicators and blinks with the hazards: check D7). Grey: the end of 29’s blade and its right contact, printed running together; probably open at rest.</text>
 <text x="126" y="264.0" font-size="2.35" text-anchor="start" font-weight="normal" fill="#333">The + to 54 wire is shown as 76 GN, as in the data; its second digit is blotted on the page, so the clash with 76 BL/VT is not confirmed. Rear indicator wires 76 and 79 leave connector 58 (B9) on its far side; their route to the rear isn’t traced yet.</text>
 <text x="126" y="268.5" font-size="2.35" text-anchor="start" font-weight="normal" fill="#333">Each lamp housing has one earth for all its bulbs (parking, tail and number-plate bulbs: lighting sheet). Turned for the layout: the manual prints the front housings mirrored (flat end and earth on the left) and the left rear cluster upside down.</text>
 <text x="126" y="273.0" font-size="2.35" text-anchor="start" font-weight="normal" fill="#333">Not in the data yet: the earth cables (front 360/361 SV; rear 189 SV, left cluster bar to right, then 189a SV to earth), drawn straight to earth here; and 138 BL, which enters 31’s left side onto the lower contact (a short lead here).</text>
