@@ -248,7 +248,6 @@
 <path d="M350,120 v3 M347,123 h6 M348,124.3 h4 M349,125.6 h2" stroke="#111" stroke-width=".5" fill="none"/>
 <text x="354" y="123" font-size="2.2" text-anchor="start" font-weight="normal" fill="#111">89 SV 0.75</text>
 <text x="300" y="137" font-size="2.1" text-anchor="start" font-weight="normal" fill="#777">90 BL 1.0 also leaves the motor’s park side (not traced)</text>
-<text x="300" y="140.6" font-size="2.1" text-anchor="start" font-weight="normal" fill="#777">on the car: a long resistor under the motor housing, yellow and red(?) leads; purpose not known yet (E18)</text>
 <path d="M370,101 L378,101" fill="none" stroke="#222" stroke-width="1.7" stroke-linejoin="round"/>
 <path d="M370,101 L378,101" fill="none" stroke="#7a4a1c" stroke-width="1.1" stroke-linejoin="round"/>
 <text x="380" y="103.5" font-size="2.1" text-anchor="start" font-weight="normal" fill="#111">85a</text>
