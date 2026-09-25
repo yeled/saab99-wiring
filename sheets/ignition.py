@@ -85,8 +85,8 @@ wire('393', [(308, 45), (304.5, 45), (304.5, 35), (350, 35), (350, 39)], 318, 33
 # 123d: +15 for 146 from 58 (A4) pin 4 on the 147 side, before the ballast resistor (book photo IMG_4729: it passes
 # under the coil without joining it); branched just right of the pin, it crosses 394 without a joint
 wire('123d', [(156, 54), (156, 73), (206, 73), (206, 112), (296, 112), (296, 66), (308, 66)], 220, 110.5); dot(156, 54)
-wire('121', [(308, 80), (304.5, 80), (304.5, 87), (346, 87)], label=False); e121 = tag(348, 87, '121 BL 1.5 → coil 5, terminal 1')
-if WIRES['121']['status'] == 'car': tick(e121 + 1.2, 86.4)
+wire('124', [(308, 80), (304.5, 80), (304.5, 87), (346, 87)], label=False); e124 = tag(348, 87, '124 BL 1.5 → coil 5, terminal 1')
+if WIRES['124']['status'] == 'car': tick(e124 + 1.2, 86.4)
 wire('284', [(308, 73), (300.5, 73), (300.5, 92), (360, 92), (360, 190), (241, 190), (241, 176)], 300, 188.5)
 
 # ---- fuel pump relay, overboost switch, pump and injection parts -------
@@ -199,6 +199,6 @@ notes2 = ['263 SV (pump relay 31) goes to relay 21:85 (probably 85: hidden under
           '201 SV (relay 89’s coil) goes to 158 directly. Relay 21 and joint 158 are on the power sheet.',
           '123d GN/VT (+15 for 146) leaves pin 4 of 58 (A4) on the 147 side, before the ballast resistor;',
           'in the book it passes under the coil without joining it (IMG_4729; 1977 Turbo diagram).',
-          '121 BL: the 1979 number is unreadable; the 1977 Turbo diagram prints 124 BL 1.5.']
+          '124 BL: the 1979 number is unreadable; the 1977 Turbo and 1980 diagrams print 124 BL 1.5.']
 for j, n in enumerate(notes2): txt(lx + 276, ly + 4.8 + j * 3.9, n, 2.3, fill='#333')
 save('ignition.svg')
