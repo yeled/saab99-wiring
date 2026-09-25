@@ -120,13 +120,14 @@
 <text x="174" y="52.6" font-size="1.8" text-anchor="middle" font-weight="normal" fill="#555">0.4 Ω</text>
 <text x="182" y="52.6" font-size="1.8" text-anchor="middle" font-weight="normal" fill="#555">0.6 Ω</text>
 <path d="M186,54 L214,54" fill="none" stroke="#222" stroke-width="1.7" stroke-linejoin="round"/>
-<path d="M186,54 L214,54" fill="none" stroke="#1e9e3e" stroke-width="1.1" stroke-linejoin="round"/>
-<path d="M186,54 L214,54" fill="none" stroke="#ffffff" stroke-width="0.5" stroke-dasharray="1.2 1.2"/>
-<rect x="187.4" y="49.3" width="23.88" height="3.8" fill="#fff" opacity=".85"/>
-<text x="188" y="52.3" font-size="2.8" text-anchor="start" font-weight="normal" fill="#111">123b GN/VT 1.5</text>
+<path d="M186,54 L214,54" fill="none" stroke="#f2c500" stroke-width="1.1" stroke-linejoin="round"/>
+<rect x="187.4" y="49.3" width="19.02" height="3.8" fill="#fff" opacity=".85"/>
+<text x="188" y="52.3" font-size="2.8" text-anchor="start" font-weight="normal" fill="#111">123b GL 1.5</text>
+<path d="M207.01999999999998,50.599999999999994 l0.9,1.0 l1.9,-2.4" fill="none" stroke="#1e7a3a" stroke-width="0.55" stroke-linecap="round" stroke-linejoin="round"/>
 <circle cx="206" cy="54" r="1.0" fill="#111"/>
 <circle cx="170" cy="54" r="1.0" fill="#111"/>
 <circle cx="186" cy="54" r="1.0" fill="#111"/>
+<text x="188" y="57.4" font-size="1.8" text-anchor="start" font-weight="normal" fill="#777">book: GN/VT</text>
 <path d="M174,65 L174,126 L112,126 L112,122" fill="none" stroke="#222" stroke-width="1.7" stroke-linejoin="round"/>
 <path d="M174,65 L174,126 L112,126 L112,122" fill="none" stroke="#1e9e3e" stroke-width="1.1" stroke-linejoin="round"/>
 <path d="M174,65 L174,126 L112,126 L112,122" fill="none" stroke="#ffffff" stroke-width="0.5" stroke-dasharray="1.2 1.2"/>
@@ -189,6 +190,7 @@
 <path d="M308,80 L304.5,80 L304.5,87 L346,87" fill="none" stroke="#1f5fbf" stroke-width="1.1" stroke-linejoin="round"/>
 <rect x="348" y="84.4" width="44.912000000000006" height="5.2" rx="1" fill="#fff" stroke="#444" stroke-width=".4"/>
 <text x="349.5" y="88" font-size="2.6" text-anchor="start" font-weight="normal" fill="#111">121 BL 1.5 <tspan font-family="Arial">→</tspan> coil 5, terminal 1</text>
+<path d="M394.112,85.30000000000001 l0.9,1.0 l1.9,-2.4" fill="none" stroke="#1e7a3a" stroke-width="0.55" stroke-linecap="round" stroke-linejoin="round"/>
 <path d="M308,73 L300.5,73 L300.5,92 L360,92 L360,190 L241,190 L241,176" fill="none" stroke="#222" stroke-width="1.7" stroke-linejoin="round"/>
 <path d="M308,73 L300.5,73 L300.5,92 L360,92 L360,190 L241,190 L241,176" fill="none" stroke="#1f5fbf" stroke-width="1.1" stroke-linejoin="round"/>
 <rect x="299.4" y="185.5" width="19.02" height="3.8" fill="#fff" opacity=".85"/>
