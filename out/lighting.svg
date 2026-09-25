@@ -233,6 +233,16 @@
 <text x="148" y="269.5" font-size="2.7" text-anchor="start" font-weight="normal" fill="#111">Dip/flash stalk (F9)</text>
 <text x="143" y="274" font-size="2.3" text-anchor="start" font-weight="normal" fill="#555">pulse on S toggles dip/main;</text>
 <text x="143" y="277.3" font-size="2.3" text-anchor="start" font-weight="normal" fill="#555">flash works with ignition off</text>
+<path d="M178.08,264 L178.08,272.2" fill="none" stroke="#111" stroke-width=".4"/>
+<circle cx="178.08" cy="273" r=".8" fill="#fff" stroke="#111" stroke-width=".35"/>
+<path d="M178.76,272.82 L190.6,269.6" stroke="#111" stroke-width=".75" stroke-linecap="round"/>
+<circle cx="193" cy="273" r=".8" fill="#fff" stroke="#111" stroke-width=".35"/>
+<path d="M193.8,273 L198,273" fill="none" stroke="#111" stroke-width=".4"/>
+<path d="M198,273 L222,273 L222,277" fill="none" stroke="#222" stroke-width="1.7" stroke-linejoin="round"/>
+<path d="M198,273 L222,273 L222,277" fill="none" stroke="#ffffff" stroke-width="1.1" stroke-linejoin="round"/>
+<rect x="199.9" y="267.3" width="17.400000000000002" height="3.8" fill="#fff" opacity=".85"/>
+<text x="200.5" y="270.3" font-size="2.8" text-anchor="start" font-weight="normal" fill="#111">32 VT 0.75</text>
+<path d="M222,277 v3 M219,280 h6 M220,281.3 h4 M221,282.6 h2" stroke="#111" stroke-width=".5" fill="none"/>
 <rect x="222" y="50" width="50" height="24" rx="1.2" fill="#fafafa" stroke="#111" stroke-width="0.8"/>
 <text x="247" y="60" font-size="3" text-anchor="middle" font-weight="bold" fill="#111">10  Light switch</text>
 <text x="247" y="64" font-size="2.3" text-anchor="middle" font-weight="normal" fill="#555">(C8) off / parking / headlamps</text>
@@ -447,6 +457,7 @@
 <circle cx="255" cy="178" r="1.0" fill="#111"/>
 <circle cx="150" cy="149" r="1.0" fill="#111"/>
 <circle cx="178.08" cy="264" r="1.0" fill="#111"/>
+<circle cx="198" cy="273" r="1.0" fill="#111"/>
 <circle cx="51.98" cy="69" r="1.0" fill="#111"/>
 <circle cx="51.98" cy="75" r="1.0" fill="#111"/>
 <circle cx="31.8" cy="72" r="1.0" fill="#111"/>

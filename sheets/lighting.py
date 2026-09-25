@@ -253,6 +253,16 @@ wire('32', [(bt['S'], yb), (bt['S'], 264)], 159.5, 259)
 box(140, 264, 58, 18)
 txt(143, 269.5, '9', 4, w='bold'); txt(148, 269.5, 'Dip/flash stalk (F9)', 2.7)
 txt(143, 274, 'pulse on S toggles dip/main;', 2.3, fill='#555'); txt(143, 277.3, 'flash works with ignition off', 2.3, fill='#555')
+# 9 as printed (book photo P8, scan F9): one contact, open at rest. The blade pivots on the relay side (32 VT from S,
+# via 58 (D8) pin 9) and rises toward the fixed contact on the earth side; both at mid-height. The book prints the
+# earth lead 32 VT 0.75 as well, so it is drawn and labelled as 32. Stopgap: it uses 32's row (8:S to 9), so a 'car'
+# tick or 'open' dash on 32 would show here too. When data/wires.csv gets 32#earth (VT 0.75, 9 to earth), change
+# this to wire('32#earth', ...); the drawing does not change.
+y9 = 273
+inner([(bt['S'], 264), (bt['S'], y9 - .8)]); contact(bt['S'], y9)
+blade_to((bt['S'], y9), (190.6, y9 - 3.4), back=0)                                 # free end short of, above, the fixed contact
+contact(193, y9); inner([(193.8, y9), (198, y9)])
+wire('32#earth', [(198, y9), (222, y9), (222, 277)], 200.5, y9 - 2.7); earth(222, 277)
 
 # ---- light switch 10 ---------------------------------------------------
 sx, sy, sw_, sh = 222, 50, 50, 24
@@ -333,7 +343,7 @@ cluster(172.5, 'L', ('42', [(255, 178), (255, 213)], (314, 211)), 27, '46', '46a
 
 # terminal dots and junctions go on top of the wires that end on them
 for p in [(x, yb) for x in bt.values()] + [(324, 36), (324, 48), (345, 36), (345, 48), (255, 125), (255, 178),
-                                           (150, 149), (bt['S'], 264), mR, dR, cR, mL, dL, cL, dropL, pR, pL,
+                                           (150, 149), (bt['S'], 264), (198, y9), mR, dR, cR, mL, dL, cL, dropL, pR, pL,
                                            kR, kL, vR, vL, eR, eL, (80, ky + 19), (86, ky + 19),
                                            (kx, ky + 19), (kx + 18, ky + 6), (kx + 18, ky + 25), (kx + 8, ky + 30)]:
     dot(*p)
