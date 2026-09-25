@@ -63,7 +63,8 @@ txt(18, 188, '57 3-pole connector (A10): pins carry 161 GL, 164 BL, and 167a SV 
 
 txt(18, 206, 'Seat belt warning', 3.4, w='bold')
 txt(18, 212, 'Fuse 5’s 150 GL reaches the seat and belt contacts; through them, 156 BR and 151 BR feed lamp 72, which returns on 157 SV (probably).', 2.3, fill='#555')
-belt = [('switch', '69', 'Seat contact (A8)', 'via 59 (A8); contact wiring too cramped to read'), ('switch', '70/71', 'Seat belt contacts L/R (A8)', 'via 59 (A8); 168 SV 0.75 to earth'),
+txt(18, 216.4, 'On the car (I3): with the ignition on, the lamp stays lit until the driver buckles up; the passenger’s belt only counts while seat contact 69 is pressed.', 2.3, fill='#555')
+belt = [('switch', '69', 'Seat contact (A8)', 'passenger seat: closes when sat on (car, I3); via 59 (A8)'), ('switch', '70/71', 'Seat belt contacts L/R (A8)', 'open when buckled (car, I3); via 59 (A8); 168 SV 0.75 to earth'),
         ('lamp', '72', 'Seat belt warning lamp (D12)', '151 BR 0.75 in, 157 SV 0.75 to earth, via 59 (C12)')]
 for i, it in enumerate(belt):
     ref(18 + (i % 2) * 190, 222 + (i // 2) * 12, *it)
@@ -83,7 +84,7 @@ probable_legend(x, ly + 29)
 notes = ['Seat heating: fuse 5 (ignition-on bar) feeds 140 GL 1.0 through 58 (E12), an optional pin in the manual, then 60 (A7) and 59 (A7) to seat heating 64: two',
          'elements in series with a thermostat between them, drawn open as printed (probably warm: it closes when cold); return 141 SV 1.0. The manual draws the',
          'two elements side by side into 59’s two rows (140 GL lower, 141 SV upper); here they run in a line and 141 is drawn straight to earth.',
-         'Interior lights and seat belt warning are listed as references only: the checks on the car (docs/car-checklist.md) will fill them in.',
+         'Interior lights and seat belt warning are listed as references only. The seat belt logic comes from the car (check I3); the contacts’ wiring is too cramped to read in the book.',
          'Fuse 5 also powers the Turbo’s high-speed fuel boost (380 GL to speed transmitter, component 140; 380a GL to throttle switch 137): see the ignition sheet.',
          'Diagram is not RHD-specific: circuits should match, but harness routing and part positions may differ.']
 for j, n in enumerate(notes): txt(lx + 108, ly + 6 + j * 5, n, 2.35, fill='#333')
