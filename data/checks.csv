@@ -21,6 +21,8 @@ D3,Dashboard,"Tachometer: wire 203 runs to the heated window switch (116), proba
 D4,Dashboard,Hazard switch: the terminal numbers printed on its back (the manual’s are unreadable).,look,"73, 76 GN, 67, 68",
 D5,Dashboard,"Heater fan: where the low-speed resistor (74) is, and the grey wire (104) to it.",look,104,
 D6,Dashboard,On a RHD car: where the radio junction box and the relays actually sit.,look,,
+D7,Dashboard,"Hazard switch 25: does its lamp flash with the normal indicators, or only with the hazards on? The book prints its lamp contact merged into the blade root.",look,"73, 76#hazard, 52","Stays dark with the normal indicators and blinks with the hazards on, so its lamp contact is open at rest (25 Sep 2026)."
+D8,Dashboard,"Dash indicator lamp (47:6, 71 GN/VT from flasher 23 terminal C): does it flash with the hazards on?",look,71,"Yes, it flashes with the hazards on (25 Sep 2026)."
 I1,Doors and interior,"Front speakers: which door has red/white + blue/white (344/345), and which brown/white + green/white (342/343). The manual contradicts itself.",look,"342, 343, 344, 345",
 I2,Doors and interior,"Interior lights: the drawing now gives the feed (fuse 9, 160 GL) and the lamp links. On the car: do the lights follow the doors with switch 53 in its middle position, and does the luggage light work from its switch (56)?",meter,"161, 164, 167, 167a, 169, 170",
 I3,Doors and interior,"Seat belt warning: with the key on, sit in the seat without the belt: does lamp 72 light, and go out when you buckle up? Note which contacts are fitted.",look,"380, 168",
