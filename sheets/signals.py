@@ -71,7 +71,7 @@ for i, (k, n) in enumerate([('BL', 'Blue'), ('BR', 'Brown'), ('GL', 'Yellow'), (
 x = lx + 4
 A(f'<path d="M{x},{ly + 17} h9" stroke="#222" stroke-width="1.2"/>'); txt(x + 11, ly + 18, 'traced (cable no. read)', 2.4)
 if DASHED[0]: A(f'<path d="M{x + 48},{ly + 17} h9" stroke="#222" stroke-width="1.2" stroke-dasharray="3 2"/>'); txt(x + 59, ly + 18, 'not traced yet', 2.4)
-tick(x, ly + 23.3); txt(x + 4, ly + 24, 'checked on the car', 2.4)
+if TICKED[0]: tick(x, ly + 23.3); txt(x + 4, ly + 24, 'checked on the car', 2.4)
 notes = ['The flasher is fed from fuse 11 on the always-live bar. Its output (73 GN) goes through the hazard switch to the indicator switch.',
          'With the hazards on, the hazard switch feeds both sides directly through 67 BL/VT (left) and 68 RD/VT (right).',
          'The hazard switch’s terminal numbers can’t be read. Its feed to the indicator switch is printed 76 GN, like the rear left indicator wire (76 BL/VT): a misprint.',

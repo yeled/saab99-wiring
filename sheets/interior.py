@@ -56,7 +56,7 @@ for i, (k, n) in enumerate([('BL', 'Blue'), ('BR', 'Brown'), ('GL', 'Yellow'), (
 x = lx + 4
 A(f'<path d="M{x},{ly + 17} h9" stroke="#222" stroke-width="1.2"/>'); txt(x + 11, ly + 18, 'traced (cable no. read)', 2.4)
 if DASHED[0]: A(f'<path d="M{x + 48},{ly + 17} h9" stroke="#222" stroke-width="1.2" stroke-dasharray="3 2"/>'); txt(x + 59, ly + 18, 'not traced yet', 2.4)
-tick(x, ly + 23.3); txt(x + 4, ly + 24, 'checked on the car', 2.4)
+if TICKED[0]: tick(x, ly + 23.3); txt(x + 4, ly + 24, 'checked on the car', 2.4)
 notes = ['Seat heating: fuse 5 (ignition-on bar) feeds 140 GL 1.0 through connector 58 at E12, which the manual draws as an optional pin,',
          'and connector 59 to the heating element; its return is 141 SV 1.0. This resolves one of fuse 5’s open wires.',
          'Interior lights and seat belt warning are listed as references only: the checks on the car (docs/car-checklist.md) will fill them in.',

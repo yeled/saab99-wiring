@@ -12,6 +12,7 @@ def fuse_checked(n):
 
 def tick(x, y, s=1.0, rot=None, cx=None, cy=None):
     """Green check mark drawn as a path, so it prints without needing a symbol font."""
+    TICKED[0] = True
     tr = f' transform="rotate({rot} {cx} {cy})"' if rot else ''
     A(f'<path d="M{x},{y - 1.1 * s} l{0.9 * s},{1.0 * s} l{1.9 * s},{-2.4 * s}" fill="none" stroke="#1e7a3a" '
       f'stroke-width="{0.55 * s}" stroke-linecap="round" stroke-linejoin="round"{tr}/>')
@@ -28,6 +29,7 @@ def txt(x, y, s, size=3.0, anchor='start', w='normal', fill='#111', rot=None):
 def path(pts):
     return 'M' + ' L'.join(f'{x},{y}' for x, y in pts)
 
+TICKED = [False]  # set when a sheet draws a check mark; the legend shows the tick sample only then
 DASHED = [False]  # set when a sheet draws anything 'not traced'; the legend shows the dashed sample only then
 
 

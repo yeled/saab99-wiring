@@ -66,7 +66,7 @@ for i, (k, n) in enumerate([('BL', 'Blue'), ('BR', 'Brown'), ('GL', 'Yellow'), (
 x = lx + 4
 A(f'<path d="M{x},{ly + 17} h9" stroke="#222" stroke-width="1.2"/>'); txt(x + 11, ly + 18, 'traced (cable no. read)', 2.4)
 if DASHED[0]: A(f'<path d="M{x + 48},{ly + 17} h9" stroke="#222" stroke-width="1.2" stroke-dasharray="3 2"/>'); txt(x + 59, ly + 18, 'not traced yet', 2.4)
-tick(x, ly + 23.3); txt(x + 4, ly + 24, 'checked on the car', 2.4)
+if TICKED[0]: tick(x, ly + 23.3); txt(x + 4, ly + 24, 'checked on the car', 2.4)
 notes = ['Terminal numbers are the instrument’s own, from the manual’s diagram. Its internal wiring (common supply, earth) isn’t drawn.',
          'Oil and temperature wires pass connector 58 at A4 (pins 5 and 6); the fuel sender wires pass 3-pole connector 57.',
          'Charge lamp: alternator D+ is 195 RD 0.75. Main-beam lamp: 27 BL/VT from lighting relay 8. Indicator lamp: 71 GN/VT from flasher 23.',

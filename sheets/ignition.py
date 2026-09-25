@@ -115,7 +115,7 @@ x = lx + 4
 A(f'<path d="M{x},{ly + 16} h9" stroke="#222" stroke-width="1.2"/>'); txt(x + 11, ly + 17, 'traced (cable no. read)', 2.4)
 if DASHED[0]: A(f'<path d="M{x + 48},{ly + 16} h9" stroke="#222" stroke-width="1.2" stroke-dasharray="3 2"/>'); txt(x + 59, ly + 17, 'not traced yet', 2.4)
 ht([(x, ly + 22), (x + 9, ly + 22)]); txt(x + 11, ly + 23, 'HT lead', 2.4)
-tick(x + 48, ly + 22.3); txt(x + 52, ly + 23, 'checked on the car', 2.4)
+if TICKED[0]: tick(x + 48, ly + 22.3); txt(x + 52, ly + 23, 'checked on the car', 2.4)
 notes = ['Overboost cut: pressure switch 144 is in the fuel pump relay’s feed (15). If it opens, the relay drops out and the pump stops.',
          'The pump relay also takes an engine-speed signal from 146 (284 BL), which normally stops the pump when the engine isn’t turning.',
          'Relay 89 is called “start inhibitor relay” in the legend, but here its coil is earthed directly, so it works as a start relay: it feeds',

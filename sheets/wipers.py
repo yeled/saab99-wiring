@@ -84,12 +84,12 @@ for i, (k, n) in enumerate([('BL', 'Blue'), ('BR', 'Brown'), ('GL', 'Yellow'), (
 x = lx + 4
 A(f'<path d="M{x},{ly + 17} h9" stroke="#222" stroke-width="1.2"/>'); txt(x + 11, ly + 18, 'traced (cable no. read)', 2.4)
 if DASHED[0]: A(f'<path d="M{x + 48},{ly + 17} h9" stroke="#222" stroke-width="1.2" stroke-dasharray="3 2"/>'); txt(x + 59, ly + 18, 'not traced yet', 2.4)
-tick(x, ly + 23.3); txt(x + 4, ly + 24, 'checked on the car', 2.4)
+if TICKED[0]: tick(x, ly + 23.3); txt(x + 4, ly + 24, 'checked on the car', 2.4)
 notes = ['Wipers run from fuse 4 on the ignition-on bar: 85 BR to the switch (53a) and 85a BR to the interval relay and motor terminal 4.',
          'The washer switch signal (91 GL) goes to the interval relay, which feeds the washer pump (91a GL), so it can wipe while washing.',
          'Speed wires: 87 GN to motor terminal 3, 86 RD to terminal 5 (through connector 58 at D8); 85a feeds 4, 88a is the park contact (2).',
          'Headlight wipers: unfused tap 94 BR from bar 3–6, then a 3 A glass fuse in holder 65 (manual, PDF p. 30) and relay 67.',
          'Diagram is not RHD-specific; the switch and relay positions (D8/D9) are drawing grid squares, not locations in the car.',
-         'Relay 67: 88 is + from the 3 A fuse, fed on to the motors (95a/95b); 88a switches control wire 98 GL, linked on by 97 BR. Plug colours checked on the car.']
+         'Relay 67: 88 is + from the 3 A fuse, fed on to the motors (95a/95b); 88a switches control wire 98 GL, linked on by 97 BR.']
 for j, n in enumerate(notes): txt(lx + 108, ly + 6 + j * 5.2, n, 2.3, fill='#333')
 save('wipers.svg')

@@ -110,6 +110,7 @@ x = lx + 97
 A(f'<path d="M{x},{ly + 5} h9" stroke="#222" stroke-width="1.2"/>'); txt(x + 11, ly + 6, 'traced (cable no. read)', 2.4)
 if DASHED[0]: A(f'<path d="M{x},{ly + 10} h9" stroke="#222" stroke-width="1.2" stroke-dasharray="3 2"/>'); txt(x + 11, ly + 11, 'not traced yet', 2.4)
 A(f'<path d="M{x},{ly + 15} h7" stroke="#222" stroke-width=".8"/><circle cx="{x + 8.3}" cy="{ly + 15}" r="1.3" fill="#fff" stroke="#222" stroke-width=".5"/>')
-txt(x + 11, ly + 16, 'ends on diagram', 2.4); tick(x + 33, ly + 15.3); txt(x + 37, ly + 16, 'checked on the car', 2.4)
+txt(x + 11, ly + 16, 'ends on diagram', 2.4)
+if TICKED[0]: tick(x + 33, ly + 15.3); txt(x + 37, ly + 16, 'checked on the car', 2.4)
 txt(lx + 4, ly + 21.5, 'Not RHD-specific: circuits should match, but harness routing and part positions may differ.', 2.3, fill='#333')
 save('power.svg')

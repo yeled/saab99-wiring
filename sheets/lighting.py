@@ -118,7 +118,8 @@ x, y = lx + 97, ly + 11
 A(f'<path d="M{x},{y - 1} h9" stroke="#222" stroke-width="1.2"/>'); txt(x + 11, y, 'traced (cable no. read)', 2.4)
 if DASHED[0]: A(f'<path d="M{x},{y + 4} h9" stroke="#222" stroke-width="1.2" stroke-dasharray="3 2"/>'); txt(x + 11, y + 5, 'not traced yet', 2.4)
 A(f'<path d="M{x},{y + 9} h7" stroke="#222" stroke-width=".8"/><circle cx="{x + 8.3}" cy="{y + 9}" r="1.3" fill="#fff" stroke="#222" stroke-width=".5"/>')
-txt(x + 11, y + 10, 'ends on diagram', 2.4); tick(x + 33, y + 9.3); txt(x + 37, y + 10, 'checked on the car', 2.4)
+txt(x + 11, y + 10, 'ends on diagram', 2.4)
+if TICKED[0]: tick(x + 33, y + 9.3); txt(x + 37, y + 10, 'checked on the car', 2.4)
 notes = ['Headlamps need the ignition on, parking/tail lights do not (manual, PDF p. 375, 413):',
          'light switch 2 is fed from ignition switch X, light switch 3 from the always-live bar.',
          'Headlamps are unfused: relay 30 is fed straight from the supply bar (20 GR 1.5).',
