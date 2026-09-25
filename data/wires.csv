@@ -63,7 +63,7 @@ cable,colour,mm2,from,to,status,evidence,notes
 391,,,6:sender,146:7,traced,label at 146,"shielded sender cable, no colour given"
 392,SV,0.75,146:shield,earth,traced,label at 146,cable shield
 393,SV,1.5,146:31,earth,traced,label at 146,
-121,BL,1.5,146:16,5:1 (coil terminal 1),car,"scan, 24 Sep: zoom shows it ending at the coil shoulder marked 1; car, check E2: blue on the coil’s − (terminal 1) (25 Sep 2026); 1977 Turbo addendum p.53 (371-2) (124 BL 1.5)","coil primary, switched by the control unit; the 1977 Turbo diagram prints 124 BL 1.5 here; the 1979 number is unreadable"
+124,BL,1.5,146:16,5:1 (coil terminal 1),car,"scan, 24 Sep: zoom shows it ending at the coil shoulder marked 1; car, check E2: blue on the coil’s − (terminal 1) (25 Sep 2026); 1977 Turbo addendum p.53 (371-2) (124 BL 1.5); 1980 diagram, book photo source/photos/book-1980-146-coil-124.jpg (124 BL 1.5, clear)","coil primary, switched by the control unit; the 1979 print’s number is unreadable (read as 121 before), the 1977 Turbo and 1980 diagrams print 124 BL 1.5 clearly"
 284,BL,0.75,146:16,102,traced,labels at 146 and 102,engine-speed signal to the pump relay
 394,GN/VT,1.0,147,89:87a,traced,label at 147,bypasses the ballast resistor while cranking (PDF p.324-325)
 122a,GL,2.5,89:87,4:50,traced,label at starter,start relay output to starter solenoid
