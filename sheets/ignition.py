@@ -39,7 +39,8 @@ contact(106.6, 112.2); contact(112, 112.4)                          # fixed cont
 inner([(106.39, 112.97), (104, 122)]); inner([(112, 113.2), (112, 122)])
 blade(107.4, 101.3, 108.5, 110.5); blade(112.2, 101.3, 113.7, 110.5)   # both open at rest; each tip just past its own contact
 mlink([cr, (113.4, cr[1])])
-wire('201', [(96, 122), (96, 125)], label=False); earth(96, 125); txt(91.5, 129, '201 SV', 2.2, 'end')
+# 201 SV: relay 89's coil earth, to earth joint 158 (power sheet); round to the empty space left of the relay
+wire('201', [(96, 122), (96, 125.5), (84, 125.5), (84, 118), (80, 118)], label=False); tag(78, 118, '201 SV 0.75 → earth joint 158 (power sheet)', w=55, anchor='end')
 wire('202', [(112, 90), (112, 84), (118, 84)], label=False); tag(120, 84, '202 GR 1.5 ← bar 7–12 (always live)')
 wire('122a', [(104, 122), (104, 141.5), (52, 141.5)], 56, 139.8); dot(104, 131); dot(104, 137)
 wire('271', [(104, 131), (108, 131)], label=False); tag(110, 131, '271 RD 1.0 → 92 thermo-time switch heater, via 58/1')
@@ -59,7 +60,7 @@ for x in (174, 182):
     dot(x, 65); a, b = resistor(x - 1.2, 55.5, 2.4, 4.8); inner([b, (x, 65)])
 inner([(170, 54), (174, 54), (174, 55.5)]); inner([(186, 54), (182, 54), (182, 55.5)]); inner([(174, 62.6), (182, 62.6)])
 tlabel(174, 52.6, '0.4 Ω', 'middle'); tlabel(182, 52.6, '0.6 Ω', 'middle')
-wire('123b', [(186, 54), (214, 54)], 188, 52.3); dot(206, 54); dot(170, 54); dot(186, 54)   # all four printed terminals
+wire('123b', [(186, 54), (214, 54)], 188, 52.3); dot(170, 54); dot(186, 54)   # all four printed terminals
 txt(188, 57.4, 'book: GN/VT', 1.8, fill='#777')                     # yellow on the car (E2, E3)
 wire('394', [(174, 65), (174, 126), (112, 126), (112, 122)], 172.6, 116, rot=-90)
 box(214, 46, 18, 30); txt(223, 43.5, '5 Coil', 2.7, 'middle', w='bold')
@@ -81,7 +82,9 @@ box(308, 40, 34, 44); txt(345, 58, '146', 3.2, w='bold'); txt(345, 62.5, 'Igniti
 for t, y in (('31', 45), ('31d', 52), ('7', 59), ('15', 66), ('16', 73), ('16', 80)):
     dot(308, y); txt(310, y + .8, t, 2.1, fill='#555')
 wire('393', [(308, 45), (304.5, 45), (304.5, 35), (350, 35), (350, 39)], 318, 33.5); earth(350, 39)
-wire('123d', [(206, 54), (206, 112), (296, 112), (296, 66), (308, 66)], 220, 110.5)
+# 123d: +15 for 146 from 58 (A4) pin 4 on the 147 side, before the ballast resistor (book photo IMG_4729: it passes
+# under the coil without joining it); branched just right of the pin, it crosses 394 without a joint
+wire('123d', [(156, 54), (156, 73), (206, 73), (206, 112), (296, 112), (296, 66), (308, 66)], 220, 110.5); dot(156, 54)
 wire('121', [(308, 80), (304.5, 80), (304.5, 87), (346, 87)], label=False); e121 = tag(348, 87, '121 BL 1.5 → coil 5, terminal 1')
 if WIRES['121']['status'] == 'car': tick(e121 + 1.2, 86.4)
 wire('284', [(308, 73), (300.5, 73), (300.5, 92), (360, 92), (360, 190), (241, 190), (241, 176)], 300, 188.5)
@@ -110,7 +113,11 @@ txt(170, 165, '144 Pressure switch (overboost)', 2.4, 'middle', w='bold')
 wire('378', [(180, 156), (220, 156)], 183, 154.3)
 wire('377', [(160, 156), (150, 156)], label=False); tag(148, 156, '377 GN/VT 0.75 ← ignition 15 at 58/4', anchor='end')
 dot(160, 156); dot(180, 156)
-wire('263', [(220, 166), (212, 166), (212, 170)], label=False); earth(212, 170); txt(198, 172, '263 SV', 2.3)
+wire('263', [(220, 166), (216, 166), (216, 171.5), (212, 171.5)], label=False)   # the pump relay's 31, to relay 21's coil earth
+tag(210, 171.5, '263 SV 0.75 → relay 21:85 (power sheet)', anchor='end')
+# 100 SV: relay 67's coil earth (via 100a) and contact 87, also on 102:31 (scan: both leads leave 31 to the left; 1977 Turbo diagram)
+wire('100', [(216, 171.5), (216, 178.5), (212, 178.5)], label=False); dot(216, 171.5)
+tag(210, 178.5, '100 SV 0.75 ← relay 67:87 (wipers sheet)', anchor='end')
 wire('261', [(270, 146), (300, 146)], 272, 144.3); dot(270, 146)
 A('<circle cx="306" cy="146" r="6" fill="#fff" stroke="#111" stroke-width=".7"/>'); txt(306, 147.2, 'M', 3, 'middle', w='bold')
 txt(306, 137.5, '103 Fuel pump', 2.6, 'middle', w='bold')
@@ -187,4 +194,11 @@ notes = ['Overboost cut: pressure switch 144 (closed at rest) is in the fuel pum
          'Sender cable 390/391 is shielded; the shield is earthed through 392 SV 0.75. 58/n = pin n of the 12-pole connector at grid A4 (data/connectors.csv).',
          'Diagram is not RHD-specific: circuits should match, but harness routing and part positions may differ.']
 for j, n in enumerate(notes): txt(lx + 108, ly + 4.8 + j * 3.9, n, 2.3, fill='#333')
+notes2 = ['263 SV (pump relay 31) goes to relay 21:85 (probably 85: hidden under 21’s border); 33 and 212 SV',
+          'take it on to earth joint 158. 100 SV, headlight wiper relay 67’s earth, also lands on 102:31.',
+          '201 SV (relay 89’s coil) goes to 158 directly. Relay 21 and joint 158 are on the power sheet.',
+          '123d GN/VT (+15 for 146) leaves pin 4 of 58 (A4) on the 147 side, before the ballast resistor;',
+          'in the book it passes under the coil without joining it (IMG_4729; 1977 Turbo diagram).',
+          '121 BL: the 1979 number is unreadable; the 1977 Turbo diagram prints 124 BL 1.5.']
+for j, n in enumerate(notes2): txt(lx + 276, ly + 4.8 + j * 3.9, n, 2.3, fill='#333')
 save('ignition.svg')
