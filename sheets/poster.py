@@ -28,7 +28,8 @@ for i, (key, title) in enumerate(ORDER):
     body = inner(p) if os.path.exists(p) else (
         f'<g font-family="Helvetica, Arial, sans-serif"><rect x="8" y="8" width="{W - 16}" height="{H - 16}" fill="#fafafa" '
         f'stroke="#bbb" stroke-dasharray="4 3"/><text x="{W / 2}" y="{H / 2}" font-size="8" text-anchor="middle" fill="#999">{title} (to come)</text></g>')
-    parts.append(f'<svg x="{x}" y="{y}" width="{W * S}" height="{H * S}" viewBox="0 0 {W} {H}">{body}</svg>')
+    parts.append(f'<svg x="{x}" y="{y}" width="{W * S}" height="{H * S}" viewBox="0 0 {W} {H}">'
+                 f'<g font-family="Helvetica, Arial, sans-serif">{body}</g></svg>')   # the sheet's own <svg> (and its font) is stripped
 wires = list(csv.DictReader(open(os.path.join(ROOT, 'data', 'wires.csv'))))
 st = Counter(w['status'] for w in wires)
 ty = 3 * H * S + 11
