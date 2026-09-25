@@ -44,7 +44,7 @@
 <path d="M149,48 L149,36 L225,36 L225,48" fill="none" stroke="#222" stroke-width="1.7" stroke-linejoin="round"/>
 <path d="M149,48 L149,36 L225,36 L225,48" fill="none" stroke="#1e9e3e" stroke-width="1.1" stroke-linejoin="round"/>
 <rect x="177.4" y="31.5" width="15.780000000000001" height="3.8" fill="#fff" opacity=".85"/>
-<text x="178" y="34.5" font-size="2.8" text-anchor="start" font-weight="normal" fill="#111">76 GN 1.0</text>
+<text x="178" y="34.5" font-size="2.8" text-anchor="start" font-weight="normal" fill="#111">74 GN 1.0</text>
 <circle cx="149" cy="48" r="1.0" fill="#111"/>
 <text x="150.6" y="51.8" font-size="2.2" text-anchor="start" font-weight="normal" fill="#555">+</text>
 <path d="M149,48 L149,57.2" fill="none" stroke="#111" stroke-width=".4"/>
@@ -390,7 +390,7 @@
 <text x="126" y="249.25" font-size="2.35" text-anchor="start" font-weight="normal" fill="#333">Switches are drawn at rest, as printed. Pressed, hazard switch 25 closes its lamp, R and L contacts together (lamp: on the car), so + feeds both sides (68 RD/VT, 67 BL/VT).</text>
 <text x="126" y="253.0" font-size="2.35" text-anchor="start" font-weight="normal" fill="#333">The manual prints 25’s terminals +, R and L (none on the lamp’s) and 24’s 54, R and L. 73 GN lands on + beside the wire to 54 (probably the same terminal).</text>
 <text x="126" y="256.75" font-size="2.35" text-anchor="start" font-weight="normal" fill="#333">25’s lamp contact prints merged into the blade root; on the car it is open at rest (the lamp stays dark with the indicators and blinks with the hazards: check D7). Grey: the end of 29’s blade and its right contact, printed running together; probably open at rest.</text>
-<text x="126" y="260.5" font-size="2.35" text-anchor="start" font-weight="normal" fill="#333">The + to 54 wire is printed 7? GN 1.0 with the second digit blotted; it is shown as 76, as in the data, but is probably 74 (the 1977 Turbo diagram prints 74 GN 1.0).</text>
+<text x="126" y="260.5" font-size="2.35" text-anchor="start" font-weight="normal" fill="#333">The + to 54 wire is 74 GN 1.0: the 1979 print blots its second digit, but the 1977 Turbo diagram and another year’s print read 74. 73 GN also lands on +.</text>
 <text x="126" y="264.25" font-size="2.35" text-anchor="start" font-weight="normal" fill="#333">24’s own outputs are 75 BL/VT and 78 RD/VT, through 58 (D8) to 58 (B9). 77/80 (front) leave on B9’s near side, as printed, and only 76/79 (rear, route not traced yet) pass it; 80 is drawn branching off 79 past it, for room.</text>
 <text x="126" y="268.0" font-size="2.35" text-anchor="start" font-weight="normal" fill="#333">Each lamp housing has one earth for all its bulbs (parking, tail and number-plate bulbs: lighting sheet). Turned for the layout: the manual prints the front housings mirrored (flat end and earth on the left) and the left rear cluster upside down.</text>
 <text x="126" y="271.75" font-size="2.35" text-anchor="start" font-weight="normal" fill="#333">Not in the data yet: the rear cluster earths (189 SV, left cluster bar to right, then 189a SV to earth), drawn straight to earth here.</text>
