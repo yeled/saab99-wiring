@@ -151,8 +151,8 @@ cable,colour,mm2,from,to,status,evidence,notes
 166,BL,0.75,55,56 luggage compartment light switch (to earth),traced,"book close-up (grid 9-10), 1979: labels at 55 and 56",luggage light to its switch
 168,SV,0.75,"70, 71, 69",earth,traced,"book photos 24 Sep: contacts 69, 70, 71 to earth",
 381,SV,0.75,140:31,earth,traced,label at 140 (book photo),
-382,BL,0.75,140:W,142 solenoid valve (E3),traced,labels at 140 (book photo) and at 142,fuel boost above about 130 km/h (PDF p.33)
-383,GR,0.75,137,(ends on the drawing),stub,"scan, 24 Sep and book photo: ends just past its label",throttle switch output; the fuel boost description (PDF p.210) implies it feeds solenoid valve 142
+382,BL,0.75,140:W,142 solenoid valve (E3),car,"labels at 140 (book photo) and at 142; car, check E12: blue on 142’s feed contact with grey 383 (25 Sep 2026)",fuel boost above about 130 km/h (PDF p.33)
+383,GR,0.75,137,142 (with 382 on one contact),car,"scan traced from both ends (137 top terminal to 142’s second lead); Turbo addendum p.240-1 figure S 6266; car, check E12: grey and blue on the same contact of 142 (25 Sep 2026)",throttle switch output: energises enrichment valve 142 above about 62° throttle
 188,VT,0.75,58 (B9),"43 handbrake switch, 42 brake failure switch",traced,"book photos 24 Sep: labels at 58, 43 and 42",brake warning lamp return
 204,GL,0.75,"ECU speed signal (with 284, 284a)",110 tachometer,traced,book photos 24 Sep: labels near the TSI bundle and at 110,tachometer signal
 214,BL,0.75,116,?,open,book photos 24 Sep: label at 116,"feed into switch 116; shares the switch terminal with 203 (tachometer supply), per the 1979 scan; source not traced; runs down to row E and meets a line toward connector 58 (E12): join or crossing not clear"
