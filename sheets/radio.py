@@ -3,8 +3,7 @@
 from common import *
 
 header('Saab 99 Turbo, model 1979 — Radio, speakers and accessory feeds',
-       'Redrawn from Saab Service Manual 1975–1980, diagram p. 371-28/29 (PDF p. 406–407) and radio installation, PDF p. 798. '
-       'Dashed = not traced yet.')
+       'Redrawn from Saab Service Manual 1975–1980, diagram p. 371-28/29 (PDF p. 406–407) and radio installation, PDF p. 798.')
 def conn(x, y, h, lab, w=4):
     A(f'<rect x="{x - w / 2}" y="{y - h / 2}" width="{w}" height="{h}" fill="#ddd" stroke="#111" stroke-width=".5"/>')
     txt(x, y - h / 2 - 1.5, lab, 2.2, 'middle', fill='#555')
@@ -31,20 +30,30 @@ wire('342', [(185, 86), (185, 180), (296, 180)], 240, 178.5)
 conn(300, 135, 16, '59'); conn(300, 175, 16, '59')
 for y1, y2 in ((130, 140), (170, 180)):
     A(f'<path d="M302,{y1} H330 M302,{y2} H330" stroke="#111" stroke-width=".6"/>')
-speaker(330, 135, '131', 'Loudspeaker, left'); txt(325, 131, '−', 3, 'end'); txt(325, 143, '+', 3, 'end')
-speaker(330, 175, '130', 'Loudspeaker, right'); txt(325, 171, '−', 3, 'end'); txt(325, 183, '+', 3, 'end')
+speaker(330, 135, '131', 'Loudspeaker, left'); txt(325, 129, '−', 3, 'end'); txt(325, 143, '+', 3, 'end')
+speaker(330, 175, '130', 'Loudspeaker, right'); txt(325, 169, '−', 3, 'end'); txt(325, 183, '+', 3, 'end')
 txt(346, 141, 'left/right as on the 1979 Turbo diagram;', 2.2, fill='#555'); txt(346, 144.5, 'the radio page shows them swapped', 2.2, fill='#555')
 
 # ---- accessory feeds on fuse 9 ---------------------------------------------------
 txt(18, 208, 'Accessory feeds', 3.2, w='bold')
-box(18, 214, 36, 16); txt(21, 220, '<tspan font-weight="bold">F9</tspan> · 8 A', 2.6); txt(21, 225, 'always-live bar', 2.2, fill='#555')
-wire('126', [(54, 222), (130, 222)], 60, 220.5); conn(134, 222, 8, '58 (B11)')
-wire('126a', [(136, 222), (200, 222)], 150, 220.5)
+# fuse 9 of fuse box 22, turned a quarter: the manual's bar 7-12 runs left, its junction ring feeds the 8 A fuse, and
+# bottom terminal 9 is the dot on the box edge
+box(18, 212, 36, 20); txt(21, 217, f'<tspan font-weight="bold">F9</tspan> · {FUSES[9]["rating"]}', 2.6)
+inner([(24, 219.5), (24, 229.5)]); contact(24, 222); txt(26, 229, 'always-live bar', 2.1, fill='#555')
+fa, fb = fuse(32, 220.8, 10, 2.4); inner([(24.8, 222), fa]); inner([fb, (54, 222)]); dot(54, 222); tlabel(52.5, 220.6, '9', 'end')
+# 58 (B11): one of its pin rows, dots just inside the frame as the manual prints them; 126 BL in, 160 GL on out of the
+# same pin, and 126a BL leaving on the fuse side, its join to the pin hidden in the manual's frame (grey)
+A('<rect x="129" y="215" width="12" height="14" fill="#ddd" stroke="#111" stroke-width=".5"/>'); txt(135, 213.3, '58 (B11)', 2.2, 'middle', fill='#555')
+wire('126', [(54, 222), (132.5, 222)], 60, 220.5)
+wire('160', [(137.5, 222), (145, 222), (145, 209), (124, 209)], label=False); tag(124, 209, '160 GL 0.75 to interior lights via 58 (A9)', size=2.4, anchor='end')
+wire('126a', [(128.4, 226.1), (126.5, 228), (126.5, 238), (180, 238), (180, 222), (200, 222)], 140, 236.5)
+A('<rect x="129" y="215" width="12" height="14" fill="none" stroke="#111" stroke-width=".5"/>')   # frame over the wire ends
+inner([(132.5, 222), (137.5, 222)]); inner([(132.5, 222), (128.4, 226.1)], grey=True); dot(132.5, 222); dot(137.5, 222)
 A('<circle cx="208" cy="222" r="7" fill="#111"/>'); txt(218, 223, '<tspan font-weight="bold">48</tspan> Cigarette lighter', 2.8)
 wire('215', [(208, 229), (208, 234)], 211, 237); earth(208, 234)
 A('<circle cx="208" cy="192" r="8" fill="#fff" stroke="#111" stroke-width=".7"/><path d="M208,192 v-5 M208,192 h4" stroke="#111" stroke-width=".5"/>')
 txt(219, 193, '<tspan font-weight="bold">49</tspan> Clock', 2.8)
-wire('127', [(200, 192), (180, 192), (180, 222)], 184, 190.5); dot(180, 222)
+wire('127', [(200, 192), (180, 192), (180, 222)], 181, 190.5); dot(180, 222)
 wire('128', [(208, 200), (208, 205)], 211, 207.5); earth(208, 205)
 
 # ---- legend and notes ---------------------------------------------------------------
@@ -59,10 +68,12 @@ x = lx + 4
 A(f'<path d="M{x},{ly + 17} h9" stroke="#222" stroke-width="1.2"/>'); txt(x + 11, ly + 18, 'traced (cable no. read)', 2.4)
 if DASHED[0]: A(f'<path d="M{x + 48},{ly + 17} h9" stroke="#222" stroke-width="1.2" stroke-dasharray="3 2"/>'); txt(x + 59, ly + 18, 'not traced yet', 2.4)
 if TICKED[0]: tick(x, ly + 23.3); txt(x + 4, ly + 24, 'checked on the car', 2.4)
+probable_legend(x, ly + (29 if TICKED[0] else 23))
 notes = ['Pin numbers and speaker polarity (342, 344 to +; 343, 345 to −) are from the radio installation page, PDF p. 798.',
          'The radio’s + (340 RD) comes from ignition switch X here, so it’s live with the key on; the radio page describes a battery feed.',
          'Left and right: the 1979 Turbo diagram puts 344/345 on the left speaker and 342/343 on the right; the radio page swaps them.',
-         'Fuse 9 (lid: cigar lighter, compartment light, clock) feeds the lighter on 126a BL; the clock’s 127 BL takes off the same line.',
+         'Fuse 9 (lid: cigar lighter, compartment light, clock): the 58 (B11) pin that 126 BL enters carries on as 160 GL to the interior lights.',
+         '126a BL to the lighter leaves 58 (B11) on the fuse side; the manual hides its join in the frame, so it’s grey. The clock’s 127 BL takes off 126a.',
          'The radio page puts the junction box in the right-hand trim panel under the dash; that’s for LHD cars.']
-for j, n in enumerate(notes): txt(lx + 108, ly + 6 + j * 5.8, n, 2.35, fill='#333')
+for j, n in enumerate(notes): txt(lx + 108, ly + 6 + j * 5.4, n, 2.35, fill='#333')
 save('radio.svg')
