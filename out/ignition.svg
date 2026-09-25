@@ -312,8 +312,6 @@
 <text x="33" y="273" font-size="2.4" text-anchor="start" font-weight="normal" fill="#111">traced (cable no. read)</text>
 <path d="M22,278 L31,278" fill="none" stroke="#444" stroke-width="1.1" stroke-linejoin="round"/>
 <text x="33" y="279" font-size="2.4" text-anchor="start" font-weight="normal" fill="#111">HT lead</text>
-<path d="M70,277.2 l0.9,1.0 l1.9,-2.4" fill="none" stroke="#1e7a3a" stroke-width="0.55" stroke-linecap="round" stroke-linejoin="round"/>
-<text x="74" y="279" font-size="2.4" text-anchor="start" font-weight="normal" fill="#111">checked on the car</text>
 <text x="126" y="260.8" font-size="2.3" text-anchor="start" font-weight="normal" fill="#333">Overboost cut: pressure switch 144 is in the fuel pump relay’s feed (15). If it opens, the relay drops out and the pump stops.</text>
 <text x="126" y="264.7" font-size="2.3" text-anchor="start" font-weight="normal" fill="#333">The pump relay also takes an engine-speed signal from 146 (284 BL), which normally stops the pump when the engine isn’t turning.</text>
 <text x="126" y="268.6" font-size="2.3" text-anchor="start" font-weight="normal" fill="#333">Relay 89 is called “start inhibitor relay” in the legend, but here its coil is earthed directly, so it works as a start relay: it feeds</text>
