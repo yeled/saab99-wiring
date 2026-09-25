@@ -106,19 +106,28 @@ def rear_cluster(y0, side, bulbs):
 # ---- indicators and hazards ---------------------------------------------------
 txt(18, 40, 'Indicators and hazards', 3.4, w='bold')
 fuse_box(62, 11)
-wire('70', [(50, 62), (70, 62)], label=False); txt(52, 60.3, '70 RD/VT 1.0', 2.2)
-box(70, 50, 30, 30); txt(85, 65, '23', 3.2, 'middle', w='bold'); txt(85, 70, 'Flasher unit', 2.3, 'middle')
-dot(70, 62); txt(72, 59.5, '49', 2.2, fill='#555'); dot(100, 58); txt(98, 56.5, '49a', 2.2, 'end', fill='#555')
-dot(80, 80); txt(80, 78, 'C', 2.2, 'middle', fill='#555'); dot(92, 80); txt(92, 78, '31', 2.2, 'middle', fill='#555')
-A('<path d="M92,80 v5" stroke="#111" stroke-width=".6"/>'); earth(92, 85)
+wire('70', [(50, 62), (70, 62), (70, 66)], label=False); txt(52, 60.3, '70 RD/VT 1.0', 2.2)
+# 23 flasher unit as printed (book photo P8, scan p.407): a box with the filled bow-tie (flasher symbol) under a strip
+# with 49, C, 49a and 31 in a row along the top edge. 70 comes down into 49, 71 and 73 leave C and 49a upwards; the
+# book draws 31 with no wire, so its earth here is grey (probably earthed through the flasher's mounting).
+FX, FY, FW, FH, FD = 66, 66, 26, 30, 75          # box left, top, width, height; y of the strip's lower edge
+T49, TC, T49A, T31 = 70, 76, 82, 88              # terminal x, left to right as printed
+box(FX, FY, FW, FH); txt(FX - 2.5, 84, '23 Flasher unit', 2.4, 'end', w='bold')
+A(f'<path d="M{FX},{FD} h{FW}" stroke="#111" stroke-width=".4"/>')
+fm, fy = FX + FW / 2, (FD + FY + FH - .4) / 2   # bow-tie centre: corner to corner, into the border as printed
+A(f'<path d="M{FX + .4},{FD} L{FX + FW - .4},{FD} L{fm},{fy} Z M{FX + .4},{FY + FH - .4} L{FX + FW - .4},{FY + FH - .4} '
+  f'L{fm},{fy} Z" fill="#111" stroke="#111" stroke-width=".3" stroke-linejoin="round"/>')
+for tx, tl in ((T49, '49'), (TC, 'C'), (T49A, '49a'), (T31, '31')): dot(tx, FY); tlabel(tx, FY + 3.6, tl, 'middle')
+A(f'<path d="M{T31},{FY} V62 H100 v3 M97,65 h6 M98,66.3 h4 M99,67.6 h2" stroke="#888" stroke-width=".5" fill="none"/>')
+PROBABLE[0] = True
 t71 = '71 GN/VT 0.75 → 47 dash indicator lamp'
-wire('71', [(80, 80), (80, 96)], label=False); tag(82, 96, t71, w=len(t71) * 2.6 * .52 + 3)
+wire('71', [(TC, FY), (TC, 48), (73, 48)], label=False); tag(73, 48, t71, w=55, anchor='end')   # left edge on x 18, with the title and F11
 
 # 25 hazard switch as printed (IMG_4724): + at the top, a blade hanging down-left from its pivot (open), and a
 # column of three contacts it closes together when pressed: lamp (grey: printed merged with the blade root, probably
 # open), R and L. The lamp is wired to an unlabelled terminal on the right edge.
 box(130, 48, 40, 40); txt(127, 75, '25 Hazard switch', 2.4, 'end', w='bold')
-wire('73', [(100, 58), (114, 58), (114, 43), (144, 43), (149, 48)], 118, 41.5)   # lands on + beside 76 (probably)
+wire('73', [(T49A, FY), (T49A, 58), (114, 58), (114, 43), (144, 43), (149, 48)], 118, 41.5)   # lands on + beside 74 (probably)
 wire('74', [(149, 48), (149, 36), (225, 36), (225, 48)], 178, 34.5)
 dot(149, 48); txt(150.6, 51.8, '+', 2.2, fill='#555')
 inner([(149, 48), (149, 57.2)]); contact(149, 58); blade(148.7, 58.64, 140.4, 76.8)
@@ -205,7 +214,7 @@ wire('136', [(202, 220), (202, 225), (295, 225), (295, yl[2]), (CX0, yl[2])], 23
 wire('137', [(301, yl[2]), (301, yr[2]), (CX0, yr[2])], 317, 181); dot(301, yl[2])
 
 # terminal dots again, on top of the wire ends that meet them
-for p in ((50, 62), (70, 62), (100, 58), (80, 80), (92, 80), (149, 48), (170, 64.8), (155, 88), (160, 88), (225, 48),
+for p in ((50, 62), (T49, FY), (TC, FY), (T49A, FY), (T31, FY), (149, 48), (170, 64.8), (155, 88), (160, 88), (225, 48),
           (219, 88), (231, 88), (D8 - 2, LB), (D8 + 2, LB), (D8 - 2, RB), (D8 + 2, RB), (B9 - 2, LB), (B9 + 2, LB),
           (B9 - 2, RB), (B9 + 2, RB), (HX0, 91), (HX0, 146), (HXF, 91), (HXF, 146), (50, 173.5), (90, 173.5),
           (114, 173.5), (158, 173.5), (162, 173.5), (50, 195), (158, 195), (162, 195), (158, 217.7), (162, 217.7),
@@ -225,7 +234,8 @@ A(f'<path d="M{x},{ly + 17} h9" stroke="#222" stroke-width="1.2"/>'); txt(x + 11
 if DASHED[0]: A(f'<path d="M{x + 48},{ly + 17} h9" stroke="#222" stroke-width="1.2" stroke-dasharray="3 2"/>'); txt(x + 59, ly + 18, 'not traced yet', 2.4)
 if TICKED[0]: tick(x, ly + 23.3); txt(x + 4, ly + 24, 'checked on the car', 2.4)
 probable_legend(x, ly + (29 if TICKED[0] else 23))
-notes = ['The flasher is fed from fuse 11 on the always-live bar. Its output (73 GN) goes to the hazard switch’s +, which feeds the indicator switch’s 54.',
+notes = ['Flasher 23 is fed on 49 from fuse 11 (always-live bar). 49a (73 GN) feeds the hazard switch’s +, which feeds the indicator switch’s 54; '
+         'C (71 GN/VT) works the dash indicator lamp. Its 31 prints with no wire, so its earth is grey (probably through the mounting).',
          'Switches are drawn at rest, as printed. Pressed, hazard switch 25 closes its lamp, R and L contacts together (lamp: on the car), so + feeds both sides (68 RD/VT, 67 BL/VT).',
          'The manual prints 25’s terminals +, R and L (none on the lamp’s) and 24’s 54, R and L. 73 GN lands on + beside the wire to 54 (probably the same terminal).',
          '25’s lamp contact prints merged into the blade root; on the car it is open at rest (the lamp stays dark with the indicators and blinks with the hazards: check D7). '
