@@ -59,7 +59,7 @@
 <circle cx="33.6" cy="138" r="1.0" fill="#111"/>
 <text x="64.5" y="138.8" font-size="2.1" text-anchor="start" font-weight="normal" fill="#555">28 indicator: signals sheet</text>
 <text x="49" y="151.7" font-size="2.7" text-anchor="middle" font-weight="normal" fill="#111">13 Parking R</text>
-<text x="49" y="154.9" font-size="2.1" text-anchor="middle" font-weight="normal" fill="#555">with an unnumbered bulb below</text>
+<text x="49" y="154.9" font-size="2.1" text-anchor="middle" font-weight="normal" fill="#555">with a reversing light below</text>
 <path d="M36,181.5 L56.94,184.57 A6.5,6.5 0 0 1 56.94,197.43 L36,200.5 A20.0,20.0 0 0 1 36,181.5 Z" fill="#fdfdfd" stroke="#111" stroke-width=".8"/>
 <path d="M38.5,182.27 V199.73" stroke="#111" stroke-width=".3"/>
 <path d="M50,191 L33.6,191" fill="none" stroke="#111" stroke-width=".4"/>
@@ -79,7 +79,7 @@
 <circle cx="33.6" cy="191" r="1.0" fill="#111"/>
 <text x="64.5" y="191.8" font-size="2.1" text-anchor="start" font-weight="normal" fill="#555">27 indicator: signals sheet</text>
 <text x="49" y="204.7" font-size="2.7" text-anchor="middle" font-weight="normal" fill="#111">13 Parking L</text>
-<text x="49" y="207.9" font-size="2.1" text-anchor="middle" font-weight="normal" fill="#555">with an unnumbered bulb below</text>
+<text x="49" y="207.9" font-size="2.1" text-anchor="middle" font-weight="normal" fill="#555">with a reversing light below</text>
 <rect x="140" y="188" width="68" height="36" rx="1.2" fill="#fafafa" stroke="#111" stroke-width="0.8"/>
 <text x="140" y="186.2" font-size="4" text-anchor="start" font-weight="bold" fill="#111">8</text>
 <text x="144.2" y="186.2" font-size="2.7" text-anchor="start" font-weight="normal" fill="#111">Lighting relay (C7)</text>
@@ -412,9 +412,10 @@
 <path d="M255.7,256.7 L261.6,254.6" stroke="#888" stroke-width=".75" stroke-linecap="round"/>
 <text x="265" y="258" font-size="2.4" text-anchor="start" font-weight="normal" fill="#111">grey inside a part: probably, not printed clearly</text>
 <text x="253" y="263.0" font-size="2.35" text-anchor="start" font-weight="normal" fill="#333">Headlamps need the ignition on (except the flash, stalk 9); parking/tail lights do not (manual, PDF p. 375, 413):</text>
-<text x="253" y="266.9" font-size="2.35" text-anchor="start" font-weight="normal" fill="#333">light switch 2 is fed from ignition switch X, light switch 3 from the always-live bar.</text>
-<text x="253" y="270.8" font-size="2.35" text-anchor="start" font-weight="normal" fill="#333">Headlamps are unfused: relay 30 is fed straight from the supply bar (20 GR 1.5).</text>
-<text x="253" y="274.7" font-size="2.35" text-anchor="start" font-weight="normal" fill="#333">Not RHD-specific: circuits are per side, but harness routing and part positions may differ.</text>
-<text x="253" y="278.6" font-size="2.35" text-anchor="start" font-weight="normal" fill="#333">All bulbs in a lamp housing share its one earth. Indicators, brake and reversing bulbs: signals sheet.</text>
-<text x="253" y="282.5" font-size="2.35" text-anchor="start" font-weight="normal" fill="#333">The front housings’ lower bulb has no number (probably corner lamp 118); its feed is not drawn.</text>
+<text x="253" y="266.6" font-size="2.35" text-anchor="start" font-weight="normal" fill="#333">light switch 2 is fed from ignition switch X, light switch 3 from the always-live bar.</text>
+<text x="253" y="270.2" font-size="2.35" text-anchor="start" font-weight="normal" fill="#333">Headlamps are unfused: relay 30 is fed straight from the supply bar (20 GR 1.5).</text>
+<text x="253" y="273.8" font-size="2.35" text-anchor="start" font-weight="normal" fill="#333">Not RHD-specific: circuits are per side, but harness routing and part positions may differ.</text>
+<text x="253" y="277.4" font-size="2.35" text-anchor="start" font-weight="normal" fill="#333">All bulbs in a lamp housing share its one earth. Indicators, brake and reversing bulbs: signals sheet.</text>
+<text x="253" y="281.0" font-size="2.35" text-anchor="start" font-weight="normal" fill="#333">Front housings: the unnumbered lower bulb is a reversing light (on the car, E16), fed by 138 BL from switch 31 (not in the data yet).</text>
+<text x="253" y="284.6" font-size="2.35" text-anchor="start" font-weight="normal" fill="#333">Relay 8 prints its flash contact on 56b (dipped), but on the car the flash lights the main beams (D9).</text>
 </svg>

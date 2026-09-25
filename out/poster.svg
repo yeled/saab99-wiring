@@ -450,7 +450,7 @@
 <circle cx="33.6" cy="138" r="1.0" fill="#111"/>
 <text x="64.5" y="138.8" font-size="2.1" text-anchor="start" font-weight="normal" fill="#555">28 indicator: signals sheet</text>
 <text x="49" y="151.7" font-size="2.7" text-anchor="middle" font-weight="normal" fill="#111">13 Parking R</text>
-<text x="49" y="154.9" font-size="2.1" text-anchor="middle" font-weight="normal" fill="#555">with an unnumbered bulb below</text>
+<text x="49" y="154.9" font-size="2.1" text-anchor="middle" font-weight="normal" fill="#555">with a reversing light below</text>
 <path d="M36,181.5 L56.94,184.57 A6.5,6.5 0 0 1 56.94,197.43 L36,200.5 A20.0,20.0 0 0 1 36,181.5 Z" fill="#fdfdfd" stroke="#111" stroke-width=".8"/>
 <path d="M38.5,182.27 V199.73" stroke="#111" stroke-width=".3"/>
 <path d="M50,191 L33.6,191" fill="none" stroke="#111" stroke-width=".4"/>
@@ -470,7 +470,7 @@
 <circle cx="33.6" cy="191" r="1.0" fill="#111"/>
 <text x="64.5" y="191.8" font-size="2.1" text-anchor="start" font-weight="normal" fill="#555">27 indicator: signals sheet</text>
 <text x="49" y="204.7" font-size="2.7" text-anchor="middle" font-weight="normal" fill="#111">13 Parking L</text>
-<text x="49" y="207.9" font-size="2.1" text-anchor="middle" font-weight="normal" fill="#555">with an unnumbered bulb below</text>
+<text x="49" y="207.9" font-size="2.1" text-anchor="middle" font-weight="normal" fill="#555">with a reversing light below</text>
 <rect x="140" y="188" width="68" height="36" rx="1.2" fill="#fafafa" stroke="#111" stroke-width="0.8"/>
 <text x="140" y="186.2" font-size="4" text-anchor="start" font-weight="bold" fill="#111">8</text>
 <text x="144.2" y="186.2" font-size="2.7" text-anchor="start" font-weight="normal" fill="#111">Lighting relay (C7)</text>
@@ -803,11 +803,12 @@
 <path d="M255.7,256.7 L261.6,254.6" stroke="#888" stroke-width=".75" stroke-linecap="round"/>
 <text x="265" y="258" font-size="2.4" text-anchor="start" font-weight="normal" fill="#111">grey inside a part: probably, not printed clearly</text>
 <text x="253" y="263.0" font-size="2.35" text-anchor="start" font-weight="normal" fill="#333">Headlamps need the ignition on (except the flash, stalk 9); parking/tail lights do not (manual, PDF p. 375, 413):</text>
-<text x="253" y="266.9" font-size="2.35" text-anchor="start" font-weight="normal" fill="#333">light switch 2 is fed from ignition switch X, light switch 3 from the always-live bar.</text>
-<text x="253" y="270.8" font-size="2.35" text-anchor="start" font-weight="normal" fill="#333">Headlamps are unfused: relay 30 is fed straight from the supply bar (20 GR 1.5).</text>
-<text x="253" y="274.7" font-size="2.35" text-anchor="start" font-weight="normal" fill="#333">Not RHD-specific: circuits are per side, but harness routing and part positions may differ.</text>
-<text x="253" y="278.6" font-size="2.35" text-anchor="start" font-weight="normal" fill="#333">All bulbs in a lamp housing share its one earth. Indicators, brake and reversing bulbs: signals sheet.</text>
-<text x="253" y="282.5" font-size="2.35" text-anchor="start" font-weight="normal" fill="#333">The front housings’ lower bulb has no number (probably corner lamp 118); its feed is not drawn.</text>
+<text x="253" y="266.6" font-size="2.35" text-anchor="start" font-weight="normal" fill="#333">light switch 2 is fed from ignition switch X, light switch 3 from the always-live bar.</text>
+<text x="253" y="270.2" font-size="2.35" text-anchor="start" font-weight="normal" fill="#333">Headlamps are unfused: relay 30 is fed straight from the supply bar (20 GR 1.5).</text>
+<text x="253" y="273.8" font-size="2.35" text-anchor="start" font-weight="normal" fill="#333">Not RHD-specific: circuits are per side, but harness routing and part positions may differ.</text>
+<text x="253" y="277.4" font-size="2.35" text-anchor="start" font-weight="normal" fill="#333">All bulbs in a lamp housing share its one earth. Indicators, brake and reversing bulbs: signals sheet.</text>
+<text x="253" y="281.0" font-size="2.35" text-anchor="start" font-weight="normal" fill="#333">Front housings: the unnumbered lower bulb is a reversing light (on the car, E16), fed by 138 BL from switch 31 (not in the data yet).</text>
+<text x="253" y="284.6" font-size="2.35" text-anchor="start" font-weight="normal" fill="#333">Relay 8 prints its flash contact on 56b (dipped), but on the car the flash lights the main beams (D9).</text>
 </g></svg>
 <svg x="788.473063973064" y="0.0" width="387.94612794612794" height="274.3333333333333" viewBox="0 0 420 297"><g font-family="Helvetica, Arial, sans-serif">
 <rect width="420" height="297" fill="#fff"/><rect x="8" y="8" width="404" height="281" fill="none" stroke="#111" stroke-width=".6"/>
@@ -1698,14 +1699,15 @@
 <path d="M23.7,262.7 L29.6,260.6" stroke="#888" stroke-width=".75" stroke-linecap="round"/>
 <text x="33" y="264" font-size="2.4" text-anchor="start" font-weight="normal" fill="#111">grey inside a part: probably, not printed clearly</text>
 <text x="126" y="246.0" font-size="2.35" text-anchor="start" font-weight="normal" fill="#333">The flasher is fed from fuse 11 on the always-live bar. Its output (73 GN) goes to the hazard switch’s +, which feeds the indicator switch’s 54.</text>
-<text x="126" y="250.5" font-size="2.35" text-anchor="start" font-weight="normal" fill="#333">Switches are drawn at rest, as printed. Pressed, hazard switch 25 closes its lamp, R and L contacts together (lamp: on the car), so + feeds both sides (68 RD/VT, 67 BL/VT).</text>
-<text x="126" y="255.0" font-size="2.35" text-anchor="start" font-weight="normal" fill="#333">The manual prints 25’s terminals +, R and L (none on the lamp’s) and 24’s 54, R and L. 73 GN lands on + beside the wire to 54 (probably the same terminal).</text>
-<text x="126" y="259.5" font-size="2.35" text-anchor="start" font-weight="normal" fill="#333">25’s lamp contact prints merged into the blade root; on the car it is open at rest (the lamp stays dark with the indicators and blinks with the hazards: check D7). Grey: the end of 29’s blade and its right contact, printed running together; probably open at rest.</text>
-<text x="126" y="264.0" font-size="2.35" text-anchor="start" font-weight="normal" fill="#333">The + to 54 wire is shown as 76 GN, as in the data; its second digit is blotted on the page, so the clash with 76 BL/VT is not confirmed. Rear indicator wires 76 and 79 leave connector 58 (B9) on its far side; their route to the rear isn’t traced yet.</text>
-<text x="126" y="268.5" font-size="2.35" text-anchor="start" font-weight="normal" fill="#333">Each lamp housing has one earth for all its bulbs (parking, tail and number-plate bulbs: lighting sheet). Turned for the layout: the manual prints the front housings mirrored (flat end and earth on the left) and the left rear cluster upside down.</text>
-<text x="126" y="273.0" font-size="2.35" text-anchor="start" font-weight="normal" fill="#333">Not in the data yet: the earth cables (front 360/361 SV; rear 189 SV, left cluster bar to right, then 189a SV to earth), drawn straight to earth here; and 138 BL, which enters 31’s left side onto the lower contact (a short lead here).</text>
-<text x="126" y="277.5" font-size="2.35" text-anchor="start" font-weight="normal" fill="#333">58 (E12): 132 and 135 pass on its rows 2 and 3; row 1 is 140 GL (interior sheet) and row 4 is 138 BL. The manual prints no pin numbers.</text>
-<text x="126" y="282.0" font-size="2.35" text-anchor="start" font-weight="normal" fill="#333">Diagram is not RHD-specific: circuits should match, but harness routing and part positions may differ.</text>
+<text x="126" y="250.1" font-size="2.35" text-anchor="start" font-weight="normal" fill="#333">Switches are drawn at rest, as printed. Pressed, hazard switch 25 closes its lamp, R and L contacts together (lamp: on the car), so + feeds both sides (68 RD/VT, 67 BL/VT).</text>
+<text x="126" y="254.2" font-size="2.35" text-anchor="start" font-weight="normal" fill="#333">The manual prints 25’s terminals +, R and L (none on the lamp’s) and 24’s 54, R and L. 73 GN lands on + beside the wire to 54 (probably the same terminal).</text>
+<text x="126" y="258.3" font-size="2.35" text-anchor="start" font-weight="normal" fill="#333">25’s lamp contact prints merged into the blade root; on the car it is open at rest (the lamp stays dark with the indicators and blinks with the hazards: check D7). Grey: the end of 29’s blade and its right contact, printed running together; probably open at rest.</text>
+<text x="126" y="262.4" font-size="2.35" text-anchor="start" font-weight="normal" fill="#333">The + to 54 wire is shown as 76 GN, as in the data; its second digit is blotted on the page, so the clash with 76 BL/VT is not confirmed. Rear indicator wires 76 and 79 leave connector 58 (B9) on its far side; their route to the rear isn’t traced yet.</text>
+<text x="126" y="266.5" font-size="2.35" text-anchor="start" font-weight="normal" fill="#333">Each lamp housing has one earth for all its bulbs (parking, tail and number-plate bulbs: lighting sheet). Turned for the layout: the manual prints the front housings mirrored (flat end and earth on the left) and the left rear cluster upside down.</text>
+<text x="126" y="270.6" font-size="2.35" text-anchor="start" font-weight="normal" fill="#333">Not in the data yet: the earth cables (front 360/361 SV; rear 189 SV, left cluster bar to right, then 189a SV to earth), drawn straight to earth here.</text>
+<text x="126" y="274.7" font-size="2.35" text-anchor="start" font-weight="normal" fill="#333">Also not in the data yet: 138 BL, which enters 31’s left side onto the lower contact (a short lead here). It feeds the reversing lights in the front housings (on the car, E16).</text>
+<text x="126" y="278.8" font-size="2.35" text-anchor="start" font-weight="normal" fill="#333">58 (E12): 132 and 135 pass on its rows 2 and 3; row 1 is 140 GL (interior sheet) and row 4 is 138 BL. The manual prints no pin numbers.</text>
+<text x="126" y="282.9" font-size="2.35" text-anchor="start" font-weight="normal" fill="#333">Diagram is not RHD-specific: circuits should match, but harness routing and part positions may differ.</text>
 </g></svg>
 <svg x="788.473063973064" y="274.3333333333333" width="387.94612794612794" height="274.3333333333333" viewBox="0 0 420 297"><g font-family="Helvetica, Arial, sans-serif">
 <rect width="420" height="297" fill="#fff"/><rect x="8" y="8" width="404" height="281" fill="none" stroke="#111" stroke-width=".6"/>
@@ -2224,7 +2226,7 @@
 <text x="126" y="267.90000000000003" font-size="2.3" text-anchor="start" font-weight="normal" fill="#333">Switch 61 as printed, at rest: the park line from the lever (up, over and down) stops short of 53’s contact (grey: probably joined, for park); the link between the circles on the 54c and S lines is printed closed, tying S to 54c (probably a misprint).</text>
 <text x="126" y="272.1" font-size="2.3" text-anchor="start" font-weight="normal" fill="#333">S has no wire printed (probably 96 GR to relay 67). Headlight wipers: unfused tap 94 BR from bar 3–6, a 3 A glass fuse in holder 65 (manual, PDF p. 30), relay 67.</text>
 <text x="126" y="276.3" font-size="2.3" text-anchor="start" font-weight="normal" fill="#333">Relay 67: 88 is + from the 3 A fuse; 95a RD takes it to upper plug row 2 (probably) and 95b RD on to lower row 2 (the park switches); 88a switches 98 GL to the upper motor’s diode (row 1). Rows of 123 counted from the top (none printed); 66 and 123 drawn mirrored.</text>
-<text x="126" y="280.5" font-size="2.3" text-anchor="start" font-weight="normal" fill="#333">97 BR runs from upper plug row 3 (nothing inside motor 66 uses it) to lower plug row 1, so as printed the lower motor gets no start feed; probably the manual leaves out a row 3 to row 1 link inside the upper motor.</text>
+<text x="126" y="280.5" font-size="2.3" text-anchor="start" font-weight="normal" fill="#333">97 BR runs from upper plug row 3 (nothing inside motor 66 uses it) to lower plug row 1, so as printed the lower motor gets no start feed; on the car both run together (E10), so the book leaves out a link, probably row 3 to row 1 inside the upper motor.</text>
 <text x="126" y="284.7" font-size="2.3" text-anchor="start" font-weight="normal" fill="#333">Diagram is not RHD-specific; the switch and relay positions (D8/D9) are drawing grid squares, not locations in the car. Light-grey terminal labels on 61 (31b, 54c, INT, 53, 53b) are probable; S and 53a are read.</text>
 </g></svg>
 <svg x="400.526936026936" y="548.6666666666666" width="387.94612794612794" height="274.3333333333333" viewBox="0 0 420 297"><g font-family="Helvetica, Arial, sans-serif">
