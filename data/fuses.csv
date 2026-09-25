@@ -1,0 +1,13 @@
+fuse,rating,bar,status,notes
+1,5 A,1-2,car,"position and rating checked on the car; lid: left park, tail & licence"
+2,5 A,1-2,car,"position and rating checked on the car; lid: right park, tail & licence"
+3,8 A,3-6,car,"position and rating checked on the car; lid: horn, back-up lights"
+4,8 A,3-6,car,"position and rating checked on the car; lid: wiper-washer, instruments, el. mirror"
+5,8 A,3-6,car,"position and rating checked on the car; lid: el. heated seats, cornering lights"
+6,16 A,3-6,car,position and rating checked on the car; lid: compartment fan
+7,16 A,7-12,car,"position and rating checked on the car; lid: cooling fan, extra lights"
+8,16 A,7-12,car,position and rating checked on the car; lid: rear demist
+9,8 A,7-12,car,"position and rating checked on the car; lid: cigar lighter, compartment light, clock"
+10,8 A,7-12,car,position and rating checked on the car; lid: fuel pump; owner fitted 16 A long ago (spec 8 A)
+11,5 A,7-12,car,"position and rating checked on the car; lid: direction indicator lamps, warning flasher"
+12,5 A,7-12,car,position and rating checked on the car; lid: brake lights

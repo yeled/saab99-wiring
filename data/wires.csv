@@ -1,0 +1,165 @@
+cable,colour,mm2,from,to,status,evidence,notes
+26,VT,1.0,8:56a,11/12 R:main,traced,"label@4030,1897","main beam, right headlamp"
+24,GL,1.0,8:56b,11/12 R:dip,traced,"label@4030,1918","dipped beam, right headlamp"
+25,BL,1.0,8:56a,11/12 L:main,traced,"label@4280,2718","main beam, left headlamp"
+23,GR,1.0,8:56b,11/12 L:dip,traced,"label@4350,2742","dipped beam, left headlamp"
+27,BL/VT,0.75,8:56a,47:7a,traced,"label@4850,2165",main-beam warning lamp in instrument
+29,SV,1.0,11/12 R:earth,earth,traced,label at lamp,headlamp earth
+115,SV,0.75,11/12 L:earth,earth,traced,label at lamp,headlamp earth
+13,SV,0.75,8:31,earth,traced,"label@4280,2250",relay earth
+32,VT,0.75,8:S,9,traced,"label@4850,2190",dip/main toggle pulse from stalk
+31,GL,0.75,10:1,8:86,traced,"label@4850,2140","relay coil feed, headlamp position"
+20,GR,1.5,22:bar 7-12,8:30,traced,"label@3990,2250","headlamp supply, unfused"
+41,GN,1.0,10:4,22:bar 1-2,traced,"label@3990,2226",parking/tail supply via fuses 1-2
+40,GR,1.0,10:3,58:pin with 7 GR,traced,"label@5130,1553","light switch supply, always live"
+7,GR,2.5,22:bar 7-12,20:30 via 58,traced+text,"label@5100,1530","terminal 30 per ignition switch table, PDF p.375"
+30,RD,1.0,10:2,20:X via 58,traced+text,"label@5130,1600","terminal X per ignition switch table, PDF p.375"
+10,GR,4.0,22:bar 7-12,21:30/51,traced,"label@3240,2027",feeds the ignition switch relay contact
+43,BL,0.75,22:fuse 1,13 L,traced,"label@2590,2545",left front parking light
+42,BL,0.75,22:fuse 1,14 L cluster node,traced,"label@2590,2470",left tail lights + number plate light
+45,GN,0.75,22:fuse 2,13 R,traced,"label@2590,2520",right front parking light
+44,GN,0.75,22:fuse 2,14 R cluster node,traced,"label@2590,2495",right tail lights + number plate light
+46,BL,0.75,14 L cluster node,(ends on diagram),stub,"label@7520,3560","accessory tap, likely trailer"
+46a,BL,0.75,15 L,(ends on diagram),stub,"label@7735,3330",accessory tap
+47,GN,0.75,14 R cluster node,(ends on diagram),stub,"label@7620,786","accessory tap, likely trailer"
+47a,GN,0.75,15 R,(ends on diagram),stub,"label@7712,1030",accessory tap
+1,RD,16.0,1:+,4:30,traced,label at starter,battery positive to starter
+6,GR,4.0,4:30,2:B+,traced,label at starter,starter 30 to alternator B+
+5,GR,4.0,2:B+,22:bar 7-12,traced,label at alternator,main feed into bar 7-12 (lands at fuse 10)
+5a,GR,2.5,2:B+,22:bar 7-12,traced,label at alternator,second feed into bar 7-12 (lands at fuse 8)
+195,RD,0.75,2:D+,47:1,traced,label near 47,charge warning lamp
+122,GL,2.5,20:50,89:86,traced+text,label near switch,terminal 50 per PDF p.375; energises relay 89
+12,BR/VT,0.75,20:54,21:86,traced+text,"label@3780,1470",1.0 mm2 between connector 58 and switch; terminal 54 per PDF p.375
+11,VT,4.0,21:87,22:bar 3-6,traced,labels at both ends,ignition-switched feed into bar 3-6
+33,SV,0.75,21:85,earth,traced,label at relay 21,joins 212 SV at relay 113:85
+123,GN/VT,1.5,20:15,147 via 58 (A4) pin 4,traced,label beside switch,terminal 15 per PDF p.375; ignition switch to ballast resistor
+340,RD,0.75,20:X via 58,122:1 radio junction box,car,labels at 58 (B9) and 122; car check D1: radio dead with key out,"radio + from ignition switch X via 58 (B9); switched by the key, as the Turbo diagram shows"
+280,GR,1.5,22:bar 7-12,73:1,traced,labels at bar and at 73,"service outlet, always live"
+202,GR,1.5,22:bar 7-12,89:30,traced,label above fuse 7,"start relay supply, unfused"
+94,BR,0.75,22:bar 3-6,67:headlight wiper relay,traced,"label@2745,2230",unfused tap off bar 3-6
+117,RD,1.5,22:fuse 3,40:horns,traced,"label@2640,2575",
+135,VT,1.0,22:fuse 3,31:reversing light switch,traced,"label@2830,3120",via connector 58 (E12)
+85,BR,1.0,22:fuse 4,61:wiper switch,traced,label at switch 61,
+85a,BR,0.75,22:fuse 4,62:4 (wiper motor),traced,labels near fuse and at relay 83,fuse 4 has a second 85a BR to relay 83 (85a#relay)
+85a#relay,BR,0.75,22:fuse 4,83:85a,traced,"scan, 24 Sep: traced both ways, fuse 4 diagonal to relay 83 terminal 85a","fuse 4 feeds two 85a BR wires: this one to the interval relay, the other to motor terminal 4"
+380,GL,1.0,22:fuse 5,140:15 speed transmitter,traced,"label@2950,2975","fuel boost; the drawing says 140, the 1979 legend calls it 151, speed transmitter (E11)"
+140,GL,1.0,22:fuse 5,64 seat heating (via 58 (E12) and 59),traced,"labels at fuse 5, at 58 (E12) and at 59",seat heating element with thermostat
+380a,GL,1.0,22:fuse 5,137 throttle valve switch,traced,labels at fuse 5 and at 137 (book photo),fuel boost: switch closes at 62 degrees of throttle (PDF p.24)
+103,BL,2.5,22:fuse 6,35:ventilator fan switch,traced,"label@2955,3250",
+110,GL,1.5,22:fuse 7,38:30/51,traced,"label@3000,2580",radiator fan relay contact
+113,RD,0.75,22:fuse 7,38:86,traced,"label@3025,2553",radiator fan relay coil
+210,RD,2.5,22:fuse 8,113:30,traced,"label@3050,2528",heated rear window relay
+126,BL,1.0,22:fuse 9,"58 (B11): 126a BL to 48, 127 BL to 49, 160 GL to the interior lights",traced,"book photos 24 Sep: labels at fuse 9, along the route and at 58 (B11)","fuse 9 lid: cigar lighter, compartment light, clock"
+260,GR,1.5,22:fuse 10,102:30,traced,"label@3300,2465",fuel pump relay
+70,RD/VT,1.0,22:fuse 11,23:49,traced,labels at both ends,indicator/hazard flasher unit
+131,RD,1.0,22:fuse 12,29,traced,label at switch 29,brake light switch
+123b,GN/VT,1.5,147,5:15,traced,label between 147 and coil,ballast resistor to coil +
+123d,GN/VT,1.0,5:15,146:15,traced,labels at coil and at 146,control unit supply from coil +
+390,,,6:sender,146:31d,traced,label at 146,"shielded sender cable, no colour given"
+391,,,6:sender,146:7,traced,label at 146,"shielded sender cable, no colour given"
+392,SV,0.75,146:shield,earth,traced,label at 146,cable shield
+393,SV,1.5,146:31,earth,traced,label at 146,
+121,BL,1.5,146:16,5:1 (coil terminal 1),traced,"scan, 24 Sep: zoom shows it ending at the coil shoulder marked 1","coil primary, switched by the control unit"
+284,BL,0.75,146:16,102,traced,labels at 146 and 102,engine-speed signal to the pump relay
+394,GN/VT,1.0,147,89:87a,traced,label at 147,bypasses the ballast resistor while cranking (PDF p.324-325)
+122a,GL,2.5,89:87,4:50,traced,label at starter,start relay output to starter solenoid
+272,BR,0.75,4:16,94,traced,labels at starter and at 94,live while cranking; via 58 (A4) pin 3
+273,GR,0.75,92,94,traced,label at 92,the two thermo-time switch wires swap places on the drawing
+271,RD,1.0,92,89:87 via 58 (A4),traced,label at 92,"thermo-time switch heater, live while cranking; via 58 (A4) pin 1, labelled GN on the relay side"
+377,GN/VT,0.75,20:15 via 58 (A4) pin 4,144,traced,label at 144,"ignition 15 feed to the overboost switch, spliced with 123 at pin 4"
+378,GN/VT,0.75,144,102:15,traced,label at 144,overboost cut
+261,GR,2.5,102:87,103:+,traced,book photos 24 Sep: labels along the route and at the pump,via 58 (B11) and 3-pole connector 57 (C12)
+262,SV,2.5,103,earth,traced,label at pump,
+261a,GR,0.75,102:87,95 and 96 via 58 (A4) pin 2,traced,label on run,pump relay output to both injection heaters
+265,GR,0.75,261a,95:+,traced,label at 95,
+266,SV,0.75,95,earth,traced,label at 95,
+267,GR,0.75,102:87 via 58 (A4) pin 2,96:+,traced,labels at 96 and 58,shares pin 2 with 261a/265: fed from the pump relay output
+268,SV,0.75,96,earth,traced,label at 96,
+263,SV,0.75,102:31,earth,traced,label at 102,
+201,SV,0.75,89:85,earth,traced,label at 89,coil earthed directly: no gear-selector switch
+282,GL,1.0,89:87,73:4,traced,labels at 73 and 89,service outlet start terminal (lets a test instrument crank)
+283,GN/VT,0.75,20:15 via 58 (A4) pin 4,73,traced,label at 58,ignition 15 to the service outlet
+183,GL,1.0,45,47:9,traced,labels at 45 and near 47:9,temperature gauge; via 58 (A4) pin 6
+184,BL,1.0,44,47:11,traced,labels at 44 and at 47:11,oil warning lamp; via 58 (A4) pin 5
+185,GR,0.75,46,47:3,traced,labels at 46 and at 47:3,fuel gauge; via 3-pole connector 57
+186,BR,0.75,46,47:12,traced,labels at 46 and at 57,fuel warning lamp; via 3-pole connector 57
+71,GN/VT,0.75,23:C,47:6,traced,labels at 47:6 and at 23,direction indicator repeater lamp
+179,SV,0.75,47:4,earth,traced,label at 47:4,
+187,VT,0.75,47:5,"58 (B9), then 188 VT",traced,book photos 24 Sep: labels at 47:5 and at 58 (B9),brake warning lamp; earthed by handbrake switch 43 or brake failure switch 42
+182,BR/VT,0.75,fuse 4 (off 85 BR at 58 (D8)),?,traced,book close-up (grid 9): branches off the fuse side of the 85 BR pin at 58 (D8),instrument supply; matches the fuse 4 lid label (instruments)
+203,BR,0.75,110,116 heated window switch,traced,"book close-ups, 1979 page (same on 1980): line from 110 runs to the third terminal of 116; 1979 scan: 203 and 214 fan out from the same switch terminal","printed BR at the tachometer and BL at switch 116 in both 1979 and 1980, a misprint; probably the tachometer + supply, looped from the switch feed (214 BL)"
+341,SV,0.75,122:5,earth,traced,label at 122; radio page,radio earth
+342,BR/VT,0.75,122:2,130 +,traced,label at 122; radio page,right speaker + on the Turbo diagram (radio page: left); via 59
+343,GN/VT,0.75,122:3,130 -,traced,label at 122; radio page,right speaker - on the Turbo diagram (radio page: left); via 59
+344,RD/VT,0.75,122:6,131 +,traced,label at 122; radio page,left speaker + on the Turbo diagram (radio page: right); via 59
+345,BL/VT,0.75,122:7,131 -,traced,label at 122; radio page,left speaker - on the Turbo diagram (radio page: right); via 59
+126a,BL,1.0,58 (B11),48,traced,label at 48,cigarette lighter feed
+127,BL,0.75,48 (126a feed),49,traced,book photos 24 Sep: joins the lighter feed,"clock feed, fuse 9 via 126a"
+215,SV,0.75,48,earth,traced,label at 48,lighter earth; the heated window switch lamp shares it
+128,SV,0.75,49,earth,traced,label at 49,
+73,GN,1.0,23:49a,25,traced,labels at 23 and 25,flasher output into the hazard switch
+76#hazard,GN,1.0,25,24:54,traced,book close-up: label at 25 reads 76 GN 1.0,"hazard switch to indicator switch feed; the rear left indicator wire is also printed 76 (76 BL/VT), so one number is a misprint"
+67,BL/VT,1.0,25:L,24:L,traced,label between 24 and 25,hazard feed to the left side
+68,RD/VT,1.0,25:R,24:R,traced,label between 24 and 25,hazard feed to the right side
+77,BL/VT,1.0,24:L via 58 (B9),27 front L,traced,label at 58 (B9) and at lamp,
+80,RD/VT,1.0,24:R via 58 (B9),28 front R,traced,label at 58 (B9) and at lamp,
+76,BL/VT,1.0,58 (B9),27 rear L,traced,labels on the far side of 58 (B9) and at the rear clusters,route to the rear not traced
+79,RD/VT,1.0,58 (B9),28 rear R,traced,labels on the far side of 58 (B9) and at the rear clusters,route to the rear not traced
+52,SV,0.75,25:lamp,earth,traced,label at 25,"hazard switch lamp earth, via 59"
+132,RD,1.0,29,58 (E12),traced,labels at 29 and 58 (E12),brake light switch output
+133,RD,0.75,58 (E12),30 L and R,traced,labels at the rear clusters,
+136,VT,1.0,31,32 L,traced,labels at 31 and left cluster,
+137,VT,0.75,136,32 R,traced,label at right cluster,
+84,GN/VT,0.75,61,83,traced,labels at 61 and 83,interval control
+88,BL,0.75,61,83,traced,labels at 61 and 83,
+88a,BL/VT,0.75,83,62:2 (park contact),traced,"scan trace from 83 to the motor, and back",interval relay park feedback from the wiper motor (probably)
+91,GL,0.75,61,83,traced,labels at 61 and 83,washer switch to the interval relay
+91a,GL,0.75,83,63:+,traced,labels at 83 and 63,washer pump feed; the relay also runs the wipers while washing
+86,RD,1.0,61,62:5 (via 58 (D8)),traced,"scan, 24 Sep: straight-line follow both ways between the switch-side label and motor terminal 5",wiper motor speed wire
+87,GN,1.0,61,62:3 (via 58 (D8)),traced,"scan, 24 Sep: straight-line follow both ways between the switch-side label and motor terminal 3",wiper motor speed wire
+83,SV,0.75,83,earth,traced,label at 83,
+89,SV,0.75,62:1,earth,traced,label at 62,
+92,SV,1.0,63,earth,traced,label at 63,
+95a,RD,0.75,67:88,66 (via 123),car,"car check (photos): colours correct at the 123 plugs; one pin takes both reds (95a in, 95b on)",headlight wiper motor feed
+95b,RD,0.75,95a,"66 (second, via 123)",car,car check (photos): colours correct at the 123 plugs; shares a pin with 95a at the other plug,feed to the second headlight wiper motor
+97,BR,0.75,upper 123 pin 3,lower 123 pin 1,car,scan and book close-ups: runs between the two plugs; colour checked on the car,"links the two headlight wiper motors, carrying the control wire on"
+98,GL,0.75,67:88a,upper 123 pin 1,car,scan and book close-ups: relay 88a to the upper plug; colour checked on the car,"motor control wire, switched by the relay (probably)"
+99,SV,0.75,66,earth,car,car check (photos): colours correct at the 123 plugs,
+99a,SV,0.75,66,earth,car,car check (photos): colours correct at the 123 plugs,
+100,SV,0.75,67:87,102:31 (earth),traced,scan trace; book close-up of grid 5-6,earths contact 87; probably brakes the motors at park
+111,GN,1.5,38:87,37 (via 59),traced,book photos 24 Sep: route from 38:87 to connector 59 at the fan,radiator fan motor feed; route not fully traced
+114,SV,0.75,38:85,60,traced,label at 38,relay coil to the thermostat switch
+114a,BL,0.75,60,39,traced,label at 39 side of connector 60,thermostat switch earths the relay coil
+105,GL,2.5,35:8,36 (via 57),traced,labels at 35; trace ends at 36,"heater fan, full speed"
+104,GR,1.0,35:6,36 via 57 and resistor 74,traced,"book photos 24 Sep: 35:6 to 57, through 74, back through 57","heater fan, low speed through resistor 74"
+211,GL,2.5,113:87,115,traced,labels at 113 and 115,heated rear window feed
+212,SV,0.75,113:85,earth,traced,label at 113,joins 33 SV
+213,BL,0.75,116,113:86,traced,book photos 24 Sep: labels at 116 and 113,switch end not traced
+141,SV,1.0,64,earth,traced,label at 59,seat heating earth
+150,GL,0.75,60,59 (A8): seat and belt contacts,traced,book close-ups: runs from 60 (A7) to 59 (A8),"+ for the seat belt warning, fuse 5 via 140 GL; the lamp lead at 59 (C12) is also labelled 150 GL"
+161,GL,0.75,52 (fed by 160 GL),"57, then 50; 163 GL to 55",traced,"book close-up (grid 9-10), 1979: labels on both sides of 57","interior light +, fuse 9"
+164,BL,0.75,52,"57, then 50",traced,"book close-up (grid 9-10), 1979: labels on both sides of 57",from the ignition switch light 52 to the interior light 50
+167,SV,0.75,53 (to 60); and 57 (to 50),60; 50,traced,"book close-up (grid 9-10), 1979: labelled at 53 and between 57 and 50","interior light switch circuit, through 60 and 57 (167a between them)"
+167a,SV,0.75,53 (via 60),57,traced,"book close-up (grid 9-10), 1979: label between 60 and 57",switched earth; connection not traced
+169,SV,0.75,53,58 (A9),traced,"book close-up (grid 9-10), 1979: drops from 53 to 58 (A9)",meets the door switch wires 170/171 across the connector (probably)
+170,SV,0.75,54,58 (A9),traced,"book close-up (grid 9-10), 1979: label at 54 and at 58 (A9)",door switch
+162,SV,0.75,50,51 dome light (mirror),traced,"book close-up (grid 9-10), 1979: labels between 50 and 51",not traced
+165,SV,0.75,50,51 dome light (mirror),traced,"book close-up (grid 9-10), 1979: labels between 50 and 51",not traced
+163,GL,0.75,161 (after 57),55 luggage compartment light,traced,"book close-up (grid 9-10), 1979: branches off 161 GL",
+166,BL,0.75,55,56 luggage compartment light switch (to earth),traced,"book close-up (grid 9-10), 1979: labels at 55 and 56",luggage light to its switch
+168,SV,0.75,"70, 71, 69",earth,traced,"book photos 24 Sep: contacts 69, 70, 71 to earth",
+381,SV,0.75,140:31,earth,traced,label at 140 (book photo),
+382,BL,0.75,140:W,142 solenoid valve (E3),traced,labels at 140 (book photo) and at 142,fuel boost above about 130 km/h (PDF p.33)
+383,GR,0.75,137,(ends on the drawing),stub,"scan, 24 Sep and book photo: ends just past its label",throttle switch output; the fuel boost description (PDF p.210) implies it feeds solenoid valve 142
+188,VT,0.75,58 (B9),"43 handbrake switch, 42 brake failure switch",traced,"book photos 24 Sep: labels at 58, 43 and 42",brake warning lamp return
+204,GL,0.75,"ECU speed signal (with 284, 284a)",110 tachometer,traced,book photos 24 Sep: labels near the TSI bundle and at 110,tachometer signal
+214,BL,0.75,116,?,open,book photos 24 Sep: label at 116,"feed into switch 116; shares the switch terminal with 203 (tachometer supply), per the 1979 scan; source not traced; runs down to row E and meets a line toward connector 58 (E12): join or crossing not clear"
+151,BR,0.75,72,"59 (C12), then 156 BR",traced,book photos 24 Sep: labels at 72 and 59,
+156,BR,0.75,59 (C12),"59 (A8): seat contact 69, belt contacts 70/71",traced,book photos 24 Sep: labels at both connectors and at 58 (A9),from the contacts to the lamp (probably + through the contacts)
+157,SV,0.75,59 (C12),earth (grid 10),traced,book close-ups: 157 SV 0.75 labelled at 59 (C12) and at the earth point in grid 10,seat belt lamp return (probably)
+90,BL,1.0,62,?,open,book photos 24 Sep: label at 62,probably the park (31b) line; the lines around the motor park contact could not be separated on the scan
+160,GL,0.75,"58 (B11), from 126 BL (fuse 9)",58 (A9),traced,"book close-ups, 1979 page (same on 1980): 160 GL leaves the pin 126 BL enters",interior light + feed from fuse 9 (lid: compartment light)
+95,RD,0.75,65 (3 A fuse),67:88,traced,scan and book close-ups,relay supply after the 3 A fuse; 88 also feeds 95a to the motors
+96,GR,0.75,61 wiper switch (via 58 (D8)),67:86,traced,"scan trace to 58 (D8); book close-up: the pin runs up, unlabelled, to wiper switch 61",headlight wiper relay coil feed from the wiper switch (probably its washer contact)
+100a,SV,0.75,67:85,?,stub,scan and book close-up: ends with an arrow just below the relay,coil side 85; the drawing does not show where it goes
+171,SV,0.75,54 (second door switch),58 (A9),traced,"book close-up (grid 9-10), 1979: labels at 58 (A9) and along the run to 54",door switch
