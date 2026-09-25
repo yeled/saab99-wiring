@@ -25,23 +25,44 @@ def sender(x, y, n, name, s=11, sw=1.5):
     return r(x + s - sw - .2), r(y + s - .1)
 
 # ---- combination instrument 47 --------------------------------------------
+# Inside as the 1979 book prints it (book photo P8-47, scan p.407 at x 5800-6390, y 1560-1945): a + rail from 2 (182)
+# feeds both gauges and the oil, low-fuel, brake and charge lamps, each lamp between the rail and its own terminal; an
+# earth rail to 4 (179) takes the gauges' third leads and the main-beam (7) and indicator (6) lamps. The book prints a
+# dot at every join; crossings without one (C° earth lead over the + rail, earth rail over the 11-5 line, earth loop
+# over the fuel gauge's + lead) don't join.
+def jdot(x, y): A(f'<circle cx="{x}" cy="{y}" r=".55" fill="#111"/>')   # small junction dot inside a part (as wipers)
 box(150, 70, 140, 120); txt(150, 66, '47 Combination instrument (C9)', 3, w='bold')
-T = {'9': (150, 90), '1': (150, 150), '11': (200, 70), '12': (235, 70), '3': (270, 70),
-     '7a': (170, 190), '5': (200, 190), '6': (230, 190), '2': (260, 190), '4': (280, 190)}
+T = {'9': (150, 90), '1': (150, 150), '11': (200, 70), '12': (235, 70), '3': (265, 70),
+     '7': (170, 190), '5': (200, 190), '6': (235, 190), '2': (260, 190), '4': (271, 190)}
 for k, (x, y) in T.items():
     dot(x, y)
     if x == 150: txt(x + 1.8, y - 1.6, k, 2.3)
     elif y == 70: txt(x + 1.8, y + 3.4, k, 2.3)
     else: txt(x + 1.8, y - 1.6, k, 2.3)
-gauge(180, 90, 11, '°C'); A('<path d="M150,90 H169" stroke="#111" stroke-width=".5"/>'); txt(180, 105.5, 'temperature', 2.3, 'middle')
-gauge(270, 110, 11, 'fuel'); A('<path d="M270,70 V99" stroke="#111" stroke-width=".5"/>'); txt(270, 125.5, 'fuel gauge', 2.3, 'middle')
-for (x, y, tx, ty, cap) in ((200, 70, 200, 84, 'oil'), (235, 70, 235, 84, 'low fuel'), (150, 150, 172, 150, 'charge'),
-                            (170, 190, 170, 172, 'main beam'), (200, 190, 200, 172, 'brake'), (230, 190, 230, 172, 'indicator')):
-    A(f'<path d="M{x},{y} L{tx if x == 150 else x},{ty}" stroke="#111" stroke-width=".5"/>')
-    lx = tx + (4 if x == 150 else 0)
-    lamp(lx, ty, r=3.5)
-    txt(lx, ty + (8 if y == 70 else -5.5) if x != 150 else ty - 5.5, cap, 2.2, 'middle')
-txt(220, 140, 'internal wiring not drawn', 2.2, 'middle', fill='#777')
+PR, ER, EL, LR = 130, 175, 158, 3.5          # + rail, earth rail, earth loop up to the fuel gauge, lamp radius
+on_circle = lambda cx, cy, r, x: round(cy + (r * r - (x - cx) ** 2) ** .5, 2)   # lowest point of the circle at x
+# gauge faces as printed: C° (temperature) and B (bensin, fuel)
+# temperature gauge: sender 9 on the left, + from the bottom, earth from the right side down to the earth rail
+gauge(177, 90, 12, 'C°'); inner([(150, 90), (165, 90)]); txt(175, 108, 'temperature', 2.3, 'end')
+inner([(177, 102), (177, PR)]); jdot(177, PR)
+inner([(189, 90), (193, 90), (193, ER)]); jdot(193, ER)
+# fuel gauge: sender 3 on top, + lead from the bottom left through the rail to 2, earth lead from the bottom right to 4
+gauge(265, 90, 12, 'B'); inner([(265, 70), (265, 78)]); txt(273, 108, 'fuel gauge', 2.3)
+inner([(260, on_circle(265, 90, 12, 260)), (260, 190)]); jdot(260, PR)
+inner([(271, on_circle(265, 90, 12, 271)), (271, 190)]); jdot(271, EL)
+inner([(177, PR), (260, PR)])                                          # the + rail
+# oil (11) and low fuel (12): terminal, lamp, + rail; the 11 line carries on through the brake lamp to 5
+for x, cap in ((200, 'oil'), (235, 'low fuel')):
+    inner([(x, 70), (x, 90 - LR)]); lamp(x, 90, r=LR); inner([(x, 90 + LR), (x, PR)]); jdot(x, PR); txt(x + 5.5, 91, cap, 2.2)
+inner([(200, PR), (200, 142 - LR)]); lamp(200, 142, r=LR); inner([(200, 142 + LR), (200, 190)]); txt(205.5, 143, 'brake', 2.2)
+# charge (1): + rail, lamp, then down and left to 1
+inner([(177, PR), (177, 142 - LR)]); lamp(177, 142, r=LR); inner([(177, 142 + LR), (177, 150), (150, 150)])
+txt(171.5, 143, 'charge', 2.2, 'end')
+# earth rail: main-beam lamp (fed from 7), C° earth lead, the loop up to the fuel gauge's earth lead, indicator lamp (fed
+# from 6, on the low-fuel lamp's vertical as printed)
+lamp(177, ER, r=LR); inner([(177 - LR, ER), (170, ER), (170, 190)]); txt(177, 170, 'main beam', 2.2, 'middle')
+inner([(177 + LR, ER), (235 - LR, ER)]); jdot(215, ER); inner([(215, ER), (215, EL), (271, EL)])
+lamp(235, ER, r=LR); inner([(235, ER + LR), (235, 190)]); txt(235, 170, 'indicator', 2.2, 'middle')
 
 # ---- senders and feeds on the left -----------------------------------------
 # 44 and 45 as the manual prints them (sender symbol, own earth lead); the signal wires keep their old runs at y 50 / 90
@@ -56,7 +77,7 @@ dot(56, 150); tlabel(54.2, 150.6, 'D+', 'end')   # the manual prints D+ left of 
 
 # ---- fuel sender and tachometer on the right ---------------------------------
 box(360, 82, 36, 20); name_(363, 89, '46', 'Fuel level'); txt(363, 93.5, 'transmitter (C12)', 2.4)
-wire('185', [(360, 88), (330, 88), (330, 60), (270, 60), (270, 70)], 300, 58.5)
+wire('185', [(360, 88), (330, 88), (330, 60), (265, 60), (265, 70)], 300, 58.5)
 wire('186', [(360, 96), (340, 96), (340, 54), (235, 54), (235, 70)], 300, 52.5)
 A('<rect x="343" y="84" width="4" height="16" fill="#ddd" stroke="#111" stroke-width=".5"/>'); txt(342, 81, '57 (B12)', 2.2, fill='#555')
 gauge(340, 150, 12, 'r/min'); txt(340, 168, '110 Tachometer (C11)', 2.6, 'middle', w='bold')
@@ -64,9 +85,9 @@ wire('203', [(352, 150), (362, 150)], label=False); tag(364, 150, '203 BR → 11
 wire('204', [(340, 138), (340, 130), (346, 130)], label=False); tag(348, 130, '204 GL 0.75 ← ECU speed signal')
 
 # ---- bottom terminals ----------------------------------------------------------
-wire('179', [(280, 190), (280, 196)], label=False); earth(280, 196); txt(284, 199, '179 SV 0.75', 2.3)
+wire('179', [(271, 190), (271, 196)], label=False); earth(271, 196); txt(275, 199, '179 SV 0.75', 2.3)
 wire('182', [(260, 190), (260, 206)], label=False); tag(262, 206, '182 BR/VT 0.75 ← fuse 4 (off 85 BR at 58 (D8))')
-wire('71', [(230, 190), (230, 214)], label=False); tag(232, 214, '71 GN/VT 0.75 ← 23 flasher unit, terminal C')
+wire('71', [(235, 190), (235, 214)], label=False); tag(237, 214, '71 GN/VT 0.75 ← 23 flasher unit, terminal C')
 wire('187', [(200, 190), (200, 222)], label=False); tag(202, 222, '187 VT 0.75 → 58 (B9) → 188 VT → 43 handbrake, 42 brake failure switch')
 wire('27', [(170, 190), (170, 230)], label=False); tag(172, 230, '27 BL/VT 0.75 ← 8 lighting relay 56a (lighting sheet)')
 
@@ -83,7 +104,8 @@ A(f'<path d="M{x},{ly + 17} h9" stroke="#222" stroke-width="1.2"/>'); txt(x + 11
 if DASHED[0]: A(f'<path d="M{x + 48},{ly + 17} h9" stroke="#222" stroke-width="1.2" stroke-dasharray="3 2"/>'); txt(x + 59, ly + 18, 'not traced yet', 2.4)
 if TICKED[0]: tick(x, ly + 23.3); txt(x + 4, ly + 24, 'checked on the car', 2.4)
 probable_legend(x, ly + 30)
-notes = ['Terminal numbers are the instrument’s own, from the manual’s diagram. Its internal wiring (common supply, earth) isn’t drawn.',
+notes = ['Inside 47 as printed (its own terminal numbers): a + rail from 2 (182) feeds both gauges and the oil (11), low-fuel (12), brake (5) '
+         'and charge (1) lamps; an earth rail to 4 (179) takes the gauges’ third leads and the main-beam (7) and indicator (6) lamps.',
          'Oil and temperature wires pass connector 58 (A4), pins 5 and 6; the fuel sender wires pass 3-pole connector 57 (B12).',
          'Charge lamp: alternator D+ is 195 RD 0.75. Main-beam lamp: 27 BL/VT from lighting relay 8. Indicator lamp: 71 GN/VT from flasher 23.',
          'Supply: 182 BR/VT from fuse 4, branching off the wiper feed 85 BR at connector 58 (D8). Tachometer: signal 204 GL, supply 203 via 116.',
