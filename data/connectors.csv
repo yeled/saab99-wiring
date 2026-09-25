@@ -2,6 +2,6 @@ connector,grid,pin,left side (on diagram),right side (on diagram),status,notes
 58,A4,1,271 RD 1.0 to 92 thermo-time switch,271 GN 1.0 to 89:87 start relay,traced,colour changes at the connector
 58,A4,2,265 GR 0.75 to 95 aux air regulator; 267 GR 0.75 to 96 warm-up regulator,261a GR 0.75 to 102:87 fuel pump relay,traced,both injection heaters share this pin
 58,A4,3,272 BR 0.75 to 4:16 starter,272 BR 0.75 to 94 cold-start valve,traced,
-58,A4,4,123 GN/VT 1.5 from 20:15 ignition switch; 377 GN/VT 0.75 to 144 pressure switch; 283 GN/VT 0.75 to 73 service outlet,123 GN/VT 1.5 to 147 ballast resistor,traced,ignition 15 for the coil and the pump relay control both pass this pin
+58,A4,4,123 GN/VT 1.5 from 20:15 ignition switch; 377 GN/VT 0.75 to 144 pressure switch; 283 GN/VT 0.75 to 73 service outlet,123 GN/VT 1.5 to 147 ballast resistor; 123d GN/VT 1.0 to 146:15 control unit,traced,ignition 15 for the coil and the pump relay control both pass this pin; 123d leaves on the 147 side (book photo IMG_4729; 1977 Turbo addendum p.53 (371-2))
 58,A4,5,184 BL 1.0 to 44 oil pressure switch,to 47 oil warning lamp,traced (instrument end not confirmed),
 58,A4,6,183 GL 1.0 to 45 temperature sender,to 47 temperature gauge,traced,

@@ -5,8 +5,9 @@ cable,colour,mm2,from,to,status,evidence,notes
 23,GR,1.0,8:56b,11/12 L:dip,traced,"label@4350,2742","dipped beam, left headlamp"
 27,BL/VT,0.75,8:56a,47:7a,traced,"label@4850,2165",main-beam warning lamp in instrument
 29,SV,1.0,11/12 R:earth,earth,traced,label at lamp,headlamp earth
-115,SV,0.75,11/12 L:earth,earth,traced,label at lamp,headlamp earth
-13,SV,0.75,8:31,earth,traced,"label@4280,2250",relay earth
+115,SV,0.75,11/12 L:common,39,traced,label at lamp; book photo IMG_4715; scan p.407; 1977 Turbo addendum p.53 (371-2),"earths radiator fan thermostat switch 39 (and so relay 38’s coil) through the left headlamp’s earth, 28 SV"
+28,SV,1.0,11/12 L:common,"earth (main earth star, D3)",traced,scan p.407 (label in the grid C2 bundle); 1977 Turbo addendum p.53 (371-2),the left headlamp’s own earth
+13,SV,0.75,8:31,113:85,traced,"label@4280,2250; book photo IMG_4722; 1977 Turbo addendum p.53 (371-2)",relay earth; meets 33 SV and 212 SV at 113:85; earth via 212 SV and joint 158
 32,VT,0.75,8:S,9,traced,"label@4850,2190",dip/main toggle pulse from stalk
 31,GL,0.75,10:1,8:86,traced,"label@4850,2140","relay coil feed, headlamp position"
 20,GR,1.5,22:bar 7-12,8:30,traced,"label@3990,2250","headlamp supply, unfused"
@@ -31,13 +32,16 @@ cable,colour,mm2,from,to,status,evidence,notes
 122,GL,2.5,20:50,89:86,traced+text,label near switch,terminal 50 per PDF p.375; energises relay 89
 12,BR/VT,0.75,20:54,21:86,traced+text,"label@3780,1470",1.0 mm2 between connector 58 and switch; terminal 54 per PDF p.375
 11,VT,4.0,21:87,22:bar 3-6,traced,labels at both ends,ignition-switched feed into bar 3-6
-33,SV,0.75,21:85,earth,traced,label at relay 21,joins 212 SV at relay 113:85
+33,SV,0.75,21:85,113:85,traced,label at relay 21; book photo IMG_4720; 1977 Turbo addendum p.53 (371-2),joins 212 SV at relay 113:85
 123,GN/VT,1.5,20:15,147 via 58 (A4) pin 4,traced,label beside switch,terminal 15 per PDF p.375; ignition switch to ballast resistor
 340,RD,0.75,20:X via 58,122:1 radio junction box,traced,labels at 58 (B9) and 122,"radio + from ignition switch X via 58 (B9); switched by the key, as the Turbo diagram shows"
 280,GR,1.5,22:bar 7-12,73:1,traced,labels at bar and at 73,"service outlet, always live"
 202,GR,1.5,22:bar 7-12,89:30,traced,label above fuse 7,"start relay supply, unfused"
 94,BR,0.75,22:bar 3-6,67:headlight wiper relay,traced,"label@2745,2230",unfused tap off bar 3-6
 117,RD,1.5,22:fuse 3,40:horns,traced,"label@2640,2575",
+118,SV,1.5,40 (E1):-,41 via 58 (E2) pin 1 and 58 (D8) pin 1,traced,book photos IMG_4715 (at horn 40 and 58 (E2)) and IMG_4723 (at 58 (D8) pin 1); scan p.407; 1977 Turbo addendum p.53 (371-2),horn return; horn contact 41 earths it (horns switched on the earth side)
+119,RD,1.0,40 (E1):+,40 (D1):+,traced,book photo IMG_4715 (at 40 (E1)); scan p.407 (40 (D1)); 1977 Turbo addendum p.53 (371-2),links the two horns’ + terminals
+120,SV,1.0,40 (E1):-,40 (D1):-,traced,book photo IMG_4715 (at 40 (E1)); scan p.407 (40 (D1)); 1977 Turbo addendum p.53 (371-2),links the two horns’ − terminals
 135,VT,1.0,22:fuse 3,31:reversing light switch,traced,"label@2830,3120",via connector 58 (E12)
 85,BR,1.0,22:fuse 4,61:wiper switch,traced,label at switch 61,
 85a,BR,0.75,22:fuse 4,62:4 (wiper motor),traced,labels near fuse and at relay 83,fuse 4 has a second 85a BR to relay 83 (85a#relay)
@@ -54,12 +58,12 @@ cable,colour,mm2,from,to,status,evidence,notes
 70,RD/VT,1.0,22:fuse 11,23:49,traced,labels at both ends,indicator/hazard flasher unit
 131,RD,1.0,22:fuse 12,29,traced,label at switch 29,brake light switch
 123b,GL,1.5,147,5:15,car,"label between 147 and coil; car: yellow at 147’s 0.6 Ω end and at the coil’s + (photos source/photos/car-147-ballast-resistor.jpg and car-5-coil.jpg, 25 Sep 2026)",ballast resistor to coil +. The book prints GN/VT 1.5; on the car it is yellow at both ends (a 1980 99 Turbo has yellow there too)
-123d,GN/VT,1.0,5:15,146:15,traced,labels at coil and at 146,control unit supply from coil +
+123d,GN/VT,1.0,58 (A4) pin 4,146:15,traced,labels at coil and at 146; book photo IMG_4729 (passes under the coil); scan walk; 1977 Turbo addendum p.53 (371-2),control unit +15 before the ballast resistor; the 1977 diagram prints 0.75
 390,,,6:sender,146:31d,traced,label at 146,"shielded sender cable, no colour given"
 391,,,6:sender,146:7,traced,label at 146,"shielded sender cable, no colour given"
 392,SV,0.75,146:shield,earth,traced,label at 146,cable shield
 393,SV,1.5,146:31,earth,traced,label at 146,
-121,BL,1.5,146:16,5:1 (coil terminal 1),car,"scan, 24 Sep: zoom shows it ending at the coil shoulder marked 1; car, check E2: blue on the coil’s − (terminal 1) (25 Sep 2026)","coil primary, switched by the control unit"
+121,BL,1.5,146:16,5:1 (coil terminal 1),car,"scan, 24 Sep: zoom shows it ending at the coil shoulder marked 1; car, check E2: blue on the coil’s − (terminal 1) (25 Sep 2026); 1977 Turbo addendum p.53 (371-2) (124 BL 1.5)","coil primary, switched by the control unit; the 1977 Turbo diagram prints 124 BL 1.5 here; the 1979 number is unreadable"
 284,BL,0.75,146:16,102,traced,labels at 146 and 102,engine-speed signal to the pump relay
 394,GN/VT,1.0,147,89:87a,traced,label at 147,bypasses the ballast resistor while cranking (PDF p.324-325)
 122a,GL,2.5,89:87,4:50,traced,label at starter,start relay output to starter solenoid
@@ -75,11 +79,11 @@ cable,colour,mm2,from,to,status,evidence,notes
 266,SV,0.75,95,earth,traced,label at 95,
 267,GR,0.75,102:87 via 58 (A4) pin 2,96:+,traced,labels at 96 and 58,shares pin 2 with 261a/265: fed from the pump relay output
 268,SV,0.75,96,earth,traced,label at 96,
-263,SV,0.75,102:31,earth,traced,label at 102,
-201,SV,0.75,89:85,earth,traced,label at 89,coil earthed directly: no gear-selector switch
+263,SV,0.75,102:31,21:85,traced,label at 102; scan p.407; book photo IMG_4720; 1977 Turbo addendum p.53 (371-2),the join is hidden under relay 21’s border (probably 85)
+201,SV,0.75,89:85,158,traced,label at 89; 1977 Turbo addendum p.53 (371-2),coil earthed directly: no gear-selector switch; to joint 158 probably (the 1979 scan trace reaches the joint)
 282,GL,1.0,89:87,73:3,traced,"labels at 73 and 89; pin 3: book photo IMG_4717 read with a reference photo of the same TSI socket (same on 99 and 900: source/ref/c900-tsi-socket.jpg), which puts start and +15 next to each other in this order",service outlet start terminal (lets a test instrument crank)
 283,GN/VT,0.75,20:15 via 58 (A4) pin 4,73:4,traced,"label at 58; pin 4: book photo IMG_4717 read with a reference photo of the same TSI socket (same on 99 and 900: source/ref/c900-tsi-socket.jpg), which puts start and +15 next to each other in this order",ignition 15 to the service outlet
-281,SV,1.5,73:2,earth,traced,book photo IMG_4717 (label at 73); ground pin per the reference photo of the TSI socket,service outlet earth; the scan runs it towards earth joint 158 (probably)
+281,SV,1.5,73:2,158,traced,book photo IMG_4717 (label at 73); ground pin per the reference photo of the TSI socket; book photo IMG_4720 (its riser on 158 T1; the label is read at 73); 1977 Turbo addendum p.53 (371-2),"service outlet earth, to earth joint 158"
 284a,BL,0.75,73:5,284 (joins it by relay 102),traced,book photo IMG_4717 (label at 73); scan trace to the 284 junction; tach pin per the reference photo of the TSI socket,engine-speed signal to the service outlet; 204 GL to the tachometer leaves the same pin
 183,GL,1.0,45,47:9,traced,labels at 45 and near 47:9,temperature gauge; via 58 (A4) pin 6
 184,BL,1.0,44,47:11,traced,labels at 44 and at 47:11,oil warning lamp; via 58 (A4) pin 5
@@ -100,18 +104,30 @@ cable,colour,mm2,from,to,status,evidence,notes
 215,SV,0.75,48,earth,traced,label at 48,lighter earth; the heated window switch lamp shares it
 128,SV,0.75,49,earth,traced,label at 49,
 73,GN,1.0,23:49a,25,traced,labels at 23 and 25,flasher output into the hazard switch
-76#hazard,GN,1.0,25,24:54,traced,book close-up: label at 25 reads 76 GN 1.0,"hazard switch to indicator switch feed; the rear left indicator wire is also printed 76 (76 BL/VT), so one number is a misprint"
+76#hazard,GN,1.0,25,24:54,traced,book photo IMG_4724 (second digit blotted); 1977 Turbo addendum p.53 (371-2) (74 GN 1.0),hazard switch + to indicator switch 24:54; probably 74 GN 1.0: the 1979 digit is blotted and the 1977 Turbo diagram prints 74 (76 is only the rear left indicator)
 67,BL/VT,1.0,25:L,24:L,traced,label between 24 and 25,hazard feed to the left side
 68,RD/VT,1.0,25:R,24:R,traced,label between 24 and 25,hazard feed to the right side
-77,BL/VT,1.0,24:L via 58 (B9),27 front L,traced,label at 58 (B9) and at lamp,
-80,RD/VT,1.0,24:R via 58 (B9),28 front R,traced,label at 58 (B9) and at lamp,
+75,BL/VT,1.0,24:L,58 (B9) via 58 (D8) pin 11,traced,book photo IMG_4723 (labelled on both sides of 58 (D8)); 1977 Turbo addendum p.53 (371-2),"indicator switch output, left; becomes 77 (front) and 76 (rear) at 58 (B9)"
+78,RD/VT,1.0,24:R,58 (B9) via 58 (D8) pin 10,traced,book photo IMG_4723 (labelled on both sides of 58 (D8)); 1977 Turbo addendum p.53 (371-2),"indicator switch output, right; becomes 80 (front) and 79 (rear) at 58 (B9)"
+77,BL/VT,1.0,75 at 58 (B9),27 front L,traced,label at 58 (B9) and at lamp; book photo IMG_4723 (24’s outputs printed 75 BL/VT and 78 RD/VT at 58 (D8)); 1977 Turbo addendum p.53 (371-2),24’s own outputs are 75 and 78
+80,RD/VT,1.0,78 at 58 (B9),28 front R,traced,label at 58 (B9) and at lamp; book photo IMG_4723 (24’s outputs printed 75 BL/VT and 78 RD/VT at 58 (D8)); 1977 Turbo addendum p.53 (371-2),24’s own outputs are 75 and 78 (the 1979 78 is smudged; the 1977 diagram prints 78)
 76,BL/VT,1.0,58 (B9),27 rear L,traced,labels on the far side of 58 (B9) and at the rear clusters,route to the rear not traced
 79,RD/VT,1.0,58 (B9),28 rear R,traced,labels on the far side of 58 (B9) and at the rear clusters,route to the rear not traced
 52,SV,0.75,25:lamp,earth,traced,label at 25,"hazard switch lamp earth, via 59"
-132,RD,1.0,29,58 (E12),traced,labels at 29 and 58 (E12),brake light switch output
-133,RD,0.75,58 (E12),30 L and R,traced,labels at the rear clusters,
+132,RD,1.0,29,30 L (via 58 (E12)),traced,labels at 29 and 58 (E12); book photos IMG_4727/IMG_4728; 1977 Turbo addendum p.53 (371-2) (132 RD via 58 to the left cluster’s 30),brake light switch output
+133,RD,0.75,30 L,30 R,traced,labels at the rear clusters; book photos IMG_4727/IMG_4728; 1977 Turbo addendum p.53 (371-2) (133 runs from the left cluster to the right),
 136,VT,1.0,31,32 L,traced,labels at 31 and left cluster,
-137,VT,0.75,136,32 R,traced,label at right cluster,
+137,VT,0.75,32 L,32 R,traced,label at right cluster; book photos IMG_4727/IMG_4728; 1977 Turbo addendum p.53 (371-2) (137 runs from the left cluster to the right),
+138,BL,1.0,"31 (switched terminal, with 136)",58 (E2) pin 4 via 58 (E12) row 4,traced,"book photo IMG_4728; scan p.407; 1977 Turbo addendum p.53 (371-2); car, checks E16 and F4 (reverse lights on fuse 3)",reversing feed to the front housings’ side back-up lights
+139,VT,0.75,58 (E2) pin 4,13 L lower bulb (side back-up light; 1977 legend 119),traced,"book photo IMG_4715; scan p.407; 1977 Turbo addendum p.53 (371-2); car, check E16",
+139a,VT,0.75,58 (E2) pin 4,13 R lower bulb,traced,"book photo IMG_4714; scan p.407; 1977 Turbo addendum p.53 (371-2); car, check E16","same pin as 139, on 138’s side of the connector"
+360,SV,0.75,13 L housing (common earth),"earth (main earth star, D3)",traced,book photo IMG_4715; scan p.407 (label in the grid C2 bundle); 1977 Turbo addendum p.53 (371-2),"earth of the left front housing: parking bulb, indicator 27 and the lower bulb"
+361,SV,1.0,13 R housing (common earth),"63 (earth terminal, with 92 SV)",traced,book photos IMG_4714 and IMG_4710 (label at 63); scan p.407; 1977 Turbo addendum p.53 (371-2),"earth of the right front housing: parking bulb, indicator 28 and the lower bulb; on to joint 158 through 92 SV"
+220,BR/VT,0.5,22:fuse 5,"117 (corner lamp switch, feed)",open,"1977 Turbo addendum p.53 (371-2); car, check E19 (dash switch, fuse 5; independent of the indicators)","118 is the second filament of the front parking bulb; the 1979 print omits this circuit; colours from the 1977 diagram, E19b checks them"
+221,BR/VT,0.5,117 (output),118 L via 58,open,"1977 Turbo addendum p.53 (371-2); car, check E19 (dash switch, fuse 5; independent of the indicators)","118 is the second filament of the front parking bulb; the 1979 print omits this circuit; colours from the 1977 diagram, E19b checks them"
+222a,BR/VT,0.5,58 (pin with 221),118 R,open,"1977 Turbo addendum p.53 (371-2); car, check E19 (dash switch, fuse 5; independent of the indicators)","118 is the second filament of the front parking bulb; the 1979 print omits this circuit; colours from the 1977 diagram, E19b checks them"
+221a,BR/VT,0.5,117 (middle contact),?,open,"1977 Turbo addendum p.53 (371-2); car, check E19 (dash switch, fuse 5; independent of the indicators)","not followed; on the 1977 print it probably runs into light switch 10; 118 is the second filament of the front parking bulb; the 1979 print omits this circuit; colours from the 1977 diagram, E19b checks them"
+223,SV,0.75,117 (pilot lamp),earth,open,"1977 Turbo addendum p.53 (371-2); car, check E19 (dash switch, fuse 5; independent of the indicators)","pilot lamp earth; 118 is the second filament of the front parking bulb; the 1979 print omits this circuit; colours from the 1977 diagram, E19b checks them"
 84,GN/VT,0.75,61,83,traced,labels at 61 and 83,interval control
 88,BL,0.75,61,83,traced,labels at 61 and 83,
 88a,BL/VT,0.75,83,62:2 (park contact),traced,"scan trace from 83 to the motor, and back",interval relay park feedback from the wiper motor (probably)
@@ -119,23 +135,25 @@ cable,colour,mm2,from,to,status,evidence,notes
 91a,GL,0.75,83,63:+,traced,labels at 83 and 63,washer pump feed; the relay also runs the wipers while washing
 86,RD,1.0,61,62:5 (via 58 (D8)),traced,"scan, 24 Sep: straight-line follow both ways between the switch-side label and motor terminal 5",wiper motor speed wire
 87,GN,1.0,61,62:3 (via 58 (D8)),traced,"scan, 24 Sep: straight-line follow both ways between the switch-side label and motor terminal 3",wiper motor speed wire
-83,SV,0.75,83,earth,traced,label at 83,
-89,SV,0.75,62:1,earth,traced,label at 62,
-92,SV,1.0,63,earth,traced,label at 63,
+83,SV,0.75,83,158,traced,label at 83; book photo IMG_4718 (branch d); 1977 Turbo addendum p.53 (371-2),
+89,SV,0.75,62:1,62 (housing),traced,label at 62; scan p.407; 1977 Turbo addendum p.53 (371-2) (89 SV from terminal 1 back to the housing),"returns to the motor housing, from where 90 BL goes to joint 158 (scan; 1977 Turbo addendum p.53 (371-2))"
+92,SV,1.0,63,158,traced,label at 63; book photos IMG_4718/IMG_4720; scan p.407,the 1977 diagram takes it to the main earth star instead; 361 SV from the right front lamp housing shares 63’s earth terminal
 95a,RD,0.75,67:88,66 (via 123),traced,labels at 67 and at 123,headlight wiper motor feed
 95b,RD,0.75,95a,"66 (second, via 123)",traced,book photos 24 Sep: joins 95a at connector 123,feed to the second headlight wiper motor
 97,BR,0.75,upper 123 pin 3,lower 123 pin 1,traced,scan and book close-ups: runs between the two plugs,"links the two headlight wiper motors, carrying the control wire on"
 98,GL,0.75,67:88a,upper 123 pin 1,traced,scan and book close-ups: relay 88a to the upper plug,"motor control wire, switched by the relay (probably)"
 99,SV,0.75,66,earth,traced,label at 123,
 99a,SV,0.75,66,earth,traced,label at 123,
-100,SV,0.75,67:87,102:31 (earth),traced,scan trace; book close-up of grid 5-6,earths contact 87; probably brakes the motors at park
+100,SV,0.75,67:87,102:31 (earth),traced,scan trace; book close-up of grid 5-6,"relay 67’s coil earth (through 100a) and contact 87, to pump relay 102:31"
 111,GN,1.5,38:87,37 (via 59),traced,book photos 24 Sep: route from 38:87 to connector 59 at the fan,radiator fan motor feed; route not fully traced
 114,SV,0.75,38:85,60,traced,label at 38,relay coil to the thermostat switch
-114a,BL,0.75,60,39,traced,label at 39 side of connector 60,thermostat switch earths the relay coil
+114a,BL,0.75,60,39,traced,label at 39 side of connector 60; 1977 Turbo addendum p.53 (371-2) (114a SV 0.75),thermostat switch earths the relay coil; the 1977 Turbo diagram prints 114a SV (black); E14 checks the car
 105,GL,2.5,35:8,36 (via 57),traced,labels at 35; trace ends at 36,"heater fan, full speed"
 104,GR,1.0,35:6,36 via 57 and resistor 74,traced,"book photos 24 Sep: 35:6 to 57, through 74, back through 57","heater fan, low speed through resistor 74"
+107,SV,2.5,36 (via 57 (F11) row 3),158,traced,book photos IMG_4725 (at 57 (F11) row 3) and IMG_4718/IMG_4720 (label at 158); scan p.407; 1977 Turbo addendum p.53 (371-2),heater fan motor return
 211,GL,2.5,113:87,115,traced,labels at 113 and 115,heated rear window feed
-212,SV,0.75,113:85,earth,traced,label at 113,joins 33 SV
+212,SV,0.75,113:85,"158 (earth joint, D6)",traced,label at 113; book photos IMG_4718/IMG_4720; 1977 Turbo addendum p.53 (371-2),joins 33 SV
+3,SV,2.5,158,"earth (main earth star, D3)",traced,scan p.407; 1977 Turbo addendum p.53 (371-2),earth joint 158 to the central earth star
 213,BL,0.75,116,113:86,traced,book photos 24 Sep: labels at 116 and 113,switch end not traced
 141,SV,1.0,64,earth,traced,label at 59,seat heating earth
 150,GL,0.75,60,59 (A8): seat and belt contacts,traced,book close-ups: runs from 60 (A7) to 59 (A8),"+ for the seat belt warning, fuse 5 via 140 GL; the lamp lead at 59 (C12) is also labelled 150 GL"
@@ -154,14 +172,15 @@ cable,colour,mm2,from,to,status,evidence,notes
 382,BL,0.75,140:W,142 solenoid valve (E3),car,"labels at 140 (book photo) and at 142; car, check E12: blue on 142’s feed contact with grey 383 (25 Sep 2026)",fuel boost above about 130 km/h (PDF p.33)
 383,GR,0.75,137,142 (with 382 on one contact),car,"scan traced from both ends (137 top terminal to 142’s second lead); Turbo addendum p.240-1 figure S 6266; car, check E12: grey and blue on the same contact of 142 (25 Sep 2026)",throttle switch output: energises enrichment valve 142 above about 62° throttle
 188,VT,0.75,58 (B9),"43 handbrake switch, 42 brake failure switch",traced,"book photos 24 Sep: labels at 58, 43 and 42",brake warning lamp return
+192,SV,0.75,158,42 (brake warning switch),traced,book photo IMG_4718; 1977 Turbo addendum p.53 (371-2),to 42’s lower contact
 204,GL,0.75,"ECU speed signal (with 284, 284a)",110 tachometer,traced,book photos 24 Sep: labels near the TSI bundle and at 110,tachometer signal
 214,BL,0.75,116,?,open,book photos 24 Sep: label at 116,"feed into switch 116; shares the switch terminal with 203 (tachometer supply), per the 1979 scan; source not traced; runs down to row E and meets a line toward connector 58 (E12): join or crossing not clear"
 151,BR,0.75,72,"59 (C12), then 156 BR",traced,book photos 24 Sep: labels at 72 and 59,
 156,BR,0.75,59 (C12),"59 (A8): seat contact 69, belt contacts 70/71",traced,book photos 24 Sep: labels at both connectors and at 58 (A9),from the contacts to the lamp (probably + through the contacts)
 157,SV,0.75,59 (C12),earth (grid 10),traced,book close-ups: 157 SV 0.75 labelled at 59 (C12) and at the earth point in grid 10,seat belt lamp return (probably)
-90,BL,1.0,62,?,open,book photos 24 Sep: label at 62,probably the park (31b) line; the lines around the motor park contact could not be separated on the scan
+90,BL,1.0,62 (housing),158,traced,book photos 24 Sep: label at 62; scan p.407 (probably: a scan seam on the run); 1977 Turbo addendum p.53 (371-2) (90 BL from 62’s housing corner to the joint),"wiper motor 62’s earth return: from the housing corner, where 89 SV from terminal 1 returns, to joint 158"
 160,GL,0.75,"58 (B11), from 126 BL (fuse 9)",58 (A9),traced,"book close-ups, 1979 page (same on 1980): 160 GL leaves the pin 126 BL enters",interior light + feed from fuse 9 (lid: compartment light)
 95,RD,0.75,65 (3 A fuse),67:88,traced,scan and book close-ups,relay supply after the 3 A fuse; 88 also feeds 95a to the motors
-96,GR,0.75,61 wiper switch (via 58 (D8)),67:86,traced,"scan trace to 58 (D8); book close-up: the pin runs up, unlabelled, to wiper switch 61",headlight wiper relay coil feed from the wiper switch (probably its washer contact)
-100a,SV,0.75,67:85,?,stub,scan and book close-up: ends with an arrow just below the relay,coil side 85; the drawing does not show where it goes
+96,GR,0.75,61:S via 58 (D8),67:86,traced,scan trace to 58 (D8); book photo IMG_4723 (nothing printed above 58 (D8) pin 3; S has no wire: probably S); 1977 Turbo addendum p.53 (371-2) (S via 58 to 67:86),headlight wiper relay coil feed from the wiper switch (probably its washer contact); probably S: the 1979 print draws nothing between S and pin 3
+100a,SV,0.75,67:85,67:87,traced,scan and book close-up: ends with an arrow just below the relay; book photos IMG_4716/IMG_4717 (85’s lead T-joined to 87’s outside the relay); 1977 Turbo addendum p.53 (371-2) (a full jumper loop),jumper outside the relay; earths the coil through 87 and 100 SV
 171,SV,0.75,54 (second door switch),58 (A9),traced,"book close-up (grid 9-10), 1979: labels at 58 (A9) and along the run to 54",door switch
