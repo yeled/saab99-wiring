@@ -151,7 +151,7 @@ txt(151, 204.5, 'on the car: on the speedometer cable, engine bay (E7)', 1.9, fi
 # solenoid valve 142: the outline is the winding (one diagonal, no inner rectangle); drawn mirrored (manual: earth left, 382 right)
 box(208, 191, 10, 14); A('<path d="M208.8,204.2 L217.2,191.8" stroke="#111" stroke-width=".35"/>'); dot(208, 198)
 A('<path d="M218,198 h12 v4" stroke="#111" stroke-width=".6" fill="none"/>'); earth(230, 202); txt(213, 209, '142 Solenoid valve (E3)', 2.2, 'middle', w='bold')
-txt(213, 212.2, 'on the car: by the warm-up regulator (E7)', 1.9, 'middle', fill='#555')
+txt(213, 212.2, 'on the car: front of the engine, on the control pressure line (E7)', 1.9, 'middle', fill='#555')
 # throttle switch 137, turned a quarter (manual: portrait, pivot at the bottom terminal, contact at the top); open at rest
 box(126, 219, 14, 12); dot(126, 225); dot(140, 225)
 inner([(126, 225), (128.2, 225)]); contact(129, 225); contact(137, 225); inner([(137.8, 225), (140, 225)])
