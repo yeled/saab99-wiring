@@ -77,8 +77,10 @@ cable,colour,mm2,from,to,status,evidence,notes
 268,SV,0.75,96,earth,traced,label at 96,
 263,SV,0.75,102:31,earth,traced,label at 102,
 201,SV,0.75,89:85,earth,traced,label at 89,coil earthed directly: no gear-selector switch
-282,GL,1.0,89:87,73:4,traced,labels at 73 and 89,service outlet start terminal (lets a test instrument crank)
-283,GN/VT,0.75,20:15 via 58 (A4) pin 4,73,traced,label at 58,ignition 15 to the service outlet
+282,GL,1.0,89:87,73:3,traced,"labels at 73 and 89; pin 3: book photo IMG_4717 read with a reference photo of the same TSI socket (same on 99 and 900: source/ref/c900-tsi-socket.jpg), which puts start and +15 next to each other in this order",service outlet start terminal (lets a test instrument crank)
+283,GN/VT,0.75,20:15 via 58 (A4) pin 4,73:4,traced,"label at 58; pin 4: book photo IMG_4717 read with a reference photo of the same TSI socket (same on 99 and 900: source/ref/c900-tsi-socket.jpg), which puts start and +15 next to each other in this order",ignition 15 to the service outlet
+281,SV,1.5,73:2,earth,traced,book photo IMG_4717 (label at 73); ground pin per the reference photo of the TSI socket,service outlet earth; the scan runs it towards earth joint 158 (probably)
+284a,BL,0.75,73:5,284 (joins it by relay 102),traced,book photo IMG_4717 (label at 73); scan trace to the 284 junction; tach pin per the reference photo of the TSI socket,engine-speed signal to the service outlet; 204 GL to the tachometer leaves the same pin
 183,GL,1.0,45,47:9,traced,labels at 45 and near 47:9,temperature gauge; via 58 (A4) pin 6
 184,BL,1.0,44,47:11,traced,labels at 44 and at 47:11,oil warning lamp; via 58 (A4) pin 5
 185,GR,0.75,46,47:3,traced,labels at 46 and at 47:3,fuel gauge; via 3-pole connector 57
