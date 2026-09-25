@@ -40,10 +40,13 @@ def ftag(x, y, text, anchor='start', size=2.4):
 # ================= windscreen wipers =================================================================================
 txt(18, 40, 'Windscreen wipers and washer', 3.4, w='bold')
 
-# fuse 4: one terminal with three legs, as in the manual (85 to the switch, 85a to the motor, 85a to the relay)
+# fuse 4: one terminal with three legs, as in the manual (85 to the switch, 85a to the motor, the third to relay 83:15).
+# The third is printed 85b BR 0.75 at 83 (book photos P7b 1979, P7a 1980), fuse 4's right-hand leg.
+F4R = '85b'
+lab = lambda c: f"{c.split('#')[0]} {WIRES[c]['colour']} {WIRES[c]['mm2']}"
 fx, fy = bar_feed(86, f'<tspan font-weight="bold">F4</tspan> · {FUSES[4]["rating"]}', 'ignition-on bar', 4)
 wire('85a', [(fx, fy), (57, fy - 3), (57, fy - 8), (61, fy - 8)], label=False); tag(61, fy - 8, '85a BR 0.75 → wiper motor 62 (4)', size=2.4)
-wire('85a#relay', [(fx, fy), (57, fy + 3), (57, fy + 8), (61, fy + 8)], label=False); tag(61, fy + 8, '85a BR 0.75 → interval relay 83', size=2.4)
+wire(F4R, [(fx, fy), (57, fy + 3), (57, fy + 8), (61, fy + 8)], label=False); tag(61, fy + 8, f'{lab(F4R)} → interval relay 83 (15)', size=2.4)
 wire('85', [(fx, fy), (158, fy), (158, 91)], 64, fy - 1.5); dot(fx, fy)   # 85 over the 85a legs, then the terminal
 
 # ---- 61 wiper switch, drawn as the manual prints it (lever at rest, probably 'off'). Terminals: bottom edge 31b, S,
@@ -152,19 +155,57 @@ txt(TX, ky + 5.6, '54c at 2 and 3 only through P–Q (probably a misprint).', 2,
 
 wire('86', [(184, 64), (392, 64), (392, 95), (370, 95)], 206, 62.5)
 wire('87', [(184, 72), (386, 72), (386, 89), (370, 89)], 206, 70.5)
-wire('84', [(184, 56.5), (196, 56.5), (196, 130), (230, 130)], 200, 128.5)
-wire('88', [(121, YB), (121, 142), (230, 142)], 200, 140.5)
-wire('91', [(136, YB), (136, 154), (230, 154)], 200, 152.5)
-wire('96', [(129, YB), (129, 104), (140, 104)], label=False); ftag(140, 104, '96 GR 0.75 → relay 67:86 (below)')   # S, via 58 (D8)
-box(230, 120, 42, 50); txt(251, 162, '83 Interval', 2.7, 'middle', w='bold'); txt(251, 166, 'relay (D8)', 2.7, 'middle', w='bold')
-for y in (130, 142, 154): dot(230, y)
-dot(251, 120); txt(253, 124, '85a', 2.2); wire('85a#relay', [(251, 120), (251, 112)], label=False); tag(249, 112, '85a BR 0.75 ← fuse 4', anchor='end')
-dot(272, 130); dot(272, 154)
-wire('88a', [(272, 130), (382, 130), (382, 107), (370, 107)], 290, 128.5)
-wire('91a', [(272, 154), (320, 154)], 280, 152.5)
-dot(320, 154); inner([(320, 154), (323.4, 154)])   # 63's feed terminal, a stem to the circle like the earth side
+
+# ---- 83 interval relay, as the 1979 book prints it (book photo P7b and scan p.407 at D8; the 1980 print, P7a, is the
+# same inside). All six terminals sit on the bottom edge, labelled up and to the left: 85, (unread: grey INT, from 84's
+# other end at 61:INT), 31, 31, 15, 31. Inside: a plain block (the timer, probably) with the coil hanging from it between
+# two small shoulders; 85 and the right-hand 31 run up into its sides, INT and 15 into its bottom. The changeover's common
+# is the 3rd terminal (88), drawn resting on the 4th (88a, closed at rest); its work contact is tied to 15.
+# Offsets in mm from the box's top-left, scaled from the scan (inner width 170 px = RW, terminal line 140 px down = RH).
 E158 = '→ earth joint 158 (power sheet)'
-wire('83', [(251, 170), (251, 180), (255, 180)], label=False); dot(251, 170); ftag(255, 180, f'83 SV 0.75 {E158}')
+RX, RY, RW, RH = 226, 84, 48, 40
+RB = RY + RH                                           # bottom edge: every terminal
+T83 = [round(RX + 6.2 + 6.92 * k, 2) for k in range(6)]   # 85, INT, 31 (common), 31 (rest), 15, 31 (earth); even pitch
+rx = lambda f: round(RX + f, 2)
+ry = lambda f: round(RY + f, 2)
+# leads: 91, 84 and 88 come in from switch 61 on the left, stacked so they turn up into T1-T3 without crossing each
+# other; 91 takes T1's printed diagonal (the print has it on 91a: same node) so 91a can drop straight to the pump and
+# the two GL wires never cross; 88a, 85b and 83 go right
+wire('91', [(136, YB), (136, RB + 3.5), (T83[0] - 3.5, RB + 3.5), (T83[0], RB)], 150, RB + 2)
+wire('84', [(184, 56.5), (196, 56.5), (196, 138), (T83[1], 138), (T83[1], RB)], 199.5, 136.5)
+wire('88', [(121, YB), (121, 144), (T83[2], 144), (T83[2], RB)], 150, 142.5)
+wire('96', [(129, YB), (129, 104), (140, 104)], label=False); ftag(140, 104, '96 GR 0.75 → relay 67:86 (below)')   # S, via 58 (D8)
+wire('91a', [(T83[0], RB), (T83[0], 154), (320, 154)], 262, 152.5)
+wire('88a', [(T83[3], RB), (T83[3], 147), (382, 147), (382, 107), (370, 107)], 290, 145.5)
+wire(F4R, [(T83[4], RB), (T83[4], 137), (277, 137)], label=False); ftag(277, 137, f'{lab(F4R)} ← fuse 4')
+wire('83', [(T83[5], RB), (T83[5], 130), (277, 130)], label=False); ftag(277, 130, f'83 SV 0.75 {E158}')
+box(RX, RY, RW, RH)
+txt(RX + RW / 2 - 2.5, RY - 2.4, '83 Interval relay', 2.7, 'middle', w='bold'); txt(RX + RW / 2 + 11.5, RY - 2.4, '(D8)', 2.2, fill='#555')
+A(f'<rect x="{rx(11.1)}" y="{ry(3)}" width="24.6" height="7.1" fill="#fff" stroke="#111" stroke-width=".4"/>')   # block
+for sx in (16.94, 26.96):                              # shoulders, sharing the coil's side walls
+    A(f'<rect x="{rx(sx)}" y="{ry(10.1)}" width="3.1" height="4.2" fill="#fff" stroke="#111" stroke-width=".4"/>')
+# coil, walls in line with T3 and T4; its diagonal runs wall to wall, set in from the corners as printed (P7b, scan,
+# 1980 alike: about 0.72 down the left wall to 0.2 down the right), so it is drawn here rather than with coil()
+CW83, CH83 = round(T83[3] - T83[2], 2), 8.9
+A(f'<rect x="{T83[2]}" y="{ry(10.1)}" width="{CW83}" height="{CH83}" fill="#fff" stroke="#111" stroke-width=".4"/>'
+  f'<path d="M{T83[2]},{ry(10.1 + .72 * CH83)} L{T83[3]},{ry(10.1 + .2 * CH83)}" stroke="#111" stroke-width=".35"/>')
+cb = (round(T83[2] + CW83 / 2, 2), ry(10.1 + CH83))   # bottom mid-point, for the link to the lever
+inner([(T83[0], RB), (T83[0], ry(6.2)), (rx(11.1), ry(6.2))])     # 85 into the block's left side
+inner([(T83[5], RB), (T83[5], ry(6.2)), (rx(35.7), ry(6.2))])     # 31 (earth) into its right side
+inner([(T83[1], RB), (T83[1], ry(10.1))]); inner([(T83[4], RB), (T83[4], ry(10.1))])   # INT and 15 into its bottom
+PV, TIP, REST, WORK = (T83[2], ry(29.93)), (rx(28.94), ry(34.57)), (T83[3], ry(36)), (rx(26.8), ry(24))
+inner([(T83[2], RB), (PV[0], PV[1] + .8)]); inner([(T83[3], RB), (REST[0], REST[1] + .8)])
+inner([(WORK[0] + .8, WORK[1]), (T83[4], WORK[1])]); jdot(T83[4], WORK[1])   # work contact to 15 (1979: a blob at the join, P7b and scan; 1980 a clear dot)
+for p in (PV, REST, WORK): contact(*p)
+ux, uy = TIP[0] - PV[0], TIP[1] - PV[1]; L = (ux * ux + uy * uy) ** .5; ux, uy = ux / L, uy / L
+blade(PV[0] + .7 * ux, PV[1] + .7 * uy, *TIP)          # lever, its tip bent down onto the rest contact: closed at rest
+hx, hy = TIP[0] - REST[0], TIP[1] - REST[1]; L = (hx * hx + hy * hy) ** .5
+blade(*TIP, REST[0] + .75 * hx / L, REST[1] + .75 * hy / L)
+mlink([cb, (cb[0], round(PV[1] + (cb[0] - PV[0]) * uy / ux - .45, 2))])   # coil to the lever, as the 3 printed dashes
+for x, t in zip(T83, ('85', 'INT', '31', '31', '15', '31')):
+    (glabel if t == 'INT' else tlabel)(round(x - 1.8, 2), RB - 1.3, t, 'end')
+for x in T83: dot(x, RB)
+dot(320, 154); inner([(320, 154), (323.4, 154)])   # 63's feed terminal, a stem to the circle like the earth side
 motor(327, 160); txt(337, 158, '63 Washer pump', 2.7, w='bold'); txt(337, 162.5, '(F4)', 2.2, fill='#555')
 # 63's earth terminal: 92 SV on to joint 158, and 361 SV brings in the right front lamp housing's earth
 inner([(327, 167), (327, 169)])
@@ -264,9 +305,11 @@ if TICKED[0]: tick(x, ly + 23.3); txt(x + 4, ly + 24, 'checked on the car', 2.4)
 probable_legend(x, ly + (29 if TICKED[0] else 23))
 py = ly + (35 if TICKED[0] else 29)                   # switch 61's position lines and their numbers
 A(f'<path d="M{x},{py} h9" {PLINE}/>'); posnum(x + 11.3, py, '2'); txt(x + 14, py + 1, 'switch position line, as printed (numbered as the GLE figure)', 2.4)
-notes = ['Wipers run from fuse 4 on the ignition-on bar: 85 BR to the switch (53a) and two 85a BR leads, to the interval relay and to motor terminal 4.',
-         'The washer switch signal (91 GL) goes to the interval relay, which feeds the washer pump (91a GL), so it can wipe while washing. '
-         'Relay and pump earth at joint 158 (83 SV, 92 SV); 361 SV, the right front lamp housing’s earth, shares the pump’s earth terminal.',
+n4 = F4R.split('#')[0]                                # the printed number once wires.csv has 85b; until then say what the book prints
+notes = [f'Wipers run from fuse 4 on the ignition-on bar: 85 BR to the switch (53a), 85a BR to motor terminal 4 and {n4} BR to relay 83’s 15'
+         + ('' if n4 == '85b' else ' (printed 85b BR at 83, 1979 and 1980)') + '. Relay and pump earth at joint 158 (83 SV, 92 SV).',
+         'Relay 83 as printed (1979 photo P7b, scan): at rest the changeover joins 88 (switch 31b) to 88a (motor park, 62:2), energised it puts 15 (+) on 88; '
+         'a block (timer, probably) drives the coil. 85 takes 91 GL (54c) and 91a GL (pump): washing probably wipes too.',
          'Speed wires: 87 GN to motor terminal 3, 86 RD to terminal 5 (through connector 58 at D8); 85a feeds 4, 88a is the park contact (2). '
          '89 SV joins terminal 1 to the housing, which 90 BL (probably; the 1977 diagram draws it) earths at joint 158.',
          'Switch 61 as the book draws it: lever at rest (0), a dashed line per notch through the pivot, no numbers (ours as the GLE figure, p. 370; 4 its text). '
@@ -282,6 +325,6 @@ notes = ['Wipers run from fuse 4 on the ignition-on bar: 85 BR to the switch (53
          '97 BR runs from upper plug row 3 (nothing inside motor 66 uses it) to lower plug row 1, so as printed the lower motor gets no start feed; '
          'on the car both run together (E10), so the book leaves out a link, probably row 3 to row 1 inside the upper motor.',
          'Diagram is not RHD-specific; the switch and relay positions (D8/D9) are drawing grid squares, not locations in the car. '
-         'Light-grey terminal labels on 61 (31b, 54c, INT, 53, 53b) are probable; S and 53a are read.']
+         'Light-grey terminal labels are probable: on 61 31b, 54c, INT, 53, 53b (S, 53a read); on 83 INT (printed, unread).']
 for j, n in enumerate(notes): txt(lx + 108, ly + 4.3 + j * 3.5, n, 2.3, fill='#333')
 save('wipers.svg')
