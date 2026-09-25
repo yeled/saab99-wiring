@@ -94,6 +94,7 @@ lead([(237, 156), (233, 156), (233, 158)]); earth(233, 158)
 box(263, 138, 22, 22); dot(263, 142); dot(263, 156); fan(274, 149, 7.5, rot=0)
 txt(288, 147, '<tspan font-weight="bold">36</tspan> Heater fan motor (F12)', 2.7)
 txt(288, 152, 'speed 8: full; speed 6: through 74', 2.2, fill='#555')
+txt(288, 155.6, 'on the car: 74 is fixed under this motor’s housing (D5)', 2.2, fill='#555')
 
 # ---- heated rear window ----------------------------------------------------------------
 txt(18, 181, 'Heated rear window', 3.4, w='bold')

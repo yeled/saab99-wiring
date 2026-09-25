@@ -166,7 +166,6 @@ for t, y in (('3', 89), ('5', 95), ('4', 101), ('2', 107)): dot(370, y); txt(368
 dot(350, 114); txt(352, 112.5, '1', 2.2)
 wire('89', [(350, 114), (350, 120)], label=False); earth(350, 120); txt(354, 123, '89 SV 0.75', 2.2)
 txt(300, 137, '90 BL 1.0 also leaves the motor’s park side (not traced)', 2.1, fill='#777')
-txt(300, 140.6, 'on the car: a long resistor under the motor housing, yellow and red(?) leads; purpose not known yet (E18)', 2.1, fill='#777')
 wire('85a', [(370, 101), (378, 101)], label=False); txt(380, 103.5, '85a', 2.1)
 
 # ================= headlight wipers ==================================================================================
