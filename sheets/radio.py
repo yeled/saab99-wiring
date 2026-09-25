@@ -30,9 +30,9 @@ wire('342', [(185, 86), (185, 180), (296, 180)], 240, 178.5)
 conn(300, 135, 16, '59'); conn(300, 175, 16, '59')
 for y1, y2 in ((130, 140), (170, 180)):
     A(f'<path d="M302,{y1} H330 M302,{y2} H330" stroke="#111" stroke-width=".6"/>')
-speaker(330, 135, '131', 'Loudspeaker, left'); txt(325, 129, '−', 3, 'end'); txt(325, 143, '+', 3, 'end')
-speaker(330, 175, '130', 'Loudspeaker, right'); txt(325, 169, '−', 3, 'end'); txt(325, 183, '+', 3, 'end')
-txt(346, 141, 'left/right as on the 1979 Turbo diagram;', 2.2, fill='#555'); txt(346, 144.5, 'the radio page shows them swapped', 2.2, fill='#555')
+speaker(330, 135, '130', 'Loudspeaker, right'); txt(325, 129, '−', 3, 'end'); txt(325, 143, '+', 3, 'end')
+speaker(330, 175, '131', 'Loudspeaker, left'); txt(325, 169, '−', 3, 'end'); txt(325, 183, '+', 3, 'end')
+txt(346, 141, 'left and right as on this car (I1)', 2.2, fill='#555'); txt(346, 144.5, 'and the radio page; the Turbo diagram swaps them', 2.2, fill='#555')
 
 # ---- accessory feeds on fuse 9 ---------------------------------------------------
 txt(18, 208, 'Accessory feeds', 3.2, w='bold')
@@ -71,7 +71,7 @@ if TICKED[0]: tick(x, ly + 23.3); txt(x + 4, ly + 24, 'checked on the car', 2.4)
 probable_legend(x, ly + (29 if TICKED[0] else 23))
 notes = ['Pin numbers and speaker polarity (342, 344 to +; 343, 345 to −) are from the radio installation page, PDF p. 798.',
          'The radio’s + (340 RD) comes from ignition switch X here, so it’s live with the key on; the radio page describes a battery feed.',
-         'Left and right: the 1979 Turbo diagram puts 344/345 on the left speaker and 342/343 on the right; the radio page swaps them.',
+         'Left and right as on this car (check I1): right-hand speaker 344/345, left-hand 342/343, as the radio page shows; the 1979 Turbo diagram swaps them.',
          'Fuse 9 (lid: cigar lighter, compartment light, clock): the 58 (B11) pin that 126 BL enters carries on as 160 GL to the interior lights.',
          '126a BL to the lighter leaves 58 (B11) on the fuse side; the manual hides its join in the frame, so it’s grey. The clock’s 127 BL takes off 126a.',
          'The radio page puts the junction box in the right-hand trim panel under the dash; that’s for LHD cars.']
