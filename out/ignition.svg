@@ -344,7 +344,7 @@
 <path d="M218,198 h12 v4" stroke="#111" stroke-width=".6" fill="none"/>
 <path d="M230,202 v3 M227,205 h6 M228,206.3 h4 M229,207.6 h2" stroke="#111" stroke-width=".5" fill="none"/>
 <text x="213" y="209" font-size="2.2" text-anchor="middle" font-weight="bold" fill="#111">142 Solenoid valve (E3)</text>
-<text x="213" y="212.2" font-size="1.9" text-anchor="middle" font-weight="normal" fill="#555">on the car: by the warm-up regulator (E7)</text>
+<text x="213" y="212.2" font-size="1.9" text-anchor="middle" font-weight="normal" fill="#555">on the car: front of the engine, on the control pressure line (E7)</text>
 <rect x="126" y="219" width="14" height="12" rx="1.2" fill="#fafafa" stroke="#111" stroke-width="0.8"/>
 <circle cx="126" cy="225" r="1.0" fill="#111"/>
 <circle cx="140" cy="225" r="1.0" fill="#111"/>
