@@ -93,9 +93,10 @@ def small_bulb(x, y, r, top):
 
 
 def twin_bulb(x, y, r):
-    """Twin-filament bulb as the 1977 Turbo diagram prints the front parking bulb (parking light 13 + corner lamp 118):
-    a circle with one filament arc near its top, sagging toward the centre, and one near its bottom, bowing up. The top
-    one (parking) is on the 1979 print; the bottom one (118) only on the 1977 edition, so it is grey (probably)."""
+    """Twin-filament 21/5 W bulb as the 1977 Turbo diagram prints the front parking bulb (5 W parking light 13 + 21 W
+    corner lamp 118; p.30, p.359): a circle with one filament arc near its top, sagging toward the centre, and one near
+    its bottom, bowing up. The top one (parking) is on the 1979 print; the bottom one (118) is not drawn there, so it is
+    grey (probably) until E19b."""
     A(f'<circle cx="{x}" cy="{y}" r="{r}" fill="#fff" stroke="#111" stroke-width=".6"/>')
     for k in (-1, 1):
         filament(round(x - r * .866, 2), round(x + r * .866, 2), round(y + k * r * .5, 2), round(-k * r * .35, 2), k == 1)
@@ -104,9 +105,9 @@ def twin_bulb(x, y, r):
 def front_housing(yc, side, ind):
     """Front lamp housing 13 as printed (IMG_4714/4715): two small bulbs above one another, indicator 27/28 to the
     right, one common earth line out of the front (crossing the lens chord). The upper, parking bulb 13 (fed from the
-    top) is drawn as the 1977 Turbo diagram prints it, a twin-filament bulb whose second filament is corner lamp 118,
-    fed from its left through the top outline at x = 41 (not on the 1979 print, so it and its lead are grey; on the
-    car: switch found (E19), bulb to check (E19b)). The lower bulb, a
+    top) is drawn as the 1977 Turbo diagram prints it, a 21/5 W twin bulb whose 21 W filament is corner lamp 118,
+    fed from its left through the top outline at x = 41 (221 left, 222a right; not drawn on the 1979 Turbo print, so it
+    and its lead are grey; on the car: switch found (E19), bulb to check (E19b)). The lower bulb, a
     side back-up light (unnumbered in 1979, 119 in the 1977 legend), is fed from the bottom. The indicator's feed is
     drawn on the signals sheet: an open terminal here.
     Returns the parking feed on the outline, the top of the parking bulb, the corner lamp feed, the back-up light
@@ -120,9 +121,9 @@ def front_housing(yc, side, ind):
     inner([(xi + ri, yc), (61.7, yc)]); contact(62.5, yc)                          # indicator feed: signals sheet
     twin_bulb(hx, yc - rs, rs); small_bulb(hx, yc + rs, rs, False); indicator(xi, yc, ri, 'lr'); jdot(hx, yc)
     txt(64.5, yc - 5.6, f'13 Parking {side}', 2.7)
-    txt(64.5, yc - 2.3, 'twin bulb with 118 corner lamp (1977 diagram)', 2.1, fill='#555')
-    txt(64.5, yc + .8, f'{ind} indicator: signals sheet', 2.1, fill='#555')
-    txt(64.5, yc + 4.1, 'lower bulb: side back-up light', 2.1, fill='#555')
+    for i, s in enumerate(('twin bulb 21/5 W: 5 W parking 13,', '21 W corner lamp 118',  # two lines: clear of 24 GL (x 114)
+                           f'{ind} indicator: signals sheet', 'lower bulb: side back-up light')):
+        txt(64.5, round(yc - 2.4 + 3 * i, 2), s, 2.1, fill='#555')
     return (hx, edge(hx)[0]), (hx, yc - 2 * rs), (xk, yk), (hx, yo), (xo, yc)
 
 
@@ -165,14 +166,17 @@ wire('139a', [vR, (hx, 151.5), (52, 151.5)], label=False); ltag('139a', 52, 151.
 wire('139', [vL, (hx, 204.5), (52, 204.5)], label=False); ltag('139', 52, 204.5, reverse)
 
 # ---- corner lamps: switch 117 and the parking bulbs' second filament 118 -----------------------------
-# Not on the 1979 print; drawn from the 1977 Turbo diagram (the car has the circuit, E19), so the cables are 'open'.
-# 117 as the 1977 print draws it: pilot lamp at the top, three contacts in a column joined by a dashed link (lamp,
-# output 221, feed 220 from fuse 5) and the rocker across them; 221a leaves the middle contact down-left.
-# The dashed runs' lengths are chosen so a dash, not a gap, meets each terminal (dash pattern 3 2 from the start).
-kx, ky = 157, 82              # 220's tag ends 4 mm short of 31 GL (x 232); 221's run to 58 is 71 mm, so a dash meets the pin
+# The 1979 Turbo print lists 117 and 118 (legend p.406) but draws only an empty pin 2 on 58 (E2). Drawn from the 1977
+# Turbo diagram with the cable numbers of the 1979 GL print (p.405); the car has the circuit (E19, F4), so the cables
+# are 'open'. 117 as the 1977 print draws it: pilot lamp at the top, three contacts in a column joined by a dashed link
+# (lamp, output 221, feed 220 from fuse 5) and the rocker across them; 221a leaves the middle contact down-left and runs
+# to light switch 10:6 (drawn with switch 10). Not drawn: the 1980 switch 76 (rear bulb 75), 1977 relay 77, the 1979 GL
+# town-light feed (37/37a, 60 (E7), 38 GR). The dashed runs' lengths are chosen so a dash, not a gap, meets each
+# terminal (dash pattern 3 2 from the start).
+kx, ky = 157, 82              # 221's run to 58 is 71 mm, so a dash meets the pin
 box(kx, ky, 18, 30)
-txt(kx, ky - 6, '117', 3.2, w='bold'); txt(kx + 7, ky - 6, 'Corner lamp switch', 2.7)
-txt(kx, ky - 2.2, 'dash switch with pilot lamp, as on the 1977 diagram', 2.1, fill='#555')
+txt(kx, ky - 6, '117', 3.2, w='bold'); txt(kx + 7, ky - 6, 'Switch, corner lamp', 2.7)
+txt(kx, ky - 2.2, '(1979 legend: C8, D8); drawn from the 1977 Turbo diagram', 2.1, fill='#555')
 xc = kx + 12
 lamp(xc, ky + 6, r=2.5)
 inner([(xc - 2.5, ky + 6), (kx + 6, ky + 6), (kx + 6, ky + 12), (xc - .8, ky + 12)])  # pilot lamp to the top contact
@@ -183,16 +187,25 @@ inner([(kx, ky + 19), (xc - .8, ky + 19)])                                      
 inner([(xc - .57, ky + 19.57), (kx + 8, ky + 23), (kx + 8, ky + 30)])                 # 221a
 inner([(kx + 18, ky + 25), (xc + .8, ky + 25)])                                       # 220, feed
 blade(kx + 9.5, ky + 13.5, kx + 16, ky + 20)                                          # stops short of the wall
-wire('220', [(kx + 18, ky + 25), (kx + 26, ky + 25)], label=False); ltag('220', kx + 26, ky + 25, '← fuse 5 (power sheet)')
-wire('223', [(kx + 18, ky + 6), (kx + 38, ky + 6), (kx + 38, ky + 9)], kx + 19.5, ky + 4); earth(kx + 38, ky + 9)
-wire('221a', [(kx + 8, ky + 30), (kx + 8, ky + 36.5), (kx + 14.5, ky + 36.5)], label=False)
-ltag('221a', kx + 14.5, ky + 36.5, '→ not followed\n(1977: probably light switch 10)', dashed=True)
-# 221 through connector 58 (as on the 1977 print) on to the left housing; 222a leaves the same pin for the right one
+# 220 and 223 are 8 mm stubs into tags that end by x 212, clear of 221a's riser to 10:6 (x 216)
+wire('220', [(kx + 18, ky + 25), (kx + 26, ky + 25)], label=False); ltag('220', kx + 26, ky + 25, '← fuse 5\n(power sheet)')
+txt(kx + 27.5, ky + 19.3, '1979 GL prints GL 0.5 (E19b)', 2, fill='#555')
+wire('223', [(kx + 18, ky + 6), (kx + 26, ky + 6)], label=False)                    # 1977 print: to clock 49's earth
+ltag('223', kx + 26, ky + 6, '→ clock 49\nearth, with 128 SV\n(radio sheet)')           # clock 49 and 128: radio sheet
+# 221 through pin 2 of the front 4-pole connector 58 (E2) (1979 GL print) on to the left housing; 222a branches off
+# the same pin's lead for the right one. The 1979 Turbo print draws pin 2 with no leads. Pins 1 and 3 are only
+# captioned (their leads are on the signals sheet); pin 4's 139/139a are drawn at the housings with their own tags.
 wire('221', [(kx, ky + 19), (86, ky + 19)], 126, ky + 17)
 wire('221', [(80, ky + 19), (14.5, ky + 19), (14.5, 171), (kL[0], 171), kL], 17.5, 169)
-wire('222a', [(80, ky + 19), (77, ky + 22), (kR[0], ky + 22), kR], 45, ky + 26.3)
-A(f'<rect x="80" y="{ky + 15}" width="6" height="8" fill="#ddd" stroke="#111" stroke-width=".6"/>')
-txt(83, ky + 13.3, '58', 2.8, 'middle', w='bold'); txt(83, ky + 26.5, 'by R housing (1977 print)', 2.1, 'middle', fill='#555')
+# 222a: square off 221 at a junction 4 mm from the pin (in 221's first gap), 6 mm down, left, down into housing R.
+# Corners at 6 and 41 mm and the end (63.2 mm, under the dot) fall on dashes.
+wire('222a', [(76, ky + 19), (76, ky + 25), (kR[0], ky + 25), kR], 45, ky + 29.3)
+A(f'<rect x="80" y="{ky + 13}" width="6" height="16" fill="#ddd" stroke="#111" stroke-width=".6"/>')
+txt(83, ky + 11.3, '58 (E2)', 2.8, 'middle', w='bold')
+for n, dy, s in (('1', 15, '118 SV: horns'), ('2', 19, ''), ('3', 23, '77 BL/VT: indicator 27'), ('4', 27, '138 BL → 139/139a')):
+    tlabel(83, ky + dy + .65, n, 'middle')
+    if s: txt(87.5, ky + dy + .7, s, 2, fill='#555')
+txt(83, ky + 32.5, 'pin 2 bare on the 1979 Turbo print', 2, 'middle', fill='#555')
 
 # ---- lighting relay 8 --------------------------------------------------
 # As the manual prints it (IMG_4719): all six terminals on the bottom edge, every contact in its printed rest state.
@@ -265,12 +278,21 @@ contact(193, y9); inner([(193.8, y9), (198, y9)])
 wire('32#earth', [(198, y9), (222, y9), (222, 277)], 200.5, y9 - 2.7); earth(222, 277)
 
 # ---- light switch 10 ---------------------------------------------------
+# 6 and 5 (upper left, as both 1979 prints draw them) close in the top position: town light, Sweden/Norway/Denmark only
+# (p.413). The 1979 Turbo print leaves them bare; the 1977 Turbo diagram runs 221a from 117's output to 6, 5 unwired.
 sx, sy, sw_, sh = 222, 50, 50, 24
 box(sx, sy, sw_, sh)
-txt(sx + 25, sy + 10, '10  Light switch', 3, 'middle', w='bold'); txt(sx + 25, sy + 14, '(C8) off / parking / headlamps', 2.3, 'middle', fill='#555')
-T = {'2': (232, sy), '3': (262, sy), '1': (232, sy + sh), '4': (262, sy + sh)}
+txt(sx + 25, sy + 9.5, '10  Light switch', 3, 'middle', w='bold')
+txt(sx + 25, sy + 13.5, '(C8) top: off (town light S/N/DK) /', 2.3, 'middle', fill='#555')
+txt(sx + 25, sy + 16.8, 'parking / headlamps', 2.3, 'middle', fill='#555')
+T = {'2': (232, sy), '3': (262, sy), '1': (232, sy + sh), '4': (262, sy + sh), '6': (sx, sy + 4), '5': (sx, sy + 10)}
 for k, (x, y) in T.items():
-    dot(x, y); txt(x + 1.8, y + (3.5 if y == sy else -1.5), k, 2.5)
+    dot(x, y); txt(x + 1.8, y + (.9 if x == sx else 3.5 if y == sy else -1.5), k, 2.5)
+# 221a: down, right under 220's tag, up at x 216 (clear of both tags and 31 GL at x 232) into 6; corners and the end
+# fall on dashes (at 1, 2, 1 and 2 mm into one)
+wire('221a', [(kx + 8, ky + 30), (kx + 8, 118), (216, 118), (216, T['6'][1]), T['6']], 184, 116)
+for i, s in enumerate(('6-5: top position, town light', '(S/N/DK only, p.413); 1979 Turbo', 'prints them bare; car: E21, D11')):
+    txt(219.5, sy - 5.6 + 2.8 * i, s, 2.1, 'end', fill='#555')
 wire('31', [(bt['86'], yb), (bt['86'], 250), (232, 250), T['1']], 203.5, 248)
 wire('20', [(bt['30'], yb), (bt['30'], 258), (236, 258), (236, 96), (244, 96)], 203.5, 256)
 wire('30', [T['2'], (232, 36), (318, 36)], 240, 34)
@@ -344,32 +366,36 @@ cluster(172.5, 'L', ('42', [(255, 178), (255, 213)], (314, 211)), 27, '46', '46a
 # terminal dots and junctions go on top of the wires that end on them
 for p in [(x, yb) for x in bt.values()] + [(324, 36), (324, 48), (345, 36), (345, 48), (255, 125), (255, 178),
                                            (150, 149), (bt['S'], 264), (198, y9), mR, dR, cR, mL, dL, cL, dropL, pR, pL,
-                                           kR, kL, vR, vL, eR, eL, (80, ky + 19), (86, ky + 19),
+                                           kR, kL, vR, vL, eR, eL, (80, ky + 19), (86, ky + 19), (76, ky + 19), T['6'],
                                            (kx, ky + 19), (kx + 18, ky + 6), (kx + 18, ky + 25), (kx + 8, ky + 30)]:
     dot(*p)
 
 # ---- legend ------------------------------------------------------------
-lx, ly = 250, 236
-box(lx, ly, 157, 51, fill='#fff', sw=.5)
-txt(lx + 3, ly + 5.5, 'Cable key: number · colour · mm²', 3, w='bold')
+lx, ly = 250, 234.5                          # top 2.4 mm under cluster L's earth; ten note lines fit above the frame
+box(lx, ly, 157, 52.5, fill='#fff', sw=.5)
+txt(lx + 3, ly + 5, 'Cable key: number · colour · mm²', 3, w='bold')
 for i, (k, n) in enumerate([('BL', 'Blue'), ('BR', 'Brown'), ('GL', 'Yellow'), ('GN', 'Green'),
                             ('GR', 'Grey'), ('RD', 'Red'), ('SV', 'Black'), ('VT', 'White')]):
-    x, y = lx + 4 + (i % 4) * 23, ly + 11 + (i // 4) * 5
+    x, y = lx + 4 + (i % 4) * 23, ly + 9.5 + (i // 4) * 4.5
     A(f'<path d="M{x},{y - 1} h7" stroke="#222" stroke-width="1.7"/><path d="M{x},{y - 1} h7" stroke="{COL[k]}" stroke-width="1.1"/>')
     txt(x + 9, y, f'{k} {n}', 2.5)
-x, y = lx + 97, ly + 11
+x, y = lx + 97, ly + 9.5
 A(f'<path d="M{x},{y - 1} h9" stroke="#222" stroke-width="1.2"/>'); txt(x + 11, y, 'traced (cable no. read)', 2.4)
 if DASHED[0]: A(f'<path d="M{x},{y + 4} h9" stroke="#222" stroke-width="1.2" stroke-dasharray="3 2"/>'); txt(x + 11, y + 5, 'not traced yet', 2.4)
 A(f'<path d="M{x},{y + 9} h7" stroke="#222" stroke-width=".8"/><circle cx="{x + 8.3}" cy="{y + 9}" r="1.3" fill="#fff" stroke="#222" stroke-width=".5"/>')
 txt(x + 11, y + 10, 'ends on diagram', 2.4)
 if TICKED[0]: tick(x + 33, y + 9.3); txt(x + 37, y + 10, 'checked on the car', 2.4)
-probable_legend(lx + 4, ly + 21)
+probable_legend(lx + 4, ly + 19)
 notes = ['Headlamps need the ignition on (except the flash, stalk 9); parking/tail lights do not (manual, PDF p. 375, 413):',
          'light switch 2 is fed from ignition switch X, light switch 3 from the always-live bar.',
          'Headlamps are unfused: relay 30 is fed straight from the supply bar (20 GR 1.5).',
          'Not RHD-specific: circuits are per side, but harness routing and part positions may differ.',
          'All bulbs in a lamp housing share its one earth. Indicators, brake and rear reversing bulbs: signals sheet.',
-         'Corner lamps 117/118 (dashed): not on the 1979 print; drawn from the 1977 Turbo diagram. The car has them (E19); bulb, colours: E19b.',
+         'Corner lamps 117/118 (dashed): the 1979 Turbo print lists them (legend p.406) but draws only an empty pin 2 on 58 (E2).',
+         'Drawn from the 1977 Turbo diagram, numbers as on the 1979 GL print (p.405). Car: dash switch with bulb, fuse 5 (E19, F4).',
+         'One bulb, two filaments: 5 W parking 13 from light switch 10, no ignition; 21 W corner lamp 118 from 117, ignition on.',
+         'Not drawn: 1980 switch 76 (dashed; fed from relay 8:86 through fuse 65, lights rear bulb 75, probably rear fog) '
+         'and 1977 relay 77 (dip cut-out).',
          'Relay 8 drawn as printed, flash on 56b (dipped); the 1977 diagram and the car (D9) flash the main beams: 1979 print probably wrong.']
-for j, n in enumerate(notes): txt(lx + 3, ly + 27 + j * 3.6, n, 2.35, fill='#333')
+for j, n in enumerate(notes): txt(lx + 3, round(ly + 24.5 + j * 2.85, 2), n, 2.2, fill='#333')
 save('lighting.svg')
