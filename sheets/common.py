@@ -22,8 +22,11 @@ o = []
 A = o.append
 
 
+ARROWS = {'→': '<tspan font-family="Arial">→</tspan>', '←': '<tspan font-family="Arial">←</tspan>'}  # Helvetica has no arrows and cairo doesn't fall back per glyph
+
 def txt(x, y, s, size=3.0, anchor='start', w='normal', fill='#111', rot=None):
     tr = f' transform="rotate({rot} {x} {y})"' if rot else ''
+    for a, t in ARROWS.items(): s = s.replace(a, t)
     A(f'<text x="{x}" y="{y}" font-size="{size}" text-anchor="{anchor}" font-weight="{w}" fill="{fill}"{tr}>{s}</text>')
 
 def path(pts):
@@ -31,6 +34,7 @@ def path(pts):
 
 TICKED = [False]  # set when a sheet draws a check mark; the legend shows the tick sample only then
 DASHED = [False]  # set when a sheet draws anything 'not traced'; the legend shows the dashed sample only then
+PROBABLE = [False]  # set when a part's internals are drawn grey (probable); probable_legend() draws only then
 
 
 def wire(cable, pts, lx=None, ly=None, rot=None, label=True):
@@ -72,6 +76,106 @@ def box(x, y, w, h, fill='#fafafa', sw=.8):
     A(f'<rect x="{x}" y="{y}" width="{w}" height="{h}" rx="1.2" fill="{fill}" stroke="#111" stroke-width="{sw}"/>')
 def lamp_earth(x, y, dx=-9):
     A(f'<path d="M{x},{y} h{dx} v5" stroke="#111" stroke-width=".6" fill="none"/>'); earth(x + dx, y + 5)
+
+
+# ---- component internals, in the style of relay 67 on the wipers sheet -------------------------
+# Circles (contact, diode, lamps) are placed by centre; rectangles (coil, resistor, fuse) by top-left, like box().
+# grey=True means probably, not printed clearly: stroke #888 instead of #111, and probable_legend() then draws.
+# Terminals stay dot(); leads from a terminal to a contact or winding are inner().
+
+def _n(v):
+    v = round(v, 3); return int(v) if v == int(v) else v
+
+def _ink(grey):
+    if grey: PROBABLE[0] = True
+    return '#888' if grey else '#111'
+
+def _ends(x, y, w, h):
+    """Lead ends of a rectangle along its long side."""
+    return ((_n(x), _n(y + h / 2)), (_n(x + w), _n(y + h / 2))) if w >= h else ((_n(x + w / 2), _n(y)), (_n(x + w / 2), _n(y + h)))
+
+def tlabel(x, y, text, anchor='start'):
+    """Tiny terminal label (relay 67: 1.8, #555), e.g. 1.3 above and 2 inside the terminal dot."""
+    txt(x, y, text, 1.8, anchor, fill='#555')
+
+def contact(x, y, grey=False):
+    """Open contact circle (r .8) centred on (x, y); inner() leads stop .8 short of the centre."""
+    A(f'<circle cx="{_n(x)}" cy="{_n(y)}" r=".8" fill="#fff" stroke="{_ink(grey)}" stroke-width=".35"/>')
+
+def blade(x0, y0, x1, y1, grey=False):
+    """Moving contact blade from its pivot to its free end; start about .7 off the pivot contact's centre."""
+    A(f'<path d="M{_n(x0)},{_n(y0)} L{_n(x1)},{_n(y1)}" stroke="{_ink(grey)}" stroke-width=".75" stroke-linecap="round"/>')
+
+def mlink(pts):
+    """Mechanical link, e.g. coil to the blades it moves: thin grey dashed line, as the manual prints it."""
+    A(f'<path d="{path([(_n(x), _n(y)) for x, y in pts])}" fill="none" stroke="#999" stroke-width=".3" stroke-dasharray=".8 .6"/>')
+
+def inner(pts, grey=False):
+    """Thin conductor inside a part: terminal to contact, coil or winding."""
+    A(f'<path d="{path([(_n(x), _n(y)) for x, y in pts])}" fill="none" stroke="{_ink(grey)}" stroke-width=".4"/>')
+
+def coil(x, y, w=8, h=7, grey=False):
+    """Relay coil or any winding (heater, valve, regulator): rectangle with a lower-left to upper-right diagonal.
+    Returns the mid-points of its left, right, top and bottom sides (leads; the top one suits mlink)."""
+    c = _ink(grey); x0, y0, x1, y1, xm, ym = _n(x), _n(y), _n(x + w), _n(y + h), _n(x + w / 2), _n(y + h / 2)
+    A(f'<rect x="{x0}" y="{y0}" width="{_n(w)}" height="{_n(h)}" fill="#fff" stroke="{c}" stroke-width=".4"/>'
+      f'<path d="M{x0},{y1} L{x1},{y0}" stroke="{c}" stroke-width=".35"/>')
+    return (x0, ym), (x1, ym), (xm, y0), (xm, y1)
+
+def resistor(x, y, w=8, h=3, grey=False):
+    """Resistor: plain rectangle. Returns its two lead ends along the long side."""
+    A(f'<rect x="{_n(x)}" y="{_n(y)}" width="{_n(w)}" height="{_n(h)}" fill="#fff" stroke="{_ink(grey)}" stroke-width=".4"/>')
+    return _ends(x, y, w, h)
+
+def fuse(x, y, w=6, h=2.4, rating=None, grey=False):
+    """Fuse: rectangle with a line through its length; rating (e.g. '3 A') above it, or right of it when upright.
+    Returns its two lead ends."""
+    c = _ink(grey); a, b = _ends(x, y, w, h)
+    A(f'<rect x="{_n(x)}" y="{_n(y)}" width="{_n(w)}" height="{_n(h)}" fill="#fff" stroke="{c}" stroke-width=".4"/>'
+      f'<path d="M{a[0]},{a[1]} L{b[0]},{b[1]}" stroke="{c}" stroke-width=".35"/>')
+    if rating: tlabel(_n(x + w / 2), _n(y - .8), rating, 'middle') if w >= h else tlabel(_n(x + w + 1), _n(y + h / 2 + .6), rating)
+    return a, b
+
+def diode(x, y, direction, grey=False, s=2.4):
+    """Diode centred on (x, y): filled triangle and bar pointing the way current flows ('r', 'l', 'u' or 'd').
+    Returns (anode, cathode) lead points."""
+    c = _ink(grey); h = s / 2
+    dx, dy = {'r': (1, 0), 'l': (-1, 0), 'u': (0, -1), 'd': (0, 1)}[direction[0]]
+    px, py = dy * h, dx * h                              # half-width across the direction of flow
+    b, t = (_n(x - dx * h), _n(y - dy * h)), (_n(x + dx * h), _n(y + dy * h))
+    A(f'<path d="M{_n(b[0] + px)},{_n(b[1] + py)} L{_n(b[0] - px)},{_n(b[1] - py)} L{t[0]},{t[1]} Z" fill="{c}" stroke="{c}" '
+      f'stroke-width=".25" stroke-linejoin="round"/><path d="M{_n(t[0] + px)},{_n(t[1] + py)} L{_n(t[0] - px)},{_n(t[1] - py)}" '
+      f'stroke="{c}" stroke-width=".45"/>')
+    return b, t
+
+def bimetal(x0, y0, x1, y1, grey=False):
+    """Thermostat (bimetal) blade: a doubled blade from its pivot to its free end, marked t°. Use with contact()."""
+    c = _ink(grey); L = ((x1 - x0) ** 2 + (y1 - y0) ** 2) ** .5
+    ux, uy = (y1 - y0) / L, (x0 - x1) / L                # unit normal; flip it so t° sits above the blade
+    if uy > 0 or (uy == 0 and ux < 0): ux, uy = -ux, -uy
+    d = ' '.join(f'M{_n(x0 + k * ux)},{_n(y0 + k * uy)} L{_n(x1 + k * ux)},{_n(y1 + k * uy)}' for k in (.3, -.3))
+    A(f'<path d="{d}" stroke="{c}" stroke-width=".35" stroke-linecap="round"/>')
+    tlabel(_n((x0 + x1) / 2 + 1.6 * ux), _n((y0 + y1) / 2 + 1.6 * uy + .6), 't°', 'middle')
+
+def twin_lamp(x, y, r=4.5, grey=False):
+    """Twin-filament bulb (headlamp high/low beam) centred on (x, y): two filament arcs that meet at a common end.
+    grey greys only the filaments. Returns (upper feed, lower feed, common): feeds on the left rim, common on the right."""
+    c = _ink(grey); k, a = r * .893, r * .45
+    A(f'<circle cx="{_n(x)}" cy="{_n(y)}" r="{_n(r)}" fill="#fff" stroke="#111" stroke-width=".6"/>')
+    ends = []
+    for sy in (-1, 1):                                   # feed enters level; upper filament bows up, lower bows down
+        f, s, e = (x - k, y + sy * a), (x - r * .4, y + sy * a), (x + r * .2, y + sy * a)
+        ends.append((_n(f[0]), _n(f[1])))
+        A(f'<path d="M{_n(f[0])},{_n(f[1])} L{_n(s[0])},{_n(s[1])} A{_n(r * .3)},{_n(r * .3)} 0 0 {1 if sy < 0 else 0} '
+          f'{_n(e[0])},{_n(e[1])} L{_n(x + r)},{_n(y)}" fill="none" stroke="{c}" stroke-width=".4" stroke-linejoin="round"/>')
+    return ends[0], ends[1], (_n(x + r), _n(y))
+
+def probable_legend(x, y):
+    """Legend sample for grey internals, drawn only when a helper had grey=True; (x, y) like the dashed sample. Returns whether it drew."""
+    if not PROBABLE[0]: return False
+    contact(x + 1, y, True); contact(x + 8, y, True); blade(x + 1.7, y - .3, x + 7.6, y - 2.4, True)
+    txt(x + 11, y + 1, 'grey inside a part: probably, not printed clearly', 2.4)
+    return True
 
 
 def unknown_style(r):
