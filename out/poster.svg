@@ -1197,7 +1197,7 @@
 <path d="M308,80 L304.5,80 L304.5,87 L346,87" fill="none" stroke="#222" stroke-width="1.7" stroke-linejoin="round"/>
 <path d="M308,80 L304.5,80 L304.5,87 L346,87" fill="none" stroke="#1f5fbf" stroke-width="1.1" stroke-linejoin="round"/>
 <rect x="348" y="84.4" width="44.912000000000006" height="5.2" rx="1" fill="#fff" stroke="#444" stroke-width=".4"/>
-<text x="349.5" y="88" font-size="2.6" text-anchor="start" font-weight="normal" fill="#111">121 BL 1.5 <tspan font-family="Arial">→</tspan> coil 5, terminal 1</text>
+<text x="349.5" y="88" font-size="2.6" text-anchor="start" font-weight="normal" fill="#111">124 BL 1.5 <tspan font-family="Arial">→</tspan> coil 5, terminal 1</text>
 <path d="M394.112,85.30000000000001 l0.9,1.0 l1.9,-2.4" fill="none" stroke="#1e7a3a" stroke-width="0.55" stroke-linecap="round" stroke-linejoin="round"/>
 <path d="M308,73 L300.5,73 L300.5,92 L360,92 L360,190 L241,190 L241,176" fill="none" stroke="#222" stroke-width="1.7" stroke-linejoin="round"/>
 <path d="M308,73 L300.5,73 L300.5,92 L360,92 L360,190 L241,190 L241,176" fill="none" stroke="#1f5fbf" stroke-width="1.1" stroke-linejoin="round"/>
@@ -1422,7 +1422,7 @@
 <text x="294" y="268.6" font-size="2.3" text-anchor="start" font-weight="normal" fill="#333">201 SV (relay 89’s coil) goes to 158 directly. Relay 21 and joint 158 are on the power sheet.</text>
 <text x="294" y="272.5" font-size="2.3" text-anchor="start" font-weight="normal" fill="#333">123d GN/VT (+15 for 146) leaves pin 4 of 58 (A4) on the 147 side, before the ballast resistor;</text>
 <text x="294" y="276.40000000000003" font-size="2.3" text-anchor="start" font-weight="normal" fill="#333">in the book it passes under the coil without joining it (IMG_4729; 1977 Turbo diagram).</text>
-<text x="294" y="280.3" font-size="2.3" text-anchor="start" font-weight="normal" fill="#333">121 BL: the 1979 number is unreadable; the 1977 Turbo diagram prints 124 BL 1.5.</text>
+<text x="294" y="280.3" font-size="2.3" text-anchor="start" font-weight="normal" fill="#333">124 BL: the 1979 number is unreadable; the 1977 Turbo and 1980 diagrams print 124 BL 1.5.</text>
 </g></svg>
 <svg x="12.580808080808083" y="274.3333333333333" width="387.94612794612794" height="274.3333333333333" viewBox="0 0 420 297"><g font-family="Helvetica, Arial, sans-serif">
 <rect width="420" height="297" fill="#fff"/><rect x="8" y="8" width="404" height="281" fill="none" stroke="#111" stroke-width=".6"/>
