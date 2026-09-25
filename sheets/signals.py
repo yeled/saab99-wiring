@@ -119,7 +119,7 @@ wire('71', [(80, 80), (80, 96)], label=False); tag(82, 96, t71, w=len(t71) * 2.6
 # open), R and L. The lamp is wired to an unlabelled terminal on the right edge.
 box(130, 48, 40, 40); txt(127, 75, '25 Hazard switch', 2.4, 'end', w='bold')
 wire('73', [(100, 58), (114, 58), (114, 43), (144, 43), (149, 48)], 118, 41.5)   # lands on + beside 76 (probably)
-wire('76#hazard', [(149, 48), (149, 36), (225, 36), (225, 48)], 178, 34.5)
+wire('74', [(149, 48), (149, 36), (225, 36), (225, 48)], 178, 34.5)
 dot(149, 48); txt(150.6, 51.8, '+', 2.2, fill='#555')
 inner([(149, 48), (149, 57.2)]); contact(149, 58); blade(148.7, 58.64, 140.4, 76.8)
 contact(150.6, 64.8); contact(150.6, 70.4); contact(150.6, 78)
@@ -230,7 +230,7 @@ notes = ['The flasher is fed from fuse 11 on the always-live bar. Its output (73
          'The manual prints 25’s terminals +, R and L (none on the lamp’s) and 24’s 54, R and L. 73 GN lands on + beside the wire to 54 (probably the same terminal).',
          '25’s lamp contact prints merged into the blade root; on the car it is open at rest (the lamp stays dark with the indicators and blinks with the hazards: check D7). '
          'Grey: the end of 29’s blade and its right contact, printed running together; probably open at rest.',
-         'The + to 54 wire is printed 7? GN 1.0 with the second digit blotted; it is shown as 76, as in the data, but is probably 74 (the 1977 Turbo diagram prints 74 GN 1.0).',
+         'The + to 54 wire is 74 GN 1.0: the 1979 print blots its second digit, but the 1977 Turbo diagram and another year’s print read 74. 73 GN also lands on +.',
          '24’s own outputs are 75 BL/VT and 78 RD/VT, through 58 (D8) to 58 (B9). 77/80 (front) leave on B9’s near side, as printed, and only '
          '76/79 (rear, route not traced yet) pass it; 80 is drawn branching off 79 past it, for room.',
          'Each lamp housing has one earth for all its bulbs (parking, tail and number-plate bulbs: lighting sheet). Turned for the layout: the manual prints '
