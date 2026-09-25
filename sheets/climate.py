@@ -61,7 +61,9 @@ A('<path d="M242,58 H262" stroke="#111" stroke-width=".6"/>'); motor(270, 58)
 txt(280, 56, '<tspan font-weight="bold">37</tspan> Radiator fan motor (D1)', 2.7); A('<path d="M270,65 v5" stroke="#111" stroke-width=".6"/>'); earth(270, 70)
 wire('114', [(144, 72), (196, 72), (196, 88), (216, 88)], 160, 70.5); conn(220, 88, 6, '60')
 wire('114a', [(222, 88), (262, 88)], 228, 86.5)
-box(262, 82, 20, 12); A('<path d="M266,90 l8,-5 M274,88 h6" stroke="#111" stroke-width=".5"/>'); A('<path d="M282,88 H290 v4" fill="none" stroke="#111" stroke-width=".6"/>'); earth(290, 92)
+box(262, 82, 20, 12); A('<path d="M266,90 l8,-5 M274,88 h6" stroke="#111" stroke-width=".5"/>')
+# 39's earth side is not a local earth: 115 SV runs to the left headlamp's common and earths through its 28 SV
+wire('115', [(282, 88), (292, 88)], label=False); tag(294, 88, '115 SV 0.75 ← left headlamp common; earth via 28 SV (lighting sheet)', w=71.9, size=2.2)
 txt(262, 104, '<tspan font-weight="bold">39</tspan> Thermostat switch (E2): closes when hot', 2.5)
 
 # ---- heater fan ------------------------------------------------------------------
@@ -89,7 +91,8 @@ dot(244, 128); dot(258, 128); inner([(244, 128), (245.7, 128)]); contact(246.5, 
 contact(255.5, 128); inner([(256.3, 128), (258, 128)])
 lead([(244, 128), (238.2, 128), (238.2, 138)]); lead([(258, 128), (260, 128), (260, 149), (245, 149)])
 lead([(245, 142), (263, 142)]); lead([(245, 156), (263, 156)])
-lead([(237, 156), (233, 156), (233, 158)]); earth(233, 158)
+# the motor's return: 107 SV from 57 row 3 to earth joint 158 (drawn on the power sheet)
+wire('107', [(237, 156), (224, 156)], label=False); tag(222, 156, '107 SV 2.5 → earth joint 158 (power sheet)', w=45.3, size=2.2, anchor='end')
 # 36: terminals on the left wall, level with 57 rows 1 and 3; no internal leads to the fan are printed; blades square to the frame
 box(263, 138, 22, 22); dot(263, 142); dot(263, 156); fan(274, 149, 7.5, rot=0)
 txt(288, 147, '<tspan font-weight="bold">36</tspan> Heater fan motor (F12)', 2.7)
@@ -108,7 +111,11 @@ inner([(116, 203), (116, 210.3)]); contact(116, 211.1); blade(115.8, 211.8, 112.
 contact(116, 223.2); inner([(116, 224), (116, 231)])
 coil(126.7, 214.2, 16.9, 5.9); inner([(137, 203), (137, 214.2)]); inner([(137, 220.1), (137, 231)]); mlink([(115.4, 217), (126.7, 217)])
 wire('210', [(54, y8), (116, y8), (116, 203)], 60, y8 - 1.5)
-wire('212', [(137, 203), (137, 198), (150, 198), (150, 200)], label=False); earth(150, 200); txt(154, 204, '212 SV 0.75', 2.2)
+# 113:85 takes three earth cables, fanned out from the terminal (nested so none cross): 13 SV from lighting relay 8
+# and 33 SV from ignition switch relay 21 arrive; 212 SV takes all three to earth joint 158 (drawn on the power sheet)
+wire('13', [(137, 203), (133, 199), (133, 174), (150, 174)], label=False); tag(152, 174, '13 SV 0.75 ← lighting relay 8:31 (lighting sheet)', w=49.6, size=2.2)
+wire('33', [(137, 203), (137, 180.5), (150, 180.5)], label=False); tag(152, 180.5, '33 SV 0.75 ← ignition switch relay 21:85 (power sheet)', w=56.6, size=2.2)
+wire('212', [(137, 203), (141, 199), (141, 187), (150, 187)], label=False); tag(152, 187, '212 SV 0.75 → earth joint 158 (power sheet)', w=46.5, size=2.2)
 # switch 116 drawn off, as printed: the rocker rests on the middle contact, clear of the lamp contact and the dot
 box(188, 196, 34, 24); txt(205, 193.6, '116 Heated window switch', 2.2, 'middle', w='bold')
 for x in (193.9, 202.8, 211.6): dot(x, 220)
@@ -140,12 +147,12 @@ if TICKED[0]: tick(x, ly + 23.3); txt(x + 4, ly + 24, 'checked on the car', 2.4)
 yl = ly + (29 if TICKED[0] else 23)
 if probable_legend(x, yl): yl += 6
 if WORK[0]: work([(x, yl), (x + 9, yl)]); txt(x + 11, yl + 1, 'short dashes inside a switch: its other positions, as printed', 2.4)
-notes = ['Radiator fan: relay 38 (drawn at rest, contact open) is fed from fuse 7 on the always-live bar, and thermostat switch 39 earths its coil, so the drawing',
-         'lets the fan run after the engine is switched off. Heater fan: fuse 6 is on the ignition-on bar. Switch 35 rests on its unwired terminal (probably off);',
-         'its short-dashed lines are its other positions, as printed: 8 feeds the motor directly; 6 goes through resistor 74, whose far lead lands on 57’s corner',
-         '(the pin is hidden: probably row 1, grey). The motor’s return runs through 57 to earth joint 158 (D6) in the manual; drawn here as a local earth.',
-         'Heated rear window: fuse 8 (always live) feeds relay 113 (at rest, open); switch 116, drawn off, energises it through 213 BL. Its right terminal takes',
-         'the feed 214 BL (not traced) and 203 to the tachometer; its lamp is probably the “on” indicator. In the manual 212 SV (113:85) runs to earth joint 158 (D6).',
+notes = ['Radiator fan: relay 38 (drawn at rest, contact open) is fed from fuse 7 on the always-live bar; thermostat switch 39 earths its coil through 115 SV and the left',
+         'headlamp’s earth, 28 SV, so the drawing lets the fan run after the engine is switched off. 114a is BL in the 1979 print, SV (black) in the 1977 Turbo diagram: car check E14.',
+         'Heater fan: fuse 6 is on the ignition-on bar. Switch 35 rests on its unwired terminal (probably off); its short-dashed lines are its other positions, as printed: 8 feeds the',
+         'motor directly; 6 goes through resistor 74, whose far lead lands on 57’s corner (the pin is hidden: probably row 1, grey). The motor returns through 57 row 3 on 107 SV to joint 158.',
+         'Heated rear window: fuse 8 (always live) feeds relay 113 (at rest, open); switch 116, drawn off, energises it through 213 BL. Its right terminal takes the feed 214 BL (not traced)',
+         'and 203 to the tachometer; its lamp is probably the “on” indicator. 113:85 also takes the earths 13 SV (relay 8) and 33 SV (relay 21); 212 SV carries all three earths (relays 113, 8 and 21) to earth joint 158.',
          'Diagram is not RHD-specific: circuits should match, but harness routing and part positions may differ.']
 for j, n in enumerate(notes): txt(lx + 108, ly + 6 + j * 4.8, n, 2.35, fill='#333')
 save('climate.svg')
