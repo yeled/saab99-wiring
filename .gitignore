@@ -5,3 +5,4 @@ source/
 out/*.pdf
 docs/
 venv/
+.DS_Store
