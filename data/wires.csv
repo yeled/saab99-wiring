@@ -3,12 +3,13 @@ cable,colour,mm2,from,to,status,evidence,notes
 24,GL,1.0,8:56b,11/12 R:dip,traced,"label@4030,1918","dipped beam, right headlamp"
 25,BL,1.0,8:56a,11/12 L:main,traced,"label@4280,2718","main beam, left headlamp"
 23,GR,1.0,8:56b,11/12 L:dip,traced,"label@4350,2742","dipped beam, left headlamp"
-27,BL/VT,0.75,8:56a,47:7a,traced,"label@4850,2165",main-beam warning lamp in instrument
+27,BL/VT,0.75,8:56a,47:7,traced,"label@4850,2165; book photo P8 (source/photos/book-P8-47-instrument-cluster.jpg) and scan p.407: terminal printed 7, not 7a",main-beam warning lamp in instrument
 29,SV,1.0,11/12 R:earth,earth,traced,label at lamp,headlamp earth
 115,SV,0.75,11/12 L:common,39,traced,label at lamp; book photo IMG_4715; scan p.407; 1977 Turbo addendum p.53 (371-2); book photo P5 (source/photos/book-1979-D1-E2-horns-39-front-left.jpg),"earths radiator fan thermostat switch 39 (and so relay 38’s coil) through the left headlamp’s earth, 28 SV"
 28,SV,1.0,11/12 L:common,"earth (main earth star, D3)",traced,scan p.407 (label in the grid C2 bundle); 1977 Turbo addendum p.53 (371-2); book photo P5 (source/photos/book-1979-D1-E2-horns-39-front-left.jpg),the left headlamp’s own earth
 13,SV,0.75,8:31,113:85,traced,"label@4280,2250; book photo IMG_4722; 1977 Turbo addendum p.53 (371-2)",relay earth; meets 33 SV and 212 SV at 113:85; earth via 212 SV and joint 158
 32,VT,0.75,8:S,9,traced,"label@4850,2190",dip/main toggle pulse from stalk
+32#earth,VT,0.75,9,earth,traced,"book photo P8 (source/photos/book-P8-9-dip-flash-stalk.jpg); scan p.407 (about 5800,3380): the stalk’s earth lead is printed 32 VT 0.75 as well","stalk 9’s earth side: pulling the stalk earths 32 VT, which pulses relay 8:S"
 31,GL,0.75,10:1,8:86,traced,"label@4850,2140","relay coil feed, headlamp position"
 20,GR,1.5,22:bar 7-12,8:30,traced,"label@3990,2250","headlamp supply, unfused"
 41,GN,1.0,10:4,22:bar 1-2,traced,"label@3990,2226",parking/tail supply via fuses 1-2
@@ -92,7 +93,7 @@ cable,colour,mm2,from,to,status,evidence,notes
 71,GN/VT,0.75,23:C,47:6,traced,labels at 47:6 and at 23,direction indicator repeater lamp
 179,SV,0.75,47:4,earth,traced,label at 47:4,
 187,VT,0.75,47:5,"58 (B9), then 188 VT",traced,book photos 24 Sep: labels at 47:5 and at 58 (B9),brake warning lamp; earthed by handbrake switch 43 or brake failure switch 42
-182,BR/VT,0.75,fuse 4 (off 85 BR at 58 (D8)),?,traced,book close-up (grid 9): branches off the fuse side of the 85 BR pin at 58 (D8),instrument supply; matches the fuse 4 lid label (instruments)
+182,BR/VT,0.75,fuse 4 (off 85 BR at 58 (D8)),47:2,traced,book close-up (grid 9): branches off the fuse side of the 85 BR pin at 58 (D8); book photo P8 (source/photos/book-P8-47-instrument-cluster.jpg): 182 BR/VT lands on terminal 2 (the cluster’s + rail),instrument supply; matches the fuse 4 lid label (instruments)
 203,BR,0.75,110,116 heated window switch,traced,"book close-ups, 1979 page (same on 1980): line from 110 runs to the third terminal of 116; 1979 scan: 203 and 214 fan out from the same switch terminal","printed BR at the tachometer and BL at switch 116 in both 1979 and 1980, a misprint; probably the tachometer + supply, looped from the switch feed (214 BL)"
 341,SV,0.75,122:5,earth,traced,label at 122; radio page,radio earth
 342,BR/VT,0.75,122:2,131 +,car,"label at 122; radio page; car, check I1: brown/white and green/white at the left-hand speaker (photo source/photos/car-131-left-speaker.jpg, 25 Sep 2026)","left speaker + on this car and the radio page (the Turbo diagram: right, 130); via 59"
