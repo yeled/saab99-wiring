@@ -2688,12 +2688,13 @@
 <text x="18" y="188" font-size="2.4" text-anchor="start" font-weight="normal" fill="#111">57 3-pole connector (A10): pins carry 161 GL, 164 BL, and 167a SV (switch side) to 167 SV (lamp side). + is 160 GL from fuse 9.</text>
 <text x="18" y="206" font-size="3.4" text-anchor="start" font-weight="bold" fill="#111">Seat belt warning</text>
 <text x="18" y="212" font-size="2.3" text-anchor="start" font-weight="normal" fill="#555">Fuse 5’s 150 GL reaches the seat and belt contacts; through them, 156 BR and 151 BR feed lamp 72, which returns on 157 SV (probably).</text>
+<text x="18" y="216.4" font-size="2.3" text-anchor="start" font-weight="normal" fill="#555">On the car (I3): with the ignition on, the lamp stays lit until the driver buckles up; the passenger’s belt only counts while seat contact 69 is pressed.</text>
 <path d="M18,223 l6,-4 M24,221 h3" stroke="#111" stroke-width=".6"/>
 <text x="30" y="222" font-size="2.7" text-anchor="start" font-weight="normal" fill="#111"><tspan font-weight="bold">69</tspan> Seat contact (A8)</text>
-<text x="30" y="226.6" font-size="2.3" text-anchor="start" font-weight="normal" fill="#555">via 59 (A8); contact wiring too cramped to read</text>
+<text x="30" y="226.6" font-size="2.3" text-anchor="start" font-weight="normal" fill="#555">passenger seat: closes when sat on (car, I3); via 59 (A8)</text>
 <path d="M208,223 l6,-4 M214,221 h3" stroke="#111" stroke-width=".6"/>
 <text x="220" y="222" font-size="2.7" text-anchor="start" font-weight="normal" fill="#111"><tspan font-weight="bold">70/71</tspan> Seat belt contacts L/R (A8)</text>
-<text x="220" y="226.6" font-size="2.3" text-anchor="start" font-weight="normal" fill="#555">via 59 (A8); 168 SV 0.75 to earth</text>
+<text x="220" y="226.6" font-size="2.3" text-anchor="start" font-weight="normal" fill="#555">open when buckled (car, I3); via 59 (A8); 168 SV 0.75 to earth</text>
 <circle cx="22" cy="233" r="3.2" fill="#fff" stroke="#111" stroke-width=".6"/>
 <path d="M19.76,230.76 L24.24,235.24 M19.76,235.24 L24.24,230.76" stroke="#111" stroke-width=".45"/>
 <text x="30" y="234" font-size="2.7" text-anchor="start" font-weight="normal" fill="#111"><tspan font-weight="bold">72</tspan> Seat belt warning lamp (D12)</text>
@@ -2720,7 +2721,7 @@
 <text x="126" y="256" font-size="2.35" text-anchor="start" font-weight="normal" fill="#333">Seat heating: fuse 5 (ignition-on bar) feeds 140 GL 1.0 through 58 (E12), an optional pin in the manual, then 60 (A7) and 59 (A7) to seat heating 64: two</text>
 <text x="126" y="261" font-size="2.35" text-anchor="start" font-weight="normal" fill="#333">elements in series with a thermostat between them, drawn open as printed (probably warm: it closes when cold); return 141 SV 1.0. The manual draws the</text>
 <text x="126" y="266" font-size="2.35" text-anchor="start" font-weight="normal" fill="#333">two elements side by side into 59’s two rows (140 GL lower, 141 SV upper); here they run in a line and 141 is drawn straight to earth.</text>
-<text x="126" y="271" font-size="2.35" text-anchor="start" font-weight="normal" fill="#333">Interior lights and seat belt warning are listed as references only: the checks on the car (docs/car-checklist.md) will fill them in.</text>
+<text x="126" y="271" font-size="2.35" text-anchor="start" font-weight="normal" fill="#333">Interior lights and seat belt warning are listed as references only. The seat belt logic comes from the car (check I3); the contacts’ wiring is too cramped to read in the book.</text>
 <text x="126" y="276" font-size="2.35" text-anchor="start" font-weight="normal" fill="#333">Fuse 5 also powers the Turbo’s high-speed fuel boost (380 GL to speed transmitter, component 140; 380a GL to throttle switch 137): see the ignition sheet.</text>
 <text x="126" y="281" font-size="2.35" text-anchor="start" font-weight="normal" fill="#333">Diagram is not RHD-specific: circuits should match, but harness routing and part positions may differ.</text>
 </g></svg>
