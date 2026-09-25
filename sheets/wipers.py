@@ -33,6 +33,9 @@ def bar_feed(y0, name, sub, n=None, rating=None):
         inner([(24.8, yc), (54, yc)])
     dot(54, yc)
     return 54, yc
+def ftag(x, y, text, anchor='start', size=2.4):
+    """tag() sized to its text: the default width runs long for these longer tags."""
+    return tag(x, y, text, w=round(len(text) * size * .46 + 4, 1), size=size, anchor=anchor)
 
 # ================= windscreen wipers =================================================================================
 txt(18, 40, 'Windscreen wipers and washer', 3.4, w='bold')
@@ -104,7 +107,7 @@ for x, y, t, anc in ((161.1, 66.3, 'F', 'start'), (139.9, 82.4, 'P', 'end'), (14
 # joins, a bar through each group. Black = read on the 1979 print, grey = probably, dotted grey with ? = unsure.
 # From the reconciled reading (book photo, scan, GLE text p. 370-371); groups in one row stay separate bars.
 TX, TY, NW, CW, RH = 51, 52.0, 22.5, 4.9, 4.6              # left, grid top, name column, cell width, row height
-TCOL = [('31b', 'BL'), ('53', 'RD'), ('53a', 'BR'), ('INT', 'GN/VT'), ('53b', 'GN'), ('S', ''), ('54c', 'GL')]   # label, wire colour
+TCOL = [('31b', 'BL'), ('53', 'RD'), ('53a', 'BR'), ('INT', 'GN/VT'), ('53b', 'GN'), ('S', 'GR'), ('54c', 'GL')]   # label, wire colour
 # headers print dark: grey in the table means a probable join (the switch symbol shows which labels are probable)
 POS61 = [('0', 'off', [(0, 1, 'p')], {0: 'p', 1: 'p'}),
          ('1', 'intermittent', [(0, 1, 'p'), (2, 3, 'r')], {0: 'p', 1: 'p', 2: 'r', 3: 'r'}),
@@ -152,20 +155,30 @@ wire('87', [(184, 72), (386, 72), (386, 89), (370, 89)], 206, 70.5)
 wire('84', [(184, 56.5), (196, 56.5), (196, 130), (230, 130)], 200, 128.5)
 wire('88', [(121, YB), (121, 142), (230, 142)], 200, 140.5)
 wire('91', [(136, YB), (136, 154), (230, 154)], 200, 152.5)
+wire('96', [(129, YB), (129, 104), (140, 104)], label=False); ftag(140, 104, '96 GR 0.75 → relay 67:86 (below)')   # S, via 58 (D8)
 box(230, 120, 42, 50); txt(251, 162, '83 Interval', 2.7, 'middle', w='bold'); txt(251, 166, 'relay (D8)', 2.7, 'middle', w='bold')
 for y in (130, 142, 154): dot(230, y)
 dot(251, 120); txt(253, 124, '85a', 2.2); wire('85a#relay', [(251, 120), (251, 112)], label=False); tag(249, 112, '85a BR 0.75 ← fuse 4', anchor='end')
 dot(272, 130); dot(272, 154)
 wire('88a', [(272, 130), (382, 130), (382, 107), (370, 107)], 290, 128.5)
 wire('91a', [(272, 154), (320, 154)], 280, 152.5)
-dot(251, 170); wire('83', [(251, 170), (251, 176)], label=False); earth(251, 176); txt(255, 179, '83 SV 0.75', 2.2)
+dot(320, 154); inner([(320, 154), (323.4, 154)])   # 63's feed terminal, a stem to the circle like the earth side
+E158 = '→ earth joint 158 (power sheet)'
+wire('83', [(251, 170), (251, 180), (255, 180)], label=False); dot(251, 170); ftag(255, 180, f'83 SV 0.75 {E158}')
 motor(327, 160); txt(337, 158, '63 Washer pump', 2.7, w='bold'); txt(337, 162.5, '(F4)', 2.2, fill='#555')
-A('<path d="M320,154 v0" />'); wire('92', [(327, 167), (327, 172)], label=False); earth(327, 172); txt(331, 175, '92 SV 1.0', 2.2)
+# 63's earth terminal: 92 SV on to joint 158, and 361 SV brings in the right front lamp housing's earth
+inner([(327, 167), (327, 169)])
+wire('92', [(327, 169), (327, 177), (331, 177)], label=False); ftag(331, 177, f'92 SV 1.0 {E158}')
+wire('361', [(327, 169), (334, 169)], label=False); ftag(334, 169, '361 SV 1.0 ← right front lamp housing (lighting sheet)')
+dot(327, 169)
 box(330, 84, 40, 30); motor(342, 99, 6); txt(350, 80.5, '62 Wiper motor (F4)', 2.7, 'middle', w='bold')
 for t, y in (('3', 89), ('5', 95), ('4', 101), ('2', 107)): dot(370, y); txt(368, y + 1, t, 2.2, 'end')
 dot(350, 114); txt(352, 112.5, '1', 2.2)
-wire('89', [(350, 114), (350, 120)], label=False); earth(350, 120); txt(354, 123, '89 SV 0.75', 2.2)
-txt(300, 137, '90 BL 1.0 also leaves the motor’s park side (not traced)', 2.1, fill='#777')
+# 89 SV loops from terminal 1 back to the housing's lower-right corner, where 90 BL leaves for joint 158
+# (label read at 62; its 1979 run crosses a scan seam, so probably; the 1977 diagram draws it)
+wire('89', [(350, 114), (350, 119), (370, 119), (370, 114)], label=False); txt(351.5, 123.2, '89 SV 0.75', 2.2)
+wire('90', [(370, 114), (376, 114), (376, 140), (372, 140)], label=False); ftag(372, 140, f'90 BL 1.0 {E158}', anchor='end')
+dot(370, 114); tlabel(368.6, 112.6, 'housing', 'end')
 wire('85a', [(370, 101), (378, 101)], label=False); txt(380, 103.5, '85a', 2.1)
 
 # ================= headlight wipers ==================================================================================
@@ -190,9 +203,11 @@ A('<path d="M148.7,215.6 L169.2,211.6" stroke="#111" stroke-width=".75" stroke-l
 A('<rect x="156" y="221" width="8" height="7" fill="#fff" stroke="#111" stroke-width=".4"/><path d="M156,228 L164,221" stroke="#111" stroke-width=".35"/>')
 A('<path d="M156,224.5 H150 V232 M164,224.5 H170 V232" fill="none" stroke="#111" stroke-width=".4"/>')
 mlink([(160, 221), (160, 207.8)])   # mechanical link from the coil to both contacts
-wire('100', [(140, 207), (134, 207), (134, 186), (138, 186)], label=False); tag(140, 186, '100 SV 0.75 → earth at relay 102')
-wire('96', [(170, 232), (170, 238), (176, 238)], label=False); tag(178, 238, '96 GR 0.75 ← wiper switch 61 (via 58 D8)')
-wire('100a', [(150, 232), (150, 238)], label=False); tag(147, 241, '100a SV 0.75: coil 85, ends on the drawing', anchor='end')
+wire('100', [(140, 207), (134, 207), (134, 186), (140, 186)], label=False); ftag(140, 186, '100 SV 0.75 → relay 102:31 (ignition sheet)')
+wire('96', [(170, 232), (170, 238), (178, 238)], label=False); tag(178, 238, '96 GR 0.75 ← wiper switch 61:S via 58 (D8)')
+# 100a: a jumper outside the relay from 85 round to 87's lead, T-joined as the 1979 print draws it (1977: the full loop),
+# so 100 SV earths the coil through 87; it crosses 95 without joining
+wire('100a', [(150, 232), (150, 238), (134, 238), (134, 207)], label=False); dot(134, 207); txt(135.6, 242.2, '100a SV 0.75', 2.1)
 
 # ---- 123 plugs and 66 motors. Drawn mirrored left to right (the manual has the plug right of the motor) so the harness
 # comes in from the left: pins keep their top-to-bottom order. Rows of 123 are through-links, a dot on each side.
@@ -235,8 +250,8 @@ wire('99', [(PX, U4), (265, U4), (265, U4 + 4.5)], label=False); earth(265, U4 +
 wire('99a', [(PX, L4), (262, L4), (262, L4 + 2)], label=False); earth(262, L4 + 2); txt(266, L4 + 7.3, '99a SV 0.75', 2.1)
 for y in (U1, U2, U3, U4, L1, L2, L4): dot(PX, y)   # harness-side pin dots over the wire ends
 
-lx, ly = 18, 250
-box(lx, ly, 389, 37, fill='#fff', sw=.5)
+lx, ly = 18, 249
+box(lx, ly, 389, 38, fill='#fff', sw=.5)
 for i, (k, n) in enumerate([('BL', 'Blue'), ('BR', 'Brown'), ('GL', 'Yellow'), ('GN', 'Green'),
                             ('GR', 'Grey'), ('RD', 'Red'), ('SV', 'Black'), ('VT', 'White')]):
     x, y = lx + 4 + (i % 4) * 23, ly + 6 + (i // 4) * 5
@@ -250,18 +265,23 @@ probable_legend(x, ly + (29 if TICKED[0] else 23))
 py = ly + (35 if TICKED[0] else 29)                   # switch 61's position lines and their numbers
 A(f'<path d="M{x},{py} h9" {PLINE}/>'); posnum(x + 11.3, py, '2'); txt(x + 14, py + 1, 'switch position line, as printed (numbered as the GLE figure)', 2.4)
 notes = ['Wipers run from fuse 4 on the ignition-on bar: 85 BR to the switch (53a) and two 85a BR leads, to the interval relay and to motor terminal 4.',
-         'The washer switch signal (91 GL) goes to the interval relay, which feeds the washer pump (91a GL), so it can wipe while washing.',
-         'Speed wires: 87 GN to motor terminal 3, 86 RD to terminal 5 (through connector 58 at D8); 85a feeds 4, 88a is the park contact (2).',
+         'The washer switch signal (91 GL) goes to the interval relay, which feeds the washer pump (91a GL), so it can wipe while washing. '
+         'Relay and pump earth at joint 158 (83 SV, 92 SV); 361 SV, the right front lamp housing’s earth, shares the pump’s earth terminal.',
+         'Speed wires: 87 GN to motor terminal 3, 86 RD to terminal 5 (through connector 58 at D8); 85a feeds 4, 88a is the park contact (2). '
+         '89 SV joins terminal 1 to the housing, which 90 BL (probably; the 1977 diagram draws it) earths at joint 158.',
          'Switch 61 as the book draws it: lever at rest (0), a dashed line per notch through the pivot, no numbers (ours as the GLE figure, p. 370; 4 its text). '
          'White slots insulate the lever’s arms: its 31b and 53a sides join apart. Pulling (4) adds S and 54c to the 53a group.',
          'The park link from the lever (up, over and down) stops short of 53 (grey: probably joined; park, braking and interval need it). '
          'P–Q, between the 54c and S lines, is printed closed, so fast would run the washer: probably a misprint (GLE keeps them apart; D10).',
-         'S has no wire printed (probably 96 GR to relay 67). Headlight wipers: unfused tap 94 BR from bar 3–6, a 3 A glass fuse in holder 65 (manual, PDF p. 30), relay 67.',
+         'The 1977 Turbo diagram (addendum p. 53) draws the park link closed and has no S–54c link, which supports the table’s grey and unsure marks. '
+         'It also draws 96 GR from S to 58; the 1979 print leaves out S to 58 (D8).',
+         'Headlight wipers: unfused tap 94 BR from bar 3–6, a 3 A glass fuse in holder 65 (manual, PDF p. 30), relay 67. '
+         'Outside 67, 100a SV joins 85 to 87 (the 1979 print draws a T, the 1977 the whole loop), so 100 SV earths the coil.',
          'Relay 67: 88 is + from the 3 A fuse; 95a RD takes it to upper plug row 2 (probably) and 95b RD on to lower row 2 (the park switches); '
          '88a switches 98 GL to the upper motor’s diode (row 1). Rows of 123 counted from the top (none printed); 66 and 123 drawn mirrored.',
          '97 BR runs from upper plug row 3 (nothing inside motor 66 uses it) to lower plug row 1, so as printed the lower motor gets no start feed; '
          'on the car both run together (E10), so the book leaves out a link, probably row 3 to row 1 inside the upper motor.',
          'Diagram is not RHD-specific; the switch and relay positions (D8/D9) are drawing grid squares, not locations in the car. '
          'Light-grey terminal labels on 61 (31b, 54c, INT, 53, 53b) are probable; S and 53a are read.']
-for j, n in enumerate(notes): txt(lx + 108, ly + 5.3 + j * 3.75, n, 2.3, fill='#333')
+for j, n in enumerate(notes): txt(lx + 108, ly + 4.3 + j * 3.5, n, 2.3, fill='#333')
 save('wipers.svg')
