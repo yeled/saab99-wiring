@@ -91,10 +91,10 @@ cable,colour,mm2,from,to,status,evidence,notes
 182,BR/VT,0.75,fuse 4 (off 85 BR at 58 (D8)),?,traced,book close-up (grid 9): branches off the fuse side of the 85 BR pin at 58 (D8),instrument supply; matches the fuse 4 lid label (instruments)
 203,BR,0.75,110,116 heated window switch,traced,"book close-ups, 1979 page (same on 1980): line from 110 runs to the third terminal of 116; 1979 scan: 203 and 214 fan out from the same switch terminal","printed BR at the tachometer and BL at switch 116 in both 1979 and 1980, a misprint; probably the tachometer + supply, looped from the switch feed (214 BL)"
 341,SV,0.75,122:5,earth,traced,label at 122; radio page,radio earth
-342,BR/VT,0.75,122:2,130 +,traced,label at 122; radio page,right speaker + on the Turbo diagram (radio page: left); via 59
-343,GN/VT,0.75,122:3,130 -,traced,label at 122; radio page,right speaker - on the Turbo diagram (radio page: left); via 59
-344,RD/VT,0.75,122:6,131 +,traced,label at 122; radio page,left speaker + on the Turbo diagram (radio page: right); via 59
-345,BL/VT,0.75,122:7,131 -,traced,label at 122; radio page,left speaker - on the Turbo diagram (radio page: right); via 59
+342,BR/VT,0.75,122:2,131 +,car,"label at 122; radio page; car, check I1: brown/white and green/white at the left-hand speaker (photo source/photos/car-131-left-speaker.jpg, 25 Sep 2026)","left speaker + on this car and the radio page (the Turbo diagram: right, 130); via 59"
+343,GN/VT,0.75,122:3,131 -,car,"label at 122; radio page; car, check I1: brown/white and green/white at the left-hand speaker (photo source/photos/car-131-left-speaker.jpg, 25 Sep 2026)","left speaker - on this car and the radio page (the Turbo diagram: right, 130); via 59"
+344,RD/VT,0.75,122:6,130 +,car,"label at 122; radio page; car, check I1: red/white and blue/white at the right-hand speaker (photo source/photos/car-130-right-speaker.jpg, 25 Sep 2026)","right speaker + on this car and the radio page (the Turbo diagram: left, 131); via 59"
+345,BL/VT,0.75,122:7,130 -,car,"label at 122; radio page; car, check I1: red/white and blue/white at the right-hand speaker (photo source/photos/car-130-right-speaker.jpg, 25 Sep 2026)","right speaker - on this car and the radio page (the Turbo diagram: left, 131); via 59"
 126a,BL,1.0,58 (B11),48,traced,label at 48,cigarette lighter feed
 127,BL,0.75,48 (126a feed),49,traced,book photos 24 Sep: joins the lighter feed,"clock feed, fuse 9 via 126a"
 215,SV,0.75,48,earth,traced,label at 48,lighter earth; the heated window switch lamp shares it
