@@ -45,7 +45,7 @@ cable,colour,mm2,from,to,status,evidence,notes
 120,SV,1.0,40 (E1):-,40 (D1):-,traced,book photo IMG_4715 (at 40 (E1)); scan p.407 (40 (D1)); 1977 Turbo addendum p.53 (371-2); book photo P5 (source/photos/book-1979-D1-E2-horns-39-front-left.jpg),links the two horns’ − terminals
 135,VT,1.0,22:fuse 3,31:reversing light switch,traced,"label@2830,3120",via connector 58 (E12)
 85,BR,1.0,22:fuse 4,61:wiper switch,traced,label at switch 61,
-85a,BR,0.75,22:fuse 4,62:4 (wiper motor),traced,label 85a BR 0.75 along fuse 4’s left leg and at motor 62 terminal 4 (scan p.407),"fuse 4’s third output, its right-hand leg, is 85b BR to relay 83:15"
+85a,BR,0.75,22:fuse 4,62:4 (wiper motor),traced,label 85a BR 0.75 along fuse 4’s left leg and at motor 62 terminal 4 (scan p.407); book photo P8 (source/photos/book-P8-62-wiper-motor.jpg): 85a BR 0.75 on the run into terminal 4,"fuse 4’s third output, its right-hand leg, is 85b BR to relay 83:15"
 85b,BR,0.75,22:fuse 4,83:15,traced,"scan p.407 traced both ways: fuse 4’s right-hand leg, down, along and up into 83:15, no connector; book photo P7b (1979; source/photos/book-P7b-83-interval-relay-pencil.jpg) and P7a (1980): label 85b BR 0.75 at 83, terminal 15",interval relay + feed from fuse 4; its only label is at 83 (the 1977 Turbo diagram runs 85b through connector 60)
 380,GL,1.0,22:fuse 5,140:15 speed transmitter,traced,"label@2950,2975","fuel boost; the drawing says 140, the 1979 legend calls it 151, speed transmitter (E11)"
 140,GL,1.0,22:fuse 5,64 seat heating (via 58 (E12) and 59),traced,"labels at fuse 5, at 58 (E12) and at 59",seat heating element with thermostat
@@ -137,7 +137,7 @@ cable,colour,mm2,from,to,status,evidence,notes
 86,RD,1.0,61,62:5 (via 58 (D8)),traced,"scan, 24 Sep: straight-line follow both ways between the switch-side label and motor terminal 5",wiper motor speed wire
 87,GN,1.0,61,62:3 (via 58 (D8)),traced,"scan, 24 Sep: straight-line follow both ways between the switch-side label and motor terminal 3",wiper motor speed wire
 83,SV,0.75,"83:31 (6th terminal, earth)",158,traced,label at 83; book photo IMG_4718 (branch d); 1977 Turbo addendum p.53 (371-2); book photo P7b (1979; source/photos/book-P7b-83-interval-relay-pencil.jpg) and P7a,
-89,SV,0.75,62:1,62 (housing),traced,label at 62; scan p.407; 1977 Turbo addendum p.53 (371-2) (89 SV from terminal 1 back to the housing),"returns to the motor housing, from where 90 BL goes to joint 158 (scan; 1977 Turbo addendum p.53 (371-2))"
+89,SV,0.75,62:1,62 (housing),traced,"label at 62; scan p.407; 1977 Turbo addendum p.53 (371-2) (89 SV from terminal 1 back to the housing); book photo P8 (source/photos/book-P8-62-wiper-motor.jpg): 89 SV 0.75 along the run from terminal 1 (on the right wall, under 2), looping back to the housing","returns to the motor housing, from where 90 BL goes to joint 158 (scan; 1977 Turbo addendum p.53 (371-2))"
 92,SV,1.0,63,158,traced,label at 63; book photos IMG_4718/IMG_4720; scan p.407,the 1977 diagram takes it to the main earth star instead; 361 SV from the right front lamp housing shares 63’s earth terminal
 95a,RD,0.75,67:88,66 (via 123),traced,labels at 67 and at 123,headlight wiper motor feed
 95b,RD,0.75,95a,"66 (second, via 123)",traced,book photos 24 Sep: joins 95a at connector 123,feed to the second headlight wiper motor
