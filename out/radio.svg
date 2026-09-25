@@ -41,21 +41,25 @@
 <path d="M215,86 L215,130 L296,130" fill="none" stroke="#ffffff" stroke-width="0.5" stroke-dasharray="1.2 1.2"/>
 <rect x="239.4" y="125.5" width="23.88" height="3.8" fill="#fff" opacity=".85"/>
 <text x="240" y="128.5" font-size="2.8" text-anchor="start" font-weight="normal" fill="#111">345 BL/VT 0.75</text>
+<path d="M263.88,126.80000000000001 l0.9,1.0 l1.9,-2.4" fill="none" stroke="#1e7a3a" stroke-width="0.55" stroke-linecap="round" stroke-linejoin="round"/>
 <path d="M195,86 L195,140 L296,140" fill="none" stroke="#222" stroke-width="1.7" stroke-linejoin="round"/>
 <path d="M195,86 L195,140 L296,140" fill="none" stroke="#d42020" stroke-width="1.1" stroke-linejoin="round"/>
 <path d="M195,86 L195,140 L296,140" fill="none" stroke="#ffffff" stroke-width="0.5" stroke-dasharray="1.2 1.2"/>
 <rect x="239.4" y="135.5" width="23.88" height="3.8" fill="#fff" opacity=".85"/>
 <text x="240" y="138.5" font-size="2.8" text-anchor="start" font-weight="normal" fill="#111">344 RD/VT 0.75</text>
+<path d="M263.88,136.8 l0.9,1.0 l1.9,-2.4" fill="none" stroke="#1e7a3a" stroke-width="0.55" stroke-linecap="round" stroke-linejoin="round"/>
 <path d="M205,86 L205,170 L296,170" fill="none" stroke="#222" stroke-width="1.7" stroke-linejoin="round"/>
 <path d="M205,86 L205,170 L296,170" fill="none" stroke="#1e9e3e" stroke-width="1.1" stroke-linejoin="round"/>
 <path d="M205,86 L205,170 L296,170" fill="none" stroke="#ffffff" stroke-width="0.5" stroke-dasharray="1.2 1.2"/>
 <rect x="239.4" y="165.5" width="23.88" height="3.8" fill="#fff" opacity=".85"/>
 <text x="240" y="168.5" font-size="2.8" text-anchor="start" font-weight="normal" fill="#111">343 GN/VT 0.75</text>
+<path d="M263.88,166.8 l0.9,1.0 l1.9,-2.4" fill="none" stroke="#1e7a3a" stroke-width="0.55" stroke-linecap="round" stroke-linejoin="round"/>
 <path d="M185,86 L185,180 L296,180" fill="none" stroke="#222" stroke-width="1.7" stroke-linejoin="round"/>
 <path d="M185,86 L185,180 L296,180" fill="none" stroke="#7a4a1c" stroke-width="1.1" stroke-linejoin="round"/>
 <path d="M185,86 L185,180 L296,180" fill="none" stroke="#ffffff" stroke-width="0.5" stroke-dasharray="1.2 1.2"/>
 <rect x="239.4" y="175.5" width="23.88" height="3.8" fill="#fff" opacity=".85"/>
 <text x="240" y="178.5" font-size="2.8" text-anchor="start" font-weight="normal" fill="#111">342 BR/VT 0.75</text>
+<path d="M263.88,176.8 l0.9,1.0 l1.9,-2.4" fill="none" stroke="#1e7a3a" stroke-width="0.55" stroke-linecap="round" stroke-linejoin="round"/>
 <rect x="298.0" y="127.0" width="4" height="16" fill="#ddd" stroke="#111" stroke-width=".5"/>
 <text x="300" y="125.5" font-size="2.2" text-anchor="middle" font-weight="normal" fill="#555">59</text>
 <rect x="298.0" y="167.0" width="4" height="16" fill="#ddd" stroke="#111" stroke-width=".5"/>
@@ -63,15 +67,15 @@
 <path d="M302,130 H330 M302,140 H330" stroke="#111" stroke-width=".6"/>
 <path d="M302,170 H330 M302,180 H330" stroke="#111" stroke-width=".6"/>
 <path d="M330,130 h5 l6,-6 v22 l-6,-6 h-5 z" fill="#fff" stroke="#111" stroke-width=".7"/>
-<text x="346" y="134" font-size="2.8" text-anchor="start" font-weight="normal" fill="#111"><tspan font-weight="bold">131</tspan> Loudspeaker, left</text>
+<text x="346" y="134" font-size="2.8" text-anchor="start" font-weight="normal" fill="#111"><tspan font-weight="bold">130</tspan> Loudspeaker, right</text>
 <text x="325" y="129" font-size="3" text-anchor="end" font-weight="normal" fill="#111">−</text>
 <text x="325" y="143" font-size="3" text-anchor="end" font-weight="normal" fill="#111">+</text>
 <path d="M330,170 h5 l6,-6 v22 l-6,-6 h-5 z" fill="#fff" stroke="#111" stroke-width=".7"/>
-<text x="346" y="174" font-size="2.8" text-anchor="start" font-weight="normal" fill="#111"><tspan font-weight="bold">130</tspan> Loudspeaker, right</text>
+<text x="346" y="174" font-size="2.8" text-anchor="start" font-weight="normal" fill="#111"><tspan font-weight="bold">131</tspan> Loudspeaker, left</text>
 <text x="325" y="169" font-size="3" text-anchor="end" font-weight="normal" fill="#111">−</text>
 <text x="325" y="183" font-size="3" text-anchor="end" font-weight="normal" fill="#111">+</text>
-<text x="346" y="141" font-size="2.2" text-anchor="start" font-weight="normal" fill="#555">left/right as on the 1979 Turbo diagram;</text>
-<text x="346" y="144.5" font-size="2.2" text-anchor="start" font-weight="normal" fill="#555">the radio page shows them swapped</text>
+<text x="346" y="141" font-size="2.2" text-anchor="start" font-weight="normal" fill="#555">left and right as on this car (I1)</text>
+<text x="346" y="144.5" font-size="2.2" text-anchor="start" font-weight="normal" fill="#555">and the radio page; the Turbo diagram swaps them</text>
 <text x="18" y="208" font-size="3.2" text-anchor="start" font-weight="bold" fill="#111">Accessory feeds</text>
 <rect x="18" y="212" width="36" height="20" rx="1.2" fill="#fafafa" stroke="#111" stroke-width="0.8"/>
 <text x="21" y="217" font-size="2.6" text-anchor="start" font-weight="normal" fill="#111"><tspan font-weight="bold">F9</tspan> · 8 A</text>
@@ -140,13 +144,15 @@
 <text x="100" y="261" font-size="2.5" text-anchor="start" font-weight="normal" fill="#111">VT White</text>
 <path d="M22,267 h9" stroke="#222" stroke-width="1.2"/>
 <text x="33" y="268" font-size="2.4" text-anchor="start" font-weight="normal" fill="#111">traced (cable no. read)</text>
-<circle cx="23" cy="273" r=".8" fill="#fff" stroke="#888" stroke-width=".35"/>
-<circle cx="30" cy="273" r=".8" fill="#fff" stroke="#888" stroke-width=".35"/>
-<path d="M23.7,272.7 L29.6,270.6" stroke="#888" stroke-width=".75" stroke-linecap="round"/>
-<text x="33" y="274" font-size="2.4" text-anchor="start" font-weight="normal" fill="#111">grey inside a part: probably, not printed clearly</text>
+<path d="M22,272.2 l0.9,1.0 l1.9,-2.4" fill="none" stroke="#1e7a3a" stroke-width="0.55" stroke-linecap="round" stroke-linejoin="round"/>
+<text x="26" y="274" font-size="2.4" text-anchor="start" font-weight="normal" fill="#111">checked on the car</text>
+<circle cx="23" cy="279" r=".8" fill="#fff" stroke="#888" stroke-width=".35"/>
+<circle cx="30" cy="279" r=".8" fill="#fff" stroke="#888" stroke-width=".35"/>
+<path d="M23.7,278.7 L29.6,276.6" stroke="#888" stroke-width=".75" stroke-linecap="round"/>
+<text x="33" y="280" font-size="2.4" text-anchor="start" font-weight="normal" fill="#111">grey inside a part: probably, not printed clearly</text>
 <text x="126" y="256.0" font-size="2.35" text-anchor="start" font-weight="normal" fill="#333">Pin numbers and speaker polarity (342, 344 to +; 343, 345 to −) are from the radio installation page, PDF p. 798.</text>
 <text x="126" y="261.4" font-size="2.35" text-anchor="start" font-weight="normal" fill="#333">The radio’s + (340 RD) comes from ignition switch X here, so it’s live with the key on; the radio page describes a battery feed.</text>
-<text x="126" y="266.8" font-size="2.35" text-anchor="start" font-weight="normal" fill="#333">Left and right: the 1979 Turbo diagram puts 344/345 on the left speaker and 342/343 on the right; the radio page swaps them.</text>
+<text x="126" y="266.8" font-size="2.35" text-anchor="start" font-weight="normal" fill="#333">Left and right as on this car (check I1): right-hand speaker 344/345, left-hand 342/343, as the radio page shows; the 1979 Turbo diagram swaps them.</text>
 <text x="126" y="272.2" font-size="2.35" text-anchor="start" font-weight="normal" fill="#333">Fuse 9 (lid: cigar lighter, compartment light, clock): the 58 (B11) pin that 126 BL enters carries on as 160 GL to the interior lights.</text>
 <text x="126" y="277.6" font-size="2.35" text-anchor="start" font-weight="normal" fill="#333">126a BL to the lighter leaves 58 (B11) on the fuse side; the manual hides its join in the frame, so it’s grey. The clock’s 127 BL takes off 126a.</text>
 <text x="126" y="283.0" font-size="2.35" text-anchor="start" font-weight="normal" fill="#333">The radio page puts the junction box in the right-hand trim panel under the dash; that’s for LHD cars.</text>
