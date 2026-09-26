@@ -37,19 +37,47 @@ DASHED = [False]  # set when a sheet draws anything 'not traced'; the legend sho
 PROBABLE = [False]  # set when a part's internals are drawn grey (probable); probable_legend() draws only then
 
 
+# Core width (mm) by cable size (mm2): exaggerated at the thin end so a size step shows at a glance (0.75 well under
+# 1.0), sloping off above 2.5 so the main feeds stay lines, not bands; the black outline adds edge(cw).
+# The book draws every line alike: this is ours. Unknown sizes draw as 1.0.
+WIDTH = {0.5: .35, 0.75: .5, 1.0: 1.1, 1.5: 1.6, 2.5: 2.3, 4.0: 2.8, 16.0: 3.4}
+def edge(cw): return .4 if cw < 1 else .6     # outline added to the core: thinner below 1.0 so the colour still shows
+def core_width(cable):
+    try: return WIDTH.get(float(WIRES[cable]['mm2']), 1.1)
+    except ValueError: return 1.1
+
+def _clear_label(pts, lx, ly, rot, length, shift):
+    """Move a label (lx, ly) away from the nearest parallel segment of its wire by shift; returns the new (lx, ly)."""
+    best = None
+    for (x0, y0), (x1, y1) in zip(pts, pts[1:]):
+        if rot is None and y0 == y1:
+            a, b, c, p, q = min(x0, x1), max(x0, x1), y0, ly, (lx, lx + length)
+        elif rot is not None and x0 == x1:
+            a, b, c, p = min(y0, y1), max(y0, y1), x0, lx
+            q = (ly - length, ly) if rot < 0 else (ly, ly + length)
+        else:
+            continue
+        if q[1] < a - 2 or q[0] > b + 2: continue          # the label doesn't run along this segment
+        if best is None or abs(p - c) < best[0]: best = (abs(p - c), c)
+    if best is None: return lx, ly
+    c = best[1]
+    if rot is None: return lx, ly + (shift if ly > c else -shift)
+    return lx + (shift if lx > c else -shift), ly
+
 def wire(cable, pts, lx=None, ly=None, rot=None, label=True):
     r = WIRES[cable]
     dash = ' stroke-dasharray="3 2"' if r['status'] == 'open' else ''
     if dash: DASHED[0] = True
     d = path(pts)
+    cw = core_width(cable)
     if r['colour'] == '':                       # colour not read yet: plain grey
         A(f'<path d="{d}" fill="none" stroke="#777" stroke-width="0.9" stroke-linejoin="round"{dash}/>')
     else:
         cols = r['colour'].split('/')
-        A(f'<path d="{d}" fill="none" stroke="#222" stroke-width="1.7" stroke-linejoin="round"{dash}/>')
-        A(f'<path d="{d}" fill="none" stroke="{COL[cols[0]]}" stroke-width="1.1" stroke-linejoin="round"{dash}/>')
+        A(f'<path d="{d}" fill="none" stroke="#222" stroke-width="{cw + edge(cw):g}" stroke-linejoin="round"{dash}/>')
+        A(f'<path d="{d}" fill="none" stroke="{COL[cols[0]]}" stroke-width="{cw:g}" stroke-linejoin="round"{dash}/>')
         if len(cols) == 2 and not dash:          # second colour as a stripe (skipped on dashed wires)
-            A(f'<path d="{d}" fill="none" stroke="{COL[cols[1]]}" stroke-width="0.5" stroke-dasharray="1.2 1.2"/>')
+            A(f'<path d="{d}" fill="none" stroke="{COL[cols[1]]}" stroke-width="{max(.3, round(cw * .45, 2)):g}" stroke-dasharray="1.2 1.2"/>')
     if r['status'] == 'stub':
         x, y = pts[-1]
         A(f'<circle cx="{x}" cy="{y}" r="1.3" fill="#fff" stroke="#222" stroke-width=".5"/>')
@@ -58,6 +86,8 @@ def wire(cable, pts, lx=None, ly=None, rot=None, label=True):
             s = 'cable no. not read'
         else:
             s = f"{cable.split('#')[0]} {r['colour']} {r['mm2']}"  # '#suffix' only disambiguates duplicate numbers
+        shift = (cw + edge(cw)) / 2 - .85                 # half-width beyond a 1.0 wire's: heavier wires push their label clear
+        if shift > 0 and r['colour']: lx, ly = _clear_label(pts, lx, ly, rot, len(s) * 1.62, round(shift, 2))
         if rot is None:
             A(f'<rect x="{lx - .6}" y="{ly - 3.0}" width="{len(s) * 1.62 + 1.2}" height="3.8" fill="#fff" opacity=".85"/>')
         txt(lx, ly, s, 2.8 if not cable.startswith('?') else 2.4, rot=rot, fill='#111' if not cable.startswith('?') else '#666')
@@ -169,6 +199,15 @@ def twin_lamp(x, y, r=4.5, grey=False):
         A(f'<path d="M{_n(f[0])},{_n(f[1])} L{_n(s[0])},{_n(s[1])} A{_n(r * .3)},{_n(r * .3)} 0 0 {1 if sy < 0 else 0} '
           f'{_n(e[0])},{_n(e[1])} L{_n(x + r)},{_n(y)}" fill="none" stroke="{c}" stroke-width=".4" stroke-linejoin="round"/>')
     return ends[0], ends[1], (_n(x + r), _n(y))
+
+def size_legend(x, y):
+    """Legend row for line widths (sample bars at y - 1, text baseline y, like the other samples). Returns its width."""
+    txt(x, y, 'cable size, mm²:', 2.4)
+    cx = x + 22
+    for mm2 in (0.75, 1.5, 2.5, 4.0):
+        A(f'<path d="M{cx},{y - 1} h7" stroke="#222" stroke-width="{WIDTH[mm2] + edge(WIDTH[mm2]):g}"/>'); txt(cx + 8.5, y, f'{mm2:g}', 2.4)
+        cx += 15.5
+    return cx - x
 
 def probable_legend(x, y):
     """Legend sample for grey internals, drawn only when a helper had grey=True; (x, y) like the dashed sample. Returns whether it drew."""
