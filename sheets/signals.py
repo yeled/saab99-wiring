@@ -169,11 +169,11 @@ inner([(151.4, 70.4), (160, 70.4), (160, 88)]); dot(160, 88); tlabel(161.6, 86.6
 inner([(151.4, 78), (155, 78), (155, 88)]); dot(155, 88); tlabel(153.4, 86.6, 'L', 'end')
 # The lamp terminal's fork, as printed: 69 SV straight right and down to earth, 52 SV on a diagonal just above it to
 # panel light connector 59 (59 (D11)), where 179 SV from 47:4 (instruments sheet) and the panel lamps' 54/56 SV share
-# the pin: 69 is their earth too. The panel lamps are on no sheet.
+# the pin: 69 is their earth too. The panel lamps are drawn on the instruments sheet.
 wire('69', [(170, 64.8), (178, 64.8), (178, 70)], label=False); earth(178, 70)
 txt(180.5, 68.8, lab('69'), 2.1)
 wire('52', [(170, 64.8), (174, 60.8), (174, 52), (177, 52)], label=False)
-mtag(177, 52, (f"{lab('52')} → panel light", 'connector 59: instrument earth', '179 (instruments sheet) and', 'panel lamps (not drawn)'), w=30)   # w from the rendered text
+mtag(177, 52, (f"{lab('52')} → panel light", 'connector 59: instrument', 'earth 179 and the panel', 'lamps (instruments sheet)'), w=30)   # w from the rendered text
 
 # 24 indicator switch as printed: 54 at the top, a lever hanging from its pivot, centre-off between R (left) and L.
 box(210, 48, 30, 40); txt(243, 68, '24 Indicator switch', 2.4, w='bold')
