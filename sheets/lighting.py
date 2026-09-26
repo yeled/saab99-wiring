@@ -10,7 +10,7 @@ from common import _ink                      # grey (probably) ink for filament(
 
 header('Saab 99 Turbo, model 1979 — Lighting circuit')
 txt(16, 40, 'FRONT', 3.6, w='bold', fill='#777'); txt(398, 91, 'REAR', 3.6, 'end', w='bold', fill='#777')
-txt(16, 44.5, 'car’s right side at top', 2.3, fill='#777')
+txt(16, 44.5, 'car’s right side at top', 2.3, fill='#777'); txt(398, 95.5, 'Combi Coupé (this car)', 2.3, 'end', fill='#777')
 
 
 def jdot(x, y):
@@ -382,43 +382,89 @@ txt(349, 37, 'X', 2.6); txt(349, 49, '30', 2.6)
 txt(358, 36, '20  Ignition switch', 3, w='bold'); txt(358, 41, '30: battery in (grey)', 2.3, fill='#555')
 txt(358, 45, 'X: live with key on (red)', 2.3, fill='#555')                   # manual PDF p. 375
 
-# ---- rear clusters -----------------------------------------------------
-# As printed (IMG_4727/4728): six bulbs over one earth bar. The tail feed enters the tail bulb next to the indicator;
-# a jumper takes it to the other tail bulb and a second one on to the number plate bulb. Both jumpers are unnumbered
-# and drawn just outside the lamp, as in the manual (whether they are in the harness or the holder is unreadable).
-# L is printed as the vertical mirror of R (indicator at the bottom, outboard like R's at the top); so is it here.
-# Feeds drawn on the signals sheet end in open terminals on the outline.
-xL, xJ, xP, xB, xE, xR, rr = 354, 348.5, 351, 372, 382, 386, 3.2
+# ---- rear lights: Combi Coupé (this car) --------------------------------
+# The car is a 3-door Combi Coupé: each rear light has four bulbs over one earth bar, R top to bottom indicator, tail,
+# brake, reversing and L its vertical mirror (indicator at the bottom, outboard like R's at the top). One tail bulb
+# each: 42 feeds the left, 44 the right. 44 also feeds the two number-plate lamps through 2-pole connector 59 (probably
+# where the harness enters the tailgate): 44 from 58 and the onward 44 to the right tail bulb both sit on 59's body-side
+# pin, so 59 hangs from the 44 run with that pin's terminal on the wire (no splice ahead of it). 47 leaves the tailgate
+# side for the first lamp and 47a links that lamp to the second. From the 1977/78 Turbo Combi Coupé diagrams (no 1979
+# one exists), so 59's pins and the number-plate lamps are grey (probably) and 47/47a dashed. Neither light has an earth
+# lead on those diagrams: each bar leaves through a grey exit terminal to a grey earth, as on the signals sheet (check
+# R3). 42 and 44 pass tail lamp connector 58, pins 2 and 1: two short blocks in one column, captioned above so 59's
+# caption can sit left of 59. The wire labels sit on the long runs further left. Feeds drawn on the signals sheet end
+# in open terminals on the outline, captioned with the cable that arrives there.
+xL, xB, xE, xR, rr = 364, 372, 379, 382, 3.2         # light: left edge, bulbs, earth bar, right edge; bulb radius
+x58 = 310                                            # 58 blocks (left edge), clear of 41 at x 304
+xp, xa, xb = 337, 368.5, 391.5                       # 59's used pin; number-plate lamp terminals
 
 
-def cluster(y0, side, feed, ind, tail_stub, plate_stub, mirror=False):
-    """feed: (cable, route up to the cluster, label position). Bulbs are indexed indicator, fed tail, brake, reversing,
-    jumper-fed tail, plate: top to bottom for R, bottom to top for L (mirror=True)."""
-    box(xL, y0, xR - xL, 54, fill='#fdfdfd', sw=.6)
+def grey_earth(x, y):
+    """common.earth() in grey: an earth that is probably there but not printed."""
+    A(f'<path d="M{x},{y} v3 M{x - 3},{y + 3} h6 M{x - 2},{y + 4.3} h4 M{x - 1},{y + 5.6} h2" stroke="{_ink(True)}" '
+      f'stroke-width=".5" fill="none"/>')
+
+
+def cluster(y0, side, bulbs):
+    """Rear light: bulbs (legend no., name, open-lead cable; None for the tail bulb) top to bottom; the top bulb's
+    lead starts the earth bar. Its way out through the bottom edge is grey, as on the signals sheet: the Combi Coupé
+    diagrams print no earth lead (check R3). Returns the tail bulb's feed height."""
+    box(xL, y0, xR - xL, 36, fill='#fdfdfd', sw=.6)
     txt((xL + xR) / 2, y0 - 2, f'Rear lamp cluster {side}', 2.6, 'middle')
-    ys = [y0 + 4.5 + 9 * i for i in range(6)]
-    if mirror: ys.reverse()
-    g = 1 if ys[4] > ys[1] else -1                                                # the way the jumpers run
-    wire(feed[0], feed[1] + [(xL, ys[1])], *feed[2])
-    for i in (1, 4, 5): inner([(xL, ys[i]), (xB - rr, ys[i])])                     # the three tail-circuit feeds
-    for i in (0, 2, 3): contact(xL, ys[i]); inner([(xL + .8, ys[i]), (xB - rr, ys[i])])   # indicator, brake, reversing
-    inner([(xL, ys[1]), (xJ, ys[1] + 4 * g), (xJ, ys[4]), (xL, ys[4])])            # tail jumper, outside the lamp
-    inner([(xL, ys[4]), (xP, ys[4] + 3 * g), (xP, ys[5]), (xL, ys[5])])            # number plate jumper
-    it = 0 if not mirror else 5                                                    # the bar starts at the top bulb
-    inner([(xB + rr, ys[it]), (xE, ys[it]), (xE, y0 + 54)])                         # earth bar
-    for i, (yy, nm) in enumerate(zip(ys, (f'{ind} indicator', '14 tail', '30 brake', '32 reversing', '14 tail', '15 plate'))):
-        indicator(xB, yy, rr, 'tb') if i == 0 else lamp(xB, yy, r=rr)
-        if i != it: inner([(xB + rr, yy), (xE, yy)]); jdot(xE, yy)
-        txt(xR + 2, yy + .8, nm, 2.2, fill='#111' if i in (1, 4, 5) else '#555')
-    earth(xE, y0 + 54); dot(xE, y0 + 54)
-    ty = ys[2] - 2.5                                                               # the tail stub lands on the jumper
-    wire(tail_stub, [(xJ, ty), (342, ty)], 322, ty + 1.5)
-    wire(plate_stub, [(xP, ys[5]), (342, ys[5])], 320, ys[5] + 1.5)
-    for p in ((xJ, ty), (xP, ys[5]), (xL, ys[1]), (xL, ys[4]), (xL, ys[5])): dot(*p)
+    ys = [y0 + 4.5 + 9 * i for i in range(4)]
+    inner([(xB + rr, ys[0]), (xE, ys[0]), (xE, ys[3])])                            # earth bar
+    inner([(xE, ys[3]), (xE, y0 + 36)], grey=True); grey_earth(xE, y0 + 36)         # its way out: none printed (R3)
+    A(f'<circle cx="{xE}" cy="{y0 + 36}" r="1.0" fill="{_ink(True)}"/>')              # grey exit terminal, as on signals
+    for i, (yy, (n, nm, c)) in enumerate(zip(ys, bulbs)):
+        indicator(xB, yy, rr, 'tb') if nm == 'indicator' else lamp(xB, yy, r=rr)
+        if i: inner([(xB + rr, yy), (xE, yy)]); jdot(xE, yy)
+        if c:                                                                      # fed on the signals sheet
+            contact(xL, yy); inner([(xL + .8, yy), (xB - rr, yy)])
+            txt(xL - 2, yy + .75, f"{c} {WIRES[c]['colour']}: signals sheet", 2.0, 'end', fill='#555')
+        else:
+            inner([(xL, yy), (xB - rr, yy)]); ty = yy
+        txt(xR + 2, yy + .8, f'{n} {nm}', 2.2, fill='#555' if c else '#111')
+    txt(xE + 4.5, y0 + 40.8, 'earth: check R3', 2.0, fill='#555')
+    return ty
 
 
-cluster(102.5, 'R', ('44', [(255, 125), (255, 116)], (314, 114)), 28, '47', '47a')
-cluster(172.5, 'L', ('42', [(255, 178), (255, 213)], (314, 211)), 27, '46', '46a', mirror=True)
+def conn58(y, pin):
+    """One pin of tail lamp connector 58: a short block, its pin number inside, the name above it."""
+    A(f'<rect x="{x58}" y="{y - 3}" width="6" height="6" fill="#ddd" stroke="#111" stroke-width=".6"/>')
+    tlabel(x58 + 3, y + .65, pin, 'middle'); txt(x58 + 3, y - 4.2, '58 tail lamps', 2.0, 'middle', fill='#555')
+
+
+def plate_lamp(x, y):
+    """Number-plate lamp 15 (a 5 W festoon) hanging from its feed terminal (x, y), with its own earth. Grey: probably."""
+    c, r = _ink(True), 3.0; cy, k = y + 6, round(3.0 * .7, 2)
+    inner([(x, y), (x, cy - r)], grey=True)
+    A(f'<circle cx="{x}" cy="{cy}" r="{r}" fill="#fff" stroke="{c}" stroke-width=".6"/>'
+      f'<path d="M{x - k},{cy - k} L{x + k},{cy + k} M{x - k},{cy + k} L{x + k},{cy - k}" stroke="{c}" stroke-width=".45"/>')
+    grey_earth(x, cy + r)
+
+
+yR = cluster(102.5, 'R', (('28', 'indicator', '79'), ('14', 'tail', None), ('30', 'brake', '133'), ('32', 'reversing', '137')))
+yL = cluster(188, 'L', (('32', 'reversing', '136'), ('30', 'brake', '132'), ('14', 'tail', None), ('27', 'indicator', '76')))
+conn58(yR, '1'); conn58(yL, '2')
+wire('44', [(255, 125), (255, yR), (x58, yR)], 262, yR - 1.5)
+wire('44', [(x58 + 6, yR), (xp, yR)], label=False)                                  # to 59's body-side pin
+wire('44', [(xp, yR), (xL, yR)], label=False)                                       # from the same pin to the right tail bulb
+wire('42', [(255, 178), (255, yL), (x58, yL)], 262, yL - 1.5)
+wire('42', [(x58 + 6, yL), (xL, yL)], label=False)
+# 59: two pins, no numbers printed, hanging from the 44 run: body side up, tailgate side down. The used pin runs from
+# its body-side terminal on 44 to the tailgate-side terminal where 47 leaves; the other one carries nothing (check R5).
+yT, yB = yR + 2, yR + 6                                                             # block top and bottom
+y59 = yB + 31.5                                                                     # 47's corner: mid-dash
+A(f'<rect x="{xp - 2}" y="{yT}" width="7" height="{yB - yT}" fill="#ddd" stroke="#111" stroke-width=".6"/>')
+inner([(xp, yR), (xp, yB)], grey=True); inner([(xp + 3, yT), (xp + 3, yB)], grey=True)
+txt(xp - 3.5, yT + 1.8, '59 number plate', 2.0, 'end', fill='#555')
+txt(xp - 3.5, yT + 4.6, '(probably at the tailgate)', 2.0, 'end', fill='#555')
+wire('47', [(xp, yB), (xp, y59), (xa, y59)], xp + 3, y59 - 1.5)                    # 63 mm, 47a 23: dashes meet both ends
+wire('47a', [(xa, y59), (xb, y59)], xa + 2, y59 - 1.5)
+plate_lamp(xa, y59); plate_lamp(xb, y59)
+txt(xa - 1, y59 + 20, '15', 2.6, w='bold'); txt(xa + 3, y59 + 20, 'Number-plate lamps', 2.6)
+for p in ((xL, yR), (xL, yL), (x58, yR), (x58 + 6, yR), (x58, yL), (x58 + 6, yL), (xp, yR), (xp, yB), (xa, y59), (xb, y59)):
+    dot(*p)
 
 # terminal dots and junctions go on top of the wires that end on them
 for p in [(x, yb) for x in bt.values()] + [(324, 36), (324, 48), (345, 36), (345, 48), (255, 125), (255, 178),
@@ -447,11 +493,11 @@ probable_legend(lx + 4, ly + 19)
 gx, gy = lx + 47, ly + 19                    # ghost blade sample, right of the grey one: open at rest, dashed where it goes
 A(f'<path d="M{gx + 1.7},{gy - .3} L{gx + 7.2},{gy - .3}" fill="none" {GHOST}/>'); contact(gx + 1, gy); contact(gx + 8, gy)
 blade(gx + 1.7, gy - .3, gx + 7.6, gy - 2.4); txt(gx + 11, gy + 1, 'faded blade: position when pulled', 2.4)   # names the blade, not the dash: K1/K2's links are grey dashes too
-notes = ['Headlamps need the ignition on (except the flash, stalk 9); parking/tail lights do not:',   # manual PDF p. 375, 413
-         'light switch 2 is fed from ignition switch X, light switch 3 from the always-live bar.',
-         'Headlamps are unfused: relay 30 is fed straight from the supply bar (20 GR 1.5).',
+notes = ['Headlamps need the ignition on (except the flash, stalk 9); parking/tail lights do not: light switch 2 is fed from ignition',   # manual PDF p. 375, 413
+         'switch X, light switch 3 from the always-live bar. Headlamps are unfused: relay 30 is fed straight from the supply bar (20 GR 1.5).',
          'Not RHD-specific: circuits should match the car, but harness routing and part positions may differ.',
-         'All bulbs in a lamp housing share its one earth. Indicators, brake and rear reversing bulbs: signals sheet.',
+         'All bulbs in a lamp housing share its one earth (rear lights: check R3). The rear is drawn for the Combi Coupé (this car): fuse 2 probably also',
+         'feeds the number-plate lamps through 44 and connector 59. These lamps, 59 and 47/47a (dashed): not yet checked on the car (checks R1, R4, R5).',
          'Corner lamps (dashed): dash switch 117 with pilot lamp, fed from fuse 5 (checks E19, F4); wiring probably as drawn,',
          'colours: check E19b. 221 reaches the left housing through pin 2 of front lamp connector 58; 222a branches off for the right.',
          'One bulb, two filaments: 5 W parking 13 from light switch 10, no ignition; 21 W corner lamp 118 from 117, ignition on (check E21).',
