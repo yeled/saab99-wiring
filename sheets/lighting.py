@@ -299,15 +299,16 @@ for k, (x, y) in T.items():
 wire('221a', [(kx + 8, ky + 30), (kx + 8, 118), (216, 118), (216, T['6'][1]), T['6']], 184, 116)
 for i, s in enumerate(('6-5: top position, town light', '(S/N/DK only, p.413); 1979 Turbo', 'prints them bare; car: E21, D11')):
     txt(219.5, sy - 5.6 + 2.8 * i, s, 2.1, 'end', fill='#555')
-wire('31', [(bt['86'], yb), (bt['86'], 250), (232, 250), T['1']], 203.5, 248)
-wire('20', [(bt['30'], yb), (bt['30'], 258), (236, 258), (236, 96), (244, 96)], 203.5, 256)
+box(240, 88, 60, 108)   # fuse box 22, drawn before 20 and 41 so their last legs show inside it, up to the bar and 290,150
+# labels 2.7 mm right of 20 GR 1.5's riser from 8:30, so they read as 31's and 20's, not the riser's
+wire('31', [(bt['86'], yb), (bt['86'], 250), (232, 250), T['1']], 205, 248)
+wire('20', [(bt['30'], yb), (bt['30'], 258), (236, 258), (236, 96), (244, 96)], 205, 256)
 wire('30', [T['2'], (232, 36), (318, 36)], 240, 34)
-wire('40', [T['3'], (262, 42), (312, 42), (318, 48)], 268, 40)
+wire('40', [T['3'], (262, 42), (314.5, 42), (318, 48)], 268, 40)   # steep last leg: meets 7 GR 2.5 at the pin, not before
 wire('41', [T['4'], (262, 80), (304, 80), (304, 150), (290, 150)], 266.5, 78.2)
 
 # ---- fuse box 22 -------------------------------------------------------
-box(240, 88, 60, 108)
-A('<path d="M244,96 H286" stroke="#111" stroke-width="1.6"/>')
+A('<path d="M244,96 H286" stroke="#111" stroke-width="2.9"/>')   # as wide as 7 GR 2.5 it feeds (solid black reads heavier than a grey core)
 txt(246, 102, 'Supply bar, fuses 7–12: always live', 2.3); txt(246, 105.4, 'fed from battery via 5 GR 4.0 + 5a GR 2.5', 2.3, fill='#555')
 wire('7', [(286, 96), (310, 96), (310, 48), (318, 48)], 314, 90, rot=-90)
 for fy, n in ((125, '2'), (178, '1')):
@@ -380,14 +381,15 @@ for p in [(x, yb) for x in bt.values()] + [(324, 36), (324, 48), (345, 36), (345
 lx, ly = 250, 234.5                          # top 2.4 mm under cluster L's earth; ten note lines fit above the frame
 box(lx, ly, 157, 52.5, fill='#fff', sw=.5)
 txt(lx + 3, ly + 5, 'Cable key: number · colour · mm²', 3, w='bold')
+size_legend(lx + 72, ly + 5)                 # on the heading row, right of its 'mm²'; its '4' ends near lx + 150
 for i, (k, n) in enumerate([('BL', 'Blue'), ('BR', 'Brown'), ('GL', 'Yellow'), ('GN', 'Green'),
                             ('GR', 'Grey'), ('RD', 'Red'), ('SV', 'Black'), ('VT', 'White')]):
     x, y = lx + 4 + (i % 4) * 23, ly + 9.5 + (i // 4) * 4.5
     A(f'<path d="M{x},{y - 1} h7" stroke="#222" stroke-width="1.7"/><path d="M{x},{y - 1} h7" stroke="{COL[k]}" stroke-width="1.1"/>')
     txt(x + 9, y, f'{k} {n}', 2.5)
 x, y = lx + 97, ly + 9.5
-A(f'<path d="M{x},{y - 1} h9" stroke="#222" stroke-width="1.2"/>'); txt(x + 11, y, 'traced (cable no. read)', 2.4)
-if DASHED[0]: A(f'<path d="M{x},{y + 4} h9" stroke="#222" stroke-width="1.2" stroke-dasharray="3 2"/>'); txt(x + 11, y + 5, 'not traced yet', 2.4)
+A(f'<path d="M{x},{y - 1} h9" stroke="#222" stroke-width="1.7"/>'); txt(x + 11, y, 'traced (cable no. read)', 2.4)
+if DASHED[0]: A(f'<path d="M{x},{y + 4} h9" stroke="#222" stroke-width="1.7" stroke-dasharray="3 2"/>'); txt(x + 11, y + 5, 'not traced yet', 2.4)
 A(f'<path d="M{x},{y + 9} h7" stroke="#222" stroke-width=".8"/><circle cx="{x + 8.3}" cy="{y + 9}" r="1.3" fill="#fff" stroke="#222" stroke-width=".5"/>')
 txt(x + 11, y + 10, 'ends on diagram', 2.4)
 if TICKED[0]: tick(x + 33, y + 9.3); txt(x + 37, y + 10, 'checked on the car', 2.4)
