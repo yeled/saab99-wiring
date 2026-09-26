@@ -43,9 +43,16 @@ mlink([cr, (113.4, cr[1])])
 wire('201', [(96, 122), (96, 125.5), (84, 125.5), (84, 118), (80, 118)], label=False); tag(78, 118, '201 SV 0.75 → earth joint 158 (power sheet)', w=55, anchor='end')
 wire('202', [(112, 90), (112, 84), (118, 84)], label=False); tag(120, 84, '202 GR 1.5 ← bar 7–12 (always live)')
 wire('122a', [(104, 122), (104, 141.5), (52, 141.5)], 56, 139.8); dot(104, 131); dot(104, 137)
-wire('271', [(104, 131), (108, 131)], label=False); tag(110, 131, '271 RD 1.0 → 92 thermo-time switch heater, via 58/1')
 wire('282', [(104, 137), (108, 137)], label=False); tag(110, 137, '282 GL 1.0 → 73 service outlet (start terminal)')
-wire('271', [(362, 230), (356, 230), (356, 223), (352, 223)], label=False); tag(350, 223, '271 RD 1.0 ← relay 89 (87)', anchor='end')
+# 271: 89:87 to 92's heater through 58/1. Under 394, up into the band below 124, across 284's riser (the only way out: 284
+# wraps 102 and the injection parts) and down the free strip right of it; 58/1 on the drop, then round into 92's left wall
+Y271 = 124.2
+wire('271', [(104, 131), (180, 131), (180, Y271), (368, Y271), (368, 214), (356, 214), (356, 230), (362, 230)], 366.6, 210, rot=-90)
+A('<rect x="364" y="186" width="8" height="4" fill="#ddd" stroke="#111" stroke-width=".5"/>'); dot(368, 186); dot(368, 190)
+txt(374, 189, '58/1', 2.1, fill='#555')
+# the RD label sits on the 92 side, where the book prints it; the relay side of 58/1 is GN 1.0 (data/connectors.csv),
+# but wires.csv has one row for 271, so the whole run is drawn RD until that is split
+txt(374, 192.2, 'book: GN 1.0 on the relay side', 1.8, fill='#777')
 wire('272', [(52, 156.5), (70, 156.5), (70, 240), (300, 240)], 80, 238.5)
 A('<rect x="199" y="236" width="4" height="8" fill="#ddd" stroke="#111" stroke-width=".5"/>'); dot(199, 240); dot(203, 240); txt(201, 234.3, '58/3', 2.1, 'middle', fill='#555')
 
@@ -121,7 +128,9 @@ box(160, 151, 20, 10); inner([(160, 156), (163.2, 156)]); inner([(176.8, 156), (
 contact(164, 156); contact(176, 156); blade(164.7, 156, 175.2, 156)
 txt(170, 165, '144 Pressure switch (overboost)', 2.4, 'middle', w='bold')
 wire('378', [(180, 156), (185, 156), (185, 134), (224.5, 134), T15], 189, 132.3)
-wire('377', [(160, 156), (150, 156)], label=False); tag(148, 156, '377 GN/VT 0.75 ← ignition 15 at 58/4', anchor='end')
+wire('377', [(160, 156), (150, 156)], label=False); tag(148, 156, '377 GN/VT 0.75 ← 58/4 above, switch side', anchor='end')
+# 377 stays a tag: it leaves pin 4 on the switch side (data/connectors.csv), and the only ways down from there cross the
+# 202 tag or squeeze between 122, 201 and relay 89's wall
 dot(160, 156); dot(180, 156)
 # 102:31 takes two leads (book photos P6a/P6b, scan): 100 SV straight in from the left, relay 67's coil earth (via 100a) and
 # contact 87; and 263 SV on a diagonal, to relay 21's coil earth (its end is in the border, aimed at 31)
