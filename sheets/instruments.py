@@ -6,6 +6,15 @@ header('Saab 99 Turbo, model 1979 — Instruments and warning lamps')
 def conn(x, y, h, lab):
     A(f'<rect x="{x - 2}" y="{y - h / 2}" width="4" height="{h}" fill="#ddd" stroke="#111" stroke-width=".5"/>')
     txt(x, y - h / 2 - 1.5, lab, 2.1, 'middle', fill='#555')
+def lab(c):
+    """A cable's label as wire() prints it: number, colour, mm² from wires.csv."""
+    r = WIRES[c]; return f"{c.split('#')[0]} {r['colour']} {r['mm2']}"
+def mtag(x, y, lines, w, size=2.4, anchor='start'):
+    """Destination tag of several lines (common.tag() takes one), boxed as the lighting sheet's two-line tags: centred
+    on y, lines 1.36 × size apart. w: from the rendered text."""
+    ls = round(1.36 * size, 2); h = round(len(lines) * ls + 1.8, 2); x0 = x if anchor == 'start' else x - w
+    A(f'<rect x="{x0}" y="{round(y - h / 2, 2)}" width="{w}" height="{h}" rx="1" fill="#fff" stroke="#444" stroke-width=".4"/>')
+    for i, s in enumerate(lines): txt(x0 + 1.5, round(y - (len(lines) - 1) * ls / 2 + i * ls + .36 * size, 2), s, size)
 def gauge(x, y, r, t):
     A(f'<circle cx="{x}" cy="{y}" r="{r}" fill="#fff" stroke="#111" stroke-width=".7"/>'); txt(x, y + 1.2, t, 3, 'middle')
 def sender(x, y, n, name, s=11, sw=1.5):
@@ -78,17 +87,28 @@ box(360, 82, 36, 20); name_(363, 89, '46', 'Fuel level'); txt(363, 93.5, 'transm
 wire('185', [(360, 88), (330, 88), (330, 60), (265, 60), (265, 70)], 300, 58.5)
 wire('186', [(360, 96), (340, 96), (340, 54), (235, 54), (235, 70)], 300, 52.5)
 A('<rect x="343" y="84" width="4" height="16" fill="#ddd" stroke="#111" stroke-width=".5"/>'); txt(345, 104.5, 'fuel sender connector 57', 2.2, 'middle', fill='#555')
-TX = 324   # tachometer centre, left of the fuel sender so 203's tag can name switch 116 in full inside the frame
-gauge(TX, 150, 12, 'r/min'); txt(TX, 168, '110 Tachometer', 2.6, 'middle', w='bold')
-wire('203', [(TX + 12, 150), (TX + 16, 150)], label=False)
-tag(TX + 18, 150, '203 BR 0.75 ← heated window switch 116 (climate sheet)', w=65, size=2.4)   # w from the rendered text
-wire('204', [(TX, 138), (TX, 130), (TX + 6, 130)], label=False); tag(TX + 8, 130, '204 GL 0.75 ← ECU speed signal')
+# 46's third lead, 190 SV from its right-hand wall (no terminal name printed; probably its earth), to 1-pole tank earth
+# connector 60 (60 (C12)), where the pump's earth 262 joins it; 191 SV 2.5 goes on to earth (all on the ignition sheet)
+wire('190', [(396, 92), (402, 92), (402, 113), (399, 113)], label=False)
+mtag(397, 113, (f"{lab('190')} → tank earth connector 60 → {lab('191')}", '→ earth, with pump earth 262 (ignition sheet)'),
+     w=61, anchor='end')                                    # w from the rendered text
+TX, TY = 314, 154   # tachometer centre: left of the fuel sender so 203's and 204's tags fit in full inside the frame
+gauge(TX, TY, 12, 'r/min'); txt(TX, TY + 18, '110 Tachometer', 2.6, 'middle', w='bold')
+wire('203', [(TX + 12, TY), (TX + 16, TY)], label=False)
+tag(TX + 18, TY, '203 BR 0.75 ← heated window switch 116 (climate sheet)', w=65, size=2.4)   # w from the rendered text
+# 204 from service outlet 73 pin 5, a lead of its own beside 284a (ignition sheet), through 1-pole connector 60 (60 (B10))
+wire('204', [(TX, TY - 12), (TX, TY - 24), (TX + 12, TY - 24)], label=False); conn(TX + 6, TY - 24, 7, 'tachometer connector 60')
+tag(TX + 14, TY - 24, f"{lab('204')} ← service outlet 73, pin 5, with 284a (ignition sheet)", w=73, size=2.4)
 
 # ---- bottom terminals ----------------------------------------------------------
-wire('179', [(271, 190), (271, 196)], label=False); earth(271, 196); txt(275, 199, '179 SV 0.75', 2.3)
+# 179 earths 47 through panel light connector 59 (59 (D11)), 52 SV and hazard switch 25's lamp terminal, which 69 SV
+# earths (signals sheet): the only earth printed for this chain
+wire('179', [(271, 190), (271, 198)], label=False)
+tag(273, 198, f"{lab('179')} → panel light connector 59 → 52 {WIRES['52']['colour']} → hazard switch 25’s lamp → "
+              f"69 {WIRES['69']['colour']} → earth (signals sheet)", w=130.5)   # the staircase's size 2.6; w from the rendered text
 wire('182', [(260, 190), (260, 206)], label=False); tag(262, 206, '182 BR/VT 0.75 ← fuse 4 (off 85 BR at stalk switch connector 58)')
 wire('71', [(235, 190), (235, 214)], label=False); tag(237, 214, '71 GN/VT 0.75 ← 23 flasher unit, terminal C')
-wire('187', [(200, 190), (200, 222)], label=False); tag(202, 222, '187 VT 0.75 → ignition switch connector 58 → 188 VT → 43 handbrake, 42 brake failure switch')
+wire('187', [(200, 190), (200, 222)], label=False); tag(202, 222, '187 VT 0.75 → ignition switch connector 58 → 188 VT → 43 handbrake, 42 brake warning switch')
 wire('27', [(170, 190), (170, 230)], label=False); tag(172, 230, '27 BL/VT 0.75 ← 8 lighting relay 56a (lighting sheet)')
 
 # ---- legend and notes ------------------------------------------------------------
@@ -114,11 +134,15 @@ notes = ['Inside 47 (its own terminal numbers): a + rail from 2 (182) feeds both
          'and charge (1) lamps; an earth rail to 4 (179) takes the gauges’ third leads and the main-beam (7) and indicator (6) lamps.',
          'Oil and temperature wires pass engine connector 58, pins 5 and 6 (our own count, top to bottom; check E1); the fuel sender wires pass fuel sender connector 57 (3-pole).',
          'Charge lamp: alternator D+ is 195 RD 0.75. Main-beam lamp: 27 BL/VT from lighting relay 8. Indicator lamp: 71 GN/VT from flasher 23.',
-         'Supply: 182 BR/VT from fuse 4, branching off the wiper feed 85 BR at stalk switch connector 58. Tachometer: signal 204 GL; '
-         'supply probably 203 from heated window switch 116.',
+         'Supply: 182 BR/VT from fuse 4, branching off the wiper feed 85 BR at stalk switch connector 58. Tachometer: signal 204 GL from '
+         'service outlet 73 pin 5 (beside 284a), through tachometer connector 60; supply probably 203 from heated window switch 116.',
+         'Earth: 47’s 4 (179 SV) goes through panel light connector 59 and 52 SV to hazard switch 25’s lamp terminal, which 69 SV earths '
+         '(signals sheet); the panel lamps (not drawn) earth the same way.',
+         'Fuel level transmitter 46: its third lead, 190 SV, is probably its earth. It meets the pump’s earth 262 at tank earth connector 60 '
+         'and goes on as 191 SV 2.5 to earth, probably near the tank.',
          '44 and 45 are drawn with the sender symbol (heavy square with a diagonal, not a winding), each with its own earth lead '
          '(no cable number). 44 probably earths the oil lamp at low oil pressure; '
          '45 is probably a resistance that falls as the coolant warms.',
          'Not RHD-specific: circuits should match the car, but harness routing and part positions may differ.']
-for j, n in enumerate(notes): txt(lx + 108, ly + 6 + j * 5.2, n, 2.35, fill='#333')
+for j, n in enumerate(notes): txt(lx + 108, ly + 5.6 + j * 4.1, n, 2.35, fill='#333')   # 8 lines: 4.1 pitch fits the box
 save('instruments.svg')
