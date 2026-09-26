@@ -479,8 +479,8 @@
 <text x="274.916" y="267" font-size="2.6" text-anchor="start" font-weight="normal" fill="#111">107 SV 2.5 <tspan font-family="Arial">←</tspan> 36 Heater fan motor, via 57 heater fan (climate sheet)</text>
 <path d="M395.5,251.5 L397.5,255 L397.5,273 L367,273" fill="none" stroke="#222" stroke-width="0.9" stroke-linejoin="round"/>
 <path d="M395.5,251.5 L397.5,255 L397.5,273 L367,273" fill="none" stroke="#111111" stroke-width="0.5" stroke-linejoin="round"/>
-<rect x="313.976" y="270.4" width="53.024" height="5.2" rx="1" fill="#fff" stroke="#444" stroke-width=".4"/>
-<text x="315.476" y="274" font-size="2.6" text-anchor="start" font-weight="normal" fill="#111">192 SV 0.75 <tspan font-family="Arial">←</tspan> 42 Brake warning switch</text>
+<rect x="236.91199999999998" y="270.4" width="130.08800000000002" height="5.2" rx="1" fill="#fff" stroke="#444" stroke-width=".4"/>
+<text x="238.41199999999998" y="274" font-size="2.6" text-anchor="start" font-weight="normal" fill="#111">192 SV 0.75 <tspan font-family="Arial">←</tspan> 42 Brake warning switch, with 381 SV from 140 Speed transmitter (ignition sheet)</text>
 <path d="M395.5,250 L404,254.5 L404,280 L367,280" fill="none" stroke="#222" stroke-width="0.9" stroke-linejoin="round"/>
 <path d="M395.5,250 L404,254.5 L404,280 L367,280" fill="none" stroke="#111111" stroke-width="0.5" stroke-linejoin="round"/>
 <rect x="295.048" y="277.4" width="71.952" height="5.2" rx="1" fill="#fff" stroke="#444" stroke-width=".4"/>

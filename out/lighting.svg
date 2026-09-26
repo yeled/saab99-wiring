@@ -47,41 +47,51 @@
 <path d="M38.0,249.19 L38.0,262 L44,262" fill="none" stroke="#111111" stroke-width="0.5" stroke-linejoin="round"/>
 <rect x="44" y="259.4" width="67.1" height="5.2" rx="1" fill="#fff" stroke="#444" stroke-width=".4"/>
 <text x="45.5" y="263" font-size="2.2" text-anchor="start" font-weight="normal" fill="#111">115 SV 0.75 <tspan font-family="Arial">→</tspan> 39 radiator fan thermostat (climate sheet)</text>
-<path d="M36,128.5 L56.94,131.57 A6.5,6.5 0 0 1 56.94,144.43 L36,147.5 A20.0,20.0 0 0 1 36,128.5 Z" fill="#fdfdfd" stroke="#111" stroke-width=".8"/>
-<path d="M38.5,129.27 V146.73" stroke="#111" stroke-width=".3"/>
+<path d="M36,128 L57.09,131.59 A6.5,6.5 0 0 1 57.09,144.41 L36,148 A22.03,22.03 0 0 1 36,128 Z" fill="#fdfdfd" stroke="#111" stroke-width=".8"/>
+<path d="M38.5,128.83 V147.17" stroke="#111" stroke-width=".3"/>
 <path d="M50,138 L33.6,138" fill="none" stroke="#111" stroke-width=".4"/>
-<path d="M45,143.2 L45,146.18" fill="none" stroke="#111" stroke-width=".4"/>
-<path d="M41,129.23 L41,135.4 L42.4,135.4" fill="none" stroke="#888" stroke-width=".4"/>
+<path d="M45,144.43 L45,146.47" fill="none" stroke="#111" stroke-width=".4"/>
+<path d="M41,128.85 L41,135.6 L42.6,135.6" fill="none" stroke="#888" stroke-width=".4"/>
 <path d="M58,138 L61.7,138" fill="none" stroke="#111" stroke-width=".4"/>
 <circle cx="62.5" cy="138" r=".8" fill="#fff" stroke="#111" stroke-width=".35"/>
-<circle cx="45" cy="135.4" r="2.6" fill="#fff" stroke="#111" stroke-width=".6"/>
-<path d="M42.75,134.1 A3.24,3.24 0 0 0 47.25,134.1" fill="none" stroke="#111" stroke-width=".4"/>
-<path d="M42.75,136.7 A3.24,3.24 0 0 1 47.25,136.7" fill="none" stroke="#888" stroke-width=".4"/>
-<circle cx="45" cy="140.6" r="2.6" fill="#fff" stroke="#111" stroke-width=".6"/>
-<path d="M42.75,141.9 A3.24,3.24 0 0 1 47.25,141.9" fill="none" stroke="#111" stroke-width=".4"/>
+<path d="M42.92,140.83 L39.8,140.83 L39.8,138" fill="none" stroke="#111" stroke-width=".4"/>
+<circle cx="39.8" cy="138" r=".6" fill="#111"/>
+<circle cx="45" cy="135.6" r="2.4" fill="#fff" stroke="#111" stroke-width=".6"/>
+<path d="M42.92,134.4 A3.0,3.0 0 0 0 47.08,134.4" fill="none" stroke="#111" stroke-width=".4"/>
+<path d="M42.92,136.8 A3.0,3.0 0 0 1 47.08,136.8" fill="none" stroke="#888" stroke-width=".4"/>
+<circle cx="45" cy="142.03" r="2.4" fill="#fff" stroke="#111" stroke-width=".6"/>
+<path d="M42.92,143.23 A3.0,3.0 0 0 1 47.08,143.23" fill="none" stroke="#111" stroke-width=".4"/>
 <circle cx="54" cy="138" r="4" fill="#fff" stroke="#111" stroke-width=".6"/>
 <path d="M54,138 L51.17,135.17 A4,4 0 0 0 51.17,140.83 Z M54,138 L56.83,135.17 A4,4 0 0 1 56.83,140.83 Z" fill="#111"/><path d="M51.17,135.17 L56.83,140.83 M51.17,140.83 L56.83,135.17" stroke="#111" stroke-width=".45"/>
 <circle cx="45" cy="138" r=".6" fill="#111"/>
+<text x="28" y="153" font-size="2.1" text-anchor="start" font-weight="normal" fill="#111">149 SV 0.75</text>
+<path d="M28,153.7 H40.5 L40.96,142.03" fill="none" stroke="#111" stroke-width=".25"/>
+<path d="M41,140.93 L41.34,142.04 L40.58,142.01 Z" fill="#111"/>
 <text x="64.5" y="132.4" font-size="2.7" text-anchor="start" font-weight="normal" fill="#111">13 Parking R</text>
 <text x="64.5" y="135.6" font-size="2.1" text-anchor="start" font-weight="normal" fill="#555">twin bulb 21/5 W: 5 W parking 13,</text>
 <text x="64.5" y="138.6" font-size="2.1" text-anchor="start" font-weight="normal" fill="#555">21 W corner lamp 118</text>
 <text x="64.5" y="141.6" font-size="2.1" text-anchor="start" font-weight="normal" fill="#555">28 indicator: signals sheet</text>
 <text x="64.5" y="144.6" font-size="2.1" text-anchor="start" font-weight="normal" fill="#555">lower bulb: side back-up light</text>
-<path d="M36,181.5 L56.94,184.57 A6.5,6.5 0 0 1 56.94,197.43 L36,200.5 A20.0,20.0 0 0 1 36,181.5 Z" fill="#fdfdfd" stroke="#111" stroke-width=".8"/>
-<path d="M38.5,182.27 V199.73" stroke="#111" stroke-width=".3"/>
+<path d="M36,181 L57.09,184.59 A6.5,6.5 0 0 1 57.09,197.41 L36,201 A22.03,22.03 0 0 1 36,181 Z" fill="#fdfdfd" stroke="#111" stroke-width=".8"/>
+<path d="M38.5,181.83 V200.17" stroke="#111" stroke-width=".3"/>
 <path d="M50,191 L33.6,191" fill="none" stroke="#111" stroke-width=".4"/>
-<path d="M45,196.2 L45,199.18" fill="none" stroke="#111" stroke-width=".4"/>
-<path d="M41,182.23 L41,188.4 L42.4,188.4" fill="none" stroke="#888" stroke-width=".4"/>
+<path d="M45,197.43 L45,199.47" fill="none" stroke="#111" stroke-width=".4"/>
+<path d="M41,181.85 L41,188.6 L42.6,188.6" fill="none" stroke="#888" stroke-width=".4"/>
 <path d="M58,191 L61.7,191" fill="none" stroke="#111" stroke-width=".4"/>
 <circle cx="62.5" cy="191" r=".8" fill="#fff" stroke="#111" stroke-width=".35"/>
-<circle cx="45" cy="188.4" r="2.6" fill="#fff" stroke="#111" stroke-width=".6"/>
-<path d="M42.75,187.1 A3.24,3.24 0 0 0 47.25,187.1" fill="none" stroke="#111" stroke-width=".4"/>
-<path d="M42.75,189.7 A3.24,3.24 0 0 1 47.25,189.7" fill="none" stroke="#888" stroke-width=".4"/>
-<circle cx="45" cy="193.6" r="2.6" fill="#fff" stroke="#111" stroke-width=".6"/>
-<path d="M42.75,194.9 A3.24,3.24 0 0 1 47.25,194.9" fill="none" stroke="#111" stroke-width=".4"/>
+<path d="M42.92,193.83 L39.8,193.83 L39.8,191" fill="none" stroke="#111" stroke-width=".4"/>
+<circle cx="39.8" cy="191" r=".6" fill="#111"/>
+<circle cx="45" cy="188.6" r="2.4" fill="#fff" stroke="#111" stroke-width=".6"/>
+<path d="M42.92,187.4 A3.0,3.0 0 0 0 47.08,187.4" fill="none" stroke="#111" stroke-width=".4"/>
+<path d="M42.92,189.8 A3.0,3.0 0 0 1 47.08,189.8" fill="none" stroke="#888" stroke-width=".4"/>
+<circle cx="45" cy="195.03" r="2.4" fill="#fff" stroke="#111" stroke-width=".6"/>
+<path d="M42.92,196.23 A3.0,3.0 0 0 1 47.08,196.23" fill="none" stroke="#111" stroke-width=".4"/>
 <circle cx="54" cy="191" r="4" fill="#fff" stroke="#111" stroke-width=".6"/>
 <path d="M54,191 L51.17,188.17 A4,4 0 0 0 51.17,193.83 Z M54,191 L56.83,188.17 A4,4 0 0 1 56.83,193.83 Z" fill="#111"/><path d="M51.17,188.17 L56.83,193.83 M51.17,193.83 L56.83,188.17" stroke="#111" stroke-width=".45"/>
 <circle cx="45" cy="191" r=".6" fill="#111"/>
+<text x="28" y="206" font-size="2.1" text-anchor="start" font-weight="normal" fill="#111">148 SV 0.75</text>
+<path d="M28,206.7 H40.5 L40.96,195.03" fill="none" stroke="#111" stroke-width=".25"/>
+<path d="M41,193.93 L41.34,195.04 L40.58,195.01 Z" fill="#111"/>
 <text x="64.5" y="185.4" font-size="2.7" text-anchor="start" font-weight="normal" fill="#111">13 Parking L</text>
 <text x="64.5" y="188.6" font-size="2.1" text-anchor="start" font-weight="normal" fill="#555">twin bulb 21/5 W: 5 W parking 13,</text>
 <text x="64.5" y="191.6" font-size="2.1" text-anchor="start" font-weight="normal" fill="#555">21 W corner lamp 118</text>
@@ -129,12 +139,12 @@
 <path d="M157,101 L86,101" fill="none" stroke="#7a4a1c" stroke-width="0.35" stroke-linejoin="round" stroke-dasharray="3 2"/>
 <rect x="125.4" y="96.0" width="22.26" height="3.6" fill="#fff" opacity=".85"/>
 <text x="126" y="99" font-size="2.8" text-anchor="start" font-weight="normal" fill="#111">221 BR/VT 0.5</text>
-<path d="M80,101 L14.5,101 L14.5,171 L41,171 L41,182.23" fill="none" stroke="#222" stroke-width="0.75" stroke-linejoin="round" stroke-dasharray="3 2"/>
-<path d="M80,101 L14.5,101 L14.5,171 L41,171 L41,182.23" fill="none" stroke="#7a4a1c" stroke-width="0.35" stroke-linejoin="round" stroke-dasharray="3 2"/>
+<path d="M80,101 L14.5,101 L14.5,171 L41,171 L41,181.85" fill="none" stroke="#222" stroke-width="0.75" stroke-linejoin="round" stroke-dasharray="3 2"/>
+<path d="M80,101 L14.5,101 L14.5,171 L41,171 L41,181.85" fill="none" stroke="#7a4a1c" stroke-width="0.35" stroke-linejoin="round" stroke-dasharray="3 2"/>
 <rect x="16.9" y="166.0" width="22.26" height="3.6" fill="#fff" opacity=".85"/>
 <text x="17.5" y="169" font-size="2.8" text-anchor="start" font-weight="normal" fill="#111">221 BR/VT 0.5</text>
-<path d="M76,101 L76,107 L41,107 L41,129.23" fill="none" stroke="#222" stroke-width="0.75" stroke-linejoin="round" stroke-dasharray="3 2"/>
-<path d="M76,101 L76,107 L41,107 L41,129.23" fill="none" stroke="#7a4a1c" stroke-width="0.35" stroke-linejoin="round" stroke-dasharray="3 2"/>
+<path d="M76,101 L76,107 L41,107 L41,128.85" fill="none" stroke="#222" stroke-width="0.75" stroke-linejoin="round" stroke-dasharray="3 2"/>
+<path d="M76,101 L76,107 L41,107 L41,128.85" fill="none" stroke="#7a4a1c" stroke-width="0.35" stroke-linejoin="round" stroke-dasharray="3 2"/>
 <rect x="44.4" y="108.3" width="23.88" height="3.6" fill="#fff" opacity=".85"/>
 <text x="45" y="111.3" font-size="2.8" text-anchor="start" font-weight="normal" fill="#111">222a BR/VT 0.5</text>
 <rect x="80" y="95" width="6" height="16" fill="#ddd" stroke="#111" stroke-width=".6"/>
@@ -147,12 +157,12 @@
 <text x="83" y="109.65" font-size="1.8" text-anchor="middle" font-weight="normal" fill="#555">4</text>
 <text x="89.8" y="109.7" font-size="2" text-anchor="start" font-weight="normal" fill="#555">138 BL <tspan font-family="Arial">←</tspan> reversing 31</text>
 <text x="83" y="89.3" font-size="2" text-anchor="middle" font-weight="normal" fill="#555">front lamp connector</text>
-<path d="M80,109 L78,109 L78,120 L101,120 L101,204.5 L45,204.5 L45,199.18" fill="none" stroke="#222" stroke-width="0.9" stroke-linejoin="round"/>
-<path d="M80,109 L78,109 L78,120 L101,120 L101,204.5 L45,204.5 L45,199.18" fill="none" stroke="#ffffff" stroke-width="0.5" stroke-linejoin="round"/>
+<path d="M80,109 L78,109 L78,120 L101,120 L101,204.5 L45,204.5 L45,199.47" fill="none" stroke="#222" stroke-width="0.9" stroke-linejoin="round"/>
+<path d="M80,109 L78,109 L78,120 L101,120 L101,204.5 L45,204.5 L45,199.47" fill="none" stroke="#ffffff" stroke-width="0.5" stroke-linejoin="round"/>
 <rect x="49.4" y="205.8" width="19.02" height="3.6" fill="#fff" opacity=".85"/>
 <text x="50" y="208.8" font-size="2.8" text-anchor="start" font-weight="normal" fill="#111">139 VT 0.75</text>
-<path d="M86,109 L88,109 L88,116 L107.5,116 L107.5,151.5 L45,151.5 L45,146.18" fill="none" stroke="#222" stroke-width="0.9" stroke-linejoin="round"/>
-<path d="M86,109 L88,109 L88,116 L107.5,116 L107.5,151.5 L45,151.5 L45,146.18" fill="none" stroke="#ffffff" stroke-width="0.5" stroke-linejoin="round"/>
+<path d="M86,109 L88,109 L88,116 L107.5,116 L107.5,151.5 L45,151.5 L45,146.47" fill="none" stroke="#222" stroke-width="0.9" stroke-linejoin="round"/>
+<path d="M86,109 L88,109 L88,116 L107.5,116 L107.5,151.5 L45,151.5 L45,146.47" fill="none" stroke="#ffffff" stroke-width="0.5" stroke-linejoin="round"/>
 <rect x="49.4" y="152.8" width="20.64" height="3.6" fill="#fff" opacity=".85"/>
 <text x="50" y="155.8" font-size="2.8" text-anchor="start" font-weight="normal" fill="#111">139a VT 0.75</text>
 <rect x="140" y="188" width="68" height="36" rx="1.2" fill="#fafafa" stroke="#111" stroke-width="0.8"/>
@@ -354,16 +364,16 @@
 <circle cx="290" cy="150" r="1.0" fill="#111"/>
 <text x="297" y="190" font-size="3" text-anchor="end" font-weight="bold" fill="#111">22  Fuse box</text>
 <text x="297" y="193.8" font-size="2.2" text-anchor="end" font-weight="normal" fill="#555">(fuses 1–2 and bar 7–12 shown)</text>
-<path d="M255,125 L45,125 L45,129.82" fill="none" stroke="#222" stroke-width="0.9" stroke-linejoin="round"/>
-<path d="M255,125 L45,125 L45,129.82" fill="none" stroke="#1e9e3e" stroke-width="0.5" stroke-linejoin="round"/>
+<path d="M255,125 L45,125 L45,129.53" fill="none" stroke="#222" stroke-width="0.9" stroke-linejoin="round"/>
+<path d="M255,125 L45,125 L45,129.53" fill="none" stroke="#1e9e3e" stroke-width="0.5" stroke-linejoin="round"/>
 <rect x="57.4" y="120.0" width="17.400000000000002" height="3.6" fill="#fff" opacity=".85"/>
 <text x="58" y="123" font-size="2.8" text-anchor="start" font-weight="normal" fill="#111">45 GN 0.75</text>
-<path d="M45,129.82 L45,132.8" fill="none" stroke="#111" stroke-width=".4"/>
-<path d="M255,178 L45,178 L45,182.82" fill="none" stroke="#222" stroke-width="0.9" stroke-linejoin="round"/>
-<path d="M255,178 L45,178 L45,182.82" fill="none" stroke="#1f5fbf" stroke-width="0.5" stroke-linejoin="round"/>
+<path d="M45,129.53 L45,133.2" fill="none" stroke="#111" stroke-width=".4"/>
+<path d="M255,178 L45,178 L45,182.53" fill="none" stroke="#222" stroke-width="0.9" stroke-linejoin="round"/>
+<path d="M255,178 L45,178 L45,182.53" fill="none" stroke="#1f5fbf" stroke-width="0.5" stroke-linejoin="round"/>
 <rect x="57.4" y="173.0" width="17.400000000000002" height="3.6" fill="#fff" opacity=".85"/>
 <text x="58" y="176" font-size="2.8" text-anchor="start" font-weight="normal" fill="#111">43 BL 0.75</text>
-<path d="M45,182.82 L45,185.8" fill="none" stroke="#111" stroke-width=".4"/>
+<path d="M45,182.53 L45,186.2" fill="none" stroke="#111" stroke-width=".4"/>
 <rect x="318" y="30" width="6" height="24" fill="#ddd" stroke="#111" stroke-width=".6"/>
 <circle cx="318" cy="36" r="1.0" fill="#111"/>
 <circle cx="318" cy="48" r="1.75" fill="#111"/>
@@ -522,12 +532,12 @@
 <circle cx="51.98" cy="243" r="1.0" fill="#111"/>
 <circle cx="31.8" cy="240" r="1.0" fill="#111"/>
 <circle cx="38.0" cy="249.19" r="1.0" fill="#111"/>
-<circle cx="45" cy="129.82" r="1.0" fill="#111"/>
-<circle cx="45" cy="182.82" r="1.0" fill="#111"/>
-<circle cx="41" cy="129.23" r="1.0" fill="#111"/>
-<circle cx="41" cy="182.23" r="1.0" fill="#111"/>
-<circle cx="45" cy="146.18" r="1.0" fill="#111"/>
-<circle cx="45" cy="199.18" r="1.0" fill="#111"/>
+<circle cx="45" cy="129.53" r="1.0" fill="#111"/>
+<circle cx="45" cy="182.53" r="1.0" fill="#111"/>
+<circle cx="41" cy="128.85" r="1.0" fill="#111"/>
+<circle cx="41" cy="181.85" r="1.0" fill="#111"/>
+<circle cx="45" cy="146.47" r="1.0" fill="#111"/>
+<circle cx="45" cy="199.47" r="1.0" fill="#111"/>
 <circle cx="33.6" cy="138" r="1.0" fill="#111"/>
 <circle cx="33.6" cy="191" r="1.0" fill="#111"/>
 <circle cx="80" cy="101" r="1.0" fill="#111"/>

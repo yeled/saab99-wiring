@@ -116,21 +116,28 @@
 <text x="300" y="52.5" font-size="2.8" text-anchor="start" font-weight="normal" fill="#111">186 BR 0.75</text>
 <rect x="343" y="84" width="4" height="16" fill="#ddd" stroke="#111" stroke-width=".5"/>
 <text x="345" y="104.5" font-size="2.2" text-anchor="middle" font-weight="normal" fill="#555">fuel sender connector 57</text>
-<circle cx="324" cy="150" r="12" fill="#fff" stroke="#111" stroke-width=".7"/>
-<text x="324" y="151.2" font-size="3" text-anchor="middle" font-weight="normal" fill="#111">r/min</text>
-<text x="324" y="168" font-size="2.6" text-anchor="middle" font-weight="bold" fill="#111">110 Tachometer</text>
-<path d="M336,150 L340,150" fill="none" stroke="#222" stroke-width="0.9" stroke-linejoin="round"/>
-<path d="M336,150 L340,150" fill="none" stroke="#7a4a1c" stroke-width="0.5" stroke-linejoin="round"/>
-<rect x="342" y="147.4" width="65" height="5.2" rx="1" fill="#fff" stroke="#444" stroke-width=".4"/>
-<text x="343.5" y="151" font-size="2.4" text-anchor="start" font-weight="normal" fill="#111">203 BR 0.75 <tspan font-family="Arial">←</tspan> heated window switch 116 (climate sheet)</text>
-<path d="M324,138 L324,130 L330,130" fill="none" stroke="#222" stroke-width="0.9" stroke-linejoin="round"/>
-<path d="M324,138 L324,130 L330,130" fill="none" stroke="#f2c500" stroke-width="0.5" stroke-linejoin="round"/>
-<rect x="332" y="127.4" width="43.56" height="5.2" rx="1" fill="#fff" stroke="#444" stroke-width=".4"/>
-<text x="333.5" y="131" font-size="2.6" text-anchor="start" font-weight="normal" fill="#111">204 GL 0.75 <tspan font-family="Arial">←</tspan> ECU speed signal</text>
-<path d="M271,190 L271,196" fill="none" stroke="#222" stroke-width="0.9" stroke-linejoin="round"/>
-<path d="M271,190 L271,196" fill="none" stroke="#111111" stroke-width="0.5" stroke-linejoin="round"/>
-<path d="M271,196 v3 M268,199 h6 M269,200.3 h4 M270,201.6 h2" stroke="#111" stroke-width=".5" fill="none"/>
-<text x="275" y="199" font-size="2.3" text-anchor="start" font-weight="normal" fill="#111">179 SV 0.75</text>
+<path d="M396,92 L402,92 L402,113 L399,113" fill="none" stroke="#222" stroke-width="0.9" stroke-linejoin="round"/>
+<path d="M396,92 L402,92 L402,113 L399,113" fill="none" stroke="#111111" stroke-width="0.5" stroke-linejoin="round"/>
+<rect x="336" y="108.84" width="61" height="8.32" rx="1" fill="#fff" stroke="#444" stroke-width=".4"/>
+<text x="337.5" y="112.23" font-size="2.4" text-anchor="start" font-weight="normal" fill="#111">190 SV 0.75 <tspan font-family="Arial">→</tspan> tank earth connector 60 <tspan font-family="Arial">→</tspan> 191 SV 2.5</text>
+<text x="337.5" y="115.49" font-size="2.4" text-anchor="start" font-weight="normal" fill="#111"><tspan font-family="Arial">→</tspan> earth, with pump earth 262 (ignition sheet)</text>
+<circle cx="314" cy="154" r="12" fill="#fff" stroke="#111" stroke-width=".7"/>
+<text x="314" y="155.2" font-size="3" text-anchor="middle" font-weight="normal" fill="#111">r/min</text>
+<text x="314" y="172" font-size="2.6" text-anchor="middle" font-weight="bold" fill="#111">110 Tachometer</text>
+<path d="M326,154 L330,154" fill="none" stroke="#222" stroke-width="0.9" stroke-linejoin="round"/>
+<path d="M326,154 L330,154" fill="none" stroke="#7a4a1c" stroke-width="0.5" stroke-linejoin="round"/>
+<rect x="332" y="151.4" width="65" height="5.2" rx="1" fill="#fff" stroke="#444" stroke-width=".4"/>
+<text x="333.5" y="155" font-size="2.4" text-anchor="start" font-weight="normal" fill="#111">203 BR 0.75 <tspan font-family="Arial">←</tspan> heated window switch 116 (climate sheet)</text>
+<path d="M314,142 L314,130 L326,130" fill="none" stroke="#222" stroke-width="0.9" stroke-linejoin="round"/>
+<path d="M314,142 L314,130 L326,130" fill="none" stroke="#f2c500" stroke-width="0.5" stroke-linejoin="round"/>
+<rect x="318" y="126.5" width="4" height="7" fill="#ddd" stroke="#111" stroke-width=".5"/>
+<text x="320" y="125.0" font-size="2.1" text-anchor="middle" font-weight="normal" fill="#555">tachometer connector 60</text>
+<rect x="328" y="127.4" width="73" height="5.2" rx="1" fill="#fff" stroke="#444" stroke-width=".4"/>
+<text x="329.5" y="131" font-size="2.4" text-anchor="start" font-weight="normal" fill="#111">204 GL 0.75 <tspan font-family="Arial">←</tspan> service outlet 73, pin 5, with 284a (ignition sheet)</text>
+<path d="M271,190 L271,198" fill="none" stroke="#222" stroke-width="0.9" stroke-linejoin="round"/>
+<path d="M271,190 L271,198" fill="none" stroke="#111111" stroke-width="0.5" stroke-linejoin="round"/>
+<rect x="273" y="195.4" width="130.5" height="5.2" rx="1" fill="#fff" stroke="#444" stroke-width=".4"/>
+<text x="274.5" y="199" font-size="2.6" text-anchor="start" font-weight="normal" fill="#111">179 SV 0.75 <tspan font-family="Arial">→</tspan> panel light connector 59 <tspan font-family="Arial">→</tspan> 52 SV <tspan font-family="Arial">→</tspan> hazard switch 25’s lamp <tspan font-family="Arial">→</tspan> 69 SV <tspan font-family="Arial">→</tspan> earth (signals sheet)</text>
 <path d="M260,190 L260,206" fill="none" stroke="#222" stroke-width="0.9" stroke-linejoin="round"/>
 <path d="M260,190 L260,206" fill="none" stroke="#7a4a1c" stroke-width="0.5" stroke-linejoin="round"/>
 <path d="M260,190 L260,206" fill="none" stroke="#ffffff" stroke-width="0.3" stroke-dasharray="1.2 1.2"/>
@@ -144,7 +151,7 @@
 <path d="M200,190 L200,222" fill="none" stroke="#222" stroke-width="0.9" stroke-linejoin="round"/>
 <path d="M200,190 L200,222" fill="none" stroke="#ffffff" stroke-width="0.5" stroke-linejoin="round"/>
 <rect x="202" y="219.4" width="126.032" height="5.2" rx="1" fill="#fff" stroke="#444" stroke-width=".4"/>
-<text x="203.5" y="223" font-size="2.6" text-anchor="start" font-weight="normal" fill="#111">187 VT 0.75 <tspan font-family="Arial">→</tspan> ignition switch connector 58 <tspan font-family="Arial">→</tspan> 188 VT <tspan font-family="Arial">→</tspan> 43 handbrake, 42 brake failure switch</text>
+<text x="203.5" y="223" font-size="2.6" text-anchor="start" font-weight="normal" fill="#111">187 VT 0.75 <tspan font-family="Arial">→</tspan> ignition switch connector 58 <tspan font-family="Arial">→</tspan> 188 VT <tspan font-family="Arial">→</tspan> 43 handbrake, 42 brake warning switch</text>
 <path d="M170,190 L170,230" fill="none" stroke="#222" stroke-width="0.9" stroke-linejoin="round"/>
 <path d="M170,190 L170,230" fill="none" stroke="#1f5fbf" stroke-width="0.5" stroke-linejoin="round"/>
 <path d="M170,190 L170,230" fill="none" stroke="#ffffff" stroke-width="0.3" stroke-dasharray="1.2 1.2"/>
@@ -178,10 +185,12 @@
 <text x="99.0" y="268" font-size="2.4" text-anchor="start" font-weight="normal" fill="#111">4.0</text>
 <path d="M22,273 h9" stroke="#222" stroke-width="1.7"/>
 <text x="33" y="274" font-size="2.4" text-anchor="start" font-weight="normal" fill="#111">traced (cable no. read)</text>
-<text x="126" y="256.0" font-size="2.35" text-anchor="start" font-weight="normal" fill="#333">Inside 47 (its own terminal numbers): a + rail from 2 (182) feeds both gauges and the oil (11), low-fuel (12), brake (5) and charge (1) lamps; an earth rail to 4 (179) takes the gauges’ third leads and the main-beam (7) and indicator (6) lamps.</text>
-<text x="126" y="261.2" font-size="2.35" text-anchor="start" font-weight="normal" fill="#333">Oil and temperature wires pass engine connector 58, pins 5 and 6 (our own count, top to bottom; check E1); the fuel sender wires pass fuel sender connector 57 (3-pole).</text>
-<text x="126" y="266.4" font-size="2.35" text-anchor="start" font-weight="normal" fill="#333">Charge lamp: alternator D+ is 195 RD 0.75. Main-beam lamp: 27 BL/VT from lighting relay 8. Indicator lamp: 71 GN/VT from flasher 23.</text>
-<text x="126" y="271.6" font-size="2.35" text-anchor="start" font-weight="normal" fill="#333">Supply: 182 BR/VT from fuse 4, branching off the wiper feed 85 BR at stalk switch connector 58. Tachometer: signal 204 GL; supply probably 203 from heated window switch 116.</text>
-<text x="126" y="276.8" font-size="2.35" text-anchor="start" font-weight="normal" fill="#333">44 and 45 are drawn with the sender symbol (heavy square with a diagonal, not a winding), each with its own earth lead (no cable number). 44 probably earths the oil lamp at low oil pressure; 45 is probably a resistance that falls as the coolant warms.</text>
-<text x="126" y="282.0" font-size="2.35" text-anchor="start" font-weight="normal" fill="#333">Not RHD-specific: circuits should match the car, but harness routing and part positions may differ.</text>
+<text x="126" y="255.6" font-size="2.35" text-anchor="start" font-weight="normal" fill="#333">Inside 47 (its own terminal numbers): a + rail from 2 (182) feeds both gauges and the oil (11), low-fuel (12), brake (5) and charge (1) lamps; an earth rail to 4 (179) takes the gauges’ third leads and the main-beam (7) and indicator (6) lamps.</text>
+<text x="126" y="259.7" font-size="2.35" text-anchor="start" font-weight="normal" fill="#333">Oil and temperature wires pass engine connector 58, pins 5 and 6 (our own count, top to bottom; check E1); the fuel sender wires pass fuel sender connector 57 (3-pole).</text>
+<text x="126" y="263.8" font-size="2.35" text-anchor="start" font-weight="normal" fill="#333">Charge lamp: alternator D+ is 195 RD 0.75. Main-beam lamp: 27 BL/VT from lighting relay 8. Indicator lamp: 71 GN/VT from flasher 23.</text>
+<text x="126" y="267.9" font-size="2.35" text-anchor="start" font-weight="normal" fill="#333">Supply: 182 BR/VT from fuse 4, branching off the wiper feed 85 BR at stalk switch connector 58. Tachometer: signal 204 GL from service outlet 73 pin 5 (beside 284a), through tachometer connector 60; supply probably 203 from heated window switch 116.</text>
+<text x="126" y="272.0" font-size="2.35" text-anchor="start" font-weight="normal" fill="#333">Earth: 47’s 4 (179 SV) goes through panel light connector 59 and 52 SV to hazard switch 25’s lamp terminal, which 69 SV earths (signals sheet); the panel lamps (not drawn) earth the same way.</text>
+<text x="126" y="276.1" font-size="2.35" text-anchor="start" font-weight="normal" fill="#333">Fuel level transmitter 46: its third lead, 190 SV, is probably its earth. It meets the pump’s earth 262 at tank earth connector 60 and goes on as 191 SV 2.5 to earth, probably near the tank.</text>
+<text x="126" y="280.2" font-size="2.35" text-anchor="start" font-weight="normal" fill="#333">44 and 45 are drawn with the sender symbol (heavy square with a diagonal, not a winding), each with its own earth lead (no cable number). 44 probably earths the oil lamp at low oil pressure; 45 is probably a resistance that falls as the coolant warms.</text>
+<text x="126" y="284.3" font-size="2.35" text-anchor="start" font-weight="normal" fill="#333">Not RHD-specific: circuits should match the car, but harness routing and part positions may differ.</text>
 </svg>
