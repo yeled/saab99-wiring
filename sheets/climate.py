@@ -135,11 +135,16 @@ wire('213', [(202.8, 220), (202.8, 237), (137, 237), (137, 231)], 145, 235.5)
 wire('215', [(193.9, 220), (193.9, 225), (190, 225)], label=False); tag(188, 225, f'215 SV 0.75 → lighter 48 → earth', w=36, size=2.2, anchor='end')
 # the right terminal's inverted V: 203 drawn first so 214's blue sits on top at the apex; 214's corner falls inside a dash
 wire('203', [(211.6, 220), (209.8, 222), (209.8, 232.6), (228, 232.6)], label=False); tag(230, 232.6, f'203 BR 0.75 → tachometer 110 (instruments sheet)', w=53.2, size=2.2)
-wire('214', [(211.6, 220), (213.4, 222), (213.4, 225.8), (228, 225.8)], label=False); tag(230, 225.8, '214 BL 0.75: feed, source not traced', w=38.5, size=2.2, dashed=True)
-wire('211', [(116, 231), (116, 243), (292, 243), (292, 215), (300, 215)], 240, 241.5)
-redot((54, y8), (116, 203), (116, 231))
-box(300, 210, 30, 10); A('<path d="M303,215 l2,-2 l2,4 l2,-4 l2,4 l2,-4 l2,4 l2,-4 l2,4 l2,-4 l2,4 l2,-4 l2,2" fill="none" stroke="#111" stroke-width=".4"/>')
-A('<path d="M330,215 h6 v4" fill="none" stroke="#111" stroke-width=".6"/>'); earth(336, 219); txt(300, 229, '<tspan font-weight="bold">115</tspan> Heated rear window', 2.6)
+# 214 still dashed (not seen on the car); probably +15 from fuse 5, tapped off 140 GL on the fuse side of 58 (E12), check D14
+wire('214', [(211.6, 220), (213.4, 222), (213.4, 225.8), (228, 225.8)], label=False)
+tag(230, 225.8, '214 BL 0.75 ← fuse 5, off 140 GL at brake and reversing light connector 58 (interior sheet); probably: check D14', w=112.1, size=2.2, dashed=True)
+# 211 rises right of 214's tag to the window; on its way it passes pin 5 of door switch connector 58 (58 (A9)), drawn as
+# the other connectors here: grey block over the wire, dots on both edges, caption above (the notes box is below)
+wire('211', [(116, 231), (116, 243), (348, 243), (348, 215), (356, 215)], 240, 241.5)
+conn(302, 243, 8, '58 door switches, pin 5')
+redot((54, y8), (116, 203), (116, 231), (300, 243), (304, 243))
+box(356, 210, 30, 10); A('<path d="M359,215 l2,-2 l2,4 l2,-4 l2,4 l2,-4 l2,4 l2,-4 l2,4 l2,-4 l2,4 l2,-4 l2,2" fill="none" stroke="#111" stroke-width=".4"/>')
+A('<path d="M386,215 h6 v4" fill="none" stroke="#111" stroke-width=".6"/>'); earth(392, 219); txt(356, 229, '<tspan font-weight="bold">115</tspan> Heated rear window', 2.6)
 
 lx, ly = 18, 250
 box(lx, ly, 389, 37, fill='#fff', sw=.5)
@@ -165,8 +170,9 @@ notes = ['Radiator fan: relay 38 (drawn at rest, contact open) is fed from fuse 
          'headlamp’s earth, 28 SV, so the drawing lets the fan run after the engine is switched off. 114a is drawn BL; it may be SV (black) on the car: check E14.',
          'Heater fan: fuse 6 is on the ignition-on bar. Switch 35 rests on its unwired terminal (probably off); its short-dashed lines are its other positions: 8 feeds the',
          'motor directly; 6 goes through resistor 74, whose far lead lands on heater fan connector 57’s corner (probably row 1; drawn grey). The motor returns through 57 row 3 on 107 SV to joint 158.',
-         'Heated rear window: fuse 8 (always live) feeds relay 113 (at rest, open); switch 116, drawn off, energises it through 213 BL. Its right terminal takes the feed 214 BL (not traced)',
+         'Heated rear window: fuse 8 (always live) feeds relay 113 (at rest, open); switch 116, drawn off, energises it through 213 BL. Its right terminal takes the feed 214 BL (probably from fuse 5 on the ignition-on bar, off 140 GL: check D14)',
          'and 203 to the tachometer; its lamp is probably the “on” indicator. 113:85 also takes the earths 13 SV (relay 8) and 33 SV (relay 21); 212 SV carries all three earths (relays 113, 8 and 21) to earth joint 158.',
+         'Combi Coupé: the heated window is in the tailgate (probably about 200 W); its feed 211 passes door switch connector 58 (pin 5) and may also pass number-plate connector 59 (check R5).',
          'Not RHD-specific: circuits should match the car, but harness routing and part positions may differ.']
-for j, n in enumerate(notes): txt(lx + 108, ly + 6 + j * 4.8, n, 2.35, fill='#333')
+for j, n in enumerate(notes): txt(lx + 108, ly + 6 + j * 4.1, n, 2.35, fill='#333')   # 8 lines: 4.1 pitch fits the box
 save('climate.svg')
