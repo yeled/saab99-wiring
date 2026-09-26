@@ -89,7 +89,7 @@ def wire(cable, pts, lx=None, ly=None, rot=None, label=True):
         shift = (cw + edge(cw)) / 2 - .85                 # half-width beyond a 1.0 wire's: heavier wires push their label clear
         if shift > 0 and r['colour']: lx, ly = _clear_label(pts, lx, ly, rot, len(s) * 1.62, round(shift, 2))
         if rot is None:
-            A(f'<rect x="{lx - .6}" y="{ly - 3.0}" width="{len(s) * 1.62 + 1.2}" height="3.8" fill="#fff" opacity=".85"/>')
+            A(f'<rect x="{lx - .6}" y="{ly - 3.0}" width="{len(s) * 1.62 + 1.2}" height="3.6" fill="#fff" opacity=".85"/>')
         txt(lx, ly, s, 2.8 if not cable.startswith('?') else 2.4, rot=rot, fill='#111' if not cable.startswith('?') else '#666')
         if r['status'] == 'car':
             tick(lx + len(s) * 1.62 + 1.2, ly - 0.6, rot=rot, cx=lx, cy=ly)
@@ -205,7 +205,7 @@ def size_legend(x, y):
     txt(x, y, 'cable size, mm²:', 2.4)
     cx = x + 22
     for mm2 in (0.75, 1.5, 2.5, 4.0):
-        A(f'<path d="M{cx},{y - 1} h7" stroke="#222" stroke-width="{WIDTH[mm2] + edge(WIDTH[mm2]):g}"/>'); txt(cx + 8.5, y, f'{mm2:g}', 2.4)
+        A(f'<path d="M{cx},{y - 1} h7" stroke="#222" stroke-width="{WIDTH[mm2] + edge(WIDTH[mm2]):g}"/>'); txt(cx + 8.5, y, f'{mm2}', 2.4)
         cx += 15.5
     return cx - x
 
