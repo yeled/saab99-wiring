@@ -695,7 +695,7 @@
 <rect x="140" y="188" width="68" height="36" rx="1.2" fill="#fafafa" stroke="#111" stroke-width="0.8"/>
 <text x="140" y="186.2" font-size="4" text-anchor="start" font-weight="bold" fill="#111">8</text>
 <text x="144.2" y="186.2" font-size="2.7" text-anchor="start" font-weight="normal" fill="#111">Lighting relay</text>
-<text x="171" y="186.2" font-size="2.3" text-anchor="start" font-weight="normal" fill="#555">latching dip/main + flash</text>
+<text x="165" y="186.2" font-size="2.3" text-anchor="start" font-weight="normal" fill="#555">drawn at rest: lights off, stalk released</text>
 <rect x="171.28" y="203.3" width="5.1" height="7.38" fill="#fff" stroke="#111" stroke-width=".4"/><path d="M171.28,210.68 L176.38,203.3" stroke="#111" stroke-width=".35"/>
 <rect x="186.58" y="203.3" width="5.44" height="7.38" fill="#fff" stroke="#111" stroke-width=".4"/><path d="M186.58,210.68 L192.02,203.3" stroke="#111" stroke-width=".35"/>
 <rect x="168.56" y="213.92" width="6.12" height="2.88" fill="#fff" stroke="#111" stroke-width=".4"/>
@@ -712,6 +712,9 @@
 <circle cx="201.2" cy="215.36" r=".6" fill="#111"/>
 <path d="M186.58,206.99 L185.56,206.99 L185.56,224" fill="none" stroke="#111" stroke-width=".4"/>
 <path d="M192.02,206.99 L193.72,206.99 L193.72,224" fill="none" stroke="#111" stroke-width=".4"/>
+<path d="M193.46,196.64 L186.25,192.37" fill="none" stroke="#bbb" stroke-width=".7" stroke-dasharray="1.3 .8"/>
+<path d="M151.27,196.92 L147.13,205.99" fill="none" stroke="#bbb" stroke-width=".7" stroke-dasharray="1.3 .8"/>
+<path d="M168.58,196.7 L177.28,196.7" fill="none" stroke="#bbb" stroke-width=".7" stroke-dasharray="1.3 .8"/>
 <circle cx="146.8" cy="206.72" r=".8" fill="#fff" stroke="#111" stroke-width=".35"/>
 <circle cx="155.64" cy="206.72" r=".8" fill="#fff" stroke="#111" stroke-width=".35"/>
 <circle cx="151.56" cy="196.28" r=".8" fill="#fff" stroke="#111" stroke-width=".35"/>
@@ -723,6 +726,16 @@
 <path d="M184.22,196.7 L193.26,196.7" stroke="#111" stroke-width=".75" stroke-linecap="round"/>
 <path d="M168.55,196.8 L177.4,194.12" stroke="#111" stroke-width=".75" stroke-linecap="round"/>
 <path d="M151.81,196.93 L155.35,205.97" stroke="#111" stroke-width=".75" stroke-linecap="round"/>
+<text x="178.08" y="200.1" font-size="1.8" font-style="italic" text-anchor="middle" fill="#666">A</text>
+<text x="183.52" y="200.1" font-size="1.8" font-style="italic" text-anchor="middle" fill="#666">B</text>
+<text x="194.06" y="200.1" font-size="1.8" font-style="italic" text-anchor="middle" fill="#666">C</text>
+<text x="166.88" y="195.6" font-size="1.8" font-style="italic" text-anchor="end" fill="#666">D</text>
+<text x="186.46" y="190.56" font-size="1.8" font-style="italic" text-anchor="start" fill="#666">E</text>
+<text x="150.26" y="196.88" font-size="1.8" font-style="italic" text-anchor="end" fill="#666">F</text>
+<text x="145.5" y="207.32" font-size="1.8" font-style="italic" text-anchor="end" fill="#666">G</text>
+<text x="155.64" y="209.92" font-size="1.8" font-style="italic" text-anchor="middle" fill="#666">H</text>
+<text x="170.48" y="204.4" font-size="1.8" font-style="italic" text-anchor="end" fill="#666">K1</text>
+<text x="185.78" y="204.4" font-size="1.8" font-style="italic" text-anchor="end" fill="#666">K2</text>
 <path d="M173.83,203.3 L173.83,196.28" fill="none" stroke="#999" stroke-width=".3" stroke-dasharray=".8 .6"/>
 <path d="M173.83,200.96 L155.98,200.96" fill="none" stroke="#999" stroke-width=".3" stroke-dasharray=".8 .6"/>
 <path d="M189.3,203.3 L189.3,198.8" fill="none" stroke="#999" stroke-width=".3" stroke-dasharray=".8 .6"/>
@@ -786,6 +799,37 @@
 <rect x="199.9" y="267.3" width="17.400000000000002" height="3.6" fill="#fff" opacity=".85"/>
 <text x="200.5" y="270.3" font-size="2.8" text-anchor="start" font-weight="normal" fill="#111">32 VT 0.75</text>
 <path d="M222,277 v3 M219,280 h6 M220,281.3 h4 M221,282.6 h2" stroke="#111" stroke-width=".5" fill="none"/>
+<text x="12.5" y="269.29999999999995" font-size="2.4" text-anchor="start" font-weight="bold" fill="#333">8 Lighting relay states</text>
+<text x="40.5" y="269.29999999999995" font-size="2.1" text-anchor="start" font-weight="normal" fill="#555">latching dip/main + flash; each path starts at terminal 30</text>
+<text x="16.1" y="272.7" font-size="2.0" text-anchor="start" font-weight="normal" fill="#555">state</text>
+<text x="33.0" y="272.7" font-size="2.0" text-anchor="start" font-weight="normal" fill="#555">coils pulled</text>
+<text x="48.0" y="272.7" font-size="2.0" text-anchor="start" font-weight="normal" fill="#555">path (letters in 8)</text>
+<text x="79.5" y="272.7" font-size="2.0" text-anchor="start" font-weight="normal" fill="#555">lights</text>
+<path d="M12.5,273.9 H136 M12.5,277.1 H136 M12.5,280.3 H136 M12.5,283.5 H136 M12.5,286.7 H136 M12.5,273.9 V286.7 M32.0,273.9 V286.7 M47.0,273.9 V286.7 M78.5,273.9 V286.7 M136,273.9 V286.7" stroke="#ccc" stroke-width=".2"/>
+<circle cx="14.1" cy="275.5" r="1.2" fill="#fff" stroke="#888" stroke-width=".25"/>
+<text x="14.1" y="276.18" font-size="1.9" text-anchor="middle" font-weight="bold" fill="#777">1</text>
+<text x="16.1" y="276.25" font-size="2.1" text-anchor="start" font-weight="normal" fill="#222">lights off</text>
+<text x="33.0" y="276.25" font-size="2.1" text-anchor="start" font-weight="normal" fill="#222">none</text>
+<text x="48.0" y="276.25" font-size="2.1" text-anchor="start" font-weight="normal" fill="#222">30 <tspan font-family="Arial">→</tspan> C <tspan font-family="Arial">→</tspan> B <tspan font-family="Arial">→</tspan> A</text>
+<text x="79.5" y="276.25" font-size="2.1" text-anchor="start" font-weight="normal" fill="#222">nothing: flash blade A–D open</text>
+<circle cx="14.1" cy="278.7" r="1.2" fill="#fff" stroke="#888" stroke-width=".25"/>
+<text x="14.1" y="279.38" font-size="1.9" text-anchor="middle" font-weight="bold" fill="#777">2</text>
+<text x="16.1" y="279.45" font-size="2.1" text-anchor="start" font-weight="normal" fill="#222">headlamps on</text>
+<text x="33.0" y="279.45" font-size="2.1" text-anchor="start" font-weight="normal" fill="#222">K2</text>
+<text x="48.0" y="279.45" font-size="2.1" text-anchor="start" font-weight="normal" fill="#222">30 <tspan font-family="Arial">→</tspan> C <tspan font-family="Arial">→</tspan> E <tspan font-family="Arial">→</tspan> F <tspan font-family="Arial">→</tspan> H <tspan font-family="Arial">→</tspan> 56b</text>
+<text x="79.5" y="279.45" font-size="2.1" text-anchor="start" font-weight="normal" fill="#222">dipped</text>
+<circle cx="14.1" cy="281.9" r="1.2" fill="#fff" stroke="#888" stroke-width=".25"/>
+<text x="14.1" y="282.58" font-size="1.9" text-anchor="middle" font-weight="bold" fill="#777">3</text>
+<text x="16.1" y="282.65" font-size="2.1" text-anchor="start" font-weight="normal" fill="#222">main, latched</text>
+<text x="33.0" y="282.65" font-size="2.1" text-anchor="start" font-weight="normal" fill="#222">K2, K1 pulse</text>
+<text x="48.0" y="282.65" font-size="2.1" text-anchor="start" font-weight="normal" fill="#222">30 <tspan font-family="Arial">→</tspan> C <tspan font-family="Arial">→</tspan> E <tspan font-family="Arial">→</tspan> F <tspan font-family="Arial">→</tspan> G <tspan font-family="Arial">→</tspan> 56a</text>
+<text x="79.5" y="282.65" font-size="2.1" text-anchor="start" font-weight="normal" fill="#222">main + dash lamp 47; next pulse: dipped (check D13)</text>
+<circle cx="14.1" cy="285.1" r="1.2" fill="#fff" stroke="#888" stroke-width=".25"/>
+<text x="14.1" y="285.78" font-size="1.9" text-anchor="middle" font-weight="bold" fill="#777">4</text>
+<text x="16.1" y="285.85" font-size="2.1" text-anchor="start" font-weight="normal" fill="#222">flash, lights off</text>
+<text x="33.0" y="285.85" font-size="2.1" text-anchor="start" font-weight="normal" fill="#222">K1, stalk held</text>
+<text x="48.0" y="285.85" font-size="2.1" text-anchor="start" font-weight="normal" fill="#222">30 <tspan font-family="Arial">→</tspan> C <tspan font-family="Arial">→</tspan> B <tspan font-family="Arial">→</tspan> A <tspan font-family="Arial">→</tspan> D</text>
+<text x="79.5" y="285.85" font-size="2.1" text-anchor="start" font-weight="normal" fill="#222">main on the car (check D9); D drawn on 56b: check D12</text>
 <rect x="222" y="50" width="50" height="24" rx="1.2" fill="#fafafa" stroke="#111" stroke-width="0.8"/>
 <text x="247" y="59.5" font-size="3" text-anchor="middle" font-weight="bold" fill="#111">10  Light switch</text>
 <text x="247" y="63.5" font-size="2.3" text-anchor="middle" font-weight="normal" fill="#555">top: off (town light S/N/DK) /</text>
@@ -1075,6 +1119,11 @@
 <circle cx="262" cy="253.5" r=".8" fill="#fff" stroke="#888" stroke-width=".35"/>
 <path d="M255.7,253.2 L261.6,251.1" stroke="#888" stroke-width=".75" stroke-linecap="round"/>
 <text x="265" y="254.5" font-size="2.4" text-anchor="start" font-weight="normal" fill="#111">grey inside a part: probably</text>
+<path d="M298.7,253.2 L304.2,253.2" fill="none" stroke="#bbb" stroke-width=".7" stroke-dasharray="1.3 .8"/>
+<circle cx="298" cy="253.5" r=".8" fill="#fff" stroke="#111" stroke-width=".35"/>
+<circle cx="305" cy="253.5" r=".8" fill="#fff" stroke="#111" stroke-width=".35"/>
+<path d="M298.7,253.2 L304.6,251.1" stroke="#111" stroke-width=".75" stroke-linecap="round"/>
+<text x="308" y="254.5" font-size="2.4" text-anchor="start" font-weight="normal" fill="#111">faded blade: position when pulled</text>
 <text x="253" y="259.0" font-size="2.2" text-anchor="start" font-weight="normal" fill="#333">Headlamps need the ignition on (except the flash, stalk 9); parking/tail lights do not:</text>
 <text x="253" y="261.85" font-size="2.2" text-anchor="start" font-weight="normal" fill="#333">light switch 2 is fed from ignition switch X, light switch 3 from the always-live bar.</text>
 <text x="253" y="264.7" font-size="2.2" text-anchor="start" font-weight="normal" fill="#333">Headlamps are unfused: relay 30 is fed straight from the supply bar (20 GR 1.5).</text>
@@ -1084,7 +1133,7 @@
 <text x="253" y="276.1" font-size="2.2" text-anchor="start" font-weight="normal" fill="#333">colours: check E19b. 221 reaches the left housing through pin 2 of front lamp connector 58; 222a branches off for the right.</text>
 <text x="253" y="278.95" font-size="2.2" text-anchor="start" font-weight="normal" fill="#333">One bulb, two filaments: 5 W parking 13 from light switch 10, no ignition; 21 W corner lamp 118 from 117, ignition on (check E21).</text>
 <text x="253" y="281.8" font-size="2.2" text-anchor="start" font-weight="normal" fill="#333">Not drawn: a rear fog lamp (check E23) or a relay that cuts the corner lamps on dipped beam (check E22); probably neither is fitted.</text>
-<text x="253" y="284.65" font-size="2.2" text-anchor="start" font-weight="normal" fill="#333">Relay 8: the car flashes the main beams (check D9), so the flash contact drawn on 56b (dipped) probably belongs on 56a.</text>
+<text x="253" y="284.65" font-size="2.2" text-anchor="start" font-weight="normal" fill="#333">Relay 8: the car flashes the main beams (check D9), but flash contact D is drawn on 56b (dipped); which pin carries main: check D12.</text>
 </g></svg>
 <svg x="788.473063973064" y="0.0" width="387.94612794612794" height="274.3333333333333" viewBox="0 0 420 297"><g font-family="Helvetica, Arial, sans-serif">
 <rect width="420" height="297" fill="#fff"/><rect x="8" y="8" width="404" height="281" fill="none" stroke="#111" stroke-width=".6"/>
