@@ -2,6 +2,7 @@
 """Render the 1979 Saab 99 Turbo signals sheet: indicators, hazards, brake and reversing lights (A3 SVG)."""
 import math
 from common import *
+from common import _ink                      # grey (probably) ink for to_earth()
 
 header('Saab 99 Turbo, model 1979 — Indicators, hazards, brake and reversing lights')
 
@@ -48,13 +49,14 @@ def label(lx, ly, s):
     txt(lx, ly, s, 2.8)
 
 
-def to_earth(x, y, dy=3):
-    """Where a rear cluster's earth bar leaves it: its cable (189/189a) is not in the data yet, so it goes straight to
-    common.earth()'s symbol, as on the lighting sheet. dy: the drop, shorter under the left rear cluster, where the right
-    front housing sits close below."""
-    ey = y + dy
+def to_earth(x, y, dy=3, grey=False):
+    """Where a rear cluster's earth bar leaves it: no earth lead is printed for the Combi Coupé's rear lights (the
+    saloon's 189/189a are not on it; check R3), so it goes straight to common.earth()'s symbol. dy: the drop.
+    grey=True: probably (the exit terminal, the drop and the symbol in _ink()'s grey)."""
+    ey, c = y + dy, _ink(grey)
     A(f'<path d="M{x},{y} v{dy} M{x - 3},{ey} h6 M{x - 2},{ey + 1.3} h4 M{x - 1},{ey + 2.6} h2" '
-      f'stroke="#111" stroke-width=".5" fill="none"/>')
+      f'stroke="{c}" stroke-width=".5" fill="none"/>')
+    A(f'<circle cx="{x}" cy="{y}" r="1.0" fill="{c}"/>')             # the exit terminal, dot()'s size
 
 
 # ---- front lamp housings and rear clusters (right-hand column) ---------------------
@@ -88,18 +90,33 @@ def front_housing(yc, n, side):
     txt(366, yc + .2, 'in the front lamp housing with parking light 13', 2.0, fill='#555')
 
 
-def rear_cluster(y0, side, bulbs):
-    """Rear lamp cluster (IMG_4727/4728): the signal bulbs over the cluster's one earth bar, which starts at the
-    indicator's lead and leaves through the border. bulbs: (legend no., caption, is_indicator), top to bottom."""
-    box(CX0, y0, CW, 27)
+CH = 36                                 # rear cluster height: four bulbs, 9 apart
+
+
+def rear_cluster(y0, side, bulbs, tail_feed):
+    """Rear lamp cluster of the 3-door Combi Coupé (Charlie's car): four bulbs, probably in this order (1977/78 Turbo CC
+    prints; the 1979 print draws the saloon's six-bulb unit, IMG_4727/4728), over the cluster's one earth bar, which
+    starts at the top bulb's lead and leaves through the bottom border. The bar joining the bulbs is black (each bulb's
+    row reads it); from the lowest bulb on, its way to earth is grey: nothing is printed for it on the CC (check R3).
+    bulbs: (legend no., caption, kind), top to bottom; kind 'ind' (indicator), 'sig' (brake or reversing, fed here) or
+    'tail' (fed on the lighting sheet: an open terminal on the outline, as the lighting sheet ends the signal feeds,
+    and a caption naming its cable and fuse). tail_feed: (cable, fuse). Returns the four bulb rows, top to bottom."""
+    box(CX0, y0, CW, CH)
     txt(CX0, y0 - 2.2, f'Rear lamp cluster, {side}', 2.4, w='bold')
-    ys = [y0 + 4.5 + 9 * i for i in range(3)]
-    for yy, (n, cap, ind) in zip(ys, bulbs):
-        indicator(CB, yy, CR, 'tb') if ind else lamp(CB, yy, r=CR)
-        inner([(CX0, yy), (CB - CR, yy)]); dot(CX0, yy)
-        if not ind: inner([(CB + CR, yy), (BAR, yy)]); jdot(BAR, yy)
-        txt(359, yy + .9, f'<tspan font-weight="bold">{n}</tspan> {cap}', 2.5)
-    inner([(CB + CR, ys[0]), (BAR, ys[0]), (BAR, y0 + 27)]); dot(BAR, y0 + 27); to_earth(BAR, y0 + 27, 2)
+    ys = [y0 + 4.5 + 9 * i for i in range(4)]
+    for i, (yy, (n, cap, kind)) in enumerate(zip(ys, bulbs)):
+        indicator(CB, yy, CR, 'tb') if kind == 'ind' else lamp(CB, yy, r=CR)
+        cap = f'<tspan font-weight="bold">{n}</tspan> {cap}'
+        if kind == 'tail':
+            contact(CX0, yy); inner([(CX0 + .8, yy), (CB - CR, yy)])
+            c, f = tail_feed
+            txt(359, yy - .5, cap, 2.5)
+            txt(359, yy + 2.7, f"{c} {WIRES[c]['colour']} from fuse {f} (lighting sheet)", 2.0, fill='#555')
+        else:
+            inner([(CX0, yy), (CB - CR, yy)]); txt(359, yy + .9, cap, 2.5)
+        if i: inner([(CB + CR, yy), (BAR, yy)]); jdot(BAR, yy)
+    inner([(CB + CR, ys[0]), (BAR, ys[0]), (BAR, ys[3])])
+    inner([(BAR, ys[3]), (BAR, y0 + CH)], grey=True); to_earth(BAR, y0 + CH, grey=True); jdot(BAR, ys[3])
     return ys
 
 
@@ -161,23 +178,25 @@ conn(B9, (LB + RB) / 2, RB - LB + 7, ('ignition switch', 'connector 58'), links=
 # on 58 (B9)'s near side and only the rear ones (76, 79) pass it. 77 is drawn so; 80 branches off 79 past B9, since from
 # the near side it would cross 79 and the 132 and 136 feeds (the notes say so). The front housings' earths: 360 SV to
 # the main earth star, 361 SV to washer pump 63's earth terminal (and on to joint 158 through 92 SV, wipers sheet).
+# The rear clusters are the Combi Coupé's four-bulb lights in the data's order: the left one is the vertical mirror of
+# the right (indicator at the bottom, reversing at the top). 76 comes down on the cluster side of 79, so it crosses only
+# the 136 and 132 feeds; the left cluster sits low enough that 136's feed clears 79's run from 58 (B9).
 front_housing(91, 27, 'left')
-wire('76', [(B9 + 2, LB), (323, LB), (323, 110), (CX0, 110)], 287, LB - 1.5)
 wire('77', [(268.5, LB), (268.5, 91), (HX0, 91)], 292, 89.5); dot(268.5, LB)
 wire('360', [(HXF, 91), (360.5, 91), (360.5, 94)], label=False); earth(360.5, 91)
 txt(364.5, 96.4, f"360 {WIRES['360']['colour']} {WIRES['360']['mm2']}", 2.1)
-# The manual prints the left cluster as the mirror image of the right (indicator at the bottom); here both read
-# the same way down, as on the lighting sheet.
-yl = rear_cluster(105.5, 'left', (('27', 'Rear indicator, left', True), ('30', 'Brake light, left', False),
-                                  ('32', 'Reversing light, left', False)))
-front_housing(146, 28, 'right')
-wire('79', [(B9 + 2, RB), (313, RB), (313, 146)], 287, RB - 1.5)
-wire('79', [(313, 146), (313, 164.5), (CX0, 164.5)], 316.5, 163)
-wire('80', [(313, 146), (HX0, 146)], 315, 144.5); dot(313, 146)
+yl = rear_cluster(114.5, 'left', (('32', 'Reversing light, left', 'sig'), ('30', 'Brake light, left', 'sig'),
+                                  ('14', 'Tail light, left', 'tail'), ('27', 'Rear indicator, left', 'ind')), ('42', 1))
+wire('76', [(B9 + 2, LB), (327, LB), (327, yl[3]), (CX0, yl[3])], 287, LB - 1.5)
+HY = 167                                # right front housing, under the left cluster's earth
+front_housing(HY, 28, 'right')
+wire('79', [(B9 + 2, RB), (313, RB), (313, HY)], 287, RB - 1.5)
+yr = rear_cluster(181, 'right', (('28', 'Rear indicator, right', 'ind'), ('14', 'Tail light, right', 'tail'),
+                                 ('30', 'Brake light, right', 'sig'), ('32', 'Reversing light, right', 'sig')), ('44', 2))
+wire('79', [(313, HY), (313, yr[0]), (CX0, yr[0])], 316.5, yr[0] - 1.5)
+wire('80', [(313, HY), (HX0, HY)], 315, HY - 1.5); dot(313, HY)
 t361 = f"361 {WIRES['361']['colour']} {WIRES['361']['mm2']} → washer pump 63 (wipers sheet)"
-wire('361', [(HXF, 146), (359, 146), (359, 151.3), (361, 151.3)], label=False); tag(361, 151.3, t361, w=44, size=2.0)
-yr = rear_cluster(160, 'right', (('28', 'Rear indicator, right', True), ('30', 'Brake light, right', False),
-                                 ('32', 'Reversing light, right', False)))
+wire('361', [(HXF, HY), (359, HY), (359, HY + 5.3), (361, HY + 5.3)], label=False); tag(361, HY + 5.3, t361, w=44, size=2.0)
 
 # ---- brake and reversing lights ---------------------------------------------------
 txt(18, 158, 'Brake and reversing lights', 3.4, w='bold')
@@ -192,10 +211,11 @@ contact(111, 173.5, grey=True); inner([(111.8, 173.5), (114, 173.5)]); dot(90, 1
 wire('132', [(114, 173.5), (158, 173.5)], 120, 172)
 # 58 (E12): rows 2, 3 and 4 (132, 135, 138); row 1 (140 GL, interior sheet) is not drawn
 conn(160, 195.6, 55.2, ('brake and reversing', 'light connector 58'), links=(173.5, 195, 217.7))   # 58 (E12)
-# 132 goes on to the left brake light; 133 leaves that feed for the right one (four verticals in a row, so the
-# crossings stay three: 79 over 132 and 136, 133 over 136)
+# 132 goes on to the left brake light; 133 leaves that feed for the right one, directly (the Combi Coupé has no tail
+# jumper at the left light). 137 branches off 136's riser below 132's run, so the crossings are five: 132 with 136,
+# 79 and 76; 136 with 79 and 76.
 wire('132', [(162, 173.5), (289, 173.5), (289, yl[1]), (CX0, yl[1])], 200, 172)
-wire('133', [(307, yl[1]), (307, yr[1]), (CX0, yr[1])], 317, 172); dot(307, yl[1])
+wire('133', [(307, yl[1]), (307, yr[2]), (CX0, yr[2])], 317, yr[2] - 1.5); dot(307, yl[1])
 fuse_box(195, 3)
 wire('135', [(50, 195), (158, 195)], 55, 193.5)
 wire('135', [(162, 195), (202, 195), (202, 199)], label=False)
@@ -209,16 +229,18 @@ wire('138', [(196, 217.7), (162, 217.7)], 166, 216.2)
 wire('138', [(158, 217.7), (138, 217.7)], label=False)
 t138 = '→ via front lamp connector 58 to the side back-up lights (lighting sheet)'   # 58 (E2)
 tag(138, 217.7, t138, w=86, anchor='end')
-# 136 goes on to the left reversing light; 137 leaves that feed for the right one
-wire('136', [(202, 220), (202, 225), (295, 225), (295, yl[2]), (CX0, yl[2])], 230, 223.5)
-wire('137', [(301, yl[2]), (301, yr[2]), (CX0, yr[2])], 317, 181); dot(301, yl[2])
+# 136 goes on to the left reversing light; 137 leaves that feed for the right one, directly (its dot on 136's riser,
+# under 132's run, so 137 does not cross it)
+J137 = 145
+wire('136', [(202, 220), (202, 225), (295, 225), (295, yl[0]), (CX0, yl[0])], 230, 223.5)
+wire('137', [(295, J137), (301, J137), (301, yr[3]), (CX0, yr[3])], 317, yr[3] - 1.5); dot(295, J137)
 
 # terminal dots again, on top of the wire ends that meet them
 for p in ((50, 62), (T49, FY), (TC, FY), (T49A, FY), (T31, FY), (149, 48), (170, 64.8), (155, 88), (160, 88), (225, 48),
           (219, 88), (231, 88), (D8 - 2, LB), (D8 + 2, LB), (D8 - 2, RB), (D8 + 2, RB), (B9 - 2, LB), (B9 + 2, LB),
-          (B9 - 2, RB), (B9 + 2, RB), (HX0, 91), (HX0, 146), (HXF, 91), (HXF, 146), (50, 173.5), (90, 173.5),
+          (B9 - 2, RB), (B9 + 2, RB), (HX0, 91), (HX0, HY), (HXF, 91), (HXF, HY), (50, 173.5), (90, 173.5),
           (114, 173.5), (158, 173.5), (162, 173.5), (50, 195), (158, 195), (162, 195), (158, 217.7), (162, 217.7),
-          (202, 199), (202, 220), (196, 217.7)) + tuple((CX0, y) for y in yl + yr):
+          (202, 199), (202, 220), (196, 217.7)) + tuple((CX0, y) for y in (yl[0], yl[1], yl[3], yr[0], yr[2], yr[3])):
     dot(*p)
 
 # ---- legend and notes ---------------------------------------------------------------
@@ -249,12 +271,10 @@ notes = ['Flasher 23 is fed on 49 from fuse 11 (always-live bar). 49a (73 GN) fe
          'Grey: the end of 29’s blade and its right contact; probably open at rest.',
          '24’s own outputs are 75 BL/VT and 78 RD/VT, through stalk switch connector 58 to ignition switch connector 58. 77/80 (front) leave '
          'before ignition switch connector 58 and only 76/79 (rear, route not traced yet) pass it; 80 is drawn branching off 79 past it, for room.',
-         'Each lamp housing has one earth for all its bulbs (parking, tail and number-plate bulbs: lighting sheet).',
-         'The two sheets draw the housings differently, for the layout: here the front housings have their flat end and earth on the right; '
-         'the lighting sheet mirrors them and draws the left rear cluster upside down.',
-         'Not in the data yet: the rear cluster earths, probably 189 SV from the left cluster’s bar to the right’s, then 189a SV to earth (check R3); drawn straight to earth here.',
-         '132 and 136 run to the left cluster; 133 and 137 start at its 30 and 32 bulb feeds (inside it, probably); their dots are drawn short of it, for room. 138 BL, from 31’s '
-         'switched side, feeds the front housings’ side back-up lights (check E16).',
+         'Each lamp housing has one earth for all its bulbs. The parking lights and the tail-light feeds are on the lighting sheet. Here the front housings have their flat end and earth on the right.',
+         'Rear lamp clusters (3-door Combi Coupé): four bulbs each, probably in the order drawn. No earth lead is printed for them (check R3): each bar goes to earth in grey.',
+         '132 and 136 run to the left cluster; 133 and 137 leave its brake and reversing feeds for the right one (at the cluster, probably; the dots are drawn short of it, for room).',
+         '138 BL, from 31’s switched side, feeds the front housings’ side back-up lights (check E16).',
          'Brake and reversing light connector 58: 132, 135 and 138 pass on its pins 2, 3 and 4 (counted top to bottom); pin 1 is 140 GL (interior sheet).',
          'Not RHD-specific: circuits should match the car, but harness routing and part positions may differ.']
 # Sources, not printed: 74 GN 1.0 has its second digit blotted on the 1979 print; the 1977 Turbo diagram and another
