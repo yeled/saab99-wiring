@@ -107,18 +107,38 @@ def front_housing(yc, side, ind):
     top) is drawn as the 1977 Turbo diagram prints it, a 21/5 W twin bulb whose 21 W filament is corner lamp 118,
     fed from its left through the top outline at x = 41 (221 left, 222a right; not drawn on the 1979 Turbo print, so it
     and its lead are grey; on the car: switch found (E19), bulb to check (E19b)). The lower bulb, a
-    side back-up light (unnumbered in 1979, 119 in the 1977 legend), is fed from the bottom. The indicator's feed is
-    drawn on the signals sheet: an open terminal here.
+    side back-up light (unnumbered in 1979, 119 in the 1977 legend), is fed from the bottom and earthed, probably only,
+    through its own jumper, 148 SV (L) or 149 SV (R): from its 10 o'clock left and up to a joint on the common line just
+    right of the lens chord, as the 1979 print draws it small. The 1979 print also has the lower bulb's top on the
+    parking bulb's joint; the 1977 print leaves a gap there (the empty lower bulbs of the GL and 1980 prints touch too,
+    so the touch is probably the symbol), so it is drawn clear of the joint, centred between the joint dot and the
+    139/139a terminal dot. The jumper's label sits below the housing's front end, underlined, on a leader with an
+    arrowhead onto the jumper, as the book prints it (like 100a at relay 67); a car tick goes just under the underline's
+    left end (right of the label, it would crowd the leader and the 139/139a riser).
+    The indicator's feed is drawn on the signals sheet: an open terminal here.
     Returns the parking feed on the outline, the top of the parking bulb, the corner lamp feed, the back-up light
     feed and the common earth, all but the second on the outline."""
-    xi, rs, ri, xk = 54, 2.6, 4, 41
-    xo, edge = housing(36, 56, yc, 9.5, 6.5, 2.4, 38.5)
-    inner([(xi - ri, yc), (xo, yc)])                                               # common earth, through the bulbs' joint
+    xi, rs, ri, xk = 54, 2.4, 4, 41
+    xo, edge = housing(36, 56, yc, 10, 6.5, 2.4, 38.5)
+    inner([(xi - ri, yc), (xo, yc)])                                               # common earth, through the parking bulb's joint
     yo, yk = edge(hx)[1], edge(xk)[0]
-    inner([(hx, yc + 2 * rs), (hx, yo)])                                           # back-up light feed, 139/139a
+    yl = round((yc + .6 + yo - 1) / 2, 2)             # lower bulb: midway between the joint dot (r .6) and 139/139a's (r 1)
+    inner([(hx, yl + rs), (hx, yo)])                                               # back-up light feed, 139/139a
     inner([(xk, yk), (xk, yc - rs), (hx - rs, yc - rs)], grey=True)                # corner lamp feed, 221/222a: 1977
     inner([(xi + ri, yc), (61.7, yc)]); contact(62.5, yc)                          # indicator feed: signals sheet
-    twin_bulb(hx, yc - rs, rs); small_bulb(hx, yc + rs, rs, False); indicator(xi, yc, ri, 'lr'); jdot(hx, yc)
+    xj, yj = 39.8, round(yl - rs / 2, 2)                                           # jumper's riser; its run at the bulb's 10 o'clock
+    inner([(round(hx - rs * .866, 2), yj), (xj, yj), (xj, yc)]); jdot(xj, yc)      # back-up light earth, 148/149 SV
+    twin_bulb(hx, yc - rs, rs); small_bulb(hx, yl, rs, False); indicator(xi, yc, ri, 'lr'); jdot(hx, yc)
+    c = '149' if side == 'R' else '148'                                            # label, underline and leader
+    s = lab(c); lx, ly = 28, round(yc + 15, 2); ux = round(lx + len(s) * 1.1 + .4, 2)
+    tx, ty = 41, round(yj + .1, 2)                                                 # arrow tip: on the jumper’s run
+    L = math.hypot(tx - ux, ty - ly - .7); ax, ay = (tx - ux) / L, (ty - ly - .7) / L
+    bx, by = tx - 1.1 * ax, ty - 1.1 * ay                                          # arrowhead base, 1.1 back from the tip
+    txt(lx, ly, s, 2.1)
+    A(f'<path d="M{lx},{round(ly + .7, 2)} H{ux} L{round(bx, 2)},{round(by, 2)}" fill="none" stroke="#111" stroke-width=".25"/>')
+    A(f'<path d="M{tx},{ty} L{round(bx - .38 * ay, 2)},{round(by + .38 * ax, 2)} L{round(bx + .38 * ay, 2)},'
+      f'{round(by - .38 * ax, 2)} Z" fill="#111"/>')
+    if WIRES[c]['status'] == 'car': tick(lx + .2, round(ly + 4.1, 2))              # under the underline's left end
     txt(64.5, yc - 5.6, f'13 Parking {side}', 2.7)
     for i, s in enumerate(('twin bulb 21/5 W: 5 W parking 13,', '21 W corner lamp 118',  # two lines: clear of 24 GL (x 114)
                            f'{ind} indicator: signals sheet', 'lower bulb: side back-up light')):
