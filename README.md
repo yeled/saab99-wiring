@@ -37,7 +37,12 @@ Terminals are written `component:terminal`, e.g. `8:56a` is lighting relay 8,
 terminal 56a. A wire whose cable number hasn't been read yet gets an id
 starting with `?` (e.g. `?D+`) and a blank colour; it is drawn thin and grey.
 Where the manual prints the same number on two different wires, the second
-gets a `#` suffix in its id (e.g. `76#hazard`); the sheets print only the number.
+gets a `#` suffix in its id (e.g. `32#earth`); the sheets print only the number.
+
+Line width follows the cable's size (mm²): 0.75 is drawn well under 1.0 and
+2.5 about twice as wide, flattening off above that so the 4.0 feeds and the
+16 mm² battery cable stay lines, not bands (`WIDTH` in `sheets/common.py`).
+Each sheet's legend shows the scale.
 
 ## Inside the parts
 
