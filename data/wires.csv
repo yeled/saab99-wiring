@@ -73,8 +73,8 @@ cable,colour,mm2,from,to,status,evidence,notes
 271,RD,1.0,92,89:87 via 58 (A4),traced,label at 92,"thermo-time switch heater, live while cranking; via 58 (A4) pin 1, labelled GN on the relay side"
 377,GN/VT,0.75,20:15 via 58 (A4) pin 4,144,traced,label at 144,"ignition 15 feed to the overboost switch, spliced with 123 at pin 4"
 378,GN/VT,0.75,144,102:15,traced,label at 144; book photos source/photos/book-P6b-102-pump-relay-FUEL.jpg (1979) and book-P6a-102-pump-relay.jpg (1980): printed along the lead into 102:15 (top wall),overboost cut
-261,GR,2.5,102:87,103:+,traced,book photos 24 Sep: labels along the route and at the pump; scan p.407 and book photos source/photos/book-P6b-102-pump-relay-FUEL.jpg (1979) and book-P6a-102-pump-relay.jpg (1980): the diagonal from 87,via 58 (B11) and 3-pole connector 57 (C12)
-262,SV,2.5,103,earth,traced,label at pump,
+261,GR,2.5,102:87,103:+,car,"book photos 24 Sep: labels along the route and at the pump; scan p.407 and book photos source/photos/book-P6b-102-pump-relay-FUEL.jpg (1979) and book-P6a-102-pump-relay.jpg (1980): the diagonal from 87; car, check R2 (grey, about 2.5 mm² at the pump)",via 58 (B11) and 3-pole connector 57 (C12)
+262,SV,2.5,103,earth,car,"label at pump; car, check R2 (black, about 2.5 mm² at the pump)",
 261a,GR,0.75,102:87,95 and 96 via 58 (A4) pin 2,traced,"label on run; scan p.407 and book photos source/photos/book-P6b-102-pump-relay-FUEL.jpg (1979) and book-P6a-102-pump-relay.jpg (1980): the lead straight up from 87, labelled 261a GR 0.75 further on",pump relay output to both injection heaters
 265,GR,0.75,261a,95:+,traced,label at 95,
 266,SV,0.75,95,earth,traced,label at 95,
