@@ -216,14 +216,18 @@ wire('139a', [(86, ky + 27), (88, ky + 27), (88, ky + 34), (107.5, ky + 34), (10
 # As the manual prints it (IMG_4719): all six terminals on the bottom edge, every contact in its printed rest state.
 # K1 (S side, in series with the resistor from 30) moves the top blade and the 56a/56b changeover; K2 (31-86) moves
 # the blade on 30. Positions are fractions of the manual's box. The flash contact is kept on 56b as printed, though the
-# 1977 Turbo diagram puts it on the main-beam pin and the car flashes the main beams (D9): probably a 1979 misprint.
+# 1977 Turbo diagram puts it on the main-beam pin and the car flashes the main beams (D9); which pin carries main on the
+# car is D12 (the 1980 print swaps the outputs instead), so D stays where the 1979 print has it until then.
+# Our reading aids, not printed: a caption for the rest state, light grey dashed 'ghost' blades where each moving contact
+# goes when its coil pulls, italic letters A-H for the contacts and K1/K2 for the coils, and a states table (below, left
+# of stalk 9) whose paths use those letters. The dip/main latch is inferred (no ratchet printed): check D13.
 rx, ry, rw, rh = 140, 188, 68, 36
 X = lambda f: round(rx + rw * f, 2)
 Y = lambda f: round(ry + rh * f, 2)
 yb, yc = ry + rh, Y(.25)
 box(rx, ry, rw, rh)
 txt(rx, ry - 1.8, '8', 4, w='bold'); txt(rx + 4.2, ry - 1.8, 'Lighting relay', 2.7)
-txt(rx + 31, ry - 1.8, 'latching dip/main + flash', 2.3, fill='#555')
+txt(rx + 25, ry - 1.8, 'drawn at rest: lights off, stalk released', 2.3, fill='#555')
 bt = {'56a': X(.10), '56b': X(.33), 'S': X(.56), '31': X(.67), '86': X(.79), '30': X(.90)}
 G, H, F = (bt['56a'], Y(.52)), (X(.23), Y(.52)), (X(.17), Y(.23))
 D, Ac, B, C, E = (X(.41), yc), (X(.56), yc), (X(.64), yc), (X(.795), yc), (X(.67), Y(.11))
@@ -240,18 +244,43 @@ inner([k1r, (bt['S'], k1r[1]), (bt['S'], yb)])                                  
 inner([k1l, (X(.405), k1l[1]), (X(.405), ra[1]), ra])                              # K1 to the resistor
 inner([rb, (bt['30'], rb[1])]); jdot(bt['30'], rb[1])                              # resistor bus to 30: crosses S, 31, 86
 inner([k2l, (bt['31'], k2l[1]), (bt['31'], yb)]); inner([k2r, (bt['86'], k2r[1]), (bt['86'], yb)])
-for p in (G, H, F, D, Ac, B, C, E): contact(*p)
-blade(B[0] + .7, yc - .3, C[0] - .8, yc - .3)                                      # B-C closed at rest
+
+
+def toward(p, q, back=.8):
+    """End points of a blade from pivot contact p towards q: .7 off p's centre, stopping `back` short of q."""
+    L = ((q[0] - p[0]) ** 2 + (q[1] - p[1]) ** 2) ** .5; ux, uy = (q[0] - p[0]) / L, (q[1] - p[1]) / L
+    return round(p[0] + .7 * ux, 2), round(p[1] + .7 * uy, 2), round(q[0] - back * ux, 2), round(q[1] - back * uy, 2)
 
 
 def blade_to(p, q, back=.8):
-    """Blade from pivot contact p towards q, starting .7 off p's centre and stopping `back` short of q."""
-    L = ((q[0] - p[0]) ** 2 + (q[1] - p[1]) ** 2) ** .5; ux, uy = (q[0] - p[0]) / L, (q[1] - p[1]) / L
-    blade(round(p[0] + .7 * ux, 2), round(p[1] + .7 * uy, 2), round(q[0] - back * ux, 2), round(q[1] - back * uy, 2))
+    blade(*toward(p, q, back))
 
 
+GHOST = 'stroke="#bbb" stroke-width=".7" stroke-dasharray="1.3 .8"'   # a blade's weight but faded; mlink is thin and darker
+
+
+def ghost_to(p, q, dy=0):
+    """Where the blade on pivot p goes when its coil pulls: a light grey dashed blade onto contact q (our aid). dy lifts
+    one that lies along a conductor, as the closed B-C blade sits .3 above it, so it reads as a blade, not a link."""
+    x0, y0, x1, y1 = toward(p, q)
+    A(f'<path d="M{x0},{round(y0 + dy, 2)} L{x1},{round(y1 + dy, 2)}" fill="none" {GHOST}/>')
+
+
+def cname(x, y, t, anchor='middle'):
+    """Our name for a contact or coil (used by the states table): small italic grey, apart from the upright terminal labels."""
+    A(f'<text x="{x}" y="{y}" font-size="1.8" font-style="italic" text-anchor="{anchor}" fill="#666">{t}</text>')
+
+
+ghost_to(C, E); ghost_to(F, G); ghost_to(D, Ac, -.3)                              # K2: C to E; K1: F to G, flash blade onto A
+for p in (G, H, F, D, Ac, B, C, E): contact(*p)
+blade(B[0] + .7, yc - .3, C[0] - .8, yc - .3)                                      # B-C closed at rest
 blade_to(D, (X(.55), Y(.17)), back=0)                                              # top blade: open, free end short of A
 blade_to(F, H)                                                                     # changeover: rests on H (56b)
+for (x, y), t, dx, dy, anc in ((Ac, 'A', 0, 3.1, 'middle'), (B, 'B', 0, 3.1, 'middle'), (C, 'C', 0, 3.1, 'middle'),
+                               (D, 'D', -1, -1.4, 'end'), (E, 'E', .9, -1.4, 'start'), (F, 'F', -1.3, .6, 'end'),
+                               (G, 'G', -1.3, .6, 'end'), (H, 'H', 0, 3.2, 'middle')):
+    cname(round(x + dx, 2), round(y + dy, 2), t, anc)
+cname(round(k1l[0] - .8, 2), round(k1t[1] + 1.1, 2), 'K1', 'end'); cname(round(k2l[0] - .8, 2), round(k2t[1] + 1.1, 2), 'K2', 'end')
 mlink([k1t, (k1t[0], Y(.23))]); mlink([(k1t[0], Y(.36)), (X(.235), Y(.36))])      # K1 to the top blade and the changeover
 mlink([k2t, (k2t[0], Y(.30))])                                                     # K2 to the B-C blade
 for k, x in bt.items(): tlabel(x - 1.5, yb - 1.3, k, 'end')                     # dots: after the wires
@@ -281,6 +310,27 @@ inner([(bt['S'], 264), (bt['S'], y9 - .8)]); contact(bt['S'], y9)
 blade_to((bt['S'], y9), (190.6, y9 - 3.4), back=0)                                 # free end short of, above, the fixed contact
 contact(193, y9); inner([(193.8, y9), (198, y9)])
 wire('32#earth', [(198, y9), (222, y9), (222, 277)], 200.5, y9 - 2.7); earth(222, 277)
+
+# ---- relay 8 states table (our aid): in the free corner left of stalk 9, under 115's tag (ends y 264.6) and above the
+# frame (288.7). Paths use the letters drawn in the relay. Row 4: as drawn D sits on 56b, which would flash dipped; the
+# car flashes main (D9), and D12 reads which pin carries main, so the row gives both and D stays put.
+TX, TY, RH8 = 12.5, 273.9, 3.2                          # left, grid top, row height
+C8 = [TX, TX + 19.5, TX + 34.5, TX + 66, 136]           # column edges: state, coils pulled, path, lights
+ROWS8 = [('1', 'lights off', 'none', '30 → C → B → A', 'nothing: flash blade A–D open'),
+         ('2', 'headlamps on', 'K2', '30 → C → E → F → H → 56b', 'dipped'),
+         ('3', 'main, latched', 'K2, K1 pulse', '30 → C → E → F → G → 56a', 'main + dash lamp 47; next pulse: dipped (check D13)'),
+         ('4', 'flash, lights off', 'K1, stalk held', '30 → C → B → A → D', 'main on the car (check D9); D drawn on 56b: check D12')]
+txt(TX, TY - 4.6, '8 Lighting relay states', 2.4, w='bold', fill='#333')
+txt(TX + 28, TY - 4.6, 'latching dip/main + flash; each path starts at terminal 30', 2.1, fill='#555')
+for x, h in zip(C8, ('state', 'coils pulled', 'path (letters in 8)', 'lights')):
+    txt(x + (3.6 if x == TX else 1), TY - 1.2, h, 2.0, fill='#555')
+grid = [f'M{TX},{round(TY + j * RH8, 2)} H{C8[-1]}' for j in range(5)] + [f'M{x},{TY} V{round(TY + 4 * RH8, 2)}' for x in C8]
+A(f'<path d="{" ".join(grid)}" stroke="#ccc" stroke-width=".2"/>')
+for j, (n, *cells) in enumerate(ROWS8):
+    y = round(TY + (j + .5) * RH8, 2)
+    A(f'<circle cx="{TX + 1.6}" cy="{y}" r="1.2" fill="#fff" stroke="#888" stroke-width=".25"/>')
+    txt(TX + 1.6, round(y + .68, 2), n, 1.9, 'middle', w='bold', fill='#777')
+    for x, s in zip(C8, cells): txt(x + (3.6 if x == TX else 1), round(y + .75, 2), s, 2.1, fill='#222')
 
 # ---- light switch 10 ---------------------------------------------------
 # 6 and 5 (upper left, as both 1979 prints draw them) close in the top position: town light, Sweden/Norway/Denmark only
@@ -394,6 +444,9 @@ A(f'<path d="M{x},{y + 9} h7" stroke="#222" stroke-width=".8"/><circle cx="{x + 
 txt(x + 11, y + 10, 'ends on diagram', 2.4)
 if TICKED[0]: tick(x + 33, y + 9.3); txt(x + 37, y + 10, 'checked on the car', 2.4)
 probable_legend(lx + 4, ly + 19)
+gx, gy = lx + 47, ly + 19                    # ghost blade sample, right of the grey one: open at rest, dashed where it goes
+A(f'<path d="M{gx + 1.7},{gy - .3} L{gx + 7.2},{gy - .3}" fill="none" {GHOST}/>'); contact(gx + 1, gy); contact(gx + 8, gy)
+blade(gx + 1.7, gy - .3, gx + 7.6, gy - 2.4); txt(gx + 11, gy + 1, 'faded blade: position when pulled', 2.4)   # names the blade, not the dash: K1/K2's links are grey dashes too
 notes = ['Headlamps need the ignition on (except the flash, stalk 9); parking/tail lights do not:',   # manual PDF p. 375, 413
          'light switch 2 is fed from ignition switch X, light switch 3 from the always-live bar.',
          'Headlamps are unfused: relay 30 is fed straight from the supply bar (20 GR 1.5).',
@@ -403,7 +456,7 @@ notes = ['Headlamps need the ignition on (except the flash, stalk 9); parking/ta
          'colours: check E19b. 221 reaches the left housing through pin 2 of front lamp connector 58; 222a branches off for the right.',
          'One bulb, two filaments: 5 W parking 13 from light switch 10, no ignition; 21 W corner lamp 118 from 117, ignition on (check E21).',
          'Not drawn: a rear fog lamp (check E23) or a relay that cuts the corner lamps on dipped beam (check E22); probably neither is fitted.',
-         'Relay 8: the car flashes the main beams (check D9), so the flash contact drawn on 56b (dipped) probably belongs on 56a.']
+         'Relay 8: the car flashes the main beams (check D9), but flash contact D is drawn on 56b (dipped); which pin carries main: check D12.']
 # Sources, not printed: corner lamps from the 1977 Turbo diagram (371-1/2) with the 1979 GL numbers (p.405); the 1979
 # Turbo legend (p.406) lists 117/118 but its drawing leaves pin 2 of 58 (E2) bare. Not drawn: the 1980 switch 76 (rear
 # bulb 75, via fuse 65 from 8:86) and the 1977 dip cut-out relay 77. Relay 8 is drawn as the 1979 print has it.
