@@ -49,6 +49,19 @@ def label(lx, ly, s):
     txt(lx, ly, s, 2.8)
 
 
+def lab(c):
+    """A cable's label as wire() prints it: number, colour, mm² from wires.csv."""
+    r = WIRES[c]; return f"{c.split('#')[0]} {r['colour']} {r['mm2']}"
+
+
+def mtag(x, y, lines, w, size=2.0):
+    """Destination tag of several lines (common.tag() takes one), boxed as the lighting sheet's two-line tags:
+    left edge x, centred on y, lines 1.36 × size apart. w: from the rendered text."""
+    ls = round(1.36 * size, 2); h = round(len(lines) * ls + 1.8, 2)
+    A(f'<rect x="{x}" y="{round(y - h / 2, 2)}" width="{w}" height="{h}" rx="1" fill="#fff" stroke="#444" stroke-width=".4"/>')
+    for i, s in enumerate(lines): txt(x + 1.5, round(y - (len(lines) - 1) * ls / 2 + i * ls + .36 * size, 2), s, size)
+
+
 def to_earth(x, y, dy=3, grey=False):
     """Where a rear cluster's earth bar leaves it: no earth lead is printed for the Combi Coupé's rear lights (the
     saloon's 189/189a are not on it; check R3), so it goes straight to common.earth()'s symbol. dy: the drop.
@@ -144,7 +157,7 @@ wire('71', [(TC, FY), (TC, 48), (73, 48)], label=False); tag(73, 48, t71, w=55, 
 
 # 25 hazard switch as printed (IMG_4724): + at the top, a blade hanging down-left from its pivot (open), and a
 # column of three contacts it closes together when pressed: lamp (grey: printed merged with the blade root, probably
-# open), R and L. The lamp is wired to an unlabelled terminal on the right edge.
+# open), R and L. The lamp's other side is an unlabelled terminal on the right edge, where two leads fork.
 box(130, 48, 40, 40); txt(127, 75, '25 Hazard switch', 2.4, 'end', w='bold')
 wire('73', [(T49A, FY), (T49A, 58), (114, 58), (114, 43), (144, 43), (149, 48)], 118, 41.5)   # lands on + beside 74 (probably)
 wire('74', [(149, 48), (149, 36), (225, 36), (225, 48)], 178, 34.5)
@@ -154,8 +167,13 @@ contact(150.6, 64.8); contact(150.6, 70.4); contact(150.6, 78)
 lamp(158.6, 64.8, r=3.2); inner([(151.4, 64.8), (155.4, 64.8)]); inner([(161.8, 64.8), (170, 64.8)]); dot(170, 64.8)
 inner([(151.4, 70.4), (160, 70.4), (160, 88)]); dot(160, 88); tlabel(161.6, 86.6, 'R')
 inner([(151.4, 78), (155, 78), (155, 88)]); dot(155, 88); tlabel(153.4, 86.6, 'L', 'end')
-wire('52', [(170, 64.8), (178, 64.8), (178, 70)], label=False); earth(178, 70)
-txt(180.5, 68.8, f"52 {WIRES['52']['colour']} {WIRES['52']['mm2']}", 2.1)
+# The lamp terminal's fork, as printed: 69 SV straight right and down to earth, 52 SV on a diagonal just above it to
+# panel light connector 59 (59 (D11)), where 179 SV from 47:4 (instruments sheet) and the panel lamps' 54/56 SV share
+# the pin: 69 is their earth too. The panel lamps are on no sheet.
+wire('69', [(170, 64.8), (178, 64.8), (178, 70)], label=False); earth(178, 70)
+txt(180.5, 68.8, lab('69'), 2.1)
+wire('52', [(170, 64.8), (174, 60.8), (174, 52), (177, 52)], label=False)
+mtag(177, 52, (f"{lab('52')} → panel light", 'connector 59: instrument earth', '179 (instruments sheet) and', 'panel lamps (not drawn)'), w=30)   # w from the rendered text
 
 # 24 indicator switch as printed: 54 at the top, a lever hanging from its pivot, centre-off between R (left) and L.
 box(210, 48, 30, 40); txt(243, 68, '24 Indicator switch', 2.4, w='bold')
@@ -278,6 +296,8 @@ notes = ['Flasher 23 is fed on 49 from fuse 11 (always-live bar). 49a (73 GN) fe
          '73 GN and 74 GN both land on + (probably the same terminal).',
          '25’s lamp contact is open at rest: the lamp stays dark with the indicators and blinks with the hazards (check D7). '
          'Grey: the end of 29’s blade and its right contact; probably open at rest.',
+         '25’s lamp terminal: 69 SV goes to earth and 52 SV to panel light connector 59, where the instrument earth (179 from 47) '
+         'and the panel lamps join it, so 69 earths them too.',
          '24’s own outputs are 75 BL/VT and 78 RD/VT, through stalk switch connector 58 to ignition switch connector 58. 77/80 (front) leave '
          'them just before ignition switch connector 58; only 76/79 (rear, route not traced yet) pass it.',
          'Front lamps on the left, rear lights on the right, the car’s right side at the top, as on the lighting sheet. Each lamp housing has one earth '
@@ -291,5 +311,5 @@ notes = ['Flasher 23 is fed on 49 from fuse 11 (always-live bar). 49a (73 GN) fe
 # year's print read 74. The manual prints 25's terminals +, R, L (none on the lamp's), 29's blade end running into its
 # right contact, 25's lamp contact merged into the blade root, no pin numbers on 58 (E12), and the left rear cluster
 # mirrored. The front housings are drawn the way it prints them (flat end on the left).
-for j, n in enumerate(notes): txt(lx + 108, ly + 5.5 + j * 3.75, n, 2.35, fill='#333')
+for j, n in enumerate(notes): txt(lx + 108, round(ly + 5.3 + j * 3.6, 2), n, 2.35, fill='#333')   # 12 lines: 3.6 pitch fits the box
 save('signals.svg')
