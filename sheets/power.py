@@ -14,9 +14,7 @@ def wire(cable, *a, _wire=wire, **k):
     STUB[0] |= WIRES[cable]['status'] == 'stub'
     _wire(cable, *a, **k)
 
-header('Saab 99 Turbo, model 1979 — Power distribution',
-       'Redrawn from Saab Service Manual 1975–1980, diagram p. 371-28/29 (PDF p. 406–407). '
-       'Component numbers as in the manual.')
+header('Saab 99 Turbo, model 1979 — Power distribution')   # source: Service Manual 1975-1980, p. 371-28/29 (PDF p. 406-407)
 
 BX = 150                                   # x of the fuse supply bars
 HX = 322                                   # left face of horn 40 (E1), where 117 RD from fuse 3 ends
@@ -32,9 +30,9 @@ for n in range(1, 13):
 def rowy(r): return 66 + 9 * r + (9 if r >= first_row[3] else 0) + (9 if r >= first_row[7] else 0)   # a gap above bars 3–6 and 7–12
 DEST = {'42': '14/15 L rear lamps: tail + plate', '43': '13 L front parking light',
         '44': '14/15 R rear lamps: tail + plate', '45': '13 R front parking light',
-        '135': '31 Reversing light switch (via connector 58)',
+        '135': '31 Reversing light switch, via 58 brake/reversing',
         '85': '61 Wiper switch', '85a': '62 Wiper motor, terminal 4', '85b': '83 Wiper interval relay, terminal 15',
-        '380': '140 speed transmitter, fuel boost (ignition sheet)', '140': '64 Seat heating, via 58 (E12) and 59 (interior sheet)',
+        '380': '140 speed transmitter, fuel boost (ignition sheet)', '140': '64 Seat heating, via 58 brake/reversing, 60 seat feed, 59 seat heater (interior sheet)',
         '380a': '137 throttle valve switch, fuel boost', '220': '117 corner lamp switch (lighting sheet)',
         '103': '35 Ventilator fan switch',
         '110': '38 Radiator fan relay 30/51', '113': '38 Radiator fan relay 86 (coil)',
@@ -119,13 +117,15 @@ inner([(IG['50'], 64), (IG['50'], P(143)[1]), P(143)])
 inner([P(143), Q(97, -42), short(CP, Q(97, -42))], grey=True)               # 50 across 15 to the side contact
 for c in (C54, CT, CB, CP): contact(*c)
 for k, x in IG.items(): txt(x + 1, 62.6, k, 2.4)            # terminal dots go on after the wires (heavy ones would hide them)
-for i, s in enumerate(('terminal names from the manual’s switch table (PDF p. 375)',   # two notes: a gap after 1
-                       'lock as book photo P8 prints it, mirrored; key rotor at rest,',
-                       'fed from 30; dashed: its other positions. Grey: 15 on to the corner',
-                       'contact, 50 across it to the side one; they meet in one blot (photo, scan)')):
-    txt(64.5, 39.5 + 3.3 * i + (1.2 if i else 0), s, 2.2, fill='#555')
+# Terminal names are from the manual's switch table (PDF p. 375); the grey links are grey because 15's and 50's leads
+# meet in one blot on book photo P8 and the scan.
+for i, s in enumerate(('key rotor at rest, fed from 30;',   # two notes: a gap after 2
+                       'dashed: its other positions',
+                       'grey = probably: 15 runs on to the upper-left contact,',
+                       '50 crosses it to the lower-left one')):
+    txt(64.5, 39.5 + 3.3 * i + (1.2 if i > 1 else 0), s, 2.2, fill='#555')
 A('<rect x="64" y="70" width="4" height="8" fill="#ddd" stroke="#111" stroke-width=".5"/>')
-txt(66, 68.5, '58', 2.4, 'middle', w='bold')
+txt(68, 81.3, '58 ign. switch', 2.2, 'end', w='bold')   # just under the pin, left of 40 GR's bend: above it, 7 GR's riser and 41's tag leave no room
 wire('7', [(57, 64), (57, 74), (64, 74)], label=False)
 # 7 and 10 GR land on bar 7–12 near its top, nested with no crossing: 7 (inner, 145) lands above 10 (outer, 139),
 # so 10 from relay 21 reaches its riser without crossing 7. They straddle F7's feed (210), 3 mm or more off it, so
@@ -143,7 +143,7 @@ wire('122', [(23, 64), (23, 169), (40, 169)], label=False); tag(40, 169, '50: 12
 # The manual (IMG_4720) prints 87 and 86 on the top edge, 30/51 and 85 below them, contact left, coil right.
 # Here the terminals sit on the side walls with the coil pair on the left, so the internals are its mirror image.
 box(80, 108, 34, 32)
-txt(80, 105, '21', 4, w='bold'); txt(87, 105, 'Ignition switch relay (B6)', 2.7)
+txt(80, 105, '21', 4, w='bold'); txt(87, 105, 'Ignition switch relay', 2.7)
 cl, cr, ct, cb = coil(82, 121, 15, 6)                      # coil 86-85
 inner([(80, 116), (ct[0], 116), ct]); inner([cb, (cb[0], 134), (80, 134)])
 contact(106, 119.5); inner([(114, 116), (106, 116), (106, 118.7)])        # 87: fixed contact
@@ -192,7 +192,7 @@ txt(40.4, 267.6, '+', 3.4); txt(61.6, 274.8, '−', 3.4, 'end')
 d = 'M64,273.6 H68 V279'                   # battery −: extra heavy and black as printed, but no cable number, so not in wires.csv
 A(f'<path d="{d}" fill="none" stroke="#222" stroke-width="1.7" stroke-linejoin="round"/><path d="{d}" fill="none" stroke="{COL["SV"]}" stroke-width="1.1" stroke-linejoin="round"/>')
 earth(68, 279)
-txt(64.5, 285, 'central earth star (D3): engine and body earth', 2.2, 'end', fill='#555')
+txt(64.5, 285, 'central earth star: engine and body earth', 2.2, 'end', fill='#555')
 DP, BP = (122, Y5 - 10), (122, Y5)         # alternator D+ and B+
 box(96, Y5 - 15, 26, 20); txt(99, Y5 - 3.5, '2', 4, w='bold'); txt(104, Y5 - 3.5, 'Alternator', 2.7); shaft(96, Y5 - 5, pulley=True)
 tlabel(120.4, DP[1] + .65, 'D+', 'end'); tlabel(120.4, BP[1] + .65, 'B+', 'end')
@@ -233,14 +233,14 @@ wire('120', [(HX, E1 + 7), (306, E1 + 7), (306, D1 + 3), (HX, D1 + 3)], 304.6, H
 wire('118', [(HX, E1 + 7), (319, E1 + 10), (319, 128), (344, 128)], 321, 126.5)
 horn(HX, E1); horn(HX, D1)
 for y in (E1 + 3, E1 + 7, D1 + 3, D1 + 7): dot(HX, y)
-txt(343, E1 + 6, '40', 3.4, w='bold'); txt(348.5, E1 + 6, 'Horn (E1)', 2.6)
-txt(343, D1 + 6, '40', 3.4, w='bold'); txt(348.5, D1 + 6, 'Horn (D1)', 2.6)
+txt(343, E1 + 6, '40', 3.4, w='bold'); txt(348.5, E1 + 6, 'Horn', 2.6)
+txt(343, D1 + 6, '40', 3.4, w='bold'); txt(348.5, D1 + 6, 'Horn', 2.6)
 txt(343, D1 + 14, 'in parallel, no horn relay: switched', 2.2, fill='#555')
 txt(343, D1 + 17.2, 'on the earth side by horn switch 41', 2.2, fill='#555')
-plug(344, 128, '58 (E2)'); wire('118', [(348, 128), (364, 128)], label=False)
-plug(364, 128, '58 (D8)'); wire('118', [(368, 128), (378, 128)], label=False)
+plug(344, 128, '58 front lamps'); wire('118', [(348, 128), (364, 128)], label=False)
+plug(364, 128, '58 stalks'); wire('118', [(368, 128), (378, 128)], label=False)
 for x in (344, 348, 364, 368): pin_dot(x, 128, '118')     # on top of 118 SV, so its stroke doesn't cover them
-box(378, 123, 14, 10); txt(378, 120.8, '41', 3.4, w='bold'); txt(383.5, 120.8, 'Horn switch', 2.4); txt(397.5, 120.8, '(D8)', 2.2, fill='#555')
+box(378, 123, 14, 10); txt(378, 120.8, '41', 3.4, w='bold'); txt(383.5, 120.8, 'Horn switch', 2.4)
 contact(382.5, 128); contact(387.5, 128); inner([(378, 128), (381.7, 128)]); inner([(388.3, 128), (392, 128)])
 blade(383.1, 127.5, 386.8, 125.4)                          # horn push: open at rest
 dot(378, 128); dot(392, 128)
@@ -257,11 +257,11 @@ for y in (TY, BY): A(f'<path d="M{C1},{y} H{C3}" stroke="#111" stroke-width=".6"
 for x in (C1, C2, C3): A(f'<path d="M{x},{TY} V{BY}" stroke="#111" stroke-width=".6"/>')
 J = {'201': '201 SV 0.75 ← 89:85 start relay coil (ignition sheet)',
      '212': '212 SV 0.75 ← 113:85 heated rear window relay (climate sheet)',
-     '281': '281 SV 1.5 ← 73 Service outlet, pin 2 (D4)',
+     '281': '281 SV 1.5 ← 73 Service outlet, pin 2',
      '92': '92 SV 1.0 ← 63 Washer pump (wipers sheet)',
      '90': '90 BL 1.0 ← 62 Wiper motor housing (wipers sheet)',
-     '107': '107 SV 2.5 ← 36 Heater fan motor, via 57 (F11) (climate sheet)',
-     '192': '192 SV 0.75 ← 42 Brake warning switch (E11)',
+     '107': '107 SV 2.5 ← 36 Heater fan motor, via 57 heater fan (climate sheet)',
+     '192': '192 SV 0.75 ← 42 Brake warning switch',
      '83': '83 SV 0.75 ← 83 Wiper interval relay (wipers sheet)'}
 ROUTE = {'201': [(C3 + 2.5, TY), (C3 + 8, TY), (C3 + 8, 205), (TE, 205)],       # out of T3's side, up and back over
          '212': [(C3, TY - 1.5), (C3, 212), (TE, 212)],
@@ -274,10 +274,10 @@ ROUTE = {'201': [(C3 + 2.5, TY), (C3 + 8, TY), (C3 + 8, 205), (TE, 205)],       
 for cab, pts in ROUTE.items():
     wire(cab, pts, label=False); tag(TE, pts[-1][1], J[cab], anchor='end')
 wire('3', [(C2, TY - 1.5), (C2, 215.5), (TE + 6, 215.5), (TE + 6, 220.5)], label=False); earth(TE + 6, 220.5)   # a real drop into the earth, not a hook
-txt(TE - 35, 224.1, '3 SV 2.5 → central earth star (D3)', 2.4)   # ends just left of the earth bar; start-anchored: cairo misplaces 'end' text with an arrow tspan
+txt(TE - 29.7, 224.1, '3 SV 2.5 → central earth star', 2.4)   # ends just left of the earth bar; start-anchored: cairo misplaces 'end' text with an arrow tspan
 for x in (C1, C2, C3):
     for y in (TY, BY): A(f'<rect x="{x - 2.5}" y="{y - 1.5}" width="5" height="3" rx=".5" fill="#111"/>')
-txt(C1 - 37, 248.2, '158', 4, w='bold'); txt(C1 - 28.5, 248.2, 'Earth joint (D6)', 2.7)   # number first, as for every part
+txt(C1 - 37, 248.2, '158', 4, w='bold'); txt(C1 - 28.5, 248.2, 'Earth joint', 2.7)   # number first, as for every part
 txt(C1 - 37, 252.6, 'six linked blocks: one earth point', 2.2, fill='#555')
 
 # ---- legend --------------------------------------------------------------
@@ -299,5 +299,5 @@ if TICKED[0]:                              # beside the stub sample, or in its p
     tick(tx, ly + 15.3); txt(gx, ly + 16, 'checked on the car', 2.4)
 size_legend(lx + 4, ly + 16)                # line widths, under the colours (ends by lx + 84, left of the stub/tick samples)
 y = ly + 21.5 + (6 if probable_legend(lx + 4, ly + 21) else 0)
-txt(lx + 4, y, 'Not RHD-specific: circuits should match, but harness routing and part positions may differ.', 2.3, fill='#333')
+txt(lx + 4, y, 'Not RHD-specific: circuits should match the car, but harness routing and part positions may differ.', 2.3, fill='#333')
 save('power.svg')
