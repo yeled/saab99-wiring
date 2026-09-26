@@ -33,8 +33,9 @@ for i, (key, title) in enumerate(ORDER):
 wires = list(csv.DictReader(open(os.path.join(ROOT, 'data', 'wires.csv'))))
 st = Counter(w['status'] for w in wires)
 ty = 3 * H * S + 11
-parts.append(f'<g font-family="Helvetica, Arial, sans-serif"><text x="{X0 + 8}" y="{ty}" font-size="8" font-weight="bold">Saab 99 Turbo, model 1979: wiring redrawn</text>'
-             f'<text x="{X0 + 185}" y="{ty}" font-size="4.2" fill="#444">from the Saab Service Manual 1975–1980, diagram p. 371-28/29. '
+# Source (not printed; our diagram is canonical): Saab Service Manual 1975-1980, diagram p. 371-28/29.
+parts.append(f'<g font-family="Helvetica, Arial, sans-serif"><text x="{X0 + 8}" y="{ty}" font-size="8" font-weight="bold">Saab 99 Turbo, model 1979: wiring diagram</text>'
+             f'<text x="{X0 + 185}" y="{ty}" font-size="4.2" fill="#444">'
              f'Wires: {st["traced"] + st["traced+text"]} traced, {st["open"]} not traced yet, {st["stub"]} end on the diagram, {st["car"]} checked on the car. '
              f'Colour codes are Swedish (GL gul = yellow, SV svart = black, VT vit = white). Generated {datetime.date.today():%d %B %Y}.</text></g>')
 parts.append('</svg>')
