@@ -128,8 +128,8 @@ box(160, 151, 20, 10); inner([(160, 156), (163.2, 156)]); inner([(176.8, 156), (
 contact(164, 156); contact(176, 156); blade(164.7, 156, 175.2, 156)
 txt(170, 165, '144 Pressure switch (overboost)', 2.4, 'middle', w='bold')
 wire('378', [(180, 156), (185, 156), (185, 134), (224.5, 134), T15], 189, 132.3)
-wire('377', [(160, 156), (150, 156)], label=False); tag(148, 156, '377 GN/VT 0.75 ← 58/4 above, switch side', anchor='end')
-# 377 stays a tag: it leaves pin 4 on the switch side (data/connectors.csv), and the only ways down from there cross the
+wire('377', [(160, 156), (150, 156)], label=False); tag(148, 156, '377 GN/VT 0.75 ← 123 at 58 A4/4 (above)', anchor='end')
+# 377 stays a tag: it tees off 123 on the switch side of pin 4 (data/connectors.csv), not the 147 side like 123d, and the only ways down from there cross the
 # 202 tag or squeeze between 122, 201 and relay 89's wall
 dot(160, 156); dot(180, 156)
 # 102:31 takes two leads (book photos P6a/P6b, scan): 100 SV straight in from the left, relay 67's coil earth (via 100a) and
