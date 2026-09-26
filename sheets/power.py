@@ -20,6 +20,7 @@ header('Saab 99 Turbo, model 1979 — Power distribution',
 
 BX = 150                                   # x of the fuse supply bars
 HX = 322                                   # left face of horn 40 (E1), where 117 RD from fuse 3 ends
+Y5, Y5A = 275, 280.5                       # 5 GR and 5a GR from alternator B+ into the foot of bar 7–12
 
 # ---- fuse box: three supply bars, twelve fuses, outputs tagged -----------
 OUTS = {1: ['42', '43'], 2: ['44', '45'], 3: ['117', '135'], 4: ['85', '85a', '85b'],
@@ -44,10 +45,11 @@ BARS = [(1, 2, 'Bar 1–2 · parking and tail lights, fed from light switch 4'),
         (3, 6, 'Bar 3–6 · live with ignition on, fed from relay 21'),
         (7, 12, 'Bar 7–12 · always live, fed from battery / alternator')]
 txt(147, 53, '22', 4, w='bold'); txt(154, 53, 'Fuse box', 2.7)
+BAR_PATHS = []                             # drawn after the wires that land on them (below), so a heavy wire's end doesn't bite the bar
 for a, b, title in BARS:
     y0, y1 = rowy(first_row[a]) - 4, rowy(first_row[b] + len(OUTS[b]) - 1) + 4
-    if b == 12: y1 = 281                      # down to where 5 and 5a come in from the alternator
-    A(f'<path d="M{BX},{y0} V{y1}" stroke="#111" stroke-width="1.6"/>')
+    if b == 12: y0, y1 = rowy(first_row[7]) - 6.5, Y5A + 2.5   # up to take 7 GR above F7's feed; down past 5 and 5a
+    BAR_PATHS.append(f'<path d="M{BX},{y0} V{y1}" stroke="#111" stroke-width="1.6"/>')
     txt(156, rowy(first_row[a]) - 6.5, title, 2.6, w='bold')
 for n, outs in OUTS.items():
     ys = [rowy(first_row[n] + i) for i in range(len(outs))]
@@ -57,11 +59,10 @@ for n, outs in OUTS.items():
     txt(163, y - 3.2, fuse_label(n), 2.4, 'middle')
     if fuse_checked(n): tick(170.4, y - 2.6, s=0.9)
     if len(ys) > 1: A(f'<path d="M176,{ys[0]} V{ys[-1]}" stroke="#111" stroke-width=".6"/>')
-    for cab, yy in zip(outs, ys):
-        dot(176, yy)
+    for cab, yy in zip(outs, ys):                           # each dot after its wire, so a heavy wire doesn't hide it
         if cab == '117':                                   # runs on to the horns (drawn below), no tag
-            HORN_Y = yy; wire(cab, [(176, yy), (HX, yy)], 180, yy - 1.5); continue
-        wire(cab, [(176, yy), (230, yy)], 180, yy - 1.5)
+            HORN_Y = yy; wire(cab, [(176, yy), (HX, yy)], 180, yy - 1.5); dot(176, yy); continue
+        wire(cab, [(176, yy), (230, yy)], 180, yy - 1.5); dot(176, yy)
         st = WIRES[cab]['status']
         end = tag(232 if st == 'stub' else 230, yy, '→ ' + DEST[cab], dashed=(st == 'open'))
         if cab in NOTE: txt(end + 2.5, yy + 1, NOTE[cab], 2.3, fill='#666')
@@ -117,17 +118,21 @@ inner([Q(124, -46), short(CB, Q(124, -46))], grey=True)                     # 15
 inner([(IG['50'], 64), (IG['50'], P(143)[1]), P(143)])
 inner([P(143), Q(97, -42), short(CP, Q(97, -42))], grey=True)               # 50 across 15 to the side contact
 for c in (C54, CT, CB, CP): contact(*c)
-for k, x in IG.items(): dot(x, 64); txt(x + 1, 62.6, k, 2.4)
+for k, x in IG.items(): txt(x + 1, 62.6, k, 2.4)            # terminal dots go on after the wires (heavy ones would hide them)
 for i, s in enumerate(('terminal names from the manual’s switch table (PDF p. 375)',   # two notes: a gap after 1
                        'lock as book photo P8 prints it, mirrored; key rotor at rest,',
                        'fed from 30; dashed: its other positions. Grey: 15 on to the corner',
                        'contact, 50 across it to the side one; they meet in one blot (photo, scan)')):
     txt(64.5, 39.5 + 3.3 * i + (1.2 if i else 0), s, 2.2, fill='#555')
-A('<rect x="64" y="70" width="4" height="8" fill="#ddd" stroke="#111" stroke-width=".5"/>'); dot(64, 74); dot(68, 74)
+A('<rect x="64" y="70" width="4" height="8" fill="#ddd" stroke="#111" stroke-width=".5"/>')
 txt(66, 68.5, '58', 2.4, 'middle', w='bold')
 wire('7', [(57, 64), (57, 74), (64, 74)], label=False)
-Y7, Y10 = rowy(first_row[7]) - 2.5, rowy(first_row[7]) + 1.5   # 7 and 10 GR land on bar 7–12 just below its top
-wire('7', [(68, 74), (142, 74), (142, Y7), (BX, Y7)], 140.4, 176, rot=-90)
+# 7 and 10 GR land on bar 7–12 near its top, nested with no crossing: 7 (inner, 145) lands above 10 (outer, 139),
+# so 10 from relay 21 reaches its riser without crossing 7. They straddle F7's feed (210), 3 mm or more off it, so
+# neither reads as running straight on into F7; 6.5 apart, so the two heavy greys never read as one band.
+X7, X10 = 145, 139
+Y7, Y10 = rowy(first_row[7]) - 3.5, rowy(first_row[7]) + 3
+wire('7', [(68, 74), (X7, 74), (X7, Y7), (BX, Y7)], X7 - 1.6, 112, rot=-90)   # label above 11 VT, where 10 isn't beside it
 wire('40', [(68, 74), (72, 79), (84, 79)], label=False); tag(84, 79, '40 GR 1.0 → 10 Light switch 3')
 wire('30', [(50, 64), (50, 87), (84, 87)], label=False); dot(50, 87); tag(84, 87, '30 RD 1.0 → 10 Light switch 2')
 wire('340', [(50, 87), (50, 95), (84, 95)], label=False); tag(84, 95, '340 RD 0.75 → 122 radio (radio sheet)')
@@ -146,7 +151,7 @@ contact(106, 130); inner([(114, 134), (106, 134), (106, 130.8)])          # 30/5
 blade(106.4, 129.3, 109.3, 120.6)                                          # make contact 30/51-87, open at rest
 mlink([cr, (107.3, cr[1])])
 for (x, y, k, a) in ((80, 116, '86', 'start'), (80, 134, '85', 'start'), (114, 116, '87', 'end'), (114, 134, '30/51', 'end')):
-    dot(x, y); tlabel(x + (1.6 if a == 'start' else -1.6), y - 1.3, k, a)
+    tlabel(x + (1.6 if a == 'start' else -1.6), y - 1.3, k, a)
 wire('12', [(41, 64), (41, 116), (80, 116)], 45, 114.5)
 # 85 is earthed through relay 113 and earth joint 158 (drawn right), not locally. 263 SV joins it under 21's border in
 # the manual (probably at 85), so it leaves the same terminal on a short diagonal, inside the turn of 33 SV.
@@ -154,12 +159,14 @@ wire('33', [(80, 134), (38, 134), (38, 153), (40, 153)], 55, 132.5)
 tag(40, 153, '→ 113:85 (climate sheet) → 212 SV → earth joint 158')
 wire('263', [(80, 134), (77, 137), (77, 145), (79, 145)], label=False); tag(79, 145, '263 SV 0.75 ← 102:31 (ignition sheet)')
 wire('11', [(114, 116), (BX, 116)], 117, 114.5)
-wire('10', [(114, 134), (146, 134), (146, Y10), (BX, Y10)], 117, 132.5)
-wire('94', [(BX, 180), (118, 180)], 120, 178.5); tag(116, 180, '→ 65 fuse holder, 3 A → 67 Headlight wiper relay', anchor='end')
+wire('10', [(114, 134), (X10, 134), (X10, Y10), (BX, Y10)], 117, 132.5)
+wire('94', [(BX, 180), (118, 180)], 118.5, 178.5); tag(116, 180, '→ 65 fuse holder, 3 A → 67 Headlight wiper relay', anchor='end')
 wire('41', [(BX, 68), (118, 68)], 120, 66.5); tag(116, 68, '10 Light switch 4 (parking) →', anchor='end')
-wire('20', [(BX, 216), (118, 216)], 120, 214.5); tag(116, 216, '→ 8 Lighting relay 30', anchor='end')
-wire('280', [(BX, 225), (118, 225)], 120, 223.5); tag(116, 225, '→ 73 Service outlet', anchor='end')
-wire('202', [(BX, 234), (118, 234)], 120, 232.5); tag(116, 234, '→ 89 Start relay 30', anchor='end')
+for cab, y, dest in (('20', 218.5, '→ 8 Lighting relay 30'), ('280', 225, '→ 73 Service outlet'),   # 3 mm or more off
+                     ('202', 232.5, '→ 89 Start relay 30')):   # the fuse feeds (F8 228, F9 237), so none reads as fused by one
+    wire(cab, [(BX, y), (118, y)], 120, y - 1.5); tag(116, y, dest, anchor='end')
+for x in IG.values(): dot(x, 64)                            # terminal dots on top of the wires, so heavy ones don't hide them
+for x, y in ((64, 74), (68, 74), (80, 116), (80, 134), (114, 116), (114, 134)): dot(x, y)
 
 # ---- battery, starter, alternator ----------------------------------------
 # Laid out as the manual (IMG_4712) draws them: starter above the battery, 6 GR over to the alternator.
@@ -171,25 +178,34 @@ def shaft(x, y, pulley=False):
     A(f'<rect x="{x - 4.6}" y="{y - h / 2}" width="3.2" height="{h}" rx=".8" fill="#111"/>')
     if pulley: A(f'<rect x="{x - 3.25}" y="{y - h / 2 + 1.4}" width=".5" height="{h - 2.8}" fill="#fff"/>')
 
-box(20, 239, 26, 16); txt(23, 245.2, '4', 4, w='bold'); txt(28, 245.2, 'Starter', 2.7); shaft(20, 247)
-for x, y, k, anc, lx_, ly_ in ((46, 243, '16', 'end', 44.4, 243.65), (46, 251, '50', 'end', 44.4, 251.65), (33, 255, '30', 'middle', 32.4, 253.3)):
+# The heavy cables need room: the starter sits high enough that 6 GR runs clear between it and the battery and alternator,
+# and the alternator's B+ fans out 6 (in from above), 5 and 5a (to the bar) far enough apart to read as three.
+SY = 233                                   # starter box top
+box(20, SY, 26, 16); txt(23, SY + 6.2, '4', 4, w='bold'); txt(28, SY + 6.2, 'Starter', 2.7); shaft(20, SY + 8)
+S30 = (33, SY + 16)                        # starter 30, on its bottom edge
+for x, y, k, anc, lx_, ly_ in ((46, SY + 4, '16', 'end', 44.4, SY + 4.65), (46, SY + 12, '50', 'end', 44.4, SY + 12.65),
+                               (*S30, '30', 'middle', 32.4, SY + 14.3)):
     dot(x, y); tlabel(lx_, ly_, k, anc)
-txt(22.6, 249.2, '16, 50: ignition sheet', 2.2, fill='#555')
+txt(22.6, SY + 10.2, '16, 50: ignition sheet', 2.2, fill='#555')
 box(38, 261, 26, 18); txt(46, 270.5, '1', 4, w='bold'); txt(51, 270.5, 'Battery', 2.7)
 txt(40.4, 267.6, '+', 3.4); txt(61.6, 274.8, '−', 3.4, 'end')
 d = 'M64,273.6 H68 V279'                   # battery −: extra heavy and black as printed, but no cable number, so not in wires.csv
 A(f'<path d="{d}" fill="none" stroke="#222" stroke-width="1.7" stroke-linejoin="round"/><path d="{d}" fill="none" stroke="{COL["SV"]}" stroke-width="1.1" stroke-linejoin="round"/>')
 earth(68, 279)
 txt(64.5, 285, 'central earth star (D3): engine and body earth', 2.2, 'end', fill='#555')
-box(96, 262, 26, 20); txt(99, 273.5, '2', 4, w='bold'); txt(104, 273.5, 'Alternator', 2.7); shaft(96, 272, pulley=True)
-tlabel(120.4, 267.65, 'D+', 'end'); tlabel(120.4, 277.65, 'B+', 'end')
-wire('1', [(33, 255), (33, 266.4), (38, 266.4)], 16.5, 262)
-wire('6', [(33, 255), (36, 258), (126, 258), (126, 273), (122, 277)], 70, 256.5)
-wire('195', [(122, 267), (136, 267), (136, 247), (134, 247)], label=False)   # crosses 6 GR, no join (as printed)
-tag(134, 247, '195 RD 0.75 → 47 charge warning lamp (instruments sheet)', anchor='end')
-wire('5', [(122, 277), (BX, 277)], 130, 275.5)
-wire('5a', [(122, 277), (125, 280), (BX, 280)], 130, 284.2)
-for x, y in ((33, 255), (38, 266.4), (64, 273.6), (122, 267), (122, 277)): dot(x, y)
+DP, BP = (122, Y5 - 10), (122, Y5)         # alternator D+ and B+
+box(96, Y5 - 15, 26, 20); txt(99, Y5 - 3.5, '2', 4, w='bold'); txt(104, Y5 - 3.5, 'Alternator', 2.7); shaft(96, Y5 - 5, pulley=True)
+tlabel(120.4, DP[1] + .65, 'D+', 'end'); tlabel(120.4, BP[1] + .65, 'B+', 'end')
+Y6, X6 = S30[1] + 6, 127                   # 6 GR's run under the starter, and its drop to B+ right of the alternator
+# 6 leaves 30 square (a short drop, then 45 deg) and 1 RD is drawn over it, so 6 branches off from behind the main cable
+wire('6', [S30, (33, S30[1] + 2), (37, Y6), (X6, Y6), (X6, Y5 - 3.5), (123.5, Y5), BP], 70, Y6 - 1.5)   # into B+ square
+wire('1', [S30, (33, 266.4), (38, 266.4)], 14.5, 262.5)                 # label left of the riser, clear of it
+wire('195', [DP, (136, DP[1]), (136, 244), (134, 244)], label=False)   # crosses 6 GR, no join (as printed)
+tag(134, 244, '195 RD 0.75 → 47 charge warning lamp (instruments sheet)', anchor='end')
+wire('5', [BP, (BX, Y5)], 133, Y5 - 1.5)
+wire('5a', [BP, (123.5, Y5), (123.5 + Y5A - Y5, Y5A), (BX, Y5A)], 133, Y5A + 4.2)   # label below; the auto-nudge adds .6
+for x, y in (S30, (38, 266.4), (64, 273.6), DP, BP): dot(x, y)
+for bp in BAR_PATHS: A(bp)                  # the fuse supply bars, over the ends of every wire that lands on them
 
 # ---- horns 40 on fuse 3, horn switch 41 ----------------------------------
 # As the manual draws them (IMG_4715 for E1, the scan for D1): a heavy square with an empty inner square and a flared
@@ -203,9 +219,13 @@ def horn(x, y, w=10, h=10):
       f'stroke="#111" stroke-width=".9" stroke-linejoin="round"/>')
     A(f'<rect x="{x}" y="{y}" width="{w}" height="{h}" fill="#111"/><rect x="{x + 1.8}" y="{y + 1.8}" width="{w - 3.6}" '
       f'height="{h - 3.6}" fill="#fff"/>')
+def pin_dot(x, y, cable):
+    """A connector pin's dot, just wider than its wire (a black dot no wider than a black wire would vanish into it)."""
+    cw = core_width(cable); r = max(1.0, round((cw + edge(cw)) / 2 + .35, 2))
+    A(f'<circle cx="{x}" cy="{y}" r="{r:g}" fill="#111"/>')
 def plug(x, y, name):
     """One pin of connector 58 on a horizontal run: grey block with the pin's two ends, name above, pin below."""
-    A(f'<rect x="{x}" y="{y - 4}" width="4" height="8" fill="#ddd" stroke="#111" stroke-width=".5"/>'); dot(x, y); dot(x + 4, y)
+    A(f'<rect x="{x}" y="{y - 4}" width="4" height="8" fill="#ddd" stroke="#111" stroke-width=".5"/>')   # pin dots: after the wires
     txt(x + 2, y - 5.7, name, 2.2, 'middle', w='bold'); txt(x + 2, y + 8.2, 'pin 1', 2.0, 'middle', fill='#555')
 E1, D1 = HORN_Y - 3, HORN_Y - 25                           # box tops: + at 3 below the top on E1, − at 3 on D1
 wire('119', [(HX, HORN_Y), (HX - 3, HORN_Y - 3), (HX - 3, D1 + 7), (HX, D1 + 7)], HX - 4.4, HORN_Y - 4, rot=-90)
@@ -219,6 +239,7 @@ txt(343, D1 + 14, 'in parallel, no horn relay: switched', 2.2, fill='#555')
 txt(343, D1 + 17.2, 'on the earth side by horn switch 41', 2.2, fill='#555')
 plug(344, 128, '58 (E2)'); wire('118', [(348, 128), (364, 128)], label=False)
 plug(364, 128, '58 (D8)'); wire('118', [(368, 128), (378, 128)], label=False)
+for x in (344, 348, 364, 368): pin_dot(x, 128, '118')     # on top of 118 SV, so its stroke doesn't cover them
 box(378, 123, 14, 10); txt(378, 120.8, '41', 3.4, w='bold'); txt(383.5, 120.8, 'Horn switch', 2.4); txt(397.5, 120.8, '(D8)', 2.2, fill='#555')
 contact(382.5, 128); contact(387.5, 128); inner([(378, 128), (381.7, 128)]); inner([(388.3, 128), (392, 128)])
 blade(383.1, 127.5, 386.8, 125.4)                          # horn push: open at rest
@@ -252,7 +273,7 @@ ROUTE = {'201': [(C3 + 2.5, TY), (C3 + 8, TY), (C3 + 8, 205), (TE, 205)],       
          '83': [(C3 + 2.5, BY), (C3 + 11, BY + 4.5), (C3 + 11, 280), (TE, 280)]}       # shallow, off B3's lower right
 for cab, pts in ROUTE.items():
     wire(cab, pts, label=False); tag(TE, pts[-1][1], J[cab], anchor='end')
-wire('3', [(C2, TY - 1.5), (C2, 219), (TE + 6, 219), (TE + 6, 220.5)], label=False); earth(TE + 6, 220.5)
+wire('3', [(C2, TY - 1.5), (C2, 215.5), (TE + 6, 215.5), (TE + 6, 220.5)], label=False); earth(TE + 6, 220.5)   # a real drop into the earth, not a hook
 txt(TE - 35, 224.1, '3 SV 2.5 → central earth star (D3)', 2.4)   # ends just left of the earth bar; start-anchored: cairo misplaces 'end' text with an arrow tspan
 for x in (C1, C2, C3):
     for y in (TY, BY): A(f'<rect x="{x - 2.5}" y="{y - 1.5}" width="5" height="3" rx=".5" fill="#111"/>')
@@ -260,22 +281,23 @@ txt(C1 - 37, 248.2, '158', 4, w='bold'); txt(C1 - 28.5, 248.2, 'Earth joint (D6)
 txt(C1 - 37, 252.6, 'six linked blocks: one earth point', 2.2, fill='#555')
 
 # ---- legend --------------------------------------------------------------
-lx, ly = 250, 30
-box(lx, ly, 157, 25, fill='#fff', sw=.5)
+lx, ly = 250, 28                           # up 2 to make room for the size row without crowding the fuse tags below
+box(lx, ly, 157, 31 if PROBABLE[0] else 25.5, fill='#fff', sw=.5)
 for i, (k, n) in enumerate([('BL', 'Blue'), ('BR', 'Brown'), ('GL', 'Yellow'), ('GN', 'Green'),
                             ('GR', 'Grey'), ('RD', 'Red'), ('SV', 'Black'), ('VT', 'White')]):
     x, y = lx + 4 + (i % 4) * 23, ly + 6 + (i // 4) * 5
     A(f'<path d="M{x},{y - 1} h7" stroke="#222" stroke-width="1.7"/><path d="M{x},{y - 1} h7" stroke="{COL[k]}" stroke-width="1.1"/>')
     txt(x + 9, y, f'{k} {n}', 2.5)
 x = lx + 97
-A(f'<path d="M{x},{ly + 5} h9" stroke="#222" stroke-width="1.2"/>'); txt(x + 11, ly + 6, 'traced (cable no. read)', 2.4)
-if DASHED[0]: A(f'<path d="M{x},{ly + 10} h9" stroke="#222" stroke-width="1.2" stroke-dasharray="3 2"/>'); txt(x + 11, ly + 11, 'not traced yet', 2.4)
+A(f'<path d="M{x},{ly + 5} h9" stroke="#222" stroke-width="1.7"/>'); txt(x + 11, ly + 6, 'traced (cable no. read)', 2.4)
+if DASHED[0]: A(f'<path d="M{x},{ly + 10} h9" stroke="#222" stroke-width="1.7" stroke-dasharray="3 2"/>'); txt(x + 11, ly + 11, 'not traced yet', 2.4)
 if STUB[0]:
     A(f'<path d="M{x},{ly + 15} h7" stroke="#222" stroke-width=".8"/><circle cx="{x + 8.3}" cy="{ly + 15}" r="1.3" fill="#fff" stroke="#222" stroke-width=".5"/>')
     txt(x + 11, ly + 16, 'ends on diagram', 2.4)
 if TICKED[0]:                              # beside the stub sample, or in its place when the sheet has no stub
     tx, gx = (x + 33, x + 37) if STUB[0] else (x + 3, x + 11)
     tick(tx, ly + 15.3); txt(gx, ly + 16, 'checked on the car', 2.4)
-probable_legend(lx + 4, ly + 15.5)
-txt(lx + 4, ly + 21.5, 'Not RHD-specific: circuits should match, but harness routing and part positions may differ.', 2.3, fill='#333')
+size_legend(lx + 4, ly + 16)                # line widths, under the colours (ends by lx + 84, left of the stub/tick samples)
+y = ly + 21.5 + (6 if probable_legend(lx + 4, ly + 21) else 0)
+txt(lx + 4, y, 'Not RHD-specific: circuits should match, but harness routing and part positions may differ.', 2.3, fill='#333')
 save('power.svg')
