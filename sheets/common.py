@@ -213,7 +213,7 @@ def probable_legend(x, y):
     """Legend sample for grey internals, drawn only when a helper had grey=True; (x, y) like the dashed sample. Returns whether it drew."""
     if not PROBABLE[0]: return False
     contact(x + 1, y, True); contact(x + 8, y, True); blade(x + 1.7, y - .3, x + 7.6, y - 2.4, True)
-    txt(x + 11, y + 1, 'grey inside a part: probably, not printed clearly', 2.4)
+    txt(x + 11, y + 1, 'grey inside a part: probably', 2.4)
     return True
 
 
@@ -230,12 +230,12 @@ def tag(x, y, text, w=None, dashed=False, size=2.6, anchor='start'):
     txt(x0 + 1.5, y + 1, text, size)
     return x0 + w
 
-def header(title, sub):
+def header(title, sub=None):
     A('<svg xmlns="http://www.w3.org/2000/svg" width="420mm" height="297mm" viewBox="0 0 420 297" '
       'font-family="Helvetica, Arial, sans-serif">')
     A('<rect width="420" height="297" fill="#fff"/><rect x="8" y="8" width="404" height="281" fill="none" stroke="#111" stroke-width=".6"/>')
     txt(14, 19, title, 6, w='bold')
-    txt(14, 25.5, sub, 2.8, fill='#444')
+    if sub: txt(14, 25.5, sub, 2.8, fill='#444')
 
 def save(name):
     A('</svg>')
