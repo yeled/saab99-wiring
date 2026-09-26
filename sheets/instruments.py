@@ -100,10 +100,16 @@ for i, (k, n) in enumerate([('BL', 'Blue'), ('BR', 'Brown'), ('GL', 'Yellow'), (
     A(f'<path d="M{x},{y - 1} h7" stroke="#222" stroke-width="1.7"/><path d="M{x},{y - 1} h7" stroke="{COL[k]}" stroke-width="1.1"/>')
     txt(x + 9, y, f'{k} {n}', 2.5)
 x = lx + 4
-A(f'<path d="M{x},{ly + 17} h9" stroke="#222" stroke-width="1.2"/>'); txt(x + 11, ly + 18, 'traced (cable no. read)', 2.4)
-if DASHED[0]: A(f'<path d="M{x + 48},{ly + 17} h9" stroke="#222" stroke-width="1.2" stroke-dasharray="3 2"/>'); txt(x + 59, ly + 18, 'not traced yet', 2.4)
-if TICKED[0]: tick(x, ly + 23.3); txt(x + 4, ly + 24, 'checked on the car', 2.4)
-probable_legend(x, ly + 30)
+size_legend(x, ly + 18)                               # line widths, under the colours
+y = ly + 24                                           # text baseline of the status row: traced, then the dashed sample or the tick
+A(f'<path d="M{x},{y - 1} h9" stroke="#222" stroke-width="1.7"/>'); txt(x + 11, y, 'traced (cable no. read)', 2.4)
+if DASHED[0]: A(f'<path d="M{x + 48},{y - 1} h9" stroke="#222" stroke-width="1.7" stroke-dasharray="3 2"/>'); txt(x + 59, y, 'not traced yet', 2.4)
+def ticked(tx, ty): tick(tx, ty - .7); txt(tx + 4, ty, 'checked on the car', 2.4)   # the check mark sample, text baseline ty
+if TICKED[0] and not DASHED[0]: ticked(x + 48, y)    # beside 'traced' when the dashed sample leaves room
+if probable_legend(x, y + 5): y += 6
+if TICKED[0] and DASHED[0]:                           # else after the grey sample (4th colour column), or a row of its own
+    if PROBABLE[0]: ticked(x + 69, y)
+    else: y += 6; ticked(x, y)
 notes = ['Inside 47 as printed (its own terminal numbers): a + rail from 2 (182) feeds both gauges and the oil (11), low-fuel (12), brake (5) '
          'and charge (1) lamps; an earth rail to 4 (179) takes the gauges’ third leads and the main-beam (7) and indicator (6) lamps.',
          'Oil and temperature wires pass connector 58 (A4), pins 5 and 6; the fuel sender wires pass 3-pole connector 57 (B12).',
