@@ -5,3 +5,7 @@ connector,grid,pin,left side (on diagram),right side (on diagram),status,notes
 58,A4,4,123 GN/VT 1.5 from 20:15 ignition switch; 377 GN/VT 0.75 to 144 pressure switch; 283 GN/VT 0.75 to 73 service outlet,123 GN/VT 1.5 to 147 ballast resistor; 123d GN/VT 1.0 to 146:15 control unit,traced,ignition 15 for the coil and the pump relay control both pass this pin; 123d leaves on the 147 side (book photo IMG_4729; 1977 Turbo addendum p.53 (371-2))
 58,A4,5,184 BL 1.0 to 44 oil pressure switch,to 47 oil warning lamp,traced (instrument end not confirmed),
 58,A4,6,183 GL 1.0 to 45 temperature sender,to 47 temperature gauge,traced,
+58,B11,1,44 GN 0.75 from fuse 2,44 GN 0.75 to the right rear (59 on the Combi Coupé),traced,row 1 from the top on the 1979 scan (26 Sep research); our own count
+58,B11,2,42 BL 0.75 from fuse 1,42 BL 0.75 to the left rear tail bulb,traced,row 2 from the top on the 1979 scan (26 Sep research); our own count
+58,A9,5,211 GL 2.5 from relay 113:87,211 GL 2.5 to heated rear window 115,traced,"row 5 from the top on the 1979 scan, labelled 211 on both sides (26 Sep research, verified); our own count"
+59,CC,?,44 GN 0.75 from 58 (B11) (body side); 44 GN 0.75 on to the right tail bulb,47 GN 0.75 to the number-plate lamps (tailgate side),open,"Combi Coupé only, probably (1977/78 Turbo CC prints); no pin numbers printed; the other pin carries nothing on the Turbo CC prints (211 on the non-Turbo CC pages): check R5"

@@ -18,13 +18,11 @@ cable,colour,mm2,from,to,status,evidence,notes
 30,RD,1.0,10:2,20:X via 58,traced+text,"label@5130,1600","terminal X per ignition switch table, PDF p.375"
 10,GR,4.0,22:bar 7-12,21:30/51,traced,"label@3240,2027",feeds the ignition switch relay contact
 43,BL,0.75,22:fuse 1,13 L,traced,"label@2590,2545",left front parking light
-42,BL,0.75,22:fuse 1,14 L cluster node,traced,"label@2590,2470",left tail lights + number plate light
+42,BL,0.75,22:fuse 1,"14 L (left rear tail bulb), via 58 (B11) row 2",traced,"label@2590,2470; 1979 scan: passes tail lamp connector 58 (B11), row 2 from the top (26 Sep research); 1977 Turbo addendum p.53 (371-2) and 1978 Turbo p.403 (371-25), both Combi Coupé: 42 BL 0.75 straight to the left tail bulb","left tail light (and left front parking light on fuse 1); on the Combi Coupé (Charlie's car) the number-plate lamps are on fuse 2, probably (1977/78 Turbo CC prints)"
 45,GN,0.75,22:fuse 2,13 R,traced,"label@2590,2520",right front parking light
-44,GN,0.75,22:fuse 2,14 R cluster node,traced,"label@2590,2495",right tail lights + number plate light
-46,BL,0.75,14 L cluster node,(ends on diagram),stub,"label@7520,3560","accessory tap, likely trailer"
-46a,BL,0.75,15 L,(ends on diagram),stub,"label@7735,3330",accessory tap
-47,GN,0.75,14 R cluster node,(ends on diagram),stub,"label@7620,786","accessory tap, likely trailer"
-47a,GN,0.75,15 R,(ends on diagram),stub,"label@7712,1030",accessory tap
+44,GN,0.75,22:fuse 2,"14 R (right rear tail bulb), via 58 (B11) row 1 and, on the Combi Coupé, 2-pole connector 59 (CC)",traced,"label@2590,2495; 1979 scan: passes 58 (B11), row 1 from the top (26 Sep research); 1977 Turbo addendum p.53 (371-2) and 1978 Turbo p.403 (371-25), both Combi Coupé: runs into 59, then '44 GN 0.75' down to the right tail bulb; CC details S 5125 (PDF p.387/393/401, 1976-78) label that last run 44a","right tail light and, on the Combi Coupé, both number-plate lamps through 47/47a beyond 59 (probably: no 1979 CC page; checks R1, R5)"
+47,GN,0.75,"59 (CC), tailgate side (on 44's pin)",15 number-plate lamp A,open,"1977 Turbo addendum p.53 (371-2) and 1978 Turbo p.403 (371-25), both Combi Coupé: 47 GN 0.75 from 59 to the first number-plate lamp; CC details S 5125 (PDF p.387/393/401, 1976-78)","Combi Coupé number-plate feed (Charlie's car, 3-door). On the 1979 saloon print 47 names the right tail-to-tail jumper instead. Probably; dashed until checks R4/R5"
+47a,GN,0.75,15 number-plate lamp A,15 number-plate lamp B,open,"1977 Turbo addendum p.53 (371-2) and 1978 Turbo p.403 (371-25), both Combi Coupé: 47a GN 0.75 from the first number-plate lamp to the second; CC details S 5125 (PDF p.387/393/401, 1976-78)",link between the two number-plate lamps (Combi Coupé); which is left and which right: check R4. Probably
 1,RD,16.0,1:+,4:30,traced,label at starter,battery positive to starter
 6,GR,4.0,4:30,2:B+,traced,label at starter,starter 30 to alternator B+
 5,GR,4.0,2:B+,22:bar 7-12,traced,label at alternator,main feed into bar 7-12 (lands at fuse 10)
@@ -94,7 +92,7 @@ cable,colour,mm2,from,to,status,evidence,notes
 179,SV,0.75,47:4,earth,traced,label at 47:4,
 187,VT,0.75,47:5,"58 (B9), then 188 VT",traced,book photos 24 Sep: labels at 47:5 and at 58 (B9),brake warning lamp; earthed by handbrake switch 43 or brake failure switch 42
 182,BR/VT,0.75,fuse 4 (off 85 BR at 58 (D8)),47:2,traced,book close-up (grid 9): branches off the fuse side of the 85 BR pin at 58 (D8); book photo P8 (source/photos/book-P8-47-instrument-cluster.jpg): 182 BR/VT lands on terminal 2 (the cluster’s + rail),instrument supply; matches the fuse 4 lid label (instruments)
-203,BR,0.75,110,116 heated window switch,traced,"book close-ups, 1979 page (same on 1980): line from 110 runs to the third terminal of 116; 1979 scan: 203 and 214 fan out from the same switch terminal","printed BR at the tachometer and BL at switch 116 in both 1979 and 1980, a misprint; probably the tachometer + supply, looped from the switch feed (214 BL)"
+203,BR,0.75,110,116 heated window switch,traced,"book close-ups, 1979 page (same on 1980): line from 110 runs to the third terminal of 116; 1979 scan: 203 and 214 fan out from the same switch terminal","printed BR at the tachometer and BL at switch 116 in both 1979 and 1980, a misprint; probably the tachometer + supply, looped from the switch feed (214 BL); the 1977 Turbo addendum and the 1978 Turbo print label it 203 BL 0.75 (supports BL, check D3)"
 341,SV,0.75,122:5,earth,traced,label at 122; radio page,radio earth
 342,BR/VT,0.75,122:2,131 +,car,"label at 122; radio page; car, check I1: brown/white and green/white at the left-hand speaker (photo source/photos/car-131-left-speaker.jpg, 25 Sep 2026)","left speaker + on this car and the radio page (the Turbo diagram: right, 130); via 59"
 343,GN/VT,0.75,122:3,131 -,car,"label at 122; radio page; car, check I1: brown/white and green/white at the left-hand speaker (photo source/photos/car-131-left-speaker.jpg, 25 Sep 2026)","left speaker - on this car and the radio page (the Turbo diagram: right, 130); via 59"
@@ -152,7 +150,7 @@ cable,colour,mm2,from,to,status,evidence,notes
 105,GL,2.5,35:8,36 (via 57),traced,labels at 35; trace ends at 36,"heater fan, full speed"
 104,GR,1.0,35:6,36 via 57 and resistor 74,traced,"book photos 24 Sep: 35:6 to 57, through 74, back through 57","heater fan, low speed through resistor 74"
 107,SV,2.5,36 (via 57 (F11) row 3),158,traced,book photos IMG_4725 (at 57 (F11) row 3) and IMG_4718/IMG_4720 (label at 158); scan p.407; 1977 Turbo addendum p.53 (371-2),heater fan motor return
-211,GL,2.5,113:87,115,traced,labels at 113 and 115,heated rear window feed
+211,GL,2.5,113:87,115 (via 58 (A9) row 5),traced,"labels at 113 and 115; 1979 scan: passes door switch connector 58 (A9), row 5 from the top, labelled 211 on both sides (26 Sep research, verified)",heated rear window feed; Combi Coupé: the glass is in the tailgate. The 1977/78 Turbo CC prints run 211 straight to 115; the non-Turbo CC detail pages pass it through 59: check R5
 212,SV,0.75,113:85,"158 (earth joint, D6)",traced,label at 113; book photos IMG_4718/IMG_4720; 1977 Turbo addendum p.53 (371-2),joins 33 SV
 3,SV,2.5,158,"earth (main earth star, D3)",traced,scan p.407; 1977 Turbo addendum p.53 (371-2),earth joint 158 to the central earth star
 213,BL,0.75,116,113:86,traced,book photos 24 Sep: labels at 116 and 113,switch end not traced
@@ -166,8 +164,8 @@ cable,colour,mm2,from,to,status,evidence,notes
 170,SV,0.75,54,58 (A9),traced,"book close-up (grid 9-10), 1979: label at 54 and at 58 (A9)",door switch
 162,SV,0.75,50,51 dome light (mirror),traced,"book close-up (grid 9-10), 1979: labels between 50 and 51",not traced
 165,SV,0.75,50,51 dome light (mirror),traced,"book close-up (grid 9-10), 1979: labels between 50 and 51",not traced
-163,GL,0.75,161 (after 57),55 luggage compartment light,traced,"book close-up (grid 9-10), 1979: branches off 161 GL",
-166,BL,0.75,55,56 luggage compartment light switch (to earth),traced,"book close-up (grid 9-10), 1979: labels at 55 and 56",luggage light to its switch
+163,GL,0.75,161 (after 57),55 luggage compartment light,traced,"book close-up (grid 9-10), 1979: branches off 161 GL","Combi Coupé: lamp 55 sits on the right-hand side of the luggage area, 10 W festoon (manual p.360, bulb table p.30); wiring unchanged"
+166,BL,0.75,55,56 luggage compartment light switch (to earth),traced,"book close-up (grid 9-10), 1979: labels at 55 and 56","luggage light to its switch; Combi Coupé: the CC detail pages (1975-78) and the trailer diagram (PDF p.801, 'Saab 99 Combi Coupé') print 166 SV 0.75, the 1977/78 Turbo CC prints BL; switch 56 sits at the tailgate striker, worked by the lock (p.360). Check R7"
 168,SV,0.75,"70, 71, 69",earth,traced,"book photos 24 Sep: contacts 69, 70, 71 to earth",
 381,SV,0.75,140:31,earth,traced,label at 140 (book photo),
 382,BL,0.75,140:W,142 solenoid valve (E3),car,"labels at 140 (book photo) and at 142; car, check E12: blue on 142’s feed contact with grey 383 (25 Sep 2026)",fuel boost above about 130 km/h (PDF p.33)
@@ -175,7 +173,7 @@ cable,colour,mm2,from,to,status,evidence,notes
 188,VT,0.75,58 (B9),"43 handbrake switch, 42 brake failure switch",traced,"book photos 24 Sep: labels at 58, 43 and 42",brake warning lamp return
 192,SV,0.75,158,42 (brake warning switch),traced,book photo IMG_4718; 1977 Turbo addendum p.53 (371-2),to 42’s lower contact
 204,GL,0.75,"ECU speed signal (with 284, 284a)",110 tachometer,traced,book photos 24 Sep: labels near the TSI bundle and at 110,tachometer signal
-214,BL,0.75,116,?,open,book photos 24 Sep: label at 116,"feed into switch 116; shares the switch terminal with 203 (tachometer supply), per the 1979 scan; source not traced; runs down to row E and meets a line toward connector 58 (E12): join or crossing not clear"
+214,BL,0.75,116,"58 (E12) row 1, fuse side (on 140 GL, fuse 5)",open,"book photos 24 Sep: label at 116; 1977 Turbo addendum p.53 (371-2): 214 BL 0.75 from 116's lower terminal (shared with 203) to the fuse-side dot of a 1-pole 58 where 140 GL 1.0 arrives (26 Sep research, crops a77_214corner/a77_214end); CC detail S 4263 (PDF p.383, 1975): 214 on the same connector pin as 150","feed into switch 116: probably +15 from fuse 5, tapped off 140 GL at 58 (E12) (1977 Turbo print; the 1979 scan loses it where it meets the line toward 58 (E12)); shares the switch terminal with 203 (tachometer). Dashed until check D14"
 151,BR,0.75,72,"59 (C12), then 156 BR",traced,book photos 24 Sep: labels at 72 and 59,
 156,BR,0.75,59 (C12),"59 (A8): seat contact 69, belt contacts 70/71",traced,book photos 24 Sep: labels at both connectors and at 58 (A9),from the contacts to the lamp (probably + through the contacts)
 157,SV,0.75,59 (C12),earth (grid 10),traced,book close-ups: 157 SV 0.75 labelled at 59 (C12) and at the earth point in grid 10,seat belt lamp return (probably)
