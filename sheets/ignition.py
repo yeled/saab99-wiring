@@ -6,7 +6,6 @@ header('Saab 99 Turbo, model 1979 — Ignition, starting and fuel injection')
 def ht(pts): A(f'<path d="{path(pts)}" fill="none" stroke="#444" stroke-width="1.1" stroke-linejoin="round"/>')
 def name(x, y, n, s, anchor='start'): txt(x, y, f'<tspan font-weight="bold">{n}</tspan> {s}', 2.7, anchor)
 # Joint on a 2.5 mm² wire: r 1.8, so it still shows past the 2.9 mm stroke and reads as a joint, not a rivet in the band
-def hdot(x, y): A(f'<circle cx="{x}" cy="{y}" r="1.8" fill="#111"/>')
 
 # ---- ignition switch and starter ----------------------------------------
 box(18, 38, 40, 32); name(21, 44, '20', 'Ignition switch')
@@ -49,7 +48,7 @@ wire('282', [(104, 137), (108, 137)], label=False); tag(110, 137, '282 GL 1.0 �
 # wraps 102 and the injection parts) and down the free strip right of it; 58/1 on the drop, then round into 92's left wall
 Y271 = 124.2
 wire('271', [(104, 131), (180, 131), (180, Y271), (368, Y271), (368, 214), (356, 214), (356, 230), (362, 230)], 366.6, 210, rot=-90)
-hdot(104, 131); hdot(104, 137)                                       # 271 and 282 tee off 122a: on top of all three
+dot(104, 131); dot(104, 137)                                       # 271 and 282 tee off 122a: on top of all three
 A('<rect x="364" y="186" width="8" height="4" fill="#ddd" stroke="#111" stroke-width=".5"/>'); dot(368, 186); dot(368, 190)
 txt(374, 189, '58 engine, pin 1', 2.1, fill='#555')
 # the RD label sits on the 92 side, where the book prints it; the relay side of 58 (A4) pin 1 is GN 1.0 (data/connectors.csv),
@@ -149,7 +148,7 @@ txt(306, 137.5, '103 Fuel pump', 2.6, 'middle', w='bold')
 # 262 SV 2.5 draws as a 2.9 mm black band: a longer run to the earth, so it reads as a lead, not a block on the pump
 wire('262', [(312, 146), (328, 146), (328, 150.5)], 331.5, 150.2); earth(328, 150.5)
 wire('261a', [T87, (242.5, 130), (276, 130), (276, 166), (280, 166)], 250, 128.6)
-hdot(*T87)                                                           # 87 on top of both leads; r 1.8 also hides the ends of 261's 2.9 mm diagonal
+dot(*T87)                                                           # 87 on top of both leads; dot() grows over 261's 2.9 mm stroke and hides its ends
 # 95 and 96: a winding each, drawn mirrored (manual: both terminals on the right wall, feed upper, earth lower)
 def regulator(y, n, s, sub):
     box(300, y, 50, 16); dot(300, y + 4); dot(300, y + 12)

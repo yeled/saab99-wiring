@@ -219,10 +219,6 @@ def horn(x, y, w=10, h=10):
       f'stroke="#111" stroke-width=".9" stroke-linejoin="round"/>')
     A(f'<rect x="{x}" y="{y}" width="{w}" height="{h}" fill="#111"/><rect x="{x + 1.8}" y="{y + 1.8}" width="{w - 3.6}" '
       f'height="{h - 3.6}" fill="#fff"/>')
-def pin_dot(x, y, cable):
-    """A connector pin's dot, just wider than its wire (a black dot no wider than a black wire would vanish into it)."""
-    cw = core_width(cable); r = max(1.0, round((cw + edge(cw)) / 2 + .35, 2))
-    A(f'<circle cx="{x}" cy="{y}" r="{r:g}" fill="#111"/>')
 def plug(x, y, name):
     """One pin of connector 58 on a horizontal run: grey block with the pin's two ends, name above, pin below."""
     A(f'<rect x="{x}" y="{y - 4}" width="4" height="8" fill="#ddd" stroke="#111" stroke-width=".5"/>')   # pin dots: after the wires
@@ -239,7 +235,7 @@ txt(343, D1 + 14, 'in parallel, no horn relay: switched', 2.2, fill='#555')
 txt(343, D1 + 17.2, 'on the earth side by horn switch 41', 2.2, fill='#555')
 plug(344, 128, '58 front lamps'); wire('118', [(348, 128), (364, 128)], label=False)
 plug(364, 128, '58 stalks'); wire('118', [(368, 128), (378, 128)], label=False)
-for x in (344, 348, 364, 368): pin_dot(x, 128, '118')     # on top of 118 SV, so its stroke doesn't cover them
+for x in (344, 348, 364, 368): dot(x, 128)                # on top of 118 SV (dot() grows on a heavy wire)
 box(378, 123, 14, 10); txt(378, 120.8, '41', 3.4, w='bold'); txt(383.5, 120.8, 'Horn switch', 2.4)
 contact(382.5, 128); contact(387.5, 128); inner([(378, 128), (381.7, 128)]); inner([(388.3, 128), (392, 128)])
 blade(383.1, 127.5, 386.8, 125.4)                          # horn push: open at rest

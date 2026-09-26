@@ -27,9 +27,6 @@ def fcontact(x, y):
 def redot(*pts):
     """Terminal dots drawn again over the wire ends: a 1.5 or 2.5 wire is wider than a dot and would swallow it."""
     for x, y in pts: dot(x, y)
-def redot_ringed(x, y):
-    """Terminal dot on a black band wider than itself (107 SV 2.5): same black dot, set off by a thin white ring."""
-    A(f'<circle cx="{x}" cy="{y}" r="1.15" fill="#111" stroke="#fff" stroke-width=".3"/>')
 WORK = [False]  # set when work() draws; the legend then shows its sample
 def work(pts):
     """A switch's other positions, drawn short-dashed as the manual prints them (not 'not traced'; DASHED stays off)."""
@@ -99,7 +96,7 @@ lead([(244, 128), (238.2, 128), (238.2, 138)]); lead([(258, 128), (260, 128), (2
 lead([(245, 142), (263, 142)]); lead([(245, 156), (263, 156)])
 # the motor's return: 107 SV from 57 row 3 to earth joint 158 (drawn on the power sheet)
 wire('107', [(237, 156), (224, 156)], label=False); tag(222, 156, '107 SV 2.5 → earth joint 158 (power sheet)', w=45.3, size=2.2, anchor='end')
-redot((237, 142)); redot_ringed(237, 156)
+redot((237, 142), (237, 156))
 # 36: terminals on the left wall, level with 57 rows 1 and 3; no internal leads to the fan are printed; blades square to the frame
 box(263, 138, 22, 22); dot(263, 142); dot(263, 156); fan(274, 149, 7.5, rot=0)
 txt(288, 147, '<tspan font-weight="bold">36</tspan> Heater fan motor', 2.7)
