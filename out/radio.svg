@@ -1,7 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="420mm" height="297mm" viewBox="0 0 420 297" font-family="Helvetica, Arial, sans-serif">
 <rect width="420" height="297" fill="#fff"/><rect x="8" y="8" width="404" height="281" fill="none" stroke="#111" stroke-width=".6"/>
 <text x="14" y="19" font-size="6" text-anchor="start" font-weight="bold" fill="#111">Saab 99 Turbo, model 1979 — Radio, speakers and accessory feeds</text>
-<text x="14" y="25.5" font-size="2.8" text-anchor="start" font-weight="normal" fill="#444">Redrawn from Saab Service Manual 1975–1980, diagram p. 371-28/29 (PDF p. 406–407) and radio installation, PDF p. 798.</text>
 <rect x="18" y="104" width="36" height="22" rx="1.2" fill="#fafafa" stroke="#111" stroke-width="0.8"/>
 <text x="21" y="110.5" font-size="2.6" text-anchor="start" font-weight="normal" fill="#111"><tspan font-weight="bold">20</tspan> Ignition switch</text>
 <circle cx="54" cy="120" r="1.0" fill="#111"/>
@@ -12,9 +11,9 @@
 <rect x="59.4" y="115.5" width="19.02" height="3.6" fill="#fff" opacity=".85"/>
 <text x="60" y="118.5" font-size="2.8" text-anchor="start" font-weight="normal" fill="#111">340 RD 0.75</text>
 <rect x="108.0" y="116.0" width="4" height="8" fill="#ddd" stroke="#111" stroke-width=".5"/>
-<text x="110" y="114.5" font-size="2.2" text-anchor="middle" font-weight="normal" fill="#555">58 (B9)</text>
+<text x="110" y="114.5" font-size="2.2" text-anchor="middle" font-weight="normal" fill="#555">ignition switch connector 58</text>
 <rect x="155" y="70" width="90" height="16" rx="1.2" fill="#fafafa" stroke="#111" stroke-width="0.8"/>
-<text x="200" y="66" font-size="2.8" text-anchor="middle" font-weight="bold" fill="#111">122 Radio junction box, 8-pole (F7)</text>
+<text x="200" y="66" font-size="2.8" text-anchor="middle" font-weight="bold" fill="#111">122 Radio junction box, 8-pole</text>
 <circle cx="165" cy="86" r="1.0" fill="#111"/>
 <text x="165" y="81" font-size="2.4" text-anchor="middle" font-weight="normal" fill="#111">1</text>
 <circle cx="175" cy="86" r="1.0" fill="#111"/>
@@ -61,9 +60,9 @@
 <text x="240" y="178.5" font-size="2.8" text-anchor="start" font-weight="normal" fill="#111">342 BR/VT 0.75</text>
 <path d="M263.88,176.8 l0.9,1.0 l1.9,-2.4" fill="none" stroke="#1e7a3a" stroke-width="0.55" stroke-linecap="round" stroke-linejoin="round"/>
 <rect x="298.0" y="127.0" width="4" height="16" fill="#ddd" stroke="#111" stroke-width=".5"/>
-<text x="300" y="125.5" font-size="2.2" text-anchor="middle" font-weight="normal" fill="#555">59</text>
+<text x="300" y="125.5" font-size="2.2" text-anchor="middle" font-weight="normal" fill="#555">right speaker connector 59</text>
 <rect x="298.0" y="167.0" width="4" height="16" fill="#ddd" stroke="#111" stroke-width=".5"/>
-<text x="300" y="165.5" font-size="2.2" text-anchor="middle" font-weight="normal" fill="#555">59</text>
+<text x="300" y="165.5" font-size="2.2" text-anchor="middle" font-weight="normal" fill="#555">left speaker connector 59</text>
 <path d="M302,130 H330 M302,140 H330" stroke="#111" stroke-width=".6"/>
 <path d="M302,170 H330 M302,180 H330" stroke="#111" stroke-width=".6"/>
 <path d="M330,130 h5 l6,-6 v22 l-6,-6 h-5 z" fill="#fff" stroke="#111" stroke-width=".7"/>
@@ -74,8 +73,7 @@
 <text x="346" y="174" font-size="2.8" text-anchor="start" font-weight="normal" fill="#111"><tspan font-weight="bold">131</tspan> Loudspeaker, left</text>
 <text x="325" y="169" font-size="3" text-anchor="end" font-weight="normal" fill="#111">−</text>
 <text x="325" y="183" font-size="3" text-anchor="end" font-weight="normal" fill="#111">+</text>
-<text x="346" y="141" font-size="2.2" text-anchor="start" font-weight="normal" fill="#555">left and right as on this car (I1)</text>
-<text x="346" y="144.5" font-size="2.2" text-anchor="start" font-weight="normal" fill="#555">and the radio page; the Turbo diagram swaps them</text>
+<text x="346" y="141" font-size="2.2" text-anchor="start" font-weight="normal" fill="#555">left and right as on this car (check I1)</text>
 <text x="18" y="208" font-size="3.2" text-anchor="start" font-weight="bold" fill="#111">Accessory feeds</text>
 <rect x="18" y="212" width="36" height="20" rx="1.2" fill="#fafafa" stroke="#111" stroke-width="0.8"/>
 <text x="21" y="217" font-size="2.6" text-anchor="start" font-weight="normal" fill="#111"><tspan font-weight="bold">F9</tspan> · 8 A</text>
@@ -88,15 +86,15 @@
 <circle cx="54" cy="222" r="1.0" fill="#111"/>
 <text x="52.5" y="220.6" font-size="1.8" text-anchor="end" font-weight="normal" fill="#555">9</text>
 <rect x="129" y="215" width="12" height="14" fill="#ddd" stroke="#111" stroke-width=".5"/>
-<text x="135" y="213.3" font-size="2.2" text-anchor="middle" font-weight="normal" fill="#555">58 (B11)</text>
+<text x="135" y="213.3" font-size="2.2" text-anchor="middle" font-weight="normal" fill="#555">58 tail lamps</text>
 <path d="M54,222 L132.5,222" fill="none" stroke="#222" stroke-width="1.7" stroke-linejoin="round"/>
 <path d="M54,222 L132.5,222" fill="none" stroke="#1f5fbf" stroke-width="1.1" stroke-linejoin="round"/>
 <rect x="59.4" y="217.5" width="17.400000000000002" height="3.6" fill="#fff" opacity=".85"/>
 <text x="60" y="220.5" font-size="2.8" text-anchor="start" font-weight="normal" fill="#111">126 BL 1.0</text>
 <path d="M137.5,222 L145,222 L145,209 L124,209" fill="none" stroke="#222" stroke-width="0.9" stroke-linejoin="round"/>
 <path d="M137.5,222 L145,222 L145,209 L124,209" fill="none" stroke="#f2c500" stroke-width="0.5" stroke-linejoin="round"/>
-<rect x="68.584" y="206.4" width="55.416" height="5.2" rx="1" fill="#fff" stroke="#444" stroke-width=".4"/>
-<text x="70.084" y="210" font-size="2.4" text-anchor="start" font-weight="normal" fill="#111">160 GL 0.75 to interior lights via 58 (A9)</text>
+<rect x="57.352000000000004" y="206.4" width="66.648" height="5.2" rx="1" fill="#fff" stroke="#444" stroke-width=".4"/>
+<text x="58.852000000000004" y="210" font-size="2.4" text-anchor="start" font-weight="normal" fill="#111">160 GL 0.75 to the interior lights (interior sheet)</text>
 <path d="M128.4,226.1 L126.5,228 L126.5,238 L180,238 L180,222 L200,222" fill="none" stroke="#222" stroke-width="1.7" stroke-linejoin="round"/>
 <path d="M128.4,226.1 L126.5,228 L126.5,238 L180,238 L180,222 L200,222" fill="none" stroke="#1f5fbf" stroke-width="1.1" stroke-linejoin="round"/>
 <rect x="139.4" y="233.5" width="19.02" height="3.6" fill="#fff" opacity=".85"/>
@@ -158,11 +156,11 @@
 <circle cx="23" cy="279" r=".8" fill="#fff" stroke="#888" stroke-width=".35"/>
 <circle cx="30" cy="279" r=".8" fill="#fff" stroke="#888" stroke-width=".35"/>
 <path d="M23.7,278.7 L29.6,276.6" stroke="#888" stroke-width=".75" stroke-linecap="round"/>
-<text x="33" y="280" font-size="2.4" text-anchor="start" font-weight="normal" fill="#111">grey inside a part: probably, not printed clearly</text>
-<text x="126" y="256.0" font-size="2.35" text-anchor="start" font-weight="normal" fill="#333">Pin numbers and speaker polarity (342, 344 to +; 343, 345 to −) are from the radio installation page, PDF p. 798.</text>
-<text x="126" y="261.4" font-size="2.35" text-anchor="start" font-weight="normal" fill="#333">The radio’s + (340 RD) comes from ignition switch X here, so it’s live with the key on; the radio page describes a battery feed.</text>
-<text x="126" y="266.8" font-size="2.35" text-anchor="start" font-weight="normal" fill="#333">Left and right as on this car (check I1): right-hand speaker 344/345, left-hand 342/343, as the radio page shows; the 1979 Turbo diagram swaps them.</text>
-<text x="126" y="272.2" font-size="2.35" text-anchor="start" font-weight="normal" fill="#333">Fuse 9 (lid: cigar lighter, compartment light, clock): the 58 (B11) pin that 126 BL enters carries on as 160 GL to the interior lights.</text>
-<text x="126" y="277.6" font-size="2.35" text-anchor="start" font-weight="normal" fill="#333">126a BL to the lighter leaves 58 (B11) on the fuse side; the manual hides its join in the frame, so it’s grey. The clock’s 127 BL takes off 126a.</text>
-<text x="126" y="283.0" font-size="2.35" text-anchor="start" font-weight="normal" fill="#333">The radio page puts the junction box in the right-hand trim panel under the dash; that’s for LHD cars.</text>
+<text x="33" y="280" font-size="2.4" text-anchor="start" font-weight="normal" fill="#111">grey inside a part: probably</text>
+<text x="126" y="256.0" font-size="2.35" text-anchor="start" font-weight="normal" fill="#333">Speaker polarity: 342 and 344 to +, 343 and 345 to −. Junction box 122’s pins are drawn in their physical order.</text>
+<text x="126" y="261.4" font-size="2.35" text-anchor="start" font-weight="normal" fill="#333">The radio’s + (340 RD) comes from ignition switch X, so it’s live only with the key on (check D1: dead with the key out).</text>
+<text x="126" y="266.8" font-size="2.35" text-anchor="start" font-weight="normal" fill="#333">Left and right as on this car (check I1): right-hand speaker 344/345, left-hand 342/343.</text>
+<text x="126" y="272.2" font-size="2.35" text-anchor="start" font-weight="normal" fill="#333">Fuse 9 (lid: cigar lighter, compartment light, clock): 126 BL enters tail lamp connector 58 and leaves the same pin as 160 GL to the interior lights.</text>
+<text x="126" y="277.6" font-size="2.35" text-anchor="start" font-weight="normal" fill="#333">126a BL to the lighter probably joins that pin on the fuse side, so the link is drawn grey. The clock’s 127 BL takes off 126a.</text>
+<text x="126" y="283.0" font-size="2.35" text-anchor="start" font-weight="normal" fill="#333">Where junction box 122 sits on this RHD car is not known yet (check D6); on LHD cars it is in the right-hand trim panel under the dash.</text>
 </svg>

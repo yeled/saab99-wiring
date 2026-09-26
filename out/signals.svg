@@ -1,10 +1,9 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="420mm" height="297mm" viewBox="0 0 420 297" font-family="Helvetica, Arial, sans-serif">
 <rect width="420" height="297" fill="#fff"/><rect x="8" y="8" width="404" height="281" fill="none" stroke="#111" stroke-width=".6"/>
 <text x="14" y="19" font-size="6" text-anchor="start" font-weight="bold" fill="#111">Saab 99 Turbo, model 1979 — Indicators, hazards, brake and reversing lights</text>
-<text x="14" y="25.5" font-size="2.8" text-anchor="start" font-weight="normal" fill="#444">Redrawn from Saab Service Manual 1975–1980, diagram p. 371-28/29 (PDF p. 406–407). Component numbers as in the manual.</text>
 <text x="18" y="40" font-size="3.4" text-anchor="start" font-weight="bold" fill="#111">Indicators and hazards</text>
 <rect x="18" y="54" width="32" height="16" rx="1.2" fill="#fafafa" stroke="#111" stroke-width="0.8"/>
-<text x="21" y="58.6" font-size="2.6" text-anchor="start" font-weight="normal" fill="#111"><tspan font-weight="bold">F11</tspan> · 5 A</text>
+<text x="21" y="58.6" font-size="2.6" text-anchor="start" font-weight="normal" fill="#111"><tspan font-weight="bold">Fuse 11</tspan> · 5 A</text>
 <path d="M22,59.8 L22,68" fill="none" stroke="#111" stroke-width=".4"/>
 <circle cx="22" cy="62" r=".8" fill="#fff" stroke="#111" stroke-width=".35"/>
 <rect x="29" y="60.8" width="10" height="2.4" fill="#fff" stroke="#111" stroke-width=".4"/><path d="M29,62 L39,62" stroke="#111" stroke-width=".35"/>
@@ -106,7 +105,8 @@
 <path d="M239,111 L243,111" fill="none" stroke="#111" stroke-width=".4"/>
 <circle cx="239" cy="111" r="1.0" fill="#111"/>
 <circle cx="243" cy="111" r="1.0" fill="#111"/>
-<text x="241" y="96.0" font-size="2.2" text-anchor="middle" font-weight="normal" fill="#555">58 (D8)</text>
+<text x="241" y="117.6" font-size="2.2" text-anchor="middle" font-weight="normal" fill="#555">stalk switch</text>
+<text x="241" y="120.3" font-size="2.2" text-anchor="middle" font-weight="normal" fill="#555">connector 58</text>
 <path d="M243,101 L273,101" fill="none" stroke="#222" stroke-width="1.7" stroke-linejoin="round"/>
 <path d="M243,101 L273,101" fill="none" stroke="#1f5fbf" stroke-width="1.1" stroke-linejoin="round"/>
 <path d="M243,101 L273,101" fill="none" stroke="#ffffff" stroke-width="0.5" stroke-dasharray="1.2 1.2"/>
@@ -124,7 +124,8 @@
 <path d="M273,111 L277,111" fill="none" stroke="#111" stroke-width=".4"/>
 <circle cx="273" cy="111" r="1.0" fill="#111"/>
 <circle cx="277" cy="111" r="1.0" fill="#111"/>
-<text x="275" y="96.0" font-size="2.2" text-anchor="middle" font-weight="normal" fill="#555">58 (B9)</text>
+<text x="275" y="117.6" font-size="2.2" text-anchor="middle" font-weight="normal" fill="#555">ignition switch</text>
+<text x="275" y="120.3" font-size="2.2" text-anchor="middle" font-weight="normal" fill="#555">connector 58</text>
 <path d="M341.24,85.55 L353.82,83.8 Q356,83.5 356,85.7 L356,96.3 Q356,98.5 353.82,98.2 L341.24,96.45 A5.5,5.5 0 0 1 341.24,85.55 Z" fill="#fafafa" stroke="#111" stroke-width=".8"/>
 <path d="M352.6,84.37 V97.63" stroke="#111" stroke-width=".3"/>
 <path d="M336.5,91 L338.9,91" fill="none" stroke="#111" stroke-width=".4"/>
@@ -230,7 +231,7 @@
 <path d="M351,187 v2 M348,189 h6 M349,190.3 h4 M350,191.6 h2" stroke="#111" stroke-width=".5" fill="none"/>
 <text x="18" y="158" font-size="3.4" text-anchor="start" font-weight="bold" fill="#111">Brake and reversing lights</text>
 <rect x="18" y="165.5" width="32" height="16" rx="1.2" fill="#fafafa" stroke="#111" stroke-width="0.8"/>
-<text x="21" y="170.1" font-size="2.6" text-anchor="start" font-weight="normal" fill="#111"><tspan font-weight="bold">F12</tspan> · 5 A</text>
+<text x="21" y="170.1" font-size="2.6" text-anchor="start" font-weight="normal" fill="#111"><tspan font-weight="bold">Fuse 12</tspan> · 5 A</text>
 <path d="M22,171.3 L22,179.5" fill="none" stroke="#111" stroke-width=".4"/>
 <circle cx="22" cy="173.5" r=".8" fill="#fff" stroke="#111" stroke-width=".35"/>
 <rect x="29" y="172.3" width="10" height="2.4" fill="#fff" stroke="#111" stroke-width=".4"/><path d="M29,173.5 L39,173.5" stroke="#111" stroke-width=".35"/>
@@ -267,7 +268,8 @@
 <path d="M158,217.7 L162,217.7" fill="none" stroke="#111" stroke-width=".4"/>
 <circle cx="158" cy="217.7" r="1.0" fill="#111"/>
 <circle cx="162" cy="217.7" r="1.0" fill="#111"/>
-<text x="160" y="166.5" font-size="2.2" text-anchor="middle" font-weight="normal" fill="#555">58 (E12)</text>
+<text x="160" y="163.8" font-size="2.2" text-anchor="middle" font-weight="normal" fill="#555">brake and reversing</text>
+<text x="160" y="166.5" font-size="2.2" text-anchor="middle" font-weight="normal" fill="#555">light connector 58</text>
 <path d="M162,173.5 L289,173.5 L289,119.0 L340,119.0" fill="none" stroke="#222" stroke-width="1.7" stroke-linejoin="round"/>
 <path d="M162,173.5 L289,173.5 L289,119.0 L340,119.0" fill="none" stroke="#d42020" stroke-width="1.1" stroke-linejoin="round"/>
 <rect x="199.4" y="169.0" width="17.400000000000002" height="3.6" fill="#fff" opacity=".85"/>
@@ -278,7 +280,7 @@
 <text x="317" y="172" font-size="2.8" text-anchor="start" font-weight="normal" fill="#111">133 RD 0.75</text>
 <circle cx="307" cy="119.0" r="1.0" fill="#111"/>
 <rect x="18" y="187" width="32" height="16" rx="1.2" fill="#fafafa" stroke="#111" stroke-width="0.8"/>
-<text x="21" y="191.6" font-size="2.6" text-anchor="start" font-weight="normal" fill="#111"><tspan font-weight="bold">F3</tspan> · 8 A</text>
+<text x="21" y="191.6" font-size="2.6" text-anchor="start" font-weight="normal" fill="#111"><tspan font-weight="bold">Fuse 3</tspan> · 8 A</text>
 <path d="M22,192.8 L22,201" fill="none" stroke="#111" stroke-width=".4"/>
 <circle cx="22" cy="195" r=".8" fill="#fff" stroke="#111" stroke-width=".35"/>
 <rect x="29" y="193.8" width="10" height="2.4" fill="#fff" stroke="#111" stroke-width=".4"/><path d="M29,195 L39,195" stroke="#111" stroke-width=".35"/>
@@ -309,8 +311,8 @@
 <text x="166" y="216.2" font-size="2.8" text-anchor="start" font-weight="normal" fill="#111">138 BL 1.0</text>
 <path d="M158,217.7 L138,217.7" fill="none" stroke="#222" stroke-width="1.7" stroke-linejoin="round"/>
 <path d="M158,217.7 L138,217.7" fill="none" stroke="#1f5fbf" stroke-width="1.1" stroke-linejoin="round"/>
-<rect x="70.5" y="215.1" width="67.5" height="5.2" rx="1" fill="#fff" stroke="#444" stroke-width=".4"/>
-<text x="72.0" y="218.7" font-size="2.6" text-anchor="start" font-weight="normal" fill="#111"><tspan font-family="Arial">→</tspan> via 58 (E2) to front side back-up lights (lighting sheet)</text>
+<rect x="52" y="215.1" width="86" height="5.2" rx="1" fill="#fff" stroke="#444" stroke-width=".4"/>
+<text x="53.5" y="218.7" font-size="2.6" text-anchor="start" font-weight="normal" fill="#111"><tspan font-family="Arial">→</tspan> via front lamp connector 58 to the side back-up lights (lighting sheet)</text>
 <path d="M202,220 L202,225 L295,225 L295,128.0 L340,128.0" fill="none" stroke="#222" stroke-width="1.7" stroke-linejoin="round"/>
 <path d="M202,220 L202,225 L295,225 L295,128.0 L340,128.0" fill="none" stroke="#ffffff" stroke-width="1.1" stroke-linejoin="round"/>
 <rect x="229.4" y="220.5" width="17.400000000000002" height="3.6" fill="#fff" opacity=".85"/>
@@ -394,16 +396,16 @@
 <circle cx="23" cy="269" r=".8" fill="#fff" stroke="#888" stroke-width=".35"/>
 <circle cx="30" cy="269" r=".8" fill="#fff" stroke="#888" stroke-width=".35"/>
 <path d="M23.7,268.7 L29.6,266.6" stroke="#888" stroke-width=".75" stroke-linecap="round"/>
-<text x="33" y="270" font-size="2.4" text-anchor="start" font-weight="normal" fill="#111">grey inside a part: probably, not printed clearly</text>
-<text x="126" y="245.5" font-size="2.35" text-anchor="start" font-weight="normal" fill="#333">Flasher 23 is fed on 49 from fuse 11 (always-live bar). 49a (73 GN) feeds the hazard switch’s +, which feeds the indicator switch’s 54; C (71 GN/VT) works the dash indicator lamp. Its 31 prints with no wire, so its earth is grey (probably through the mounting).</text>
-<text x="126" y="249.25" font-size="2.35" text-anchor="start" font-weight="normal" fill="#333">Switches are drawn at rest, as printed. Pressed, hazard switch 25 closes its lamp, R and L contacts together (lamp: on the car), so + feeds both sides (68 RD/VT, 67 BL/VT).</text>
-<text x="126" y="253.0" font-size="2.35" text-anchor="start" font-weight="normal" fill="#333">The manual prints 25’s terminals +, R and L (none on the lamp’s) and 24’s 54, R and L. 73 GN lands on + beside the wire to 54 (probably the same terminal).</text>
-<text x="126" y="256.75" font-size="2.35" text-anchor="start" font-weight="normal" fill="#333">25’s lamp contact prints merged into the blade root; on the car it is open at rest (the lamp stays dark with the indicators and blinks with the hazards: check D7). Grey: the end of 29’s blade and its right contact, printed running together; probably open at rest.</text>
-<text x="126" y="260.5" font-size="2.35" text-anchor="start" font-weight="normal" fill="#333">The + to 54 wire is 74 GN 1.0: the 1979 print blots its second digit, but the 1977 Turbo diagram and another year’s print read 74. 73 GN also lands on +.</text>
-<text x="126" y="264.25" font-size="2.35" text-anchor="start" font-weight="normal" fill="#333">24’s own outputs are 75 BL/VT and 78 RD/VT, through 58 (D8) to 58 (B9). 77/80 (front) leave on B9’s near side, as printed, and only 76/79 (rear, route not traced yet) pass it; 80 is drawn branching off 79 past it, for room.</text>
-<text x="126" y="268.0" font-size="2.35" text-anchor="start" font-weight="normal" fill="#333">Each lamp housing has one earth for all its bulbs (parking, tail and number-plate bulbs: lighting sheet). Turned for the layout: the manual prints the front housings mirrored (flat end and earth on the left) and the left rear cluster upside down.</text>
-<text x="126" y="271.75" font-size="2.35" text-anchor="start" font-weight="normal" fill="#333">Not in the data yet: the rear cluster earths (189 SV, left cluster bar to right, then 189a SV to earth), drawn straight to earth here.</text>
-<text x="126" y="275.5" font-size="2.35" text-anchor="start" font-weight="normal" fill="#333">132 and 136 run to the left cluster; 133 and 137 start at its 30 and 32 bulb feeds (inside it, probably); their dots are drawn short of it, for room. 138 BL, from 31’s switched side, feeds the front housings’ side back-up lights (car: E16).</text>
-<text x="126" y="279.25" font-size="2.35" text-anchor="start" font-weight="normal" fill="#333">58 (E12): 132, 135 and 138 pass on its rows 2, 3 and 4; row 1 is 140 GL (interior sheet). The manual prints no pin numbers.</text>
-<text x="126" y="283.0" font-size="2.35" text-anchor="start" font-weight="normal" fill="#333">Diagram is not RHD-specific: circuits should match, but harness routing and part positions may differ.</text>
+<text x="33" y="270" font-size="2.4" text-anchor="start" font-weight="normal" fill="#111">grey inside a part: probably</text>
+<text x="126" y="245.5" font-size="2.35" text-anchor="start" font-weight="normal" fill="#333">Flasher 23 is fed on 49 from fuse 11 (always-live bar). 49a (73 GN) feeds the hazard switch’s +, which feeds the indicator switch’s 54; C (71 GN/VT) works the dash indicator lamp. Its 31 is probably earthed through the mounting (grey).</text>
+<text x="126" y="249.25" font-size="2.35" text-anchor="start" font-weight="normal" fill="#333">Switches are drawn at rest. Pressed, hazard switch 25 closes its lamp, R and L contacts together, so + feeds both sides (68 RD/VT, 67 BL/VT).</text>
+<text x="126" y="253.0" font-size="2.35" text-anchor="start" font-weight="normal" fill="#333">Terminals: hazard switch 25 has +, R, L and one for its lamp (markings: check D4); indicator switch 24 has 54, R and L. 73 GN and 74 GN both land on + (probably the same terminal).</text>
+<text x="126" y="256.75" font-size="2.35" text-anchor="start" font-weight="normal" fill="#333">25’s lamp contact is open at rest: the lamp stays dark with the indicators and blinks with the hazards (check D7). Grey: the end of 29’s blade and its right contact; probably open at rest.</text>
+<text x="126" y="260.5" font-size="2.35" text-anchor="start" font-weight="normal" fill="#333">24’s own outputs are 75 BL/VT and 78 RD/VT, through stalk switch connector 58 to ignition switch connector 58. 77/80 (front) leave before ignition switch connector 58 and only 76/79 (rear, route not traced yet) pass it; 80 is drawn branching off 79 past it, for room.</text>
+<text x="126" y="264.25" font-size="2.35" text-anchor="start" font-weight="normal" fill="#333">Each lamp housing has one earth for all its bulbs (parking, tail and number-plate bulbs: lighting sheet).</text>
+<text x="126" y="268.0" font-size="2.35" text-anchor="start" font-weight="normal" fill="#333">The two sheets draw the housings differently, for the layout: here the front housings have their flat end and earth on the right; the lighting sheet mirrors them and draws the left rear cluster upside down.</text>
+<text x="126" y="271.75" font-size="2.35" text-anchor="start" font-weight="normal" fill="#333">Not in the data yet: the rear cluster earths, probably 189 SV from the left cluster’s bar to the right’s, then 189a SV to earth (check R3); drawn straight to earth here.</text>
+<text x="126" y="275.5" font-size="2.35" text-anchor="start" font-weight="normal" fill="#333">132 and 136 run to the left cluster; 133 and 137 start at its 30 and 32 bulb feeds (inside it, probably); their dots are drawn short of it, for room. 138 BL, from 31’s switched side, feeds the front housings’ side back-up lights (check E16).</text>
+<text x="126" y="279.25" font-size="2.35" text-anchor="start" font-weight="normal" fill="#333">Brake and reversing light connector 58: 132, 135 and 138 pass on its pins 2, 3 and 4 (counted top to bottom); pin 1 is 140 GL (interior sheet).</text>
+<text x="126" y="283.0" font-size="2.35" text-anchor="start" font-weight="normal" fill="#333">Not RHD-specific: circuits should match the car, but harness routing and part positions may differ.</text>
 </svg>

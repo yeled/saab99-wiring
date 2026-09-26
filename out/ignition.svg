@@ -1,7 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="420mm" height="297mm" viewBox="0 0 420 297" font-family="Helvetica, Arial, sans-serif">
 <rect width="420" height="297" fill="#fff"/><rect x="8" y="8" width="404" height="281" fill="none" stroke="#111" stroke-width=".6"/>
 <text x="14" y="19" font-size="6" text-anchor="start" font-weight="bold" fill="#111">Saab 99 Turbo, model 1979 — Ignition, starting and fuel injection</text>
-<text x="14" y="25.5" font-size="2.8" text-anchor="start" font-weight="normal" fill="#444">Redrawn from Saab Service Manual 1975–1980, diagram p. 371-28/29 (PDF p. 406–407). Component numbers as in the manual.</text>
 <rect x="18" y="38" width="40" height="32" rx="1.2" fill="#fafafa" stroke="#111" stroke-width="0.8"/>
 <text x="21" y="44" font-size="2.7" text-anchor="start" font-weight="normal" fill="#111"><tspan font-weight="bold">20</tspan> Ignition switch</text>
 <circle cx="58" cy="44" r="1.0" fill="#111"/>
@@ -43,7 +42,6 @@
 <rect x="88" y="90" width="32" height="32" rx="1.2" fill="#fafafa" stroke="#111" stroke-width="0.8"/>
 <text x="123.5" y="103.5" font-size="3.2" text-anchor="start" font-weight="bold" fill="#111">89</text>
 <text x="123.5" y="108" font-size="2.5" text-anchor="start" font-weight="normal" fill="#111">Start relay</text>
-<text x="123.5" y="111.5" font-size="2.1" text-anchor="start" font-weight="normal" fill="#555">(legend: start inhibitor relay)</text>
 <circle cx="96" cy="90" r="1.0" fill="#111"/>
 <text x="97.3" y="93.3" font-size="1.8" text-anchor="start" font-weight="normal" fill="#555">86</text>
 <circle cx="112" cy="90" r="1.0" fill="#111"/>
@@ -95,8 +93,8 @@
 <rect x="364" y="186" width="8" height="4" fill="#ddd" stroke="#111" stroke-width=".5"/>
 <circle cx="368" cy="186" r="1.0" fill="#111"/>
 <circle cx="368" cy="190" r="1.0" fill="#111"/>
-<text x="374" y="189" font-size="2.1" text-anchor="start" font-weight="normal" fill="#555">58/1</text>
-<text x="374" y="192.2" font-size="1.8" text-anchor="start" font-weight="normal" fill="#777">book: GN 1.0 on the relay side</text>
+<text x="374" y="189" font-size="2.1" text-anchor="start" font-weight="normal" fill="#555">58 engine, pin 1</text>
+<text x="374" y="192.2" font-size="1.8" text-anchor="start" font-weight="normal" fill="#777">relay side probably GN 1.0 (check E1)</text>
 <path d="M52,156.5 L70,156.5 L70,240 L300,240" fill="none" stroke="#222" stroke-width="0.9" stroke-linejoin="round"/>
 <path d="M52,156.5 L70,156.5 L70,240 L300,240" fill="none" stroke="#7a4a1c" stroke-width="0.5" stroke-linejoin="round"/>
 <rect x="79.4" y="235.5" width="19.02" height="3.6" fill="#fff" opacity=".85"/>
@@ -104,12 +102,12 @@
 <rect x="199" y="236" width="4" height="8" fill="#ddd" stroke="#111" stroke-width=".5"/>
 <circle cx="199" cy="240" r="1.0" fill="#111"/>
 <circle cx="203" cy="240" r="1.0" fill="#111"/>
-<text x="201" y="234.3" font-size="2.1" text-anchor="middle" font-weight="normal" fill="#555">58/3</text>
+<text x="201" y="234.3" font-size="2.1" text-anchor="middle" font-weight="normal" fill="#555">58 engine, pin 3</text>
 <rect x="146" y="48" width="4" height="12" fill="#ddd" stroke="#111" stroke-width=".5"/>
 <circle cx="146" cy="54" r="1.0" fill="#111"/>
 <circle cx="150" cy="54" r="1.0" fill="#111"/>
-<text x="148" y="46" font-size="2.4" text-anchor="middle" font-weight="bold" fill="#111">58</text>
-<text x="148" y="64" font-size="2.1" text-anchor="middle" font-weight="normal" fill="#555">A4/4</text>
+<text x="148" y="46" font-size="2.4" text-anchor="middle" font-weight="bold" fill="#111">58 engine</text>
+<text x="148" y="64" font-size="2.1" text-anchor="middle" font-weight="normal" fill="#555">pin 4</text>
 <path d="M150,54 L170,54" fill="none" stroke="#222" stroke-width="2.2" stroke-linejoin="round"/>
 <path d="M150,54 L170,54" fill="none" stroke="#1e9e3e" stroke-width="1.6" stroke-linejoin="round"/>
 <path d="M150,54 L170,54" fill="none" stroke="#ffffff" stroke-width="0.72" stroke-dasharray="1.2 1.2"/>
@@ -134,7 +132,6 @@
 <path d="M207.01999999999998,50.349999999999994 l0.9,1.0 l1.9,-2.4" fill="none" stroke="#1e7a3a" stroke-width="0.55" stroke-linecap="round" stroke-linejoin="round"/>
 <circle cx="170" cy="54" r="1.0" fill="#111"/>
 <circle cx="186" cy="54" r="1.0" fill="#111"/>
-<text x="188" y="57.4" font-size="1.8" text-anchor="start" font-weight="normal" fill="#777">book: GN/VT</text>
 <path d="M174,65 L174,126 L112,126 L112,122" fill="none" stroke="#222" stroke-width="1.7" stroke-linejoin="round"/>
 <path d="M174,65 L174,126 L112,126 L112,122" fill="none" stroke="#1e9e3e" stroke-width="1.1" stroke-linejoin="round"/>
 <path d="M174,65 L174,126 L112,126 L112,122" fill="none" stroke="#ffffff" stroke-width="0.5" stroke-dasharray="1.2 1.2"/>
@@ -260,8 +257,8 @@
 <path d="M160,156 L150,156" fill="none" stroke="#222" stroke-width="0.9" stroke-linejoin="round"/>
 <path d="M160,156 L150,156" fill="none" stroke="#1e9e3e" stroke-width="0.5" stroke-linejoin="round"/>
 <path d="M160,156 L150,156" fill="none" stroke="#ffffff" stroke-width="0.3" stroke-dasharray="1.2 1.2"/>
-<rect x="92.27199999999999" y="153.4" width="55.728" height="5.2" rx="1" fill="#fff" stroke="#444" stroke-width=".4"/>
-<text x="93.77199999999999" y="157" font-size="2.6" text-anchor="start" font-weight="normal" fill="#111">377 GN/VT 0.75 <tspan font-family="Arial">←</tspan> 123 at 58 A4/4 (above)</text>
+<rect x="80" y="153.4" width="68" height="5.2" rx="1" fill="#fff" stroke="#444" stroke-width=".4"/>
+<text x="81.5" y="157" font-size="2.6" text-anchor="start" font-weight="normal" fill="#111">377 GN/VT 0.75 <tspan font-family="Arial">←</tspan> 123 at 58 engine pin 4 (top of sheet)</text>
 <circle cx="160" cy="156" r="1.0" fill="#111"/>
 <circle cx="180" cy="156" r="1.0" fill="#111"/>
 <path d="M216,149.5 L212.5,153 L212.5,176.5 L208,176.5" fill="none" stroke="#222" stroke-width="0.9" stroke-linejoin="round"/>
@@ -315,7 +312,8 @@
 <path d="M300,202 L280,202 L280,166" fill="none" stroke="#8a8a8a" stroke-width="0.5" stroke-linejoin="round"/>
 <rect x="280.79999999999995" y="197.5" width="19.02" height="3.6" fill="#fff" opacity=".85"/>
 <text x="281.4" y="200.5" font-size="2.8" text-anchor="start" font-weight="normal" fill="#111">267 GR 0.75</text>
-<text x="282.5" y="173" font-size="2.1" text-anchor="start" font-weight="normal" fill="#555">58/2</text>
+<text x="282.5" y="172.2" font-size="2.1" text-anchor="start" font-weight="normal" fill="#555">58 engine</text>
+<text x="282.5" y="175" font-size="2.1" text-anchor="start" font-weight="normal" fill="#555">pin 2</text>
 <circle cx="280" cy="166" r="1.0" fill="#111"/>
 <path d="M300,210 L295,210 L295,213" fill="none" stroke="#222" stroke-width="0.9" stroke-linejoin="round"/>
 <path d="M300,210 L295,210 L295,213" fill="none" stroke="#111111" stroke-width="0.5" stroke-linejoin="round"/>
@@ -344,12 +342,11 @@
 <circle cx="362" cy="240" r="1.0" fill="#111"/>
 <path d="M395,230 h5 v5" stroke="#111" stroke-width=".6" fill="none"/>
 <path d="M400,235 v3 M397,238 h6 M398,239.3 h4 M399,240.6 h2" stroke="#111" stroke-width=".5" fill="none"/>
-<text x="80" y="186" font-size="2.8" text-anchor="start" font-weight="bold" fill="#111">High-speed fuel boost (1979 Turbo only)</text>
-<text x="80" y="190.5" font-size="2.1" text-anchor="start" font-weight="normal" fill="#555">Richens the mixture above about 130 km/h (140) or at 62° throttle (137). PDF p. 24, 33, 210.</text>
+<text x="80" y="186" font-size="2.8" text-anchor="start" font-weight="bold" fill="#111">High-speed fuel boost</text>
+<text x="80" y="190.5" font-size="2.1" text-anchor="start" font-weight="normal" fill="#555">Richens the mixture above about 130 km/h (140) or at 62° throttle (137).</text>
 <rect x="118" y="194" width="30" height="14" rx="1.2" fill="#fafafa" stroke="#111" stroke-width="0.8"/>
-<text x="133" y="199.5" font-size="2.8" text-anchor="middle" font-weight="bold" fill="#111">140</text>
-<text x="133" y="204" font-size="2.0" text-anchor="middle" font-weight="normal" fill="#111">Speed transmitter</text>
-<text x="133" y="206.6" font-size="1.8" text-anchor="middle" font-weight="normal" fill="#555">(legend: 151)</text>
+<text x="133" y="200.3" font-size="2.8" text-anchor="middle" font-weight="bold" fill="#111">140</text>
+<text x="133" y="204.8" font-size="2.0" text-anchor="middle" font-weight="normal" fill="#111">Speed transmitter</text>
 <circle cx="118" cy="201" r="1.0" fill="#111"/>
 <text x="119.5" y="199.7" font-size="1.8" text-anchor="start" font-weight="normal" fill="#555">15</text>
 <circle cx="148" cy="198" r="1.0" fill="#111"/>
@@ -369,15 +366,15 @@
 <rect x="151.4" y="193.5" width="19.02" height="3.6" fill="#fff" opacity=".85"/>
 <text x="152" y="196.5" font-size="2.8" text-anchor="start" font-weight="normal" fill="#111">382 BL 0.75</text>
 <path d="M171.01999999999998,194.8 l0.9,1.0 l1.9,-2.4" fill="none" stroke="#1e7a3a" stroke-width="0.55" stroke-linecap="round" stroke-linejoin="round"/>
-<text x="151" y="204.5" font-size="1.9" text-anchor="start" font-weight="normal" fill="#555">on the car: on the speedometer cable, engine bay (E7)</text>
+<text x="151" y="204.5" font-size="1.9" text-anchor="start" font-weight="normal" fill="#555">on the car: speedometer cable, engine bay (check E7)</text>
 <rect x="208" y="191" width="10" height="14" rx="1.2" fill="#fafafa" stroke="#111" stroke-width="0.8"/>
 <path d="M208.8,204.2 L217.2,191.8" stroke="#111" stroke-width=".35"/>
 <circle cx="208" cy="198" r="1.0" fill="#111"/>
 <path d="M218,198 h12 v4" stroke="#111" stroke-width=".6" fill="none"/>
 <path d="M230,202 v3 M227,205 h6 M228,206.3 h4 M229,207.6 h2" stroke="#111" stroke-width=".5" fill="none"/>
-<text x="213" y="189.3" font-size="2.2" text-anchor="middle" font-weight="bold" fill="#111">142 Solenoid valve (E3)</text>
-<text x="214" y="210.6" font-size="1.9" text-anchor="start" font-weight="normal" fill="#555">on the car: front of the engine, on the control pressure line (E7);</text>
-<text x="214" y="213.4" font-size="1.9" text-anchor="start" font-weight="normal" fill="#555">382 and 383 on one contact, earth on the other (E12)</text>
+<text x="213" y="189.3" font-size="2.2" text-anchor="middle" font-weight="bold" fill="#111">142 Solenoid valve</text>
+<text x="214" y="210.6" font-size="1.9" text-anchor="start" font-weight="normal" fill="#555">on the car: front of the engine, on the control pressure line (check E7);</text>
+<text x="214" y="213.4" font-size="1.9" text-anchor="start" font-weight="normal" fill="#555">382 and 383 on one contact, earth on the other (check E12)</text>
 <rect x="126" y="219" width="14" height="12" rx="1.2" fill="#fafafa" stroke="#111" stroke-width="0.8"/>
 <circle cx="126" cy="225" r="1.0" fill="#111"/>
 <circle cx="140" cy="225" r="1.0" fill="#111"/>
@@ -430,21 +427,20 @@
 <circle cx="23" cy="284" r=".8" fill="#fff" stroke="#888" stroke-width=".35"/>
 <circle cx="30" cy="284" r=".8" fill="#fff" stroke="#888" stroke-width=".35"/>
 <path d="M23.7,283.7 L29.6,281.6" stroke="#888" stroke-width=".75" stroke-linecap="round"/>
-<text x="33" y="285" font-size="2.4" text-anchor="start" font-weight="normal" fill="#111">grey inside a part: probably, not printed clearly</text>
+<text x="33" y="285" font-size="2.4" text-anchor="start" font-weight="normal" fill="#111">grey inside a part: probably</text>
 <path d="M88,283.2 l0.9,1.0 l1.9,-2.4" fill="none" stroke="#1e7a3a" stroke-width="0.55" stroke-linecap="round" stroke-linejoin="round"/>
 <text x="92" y="285" font-size="2.4" text-anchor="start" font-weight="normal" fill="#111">checked on the car</text>
 <text x="126" y="260.8" font-size="2.3" text-anchor="start" font-weight="normal" fill="#333">Overboost cut: pressure switch 144 (closed at rest) is in the fuel pump relay’s feed (15). If it opens, the relay drops out and the pump stops.</text>
 <text x="126" y="264.7" font-size="2.3" text-anchor="start" font-weight="normal" fill="#333">The pump relay also takes an engine-speed signal from 146 (284 BL), which normally stops the pump when the engine isn’t turning.</text>
-<text x="126" y="268.6" font-size="2.3" text-anchor="start" font-weight="normal" fill="#333">Relay 89 is called “start inhibitor relay” in the legend, but here its coil is earthed directly, so it works as a start relay: it feeds starter terminal 50 (the solenoid)</text>
-<text x="126" y="272.5" font-size="2.3" text-anchor="start" font-weight="normal" fill="#333">from the always-live bar, and 87a feeds 394 to the joint of 147’s two resistors, bypassing the 0.4 Ω one while cranking (the 0.6 Ω stays in; PDF p. 324).</text>
-<text x="126" y="276.40000000000003" font-size="2.3" text-anchor="start" font-weight="normal" fill="#333">92 also has a second meander from its upper terminal to its lower one; the print does not show what it is, so it is not drawn.</text>
-<text x="126" y="280.3" font-size="2.3" text-anchor="start" font-weight="normal" fill="#333">Sender cable 390/391 is shielded; the shield is earthed through 392 SV 0.75. 58/n = pin n of the 12-pole connector at grid A4 (data/connectors.csv).</text>
-<text x="126" y="284.2" font-size="2.3" text-anchor="start" font-weight="normal" fill="#333">Diagram is not RHD-specific: circuits should match, but harness routing and part positions may differ.</text>
-<text x="294" y="260.8" font-size="2.3" text-anchor="start" font-weight="normal" fill="#333">263 SV (pump relay 31) goes to relay 21:85 (probably 85: hidden under 21’s border); 33 and 212 SV</text>
+<text x="126" y="268.6" font-size="2.3" text-anchor="start" font-weight="normal" fill="#333">Start relay 89: its coil is earthed directly (201 SV), so it pulls in whenever the key is at start. It feeds starter terminal 50 (the solenoid)</text>
+<text x="126" y="272.5" font-size="2.3" text-anchor="start" font-weight="normal" fill="#333">from the always-live bar, and 87a feeds 394 to the joint of 147’s two resistors, bypassing the 0.4 Ω one while cranking (the 0.6 Ω stays in).</text>
+<text x="126" y="276.40000000000003" font-size="2.3" text-anchor="start" font-weight="normal" fill="#333">92 may also have a second element between its two terminals (perhaps a second heater); it is not drawn, as what it is is not known.</text>
+<text x="126" y="280.3" font-size="2.3" text-anchor="start" font-weight="normal" fill="#333">Sender cable 390/391 is shielded; the shield is earthed through 392 SV 0.75. Engine connector 58 (12-pole): pin numbers are our own count (check E1).</text>
+<text x="126" y="284.2" font-size="2.3" text-anchor="start" font-weight="normal" fill="#333">Not RHD-specific: circuits should match the car, but harness routing and part positions may differ.</text>
+<text x="294" y="260.8" font-size="2.3" text-anchor="start" font-weight="normal" fill="#333">263 SV (pump relay 31) goes to relay 21, probably to its 85; 33 and 212 SV</text>
 <text x="294" y="264.7" font-size="2.3" text-anchor="start" font-weight="normal" fill="#333">take it on to earth joint 158. 100 SV, headlight wiper relay 67’s earth, also lands on 102:31.</text>
 <text x="294" y="268.6" font-size="2.3" text-anchor="start" font-weight="normal" fill="#333">201 SV (relay 89’s coil) goes to 158 directly. Relay 21 and joint 158 are on the power sheet.</text>
-<text x="294" y="272.5" font-size="2.3" text-anchor="start" font-weight="normal" fill="#333">123d GN/VT (+15 for 146) leaves pin 4 of 58 (A4) on the 147 side, before the ballast resistor;</text>
-<text x="294" y="276.40000000000003" font-size="2.3" text-anchor="start" font-weight="normal" fill="#333">in the book it passes under the coil without joining it (IMG_4729; 1977 Turbo diagram).</text>
-<text x="294" y="280.3" font-size="2.3" text-anchor="start" font-weight="normal" fill="#333">124 BL: the 1979 number is unreadable; the 1977 Turbo and 1980 diagrams print 124 BL 1.5.</text>
-<text x="294" y="284.2" font-size="2.3" text-anchor="start" font-weight="normal" fill="#333">102’s joined bottom pair is printed 31 but takes the speed signal (284, 284a): probably a misprint for 1.</text>
+<text x="294" y="272.5" font-size="2.3" text-anchor="start" font-weight="normal" fill="#333">123d GN/VT (+15 for 146) comes from engine connector 58 pin 4 on the 147 side,</text>
+<text x="294" y="276.40000000000003" font-size="2.3" text-anchor="start" font-weight="normal" fill="#333">before the ballast resistor, not from coil terminal 15.</text>
+<text x="294" y="280.3" font-size="2.3" text-anchor="start" font-weight="normal" fill="#333">102’s joined bottom pair (marked 31) takes the speed signal (284, 284a): probably terminal 1.</text>
 </svg>

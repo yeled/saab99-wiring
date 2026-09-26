@@ -1,7 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="420mm" height="297mm" viewBox="0 0 420 297" font-family="Helvetica, Arial, sans-serif">
 <rect width="420" height="297" fill="#fff"/><rect x="8" y="8" width="404" height="281" fill="none" stroke="#111" stroke-width=".6"/>
 <text x="14" y="19" font-size="6" text-anchor="start" font-weight="bold" fill="#111">Saab 99 Turbo, model 1979 — Interior lights, seat heating, seat belt warning</text>
-<text x="14" y="25.5" font-size="2.8" text-anchor="start" font-weight="normal" fill="#444">Redrawn from Saab Service Manual 1975–1980, diagram p. 371-28/29 (PDF p. 406–407). Component numbers as in the manual.</text>
 <text x="18" y="40" font-size="3.4" text-anchor="start" font-weight="bold" fill="#111">Seat heating</text>
 <rect x="18" y="52" width="32" height="20" rx="1.2" fill="#fafafa" stroke="#111" stroke-width="0.8"/>
 <text x="21" y="57" font-size="2.6" text-anchor="start" font-weight="normal" fill="#111"><tspan font-weight="bold">F5</tspan> · 8 A</text>
@@ -25,17 +24,17 @@
 <path d="M118,62 L122,62" fill="none" stroke="#111" stroke-width=".4"/>
 <circle cx="118" cy="62" r="1.0" fill="#111"/>
 <circle cx="122" cy="62" r="1.0" fill="#111"/>
-<text x="120" y="56.5" font-size="2.2" text-anchor="middle" font-weight="normal" fill="#555">58 (E12)</text>
+<text x="120" y="56.5" font-size="2.2" text-anchor="middle" font-weight="normal" fill="#555">58 brake/reversing</text>
 <rect x="148" y="58.0" width="4" height="8" fill="#ddd" stroke="#111" stroke-width=".5"/>
 <path d="M148,62 L152,62" fill="none" stroke="#111" stroke-width=".4"/>
 <circle cx="148" cy="62" r="1.0" fill="#111"/>
 <circle cx="152" cy="62" r="1.0" fill="#111"/>
-<text x="150" y="56.5" font-size="2.2" text-anchor="middle" font-weight="normal" fill="#555">60 (A7)</text>
+<text x="150" y="56.5" font-size="2.2" text-anchor="middle" font-weight="normal" fill="#555">60 seat feed</text>
 <rect x="178" y="58.0" width="4" height="8" fill="#ddd" stroke="#111" stroke-width=".5"/>
 <path d="M178,62 L182,62" fill="none" stroke="#111" stroke-width=".4"/>
 <circle cx="178" cy="62" r="1.0" fill="#111"/>
 <circle cx="182" cy="62" r="1.0" fill="#111"/>
-<text x="180" y="56.5" font-size="2.2" text-anchor="middle" font-weight="normal" fill="#555">59 (A7)</text>
+<text x="180" y="56.5" font-size="2.2" text-anchor="middle" font-weight="normal" fill="#555">59 seat heater</text>
 <path d="M182,62 H196" stroke="#111" stroke-width=".6"/>
 <rect x="196" y="47.5" width="55" height="19" rx="1.2" fill="#fafafa" stroke="#111" stroke-width="0.8"/>
 <rect x="217.5" y="50.9" width="11" height="12.2" rx=".6" fill="#fff" stroke="#111" stroke-width=".7"/>
@@ -59,7 +58,7 @@
 <text x="226.998" y="56.063" font-size="1.8" text-anchor="middle" font-weight="normal" fill="#555">t°</text>
 <circle cx="196" cy="62" r="1.0" fill="#111"/>
 <circle cx="251" cy="52" r="1.0" fill="#111"/>
-<text x="223.5" y="71.5" font-size="2.5" text-anchor="middle" font-weight="bold" fill="#111">64 Seat heating element with thermostat (A6)</text>
+<text x="223.5" y="71.5" font-size="2.5" text-anchor="middle" font-weight="bold" fill="#111">64 Seat heating element with thermostat</text>
 <path d="M251,52 L261,52 L261,57" fill="none" stroke="#222" stroke-width="1.7" stroke-linejoin="round"/>
 <path d="M251,52 L261,52 L261,57" fill="none" stroke="#111111" stroke-width="1.1" stroke-linejoin="round"/>
 <path d="M261,57 v3 M258,60 h6 M259,61.3 h4 M260,62.6 h2" stroke="#111" stroke-width=".5" fill="none"/>
@@ -67,49 +66,49 @@
 <path d="M144,62 L144,86 L196,86" fill="none" stroke="#222" stroke-width="0.9" stroke-linejoin="round"/>
 <path d="M144,62 L144,86 L196,86" fill="none" stroke="#f2c500" stroke-width="0.5" stroke-linejoin="round"/>
 <circle cx="144" cy="62" r="1.0" fill="#111"/>
-<rect x="198" y="83.4" width="65.19200000000001" height="5.2" rx="1" fill="#fff" stroke="#444" stroke-width=".4"/>
-<text x="199.5" y="87" font-size="2.6" text-anchor="start" font-weight="normal" fill="#111">150 GL 0.75 to 59 (A8): seat and belt contacts</text>
+<rect x="198" y="83.4" width="86.82400000000001" height="5.2" rx="1" fill="#fff" stroke="#444" stroke-width=".4"/>
+<text x="199.5" y="87" font-size="2.6" text-anchor="start" font-weight="normal" fill="#111">150 GL 0.75 to seat contact 69 and belt contacts 70/71 (below)</text>
 <text x="18" y="108" font-size="3.4" text-anchor="start" font-weight="bold" fill="#111">Interior lights</text>
-<text x="18" y="114" font-size="2.4" text-anchor="start" font-weight="normal" fill="#555">Fuse 9’s 160 GL feeds 52, then 161 GL through 57 to 50 and (163 GL) 55; 164 BL, 167 SV reach 50; 162/165 SV link 50–51; doors 170/171 SV.</text>
+<text x="18" y="114" font-size="2.4" text-anchor="start" font-weight="normal" fill="#555">Fuse 9’s 160 GL feeds 52, then 161 GL through dome light connector 57 to 50 and (163 GL) 55; 164 BL, 167 SV reach 50; 162/165 SV link 50–51; doors 170/171 SV.</text>
 <circle cx="22" cy="125" r="3.2" fill="#fff" stroke="#111" stroke-width=".6"/>
 <path d="M19.76,122.76 L24.24,127.24 M19.76,127.24 L24.24,122.76" stroke="#111" stroke-width=".45"/>
-<text x="30" y="126" font-size="2.7" text-anchor="start" font-weight="normal" fill="#111"><tspan font-weight="bold">50</tspan> Dome light, door pillar (A10)</text>
+<text x="30" y="126" font-size="2.7" text-anchor="start" font-weight="normal" fill="#111"><tspan font-weight="bold">50</tspan> Dome light, door pillar</text>
 <text x="30" y="130.6" font-size="2.3" text-anchor="start" font-weight="normal" fill="#555">164 BL 0.75, 167 SV 0.75</text>
 <circle cx="212" cy="125" r="3.2" fill="#fff" stroke="#111" stroke-width=".6"/>
 <path d="M209.76,122.76 L214.24,127.24 M209.76,127.24 L214.24,122.76" stroke="#111" stroke-width=".45"/>
-<text x="220" y="126" font-size="2.7" text-anchor="start" font-weight="normal" fill="#111"><tspan font-weight="bold">51</tspan> Dome light, rear-view mirror (A10)</text>
+<text x="220" y="126" font-size="2.7" text-anchor="start" font-weight="normal" fill="#111"><tspan font-weight="bold">51</tspan> Dome light, rear-view mirror</text>
 <text x="220" y="130.6" font-size="2.3" text-anchor="start" font-weight="normal" fill="#555">162 SV 0.75, 165 SV 0.75</text>
 <circle cx="22" cy="139" r="3.2" fill="#fff" stroke="#111" stroke-width=".6"/>
 <path d="M19.76,136.76 L24.24,141.24 M19.76,141.24 L24.24,136.76" stroke="#111" stroke-width=".45"/>
-<text x="30" y="140" font-size="2.7" text-anchor="start" font-weight="normal" fill="#111"><tspan font-weight="bold">52</tspan> Ignition switch light (A9)</text>
-<text x="30" y="144.6" font-size="2.3" text-anchor="start" font-weight="normal" fill="#555">161 GL 0.75, 164 BL 0.75, via connector 57</text>
+<text x="30" y="140" font-size="2.7" text-anchor="start" font-weight="normal" fill="#111"><tspan font-weight="bold">52</tspan> Ignition switch light</text>
+<text x="30" y="144.6" font-size="2.3" text-anchor="start" font-weight="normal" fill="#555">161 GL 0.75, 164 BL 0.75, via dome light connector 57</text>
 <path d="M208,141 l6,-4 M214,139 h3" stroke="#111" stroke-width=".6"/>
-<text x="220" y="140" font-size="2.7" text-anchor="start" font-weight="normal" fill="#111"><tspan font-weight="bold">53</tspan> Interior lighting switch (A9)</text>
-<text x="220" y="144.6" font-size="2.3" text-anchor="start" font-weight="normal" fill="#555">167a SV 0.75 via connector 60, 169 SV 0.75</text>
+<text x="220" y="140" font-size="2.7" text-anchor="start" font-weight="normal" fill="#111"><tspan font-weight="bold">53</tspan> Interior lighting switch</text>
+<text x="220" y="144.6" font-size="2.3" text-anchor="start" font-weight="normal" fill="#555">167a SV 0.75 via interior light switch connector 60, 169 SV 0.75</text>
 <path d="M18,155 l6,-4 M24,153 h3" stroke="#111" stroke-width=".6"/>
-<text x="30" y="154" font-size="2.7" text-anchor="start" font-weight="normal" fill="#111"><tspan font-weight="bold">54</tspan> Door switch (A9, A11, B11)</text>
-<text x="30" y="158.6" font-size="2.3" text-anchor="start" font-weight="normal" fill="#555">170 SV 0.75</text>
+<text x="30" y="154" font-size="2.7" text-anchor="start" font-weight="normal" fill="#111"><tspan font-weight="bold">54</tspan> Door switches</text>
+<text x="30" y="158.6" font-size="2.3" text-anchor="start" font-weight="normal" fill="#555">170 SV 0.75, 171 SV 0.75</text>
 <circle cx="212" cy="153" r="3.2" fill="#fff" stroke="#111" stroke-width=".6"/>
 <path d="M209.76,150.76 L214.24,155.24 M209.76,155.24 L214.24,150.76" stroke="#111" stroke-width=".45"/>
-<text x="220" y="154" font-size="2.7" text-anchor="start" font-weight="normal" fill="#111"><tspan font-weight="bold">55</tspan> Luggage compartment light (A10)</text>
+<text x="220" y="154" font-size="2.7" text-anchor="start" font-weight="normal" fill="#111"><tspan font-weight="bold">55</tspan> Luggage compartment light</text>
 <text x="220" y="158.6" font-size="2.3" text-anchor="start" font-weight="normal" fill="#555">163 GL 0.75, 166 BL 0.75 to switch 56</text>
 <path d="M18,169 l6,-4 M24,167 h3" stroke="#111" stroke-width=".6"/>
-<text x="30" y="168" font-size="2.7" text-anchor="start" font-weight="normal" fill="#111"><tspan font-weight="bold">56</tspan> Luggage compartment light switch (A10)</text>
+<text x="30" y="168" font-size="2.7" text-anchor="start" font-weight="normal" fill="#111"><tspan font-weight="bold">56</tspan> Luggage compartment light switch</text>
 <text x="30" y="172.6" font-size="2.3" text-anchor="start" font-weight="normal" fill="#555">166 BL 0.75, earth</text>
-<text x="18" y="188" font-size="2.4" text-anchor="start" font-weight="normal" fill="#111">57 3-pole connector (A10): pins carry 161 GL, 164 BL, and 167a SV (switch side) to 167 SV (lamp side). + is 160 GL from fuse 9.</text>
+<text x="18" y="188" font-size="2.4" text-anchor="start" font-weight="normal" fill="#111">Dome light connector 57, 3-pole: pins carry 161 GL, 164 BL, and 167a SV (switch side) to 167 SV (lamp side). + is 160 GL from fuse 9.</text>
 <text x="18" y="206" font-size="3.4" text-anchor="start" font-weight="bold" fill="#111">Seat belt warning</text>
 <text x="18" y="212" font-size="2.3" text-anchor="start" font-weight="normal" fill="#555">Fuse 5’s 150 GL reaches the seat and belt contacts; through them, 156 BR and 151 BR feed lamp 72, which returns on 157 SV (probably).</text>
-<text x="18" y="216.4" font-size="2.3" text-anchor="start" font-weight="normal" fill="#555">On the car (I3): with the ignition on, the lamp stays lit until the driver buckles up; the passenger’s belt only counts while seat contact 69 is pressed.</text>
+<text x="18" y="216.4" font-size="2.3" text-anchor="start" font-weight="normal" fill="#555">On the car (check I3): with the ignition on, the lamp stays lit until the driver buckles up; the passenger’s belt only counts while seat contact 69 is pressed.</text>
 <path d="M18,223 l6,-4 M24,221 h3" stroke="#111" stroke-width=".6"/>
-<text x="30" y="222" font-size="2.7" text-anchor="start" font-weight="normal" fill="#111"><tspan font-weight="bold">69</tspan> Seat contact (A8)</text>
-<text x="30" y="226.6" font-size="2.3" text-anchor="start" font-weight="normal" fill="#555">passenger seat: closes when sat on (car, I3); via 59 (A8)</text>
+<text x="30" y="222" font-size="2.7" text-anchor="start" font-weight="normal" fill="#111"><tspan font-weight="bold">69</tspan> Seat contact</text>
+<text x="30" y="226.6" font-size="2.3" text-anchor="start" font-weight="normal" fill="#555">passenger seat: closes when sat on (check I3); via seat belt contact connector 59</text>
 <path d="M208,223 l6,-4 M214,221 h3" stroke="#111" stroke-width=".6"/>
-<text x="220" y="222" font-size="2.7" text-anchor="start" font-weight="normal" fill="#111"><tspan font-weight="bold">70/71</tspan> Seat belt contacts L/R (A8)</text>
-<text x="220" y="226.6" font-size="2.3" text-anchor="start" font-weight="normal" fill="#555">open when buckled (car, I3); via 59 (A8); 168 SV 0.75 to earth</text>
+<text x="220" y="222" font-size="2.7" text-anchor="start" font-weight="normal" fill="#111"><tspan font-weight="bold">70/71</tspan> Seat belt contacts L/R</text>
+<text x="220" y="226.6" font-size="2.3" text-anchor="start" font-weight="normal" fill="#555">open when buckled (check I3); via seat belt contact connector 59; 168 SV 0.75 to earth</text>
 <circle cx="22" cy="233" r="3.2" fill="#fff" stroke="#111" stroke-width=".6"/>
 <path d="M19.76,230.76 L24.24,235.24 M19.76,235.24 L24.24,230.76" stroke="#111" stroke-width=".45"/>
-<text x="30" y="234" font-size="2.7" text-anchor="start" font-weight="normal" fill="#111"><tspan font-weight="bold">72</tspan> Seat belt warning lamp (D12)</text>
-<text x="30" y="238.6" font-size="2.3" text-anchor="start" font-weight="normal" fill="#555">151 BR 0.75 in, 157 SV 0.75 to earth, via 59 (C12)</text>
+<text x="30" y="234" font-size="2.7" text-anchor="start" font-weight="normal" fill="#111"><tspan font-weight="bold">72</tspan> Seat belt warning lamp</text>
+<text x="30" y="238.6" font-size="2.3" text-anchor="start" font-weight="normal" fill="#555">151 BR 0.75 in, 157 SV 0.75 to earth, via seat belt lamp connector 59</text>
 <rect x="18" y="250" width="389" height="37" rx="1.2" fill="#fff" stroke="#111" stroke-width="0.5"/>
 <path d="M22,255 h7" stroke="#222" stroke-width="1.7"/><path d="M22,255 h7" stroke="#1f5fbf" stroke-width="1.1"/>
 <text x="31" y="256" font-size="2.5" text-anchor="start" font-weight="normal" fill="#111">BL Blue</text>
@@ -138,10 +137,10 @@
 <text x="99.0" y="268" font-size="2.4" text-anchor="start" font-weight="normal" fill="#111">4.0</text>
 <path d="M22,273 h9" stroke="#222" stroke-width="1.7"/>
 <text x="33" y="274" font-size="2.4" text-anchor="start" font-weight="normal" fill="#111">traced (cable no. read)</text>
-<text x="126" y="256" font-size="2.35" text-anchor="start" font-weight="normal" fill="#333">Seat heating: fuse 5 (ignition-on bar) feeds 140 GL 1.0 through 58 (E12), an optional pin in the manual, then 60 (A7) and 59 (A7) to seat heating 64: two</text>
-<text x="126" y="261" font-size="2.35" text-anchor="start" font-weight="normal" fill="#333">elements in series with a thermostat between them, drawn open as printed (probably warm: it closes when cold); return 141 SV 1.0. The manual draws the</text>
-<text x="126" y="266" font-size="2.35" text-anchor="start" font-weight="normal" fill="#333">two elements side by side into 59’s two rows (140 GL lower, 141 SV upper); here they run in a line and 141 is drawn straight to earth.</text>
-<text x="126" y="271" font-size="2.35" text-anchor="start" font-weight="normal" fill="#333">Interior lights and seat belt warning are listed as references only. The seat belt logic comes from the car (check I3); the contacts’ wiring is too cramped to read in the book.</text>
+<text x="126" y="256" font-size="2.35" text-anchor="start" font-weight="normal" fill="#333">Seat heating: fuse 5 (ignition-on bar) feeds 140 GL 1.0 through brake and reversing light connector 58, seat heating feed connector 60 and</text>
+<text x="126" y="261" font-size="2.35" text-anchor="start" font-weight="normal" fill="#333">seat heater connector 59 to seat heating element 64: two elements in series with a thermostat between them, drawn open (probably its warm state: it closes when cold).</text>
+<text x="126" y="266" font-size="2.35" text-anchor="start" font-weight="normal" fill="#333">Return 141 SV 1.0 shares seat heater connector 59 (2-pole: 141 SV upper row, 140 GL lower) but is drawn straight to earth here.</text>
+<text x="126" y="271" font-size="2.35" text-anchor="start" font-weight="normal" fill="#333">Interior lights and seat belt warning are listed as references only. The seat belt logic comes from the car (check I3); the contacts’ own wiring is not known.</text>
 <text x="126" y="276" font-size="2.35" text-anchor="start" font-weight="normal" fill="#333">Fuse 5 also powers the Turbo’s high-speed fuel boost (380 GL to speed transmitter, component 140; 380a GL to throttle switch 137): see the ignition sheet.</text>
-<text x="126" y="281" font-size="2.35" text-anchor="start" font-weight="normal" fill="#333">Diagram is not RHD-specific: circuits should match, but harness routing and part positions may differ.</text>
+<text x="126" y="281" font-size="2.35" text-anchor="start" font-weight="normal" fill="#333">Not RHD-specific: circuits should match the car, but harness routing and part positions may differ.</text>
 </svg>

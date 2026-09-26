@@ -1,7 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="420mm" height="297mm" viewBox="0 0 420 297" font-family="Helvetica, Arial, sans-serif">
 <rect width="420" height="297" fill="#fff"/><rect x="8" y="8" width="404" height="281" fill="none" stroke="#111" stroke-width=".6"/>
 <text x="14" y="19" font-size="6" text-anchor="start" font-weight="bold" fill="#111">Saab 99 Turbo, model 1979 — Wipers and washers</text>
-<text x="14" y="25.5" font-size="2.8" text-anchor="start" font-weight="normal" fill="#444">Redrawn from Saab Service Manual 1975–1980, diagram p. 371-28/29 (PDF p. 406–407). Component numbers as in the manual.</text>
 <text x="18" y="40" font-size="3.4" text-anchor="start" font-weight="bold" fill="#111">Windscreen wipers and washer</text>
 <rect x="18" y="86" width="36" height="20" rx="1.2" fill="#fafafa" stroke="#111" stroke-width="0.8"/>
 <text x="21" y="91" font-size="2.6" text-anchor="start" font-weight="normal" fill="#111"><tspan font-weight="bold">F4</tspan> · 8 A</text>
@@ -15,16 +14,15 @@
 <circle cx="54" cy="96" r="1.0" fill="#111"/>
 <path d="M54,96 L57,93 L57,88 L61,88" fill="none" stroke="#222" stroke-width="0.9" stroke-linejoin="round"/>
 <path d="M54,96 L57,93 L57,88 L61,88" fill="none" stroke="#7a4a1c" stroke-width="0.5" stroke-linejoin="round"/>
-<rect x="61" y="85.4" width="42.936" height="5.2" rx="1" fill="#fff" stroke="#444" stroke-width=".4"/>
-<text x="62.5" y="89" font-size="2.4" text-anchor="start" font-weight="normal" fill="#111">85a BR 0.75 <tspan font-family="Arial">→</tspan> wiper motor 62 (4)</text>
+<rect x="61" y="85.4" width="40.44" height="5.2" rx="1" fill="#fff" stroke="#444" stroke-width=".4"/>
+<text x="62.5" y="89" font-size="2.4" text-anchor="start" font-weight="normal" fill="#111">85a BR 0.75 <tspan font-family="Arial">→</tspan> wiper motor 62:4</text>
 <path d="M54,96 L158,96 L158,91" fill="none" stroke="#222" stroke-width="1.7" stroke-linejoin="round"/>
 <path d="M54,96 L158,96 L158,91" fill="none" stroke="#7a4a1c" stroke-width="1.1" stroke-linejoin="round"/>
 <rect x="63.4" y="91.5" width="15.780000000000001" height="3.6" fill="#fff" opacity=".85"/>
 <text x="64" y="94.5" font-size="2.8" text-anchor="start" font-weight="normal" fill="#111">85 BR 1.0</text>
 <circle cx="54" cy="96" r="1.0" fill="#111"/>
 <rect x="112" y="45" width="72" height="46" rx="1.2" fill="#fafafa" stroke="#111" stroke-width="0.8"/>
-<text x="146" y="42.6" font-size="2.7" text-anchor="middle" font-weight="bold" fill="#111">61 Wiper switch</text>
-<text x="158.5" y="42.6" font-size="2.2" text-anchor="start" font-weight="normal" fill="#555">(D9)</text>
+<text x="148.0" y="42.6" font-size="2.7" text-anchor="middle" font-weight="bold" fill="#111">61 Wiper switch</text>
 <path d="M120.8,74.9 L149.96,64.62 L173,56.5" fill="none" stroke="#999" stroke-width=".3" stroke-dasharray=".8 .6"/>
 <path d="M118.98,65.47 L149.96,64.62 L172.6,64" fill="none" stroke="#999" stroke-width=".3" stroke-dasharray=".8 .6"/>
 <path d="M119.99,56.72 L149.96,64.62 L173.6,70.85" fill="none" stroke="#999" stroke-width=".3" stroke-dasharray=".8 .6"/>
@@ -159,15 +157,15 @@
 <circle cx="100.45" cy="72.7" r=".85" fill="#888"/>
 <circle cx="105.35" cy="72.7" r=".85" fill="#888"/>
 <circle cx="52" cy="77.2" r=".85" fill="#111"/>
-<text x="53.5" y="77.9" font-size="2" text-anchor="start" font-weight="normal" fill="#333">read</text>
+<text x="53.5" y="77.9" font-size="2" text-anchor="start" font-weight="normal" fill="#333">joined</text>
 <circle cx="61" cy="77.2" r=".85" fill="#888"/>
 <text x="62.5" y="77.9" font-size="2" text-anchor="start" font-weight="normal" fill="#333">probably</text>
 <path d="M74,77.2 h3.5" stroke="#888" stroke-width=".55" stroke-dasharray=".05 .75" stroke-linecap="round"/>
 <text x="78.3" y="77.9" font-size="2" text-anchor="start" font-weight="normal" fill="#333">unsure</text>
 <path d="M88,77.2 H89.1 A1.1,1.1 0 0 1 91.3,77.2 H92.4" fill="none" stroke="#111" stroke-width=".7" stroke-linejoin="round"/>
 <text x="93.4" y="77.9" font-size="2" text-anchor="start" font-weight="normal" fill="#333">hop: not joined</text>
-<text x="51" y="80.7" font-size="2" text-anchor="start" font-weight="normal" fill="#333">?: at 2, S only if F’s flat top (printed on line 2) is a contact;</text>
-<text x="51" y="83.5" font-size="2" text-anchor="start" font-weight="normal" fill="#333">54c at 2 and 3 only through P–Q (probably a misprint).</text>
+<text x="51" y="80.7" font-size="2" text-anchor="start" font-weight="normal" fill="#333">?: at 2, S only if F’s flat top (on line 2) is a contact;</text>
+<text x="51" y="83.5" font-size="2" text-anchor="start" font-weight="normal" fill="#333">54c at 2 and 3 only through P–Q (probably open: check D10).</text>
 <path d="M184,64 L392,64 L392,95 L370,95" fill="none" stroke="#222" stroke-width="1.7" stroke-linejoin="round"/>
 <path d="M184,64 L392,64 L392,95 L370,95" fill="none" stroke="#d42020" stroke-width="1.1" stroke-linejoin="round"/>
 <rect x="205.4" y="59.5" width="15.780000000000001" height="3.6" fill="#fff" opacity=".85"/>
@@ -208,8 +206,7 @@
 <rect x="277" y="127.4" width="50.4" height="5.2" rx="1" fill="#fff" stroke="#444" stroke-width=".4"/>
 <text x="278.5" y="131" font-size="2.4" text-anchor="start" font-weight="normal" fill="#111">83 SV 0.75 <tspan font-family="Arial">→</tspan> earth joint 158 (power sheet)</text>
 <rect x="226" y="84" width="48" height="40" rx="1.2" fill="#fafafa" stroke="#111" stroke-width="0.8"/>
-<text x="247.5" y="81.6" font-size="2.7" text-anchor="middle" font-weight="bold" fill="#111">83 Interval relay</text>
-<text x="261.5" y="81.6" font-size="2.2" text-anchor="start" font-weight="normal" fill="#555">(D8)</text>
+<text x="250.0" y="81.6" font-size="2.7" text-anchor="middle" font-weight="bold" fill="#111">83 Interval relay</text>
 <rect x="237.1" y="87" width="24.6" height="7.1" fill="#fff" stroke="#111" stroke-width=".4"/>
 <rect x="242.94" y="94.1" width="3.1" height="4.2" fill="#fff" stroke="#111" stroke-width=".4"/>
 <rect x="252.96" y="94.1" width="3.1" height="4.2" fill="#fff" stroke="#111" stroke-width=".4"/>
@@ -245,7 +242,6 @@
 <circle cx="327" cy="160" r="7" fill="#fff" stroke="#111" stroke-width=".7"/>
 <text x="327" y="161.2" font-size="3" text-anchor="middle" font-weight="bold" fill="#111">M</text>
 <text x="337" y="158" font-size="2.7" text-anchor="start" font-weight="bold" fill="#111">63 Washer pump</text>
-<text x="337" y="162.5" font-size="2.2" text-anchor="start" font-weight="normal" fill="#555">(F4)</text>
 <path d="M327,167 L327,169" fill="none" stroke="#111" stroke-width=".4"/>
 <path d="M327,169 L327,177 L331,177" fill="none" stroke="#222" stroke-width="1.7" stroke-linejoin="round"/>
 <path d="M327,169 L327,177 L331,177" fill="none" stroke="#111111" stroke-width="1.1" stroke-linejoin="round"/>
@@ -270,7 +266,7 @@
 <rect x="330" y="84" width="40" height="34" rx="1.2" fill="#fafafa" stroke="#111" stroke-width="0.8"/>
 <circle cx="343.3" cy="94.4" r="7.5" fill="#fff" stroke="#111" stroke-width=".7"/>
 <text x="343.3" y="95.60000000000001" font-size="3" text-anchor="middle" font-weight="bold" fill="#111">M</text>
-<text x="350" y="80.5" font-size="2.7" text-anchor="middle" font-weight="bold" fill="#111">62 Wiper motor (F4)</text>
+<text x="350" y="80.5" font-size="2.7" text-anchor="middle" font-weight="bold" fill="#111">62 Wiper motor</text>
 <path d="M337.997,89.097 L332.9,84" fill="none" stroke="#111" stroke-width=".4"/>
 <path d="M332.90,84 L335.70,86.80" stroke="#111" stroke-width=".8" stroke-linecap="round"/>
 <rect x="0" y="-0.75" width="2.6" height="1.5" fill="#fff" stroke="#111" stroke-width=".4" transform="translate(349.6380355039715 90.390099009901) rotate(-32.32041333973264)"/>
@@ -363,7 +359,7 @@
 <rect x="198" y="169" width="4" height="8" fill="#ddd" stroke="#111" stroke-width=".5"/>
 <circle cx="198" cy="173" r="1.0" fill="#111"/>
 <circle cx="202" cy="173" r="1.0" fill="#111"/>
-<text x="200" y="167.3" font-size="2.2" text-anchor="middle" font-weight="bold" fill="#111">58 (D8)</text>
+<text x="200" y="167.3" font-size="2.2" text-anchor="middle" font-weight="bold" fill="#111">58 stalks</text>
 <text x="200" y="181.2" font-size="2.0" text-anchor="middle" font-weight="normal" fill="#555">pin 3</text>
 <path d="M150,232 L150,238 L134,238 L134,207" fill="none" stroke="#222" stroke-width="0.9" stroke-linejoin="round"/>
 <path d="M150,232 L150,238 L134,238 L134,207" fill="none" stroke="#111111" stroke-width="0.5" stroke-linejoin="round"/>
@@ -502,20 +498,20 @@
 <circle cx="23" cy="278" r=".8" fill="#fff" stroke="#888" stroke-width=".35"/>
 <circle cx="30" cy="278" r=".8" fill="#fff" stroke="#888" stroke-width=".35"/>
 <path d="M23.7,277.7 L29.6,275.6" stroke="#888" stroke-width=".75" stroke-linecap="round"/>
-<text x="33" y="279" font-size="2.4" text-anchor="start" font-weight="normal" fill="#111">grey inside a part: probably, not printed clearly</text>
+<text x="33" y="279" font-size="2.4" text-anchor="start" font-weight="normal" fill="#111">grey inside a part: probably</text>
 <path d="M22,284 h9" stroke="#999" stroke-width=".3" stroke-dasharray=".8 .6"/>
 <circle cx="33.3" cy="284" r="1.3" fill="#fff" stroke="#888" stroke-width=".25"/>
 <text x="33.3" y="284.72" font-size="2" text-anchor="middle" font-weight="bold" fill="#777">2</text>
-<text x="36" y="285" font-size="2.4" text-anchor="start" font-weight="normal" fill="#111">switch position line, as printed (numbered as the GLE figure)</text>
+<text x="36" y="285" font-size="2.4" text-anchor="start" font-weight="normal" fill="#111">switch position line and its number</text>
 <text x="126" y="252.45" font-size="2.3" text-anchor="start" font-weight="normal" fill="#333">Wipers run from fuse 4 on the ignition-on bar: 85 BR to the switch (53a), 85a BR to motor terminal 4 and 85b BR to relay 83’s 15. Relay and pump earth at joint 158 (83 SV, 92 SV).</text>
-<text x="126" y="255.7" font-size="2.3" text-anchor="start" font-weight="normal" fill="#333">Relay 83 as printed (1979 photo P7b, scan): at rest the changeover joins 88 (switch 31b) to 88a (motor park, 62:2), energised it puts 15 (+) on 88; a block (timer, probably) drives the coil. 85 takes 91 GL (54c) and 91a GL (pump): washing probably wipes too.</text>
-<text x="126" y="258.95" font-size="2.3" text-anchor="start" font-weight="normal" fill="#333">Motor 62 as printed (1979 photo P8, scan): 87 GN (3) and 86 RD (5), through 58 at D8, feed the fast and slow brushes (probably 53b, 53); the third (common) brush is earthed to the housing. The line from M to the top wall is probably the drive, not a wire (as 66’s arm).</text>
-<text x="126" y="262.2" font-size="2.3" text-anchor="start" font-weight="normal" fill="#333">The park changeover on 2 (88a) rests on 1 (earth), which shorts the rotor to stop it (manual, PDF p. 370), and swings to 4 (85a BR, +). 89 SV loops from 1 to the housing corner; 90 BL leaves there for joint 158 (its run probably: a scan seam; the 1977 diagram draws it).</text>
-<text x="126" y="265.45" font-size="2.3" text-anchor="start" font-weight="normal" fill="#333">Switch 61 as the book draws it: lever at rest (0), a dashed line per notch through the pivot, no numbers (ours as the GLE figure, p. 370; 4 its text). White slots insulate the lever’s arms: its 31b and 53a sides join apart. Pulling (4) adds S and 54c to the 53a group.</text>
-<text x="126" y="268.7" font-size="2.3" text-anchor="start" font-weight="normal" fill="#333">The park link from the lever (up, over and down) stops short of 53 (grey: probably joined; park, braking and interval need it). P–Q, between the 54c and S lines, is printed closed, so fast would run the washer: probably a misprint (GLE keeps them apart; D10).</text>
-<text x="126" y="271.95" font-size="2.3" text-anchor="start" font-weight="normal" fill="#333">The 1977 Turbo diagram (addendum p. 53) draws the park link closed and has no S–54c link, which supports the table’s grey and unsure marks. It also draws 96 GR from S to 58; the 1979 print leaves out S to 58 (D8), which 85, 86 and 87 also pass (only 96’s pin drawn).</text>
-<text x="126" y="275.2" font-size="2.3" text-anchor="start" font-weight="normal" fill="#333">Headlight wipers: unfused tap 94 BR from bar 3–6, a 3 A glass fuse in holder 65 (manual, PDF p. 30), relay 67. Outside 67, 100a SV joins 85 to 87 (the 1979 print draws a T, the 1977 the whole loop), so 100 SV earths the coil.</text>
-<text x="126" y="278.45" font-size="2.3" text-anchor="start" font-weight="normal" fill="#333">Relay 67: 88 is + from the 3 A fuse; 95a RD takes it to upper plug row 2 (probably) and 95b RD on to lower row 2 (the park switches); 88a switches 98 GL to the upper motor’s diode (row 1). Rows of 123 counted from the top (none printed); 66 and 123 drawn mirrored.</text>
-<text x="126" y="281.7" font-size="2.3" text-anchor="start" font-weight="normal" fill="#333">97 BR runs from upper plug row 3 (nothing inside motor 66 uses it) to lower plug row 1, so as printed the lower motor gets no start feed; on the car both run together (E10), so the book leaves out a link, probably row 3 to row 1 inside the upper motor.</text>
-<text x="126" y="284.95" font-size="2.3" text-anchor="start" font-weight="normal" fill="#333">Diagram is not RHD-specific; the switch and relay positions (D8/D9) are drawing grid squares, not locations in the car. Light-grey terminal labels are probable: on 61 31b, 54c, INT, 53, 53b (S, 53a read); on 83 INT (printed, unread).</text>
+<text x="126" y="255.7" font-size="2.3" text-anchor="start" font-weight="normal" fill="#333">Relay 83: at rest the changeover joins 88 (switch 31b) to 88a (motor park, 62:2); energised, it puts 15 (+) on 88. A block (timer, probably) drives the coil. 85 takes 91 GL (54c) and 91a GL (pump): washing probably wipes too.</text>
+<text x="126" y="258.95" font-size="2.3" text-anchor="start" font-weight="normal" fill="#333">Motor 62: 87 GN (3) and 86 RD (5), through stalk switch connector 58, feed the fast and slow brushes (probably 53b, 53); the third (common) brush is earthed to the housing. The line from M to the top wall is probably the drive, not a wire.</text>
+<text x="126" y="262.2" font-size="2.3" text-anchor="start" font-weight="normal" fill="#333">The park changeover on 2 (88a) rests on 1 (earth), which shorts the rotor to stop it, and swings to 4 (85a BR, +). 89 SV loops from 1 to the housing corner; 90 BL leaves there, probably for joint 158.</text>
+<text x="126" y="265.45" font-size="2.3" text-anchor="start" font-weight="normal" fill="#333">Switch 61: lever at rest (0), a dashed line through the pivot for each notch (1 intermittent, 2 slow, 3 fast). White slots insulate the lever’s arms: its 31b and 53a sides join apart. Pulling (4) adds S and 54c to the 53a group.</text>
+<text x="126" y="268.7" font-size="2.3" text-anchor="start" font-weight="normal" fill="#333">The park link from the lever (up, over and down) stops short of 53 (grey: probably joined; park, braking and interval need it). P–Q, between the 54c and S lines, is drawn closed, which would run the washer at fast: probably open (check D10).</text>
+<text x="126" y="271.95" font-size="2.3" text-anchor="start" font-weight="normal" fill="#333">All of switch 61’s wires pass stalk switch connector 58 (85, 86, 87 and the rest); only 96’s pin (3) is drawn. 96 GR probably starts at S.</text>
+<text x="126" y="275.2" font-size="2.3" text-anchor="start" font-weight="normal" fill="#333">Headlight wipers: unfused tap 94 BR from bar 3–6, a 3 A glass fuse in holder 65, relay 67. Outside 67, 100a SV joins 85 to 87, so 100 SV earths the coil.</text>
+<text x="126" y="278.45" font-size="2.3" text-anchor="start" font-weight="normal" fill="#333">Relay 67: 88 is + from the 3 A fuse; 95a RD takes it to upper plug row 2 (probably) and 95b RD on to lower row 2 (the park switches); 88a switches 98 GL to the upper motor’s diode (row 1). Rows of 123 are our own count, from the top.</text>
+<text x="126" y="281.7" font-size="2.3" text-anchor="start" font-weight="normal" fill="#333">97 BR runs from upper plug row 3 to lower plug row 1. Both motors run together (check E10), so the upper motor must pass the start feed on: probably a link from row 1 to row 3 inside it (not drawn).</text>
+<text x="126" y="284.95" font-size="2.3" text-anchor="start" font-weight="normal" fill="#333">Not RHD-specific: circuits should match the car, but harness routing and part positions may differ. Light-grey terminal labels are probable: on 61 31b, 54c, INT, 53, 53b; on 83 INT.</text>
 </svg>
