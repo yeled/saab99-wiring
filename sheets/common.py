@@ -64,12 +64,21 @@ def _clear_label(pts, lx, ly, rot, length, shift):
     if rot is None: return lx, ly + (shift if ly > c else -shift)
     return lx + (shift if lx > c else -shift), ly
 
+SEGS = []   # (a, b, stroke width, black) for every wire drawn so far: dot() uses it to stay visible on heavy wires
+
+def _on_seg(p, a, b, tol=.05):
+    (x, y), (x0, y0), (x1, y1) = p, a, b
+    dx, dy = x1 - x0, y1 - y0; L2 = dx * dx + dy * dy
+    t = 0 if L2 == 0 else max(0, min(1, ((x - x0) * dx + (y - y0) * dy) / L2))
+    return (x - x0 - t * dx) ** 2 + (y - y0 - t * dy) ** 2 <= tol * tol
+
 def wire(cable, pts, lx=None, ly=None, rot=None, label=True):
     r = WIRES[cable]
     dash = ' stroke-dasharray="3 2"' if r['status'] == 'open' else ''
     if dash: DASHED[0] = True
     d = path(pts)
     cw = core_width(cable)
+    SEGS.extend((p, q, cw + edge(cw), r['colour'].startswith('SV')) for p, q in zip(pts, pts[1:]))
     if r['colour'] == '':                       # colour not read yet: plain grey
         A(f'<path d="{d}" fill="none" stroke="#777" stroke-width="0.9" stroke-linejoin="round"{dash}/>')
     else:
@@ -94,7 +103,13 @@ def wire(cable, pts, lx=None, ly=None, rot=None, label=True):
         if r['status'] == 'car':
             tick(lx + len(s) * 1.62 + 1.2, ly - 0.6, rot=rot, cx=lx, cy=ly)
 
-def dot(x, y): A(f'<circle cx="{x}" cy="{y}" r="1.0" fill="#111"/>')
+def dot(x, y):
+    """Terminal or joint dot (r 1.0). On a wire drawn earlier that is wider than the dot, it grows to just past the
+    wire's edges, and on a black wire it gets a thin white ring, so it never vanishes into the wire."""
+    on = [(w, k) for a, b, w, k in SEGS if w > 2.0 and _on_seg((x, y), a, b)]
+    if not on: A(f'<circle cx="{x}" cy="{y}" r="1.0" fill="#111"/>'); return
+    w = max(w for w, _ in on); ring = ' stroke="#fff" stroke-width=".3"' if any(k for _, k in on) else ''
+    A(f'<circle cx="{x}" cy="{y}" r="{round(w / 2 + .3, 2):g}" fill="#111"{ring}/>')
 def earth(x, y):
     A(f'<path d="M{x},{y} v3 M{x - 3},{y + 3} h6 M{x - 2},{y + 4.3} h4 M{x - 1},{y + 5.6} h2" stroke="#111" stroke-width=".5" fill="none"/>')
 def lamp(x, y, cap='', r=4.5, anchor='middle', cx=None, cy=None):
