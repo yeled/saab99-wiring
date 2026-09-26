@@ -2,9 +2,7 @@
 """Render the 1979 Saab 99 Turbo instruments and warning lamps sheet (A3 SVG)."""
 from common import *
 
-header('Saab 99 Turbo, model 1979 — Instruments and warning lamps',
-       'Redrawn from Saab Service Manual 1975–1980, diagram p. 371-28/29 (PDF p. 406–407). '
-       'Component numbers as in the manual.')
+header('Saab 99 Turbo, model 1979 — Instruments and warning lamps')
 def conn(x, y, h, lab):
     A(f'<rect x="{x - 2}" y="{y - h / 2}" width="4" height="{h}" fill="#ddd" stroke="#111" stroke-width=".5"/>')
     txt(x, y - h / 2 - 1.5, lab, 2.1, 'middle', fill='#555')
@@ -31,7 +29,7 @@ def sender(x, y, n, name, s=11, sw=1.5):
 # dot at every join; crossings without one (C° earth lead over the + rail, earth rail over the 11-5 line, earth loop
 # over the fuel gauge's + lead) don't join.
 def jdot(x, y): A(f'<circle cx="{x}" cy="{y}" r=".55" fill="#111"/>')   # small junction dot inside a part (as wipers)
-box(150, 70, 140, 120); txt(150, 66, '47 Combination instrument (C9)', 3, w='bold')
+box(150, 70, 140, 120); txt(150, 66, '47 Combination instrument', 3, w='bold')
 T = {'9': (150, 90), '1': (150, 150), '11': (200, 70), '12': (235, 70), '3': (265, 70),
      '7': (170, 190), '5': (200, 190), '6': (235, 190), '2': (260, 190), '4': (271, 190)}
 for k, (x, y) in T.items():
@@ -67,28 +65,30 @@ lamp(235, ER, r=LR); inner([(235, ER + LR), (235, 190)]); txt(235, 170, 'indicat
 # ---- senders and feeds on the left -----------------------------------------
 # 44 and 45 as the manual prints them (sender symbol, own earth lead); the signal wires keep their old runs at y 50 / 90
 name_ = lambda x, y, n, s: txt(x, y, f'<tspan font-weight="bold">{n}</tspan> {s}', 2.6)
-sx, sy = sender(40, 35, '44', 'Oil warning switch (A2)')
-wire('184', [(sx, sy), (sx, 50), (200, 50), (200, 70)], 60, 48.5); conn(110, 50, 7, '58 (A4) pin 5')
-sx, sy = sender(40, 75, '45', 'Temperature transmitter (A2)')
-wire('183', [(sx, sy), (sx, 90), (150, 90)], 60, 88.5); conn(110, 90, 7, '58 (A4) pin 6')
-box(22, 146, 34, 16); name_(25, 155, '2', 'Alternator (B3)')   # D+ a quarter down the right wall, as printed (B+ not on this sheet)
+sx, sy = sender(40, 35, '44', 'Oil warning switch')
+wire('184', [(sx, sy), (sx, 50), (200, 50), (200, 70)], 60, 48.5); conn(110, 50, 7, 'engine connector 58, pin 5')
+sx, sy = sender(40, 75, '45', 'Temperature transmitter')
+wire('183', [(sx, sy), (sx, 90), (150, 90)], 60, 88.5); conn(110, 90, 7, 'engine connector 58, pin 6')
+box(22, 146, 34, 16); name_(25, 155, '2', 'Alternator')   # D+ a quarter down the right wall, as printed (B+ not on this sheet)
 wire('195', [(56, 150), (150, 150)], 60, 148.5)
 dot(56, 150); tlabel(54.2, 150.6, 'D+', 'end')   # the manual prints D+ left of its circle on the right wall
 
 # ---- fuel sender and tachometer on the right ---------------------------------
-box(360, 82, 36, 20); name_(363, 89, '46', 'Fuel level'); txt(363, 93.5, 'transmitter (C12)', 2.4)
+box(360, 82, 36, 20); name_(363, 89, '46', 'Fuel level'); txt(363, 93.5, 'transmitter', 2.4)
 wire('185', [(360, 88), (330, 88), (330, 60), (265, 60), (265, 70)], 300, 58.5)
 wire('186', [(360, 96), (340, 96), (340, 54), (235, 54), (235, 70)], 300, 52.5)
-A('<rect x="343" y="84" width="4" height="16" fill="#ddd" stroke="#111" stroke-width=".5"/>'); txt(342, 81, '57 (B12)', 2.2, fill='#555')
-gauge(340, 150, 12, 'r/min'); txt(340, 168, '110 Tachometer (C11)', 2.6, 'middle', w='bold')
-wire('203', [(352, 150), (362, 150)], label=False); tag(364, 150, '203 BR → 116 (+ supply?)')
-wire('204', [(340, 138), (340, 130), (346, 130)], label=False); tag(348, 130, '204 GL 0.75 ← ECU speed signal')
+A('<rect x="343" y="84" width="4" height="16" fill="#ddd" stroke="#111" stroke-width=".5"/>'); txt(345, 104.5, 'fuel sender connector 57', 2.2, 'middle', fill='#555')
+TX = 324   # tachometer centre, left of the fuel sender so 203's tag can name switch 116 in full inside the frame
+gauge(TX, 150, 12, 'r/min'); txt(TX, 168, '110 Tachometer', 2.6, 'middle', w='bold')
+wire('203', [(TX + 12, 150), (TX + 16, 150)], label=False)
+tag(TX + 18, 150, '203 BR 0.75 ← heated window switch 116 (climate sheet)', w=65, size=2.4)   # w from the rendered text
+wire('204', [(TX, 138), (TX, 130), (TX + 6, 130)], label=False); tag(TX + 8, 130, '204 GL 0.75 ← ECU speed signal')
 
 # ---- bottom terminals ----------------------------------------------------------
 wire('179', [(271, 190), (271, 196)], label=False); earth(271, 196); txt(275, 199, '179 SV 0.75', 2.3)
-wire('182', [(260, 190), (260, 206)], label=False); tag(262, 206, '182 BR/VT 0.75 ← fuse 4 (off 85 BR at 58 (D8))')
+wire('182', [(260, 190), (260, 206)], label=False); tag(262, 206, '182 BR/VT 0.75 ← fuse 4 (off 85 BR at stalk switch connector 58)')
 wire('71', [(235, 190), (235, 214)], label=False); tag(237, 214, '71 GN/VT 0.75 ← 23 flasher unit, terminal C')
-wire('187', [(200, 190), (200, 222)], label=False); tag(202, 222, '187 VT 0.75 → 58 (B9) → 188 VT → 43 handbrake, 42 brake failure switch')
+wire('187', [(200, 190), (200, 222)], label=False); tag(202, 222, '187 VT 0.75 → ignition switch connector 58 → 188 VT → 43 handbrake, 42 brake failure switch')
 wire('27', [(170, 190), (170, 230)], label=False); tag(172, 230, '27 BL/VT 0.75 ← 8 lighting relay 56a (lighting sheet)')
 
 # ---- legend and notes ------------------------------------------------------------
@@ -110,14 +110,15 @@ if probable_legend(x, y + 5): y += 6
 if TICKED[0] and DASHED[0]:                           # else after the grey sample (4th colour column), or a row of its own
     if PROBABLE[0]: ticked(x + 69, y)
     else: y += 6; ticked(x, y)
-notes = ['Inside 47 as printed (its own terminal numbers): a + rail from 2 (182) feeds both gauges and the oil (11), low-fuel (12), brake (5) '
+notes = ['Inside 47 (its own terminal numbers): a + rail from 2 (182) feeds both gauges and the oil (11), low-fuel (12), brake (5) '
          'and charge (1) lamps; an earth rail to 4 (179) takes the gauges’ third leads and the main-beam (7) and indicator (6) lamps.',
-         'Oil and temperature wires pass connector 58 (A4), pins 5 and 6; the fuel sender wires pass 3-pole connector 57 (B12).',
+         'Oil and temperature wires pass engine connector 58, pins 5 and 6 (our own count, top to bottom; check E1); the fuel sender wires pass fuel sender connector 57 (3-pole).',
          'Charge lamp: alternator D+ is 195 RD 0.75. Main-beam lamp: 27 BL/VT from lighting relay 8. Indicator lamp: 71 GN/VT from flasher 23.',
-         'Supply: 182 BR/VT from fuse 4, branching off the wiper feed 85 BR at connector 58 (D8). Tachometer: signal 204 GL, supply 203 via 116.',
-         '44 and 45 are drawn with the manual’s sender symbol (heavy square with a diagonal, not a winding), each with its own earth lead '
-         '(no number printed). 44 probably earths the oil lamp at low oil pressure; '
+         'Supply: 182 BR/VT from fuse 4, branching off the wiper feed 85 BR at stalk switch connector 58. Tachometer: signal 204 GL; '
+         'supply probably 203 from heated window switch 116.',
+         '44 and 45 are drawn with the sender symbol (heavy square with a diagonal, not a winding), each with its own earth lead '
+         '(no cable number). 44 probably earths the oil lamp at low oil pressure; '
          '45 is probably a resistance that falls as the coolant warms.',
-         'Diagram is not RHD-specific: circuits should match, but harness routing and part positions may differ.']
+         'Not RHD-specific: circuits should match the car, but harness routing and part positions may differ.']
 for j, n in enumerate(notes): txt(lx + 108, ly + 6 + j * 5.2, n, 2.35, fill='#333')
 save('instruments.svg')
