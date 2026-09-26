@@ -3,9 +3,7 @@
 import math
 from common import *
 
-header('Saab 99 Turbo, model 1979 — Radiator fan, heater fan, heated rear window',
-       'Redrawn from Saab Service Manual 1975–1980, diagram p. 371-28/29 (PDF p. 406–407). '
-       'Component numbers as in the manual.')
+header('Saab 99 Turbo, model 1979 — Radiator fan, heater fan, heated rear window')
 def fuse_stub(y0, n):
     """Fuse n of fuse box 22, as radio.py draws fuse 9: the bar runs down the left, its junction ring feeds the fuse,
     and bottom terminal n is the dot on the box edge. Returns the height of that dot."""
@@ -62,16 +60,16 @@ inner([(110, 58), (120.2, 58)]); contact(121, 58); contact(133, 58); inner([(133
 blade(121.6, 57.5, 132.4, 54.6)
 coil(124, 64, 6, 16); inner([(110, 72), (124, 72)]); inner([(130, 72), (144, 72)]); mlink([(127, 64), (127, 56.5)])
 wire('110', [(54, y7), (57, 58), (110, 58)], 62, 56.5); wire('113', [(54, y7), (57, 66), (80, 66), (80, 72), (110, 72)], 62, 64.5)
-wire('111', [(144, 58), (236, 58)], 170, 56.5); conn(240, 58, 8, '59')
+wire('111', [(144, 58), (236, 58)], 170, 56.5); conn(240, 58, 8, '59 radiator fan')
 redot((54, y7), (110, 58), (144, 58))
 A('<path d="M242,58 H262" stroke="#111" stroke-width=".6"/>'); motor(270, 58)
-txt(280, 56, '<tspan font-weight="bold">37</tspan> Radiator fan motor (D1)', 2.7); A('<path d="M270,65 v5" stroke="#111" stroke-width=".6"/>'); earth(270, 70)
-wire('114', [(144, 72), (196, 72), (196, 88), (216, 88)], 160, 70.5); conn(220, 88, 6, '60')
-wire('114a', [(222, 88), (262, 88)], 228, 86.5)
+txt(280, 56, '<tspan font-weight="bold">37</tspan> Radiator fan motor', 2.7); A('<path d="M270,65 v5" stroke="#111" stroke-width=".6"/>'); earth(270, 70)
+wire('114', [(144, 72), (196, 72), (196, 88), (216, 88)], 160, 70.5); conn(220, 88, 6, '60 thermostat')
+wire('114a', [(222, 88), (262, 88)], 231, 86.5)
 box(262, 82, 20, 12); A('<path d="M266,90 l8,-5 M274,88 h6" stroke="#111" stroke-width=".5"/>')
 # 39's earth side is not a local earth: 115 SV runs to the left headlamp's common and earths through its 28 SV
 wire('115', [(282, 88), (292, 88)], label=False); tag(294, 88, '115 SV 0.75 ← left headlamp common; earth via 28 SV (lighting sheet)', w=71.9, size=2.2)
-txt(262, 104, '<tspan font-weight="bold">39</tspan> Thermostat switch (E2): closes when hot', 2.5)
+txt(262, 104, '<tspan font-weight="bold">39</tspan> Thermostat switch: closes when hot', 2.5)
 
 # ---- heater fan ------------------------------------------------------------------
 txt(18, 124, 'Heater (ventilator) fan', 3.4, w='bold')
@@ -91,7 +89,7 @@ wire('104', [(144, 149), (237, 149)], 196, 147.5)
 redot((54, y6), (110, y6), (144, 142))
 # 57 (F11): three through-links; 74 hangs off it: in from row 2's right side, out onto 57's top edge just inside the
 # left corner, in line with the left pins, where the manual hides which pin it joins (probably row 1: grey)
-A('<rect x="237" y="138" width="8" height="22" fill="#ddd" stroke="#111" stroke-width=".5"/>'); txt(239.6, 136.3, '57 (F11)', 2.2, fill='#555')
+A('<rect x="237" y="138" width="8" height="22" fill="#ddd" stroke="#111" stroke-width=".5"/>'); txt(239.6, 136.3, '57 heater fan', 2.2, fill='#555')
 for y in (142, 149, 156): inner([(237, y), (245, y)]); dot(237, y); dot(245, y)
 inner([(238.2, 138), (238.2, 142)], grey=True)
 box(244, 124, 14, 8); txt(239.9, 122.2, '<tspan font-weight="bold">74</tspan> Resistor, low speed', 2.2)  # centred on the box by hand: cairosvg misplaces a bold tspan in centred text
@@ -104,9 +102,9 @@ wire('107', [(237, 156), (224, 156)], label=False); tag(222, 156, '107 SV 2.5 �
 redot((237, 142)); redot_ringed(237, 156)
 # 36: terminals on the left wall, level with 57 rows 1 and 3; no internal leads to the fan are printed; blades square to the frame
 box(263, 138, 22, 22); dot(263, 142); dot(263, 156); fan(274, 149, 7.5, rot=0)
-txt(288, 147, '<tspan font-weight="bold">36</tspan> Heater fan motor (F12)', 2.7)
+txt(288, 147, '<tspan font-weight="bold">36</tspan> Heater fan motor', 2.7)
 txt(288, 152, 'speed 8: full; speed 6: through 74', 2.2, fill='#555')
-txt(288, 155.6, 'on the car: 74 is fixed under this motor’s housing (D5)', 2.2, fill='#555')
+txt(288, 155.6, 'on the car: 74 is fixed under this motor’s housing (check D5)', 2.2, fill='#555')
 
 # ---- heated rear window ----------------------------------------------------------------
 txt(18, 181, 'Heated rear window', 3.4, w='bold')
@@ -141,7 +139,7 @@ wire('214', [(211.6, 220), (213.4, 222), (213.4, 225.8), (228, 225.8)], label=Fa
 wire('211', [(116, 231), (116, 243), (292, 243), (292, 215), (300, 215)], 240, 241.5)
 redot((54, y8), (116, 203), (116, 231))
 box(300, 210, 30, 10); A('<path d="M303,215 l2,-2 l2,4 l2,-4 l2,4 l2,-4 l2,4 l2,-4 l2,4 l2,-4 l2,4 l2,-4 l2,2" fill="none" stroke="#111" stroke-width=".4"/>')
-A('<path d="M330,215 h6 v4" fill="none" stroke="#111" stroke-width=".6"/>'); earth(336, 219); txt(300, 229, '<tspan font-weight="bold">115</tspan> Heated rear window (D12)', 2.6)
+A('<path d="M330,215 h6 v4" fill="none" stroke="#111" stroke-width=".6"/>'); earth(336, 219); txt(300, 229, '<tspan font-weight="bold">115</tspan> Heated rear window', 2.6)
 
 lx, ly = 18, 250
 box(lx, ly, 389, 37, fill='#fff', sw=.5)
@@ -159,16 +157,16 @@ def r_traced(y):
     A(f'<path d="M{x},{y - 1} h9" stroke="#222" stroke-width="{w:g}"/>'); txt(x + 11, y, 'traced (cable no. read)', 2.4)
     if DASHED[0]: A(f'<path d="M{x + 48},{y - 1} h9" stroke="#222" stroke-width="{w:g}" stroke-dasharray="3 2"/>'); txt(x + 59, y, 'not traced yet', 2.4)
 def r_tick(y): tick(x, y - .7); txt(x + 4, y, 'checked on the car', 2.4)
-def r_work(y): work([(x, y - 1), (x + 9, y - 1)]); txt(x + 11, y, 'short dashes inside a switch: its other positions, as printed', 2.4)
+def r_work(y): work([(x, y - 1), (x + 9, y - 1)]); txt(x + 11, y, 'short dashes inside a switch: its other positions', 2.4)
 rows = [lambda y: size_legend(x, y), r_traced] + [r_tick] * TICKED[0] + [lambda y: probable_legend(x, y - 1)] * PROBABLE[0] + [r_work] * WORK[0]
 y0, y1 = ly + 17, ly + 34.8
 for k, row in enumerate(rows): row(y0 + k * min(6, (y1 - y0) / (len(rows) - 1)))
 notes = ['Radiator fan: relay 38 (drawn at rest, contact open) is fed from fuse 7 on the always-live bar; thermostat switch 39 earths its coil through 115 SV and the left',
-         'headlamp’s earth, 28 SV, so the drawing lets the fan run after the engine is switched off. 114a is BL in the 1979 print, SV (black) in the 1977 Turbo diagram: car check E14.',
-         'Heater fan: fuse 6 is on the ignition-on bar. Switch 35 rests on its unwired terminal (probably off); its short-dashed lines are its other positions, as printed: 8 feeds the',
-         'motor directly; 6 goes through resistor 74, whose far lead lands on 57’s corner (the pin is hidden: probably row 1, grey). The motor returns through 57 row 3 on 107 SV to joint 158.',
+         'headlamp’s earth, 28 SV, so the drawing lets the fan run after the engine is switched off. 114a is drawn BL; it may be SV (black) on the car: check E14.',
+         'Heater fan: fuse 6 is on the ignition-on bar. Switch 35 rests on its unwired terminal (probably off); its short-dashed lines are its other positions: 8 feeds the',
+         'motor directly; 6 goes through resistor 74, whose far lead lands on heater fan connector 57’s corner (probably row 1; drawn grey). The motor returns through 57 row 3 on 107 SV to joint 158.',
          'Heated rear window: fuse 8 (always live) feeds relay 113 (at rest, open); switch 116, drawn off, energises it through 213 BL. Its right terminal takes the feed 214 BL (not traced)',
          'and 203 to the tachometer; its lamp is probably the “on” indicator. 113:85 also takes the earths 13 SV (relay 8) and 33 SV (relay 21); 212 SV carries all three earths (relays 113, 8 and 21) to earth joint 158.',
-         'Diagram is not RHD-specific: circuits should match, but harness routing and part positions may differ.']
+         'Not RHD-specific: circuits should match the car, but harness routing and part positions may differ.']
 for j, n in enumerate(notes): txt(lx + 108, ly + 6 + j * 4.8, n, 2.35, fill='#333')
 save('climate.svg')
