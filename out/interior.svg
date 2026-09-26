@@ -68,6 +68,11 @@
 <circle cx="144" cy="62" r="1.0" fill="#111"/>
 <rect x="198" y="83.4" width="86.82400000000001" height="5.2" rx="1" fill="#fff" stroke="#444" stroke-width=".4"/>
 <text x="199.5" y="87" font-size="2.6" text-anchor="start" font-weight="normal" fill="#111">150 GL 0.75 to seat contact 69 and belt contacts 70/71 (below)</text>
+<path d="M113,62 L113,94 L119,94" fill="none" stroke="#222" stroke-width="0.9" stroke-linejoin="round" stroke-dasharray="3 2"/>
+<path d="M113,62 L113,94 L119,94" fill="none" stroke="#1f5fbf" stroke-width="0.5" stroke-linejoin="round" stroke-dasharray="3 2"/>
+<circle cx="113" cy="62" r="1.0" fill="#111"/>
+<rect x="121" y="91.4" width="94" height="5.2" rx="1" fill="#fff" stroke="#444" stroke-width=".4" stroke-dasharray="1.5 1"/>
+<text x="122.5" y="95" font-size="2.6" text-anchor="start" font-weight="normal" fill="#111">214 BL 0.75 <tspan font-family="Arial">→</tspan> heated window switch 116 (climate sheet); probably: check D14</text>
 <text x="18" y="108" font-size="3.4" text-anchor="start" font-weight="bold" fill="#111">Interior lights</text>
 <text x="18" y="114" font-size="2.4" text-anchor="start" font-weight="normal" fill="#555">Fuse 9’s 160 GL feeds 52, then 161 GL through dome light connector 57 to 50 and (163 GL) 55; 164 BL, 167 SV reach 50; 162/165 SV link 50–51; doors 170/171 SV.</text>
 <circle cx="22" cy="125" r="3.2" fill="#fff" stroke="#111" stroke-width=".6"/>
@@ -91,10 +96,12 @@
 <circle cx="212" cy="153" r="3.2" fill="#fff" stroke="#111" stroke-width=".6"/>
 <path d="M209.76,150.76 L214.24,155.24 M209.76,155.24 L214.24,150.76" stroke="#111" stroke-width=".45"/>
 <text x="220" y="154" font-size="2.7" text-anchor="start" font-weight="normal" fill="#111"><tspan font-weight="bold">55</tspan> Luggage compartment light</text>
-<text x="220" y="158.6" font-size="2.3" text-anchor="start" font-weight="normal" fill="#555">163 GL 0.75, 166 BL 0.75 to switch 56</text>
+<text x="220" y="158.6" font-size="2.3" text-anchor="start" font-weight="normal" fill="#555">163 GL 0.75, 166 BL 0.75 to switch 56 (166 may be black: check R7)</text>
+<text x="220" y="162.4" font-size="2.3" text-anchor="start" font-weight="normal" fill="#555">Combi Coupé: on the right-hand side of the luggage area, 10 W (check R7)</text>
 <path d="M18,169 l6,-4 M24,167 h3" stroke="#111" stroke-width=".6"/>
 <text x="30" y="168" font-size="2.7" text-anchor="start" font-weight="normal" fill="#111"><tspan font-weight="bold">56</tspan> Luggage compartment light switch</text>
-<text x="30" y="172.6" font-size="2.3" text-anchor="start" font-weight="normal" fill="#555">166 BL 0.75, earth</text>
+<text x="30" y="172.6" font-size="2.3" text-anchor="start" font-weight="normal" fill="#555">166 BL 0.75 (may be black: check R7), earth</text>
+<text x="30" y="176.4" font-size="2.3" text-anchor="start" font-weight="normal" fill="#555">Combi Coupé: a plunger at the tailgate striker, worked by the lock (check R7)</text>
 <text x="18" y="188" font-size="2.4" text-anchor="start" font-weight="normal" fill="#111">Dome light connector 57, 3-pole: pins carry 161 GL, 164 BL, and 167a SV (switch side) to 167 SV (lamp side). + is 160 GL from fuse 9.</text>
 <text x="18" y="206" font-size="3.4" text-anchor="start" font-weight="bold" fill="#111">Seat belt warning</text>
 <text x="18" y="212" font-size="2.3" text-anchor="start" font-weight="normal" fill="#555">Fuse 5’s 150 GL reaches the seat and belt contacts; through them, 156 BR and 151 BR feed lamp 72, which returns on 157 SV (probably).</text>
@@ -137,10 +144,12 @@
 <text x="99.0" y="268" font-size="2.4" text-anchor="start" font-weight="normal" fill="#111">4.0</text>
 <path d="M22,273 h9" stroke="#222" stroke-width="1.7"/>
 <text x="33" y="274" font-size="2.4" text-anchor="start" font-weight="normal" fill="#111">traced (cable no. read)</text>
+<path d="M70,273 h9" stroke="#222" stroke-width="1.7" stroke-dasharray="3 2"/>
+<text x="81" y="274" font-size="2.4" text-anchor="start" font-weight="normal" fill="#111">not traced yet</text>
 <text x="126" y="256" font-size="2.35" text-anchor="start" font-weight="normal" fill="#333">Seat heating: fuse 5 (ignition-on bar) feeds 140 GL 1.0 through brake and reversing light connector 58, seat heating feed connector 60 and</text>
 <text x="126" y="261" font-size="2.35" text-anchor="start" font-weight="normal" fill="#333">seat heater connector 59 to seat heating element 64: two elements in series with a thermostat between them, drawn open (probably its warm state: it closes when cold).</text>
 <text x="126" y="266" font-size="2.35" text-anchor="start" font-weight="normal" fill="#333">Return 141 SV 1.0 shares seat heater connector 59 (2-pole: 141 SV upper row, 140 GL lower) but is drawn straight to earth here.</text>
 <text x="126" y="271" font-size="2.35" text-anchor="start" font-weight="normal" fill="#333">Interior lights and seat belt warning are listed as references only. The seat belt logic comes from the car (check I3); the contacts’ own wiring is not known.</text>
-<text x="126" y="276" font-size="2.35" text-anchor="start" font-weight="normal" fill="#333">Fuse 5 also powers the Turbo’s high-speed fuel boost (380 GL to speed transmitter, component 140; 380a GL to throttle switch 137): see the ignition sheet.</text>
+<text x="126" y="276" font-size="2.35" text-anchor="start" font-weight="normal" fill="#333">Fuse 5 also powers the Turbo’s high-speed fuel boost (380 GL to speed transmitter, component 140; 380a GL to throttle switch 137; ignition sheet) and, probably, heated window switch 116 through 214 BL (check D14; climate sheet).</text>
 <text x="126" y="281" font-size="2.35" text-anchor="start" font-weight="normal" fill="#333">Not RHD-specific: circuits should match the car, but harness routing and part positions may differ.</text>
 </svg>

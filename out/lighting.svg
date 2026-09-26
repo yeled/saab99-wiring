@@ -4,6 +4,7 @@
 <text x="16" y="40" font-size="3.6" text-anchor="start" font-weight="bold" fill="#777">FRONT</text>
 <text x="398" y="91" font-size="3.6" text-anchor="end" font-weight="bold" fill="#777">REAR</text>
 <text x="16" y="44.5" font-size="2.3" text-anchor="start" font-weight="normal" fill="#777">car’s right side at top</text>
+<text x="398" y="95.5" font-size="2.3" text-anchor="end" font-weight="normal" fill="#777">Combi Coupé (this car)</text>
 <path d="M34,62 L46.52,64.55 A7.6,7.6 0 0 1 46.52,79.45 L34,82 A23.83,23.83 0 0 1 34,62 Z" fill="#fdfdfd" stroke="#111" stroke-width=".8"/>
 <path d="M36,62.81 V81.19" stroke="#111" stroke-width=".3"/>
 <circle cx="45" cy="72" r="5.5" fill="#fff" stroke="#111" stroke-width=".6"/>
@@ -378,132 +379,127 @@
 <text x="358" y="36" font-size="3" text-anchor="start" font-weight="bold" fill="#111">20  Ignition switch</text>
 <text x="358" y="41" font-size="2.3" text-anchor="start" font-weight="normal" fill="#555">30: battery in (grey)</text>
 <text x="358" y="45" font-size="2.3" text-anchor="start" font-weight="normal" fill="#555">X: live with key on (red)</text>
-<rect x="354" y="102.5" width="32" height="54" rx="1.2" fill="#fdfdfd" stroke="#111" stroke-width="0.6"/>
-<text x="370.0" y="100.5" font-size="2.6" text-anchor="middle" font-weight="normal" fill="#111">Rear lamp cluster R</text>
-<path d="M255,125 L255,116 L354,116.0" fill="none" stroke="#222" stroke-width="0.9" stroke-linejoin="round"/>
-<path d="M255,125 L255,116 L354,116.0" fill="none" stroke="#1e9e3e" stroke-width="0.5" stroke-linejoin="round"/>
-<rect x="313.4" y="111.0" width="17.400000000000002" height="3.6" fill="#fff" opacity=".85"/>
-<text x="314" y="114" font-size="2.8" text-anchor="start" font-weight="normal" fill="#111">44 GN 0.75</text>
-<path d="M354,116 L368.8,116" fill="none" stroke="#111" stroke-width=".4"/>
-<path d="M354,143 L368.8,143" fill="none" stroke="#111" stroke-width=".4"/>
-<path d="M354,152 L368.8,152" fill="none" stroke="#111" stroke-width=".4"/>
-<circle cx="354" cy="107" r=".8" fill="#fff" stroke="#111" stroke-width=".35"/>
-<path d="M354.8,107 L368.8,107" fill="none" stroke="#111" stroke-width=".4"/>
-<circle cx="354" cy="125" r=".8" fill="#fff" stroke="#111" stroke-width=".35"/>
-<path d="M354.8,125 L368.8,125" fill="none" stroke="#111" stroke-width=".4"/>
-<circle cx="354" cy="134" r=".8" fill="#fff" stroke="#111" stroke-width=".35"/>
-<path d="M354.8,134 L368.8,134" fill="none" stroke="#111" stroke-width=".4"/>
-<path d="M354,116 L348.5,120 L348.5,143 L354,143" fill="none" stroke="#111" stroke-width=".4"/>
-<path d="M354,143 L351,146 L351,152 L354,152" fill="none" stroke="#111" stroke-width=".4"/>
-<path d="M375.2,107 L382,107 L382,156.5" fill="none" stroke="#111" stroke-width=".4"/>
+<rect x="364" y="102.5" width="18" height="36" rx="1.2" fill="#fdfdfd" stroke="#111" stroke-width="0.6"/>
+<text x="373.0" y="100.5" font-size="2.6" text-anchor="middle" font-weight="normal" fill="#111">Rear lamp cluster R</text>
+<path d="M375.2,107 L379,107 L379,134" fill="none" stroke="#111" stroke-width=".4"/>
+<path d="M379,134 L379,138.5" fill="none" stroke="#888" stroke-width=".4"/>
+<path d="M379,138.5 v3 M376,141.5 h6 M377,142.8 h4 M378,144.1 h2" stroke="#888" stroke-width=".5" fill="none"/>
+<circle cx="379" cy="138.5" r="1.0" fill="#888"/>
 <circle cx="372" cy="107.0" r="3.2" fill="#fff" stroke="#111" stroke-width=".6"/>
 <path d="M372,107.0 L369.74,104.74 A3.2,3.2 0 0 1 374.26,104.74 Z M372,107.0 L369.74,109.26 A3.2,3.2 0 0 0 374.26,109.26 Z" fill="#111"/><path d="M369.74,104.74 L374.26,109.26 M369.74,109.26 L374.26,104.74" stroke="#111" stroke-width=".45"/>
-<text x="388" y="107.8" font-size="2.2" text-anchor="start" font-weight="normal" fill="#555">28 indicator</text>
+<circle cx="364" cy="107" r=".8" fill="#fff" stroke="#111" stroke-width=".35"/>
+<path d="M364.8,107 L368.8,107" fill="none" stroke="#111" stroke-width=".4"/>
+<text x="362" y="107.75" font-size="2.0" text-anchor="end" font-weight="normal" fill="#555">79 RD/VT: signals sheet</text>
+<text x="384" y="107.8" font-size="2.2" text-anchor="start" font-weight="normal" fill="#555">28 indicator</text>
 <circle cx="372" cy="116.0" r="3.2" fill="#fff" stroke="#111" stroke-width=".6"/>
 <path d="M369.76,113.76 L374.24,118.24 M369.76,118.24 L374.24,113.76" stroke="#111" stroke-width=".45"/>
-<path d="M375.2,116 L382,116" fill="none" stroke="#111" stroke-width=".4"/>
-<circle cx="382" cy="116.0" r=".6" fill="#111"/>
-<text x="388" y="116.8" font-size="2.2" text-anchor="start" font-weight="normal" fill="#111">14 tail</text>
+<path d="M375.2,116 L379,116" fill="none" stroke="#111" stroke-width=".4"/>
+<circle cx="379" cy="116.0" r=".6" fill="#111"/>
+<path d="M364,116 L368.8,116" fill="none" stroke="#111" stroke-width=".4"/>
+<text x="384" y="116.8" font-size="2.2" text-anchor="start" font-weight="normal" fill="#111">14 tail</text>
 <circle cx="372" cy="125.0" r="3.2" fill="#fff" stroke="#111" stroke-width=".6"/>
 <path d="M369.76,122.76 L374.24,127.24 M369.76,127.24 L374.24,122.76" stroke="#111" stroke-width=".45"/>
-<path d="M375.2,125 L382,125" fill="none" stroke="#111" stroke-width=".4"/>
-<circle cx="382" cy="125.0" r=".6" fill="#111"/>
-<text x="388" y="125.8" font-size="2.2" text-anchor="start" font-weight="normal" fill="#555">30 brake</text>
+<path d="M375.2,125 L379,125" fill="none" stroke="#111" stroke-width=".4"/>
+<circle cx="379" cy="125.0" r=".6" fill="#111"/>
+<circle cx="364" cy="125" r=".8" fill="#fff" stroke="#111" stroke-width=".35"/>
+<path d="M364.8,125 L368.8,125" fill="none" stroke="#111" stroke-width=".4"/>
+<text x="362" y="125.75" font-size="2.0" text-anchor="end" font-weight="normal" fill="#555">133 RD: signals sheet</text>
+<text x="384" y="125.8" font-size="2.2" text-anchor="start" font-weight="normal" fill="#555">30 brake</text>
 <circle cx="372" cy="134.0" r="3.2" fill="#fff" stroke="#111" stroke-width=".6"/>
 <path d="M369.76,131.76 L374.24,136.24 M369.76,136.24 L374.24,131.76" stroke="#111" stroke-width=".45"/>
-<path d="M375.2,134 L382,134" fill="none" stroke="#111" stroke-width=".4"/>
-<circle cx="382" cy="134.0" r=".6" fill="#111"/>
-<text x="388" y="134.8" font-size="2.2" text-anchor="start" font-weight="normal" fill="#555">32 reversing</text>
-<circle cx="372" cy="143.0" r="3.2" fill="#fff" stroke="#111" stroke-width=".6"/>
-<path d="M369.76,140.76 L374.24,145.24 M369.76,145.24 L374.24,140.76" stroke="#111" stroke-width=".45"/>
-<path d="M375.2,143 L382,143" fill="none" stroke="#111" stroke-width=".4"/>
-<circle cx="382" cy="143.0" r=".6" fill="#111"/>
-<text x="388" y="143.8" font-size="2.2" text-anchor="start" font-weight="normal" fill="#111">14 tail</text>
-<circle cx="372" cy="152.0" r="3.2" fill="#fff" stroke="#111" stroke-width=".6"/>
-<path d="M369.76,149.76 L374.24,154.24 M369.76,154.24 L374.24,149.76" stroke="#111" stroke-width=".45"/>
-<path d="M375.2,152 L382,152" fill="none" stroke="#111" stroke-width=".4"/>
-<circle cx="382" cy="152.0" r=".6" fill="#111"/>
-<text x="388" y="152.8" font-size="2.2" text-anchor="start" font-weight="normal" fill="#111">15 plate</text>
-<path d="M382,156.5 v3 M379,159.5 h6 M380,160.8 h4 M381,162.1 h2" stroke="#111" stroke-width=".5" fill="none"/>
-<circle cx="382" cy="156.5" r="1.0" fill="#111"/>
-<path d="M348.5,122.5 L342,122.5" fill="none" stroke="#222" stroke-width="0.9" stroke-linejoin="round"/>
-<path d="M348.5,122.5 L342,122.5" fill="none" stroke="#1e9e3e" stroke-width="0.5" stroke-linejoin="round"/>
-<circle cx="342" cy="122.5" r="1.3" fill="#fff" stroke="#222" stroke-width=".5"/>
-<rect x="321.4" y="121.0" width="17.400000000000002" height="3.6" fill="#fff" opacity=".85"/>
-<text x="322" y="124.0" font-size="2.8" text-anchor="start" font-weight="normal" fill="#111">47 GN 0.75</text>
-<path d="M351,152.0 L342,152.0" fill="none" stroke="#222" stroke-width="0.9" stroke-linejoin="round"/>
-<path d="M351,152.0 L342,152.0" fill="none" stroke="#1e9e3e" stroke-width="0.5" stroke-linejoin="round"/>
-<circle cx="342" cy="152.0" r="1.3" fill="#fff" stroke="#222" stroke-width=".5"/>
-<rect x="319.4" y="150.5" width="19.02" height="3.6" fill="#fff" opacity=".85"/>
-<text x="320" y="153.5" font-size="2.8" text-anchor="start" font-weight="normal" fill="#111">47a GN 0.75</text>
-<circle cx="348.5" cy="122.5" r="1.0" fill="#111"/>
-<circle cx="351" cy="152.0" r="1.0" fill="#111"/>
-<circle cx="354" cy="116.0" r="1.0" fill="#111"/>
-<circle cx="354" cy="143.0" r="1.0" fill="#111"/>
-<circle cx="354" cy="152.0" r="1.0" fill="#111"/>
-<rect x="354" y="172.5" width="32" height="54" rx="1.2" fill="#fdfdfd" stroke="#111" stroke-width="0.6"/>
-<text x="370.0" y="170.5" font-size="2.6" text-anchor="middle" font-weight="normal" fill="#111">Rear lamp cluster L</text>
-<path d="M255,178 L255,213 L354,213.0" fill="none" stroke="#222" stroke-width="0.9" stroke-linejoin="round"/>
-<path d="M255,178 L255,213 L354,213.0" fill="none" stroke="#1f5fbf" stroke-width="0.5" stroke-linejoin="round"/>
-<rect x="313.4" y="208.0" width="17.400000000000002" height="3.6" fill="#fff" opacity=".85"/>
-<text x="314" y="211" font-size="2.8" text-anchor="start" font-weight="normal" fill="#111">42 BL 0.75</text>
-<path d="M354,213 L368.8,213" fill="none" stroke="#111" stroke-width=".4"/>
-<path d="M354,186 L368.8,186" fill="none" stroke="#111" stroke-width=".4"/>
-<path d="M354,177 L368.8,177" fill="none" stroke="#111" stroke-width=".4"/>
-<circle cx="354" cy="222" r=".8" fill="#fff" stroke="#111" stroke-width=".35"/>
-<path d="M354.8,222 L368.8,222" fill="none" stroke="#111" stroke-width=".4"/>
-<circle cx="354" cy="204" r=".8" fill="#fff" stroke="#111" stroke-width=".35"/>
-<path d="M354.8,204 L368.8,204" fill="none" stroke="#111" stroke-width=".4"/>
-<circle cx="354" cy="195" r=".8" fill="#fff" stroke="#111" stroke-width=".35"/>
-<path d="M354.8,195 L368.8,195" fill="none" stroke="#111" stroke-width=".4"/>
-<path d="M354,213 L348.5,209 L348.5,186 L354,186" fill="none" stroke="#111" stroke-width=".4"/>
-<path d="M354,186 L351,183 L351,177 L354,177" fill="none" stroke="#111" stroke-width=".4"/>
-<path d="M375.2,177 L382,177 L382,226.5" fill="none" stroke="#111" stroke-width=".4"/>
-<circle cx="372" cy="222.0" r="3.2" fill="#fff" stroke="#111" stroke-width=".6"/>
-<path d="M372,222.0 L369.74,219.74 A3.2,3.2 0 0 1 374.26,219.74 Z M372,222.0 L369.74,224.26 A3.2,3.2 0 0 0 374.26,224.26 Z" fill="#111"/><path d="M369.74,219.74 L374.26,224.26 M369.74,224.26 L374.26,219.74" stroke="#111" stroke-width=".45"/>
-<path d="M375.2,222 L382,222" fill="none" stroke="#111" stroke-width=".4"/>
-<circle cx="382" cy="222.0" r=".6" fill="#111"/>
-<text x="388" y="222.8" font-size="2.2" text-anchor="start" font-weight="normal" fill="#555">27 indicator</text>
-<circle cx="372" cy="213.0" r="3.2" fill="#fff" stroke="#111" stroke-width=".6"/>
-<path d="M369.76,210.76 L374.24,215.24 M369.76,215.24 L374.24,210.76" stroke="#111" stroke-width=".45"/>
-<path d="M375.2,213 L382,213" fill="none" stroke="#111" stroke-width=".4"/>
-<circle cx="382" cy="213.0" r=".6" fill="#111"/>
-<text x="388" y="213.8" font-size="2.2" text-anchor="start" font-weight="normal" fill="#111">14 tail</text>
-<circle cx="372" cy="204.0" r="3.2" fill="#fff" stroke="#111" stroke-width=".6"/>
-<path d="M369.76,201.76 L374.24,206.24 M369.76,206.24 L374.24,201.76" stroke="#111" stroke-width=".45"/>
-<path d="M375.2,204 L382,204" fill="none" stroke="#111" stroke-width=".4"/>
-<circle cx="382" cy="204.0" r=".6" fill="#111"/>
-<text x="388" y="204.8" font-size="2.2" text-anchor="start" font-weight="normal" fill="#555">30 brake</text>
-<circle cx="372" cy="195.0" r="3.2" fill="#fff" stroke="#111" stroke-width=".6"/>
-<path d="M369.76,192.76 L374.24,197.24 M369.76,197.24 L374.24,192.76" stroke="#111" stroke-width=".45"/>
-<path d="M375.2,195 L382,195" fill="none" stroke="#111" stroke-width=".4"/>
-<circle cx="382" cy="195.0" r=".6" fill="#111"/>
-<text x="388" y="195.8" font-size="2.2" text-anchor="start" font-weight="normal" fill="#555">32 reversing</text>
-<circle cx="372" cy="186.0" r="3.2" fill="#fff" stroke="#111" stroke-width=".6"/>
-<path d="M369.76,183.76 L374.24,188.24 M369.76,188.24 L374.24,183.76" stroke="#111" stroke-width=".45"/>
-<path d="M375.2,186 L382,186" fill="none" stroke="#111" stroke-width=".4"/>
-<circle cx="382" cy="186.0" r=".6" fill="#111"/>
-<text x="388" y="186.8" font-size="2.2" text-anchor="start" font-weight="normal" fill="#111">14 tail</text>
-<circle cx="372" cy="177.0" r="3.2" fill="#fff" stroke="#111" stroke-width=".6"/>
-<path d="M369.76,174.76 L374.24,179.24 M369.76,179.24 L374.24,174.76" stroke="#111" stroke-width=".45"/>
-<text x="388" y="177.8" font-size="2.2" text-anchor="start" font-weight="normal" fill="#111">15 plate</text>
-<path d="M382,226.5 v3 M379,229.5 h6 M380,230.8 h4 M381,232.1 h2" stroke="#111" stroke-width=".5" fill="none"/>
-<circle cx="382" cy="226.5" r="1.0" fill="#111"/>
-<path d="M348.5,201.5 L342,201.5" fill="none" stroke="#222" stroke-width="0.9" stroke-linejoin="round"/>
-<path d="M348.5,201.5 L342,201.5" fill="none" stroke="#1f5fbf" stroke-width="0.5" stroke-linejoin="round"/>
-<circle cx="342" cy="201.5" r="1.3" fill="#fff" stroke="#222" stroke-width=".5"/>
-<rect x="321.4" y="200.0" width="17.400000000000002" height="3.6" fill="#fff" opacity=".85"/>
-<text x="322" y="203.0" font-size="2.8" text-anchor="start" font-weight="normal" fill="#111">46 BL 0.75</text>
-<path d="M351,177.0 L342,177.0" fill="none" stroke="#222" stroke-width="0.9" stroke-linejoin="round"/>
-<path d="M351,177.0 L342,177.0" fill="none" stroke="#1f5fbf" stroke-width="0.5" stroke-linejoin="round"/>
-<circle cx="342" cy="177.0" r="1.3" fill="#fff" stroke="#222" stroke-width=".5"/>
-<rect x="319.4" y="175.5" width="19.02" height="3.6" fill="#fff" opacity=".85"/>
-<text x="320" y="178.5" font-size="2.8" text-anchor="start" font-weight="normal" fill="#111">46a BL 0.75</text>
-<circle cx="348.5" cy="201.5" r="1.0" fill="#111"/>
-<circle cx="351" cy="177.0" r="1.0" fill="#111"/>
-<circle cx="354" cy="213.0" r="1.0" fill="#111"/>
-<circle cx="354" cy="186.0" r="1.0" fill="#111"/>
-<circle cx="354" cy="177.0" r="1.0" fill="#111"/>
+<path d="M375.2,134 L379,134" fill="none" stroke="#111" stroke-width=".4"/>
+<circle cx="379" cy="134.0" r=".6" fill="#111"/>
+<circle cx="364" cy="134" r=".8" fill="#fff" stroke="#111" stroke-width=".35"/>
+<path d="M364.8,134 L368.8,134" fill="none" stroke="#111" stroke-width=".4"/>
+<text x="362" y="134.75" font-size="2.0" text-anchor="end" font-weight="normal" fill="#555">137 VT: signals sheet</text>
+<text x="384" y="134.8" font-size="2.2" text-anchor="start" font-weight="normal" fill="#555">32 reversing</text>
+<text x="383.5" y="143.3" font-size="2.0" text-anchor="start" font-weight="normal" fill="#555">earth: check R3</text>
+<rect x="364" y="188" width="18" height="36" rx="1.2" fill="#fdfdfd" stroke="#111" stroke-width="0.6"/>
+<text x="373.0" y="186" font-size="2.6" text-anchor="middle" font-weight="normal" fill="#111">Rear lamp cluster L</text>
+<path d="M375.2,192.5 L379,192.5 L379,219.5" fill="none" stroke="#111" stroke-width=".4"/>
+<path d="M379,219.5 L379,224" fill="none" stroke="#888" stroke-width=".4"/>
+<path d="M379,224 v3 M376,227 h6 M377,228.3 h4 M378,229.6 h2" stroke="#888" stroke-width=".5" fill="none"/>
+<circle cx="379" cy="224" r="1.0" fill="#888"/>
+<circle cx="372" cy="192.5" r="3.2" fill="#fff" stroke="#111" stroke-width=".6"/>
+<path d="M369.76,190.26 L374.24,194.74 M369.76,194.74 L374.24,190.26" stroke="#111" stroke-width=".45"/>
+<circle cx="364" cy="192.5" r=".8" fill="#fff" stroke="#111" stroke-width=".35"/>
+<path d="M364.8,192.5 L368.8,192.5" fill="none" stroke="#111" stroke-width=".4"/>
+<text x="362" y="193.25" font-size="2.0" text-anchor="end" font-weight="normal" fill="#555">136 VT: signals sheet</text>
+<text x="384" y="193.3" font-size="2.2" text-anchor="start" font-weight="normal" fill="#555">32 reversing</text>
+<circle cx="372" cy="201.5" r="3.2" fill="#fff" stroke="#111" stroke-width=".6"/>
+<path d="M369.76,199.26 L374.24,203.74 M369.76,203.74 L374.24,199.26" stroke="#111" stroke-width=".45"/>
+<path d="M375.2,201.5 L379,201.5" fill="none" stroke="#111" stroke-width=".4"/>
+<circle cx="379" cy="201.5" r=".6" fill="#111"/>
+<circle cx="364" cy="201.5" r=".8" fill="#fff" stroke="#111" stroke-width=".35"/>
+<path d="M364.8,201.5 L368.8,201.5" fill="none" stroke="#111" stroke-width=".4"/>
+<text x="362" y="202.25" font-size="2.0" text-anchor="end" font-weight="normal" fill="#555">132 RD: signals sheet</text>
+<text x="384" y="202.3" font-size="2.2" text-anchor="start" font-weight="normal" fill="#555">30 brake</text>
+<circle cx="372" cy="210.5" r="3.2" fill="#fff" stroke="#111" stroke-width=".6"/>
+<path d="M369.76,208.26 L374.24,212.74 M369.76,212.74 L374.24,208.26" stroke="#111" stroke-width=".45"/>
+<path d="M375.2,210.5 L379,210.5" fill="none" stroke="#111" stroke-width=".4"/>
+<circle cx="379" cy="210.5" r=".6" fill="#111"/>
+<path d="M364,210.5 L368.8,210.5" fill="none" stroke="#111" stroke-width=".4"/>
+<text x="384" y="211.3" font-size="2.2" text-anchor="start" font-weight="normal" fill="#111">14 tail</text>
+<circle cx="372" cy="219.5" r="3.2" fill="#fff" stroke="#111" stroke-width=".6"/>
+<path d="M372,219.5 L369.74,217.24 A3.2,3.2 0 0 1 374.26,217.24 Z M372,219.5 L369.74,221.76 A3.2,3.2 0 0 0 374.26,221.76 Z" fill="#111"/><path d="M369.74,217.24 L374.26,221.76 M369.74,221.76 L374.26,217.24" stroke="#111" stroke-width=".45"/>
+<path d="M375.2,219.5 L379,219.5" fill="none" stroke="#111" stroke-width=".4"/>
+<circle cx="379" cy="219.5" r=".6" fill="#111"/>
+<circle cx="364" cy="219.5" r=".8" fill="#fff" stroke="#111" stroke-width=".35"/>
+<path d="M364.8,219.5 L368.8,219.5" fill="none" stroke="#111" stroke-width=".4"/>
+<text x="362" y="220.25" font-size="2.0" text-anchor="end" font-weight="normal" fill="#555">76 BL/VT: signals sheet</text>
+<text x="384" y="220.3" font-size="2.2" text-anchor="start" font-weight="normal" fill="#555">27 indicator</text>
+<text x="383.5" y="228.8" font-size="2.0" text-anchor="start" font-weight="normal" fill="#555">earth: check R3</text>
+<rect x="310" y="113.0" width="6" height="6" fill="#ddd" stroke="#111" stroke-width=".6"/>
+<text x="313" y="116.65" font-size="1.8" text-anchor="middle" font-weight="normal" fill="#555">1</text>
+<text x="313" y="111.8" font-size="2.0" text-anchor="middle" font-weight="normal" fill="#555">58 tail lamps</text>
+<rect x="310" y="207.5" width="6" height="6" fill="#ddd" stroke="#111" stroke-width=".6"/>
+<text x="313" y="211.15" font-size="1.8" text-anchor="middle" font-weight="normal" fill="#555">2</text>
+<text x="313" y="206.3" font-size="2.0" text-anchor="middle" font-weight="normal" fill="#555">58 tail lamps</text>
+<path d="M255,125 L255,116.0 L310,116.0" fill="none" stroke="#222" stroke-width="0.9" stroke-linejoin="round"/>
+<path d="M255,125 L255,116.0 L310,116.0" fill="none" stroke="#1e9e3e" stroke-width="0.5" stroke-linejoin="round"/>
+<rect x="261.4" y="111.5" width="17.400000000000002" height="3.6" fill="#fff" opacity=".85"/>
+<text x="262" y="114.5" font-size="2.8" text-anchor="start" font-weight="normal" fill="#111">44 GN 0.75</text>
+<path d="M316,116.0 L337,116.0" fill="none" stroke="#222" stroke-width="0.9" stroke-linejoin="round"/>
+<path d="M316,116.0 L337,116.0" fill="none" stroke="#1e9e3e" stroke-width="0.5" stroke-linejoin="round"/>
+<path d="M337,116.0 L364,116.0" fill="none" stroke="#222" stroke-width="0.9" stroke-linejoin="round"/>
+<path d="M337,116.0 L364,116.0" fill="none" stroke="#1e9e3e" stroke-width="0.5" stroke-linejoin="round"/>
+<path d="M255,178 L255,210.5 L310,210.5" fill="none" stroke="#222" stroke-width="0.9" stroke-linejoin="round"/>
+<path d="M255,178 L255,210.5 L310,210.5" fill="none" stroke="#1f5fbf" stroke-width="0.5" stroke-linejoin="round"/>
+<rect x="261.4" y="206.0" width="17.400000000000002" height="3.6" fill="#fff" opacity=".85"/>
+<text x="262" y="209.0" font-size="2.8" text-anchor="start" font-weight="normal" fill="#111">42 BL 0.75</text>
+<path d="M316,210.5 L364,210.5" fill="none" stroke="#222" stroke-width="0.9" stroke-linejoin="round"/>
+<path d="M316,210.5 L364,210.5" fill="none" stroke="#1f5fbf" stroke-width="0.5" stroke-linejoin="round"/>
+<rect x="335" y="118.0" width="7" height="4.0" fill="#ddd" stroke="#111" stroke-width=".6"/>
+<path d="M337,116 L337,122" fill="none" stroke="#888" stroke-width=".4"/>
+<path d="M340,118 L340,122" fill="none" stroke="#888" stroke-width=".4"/>
+<text x="333.5" y="119.8" font-size="2.0" text-anchor="end" font-weight="normal" fill="#555">59 number plate</text>
+<text x="333.5" y="122.6" font-size="2.0" text-anchor="end" font-weight="normal" fill="#555">(probably at the tailgate)</text>
+<path d="M337,122.0 L337,153.5 L368.5,153.5" fill="none" stroke="#222" stroke-width="0.9" stroke-linejoin="round" stroke-dasharray="3 2"/>
+<path d="M337,122.0 L337,153.5 L368.5,153.5" fill="none" stroke="#1e9e3e" stroke-width="0.5" stroke-linejoin="round" stroke-dasharray="3 2"/>
+<rect x="339.4" y="149.0" width="17.400000000000002" height="3.6" fill="#fff" opacity=".85"/>
+<text x="340" y="152.0" font-size="2.8" text-anchor="start" font-weight="normal" fill="#111">47 GN 0.75</text>
+<path d="M368.5,153.5 L391.5,153.5" fill="none" stroke="#222" stroke-width="0.9" stroke-linejoin="round" stroke-dasharray="3 2"/>
+<path d="M368.5,153.5 L391.5,153.5" fill="none" stroke="#1e9e3e" stroke-width="0.5" stroke-linejoin="round" stroke-dasharray="3 2"/>
+<rect x="369.9" y="149.0" width="19.02" height="3.6" fill="#fff" opacity=".85"/>
+<text x="370.5" y="152.0" font-size="2.8" text-anchor="start" font-weight="normal" fill="#111">47a GN 0.75</text>
+<path d="M368.5,153.5 L368.5,156.5" fill="none" stroke="#888" stroke-width=".4"/>
+<circle cx="368.5" cy="159.5" r="3.0" fill="#fff" stroke="#888" stroke-width=".6"/><path d="M366.4,157.4 L370.6,161.6 M366.4,161.6 L370.6,157.4" stroke="#888" stroke-width=".45"/>
+<path d="M368.5,162.5 v3 M365.5,165.5 h6 M366.5,166.8 h4 M367.5,168.1 h2" stroke="#888" stroke-width=".5" fill="none"/>
+<path d="M391.5,153.5 L391.5,156.5" fill="none" stroke="#888" stroke-width=".4"/>
+<circle cx="391.5" cy="159.5" r="3.0" fill="#fff" stroke="#888" stroke-width=".6"/><path d="M389.4,157.4 L393.6,161.6 M389.4,161.6 L393.6,157.4" stroke="#888" stroke-width=".45"/>
+<path d="M391.5,162.5 v3 M388.5,165.5 h6 M389.5,166.8 h4 M390.5,168.1 h2" stroke="#888" stroke-width=".5" fill="none"/>
+<text x="367.5" y="173.5" font-size="2.6" text-anchor="start" font-weight="bold" fill="#111">15</text>
+<text x="371.5" y="173.5" font-size="2.6" text-anchor="start" font-weight="normal" fill="#111">Number-plate lamps</text>
+<circle cx="364" cy="116.0" r="1.0" fill="#111"/>
+<circle cx="364" cy="210.5" r="1.0" fill="#111"/>
+<circle cx="310" cy="116.0" r="1.0" fill="#111"/>
+<circle cx="316" cy="116.0" r="1.0" fill="#111"/>
+<circle cx="310" cy="210.5" r="1.0" fill="#111"/>
+<circle cx="316" cy="210.5" r="1.0" fill="#111"/>
+<circle cx="337" cy="116.0" r="1.0" fill="#111"/>
+<circle cx="337" cy="122.0" r="1.0" fill="#111"/>
+<circle cx="368.5" cy="153.5" r="1.0" fill="#111"/>
+<circle cx="391.5" cy="153.5" r="1.0" fill="#111"/>
 <circle cx="146.8" cy="224" r="1.0" fill="#111"/>
 <circle cx="162.44" cy="224" r="1.0" fill="#111"/>
 <circle cx="178.08" cy="224" r="1.0" fill="#111"/>
@@ -586,11 +582,11 @@
 <circle cx="305" cy="253.5" r=".8" fill="#fff" stroke="#111" stroke-width=".35"/>
 <path d="M298.7,253.2 L304.6,251.1" stroke="#111" stroke-width=".75" stroke-linecap="round"/>
 <text x="308" y="254.5" font-size="2.4" text-anchor="start" font-weight="normal" fill="#111">faded blade: position when pulled</text>
-<text x="253" y="259.0" font-size="2.2" text-anchor="start" font-weight="normal" fill="#333">Headlamps need the ignition on (except the flash, stalk 9); parking/tail lights do not:</text>
-<text x="253" y="261.85" font-size="2.2" text-anchor="start" font-weight="normal" fill="#333">light switch 2 is fed from ignition switch X, light switch 3 from the always-live bar.</text>
-<text x="253" y="264.7" font-size="2.2" text-anchor="start" font-weight="normal" fill="#333">Headlamps are unfused: relay 30 is fed straight from the supply bar (20 GR 1.5).</text>
-<text x="253" y="267.55" font-size="2.2" text-anchor="start" font-weight="normal" fill="#333">Not RHD-specific: circuits should match the car, but harness routing and part positions may differ.</text>
-<text x="253" y="270.4" font-size="2.2" text-anchor="start" font-weight="normal" fill="#333">All bulbs in a lamp housing share its one earth. Indicators, brake and rear reversing bulbs: signals sheet.</text>
+<text x="253" y="259.0" font-size="2.2" text-anchor="start" font-weight="normal" fill="#333">Headlamps need the ignition on (except the flash, stalk 9); parking/tail lights do not: light switch 2 is fed from ignition</text>
+<text x="253" y="261.85" font-size="2.2" text-anchor="start" font-weight="normal" fill="#333">switch X, light switch 3 from the always-live bar. Headlamps are unfused: relay 30 is fed straight from the supply bar (20 GR 1.5).</text>
+<text x="253" y="264.7" font-size="2.2" text-anchor="start" font-weight="normal" fill="#333">Not RHD-specific: circuits should match the car, but harness routing and part positions may differ.</text>
+<text x="253" y="267.55" font-size="2.2" text-anchor="start" font-weight="normal" fill="#333">All bulbs in a lamp housing share its one earth (rear lights: check R3). The rear is drawn for the Combi Coupé (this car): fuse 2 probably also</text>
+<text x="253" y="270.4" font-size="2.2" text-anchor="start" font-weight="normal" fill="#333">feeds the number-plate lamps through 44 and connector 59. These lamps, 59 and 47/47a (dashed): not yet checked on the car (checks R1, R4, R5).</text>
 <text x="253" y="273.25" font-size="2.2" text-anchor="start" font-weight="normal" fill="#333">Corner lamps (dashed): dash switch 117 with pilot lamp, fed from fuse 5 (checks E19, F4); wiring probably as drawn,</text>
 <text x="253" y="276.1" font-size="2.2" text-anchor="start" font-weight="normal" fill="#333">colours: check E19b. 221 reaches the left housing through pin 2 of front lamp connector 58; 222a branches off for the right.</text>
 <text x="253" y="278.95" font-size="2.2" text-anchor="start" font-weight="normal" fill="#333">One bulb, two filaments: 5 W parking 13 from light switch 10, no ignition; 21 W corner lamp 118 from 117, ignition on (check E21).</text>
