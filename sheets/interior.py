@@ -13,12 +13,13 @@ def meander(x, y, w=10, up=1.2, down=1.8):
     s = w / 6
     pts = [(x, y)] + [(round(x + (k + j) * s, 2), round(y + (-up if k % 2 == 0 else down), 2)) for k in range(6) for j in (0, 1)] + [(x + w, y)]
     A(f'<path d="{path(pts)}" fill="none" stroke="#111" stroke-width=".4" stroke-linejoin="round"/>')
-def ref(x, y, sym, n, name, cables):
+def ref(x, y, sym, n, name, cables, more=None):
     if sym == 'lamp': lamp(x + 4, y - 1, r=3.2)
     else:
         A(f'<path d="M{x},{y + 1} l6,-4 M{x + 6},{y - 1} h3" stroke="#111" stroke-width=".6"/>')
     txt(x + 12, y, f'<tspan font-weight="bold">{n}</tspan> {name}', 2.7)
     txt(x + 12, y + 4.6, cables, 2.3, fill='#555')
+    if more: txt(x + 12, y + 8.4, more, 2.3, fill='#555')   # a third line, only where the row below is free
 
 txt(18, 40, 'Seat heating', 3.4, w='bold')
 # fuse 5 of fuse box 22, turned a quarter as on the radio sheet: the ignition-on bar runs down the left, its junction
@@ -45,6 +46,11 @@ dot(196, 62); dot(251, 52)
 txt(223.5, 71.5, '64 Seat heating element with thermostat', 2.5, 'middle', w='bold')
 wire('141', [(251, 52), (261, 52), (261, 57)], label=False); earth(261, 57); txt(265, 60, '141 SV 1.0', 2.2)
 wire('150', [(144, 62), (144, 86), (196, 86)], label=False); dot(144, 62); tag(198, 86, '150 GL 0.75 to seat contact 69 and belt contacts 70/71 (below)')
+# 214 BL (open): probably taps 140 on the fuse side of 58 (E12) for heated window switch 116; a T-joint just left of the
+# pin (as 150 leaves 60), so the dashes start at the dot, then down inside 150's corner to its tag; 32 down, so the corner
+# falls inside a dash
+wire('214', [(113, 62), (113, 94), (119, 94)], label=False); dot(113, 62)
+tag(121, 94, '214 BL 0.75 → heated window switch 116 (climate sheet); probably: check D14', w=94, dashed=True)
 
 txt(18, 108, 'Interior lights', 3.4, w='bold')
 txt(18, 114, 'Fuse 9’s 160 GL feeds 52, then 161 GL through dome light connector 57 to 50 and (163 GL) 55; 164 BL, 167 SV reach 50; 162/165 SV link 50–51; doors 170/171 SV.', 2.4, fill='#555')
@@ -53,8 +59,10 @@ items = [('lamp', '50', 'Dome light, door pillar', '164 BL 0.75, 167 SV 0.75'),
          ('lamp', '52', 'Ignition switch light', '161 GL 0.75, 164 BL 0.75, via dome light connector 57'),
          ('switch', '53', 'Interior lighting switch', '167a SV 0.75 via interior light switch connector 60, 169 SV 0.75'),
          ('switch', '54', 'Door switches', '170 SV 0.75, 171 SV 0.75'),
-         ('lamp', '55', 'Luggage compartment light', '163 GL 0.75, 166 BL 0.75 to switch 56'),
-         ('switch', '56', 'Luggage compartment light switch', '166 BL 0.75, earth')]
+         ('lamp', '55', 'Luggage compartment light', '163 GL 0.75, 166 BL 0.75 to switch 56 (166 may be black: check R7)',
+          'Combi Coupé: on the right-hand side of the luggage area, 10 W (check R7)'),
+         ('switch', '56', 'Luggage compartment light switch', '166 BL 0.75 (may be black: check R7), earth',
+          'Combi Coupé: a plunger at the tailgate striker, worked by the lock (check R7)')]
 for i, it in enumerate(items):
     ref(18 + (i % 2) * 190, 126 + (i // 2) * 14, *it)
 txt(18, 188, 'Dome light connector 57, 3-pole: pins carry 161 GL, 164 BL, and 167a SV (switch side) to 167 SV (lamp side). + is 160 GL from fuse 9.', 2.4)
@@ -90,7 +98,7 @@ notes = ['Seat heating: fuse 5 (ignition-on bar) feeds 140 GL 1.0 through brake 
          'seat heater connector 59 to seat heating element 64: two elements in series with a thermostat between them, drawn open (probably its warm state: it closes when cold).',
          'Return 141 SV 1.0 shares seat heater connector 59 (2-pole: 141 SV upper row, 140 GL lower) but is drawn straight to earth here.',
          'Interior lights and seat belt warning are listed as references only. The seat belt logic comes from the car (check I3); the contacts’ own wiring is not known.',
-         'Fuse 5 also powers the Turbo’s high-speed fuel boost (380 GL to speed transmitter, component 140; 380a GL to throttle switch 137): see the ignition sheet.',
+         'Fuse 5 also powers the Turbo’s high-speed fuel boost (380 GL to speed transmitter, component 140; 380a GL to throttle switch 137; ignition sheet) and, probably, heated window switch 116 through 214 BL (check D14; climate sheet).',
          'Not RHD-specific: circuits should match the car, but harness routing and part positions may differ.']
 for j, n in enumerate(notes): txt(lx + 108, ly + 6 + j * 5, n, 2.35, fill='#333')
 save('interior.svg')
