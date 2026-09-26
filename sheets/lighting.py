@@ -161,9 +161,6 @@ pL, pLb, kL, vL, eL = front_housing(191, 'L', 27)
 wire('361', [eR, (24, 138), (24, 161), (28, 161)], label=False)
 ltag('361', 28, 161, '→ washer pump 63 earth (wipers sheet)')
 wire('360', [eL, (24.6, 191), (24.6, 196)], 11, 188.8); earth(24.6, 196)
-reverse = '← 138 BL from reversing switch 31\nvia 58 (E12) and 58 (E2) (signals sheet)'
-wire('139a', [vR, (hx, 151.5), (52, 151.5)], label=False); ltag('139a', 52, 151.5, reverse)
-wire('139', [vL, (hx, 204.5), (52, 204.5)], label=False); ltag('139', 52, 204.5, reverse)
 
 # ---- corner lamps: switch 117 and the parking bulbs' second filament 118 -----------------------------
 # The 1979 Turbo print lists 117 and 118 (legend p.406) but draws only an empty pin 2 on 58 (E2). Drawn from the 1977
@@ -194,7 +191,7 @@ wire('223', [(kx + 18, ky + 6), (kx + 26, ky + 6)], label=False)                
 ltag('223', kx + 26, ky + 6, '→ clock 49\nearth, with 128 SV\n(radio sheet)')           # clock 49 and 128: radio sheet
 # 221 through pin 2 of the front 4-pole connector 58 (E2) (1979 GL print) on to the left housing; 222a branches off
 # the same pin's lead for the right one. The 1979 Turbo print draws pin 2 with no leads. Pins 1 and 3 are only
-# captioned (their leads are on the signals sheet); pin 4's 139/139a are drawn at the housings with their own tags.
+# captioned (their leads are on the signals sheet); pin 4's 139/139a are drawn below.
 wire('221', [(kx, ky + 19), (86, ky + 19)], 126, ky + 17)
 wire('221', [(80, ky + 19), (14.5, ky + 19), (14.5, 171), (kL[0], 171), kL], 17.5, 169)
 # 222a: square off 221 at a junction 4 mm from the pin (in 221's first gap), 6 mm down, left, down into housing R.
@@ -202,10 +199,19 @@ wire('221', [(80, ky + 19), (14.5, ky + 19), (14.5, 171), (kL[0], 171), kL], 17.
 wire('222a', [(76, ky + 19), (76, ky + 25), (kR[0], ky + 25), kR], 45, ky + 29.3)
 A(f'<rect x="80" y="{ky + 13}" width="6" height="16" fill="#ddd" stroke="#111" stroke-width=".6"/>')
 txt(83, ky + 11.3, '58 (E2)', 2.8, 'middle', w='bold')
-for n, dy, s in (('1', 15, '118 SV: horns'), ('2', 19, ''), ('3', 23, '77 BL/VT: indicator 27'), ('4', 27, '138 BL → 139/139a')):
+for n, dy, s in (('1', 15, '118 SV: horns'), ('2', 19, ''), ('3', 23, '77 BL/VT: indicator 27'), ('4', 27, '')):
     tlabel(83, ky + dy + .65, n, 'middle')
     if s: txt(87.5, ky + dy + .7, s, 2, fill='#555')
-txt(83, ky + 32.5, 'pin 2 bare on the 1979 Turbo print', 2, 'middle', fill='#555')
+txt(89.8, ky + 27.7, '138 BL ← reversing 31', 2, fill='#555')   # right of 139a's stub, which turns down
+txt(83, ky + 7.3, 'pin 2 bare on the 1979 Turbo print', 2, 'middle', fill='#555')   # above the name: 139/139a leave below
+# 139/139a from pin 4 as book photo P5 prints them: 139 from the housing side (left), 139a from 138's side (right).
+# Each leaves its pin with a short sideways stub (as 221 leaves pin 2) and drops, then runs round the right of housing
+# R's captions (end x 96) in a lane short of 24 GL (x 114) and back left under its housing into the lower bulb:
+# 139 in lane x 101 to L, 139a in lane x 107.5 to R. The two cross once, plainly, at (101, 151.5).
+# Crossings: 45 GN (both), 43 BL (139), 139/139a.
+wire('139', [(80, ky + 27), (78, ky + 27), (78, ky + 38), (101, ky + 38), (101, 204.5), (hx, 204.5), vL], 50, 208.8)
+wire('139a', [(86, ky + 27), (88, ky + 27), (88, ky + 34), (107.5, ky + 34), (107.5, 151.5), (hx, 151.5), vR],
+     50, 155.8)
 
 # ---- lighting relay 8 --------------------------------------------------
 # As the manual prints it (IMG_4719): all six terminals on the bottom edge, every contact in its printed rest state.
@@ -367,7 +373,7 @@ cluster(172.5, 'L', ('42', [(255, 178), (255, 213)], (314, 211)), 27, '46', '46a
 for p in [(x, yb) for x in bt.values()] + [(324, 36), (324, 48), (345, 36), (345, 48), (255, 125), (255, 178),
                                            (150, 149), (bt['S'], 264), (198, y9), mR, dR, cR, mL, dL, cL, dropL, pR, pL,
                                            kR, kL, vR, vL, eR, eL, (80, ky + 19), (86, ky + 19), (76, ky + 19), T['6'],
-                                           (kx, ky + 19), (kx + 18, ky + 6), (kx + 18, ky + 25), (kx + 8, ky + 30)]:
+                                           (80, ky + 27), (86, ky + 27), (kx, ky + 19), (kx + 18, ky + 6), (kx + 18, ky + 25), (kx + 8, ky + 30)]:
     dot(*p)
 
 # ---- legend ------------------------------------------------------------
