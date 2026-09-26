@@ -249,8 +249,8 @@
 <path d="M160,156 L150,156" fill="none" stroke="#222" stroke-width="1.7" stroke-linejoin="round"/>
 <path d="M160,156 L150,156" fill="none" stroke="#1e9e3e" stroke-width="1.1" stroke-linejoin="round"/>
 <path d="M160,156 L150,156" fill="none" stroke="#ffffff" stroke-width="0.5" stroke-dasharray="1.2 1.2"/>
-<rect x="90.92" y="153.4" width="57.08" height="5.2" rx="1" fill="#fff" stroke="#444" stroke-width=".4"/>
-<text x="92.42" y="157" font-size="2.6" text-anchor="start" font-weight="normal" fill="#111">377 GN/VT 0.75 <tspan font-family="Arial">←</tspan> 58/4 above, switch side</text>
+<rect x="92.27199999999999" y="153.4" width="55.728" height="5.2" rx="1" fill="#fff" stroke="#444" stroke-width=".4"/>
+<text x="93.77199999999999" y="157" font-size="2.6" text-anchor="start" font-weight="normal" fill="#111">377 GN/VT 0.75 <tspan font-family="Arial">←</tspan> 123 at 58 A4/4 (above)</text>
 <circle cx="160" cy="156" r="1.0" fill="#111"/>
 <circle cx="180" cy="156" r="1.0" fill="#111"/>
 <path d="M216,149.5 L212.5,153 L212.5,176.5 L208,176.5" fill="none" stroke="#222" stroke-width="1.7" stroke-linejoin="round"/>
