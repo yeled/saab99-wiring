@@ -245,7 +245,8 @@ A('<path d="M392,128 H397" stroke="#111" stroke-width=".6" fill="none"/>'); eart
 # ---- earth joint 158 (D6) --------------------------------------------------
 # The manual (IMG_4718, IMG_4720) prints six linked blocks, 2 rows x 3 columns, with no pin names; "158" beside them.
 # Every cable sits on the block where the manual has it: T1 281 and 92, T2 3, T3 212 and 201, B3 90, 107, 192 and 83.
-# Tags name where each cable comes from; 3 SV 2.5 goes to the central earth star, like the battery −.
+# Tags name where each cable comes from; 3 SV 2.5 goes to the central earth star, like the battery −. 192 also carries
+# speed transmitter 140's earth: 381 SV lands on brake warning switch 42's earth side (scan p.407), so its tag names it.
 TE = 367                                                   # right end of the tags
 C1, C2, C3 = 377, 385, 393                                 # block columns
 TY, BY = 243, 250                                          # block rows
@@ -257,7 +258,7 @@ J = {'201': '201 SV 0.75 ← 89:85 start relay coil (ignition sheet)',
      '92': '92 SV 1.0 ← 63 Washer pump (wipers sheet)',
      '90': '90 BL 1.0 ← 62 Wiper motor housing (wipers sheet)',
      '107': '107 SV 2.5 ← 36 Heater fan motor, via 57 heater fan (climate sheet)',
-     '192': '192 SV 0.75 ← 42 Brake warning switch',
+     '192': '192 SV 0.75 ← 42 Brake warning switch, with 381 SV from 140 Speed transmitter (ignition sheet)',
      '83': '83 SV 0.75 ← 83 Wiper interval relay (wipers sheet)'}
 ROUTE = {'201': [(C3 + 2.5, TY), (C3 + 8, TY), (C3 + 8, 205), (TE, 205)],       # out of T3's side, up and back over
          '212': [(C3, TY - 1.5), (C3, 212), (TE, 212)],
