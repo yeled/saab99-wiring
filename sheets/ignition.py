@@ -64,7 +64,11 @@ wire('123b', [(186, 54), (214, 54)], 188, 52.3); dot(170, 54); dot(186, 54)   # 
 txt(188, 57.4, 'book: GN/VT', 1.8, fill='#777')                     # yellow on the car (E2, E3)
 wire('394', [(174, 65), (174, 126), (112, 126), (112, 122)], 172.6, 116, rot=-90)
 box(214, 46, 18, 30); txt(223, 43.5, '5 Coil', 2.7, 'middle', w='bold')
-dot(214, 54); txt(216, 54.8, '15', 2.1, fill='#555'); dot(214, 68); txt(216, 68.8, '1', 2.1, fill='#555')
+# 5's terminals: scan p.407 (about x 3290-3340, y 1090) and book photo source/photos/book-1980-146-coil-124.jpg print
+# 15 on the upright coil's left shoulder and 1 on its right one; 124 crosses 123d and 284 on its way there too.
+# 1 on the bottom wall near the right corner, where the book's right shoulder lands when the coil is turned tower-right;
+# 15 stays on the left wall to meet 123b. 124 comes in from below (1's dot is drawn after it, on top)
+dot(214, 54); txt(216, 54.8, '15', 2.1, fill='#555'); txt(228, 73.6, '1', 2.1, 'middle', fill='#555')
 A('<circle cx="262" cy="61" r="9" fill="#fff" stroke="#111" stroke-width=".8"/><circle cx="262" cy="61" r="1" fill="#111"/>')
 txt(262, 48, '6 Distributor', 2.7, 'middle', w='bold')
 ht([(232, 61), (253, 61)])
@@ -84,9 +88,10 @@ for t, y in (('31', 45), ('31d', 52), ('7', 59), ('15', 66), ('16', 73), ('16', 
 wire('393', [(308, 45), (304.5, 45), (304.5, 35), (350, 35), (350, 39)], 318, 33.5); earth(350, 39)
 # 123d: +15 for 146 from 58 (A4) pin 4 on the 147 side, before the ballast resistor (book photo IMG_4729: it passes
 # under the coil without joining it); branched just right of the pin, it crosses 394 without a joint
-wire('123d', [(156, 54), (156, 73), (206, 73), (206, 112), (296, 112), (296, 66), (308, 66)], 220, 110.5); dot(156, 54)
-wire('124', [(308, 80), (304.5, 80), (304.5, 87), (346, 87)], label=False); e124 = tag(348, 87, '124 BL 1.5 → coil 5, terminal 1')
-if WIRES['124']['status'] == 'car': tick(e124 + 1.2, 86.4)
+wire('123d', [(156, 54), (156, 73), (206, 73), (206, 112), (296, 112), (296, 66), (308, 66)], 234, 110.5); dot(156, 54)
+# 124: lower 16 to coil 1. It has to cross 284 (which wraps the lower 16) and 123d (coil 1 sits inside 123d's loop);
+# it drops beside 146 and runs back under 123d's bottom run, clear of the HT leads
+wire('124', [(308, 80), (304.5, 80), (304.5, 120), (228, 120), (228, 76)], 258, 118.3); dot(228, 76)   # on top of the lead
 wire('284', [(308, 73), (300.5, 73), (300.5, 92), (360, 92), (360, 182), (233.5, 182), (227.5, 176)], 246, 180.3)   # into 102's bottom pair
 
 # ---- fuel pump relay, overboost switch, pump and injection parts -------
