@@ -147,7 +147,7 @@ wire('261', [T87, (247, 136.5), (290, 136.5), (290, 146), (300, 146)], 252, 134.
 A('<circle cx="306" cy="146" r="6" fill="#fff" stroke="#111" stroke-width=".7"/>'); txt(306, 147.2, 'M', 3, 'middle', w='bold')
 txt(306, 137.5, '103 Fuel pump', 2.6, 'middle', w='bold')
 # 262 SV 2.5 draws as a 2.9 mm black band: a longer run to the earth, so it reads as a lead, not a block on the pump
-wire('262', [(312, 146), (328, 146), (328, 150.5)], label=False); earth(328, 150.5)
+wire('262', [(312, 146), (328, 146), (328, 150.5)], 331.5, 150.2); earth(328, 150.5)
 wire('261a', [T87, (242.5, 130), (276, 130), (276, 166), (280, 166)], 250, 128.6)
 hdot(*T87)                                                           # 87 on top of both leads; r 1.8 also hides the ends of 261's 2.9 mm diagonal
 # 95 and 96: a winding each, drawn mirrored (manual: both terminals on the right wall, feed upper, earth lower)
