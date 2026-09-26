@@ -44,10 +44,8 @@ txt(18, 40, 'Windscreen wipers and washer', 3.4, w='bold')
 # fuse 4: one terminal with three legs, as in the manual (85 to the switch, 85a to the motor, the third to relay 83:15).
 # The third is printed 85b BR 0.75 at 83 (book photos P7b 1979, P7a 1980), fuse 4's right-hand leg.
 F4R = '85b'
-lab = lambda c: f"{c.split('#')[0]} {WIRES[c]['colour']} {WIRES[c]['mm2']}"
 fx, fy = bar_feed(86, f'<tspan font-weight="bold">F4</tspan> · {FUSES[4]["rating"]}', 'ignition-on bar', 4)
 wire('85a', [(fx, fy), (57, fy - 3), (57, fy - 8), (61, fy - 8)], label=False); tag(61, fy - 8, '85a BR 0.75 → wiper motor 62 (4)', size=2.4)
-wire(F4R, [(fx, fy), (57, fy + 3), (57, fy + 8), (61, fy + 8)], label=False); tag(61, fy + 8, f'{lab(F4R)} → interval relay 83 (15)', size=2.4)
 wire('85', [(fx, fy), (158, fy), (158, 91)], 64, fy - 1.5); dot(fx, fy)   # 85 over the 85a legs, then the terminal
 
 # ---- 61 wiper switch, drawn as the manual prints it (lever at rest, probably 'off'). Terminals: bottom edge 31b, S,
@@ -171,14 +169,15 @@ rx = lambda f: round(RX + f, 2)
 ry = lambda f: round(RY + f, 2)
 # leads: 91, 84 and 88 come in from switch 61 on the left, stacked so they turn up into T1-T3 without crossing each
 # other; 91 takes T1's printed diagonal (the print has it on 91a: same node) so 91a can drop straight to the pump and
-# the two GL wires never cross; 88a, 85b and 83 go right
+# the two GL wires never cross; 88a and 83 go right; 85b comes up into 15 from below (see its comment)
 wire('91', [(136, YB), (136, RB + 3.5), (T83[0] - 3.5, RB + 3.5), (T83[0], RB)], 150, RB + 2)
 wire('84', [(184, 56.5), (196, 56.5), (196, 138), (T83[1], 138), (T83[1], RB)], 199.5, 136.5)
 wire('88', [(121, YB), (121, 144), (T83[2], 144), (T83[2], RB)], 150, 142.5)
-wire('96', [(129, YB), (129, 104), (140, 104)], label=False); ftag(140, 104, '96 GR 0.75 → relay 67:86 (below)')   # S, via 58 (D8)
-wire('91a', [(T83[0], RB), (T83[0], 154), (320, 154)], 262, 152.5)
+wire('91a', [(T83[0], RB), (T83[0], 154), (320, 154)], 266, 152.5)
 wire('88a', [(T83[3], RB), (T83[3], 147), (382, 147), (382, 107), (370, 107)], 290, 145.5)
-wire(F4R, [(T83[4], RB), (T83[4], 137), (277, 137)], label=False); ftag(277, 137, f'{lab(F4R)} ← fuse 4')
+# 85b from fuse 4's lower leg: down the left, along under the switch and the relay (below 91a), up into 15; it crosses
+# 91a and 88a on its way up
+wire(F4R, [(fx, fy), (57, fy + 3), (57, 160), (T83[4], 160), (T83[4], RB)], 70, 158.5); dot(fx, fy)
 wire('83', [(T83[5], RB), (T83[5], 130), (277, 130)], label=False); ftag(277, 130, f'83 SV 0.75 {E158}')
 box(RX, RY, RW, RH)
 txt(RX + RW / 2 - 2.5, RY - 2.4, '83 Interval relay', 2.7, 'middle', w='bold'); txt(RX + RW / 2 + 11.5, RY - 2.4, '(D8)', 2.2, fill='#555')
@@ -227,7 +226,7 @@ def brush(x0, y0, a, L=2.6, w=1.5):
     A(f'<rect x="0" y="{-w / 2}" width="{L}" height="{w}" fill="#fff" stroke="#111" stroke-width=".4" '
       f'transform="translate({x0} {y0}) rotate({-a})"/>')
     return round(x0 + L * math.cos(math.radians(a)), 2), round(y0 - L * math.sin(math.radians(a)), 2)
-wire('85a', [(370, 101), (378, 101)], label=False); txt(380, 103.5, '85a', 2.1)
+wire('85a', [(370, 101), (375, 101)], label=False); ftag(375, 101, '85a BR 0.75 ← fuse 4 (left)')   # no clean route: 62:4 is fenced by 86, 87 and 88a
 # 89 SV (printed along its first run from 1) loops out and back to the housing's lower-right corner, where 90 BL leaves
 # for joint 158 (90: label read at 62; its 1979 run crosses a scan seam, so probably; the 1977 diagram draws it)
 wire('89', [(370, 113), (378.5, 113), (378.5, 118), (370, 118)], label=False); txt(370.9, 111.7, '89 SV 0.75', 2.0)
@@ -278,7 +277,15 @@ A('<rect x="156" y="221" width="8" height="7" fill="#fff" stroke="#111" stroke-w
 A('<path d="M156,224.5 H150 V232 M164,224.5 H170 V232" fill="none" stroke="#111" stroke-width=".4"/>')
 mlink([(160, 221), (160, 207.8)])   # mechanical link from the coil to both contacts
 wire('100', [(140, 207), (134, 207), (134, 186), (140, 186)], label=False); ftag(140, 186, '100 SV 0.75 → relay 102:31 (ignition sheet)')
-wire('96', [(170, 232), (170, 238), (178, 238)], label=False); tag(178, 238, '96 GR 0.75 ← wiper switch 61:S via 58 (D8)')
+# 96 from switch 61:S (the 1979 print leaves out S to 58 (D8)) down between 88 and 91, along through 58 (D8) pin 3,
+# down right of 67 across 95a and 98, and under 67 into 86; labelled on the run under 67, the part the print draws
+Y96, X96 = 173, 220
+wire('96', [(129, YB), (129, Y96), (X96, Y96), (X96, 238), (170, 238), (170, 232)], 186, 236.5)
+def pin58(x, y, name, pin):
+    """One pin of connector 58 on a horizontal run, as on the power sheet: grey block with the pin's two ends, name above, pin below."""
+    A(f'<rect x="{x}" y="{y - 4}" width="4" height="8" fill="#ddd" stroke="#111" stroke-width=".5"/>'); dot(x, y); dot(x + 4, y)
+    txt(x + 2, y - 5.7, name, 2.2, 'middle', w='bold'); txt(x + 2, y + 8.2, pin, 2.0, 'middle', fill='#555')
+pin58(198, Y96, '58 (D8)', 'pin 3')
 # 100a: a jumper outside the relay from 85 round to 87's lead, T-joined as the 1979 print draws it (1977: the full loop),
 # so 100 SV earths the coil through 87; it crosses 95 without joining
 wire('100a', [(150, 232), (150, 238), (134, 238), (134, 207)], label=False); dot(134, 207); txt(135.6, 242.2, '100a SV 0.75', 2.1)
@@ -352,7 +359,7 @@ notes = [f'Wipers run from fuse 4 on the ignition-on bar: 85 BR to the switch (5
          'The park link from the lever (up, over and down) stops short of 53 (grey: probably joined; park, braking and interval need it). '
          'P–Q, between the 54c and S lines, is printed closed, so fast would run the washer: probably a misprint (GLE keeps them apart; D10).',
          'The 1977 Turbo diagram (addendum p. 53) draws the park link closed and has no S–54c link, which supports the table’s grey and unsure marks. '
-         'It also draws 96 GR from S to 58; the 1979 print leaves out S to 58 (D8).',
+         'It also draws 96 GR from S to 58; the 1979 print leaves out S to 58 (D8), which 85, 86 and 87 also pass (only 96’s pin drawn).',
          'Headlight wipers: unfused tap 94 BR from bar 3–6, a 3 A glass fuse in holder 65 (manual, PDF p. 30), relay 67. '
          'Outside 67, 100a SV joins 85 to 87 (the 1979 print draws a T, the 1977 the whole loop), so 100 SV earths the coil.',
          'Relay 67: 88 is + from the 3 A fuse; 95a RD takes it to upper plug row 2 (probably) and 95b RD on to lower row 2 (the park switches); '
