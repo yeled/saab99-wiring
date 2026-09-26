@@ -50,11 +50,11 @@ wire('126a', [(128.4, 226.1), (126.5, 228), (126.5, 238), (180, 238), (180, 222)
 A('<rect x="129" y="215" width="12" height="14" fill="none" stroke="#111" stroke-width=".5"/>')   # frame over the wire ends
 inner([(132.5, 222), (137.5, 222)]); inner([(132.5, 222), (128.4, 226.1)], grey=True); dot(132.5, 222); dot(137.5, 222)
 A('<circle cx="208" cy="222" r="7" fill="#111"/>'); txt(218, 223, '<tspan font-weight="bold">48</tspan> Cigarette lighter', 2.8)
-wire('215', [(208, 229), (208, 234)], 211, 237); earth(208, 234)
+wire('215', [(208, 229), (208, 234)], 212.5, 237); earth(208, 234)   # labels clear of the earth bar's end (x 211)
 A('<circle cx="208" cy="192" r="8" fill="#fff" stroke="#111" stroke-width=".7"/><path d="M208,192 v-5 M208,192 h4" stroke="#111" stroke-width=".5"/>')
 txt(219, 193, '<tspan font-weight="bold">49</tspan> Clock', 2.8)
 wire('127', [(200, 192), (180, 192), (180, 222)], 181, 190.5); dot(180, 222)
-wire('128', [(208, 200), (208, 205)], 211, 207.5); earth(208, 205)
+wire('128', [(208, 200), (208, 205)], 212.5, 207.5); earth(208, 205)
 
 # ---- legend and notes ---------------------------------------------------------------
 lx, ly = 18, 250
@@ -65,10 +65,16 @@ for i, (k, n) in enumerate([('BL', 'Blue'), ('BR', 'Brown'), ('GL', 'Yellow'), (
     A(f'<path d="M{x},{y - 1} h7" stroke="#222" stroke-width="1.7"/><path d="M{x},{y - 1} h7" stroke="{COL[k]}" stroke-width="1.1"/>')
     txt(x + 9, y, f'{k} {n}', 2.5)
 x = lx + 4
-A(f'<path d="M{x},{ly + 17} h9" stroke="#222" stroke-width="1.2"/>'); txt(x + 11, ly + 18, 'traced (cable no. read)', 2.4)
-if DASHED[0]: A(f'<path d="M{x + 48},{ly + 17} h9" stroke="#222" stroke-width="1.2" stroke-dasharray="3 2"/>'); txt(x + 59, ly + 18, 'not traced yet', 2.4)
-if TICKED[0]: tick(x, ly + 23.3); txt(x + 4, ly + 24, 'checked on the car', 2.4)
-probable_legend(x, ly + (29 if TICKED[0] else 23))
+size_legend(x, ly + 18)                               # line widths, under the colours
+y = ly + 24                                           # text baseline of the status row: traced, then the dashed sample or the tick
+A(f'<path d="M{x},{y - 1} h9" stroke="#222" stroke-width="1.7"/>'); txt(x + 11, y, 'traced (cable no. read)', 2.4)
+if DASHED[0]: A(f'<path d="M{x + 48},{y - 1} h9" stroke="#222" stroke-width="1.7" stroke-dasharray="3 2"/>'); txt(x + 59, y, 'not traced yet', 2.4)
+def ticked(tx, ty): tick(tx, ty - .7); txt(tx + 4, ty, 'checked on the car', 2.4)   # the check mark sample, text baseline ty
+if TICKED[0] and not DASHED[0]: ticked(x + 48, y)    # beside 'traced' when the dashed sample leaves room
+if probable_legend(x, y + 5): y += 6
+if TICKED[0] and DASHED[0]:                           # else after the grey sample (4th colour column), or a row of its own
+    if PROBABLE[0]: ticked(x + 69, y)
+    else: y += 6; ticked(x, y)
 notes = ['Pin numbers and speaker polarity (342, 344 to +; 343, 345 to −) are from the radio installation page, PDF p. 798.',
          'The radio’s + (340 RD) comes from ignition switch X here, so it’s live with the key on; the radio page describes a battery feed.',
          'Left and right as on this car (check I1): right-hand speaker 344/345, left-hand 342/343, as the radio page shows; the 1979 Turbo diagram swaps them.',
