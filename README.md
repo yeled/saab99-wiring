@@ -4,6 +4,11 @@ A clean, printable redraw of the factory wiring diagram for the 1979 Saab 99
 Turbo, built from the Saab Service Manual 1975–1980 (diagram p. 371-28/29,
 PDF p. 406–407).
 
+It describes one car, a 3-door Combi Coupé, and is checked against it. The
+1979 Turbo diagram draws the saloon's rear lights, so the rear (four-bulb
+lights, two separate number-plate lamps) comes from the manual's 1977/78
+Turbo Combi Coupé diagrams instead.
+
 The wiring lives in CSV files; the drawings are generated from them. Change a
 wire's status in the CSV and the sheet updates.
 
