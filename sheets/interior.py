@@ -2,9 +2,7 @@
 """Render the 1979 Saab 99 Turbo interior lights, seat heating and seat belt warning sheet (A3 SVG)."""
 from common import *
 
-header('Saab 99 Turbo, model 1979 — Interior lights, seat heating, seat belt warning',
-       'Redrawn from Saab Service Manual 1975–1980, diagram p. 371-28/29 (PDF p. 406–407). '
-       'Component numbers as in the manual.')
+header('Saab 99 Turbo, model 1979 — Interior lights, seat heating, seat belt warning')
 def conn(x, y, h, lab, links=()):
     """In-line connector pin; links: row heights where the manual prints a through-link (a dot on both inner edges)."""
     A(f'<rect x="{x - 2}" y="{y - h / 2}" width="4" height="{h}" fill="#ddd" stroke="#111" stroke-width=".5"/>')
@@ -30,7 +28,7 @@ inner([(24, 59.5), (24, 69.5)]); contact(24, 62); txt(26, 69, 'ignition-on bar',
 fa, fb = fuse(30, 60.8, 10, 2.4); inner([(24.8, 62), fa]); inner([fb, (50, 62)]); dot(50, 62); tlabel(48.5, 60.6, '5', 'end')
 # 140 runs fuse 5 → 58 (E12) → 60 (A7) → 59 (A7) → 64; 150 leaves 60's fuse-side dot (its right one in the manual)
 wire('140', [(50, 62), (118, 62)], 58, 60.5); wire('140', [(122, 62), (148, 62)], label=False); wire('140', [(152, 62), (178, 62)], label=False)
-conn(120, 62, 8, '58 (E12)', links=(62,)); conn(150, 62, 8, '60 (A7)', links=(62,)); conn(180, 62, 8, '59 (A7)', links=(62,))
+conn(120, 62, 8, '58 brake/reversing', links=(62,)); conn(150, 62, 8, '60 seat feed', links=(62,)); conn(180, 62, 8, '59 seat heater', links=(62,))
 A('<path d="M182,62 H196" stroke="#111" stroke-width=".6"/>')
 # 64 as the manual prints it: lower element, thermostat (open), upper element, in series. The manual draws the two
 # elements side by side into both rows of 59; here they run in a line from 140 (left) to 141 (right).
@@ -44,28 +42,29 @@ inner([(223.8, 52), (230.2, 52)]); contact(231, 52); inner([(231.8, 52), (233.6,
 inner([(243.6, 52), (245.4, 52)]); contact(246.2, 52); inner([(247, 52), (251, 52)]); contact(223, 52)
 bimetal(223.4, 52.57, 227.85, 60)   # hangs from the top contact and rests on the right wall (a stop), clear of the bottom contact
 dot(196, 62); dot(251, 52)
-txt(223.5, 71.5, '64 Seat heating element with thermostat (A6)', 2.5, 'middle', w='bold')
+txt(223.5, 71.5, '64 Seat heating element with thermostat', 2.5, 'middle', w='bold')
 wire('141', [(251, 52), (261, 52), (261, 57)], label=False); earth(261, 57); txt(265, 60, '141 SV 1.0', 2.2)
-wire('150', [(144, 62), (144, 86), (196, 86)], label=False); dot(144, 62); tag(198, 86, '150 GL 0.75 to 59 (A8): seat and belt contacts')
+wire('150', [(144, 62), (144, 86), (196, 86)], label=False); dot(144, 62); tag(198, 86, '150 GL 0.75 to seat contact 69 and belt contacts 70/71 (below)')
 
 txt(18, 108, 'Interior lights', 3.4, w='bold')
-txt(18, 114, 'Fuse 9’s 160 GL feeds 52, then 161 GL through 57 to 50 and (163 GL) 55; 164 BL, 167 SV reach 50; 162/165 SV link 50–51; doors 170/171 SV.', 2.4, fill='#555')
-items = [('lamp', '50', 'Dome light, door pillar (A10)', '164 BL 0.75, 167 SV 0.75'),
-         ('lamp', '51', 'Dome light, rear-view mirror (A10)', '162 SV 0.75, 165 SV 0.75'),
-         ('lamp', '52', 'Ignition switch light (A9)', '161 GL 0.75, 164 BL 0.75, via connector 57'),
-         ('switch', '53', 'Interior lighting switch (A9)', '167a SV 0.75 via connector 60, 169 SV 0.75'),
-         ('switch', '54', 'Door switch (A9, A11, B11)', '170 SV 0.75'),
-         ('lamp', '55', 'Luggage compartment light (A10)', '163 GL 0.75, 166 BL 0.75 to switch 56'),
-         ('switch', '56', 'Luggage compartment light switch (A10)', '166 BL 0.75, earth')]
+txt(18, 114, 'Fuse 9’s 160 GL feeds 52, then 161 GL through dome light connector 57 to 50 and (163 GL) 55; 164 BL, 167 SV reach 50; 162/165 SV link 50–51; doors 170/171 SV.', 2.4, fill='#555')
+items = [('lamp', '50', 'Dome light, door pillar', '164 BL 0.75, 167 SV 0.75'),
+         ('lamp', '51', 'Dome light, rear-view mirror', '162 SV 0.75, 165 SV 0.75'),
+         ('lamp', '52', 'Ignition switch light', '161 GL 0.75, 164 BL 0.75, via dome light connector 57'),
+         ('switch', '53', 'Interior lighting switch', '167a SV 0.75 via interior light switch connector 60, 169 SV 0.75'),
+         ('switch', '54', 'Door switches', '170 SV 0.75, 171 SV 0.75'),
+         ('lamp', '55', 'Luggage compartment light', '163 GL 0.75, 166 BL 0.75 to switch 56'),
+         ('switch', '56', 'Luggage compartment light switch', '166 BL 0.75, earth')]
 for i, it in enumerate(items):
     ref(18 + (i % 2) * 190, 126 + (i // 2) * 14, *it)
-txt(18, 188, '57 3-pole connector (A10): pins carry 161 GL, 164 BL, and 167a SV (switch side) to 167 SV (lamp side). + is 160 GL from fuse 9.', 2.4)
+txt(18, 188, 'Dome light connector 57, 3-pole: pins carry 161 GL, 164 BL, and 167a SV (switch side) to 167 SV (lamp side). + is 160 GL from fuse 9.', 2.4)
 
 txt(18, 206, 'Seat belt warning', 3.4, w='bold')
 txt(18, 212, 'Fuse 5’s 150 GL reaches the seat and belt contacts; through them, 156 BR and 151 BR feed lamp 72, which returns on 157 SV (probably).', 2.3, fill='#555')
-txt(18, 216.4, 'On the car (I3): with the ignition on, the lamp stays lit until the driver buckles up; the passenger’s belt only counts while seat contact 69 is pressed.', 2.3, fill='#555')
-belt = [('switch', '69', 'Seat contact (A8)', 'passenger seat: closes when sat on (car, I3); via 59 (A8)'), ('switch', '70/71', 'Seat belt contacts L/R (A8)', 'open when buckled (car, I3); via 59 (A8); 168 SV 0.75 to earth'),
-        ('lamp', '72', 'Seat belt warning lamp (D12)', '151 BR 0.75 in, 157 SV 0.75 to earth, via 59 (C12)')]
+txt(18, 216.4, 'On the car (check I3): with the ignition on, the lamp stays lit until the driver buckles up; the passenger’s belt only counts while seat contact 69 is pressed.', 2.3, fill='#555')
+belt = [('switch', '69', 'Seat contact', 'passenger seat: closes when sat on (check I3); via seat belt contact connector 59'),
+        ('switch', '70/71', 'Seat belt contacts L/R', 'open when buckled (check I3); via seat belt contact connector 59; 168 SV 0.75 to earth'),
+        ('lamp', '72', 'Seat belt warning lamp', '151 BR 0.75 in, 157 SV 0.75 to earth, via seat belt lamp connector 59')]
 for i, it in enumerate(belt):
     ref(18 + (i % 2) * 190, 222 + (i // 2) * 12, *it)
 
@@ -87,11 +86,11 @@ if probable_legend(x, y + 5): y += 6
 if TICKED[0] and DASHED[0]:                           # else after the grey sample (4th colour column), or a row of its own
     if PROBABLE[0]: ticked(x + 69, y)
     else: y += 6; ticked(x, y)
-notes = ['Seat heating: fuse 5 (ignition-on bar) feeds 140 GL 1.0 through 58 (E12), an optional pin in the manual, then 60 (A7) and 59 (A7) to seat heating 64: two',
-         'elements in series with a thermostat between them, drawn open as printed (probably warm: it closes when cold); return 141 SV 1.0. The manual draws the',
-         'two elements side by side into 59’s two rows (140 GL lower, 141 SV upper); here they run in a line and 141 is drawn straight to earth.',
-         'Interior lights and seat belt warning are listed as references only. The seat belt logic comes from the car (check I3); the contacts’ wiring is too cramped to read in the book.',
+notes = ['Seat heating: fuse 5 (ignition-on bar) feeds 140 GL 1.0 through brake and reversing light connector 58, seat heating feed connector 60 and',
+         'seat heater connector 59 to seat heating element 64: two elements in series with a thermostat between them, drawn open (probably its warm state: it closes when cold).',
+         'Return 141 SV 1.0 shares seat heater connector 59 (2-pole: 141 SV upper row, 140 GL lower) but is drawn straight to earth here.',
+         'Interior lights and seat belt warning are listed as references only. The seat belt logic comes from the car (check I3); the contacts’ own wiring is not known.',
          'Fuse 5 also powers the Turbo’s high-speed fuel boost (380 GL to speed transmitter, component 140; 380a GL to throttle switch 137): see the ignition sheet.',
-         'Diagram is not RHD-specific: circuits should match, but harness routing and part positions may differ.']
+         'Not RHD-specific: circuits should match the car, but harness routing and part positions may differ.']
 for j, n in enumerate(notes): txt(lx + 108, ly + 6 + j * 5, n, 2.35, fill='#333')
 save('interior.svg')
