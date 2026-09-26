@@ -1207,8 +1207,7 @@
 <text x="223" y="43.5" font-size="2.7" text-anchor="middle" font-weight="bold" fill="#111">5 Coil</text>
 <circle cx="214" cy="54" r="1.0" fill="#111"/>
 <text x="216" y="54.8" font-size="2.1" text-anchor="start" font-weight="normal" fill="#555">15</text>
-<circle cx="214" cy="68" r="1.0" fill="#111"/>
-<text x="216" y="68.8" font-size="2.1" text-anchor="start" font-weight="normal" fill="#555">1</text>
+<text x="228" y="73.6" font-size="2.1" text-anchor="middle" font-weight="normal" fill="#555">1</text>
 <circle cx="262" cy="61" r="9" fill="#fff" stroke="#111" stroke-width=".8"/><circle cx="262" cy="61" r="1" fill="#111"/>
 <text x="262" y="48" font-size="2.7" text-anchor="middle" font-weight="bold" fill="#111">6 Distributor</text>
 <path d="M232,61 L253,61" fill="none" stroke="#444" stroke-width="1.1" stroke-linejoin="round"/>
@@ -1255,14 +1254,15 @@
 <path d="M156,54 L156,73 L206,73 L206,112 L296,112 L296,66 L308,66" fill="none" stroke="#222" stroke-width="1.7" stroke-linejoin="round"/>
 <path d="M156,54 L156,73 L206,73 L206,112 L296,112 L296,66 L308,66" fill="none" stroke="#1e9e3e" stroke-width="1.1" stroke-linejoin="round"/>
 <path d="M156,54 L156,73 L206,73 L206,112 L296,112 L296,66 L308,66" fill="none" stroke="#ffffff" stroke-width="0.5" stroke-dasharray="1.2 1.2"/>
-<rect x="219.4" y="107.5" width="23.88" height="3.8" fill="#fff" opacity=".85"/>
-<text x="220" y="110.5" font-size="2.8" text-anchor="start" font-weight="normal" fill="#111">123d GN/VT 1.0</text>
+<rect x="233.4" y="107.5" width="23.88" height="3.8" fill="#fff" opacity=".85"/>
+<text x="234" y="110.5" font-size="2.8" text-anchor="start" font-weight="normal" fill="#111">123d GN/VT 1.0</text>
 <circle cx="156" cy="54" r="1.0" fill="#111"/>
-<path d="M308,80 L304.5,80 L304.5,87 L346,87" fill="none" stroke="#222" stroke-width="1.7" stroke-linejoin="round"/>
-<path d="M308,80 L304.5,80 L304.5,87 L346,87" fill="none" stroke="#1f5fbf" stroke-width="1.1" stroke-linejoin="round"/>
-<rect x="348" y="84.4" width="44.912000000000006" height="5.2" rx="1" fill="#fff" stroke="#444" stroke-width=".4"/>
-<text x="349.5" y="88" font-size="2.6" text-anchor="start" font-weight="normal" fill="#111">124 BL 1.5 <tspan font-family="Arial">→</tspan> coil 5, terminal 1</text>
-<path d="M394.112,85.30000000000001 l0.9,1.0 l1.9,-2.4" fill="none" stroke="#1e7a3a" stroke-width="0.55" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M308,80 L304.5,80 L304.5,120 L228,120 L228,76" fill="none" stroke="#222" stroke-width="1.7" stroke-linejoin="round"/>
+<path d="M308,80 L304.5,80 L304.5,120 L228,120 L228,76" fill="none" stroke="#1f5fbf" stroke-width="1.1" stroke-linejoin="round"/>
+<rect x="257.4" y="115.3" width="17.400000000000002" height="3.8" fill="#fff" opacity=".85"/>
+<text x="258" y="118.3" font-size="2.8" text-anchor="start" font-weight="normal" fill="#111">124 BL 1.5</text>
+<path d="M275.4,116.60000000000001 l0.9,1.0 l1.9,-2.4" fill="none" stroke="#1e7a3a" stroke-width="0.55" stroke-linecap="round" stroke-linejoin="round"/>
+<circle cx="228" cy="76" r="1.0" fill="#111"/>
 <path d="M308,73 L300.5,73 L300.5,92 L360,92 L360,182 L233.5,182 L227.5,176" fill="none" stroke="#222" stroke-width="1.7" stroke-linejoin="round"/>
 <path d="M308,73 L300.5,73 L300.5,92 L360,92 L360,182 L233.5,182 L227.5,176" fill="none" stroke="#1f5fbf" stroke-width="1.1" stroke-linejoin="round"/>
 <rect x="245.4" y="177.3" width="19.02" height="3.8" fill="#fff" opacity=".85"/>
@@ -3166,5 +3166,5 @@
 <text x="126" y="276" font-size="2.35" text-anchor="start" font-weight="normal" fill="#333">Fuse 5 also powers the Turbo’s high-speed fuel boost (380 GL to speed transmitter, component 140; 380a GL to throttle switch 137): see the ignition sheet.</text>
 <text x="126" y="281" font-size="2.35" text-anchor="start" font-weight="normal" fill="#333">Diagram is not RHD-specific: circuits should match, but harness routing and part positions may differ.</text>
 </g></svg>
-<g font-family="Helvetica, Arial, sans-serif"><text x="20.580808080808083" y="834.0" font-size="8" font-weight="bold">Saab 99 Turbo, model 1979: wiring redrawn</text><text x="197.58080808080808" y="834.0" font-size="4.2" fill="#444">from the Saab Service Manual 1975–1980, diagram p. 371-28/29. Wires: 168 traced, 6 not traced yet, 4 end on the diagram, 8 checked on the car. Colour codes are Swedish (GL gul = yellow, SV svart = black, VT vit = white). Generated 25 September 2026.</text></g>
+<g font-family="Helvetica, Arial, sans-serif"><text x="20.580808080808083" y="834.0" font-size="8" font-weight="bold">Saab 99 Turbo, model 1979: wiring redrawn</text><text x="197.58080808080808" y="834.0" font-size="4.2" fill="#444">from the Saab Service Manual 1975–1980, diagram p. 371-28/29. Wires: 168 traced, 6 not traced yet, 4 end on the diagram, 8 checked on the car. Colour codes are Swedish (GL gul = yellow, SV svart = black, VT vit = white). Generated 26 September 2026.</text></g>
 </svg>
