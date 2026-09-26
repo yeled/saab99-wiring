@@ -1362,11 +1362,15 @@
 <path d="M242.5,140 L247,136.5 L290,136.5 L290,146 L300,146" fill="none" stroke="#8a8a8a" stroke-width="2.3" stroke-linejoin="round"/>
 <rect x="251.4" y="131.20000000000002" width="17.400000000000002" height="3.6" fill="#fff" opacity=".85"/>
 <text x="252" y="134.20000000000002" font-size="2.8" text-anchor="start" font-weight="normal" fill="#111">261 GR 2.5</text>
+<path d="M269.4,132.50000000000003 l0.9,1.0 l1.9,-2.4" fill="none" stroke="#1e7a3a" stroke-width="0.55" stroke-linecap="round" stroke-linejoin="round"/>
 <circle cx="306" cy="146" r="6" fill="#fff" stroke="#111" stroke-width=".7"/>
 <text x="306" y="147.2" font-size="3" text-anchor="middle" font-weight="bold" fill="#111">M</text>
 <text x="306" y="137.5" font-size="2.6" text-anchor="middle" font-weight="bold" fill="#111">103 Fuel pump</text>
 <path d="M312,146 L328,146 L328,150.5" fill="none" stroke="#222" stroke-width="2.9" stroke-linejoin="round"/>
 <path d="M312,146 L328,146 L328,150.5" fill="none" stroke="#111111" stroke-width="2.3" stroke-linejoin="round"/>
+<rect x="330.9" y="147.2" width="17.400000000000002" height="3.6" fill="#fff" opacity=".85"/>
+<text x="331.5" y="150.2" font-size="2.8" text-anchor="start" font-weight="normal" fill="#111">262 SV 2.5</text>
+<path d="M348.9,148.5 l0.9,1.0 l1.9,-2.4" fill="none" stroke="#1e7a3a" stroke-width="0.55" stroke-linecap="round" stroke-linejoin="round"/>
 <path d="M328,150.5 v3 M325,153.5 h6 M326,154.8 h4 M327,156.1 h2" stroke="#111" stroke-width=".5" fill="none"/>
 <path d="M242.5,140 L242.5,130 L276,130 L276,166 L280,166" fill="none" stroke="#222" stroke-width="0.9" stroke-linejoin="round"/>
 <path d="M242.5,140 L242.5,130 L276,130 L276,166 L280,166" fill="none" stroke="#8a8a8a" stroke-width="0.5" stroke-linejoin="round"/>
@@ -3255,5 +3259,5 @@
 <text x="126" y="276" font-size="2.35" text-anchor="start" font-weight="normal" fill="#333">Fuse 5 also powers the Turbo’s high-speed fuel boost (380 GL to speed transmitter, component 140; 380a GL to throttle switch 137): see the ignition sheet.</text>
 <text x="126" y="281" font-size="2.35" text-anchor="start" font-weight="normal" fill="#333">Not RHD-specific: circuits should match the car, but harness routing and part positions may differ.</text>
 </g></svg>
-<g font-family="Helvetica, Arial, sans-serif"><text x="20.580808080808083" y="834.0" font-size="8" font-weight="bold">Saab 99 Turbo, model 1979: wiring diagram</text><text x="197.58080808080808" y="834.0" font-size="4.2" fill="#444">Wires: 168 traced, 6 not traced yet, 4 end on the diagram, 8 checked on the car. Colour codes are Swedish (GL gul = yellow, SV svart = black, VT vit = white). Generated 26 September 2026.</text></g>
+<g font-family="Helvetica, Arial, sans-serif"><text x="20.580808080808083" y="834.0" font-size="8" font-weight="bold">Saab 99 Turbo, model 1979: wiring diagram</text><text x="197.58080808080808" y="834.0" font-size="4.2" fill="#444">Wires: 166 traced, 6 not traced yet, 4 end on the diagram, 10 checked on the car. Colour codes are Swedish (GL gul = yellow, SV svart = black, VT vit = white). Generated 26 September 2026.</text></g>
 </svg>
