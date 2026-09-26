@@ -104,12 +104,71 @@ tag(TX + 14, TY - 24, f"{lab('204')} ← service outlet 73, pin 5, with 284a (ig
 # 179 earths 47 through panel light connector 59 (59 (D11)), 52 SV and hazard switch 25's lamp terminal, which 69 SV
 # earths (signals sheet): the only earth printed for this chain
 wire('179', [(271, 190), (271, 198)], label=False)
-tag(273, 198, f"{lab('179')} → panel light connector 59 → 52 {WIRES['52']['colour']} → hazard switch 25’s lamp → "
-              f"69 {WIRES['69']['colour']} → earth (signals sheet)", w=130.5)   # the staircase's size 2.6; w from the rendered text
+tag(273, 198, f"{lab('179')} → panel light connector 59 (lower left), then 52 → 69 → earth")   # no clean route across the sheet
 wire('182', [(260, 190), (260, 206)], label=False); tag(262, 206, '182 BR/VT 0.75 ← fuse 4 (off 85 BR at stalk switch connector 58)')
 wire('71', [(235, 190), (235, 214)], label=False); tag(237, 214, '71 GN/VT 0.75 ← 23 flasher unit, terminal C')
 wire('187', [(200, 190), (200, 222)], label=False); tag(202, 222, '187 VT 0.75 → ignition switch connector 58 → 188 VT → 43 handbrake, 42 brake warning switch')
 wire('27', [(170, 190), (170, 230)], label=False); tag(172, 230, '27 BL/VT 0.75 ← 8 lighting relay 56a (lighting sheet)')
+
+# ---- panel lighting: rheostat 16, panel light connector 59 (59 (D11)), lamps 17, 18, 19 -------------------------
+# As the 1979 book prints it (scan p.407 x 6650-7010, y 1930-2800; book photos IMG_4708, IMG_4701): 50 GN from fuse 2
+# (off 44 GN at tail lamp connector 58 row 1, lighting sheet) through rheostat 16 and 51 GN to 59's GN pin. Every lamp
+# sits between a GN (feed) side and an SV (earth) side; the SV pin returns through 52 SV to hazard switch 25's lamp
+# terminal, which 69 SV earths (signals sheet), with 47's 179. 59 has no pin numbers: two upright pins, a dot at each end.
+XF, Y16 = 108, 175                      # feed column (50, 16, 51, 59's GN pin); rheostat top
+XP, YT, YB = XF - 6, 194.5, 199.5       # 59's SV pin; top and bottom dots
+XS, XG, XLOOP = 131, 138, 144           # SV and GN rails (the 18s' and 19's left and right edges); 61's loop
+LX, LR, R17 = 134.5, 3.5, 3             # lamp centre x and radius on the rails; the 17s' radius (pin pitch / 2)
+Y18U, Y18L, Y19 = 204.5, 223, 242
+Y17, X17L, X17R = Y18L + R17, XF - R17, 118    # the right 17's top touches 62 (y Y18L), its bottom 61
+def rheostat(x, y, w=3.2, h=9):
+    """Rheostat as printed: an upright box crossed by a straight arrow from lower left to upper right, head outside the
+    top-right corner. Returns its top and bottom lead ends."""
+    A(f'<rect x="{x - w / 2}" y="{y}" width="{w}" height="{h}" fill="#fff" stroke="#111" stroke-width=".7"/>')
+    x0, y0, x1, y1 = x - w / 2 - 1.6, y + h - 1.2, x + w / 2 + 1.4, y + 1.2
+    A(f'<path d="M{x0},{y0} L{x1},{y1}" stroke="#111" stroke-width=".4"/>')
+    A(f'<path d="M{x1 + .6},{round(y1 - .9, 2)} L{round(x1 - 1.3, 2)},{round(y1 + .2, 2)} L{round(x1 - .2, 2)},{round(y1 + 1.4, 2)} Z" fill="#111"/>')
+    return (x, y), (x, y + h)
+# feed: fuse 2 → 50 → 16 → 51 → 59
+wire('50', [(XF - 3, 170), (XF, 170), (XF, Y16)], label=False)
+mtag(XF - 3, 170, (f"{lab('50')} ← fuse 2 (right park, tail, plate), off 44 GN", 'at tail lamp connector 58 (lighting sheet)'),
+     w=62, anchor='end')
+(t16, b16) = rheostat(XF, Y16)
+txt(XF + 4, Y16 + 5.6, '<tspan font-weight="bold">16</tspan> Rheostat (dimmer)', 2.6)
+wire('51', [b16, (XF, YT)], XF + 1.8, 190.5)
+# 59's leads: SV pin 179 (from 47:4) and 52 (to 25) on top, 54 and 56 below; GN pin 51 on top, 53 and 55 below
+wire('179', [(XP, YT), (XP, 184.5), (XP - 3, 184.5)], label=False)
+tag(XP - 3, 184.5, f"{lab('179')} ← 47 terminal 4 (above)", anchor='end', size=2.4)
+wire('52', [(XP, YT), (XP - 7, YT)], label=False)
+mtag(XP - 7, YT + 1.2, (f"{lab('52')} → hazard switch 25’s lamp terminal", f"→ 69 {WIRES['69']['colour']} {WIRES['69']['mm2']} → earth (signals sheet)"),
+     w=55, anchor='end')
+wire('54', [(XP, YB), (XP, Y17)], XP - 1.2, Y17 - 5, rot=-90)
+wire('53', [(XF, YB), (XF, Y17)], XF + 3.2, Y17 - 4, rot=-90)
+wire('55', [(XF, YB), (XG, YB), (XG, Y18U)], XF + 6, YB - 1.4)
+wire('56', [(X17L, YB + 1.5), (X17L, Y18U), (XS, Y18U)], XF + 6, Y18U + 3.6)
+# the connector over the wire ends: box, two upright pins with a dot at each end; 56's pin is hidden in the book's frame
+A(f'<rect x="{XP - 3}" y="{YT - 2}" width="{XF - XP + 6}" height="{YB - YT + 4}" fill="#ddd" stroke="#111" stroke-width=".6"/>')
+for x in (XP, XF): inner([(x, YT), (x, YB)]); jdot(x, YT); jdot(x, YB)
+inner([(XP, YB), (X17L, YB + 1.5)], grey=True)           # 56 SV: probably the SV pin (join hidden in the frame; check D17)
+txt(XF + 4.5, YT - 0.2, '<tspan font-weight="bold">59</tspan> panel light connector', 2.2, fill='#555')
+# lamps: 18, 18 and 19 on the rails; 17 left between 59's pin leads, 17 right between 62 (top) and 61 (bottom)
+wire('57', [(XG, Y18U), (XG, Y18L)], XG + 1.5, (Y18U + Y18L) / 2 + 1)
+wire('58', [(XS, Y18U), (XS, Y18L)], XS - 17.7, (Y18U + Y18L) / 2 + 1)
+wire('59', [(XG, Y18L), (XG, Y19)], XG + 1.5, (Y18L + Y19) / 2 + 3.5)
+wire('60', [(XS, Y18L), (XS, Y19)], XS - 17.7, (Y18L + Y19) / 2 + 3.5)
+wire('62', [(XS, Y18L), (X17R, Y18L)], X17R - 4, Y18L - 1.4)
+wire('61', [(X17R, Y17 + R17), (XLOOP, Y17 + R17), (XLOOP, Y18L), (XG, Y18L)], XLOOP + 1.5, Y17 + R17 + 1)
+for y in (Y18U, Y18L, Y19): lamp(LX, y, r=LR)
+for x in (X17L, X17R): lamp(x, Y17, r=R17)
+txt(XLOOP + 2, Y18U + 1, '18', 2.8, w='bold'); txt(XLOOP + 2, Y18L - 2.5, '18', 2.8, w='bold'); txt(XG + 2, Y19 + 2.5, '19', 2.8, w='bold')
+txt((X17L + X17R) / 2, Y17 + R17 + 4, '17', 2.8, 'middle', w='bold')
+for j, s in enumerate(['<tspan font-weight="bold">Panel lighting</tspan> (sidelights on; dimmed by 16)',
+                       '<tspan font-weight="bold">17</tspan> Switch lights (two; which switches: check D18)',
+                       '<tspan font-weight="bold">18</tspan> Instrument panel light (two)',
+                       '<tspan font-weight="bold">19</tspan> Glove compartment and heater control lights',
+                       '(drawn as one lamp; one bulb or two: check D18)']):
+    txt(20, 210 + j * 3.6, s, 2.4)
+
 
 # ---- legend and notes ------------------------------------------------------------
 lx, ly = 18, 250
@@ -137,7 +196,7 @@ notes = ['Inside 47 (its own terminal numbers): a + rail from 2 (182) feeds both
          'Supply: 182 BR/VT from fuse 4, branching off the wiper feed 85 BR at stalk switch connector 58. Tachometer: signal 204 GL from '
          'service outlet 73 pin 5 (beside 284a), through tachometer connector 60; supply probably 203 from heated window switch 116.',
          'Earth: 47’s 4 (179 SV) goes through panel light connector 59 and 52 SV to hazard switch 25’s lamp terminal, which 69 SV earths '
-         '(signals sheet); the panel lamps (not drawn) earth the same way.',
+         '(signals sheet); the panel lamps (lower left) earth the same way.',
          'Fuel level transmitter 46: its third lead, 190 SV, is probably its earth. It meets the pump’s earth 262 at tank earth connector 60 '
          'and goes on as 191 SV 2.5 to earth, probably near the tank.',
          '44 and 45 are drawn with the sender symbol (heavy square with a diagonal, not a winding), each with its own earth lead '
