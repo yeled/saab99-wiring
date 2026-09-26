@@ -3,22 +3,22 @@
 import math
 from common import *
 
-header('Saab 99 Turbo, model 1979 — Indicators, hazards, brake and reversing lights',
-       'Redrawn from Saab Service Manual 1975–1980, diagram p. 371-28/29 (PDF p. 406–407). '
-       'Component numbers as in the manual.')
+header('Saab 99 Turbo, model 1979 — Indicators, hazards, brake and reversing lights')
 
 
-def conn(x, y, h, lab, links=()):
-    """In-line connector; links: row heights where the manual prints a through-link (a dot on both inner edges)."""
+def conn(x, y, h, lab, links=(), below=False):
+    """In-line connector; links: row heights where the manual prints a through-link (a dot on both inner edges).
+    lab: its name, one string per line, centred above it (below=True: under it)."""
     A(f'<rect x="{x - 2}" y="{y - h / 2}" width="4" height="{h}" fill="#ddd" stroke="#111" stroke-width=".5"/>')
     for ry in links: inner([(x - 2, ry), (x + 2, ry)]); dot(x - 2, ry); dot(x + 2, ry)
-    txt(x, y - h / 2 - 1.5, lab, 2.2, 'middle', fill='#555')
+    y0 = y + h / 2 + 3.1 if below else y - h / 2 - 1.5 - 2.7 * (len(lab) - 1)
+    for i, s in enumerate(lab): txt(x, round(y0 + 2.7 * i, 2), s, 2.2, 'middle', fill='#555')
 
 
 def fuse_box(y, n):
     """One fuse of fuse box 22, turned a quarter as on the radio sheet: the bar (junction ring) feeds the fuse,
     and its bottom terminal n is the dot on the box edge."""
-    box(18, y - 8, 32, 16); txt(21, y - 3.4, f'<tspan font-weight="bold">F{n}</tspan> · {FUSES[n]["rating"]}', 2.6)
+    box(18, y - 8, 32, 16); txt(21, y - 3.4, f'<tspan font-weight="bold">Fuse {n}</tspan> · {FUSES[n]["rating"]}', 2.6)
     inner([(22, y - 2.2), (22, y + 6)]); contact(22, y)
     fa, fb = fuse(29, y - 1.2, 10, 2.4); inner([(22.8, y), fa]); inner([fb, (50, y)])
     dot(50, y); tlabel(48.6, y - 1.3, str(n), 'end')
@@ -152,10 +152,10 @@ LB, RB = 101, 111                       # rows of 58 (D8) and 58 (B9): L (75/77/
 D8, B9 = 241, 275
 wire('75', [(231, 88), (231, LB), (D8 - 2, LB)], label=False)
 wire('78', [(219, 88), (219, RB), (D8 - 2, RB)], label=False)
-conn(D8, (LB + RB) / 2, RB - LB + 7, '58 (D8)', links=(LB, RB))
+conn(D8, (LB + RB) / 2, RB - LB + 7, ('stalk switch', 'connector 58'), links=(LB, RB), below=True)   # 58 (D8)
 wire('75', [(D8 + 2, LB), (B9 - 2, LB)], 246, LB - 1.5)
 wire('78', [(D8 + 2, RB), (B9 - 2, RB)], 246, RB - 1.5)
-conn(B9, (LB + RB) / 2, RB - LB + 7, '58 (B9)', links=(LB, RB))
+conn(B9, (LB + RB) / 2, RB - LB + 7, ('ignition switch', 'connector 58'), links=(LB, RB), below=True)   # 58 (B9)
 
 # lamps: left side (front, rear cluster), then right side. As printed, the front cables (77, 80) leave 75's and 78's pins
 # on 58 (B9)'s near side and only the rear ones (76, 79) pass it. 77 is drawn so; 80 branches off 79 past B9, since from
@@ -191,7 +191,7 @@ blade(93.85, 173.24, 99.6, 170.9); blade(99.6, 170.9, 106, 168.33, grey=True)
 contact(111, 173.5, grey=True); inner([(111.8, 173.5), (114, 173.5)]); dot(90, 173.5); dot(114, 173.5)
 wire('132', [(114, 173.5), (158, 173.5)], 120, 172)
 # 58 (E12): rows 2, 3 and 4 (132, 135, 138); row 1 (140 GL, interior sheet) is not drawn
-conn(160, 195.6, 55.2, '58 (E12)', links=(173.5, 195, 217.7))
+conn(160, 195.6, 55.2, ('brake and reversing', 'light connector 58'), links=(173.5, 195, 217.7))   # 58 (E12)
 # 132 goes on to the left brake light; 133 leaves that feed for the right one (four verticals in a row, so the
 # crossings stay three: 79 over 132 and 136, 133 over 136)
 wire('132', [(162, 173.5), (289, 173.5), (289, yl[1]), (CX0, yl[1])], 200, 172)
@@ -207,8 +207,8 @@ contact(202, 217.7); inner([(202, 218.5), (202, 220)]); dot(202, 220); inner([(1
 # 138 BL: from 31's switched side back through 58 (E12) row 4, on to 58 (E2) and the front housings' lower bulbs
 wire('138', [(196, 217.7), (162, 217.7)], 166, 216.2)
 wire('138', [(158, 217.7), (138, 217.7)], label=False)
-t138 = '→ via 58 (E2) to front side back-up lights (lighting sheet)'
-tag(138, 217.7, t138, w=67.5, anchor='end')
+t138 = '→ via front lamp connector 58 to the side back-up lights (lighting sheet)'   # 58 (E2)
+tag(138, 217.7, t138, w=86, anchor='end')
 # 136 goes on to the left reversing light; 137 leaves that feed for the right one
 wire('136', [(202, 220), (202, 225), (295, 225), (295, yl[2]), (CX0, yl[2])], 230, 223.5)
 wire('137', [(301, yl[2]), (301, yr[2]), (CX0, yr[2])], 317, 181); dot(301, yl[2])
@@ -241,20 +241,25 @@ if TICKED[0] and DASHED[0]:                           # else after the grey samp
     if PROBABLE[0]: ticked(x + 69, y)
     else: y += 6; ticked(x, y)
 notes = ['Flasher 23 is fed on 49 from fuse 11 (always-live bar). 49a (73 GN) feeds the hazard switch’s +, which feeds the indicator switch’s 54; '
-         'C (71 GN/VT) works the dash indicator lamp. Its 31 prints with no wire, so its earth is grey (probably through the mounting).',
-         'Switches are drawn at rest, as printed. Pressed, hazard switch 25 closes its lamp, R and L contacts together (lamp: on the car), so + feeds both sides (68 RD/VT, 67 BL/VT).',
-         'The manual prints 25’s terminals +, R and L (none on the lamp’s) and 24’s 54, R and L. 73 GN lands on + beside the wire to 54 (probably the same terminal).',
-         '25’s lamp contact prints merged into the blade root; on the car it is open at rest (the lamp stays dark with the indicators and blinks with the hazards: check D7). '
-         'Grey: the end of 29’s blade and its right contact, printed running together; probably open at rest.',
-         'The + to 54 wire is 74 GN 1.0: the 1979 print blots its second digit, but the 1977 Turbo diagram and another year’s print read 74. 73 GN also lands on +.',
-         '24’s own outputs are 75 BL/VT and 78 RD/VT, through 58 (D8) to 58 (B9). 77/80 (front) leave on B9’s near side, as printed, and only '
-         '76/79 (rear, route not traced yet) pass it; 80 is drawn branching off 79 past it, for room.',
-         'Each lamp housing has one earth for all its bulbs (parking, tail and number-plate bulbs: lighting sheet). Turned for the layout: the manual prints '
-         'the front housings mirrored (flat end and earth on the left) and the left rear cluster upside down.',
-         'Not in the data yet: the rear cluster earths (189 SV, left cluster bar to right, then 189a SV to earth), drawn straight to earth here.',
+         'C (71 GN/VT) works the dash indicator lamp. Its 31 is probably earthed through the mounting (grey).',
+         'Switches are drawn at rest. Pressed, hazard switch 25 closes its lamp, R and L contacts together, so + feeds both sides (68 RD/VT, 67 BL/VT).',
+         'Terminals: hazard switch 25 has +, R, L and one for its lamp (markings: check D4); indicator switch 24 has 54, R and L. '
+         '73 GN and 74 GN both land on + (probably the same terminal).',
+         '25’s lamp contact is open at rest: the lamp stays dark with the indicators and blinks with the hazards (check D7). '
+         'Grey: the end of 29’s blade and its right contact; probably open at rest.',
+         '24’s own outputs are 75 BL/VT and 78 RD/VT, through stalk switch connector 58 to ignition switch connector 58. 77/80 (front) leave '
+         'before ignition switch connector 58 and only 76/79 (rear, route not traced yet) pass it; 80 is drawn branching off 79 past it, for room.',
+         'Each lamp housing has one earth for all its bulbs (parking, tail and number-plate bulbs: lighting sheet).',
+         'The two sheets draw the housings differently, for the layout: here the front housings have their flat end and earth on the right; '
+         'the lighting sheet mirrors them and draws the left rear cluster upside down.',
+         'Not in the data yet: the rear cluster earths, probably 189 SV from the left cluster’s bar to the right’s, then 189a SV to earth (check R3); drawn straight to earth here.',
          '132 and 136 run to the left cluster; 133 and 137 start at its 30 and 32 bulb feeds (inside it, probably); their dots are drawn short of it, for room. 138 BL, from 31’s '
-         'switched side, feeds the front housings’ side back-up lights (car: E16).',
-         '58 (E12): 132, 135 and 138 pass on its rows 2, 3 and 4; row 1 is 140 GL (interior sheet). The manual prints no pin numbers.',
-         'Diagram is not RHD-specific: circuits should match, but harness routing and part positions may differ.']
+         'switched side, feeds the front housings’ side back-up lights (check E16).',
+         'Brake and reversing light connector 58: 132, 135 and 138 pass on its pins 2, 3 and 4 (counted top to bottom); pin 1 is 140 GL (interior sheet).',
+         'Not RHD-specific: circuits should match the car, but harness routing and part positions may differ.']
+# Sources, not printed: 74 GN 1.0 has its second digit blotted on the 1979 print; the 1977 Turbo diagram and another
+# year's print read 74. The manual prints 25's terminals +, R, L (none on the lamp's), 29's blade end running into its
+# right contact, 25's lamp contact merged into the blade root, no pin numbers on 58 (E12), and the front housings and
+# left rear cluster mirrored.
 for j, n in enumerate(notes): txt(lx + 108, ly + 5.5 + j * 3.75, n, 2.35, fill='#333')
 save('signals.svg')
