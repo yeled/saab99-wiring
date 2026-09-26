@@ -366,7 +366,7 @@
 <path d="M45,182.82 L45,185.8" fill="none" stroke="#111" stroke-width=".4"/>
 <rect x="318" y="30" width="6" height="24" fill="#ddd" stroke="#111" stroke-width=".6"/>
 <circle cx="318" cy="36" r="1.0" fill="#111"/>
-<circle cx="318" cy="48" r="1.0" fill="#111"/>
+<circle cx="318" cy="48" r="1.75" fill="#111"/>
 <text x="321" y="28" font-size="3" text-anchor="middle" font-weight="bold" fill="#111">58</text>
 <text x="321" y="24" font-size="2.2" text-anchor="middle" font-weight="normal" fill="#555">ignition switch connector, 12-pole</text>
 <path d="M324,36 L345,36" fill="none" stroke="#222" stroke-width="1.7" stroke-linejoin="round"/>
@@ -505,11 +505,11 @@
 <circle cx="178.08" cy="224" r="1.0" fill="#111"/>
 <circle cx="185.56" cy="224" r="1.0" fill="#111"/>
 <circle cx="193.72" cy="224" r="1.0" fill="#111"/>
-<circle cx="201.2" cy="224" r="1.0" fill="#111"/>
+<circle cx="201.2" cy="224" r="1.4" fill="#111"/>
 <circle cx="324" cy="36" r="1.0" fill="#111"/>
-<circle cx="324" cy="48" r="1.0" fill="#111"/>
+<circle cx="324" cy="48" r="1.75" fill="#111"/>
 <circle cx="345" cy="36" r="1.0" fill="#111"/>
-<circle cx="345" cy="48" r="1.0" fill="#111"/>
+<circle cx="345" cy="48" r="1.75" fill="#111"/>
 <circle cx="255" cy="125" r="1.0" fill="#111"/>
 <circle cx="255" cy="178" r="1.0" fill="#111"/>
 <circle cx="150" cy="149" r="1.0" fill="#111"/>

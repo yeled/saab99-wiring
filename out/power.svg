@@ -54,7 +54,7 @@
 <path d="M176,111 L322,111" fill="none" stroke="#d42020" stroke-width="1.6" stroke-linejoin="round"/>
 <rect x="179.4" y="106.25" width="17.400000000000002" height="3.6" fill="#fff" opacity=".85"/>
 <text x="180" y="109.25" font-size="2.8" text-anchor="start" font-weight="normal" fill="#111">117 RD 1.5</text>
-<circle cx="176" cy="111" r="1.0" fill="#111"/>
+<circle cx="176" cy="111" r="1.4" fill="#111"/>
 <path d="M176,120 L230,120" fill="none" stroke="#222" stroke-width="1.7" stroke-linejoin="round"/>
 <path d="M176,120 L230,120" fill="none" stroke="#ffffff" stroke-width="1.1" stroke-linejoin="round"/>
 <rect x="179.4" y="115.5" width="17.400000000000002" height="3.6" fill="#fff" opacity=".85"/>
@@ -126,7 +126,7 @@
 <path d="M176,192 L230,192" fill="none" stroke="#1f5fbf" stroke-width="2.3" stroke-linejoin="round"/>
 <rect x="179.4" y="186.9" width="17.400000000000002" height="3.6" fill="#fff" opacity=".85"/>
 <text x="180" y="189.9" font-size="2.8" text-anchor="start" font-weight="normal" fill="#111">103 BL 2.5</text>
-<circle cx="176" cy="192" r="1.0" fill="#111"/>
+<circle cx="176" cy="192" r="1.75" fill="#111"/>
 <rect x="230" y="189.4" width="38.15200000000001" height="5.2" rx="1" fill="#fff" stroke="#444" stroke-width=".4"/>
 <text x="231.5" y="193" font-size="2.6" text-anchor="start" font-weight="normal" fill="#111"><tspan font-family="Arial">→</tspan> 35 Ventilator fan switch</text>
 <path d="M150,210 H156 M170,210 H176" stroke="#111" stroke-width=".6"/>
@@ -137,7 +137,7 @@
 <path d="M176,210 L230,210" fill="none" stroke="#f2c500" stroke-width="1.6" stroke-linejoin="round"/>
 <rect x="179.4" y="205.25" width="17.400000000000002" height="3.6" fill="#fff" opacity=".85"/>
 <text x="180" y="208.25" font-size="2.8" text-anchor="start" font-weight="normal" fill="#111">110 GL 1.5</text>
-<circle cx="176" cy="210" r="1.0" fill="#111"/>
+<circle cx="176" cy="210" r="1.4" fill="#111"/>
 <rect x="230" y="207.4" width="42.208000000000006" height="5.2" rx="1" fill="#fff" stroke="#444" stroke-width=".4"/>
 <text x="231.5" y="211" font-size="2.6" text-anchor="start" font-weight="normal" fill="#111"><tspan font-family="Arial">→</tspan> 38 Radiator fan relay 30/51</text>
 <path d="M176,219 L230,219" fill="none" stroke="#222" stroke-width="0.9" stroke-linejoin="round"/>
@@ -154,7 +154,7 @@
 <path d="M176,228 L230,228" fill="none" stroke="#d42020" stroke-width="2.3" stroke-linejoin="round"/>
 <rect x="179.4" y="222.9" width="17.400000000000002" height="3.6" fill="#fff" opacity=".85"/>
 <text x="180" y="225.9" font-size="2.8" text-anchor="start" font-weight="normal" fill="#111">210 RD 2.5</text>
-<circle cx="176" cy="228" r="1.0" fill="#111"/>
+<circle cx="176" cy="228" r="1.75" fill="#111"/>
 <rect x="230" y="225.4" width="47.616" height="5.2" rx="1" fill="#fff" stroke="#444" stroke-width=".4"/>
 <text x="231.5" y="229" font-size="2.6" text-anchor="start" font-weight="normal" fill="#111"><tspan font-family="Arial">→</tspan> 113 Heated rear window relay 30</text>
 <path d="M150,237 H156 M170,237 H176" stroke="#111" stroke-width=".6"/>
@@ -174,7 +174,7 @@
 <path d="M176,246 L230,246" fill="none" stroke="#8a8a8a" stroke-width="1.6" stroke-linejoin="round"/>
 <rect x="179.4" y="241.25" width="17.400000000000002" height="3.6" fill="#fff" opacity=".85"/>
 <text x="180" y="244.25" font-size="2.8" text-anchor="start" font-weight="normal" fill="#111">260 GR 1.5</text>
-<circle cx="176" cy="246" r="1.0" fill="#111"/>
+<circle cx="176" cy="246" r="1.4" fill="#111"/>
 <rect x="230" y="243.4" width="35.44800000000001" height="5.2" rx="1" fill="#fff" stroke="#444" stroke-width=".4"/>
 <text x="231.5" y="247" font-size="2.6" text-anchor="start" font-weight="normal" fill="#111"><tspan font-family="Arial">→</tspan> 102 Fuel pump relay 30</text>
 <path d="M150,255 H156 M170,255 H176" stroke="#111" stroke-width=".6"/>
@@ -331,17 +331,17 @@
 <text x="120" y="230.75" font-size="2.8" text-anchor="start" font-weight="normal" fill="#111">202 GR 1.5</text>
 <rect x="87.312" y="229.9" width="28.688" height="5.2" rx="1" fill="#fff" stroke="#444" stroke-width=".4"/>
 <text x="88.812" y="233.5" font-size="2.6" text-anchor="start" font-weight="normal" fill="#111"><tspan font-family="Arial">→</tspan> 89 Start relay 30</text>
-<circle cx="23" cy="64" r="1.0" fill="#111"/>
-<circle cx="32" cy="64" r="1.0" fill="#111"/>
+<circle cx="23" cy="64" r="1.75" fill="#111"/>
+<circle cx="32" cy="64" r="1.4" fill="#111"/>
 <circle cx="41" cy="64" r="1.0" fill="#111"/>
 <circle cx="50" cy="64" r="1.0" fill="#111"/>
-<circle cx="57" cy="64" r="1.0" fill="#111"/>
-<circle cx="64" cy="74" r="1.0" fill="#111"/>
-<circle cx="68" cy="74" r="1.0" fill="#111"/>
+<circle cx="57" cy="64" r="1.75" fill="#111"/>
+<circle cx="64" cy="74" r="1.75" fill="#111"/>
+<circle cx="68" cy="74" r="1.75" fill="#111"/>
 <circle cx="80" cy="116" r="1.0" fill="#111"/>
 <circle cx="80" cy="134" r="1.0" fill="#111"/>
-<circle cx="114" cy="116" r="1.0" fill="#111"/>
-<circle cx="114" cy="134" r="1.0" fill="#111"/>
+<circle cx="114" cy="116" r="2" fill="#111"/>
+<circle cx="114" cy="134" r="2" fill="#111"/>
 <rect x="20" y="233" width="26" height="16" rx="1.2" fill="#fafafa" stroke="#111" stroke-width="0.8"/>
 <text x="23" y="239.2" font-size="4" text-anchor="start" font-weight="bold" fill="#111">4</text>
 <text x="28" y="239.2" font-size="2.7" text-anchor="start" font-weight="normal" fill="#111">Starter</text>
@@ -390,11 +390,11 @@
 <path d="M122,275 L123.5,275 L129.0,280.5 L150,280.5" fill="none" stroke="#8a8a8a" stroke-width="2.3" stroke-linejoin="round"/>
 <rect x="132.4" y="282.3" width="15.780000000000001" height="3.6" fill="#fff" opacity=".85"/>
 <text x="133" y="285.3" font-size="2.8" text-anchor="start" font-weight="normal" fill="#111">5a GR 2.5</text>
-<circle cx="33" cy="249" r="1.0" fill="#111"/>
-<circle cx="38" cy="266.4" r="1.0" fill="#111"/>
+<circle cx="33" cy="249" r="2.3" fill="#111"/>
+<circle cx="38" cy="266.4" r="2.3" fill="#111"/>
 <circle cx="64" cy="273.6" r="1.0" fill="#111"/>
 <circle cx="122" cy="265" r="1.0" fill="#111"/>
-<circle cx="122" cy="275" r="1.0" fill="#111"/>
+<circle cx="122" cy="275" r="2" fill="#111"/>
 <path d="M150,62 V97" stroke="#111" stroke-width="1.6"/>
 <path d="M150,107 V196" stroke="#111" stroke-width="1.6"/>
 <path d="M150,203.5 V283.0" stroke="#111" stroke-width="1.6"/>
@@ -412,8 +412,8 @@
 <rect x="322" y="108" width="10" height="10" fill="#111"/><rect x="323.8" y="109.8" width="6.4" height="6.4" fill="#fff"/>
 <path d="M332,89 L340,84.5 L340,97.5 L332,93 Z" fill="#fff" stroke="#111" stroke-width=".9" stroke-linejoin="round"/>
 <rect x="322" y="86" width="10" height="10" fill="#111"/><rect x="323.8" y="87.8" width="6.4" height="6.4" fill="#fff"/>
-<circle cx="322" cy="111" r="1.0" fill="#111"/>
-<circle cx="322" cy="115" r="1.0" fill="#111"/>
+<circle cx="322" cy="111" r="1.4" fill="#111"/>
+<circle cx="322" cy="115" r="1.4" fill="#111" stroke="#fff" stroke-width=".3"/>
 <circle cx="322" cy="89" r="1.0" fill="#111"/>
 <circle cx="322" cy="93" r="1.0" fill="#111"/>
 <text x="343" y="114" font-size="3.4" text-anchor="start" font-weight="bold" fill="#111">40</text>
@@ -432,10 +432,10 @@
 <text x="366" y="136.2" font-size="2.0" text-anchor="middle" font-weight="normal" fill="#555">pin 1</text>
 <path d="M368,128 L378,128" fill="none" stroke="#222" stroke-width="2.2" stroke-linejoin="round"/>
 <path d="M368,128 L378,128" fill="none" stroke="#111111" stroke-width="1.6" stroke-linejoin="round"/>
-<circle cx="344" cy="128" r="1.45" fill="#111"/>
-<circle cx="348" cy="128" r="1.45" fill="#111"/>
-<circle cx="364" cy="128" r="1.45" fill="#111"/>
-<circle cx="368" cy="128" r="1.45" fill="#111"/>
+<circle cx="344" cy="128" r="1.4" fill="#111" stroke="#fff" stroke-width=".3"/>
+<circle cx="348" cy="128" r="1.4" fill="#111" stroke="#fff" stroke-width=".3"/>
+<circle cx="364" cy="128" r="1.4" fill="#111" stroke="#fff" stroke-width=".3"/>
+<circle cx="368" cy="128" r="1.4" fill="#111" stroke="#fff" stroke-width=".3"/>
 <rect x="378" y="123" width="14" height="10" rx="1.2" fill="#fafafa" stroke="#111" stroke-width="0.8"/>
 <text x="378" y="120.8" font-size="3.4" text-anchor="start" font-weight="bold" fill="#111">41</text>
 <text x="383.5" y="120.8" font-size="2.4" text-anchor="start" font-weight="normal" fill="#111">Horn switch</text>
@@ -444,7 +444,7 @@
 <path d="M378,128 L381.7,128" fill="none" stroke="#111" stroke-width=".4"/>
 <path d="M388.3,128 L392,128" fill="none" stroke="#111" stroke-width=".4"/>
 <path d="M383.1,127.5 L386.8,125.4" stroke="#111" stroke-width=".75" stroke-linecap="round"/>
-<circle cx="378" cy="128" r="1.0" fill="#111"/>
+<circle cx="378" cy="128" r="1.4" fill="#111" stroke="#fff" stroke-width=".3"/>
 <circle cx="392" cy="128" r="1.0" fill="#111"/>
 <path d="M392,128 H397" stroke="#111" stroke-width=".6" fill="none"/>
 <path d="M397,128 v3 M394,131 h6 M395,132.3 h4 M396,133.6 h2" stroke="#111" stroke-width=".5" fill="none"/>

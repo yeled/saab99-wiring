@@ -45,9 +45,9 @@
 <text x="170" y="56.25" font-size="2.8" text-anchor="start" font-weight="normal" fill="#111">111 GN 1.5</text>
 <rect x="238" y="54.0" width="4" height="8" fill="#ddd" stroke="#111" stroke-width=".5"/>
 <text x="240" y="52.5" font-size="2.2" text-anchor="middle" font-weight="normal" fill="#555">59 radiator fan</text>
-<circle cx="54" cy="62" r="1.0" fill="#111"/>
-<circle cx="110" cy="58" r="1.0" fill="#111"/>
-<circle cx="144" cy="58" r="1.0" fill="#111"/>
+<circle cx="54" cy="62" r="1.4" fill="#111"/>
+<circle cx="110" cy="58" r="1.4" fill="#111"/>
+<circle cx="144" cy="58" r="1.4" fill="#111"/>
 <path d="M242,58 H262" stroke="#111" stroke-width=".6"/>
 <circle cx="270" cy="58" r="7" fill="#fff" stroke="#111" stroke-width=".7"/>
 <text x="270" y="59.2" font-size="3" text-anchor="middle" font-weight="bold" fill="#111">M</text>
@@ -91,7 +91,7 @@
 <circle cx="144" cy="142" r="1.0" fill="#111"/>
 <circle cx="144" cy="149" r="1.0" fill="#111"/>
 <circle cx="144" cy="157.4" r="1.0" fill="#111"/>
-<circle cx="110" cy="149" r="1.0" fill="#111"/>
+<circle cx="110" cy="149" r="1.75" fill="#111"/>
 <text x="113" y="147.6" font-size="1.8" text-anchor="start" font-weight="normal" fill="#555">4</text>
 <text x="142.5" y="140.6" font-size="1.8" text-anchor="end" font-weight="normal" fill="#555">8</text>
 <text x="142.5" y="147.6" font-size="1.8" text-anchor="end" font-weight="normal" fill="#555">6</text>
@@ -114,13 +114,13 @@
 <path d="M144,149 L237,149" fill="none" stroke="#8a8a8a" stroke-width="1.1" stroke-linejoin="round"/>
 <rect x="195.4" y="144.5" width="17.400000000000002" height="3.6" fill="#fff" opacity=".85"/>
 <text x="196" y="147.5" font-size="2.8" text-anchor="start" font-weight="normal" fill="#111">104 GR 1.0</text>
-<circle cx="54" cy="149" r="1.0" fill="#111"/>
-<circle cx="110" cy="149" r="1.0" fill="#111"/>
-<circle cx="144" cy="142" r="1.0" fill="#111"/>
+<circle cx="54" cy="149" r="1.75" fill="#111"/>
+<circle cx="110" cy="149" r="1.75" fill="#111"/>
+<circle cx="144" cy="142" r="1.75" fill="#111"/>
 <rect x="237" y="138" width="8" height="22" fill="#ddd" stroke="#111" stroke-width=".5"/>
 <text x="239.6" y="136.3" font-size="2.2" text-anchor="start" font-weight="normal" fill="#555">57 heater fan</text>
 <path d="M237,142 L245,142" fill="none" stroke="#111" stroke-width=".4"/>
-<circle cx="237" cy="142" r="1.0" fill="#111"/>
+<circle cx="237" cy="142" r="1.75" fill="#111"/>
 <circle cx="245" cy="142" r="1.0" fill="#111"/>
 <path d="M237,149 L245,149" fill="none" stroke="#111" stroke-width=".4"/>
 <circle cx="237" cy="149" r="1.0" fill="#111"/>
@@ -146,8 +146,8 @@
 <path d="M237,156 L224,156" fill="none" stroke="#111111" stroke-width="2.3" stroke-linejoin="round"/>
 <rect x="176.7" y="153.4" width="45.3" height="5.2" rx="1" fill="#fff" stroke="#444" stroke-width=".4"/>
 <text x="178.2" y="157" font-size="2.2" text-anchor="start" font-weight="normal" fill="#111">107 SV 2.5 <tspan font-family="Arial">→</tspan> earth joint 158 (power sheet)</text>
-<circle cx="237" cy="142" r="1.0" fill="#111"/>
-<circle cx="237" cy="156" r="1.15" fill="#111" stroke="#fff" stroke-width=".3"/>
+<circle cx="237" cy="142" r="1.75" fill="#111"/>
+<circle cx="237" cy="156" r="1.75" fill="#111" stroke="#fff" stroke-width=".3"/>
 <rect x="263" y="138" width="22" height="22" rx="1.2" fill="#fafafa" stroke="#111" stroke-width="0.8"/>
 <circle cx="263" cy="142" r="1.0" fill="#111"/>
 <circle cx="263" cy="156" r="1.0" fill="#111"/>
@@ -244,11 +244,11 @@
 <text x="240" y="240.9" font-size="2.8" text-anchor="start" font-weight="normal" fill="#111">211 GL 2.5</text>
 <rect x="300" y="239.0" width="4" height="8" fill="#ddd" stroke="#111" stroke-width=".5"/>
 <text x="302" y="237.5" font-size="2.2" text-anchor="middle" font-weight="normal" fill="#555">58 door switches, pin 5</text>
-<circle cx="54" cy="196" r="1.0" fill="#111"/>
-<circle cx="116" cy="203" r="1.0" fill="#111"/>
-<circle cx="116" cy="231" r="1.0" fill="#111"/>
-<circle cx="300" cy="243" r="1.0" fill="#111"/>
-<circle cx="304" cy="243" r="1.0" fill="#111"/>
+<circle cx="54" cy="196" r="1.75" fill="#111"/>
+<circle cx="116" cy="203" r="1.75" fill="#111"/>
+<circle cx="116" cy="231" r="1.75" fill="#111"/>
+<circle cx="300" cy="243" r="1.75" fill="#111"/>
+<circle cx="304" cy="243" r="1.75" fill="#111"/>
 <rect x="356" y="210" width="30" height="10" rx="1.2" fill="#fafafa" stroke="#111" stroke-width="0.8"/>
 <path d="M359,215 l2,-2 l2,4 l2,-4 l2,4 l2,-4 l2,4 l2,-4 l2,4 l2,-4 l2,4 l2,-4 l2,2" fill="none" stroke="#111" stroke-width=".4"/>
 <path d="M386,215 h6 v4" fill="none" stroke="#111" stroke-width=".6"/>
