@@ -26,6 +26,12 @@ def lead(pts):
 def fcontact(x, y):
     """Filled contact (the manual's black dot), same size as contact()."""
     A(f'<circle cx="{x}" cy="{y}" r=".8" fill="#111"/>')
+def redot(*pts):
+    """Terminal dots drawn again over the wire ends: a 1.5 or 2.5 wire is wider than a dot and would swallow it."""
+    for x, y in pts: dot(x, y)
+def redot_ringed(x, y):
+    """Terminal dot on a black band wider than itself (107 SV 2.5): same black dot, set off by a thin white ring."""
+    A(f'<circle cx="{x}" cy="{y}" r="1.15" fill="#111" stroke="#fff" stroke-width=".3"/>')
 WORK = [False]  # set when work() draws; the legend then shows its sample
 def work(pts):
     """A switch's other positions, drawn short-dashed as the manual prints them (not 'not traced'; DASHED stays off)."""
@@ -57,6 +63,7 @@ blade(121.6, 57.5, 132.4, 54.6)
 coil(124, 64, 6, 16); inner([(110, 72), (124, 72)]); inner([(130, 72), (144, 72)]); mlink([(127, 64), (127, 56.5)])
 wire('110', [(54, y7), (57, 58), (110, 58)], 62, 56.5); wire('113', [(54, y7), (57, 66), (80, 66), (80, 72), (110, 72)], 62, 64.5)
 wire('111', [(144, 58), (236, 58)], 170, 56.5); conn(240, 58, 8, '59')
+redot((54, y7), (110, 58), (144, 58))
 A('<path d="M242,58 H262" stroke="#111" stroke-width=".6"/>'); motor(270, 58)
 txt(280, 56, '<tspan font-weight="bold">37</tspan> Radiator fan motor (D1)', 2.7); A('<path d="M270,65 v5" stroke="#111" stroke-width=".6"/>'); earth(270, 70)
 wire('114', [(144, 72), (196, 72), (196, 88), (216, 88)], 160, 70.5); conn(220, 88, 6, '60')
@@ -81,6 +88,7 @@ blade(119.1, 149.4, 130.4, 157.2)
 work([(119.2, 148.6), (130, 142.5)]); work([(119.3, 149), (132, 149)])
 wire('105', [(144, 142), (237, 142)], 170, 140.5)
 wire('104', [(144, 149), (237, 149)], 196, 147.5)
+redot((54, y6), (110, y6), (144, 142))
 # 57 (F11): three through-links; 74 hangs off it: in from row 2's right side, out onto 57's top edge just inside the
 # left corner, in line with the left pins, where the manual hides which pin it joins (probably row 1: grey)
 A('<rect x="237" y="138" width="8" height="22" fill="#ddd" stroke="#111" stroke-width=".5"/>'); txt(239.6, 136.3, '57 (F11)', 2.2, fill='#555')
@@ -93,6 +101,7 @@ lead([(244, 128), (238.2, 128), (238.2, 138)]); lead([(258, 128), (260, 128), (2
 lead([(245, 142), (263, 142)]); lead([(245, 156), (263, 156)])
 # the motor's return: 107 SV from 57 row 3 to earth joint 158 (drawn on the power sheet)
 wire('107', [(237, 156), (224, 156)], label=False); tag(222, 156, '107 SV 2.5 → earth joint 158 (power sheet)', w=45.3, size=2.2, anchor='end')
+redot((237, 142)); redot_ringed(237, 156)
 # 36: terminals on the left wall, level with 57 rows 1 and 3; no internal leads to the fan are printed; blades square to the frame
 box(263, 138, 22, 22); dot(263, 142); dot(263, 156); fan(274, 149, 7.5, rot=0)
 txt(288, 147, '<tspan font-weight="bold">36</tspan> Heater fan motor (F12)', 2.7)
@@ -130,6 +139,7 @@ wire('215', [(193.9, 220), (193.9, 225), (190, 225)], label=False); tag(188, 225
 wire('203', [(211.6, 220), (209.8, 222), (209.8, 232.6), (228, 232.6)], label=False); tag(230, 232.6, f'203 BR 0.75 → tachometer 110 (instruments sheet)', w=53.2, size=2.2)
 wire('214', [(211.6, 220), (213.4, 222), (213.4, 225.8), (228, 225.8)], label=False); tag(230, 225.8, '214 BL 0.75: feed, source not traced', w=38.5, size=2.2, dashed=True)
 wire('211', [(116, 231), (116, 243), (292, 243), (292, 215), (300, 215)], 240, 241.5)
+redot((54, y8), (116, 203), (116, 231))
 box(300, 210, 30, 10); A('<path d="M303,215 l2,-2 l2,4 l2,-4 l2,4 l2,-4 l2,4 l2,-4 l2,4 l2,-4 l2,4 l2,-4 l2,2" fill="none" stroke="#111" stroke-width=".4"/>')
 A('<path d="M330,215 h6 v4" fill="none" stroke="#111" stroke-width=".6"/>'); earth(336, 219); txt(300, 229, '<tspan font-weight="bold">115</tspan> Heated rear window (D12)', 2.6)
 
@@ -141,12 +151,18 @@ for i, (k, n) in enumerate([('BL', 'Blue'), ('BR', 'Brown'), ('GL', 'Yellow'), (
     A(f'<path d="M{x},{y - 1} h7" stroke="#222" stroke-width="1.7"/><path d="M{x},{y - 1} h7" stroke="{COL[k]}" stroke-width="1.1"/>')
     txt(x + 9, y, f'{k} {n}', 2.5)
 x = lx + 4
-A(f'<path d="M{x},{ly + 17} h9" stroke="#222" stroke-width="1.2"/>'); txt(x + 11, ly + 18, 'traced (cable no. read)', 2.4)
-if DASHED[0]: A(f'<path d="M{x + 48},{ly + 17} h9" stroke="#222" stroke-width="1.2" stroke-dasharray="3 2"/>'); txt(x + 59, ly + 18, 'not traced yet', 2.4)
-if TICKED[0]: tick(x, ly + 23.3); txt(x + 4, ly + 24, 'checked on the car', 2.4)
-yl = ly + (29 if TICKED[0] else 23)
-if probable_legend(x, yl): yl += 6
-if WORK[0]: work([(x, yl), (x + 9, yl)]); txt(x + 11, yl + 1, 'short dashes inside a switch: its other positions, as printed', 2.4)
+# rows under the colours, by text baseline y: cable sizes, line styles, then the samples this sheet uses; spread down to
+# the notes' last line (ly + 34.8), at most 6 apart
+# line-style samples at a 1.0 wire's width (core + outline, as the colour samples), so they don't read as another size
+def r_traced(y):
+    w = WIDTH[1.0] + edge(WIDTH[1.0])
+    A(f'<path d="M{x},{y - 1} h9" stroke="#222" stroke-width="{w:g}"/>'); txt(x + 11, y, 'traced (cable no. read)', 2.4)
+    if DASHED[0]: A(f'<path d="M{x + 48},{y - 1} h9" stroke="#222" stroke-width="{w:g}" stroke-dasharray="3 2"/>'); txt(x + 59, y, 'not traced yet', 2.4)
+def r_tick(y): tick(x, y - .7); txt(x + 4, y, 'checked on the car', 2.4)
+def r_work(y): work([(x, y - 1), (x + 9, y - 1)]); txt(x + 11, y, 'short dashes inside a switch: its other positions, as printed', 2.4)
+rows = [lambda y: size_legend(x, y), r_traced] + [r_tick] * TICKED[0] + [lambda y: probable_legend(x, y - 1)] * PROBABLE[0] + [r_work] * WORK[0]
+y0, y1 = ly + 17, ly + 34.8
+for k, row in enumerate(rows): row(y0 + k * min(6, (y1 - y0) / (len(rows) - 1)))
 notes = ['Radiator fan: relay 38 (drawn at rest, contact open) is fed from fuse 7 on the always-live bar; thermostat switch 39 earths its coil through 115 SV and the left',
          'headlamp’s earth, 28 SV, so the drawing lets the fan run after the engine is switched off. 114a is BL in the 1979 print, SV (black) in the 1977 Turbo diagram: car check E14.',
          'Heater fan: fuse 6 is on the ignition-on bar. Switch 35 rests on its unwired terminal (probably off); its short-dashed lines are its other positions, as printed: 8 feeds the',
