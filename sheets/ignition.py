@@ -44,16 +44,18 @@ wire('201', [(96, 122), (96, 125.5), (84, 125.5), (84, 118), (80, 118)], label=F
 wire('202', [(112, 90), (112, 84), (118, 84)], label=False); tag(120, 84, '202 GR 1.5 ← bar 7–12 (always live)'); dot(112, 90)   # 30 on top
 wire('122a', [(104, 122), (104, 141.5), (52, 141.5)], 56, 139.8); dot(104, 122); dot(52, 141.5)   # 87 and 50 on top of it
 wire('282', [(104, 137), (108, 137)], label=False); tag(110, 137, '282 GL 1.0 → 73 service outlet (start terminal)')
-# 271: 89:87 to 92's heater through 58/1. Under 394, up into the band below 124, across 284's riser (the only way out: 284
-# wraps 102 and the injection parts) and down the free strip right of it; 58/1 on the drop, then round into 92's left wall
-Y271 = 124.2
-wire('271', [(104, 131), (180, 131), (180, Y271), (368, Y271), (368, 214), (356, 214), (356, 230), (362, 230)], 366.6, 210, rot=-90)
+# 271: 89:87 to 92's heater through 58/1. Under 394, up into the band below 124, right over the pump and down the strip
+# between the injection parts and 284's riser (284 wraps 102 and the injection parts, so its bottom run crosses this drop
+# once); 58/1 on the drop, then round into 92's left wall. X271 leaves room left of it for the pump's earth column.
+Y271, X271 = 124.2, 384
+wire('271', [(104, 131), (180, 131), (180, Y271), (X271, Y271), (X271, 214), (356, 214), (356, 230), (362, 230)], X271 - 1.4, 211, rot=-90)
 dot(104, 131); dot(104, 137)                                       # 271 and 282 tee off 122a: on top of all three
-A('<rect x="364" y="186" width="8" height="4" fill="#ddd" stroke="#111" stroke-width=".5"/>'); dot(368, 186); dot(368, 190)
-txt(374, 189, '58 engine, pin 1', 2.1, fill='#555')
+Y58 = 188                                                          # 58/1's top: 6 below 284's crossing, so 284 doesn't read as landing on it
+A(f'<rect x="{X271 - 4}" y="{Y58}" width="8" height="4" fill="#ddd" stroke="#111" stroke-width=".5"/>'); dot(X271, Y58); dot(X271, Y58 + 4)
+txt(X271 - 6, Y58 + 3, '58 engine, pin 1', 2.1, 'end', fill='#555')   # left of the pin: right of it, the grey lines would run into the border
 # the RD label sits on the 92 side, where the book prints it; the relay side of 58 (A4) pin 1 is GN 1.0 (data/connectors.csv),
 # but wires.csv has one row for 271, so the whole run is drawn RD until that is split
-txt(374, 192.2, 'relay side probably GN 1.0 (check E1)', 1.8, fill='#777')
+txt(X271 - 6, Y58 + 6.2, 'relay side probably', 1.8, 'end', fill='#777'); txt(X271 - 6, Y58 + 8.8, 'GN 1.0 (check E1)', 1.8, 'end', fill='#777')   # two lines: clear of 96
 wire('272', [(52, 156.5), (70, 156.5), (70, 240), (300, 240)], 80, 238.5)
 A('<rect x="199" y="236" width="4" height="8" fill="#ddd" stroke="#111" stroke-width=".5"/>'); dot(199, 240); dot(203, 240); txt(201, 234.3, '58 engine, pin 3', 2.1, 'middle', fill='#555')
 
@@ -99,7 +101,9 @@ wire('123d', [(156, 54), (156, 73), (206, 73), (206, 112), (296, 112), (296, 66)
 # 124: lower 16 to coil 1. It has to cross 284 (which wraps the lower 16) and 123d (coil 1 sits inside 123d's loop);
 # it drops beside 146 and runs back under 123d's bottom run, clear of the HT leads
 wire('124', [(308, 80), (304.5, 80), (304.5, 119.5), (228, 119.5), (228, 76)], 258, 117.8); dot(228, 76); dot(308, 80)   # both ends on top of the lead
-wire('284', [(308, 73), (300.5, 73), (300.5, 92), (360, 92), (360, 182), (233.5, 182), (227.5, 176)], 246, 180.3)   # into 102's bottom pair
+# 284 comes down the far right, past 271, and crosses it once on its way back (it used to cross 271's top run instead):
+# that leaves the column between 95 and 271 free for the pump's earth through tank earth connector 60
+wire('284', [(308, 73), (300.5, 73), (300.5, 92), (400, 92), (400, 182), (233.5, 182), (227.5, 176)], 246, 180.3)   # into 102's bottom pair
 
 # ---- fuel pump relay, overboost switch, pump and injection parts -------
 # fuel pump relay 102 as the book prints it: 1979 foldout (book photo P6b, with Charlie's pencil FUEL) and 1980 (P6a) are
@@ -145,8 +149,19 @@ dot(*T31)                                                            # 31 on top
 wire('261', [T87, (247, 136.5), (290, 136.5), (290, 146), (300, 146)], 252, 134.8)
 A('<circle cx="306" cy="146" r="6" fill="#fff" stroke="#111" stroke-width=".7"/>'); txt(306, 147.2, 'M', 3, 'middle', w='bold')
 txt(306, 137.5, '103 Fuel pump', 2.6, 'middle', w='bold')
-# 262 SV 2.5 draws as a 2.9 mm black band: a longer run to the earth, so it reads as a lead, not a block on the pump
-wire('262', [(312, 146), (328, 146), (328, 150.5)], 331.5, 150.2); earth(328, 150.5)
+# The pump's earth goes through 1-pole tank earth connector 60 (scan p.407, C12): 262 SV 2.5 and 190 SV from fuel level
+# transmitter 46 share its pump-side pin, and 191 SV 2.5 leaves the other pin for an earth just below it (probably a body
+# earth near the tank). 262 runs right to the column between 95 and 271, then down into the pin; 190 comes down from its
+# tag above the pump onto 262's corner, so both reach the pin from the pump side.
+X60, Y60 = 358, 154                                                  # 60's pump-side pin (top); the other pin is 6 below
+wire('262', [(312, 146), (X60, 146), (X60, Y60)], 318, 143.5)
+Y190 = 128.9                                                        # 1.1 above 261a's top run, so the tag doesn't read as its end
+wire('190', [(354, Y190), (X60, Y190), (X60, 146)], label=False)
+tag(352, Y190, '190 SV 0.75 ← fuel level transmitter 46 (instruments sheet)', w=66, size=2.4, anchor='end')
+A(f'<rect x="{X60 - 4}" y="{Y60}" width="8" height="6" fill="#ddd" stroke="#111" stroke-width=".5"/>')   # 6 tall: both pin dots grow on the heavy leads
+wire('191', [(X60, Y60 + 6), (X60, 170)], X60 + 4, 167.5); earth(X60, 170)
+dot(X60, 146); dot(X60, Y60); dot(X60, Y60 + 6)                    # the join and both pins, on top of the 2.5 mm² leads
+txt(X60 + 6, Y60 + 3.8, '60 tank earth', 2.1, fill='#555')
 wire('261a', [T87, (242.5, 130), (276, 130), (276, 166), (280, 166)], 250, 128.6)
 dot(*T87)                                                           # 87 on top of both leads; dot() grows over 261's 2.9 mm stroke and hides its ends
 # 95 and 96: a winding each, drawn mirrored (manual: both terminals on the right wall, feed upper, earth lower)
@@ -179,24 +194,30 @@ A('<path d="M395,230 h5 v5" stroke="#111" stroke-width=".6" fill="none"/>'); ear
 txt(80, 186, 'High-speed fuel boost', 2.8, w='bold')                  # 1979 Turbo only (manual PDF p. 24, 33, 210)
 txt(80, 190.5, 'Richens the mixture above about 130 km/h (140) or at 62° throttle (137).', 2.1, fill='#555')
 box(118, 194, 30, 14); txt(133, 200.3, '140', 2.8, 'middle', w='bold'); txt(133, 204.8, 'Speed transmitter', 2.0, 'middle')   # the 1979 legend numbers it 151
-dot(118, 201); tlabel(119.5, 199.7, '15'); dot(148, 198); tlabel(146.5, 197.2, 'W', 'end'); dot(133, 208)
-tlabel(134.5, 210.5, '-31')                                          # printed '-31'; outside the box
+dot(118, 201); tlabel(119.5, 199.7, '15'); dot(148, 198); tlabel(146.5, 197.2, 'W', 'end')
 wire('380', [(114, 201), (118, 201)], label=False); tag(82, 201, '380 GL 1.0 ← fuse 5')
-wire('381', [(133, 208), (133, 211)], label=False); earth(133, 211); txt(137, 215, '381 SV', 2.1)
-wire('382', [(148, 198), (208, 198)], 152, 196.5)
+# 381 SV: 140's earth. Scan p.407 and book photos: down from -31, right, into brake warning switch 42's corner by its
+# earth-side lead, so it reaches joint 158 through 192 SV (power sheet). -31 sits near the left corner and 142 is set
+# right, so the tag has room below 140 before 383's riser; it sits low enough to clear the '-31' label above it.
+wire('381', [(123, 208), (123, 214.5), (125, 214.5)], label=False); dot(123, 208)
+tlabel(124.5, 210.5, '-31')                                          # printed '-31'; outside the box
+tag(127, 214.5, '381 SV 0.75 → brake warning switch 42 → 192 → earth joint 158 (power sheet)', w=87.4, size=2.4)
+X142 = 222                                                           # 142's left wall
+wire('382', [(148, 198), (X142, 198)], 152, 196.5)
 txt(151, 204.5, 'on the car: speedometer cable, engine bay (check E7)', 1.9, fill='#555')
 # solenoid valve 142: the outline is the winding (one diagonal, no inner rectangle); drawn mirrored (manual: earth left, 382 right)
-box(208, 191, 10, 14); A('<path d="M208.8,204.2 L217.2,191.8" stroke="#111" stroke-width=".35"/>'); dot(208, 198)
-A('<path d="M218,198 h12 v4" stroke="#111" stroke-width=".6" fill="none"/>'); earth(230, 202); txt(213, 189.3, '142 Solenoid valve', 2.2, 'middle', w='bold')
-txt(214, 210.6, 'on the car: front of the engine, on the control pressure line (check E7);', 1.9, fill='#555')
-txt(214, 213.4, '382 and 383 on one contact, earth on the other (check E12)', 1.9, fill='#555')
+box(X142, 191, 10, 14); A(f'<path d="M{X142 + .8},204.2 L{X142 + 9.2},191.8" stroke="#111" stroke-width=".35"/>'); dot(X142, 198)
+A(f'<path d="M{X142 + 10},198 h8 v4" stroke="#111" stroke-width=".6" fill="none"/>'); earth(X142 + 18, 202); txt(X142 + 5, 189.3, '142 Solenoid valve', 2.2, 'middle', w='bold')
+for i, s in enumerate(('on the car: front of the engine, on the control', 'pressure line (check E7); 382 and 383 on one contact,',
+                       'earth on the other (check E12)')):
+    txt(X142 + 6, 212 + 2.8 * i, s, 1.9, fill='#555')
 # throttle switch 137, turned a quarter (manual: portrait, pivot at the bottom terminal, contact at the top); open at rest
 box(126, 219, 14, 12); dot(126, 225); dot(140, 225)
 inner([(126, 225), (128.2, 225)]); contact(129, 225); contact(137, 225); inner([(137.8, 225), (140, 225)])
 blade(129.6, 224.6, 136.6, 221.6)
 txt(120, 235, '<tspan font-weight="bold">137</tspan> Throttle switch, 62°', 2.4)
 wire('380a', [(114, 225), (126, 225)], label=False); tag(82, 225, '380a GL 1.0 ← fuse 5')
-wire('383', [(140, 225), (203, 225), (203, 198)], 150, 223.5); dot(203, 198)   # joins 382 at 142's feed terminal: one contact on the car (E12)
+wire('383', [(140, 225), (X142 - 5, 225), (X142 - 5, 198)], 150, 223.5); dot(X142 - 5, 198)   # joins 382 at 142's feed terminal: one contact on the car (E12)
 
 # ---- legend and notes ----------------------------------------------------
 lx, ly = 18, 256
@@ -227,6 +248,7 @@ notes2 = ['263 SV (pump relay 31) goes to relay 21, probably to its 85; 33 and 2
           '201 SV (relay 89’s coil) goes to 158 directly. Relay 21 and joint 158 are on the power sheet.',
           '123d GN/VT (+15 for 146) comes from engine connector 58 pin 4 on the 147 side,',
           'before the ballast resistor, not from coil terminal 15.',
-          '102’s joined bottom pair (marked 31) takes the speed signal (284, 284a): probably terminal 1.']
+          '102’s joined bottom pair (marked 31) takes the speed signal (284, 284a): probably terminal 1.',
+          '381 SV (140’s earth) lands on 42’s earth side, probably spliced into 192 SV there.']
 for j, n in enumerate(notes2): txt(lx + 276, ly + 4.8 + j * 3.9, n, 2.3, fill='#333')
 save('ignition.svg')
