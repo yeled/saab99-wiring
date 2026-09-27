@@ -152,14 +152,13 @@ A(f'<path d="M{FX + .4},{FD} L{FX + FW - .4},{FD} L{fm},{fy} Z M{FX + .4},{FY + 
 for tx, tl in ((T49, '49'), (TC, 'C'), (T49A, '49a'), (T31, '31')): dot(tx, FY); tlabel(tx, FY + 3.6, tl, 'middle')
 A(f'<path d="M{T31},{FY} V62 H100 v3 M97,65 h6 M98,66.3 h4 M99,67.6 h2" stroke="#888" stroke-width=".5" fill="none"/>')
 PROBABLE[0] = True
-t71 = '71 GN/VT 0.75 → 47 dash indicator lamp'
-wire('71', [(TC, FY), (TC, 48), (73, 48)], label=False); tag(73, 48, t71, w=55, anchor='end')   # left edge on x 18, with the title and F11
+wire('71', [(TC, FY), (TC, 48), (73, 48)], label=False); mtag(18, 48, ('71 GN/VT 0.75 → 47 dash indicator', 'lamp (instruments sheet)'), w=55, size=2.4)   # left edge on x 18, with the title and F11
 
 # 25 hazard switch as printed (IMG_4724): + at the top, a blade hanging down-left from its pivot (open), and a
 # column of three contacts it closes together when pressed: lamp (grey: printed merged with the blade root, probably
 # open), R and L. The lamp's other side is an unlabelled terminal on the right edge, where two leads fork.
 box(130, 48, 40, 40); txt(127, 75, '25 Hazard switch', 2.4, 'end', w='bold')
-wire('73', [(T49A, FY), (T49A, 58), (114, 58), (114, 43), (144, 43), (149, 48)], 118, 41.5)   # lands on + beside 74 (probably)
+wire('73', [(T49A, FY), (T49A, 58), (114, 58), (114, 43), (144, 43), (149, 48)], 118, 41.5)   # lands on + beside 74 (scan, IMG_4724; P3)
 wire('74', [(149, 48), (149, 36), (225, 36), (225, 48)], 178, 34.5)
 dot(149, 48); txt(150.6, 51.8, '+', 2.2, fill='#555')
 inner([(149, 48), (149, 57.2)]); contact(149, 58); blade(148.7, 58.64, 140.4, 76.8)
@@ -169,9 +168,12 @@ inner([(151.4, 70.4), (160, 70.4), (160, 88)]); dot(160, 88); tlabel(161.6, 86.6
 inner([(151.4, 78), (155, 78), (155, 88)]); dot(155, 88); tlabel(153.4, 86.6, 'L', 'end')
 # The lamp terminal's fork, as printed: 69 SV straight right and down to earth, 52 SV on a diagonal just above it to
 # panel light connector 59 (59 (D11)), where 179 SV from 47:4 (instruments sheet) and the panel lamps' 54/56 SV share
-# the pin: 69 is their earth too. The panel lamps are drawn on the instruments sheet.
+# the pin: 69 is their earth too. The panel lamps are drawn on the instruments sheet. 69's earth symbol is the F10 earth
+# point of the print, which 129 SV (radio sheet), 157 SV (interior sheet) and 341 SV (radio sheet) share (scan p.407,
+# book photo IMG_4707): captioned, as the radio and interior sheets caption theirs.
 wire('69', [(170, 64.8), (178, 64.8), (178, 70)], label=False); earth(178, 70)
 txt(180.5, 68.8, lab('69'), 2.1)
+txt(182.5, 72.9, 'earth point shared', 2.0, fill='#555'); txt(182.5, 75.6, 'with 129, 157, 341 SV', 2.0, fill='#555')
 wire('52', [(170, 64.8), (174, 60.8), (174, 52), (177, 52)], label=False)
 mtag(177, 52, (f"{lab('52')} → panel light", 'connector 59: instrument', 'earth 179 and the panel', 'lamps (instruments sheet)'), w=30)   # w from the rendered text
 
@@ -196,7 +198,8 @@ conn(B9, (LB + RB) / 2, RB - LB + 7, ('ignition switch', 'connector 58'), links=
 
 # FRONT, on the left: the right housing (28) above the left one (27). As printed, the front cables leave 75's and 78's
 # pins on 58 (B9)'s near side and only the rear ones (76, 79) pass it: 80 drops off 78's row, 77 off 75's (crossing
-# 78's row, the one crossing it needs), and both run straight left under 58 (D8)'s name to the rounded ends.
+# 78's row, the one crossing it needs), and both run straight left under 58 (D8)'s name to the rounded ends. On the way
+# 77 passes front lamp connector 58 (58 (E2)) pin 3 (scan p.407, pin at x 1259; book photo P5); 80 passes no connector.
 # The earths: 361 SV to washer pump 63's earth terminal (on to joint 158 through 92 SV, wipers sheet), 360 SV to the
 # main earth star.
 txt(18, 108, 'FRONT', 3.6, w='bold', fill='#777'); txt(18, 112.5, 'car’s right side at top', 2.3, fill='#777')
@@ -207,7 +210,10 @@ wire('80', [(J80, RB), (J80, FR), (HXT, FR)], 150, FR - 1.5); dot(J80, RB)
 t361 = f"361 {WIRES['361']['colour']} {WIRES['361']['mm2']} → washer pump 63 (wipers sheet)"
 wire('361', [(HXF, FR), (HXF - 8, FR)], label=False); tag(HXF - 8, FR, t361, w=44, size=2.0, anchor='end')
 front_housing(FL, 27, 'left')
-wire('77', [(J77, LB), (J77, FL), (HXT, FL)], 150, FL - 1.5); dot(J77, LB)
+X77 = 190                               # front lamp connector 58's pin 3, right of 77's label (under 27's captions: no room)
+wire('77', [(J77, LB), (J77, FL), (X77 + 2, FL)], label=False); dot(J77, LB)
+wire('77', [(X77 - 2, FL), (HXT, FL)], 150, FL - 1.5)
+conn(X77, FL, 7, ('front lamp', 'connector 58, pin 3'), links=(FL,), below=True)   # 58 (E2)
 wire('360', [(HXF, FL), (HXF - 8, FL), (HXF - 8, FL + 3)], label=False); earth(HXF - 8, FL)
 txt(HXF - 13.5, FL + 4.4, f"360 {WIRES['360']['colour']} {WIRES['360']['mm2']}", 2.1, 'end')
 
@@ -265,7 +271,7 @@ wire('137', [(C136, yl[0]), (C136, yr[3]), (CX0, yr[3])], 324, yr[3] - 1.5); dot
 # terminal dots again, on top of the wire ends that meet them
 for p in ((50, 62), (T49, FY), (TC, FY), (T49A, FY), (T31, FY), (149, 48), (170, 64.8), (155, 88), (160, 88), (225, 48),
           (219, 88), (231, 88), (D8 - 2, LB), (D8 + 2, LB), (D8 - 2, RB), (D8 + 2, RB), (B9 - 2, LB), (B9 + 2, LB),
-          (B9 - 2, RB), (B9 + 2, RB), (HXT, FR), (HXT, FL), (HXF, FR), (HXF, FL), (50, Y12), (90, Y12),
+          (B9 - 2, RB), (B9 + 2, RB), (X77 - 2, FL), (X77 + 2, FL), (HXT, FR), (HXT, FL), (HXF, FR), (HXF, FL), (50, Y12), (90, Y12),
           (114, Y12), (158, Y12), (162, Y12), (50, Y3), (158, Y3), (162, Y3), (158, Y138), (162, Y138),
           (202, 205), (202, 226), (196, Y138)) + tuple((CX0, y) for y in (yl[0], yl[1], yl[3], yr[0], yr[2], yr[3])):
     dot(*p)
@@ -293,18 +299,18 @@ notes = ['Flasher 23 is fed on 49 from fuse 11 (always-live bar). 49a (73 GN) fe
          'C (71 GN/VT) works the dash indicator lamp. Its 31 is probably earthed through the mounting (grey).',
          'Switches are drawn at rest. Pressed, hazard switch 25 closes its lamp, R and L contacts together, so + feeds both sides (68 RD/VT, 67 BL/VT).',
          'Terminals: hazard switch 25 has +, R, L and one for its lamp (markings: check D4); indicator switch 24 has 54, R and L. '
-         '73 GN and 74 GN both land on + (probably the same terminal).',
+         '73 GN and 74 GN both land on +.',
          '25’s lamp contact is open at rest: the lamp stays dark with the indicators and blinks with the hazards (check D7). '
          'Grey: the end of 29’s blade and its right contact; probably open at rest.',
          '25’s lamp terminal: 69 SV goes to earth and 52 SV to panel light connector 59, where the instrument earth (179 from 47) '
          'and the panel lamps join it, so 69 earths them too.',
-         '24’s own outputs are 75 BL/VT and 78 RD/VT, through stalk switch connector 58 to ignition switch connector 58. 77/80 (front) leave '
-         'them just before ignition switch connector 58; only 76/79 (rear, route not traced yet) pass it.',
+         '24’s own outputs are 75 BL/VT and 78 RD/VT, through stalk switch connector 58 to ignition switch connector 58. 76/79 (rear) pass ignition switch connector 58',
+         'and run to the rear clusters with no other connector; 77/80 (front) leave 75/78 just before ignition switch connector 58, and 77 then passes front lamp connector 58 (pin 3).',
          'Front lamps on the left, rear lights on the right, the car’s right side at the top, as on the lighting sheet. Each lamp housing has one earth '
          'for all its bulbs; the parking lights and the tail-light feeds are on the lighting sheet.',
          'Rear lamp clusters (3-door Combi Coupé): four bulbs each, probably in the order drawn. No earth lead is printed for them (check R3): each bar goes to earth in grey.',
          '132 and 136 run to the left cluster; 133 and 137 leave its brake and reversing feeds for the right one (at the cluster, probably; the dots are drawn short of it, for room).',
-         '138 BL, from 31’s switched side, feeds the front housings’ side back-up lights (check E16).',
+         '138 BL, from 31’s switched side, feeds the front housings’ side back-up lights (check E16). '
          'Brake and reversing light connector 58: 132, 135 and 138 pass on its pins 2, 3 and 4 (counted top to bottom); pin 1 is 140 GL (interior sheet).',
          'Not RHD-specific: circuits should match the car, but harness routing and part positions may differ.']
 # Sources, not printed: 74 GN 1.0 has its second digit blotted on the 1979 print; the 1977 Turbo diagram and another
