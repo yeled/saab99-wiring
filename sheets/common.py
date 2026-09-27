@@ -34,6 +34,7 @@ def path(pts):
 
 TICKED = [False]  # set when a sheet draws a check mark; the legend shows the tick sample only then
 DASHED = [False]  # set when a sheet draws anything 'not traced'; the legend shows the dashed sample only then
+STUB = [False]    # set when a sheet draws a stub (open circle); the legend shows the 'ends on diagram' sample only then
 PROBABLE = [False]  # set when a part's internals are drawn grey (probable); probable_legend() draws only then
 
 
@@ -88,6 +89,7 @@ def wire(cable, pts, lx=None, ly=None, rot=None, label=True):
         if len(cols) == 2 and not dash:          # second colour as a stripe (skipped on dashed wires)
             A(f'<path d="{d}" fill="none" stroke="{COL[cols[1]]}" stroke-width="{max(.3, round(cw * .45, 2)):g}" stroke-dasharray="1.2 1.2"/>')
     if r['status'] == 'stub':
+        STUB[0] = True
         x, y = pts[-1]
         A(f'<circle cx="{x}" cy="{y}" r="1.3" fill="#fff" stroke="#222" stroke-width=".5"/>')
     if label and lx is not None:
