@@ -35,16 +35,39 @@ def bar_feed(y0, name, sub, n=None, rating=None):
 def ftag(x, y, text, anchor='start', size=2.4):
     """tag() sized to its text: the default width runs long for these longer tags."""
     return tag(x, y, text, w=round(len(text) * size * .46 + 4, 1), size=size, anchor=anchor)
+def mtag(x, y, lines, size=2.2):
+    """Destination tag of several lines (tag() takes one), boxed as the lighting sheet's two-line tags: left edge x,
+    centred on y, lines 1.36 x size apart."""
+    ls = round(1.36 * size, 2); h = round(len(lines) * ls + 1.8, 2); w = round(max(len(t) for t in lines) * size * .46 + 4, 1)
+    A(f'<rect x="{x}" y="{round(y - h / 2, 2)}" width="{w}" height="{h}" rx="1" fill="#fff" stroke="#444" stroke-width=".4"/>')
+    for i, t in enumerate(lines): txt(x + 1.5, round(y - (len(lines) - 1) * ls / 2 + i * ls + .36 * size, 2), t, size)
+def bar58(x0, y0, w, h, pins):
+    """Part of stalk switch connector 58 (the book's 58 at D8, one 11-pin block there) across several parallel runs:
+    a grey bar 6 deep, a dot where each run meets an edge, and the pin number inside (our own count, left to right on
+    the print, as in data/connectors.csv). pins: (x, y, number, grey); upright bars (h > w) take horizontal runs.
+    grey: the pin is probably this one (light grey number, as the sheet's probable terminal labels)."""
+    A(f'<rect x="{x0}" y="{y0}" width="{w}" height="{h}" fill="#ddd" stroke="#111" stroke-width=".5"/>')
+    for x, y, n, grey in pins:
+        ends = ((x0, y), (x0 + w, y)) if h > w else ((x, y0), (x, y0 + h))
+        (glabel if grey else tlabel)(x, round(y + .65, 2), n, 'middle')
+        for p in ends: dot(*p)
 
 # ================= windscreen wipers =================================================================================
 txt(18, 40, 'Windscreen wipers and washer', 3.4, w='bold')
 
 # fuse 4: one terminal with three legs, as in the manual (85 to the switch, 85a to the motor, the third to relay 83:15).
 # The third is printed 85b BR 0.75 at 83 (book photos P7b 1979, P7a 1980), fuse 4's right-hand leg.
+# 85 runs under the switch below stalk switch connector 58's bar (drawn with the switch) and rises into 53a through
+# pin 5; 182 BR/VT to the instruments leaves it on the fuse side of that pin (connectors.csv 58,D8,5: scan p.407 shows
+# the branch leaving the bottom frame just right of pin 5's lower dot; book photo IMG_4723).
 F4R = '85b'
-fx, fy = bar_feed(86, f'<tspan font-weight="bold">F4</tspan> · {FUSES[4]["rating"]}', 'ignition-on bar', 4)
+fx, fy = bar_feed(100, f'<tspan font-weight="bold">F4</tspan> · {FUSES[4]["rating"]}', 'ignition-on bar', 4)
 wire('85a', [(fx, fy), (57, fy - 3), (57, fy - 8), (61, fy - 8)], label=False); tag(61, fy - 8, '85a BR 0.75 → wiper motor 62:4', size=2.4)
-wire('85', [(fx, fy), (158, fy), (158, 91)], 64, fy - 1.5); dot(fx, fy)   # 85 over the 85a legs, then the terminal
+Y58 = 98                                               # top of connector 58's bar under the switch (6 deep)
+wire('85', [(fx, fy), (158, fy), (158, Y58 + 6)], 64, fy - 1.5); dot(fx, fy)   # 85 over the 85a legs, then the terminal
+wire('85', [(158, Y58), (158, 91)], label=False)
+wire('182', [(158, fy), (166, fy)], label=False); dot(158, fy)
+mtag(166, fy, ('182 BR/VT 0.75 → 47:2', 'combination instrument', '(instruments sheet)'))
 
 # ---- 61 wiper switch, drawn as the manual prints it (lever at rest, probably 'off'). Terminals: bottom edge 31b, S,
 # 54c, 53a; right edge INT, 53, 53b. Grey = probable: the labels the print doesn't show clearly, and the T1-53 join.
@@ -150,8 +173,11 @@ txt(TX + 42.4, ky, 'hop: not joined', 2, fill='#333')
 txt(TX, ky + 2.8, '?: at 2, S only if F’s flat top (on line 2) is a contact;', 2, fill='#333')
 txt(TX, ky + 5.6, '54c at 2 and 3 only through P–Q (probably open: check D10).', 2, fill='#333')
 
-wire('86', [(184, 64), (392, 64), (392, 95), (370, 95)], 206, 62.5)
-wire('87', [(184, 72), (386, 72), (386, 89), (370, 89)], 206, 70.5)
+# 84, 86 and 87 leave 61's right edge through stalk switch connector 58, pins 8, 7 and 6 (data/connectors.csv 58,D8;
+# book photo IMG_4723, scan p.407): an upright bar, named above, clear of the switch box
+XB = 190                                               # the bar's left edge
+wire('86', [(184, 64), (XB, 64)], label=False); wire('86', [(XB + 6, 64), (392, 64), (392, 95), (370, 95)], 206, 62.5)
+wire('87', [(184, 72), (XB, 72)], label=False); wire('87', [(XB + 6, 72), (386, 72), (386, 89), (370, 89)], 206, 70.5)
 
 # ---- 83 interval relay, as the 1979 book prints it (book photo P7b and scan p.407 at D8; the 1980 print, P7a, is the
 # same inside). All six terminals sit on the bottom edge, labelled up and to the left: 85, (unread: grey INT, from 84's
@@ -168,9 +194,10 @@ ry = lambda f: round(RY + f, 2)
 # leads: 91, 84 and 88 come in from switch 61 on the left, stacked so they turn up into T1-T3 without crossing each
 # other; 91 takes T1's printed diagonal (the print has it on 91a: same node) so 91a can drop straight to the pump and
 # the two GL wires never cross; 88a and 83 go right; 85b comes up into 15 from below (see its comment)
-wire('91', [(136, YB), (136, RB + 3.5), (T83[0] - 3.5, RB + 3.5), (T83[0], RB)], 150, RB + 2)
-wire('84', [(184, 56.5), (196, 56.5), (196, 138), (T83[1], 138), (T83[1], RB)], 199.5, 136.5)
-wire('88', [(121, YB), (121, 144), (T83[2], 144), (T83[2], RB)], 150, 142.5)
+wire('91', [(136, YB), (136, Y58)], label=False); wire('91', [(136, Y58 + 6), (136, RB + 3.5), (T83[0] - 3.5, RB + 3.5), (T83[0], RB)], 150, RB + 2)
+wire('84', [(184, 56.5), (XB, 56.5)], label=False)
+wire('84', [(XB + 6, 56.5), (201, 56.5), (201, 138), (T83[1], 138), (T83[1], RB)], 204.5, 136.5)
+wire('88', [(121, YB), (121, Y58)], label=False); wire('88', [(121, Y58 + 6), (121, 144), (T83[2], 144), (T83[2], RB)], 150, 142.5)
 wire('91a', [(T83[0], RB), (T83[0], 154), (320, 154)], 266, 152.5)
 wire('88a', [(T83[3], RB), (T83[3], 147), (382, 147), (382, 107), (370, 107)], 290, 145.5)
 # 85b from fuse 4's lower leg: down the left, along under the switch and the relay (below 91a), up into 15; it crosses
@@ -226,7 +253,7 @@ def brush(x0, y0, a, L=2.6, w=1.5):
     return round(x0 + L * math.cos(math.radians(a)), 2), round(y0 - L * math.sin(math.radians(a)), 2)
 wire('85a', [(370, 101), (375, 101)], label=False); ftag(375, 101, '85a BR 0.75 ← fuse 4 (left)')   # no clean route: 62:4 is fenced by 86, 87 and 88a
 # 89 SV (printed along its first run from 1) loops out and back to the housing's lower-right corner, where 90 BL leaves
-# for joint 158 (90: label read at 62; its 1979 run crosses a scan seam, so probably; the 1977 diagram draws it)
+# for joint 158 (90: label read at 62; traced both ways on p.407, the seam is a 3 px step; the 1977 diagram draws it)
 wire('89', [(370, 113), (378.5, 113), (378.5, 118), (370, 118)], label=False); txt(370.9, 111.7, '89 SV 0.75', 2.0)
 wire('90', [(370, 118), (373.5, 121.5), (376, 121.5), (376, 140), (372, 140)], label=False); ftag(372, 140, f'90 BL 1.0 {E158}', anchor='end')
 box(330, 84, 40, 34); motor(MX62, MY62, MR62); txt(350, 80.5, '62 Wiper motor', 2.7, 'middle', w='bold')
@@ -275,15 +302,18 @@ A('<rect x="156" y="221" width="8" height="7" fill="#fff" stroke="#111" stroke-w
 A('<path d="M156,224.5 H150 V232 M164,224.5 H170 V232" fill="none" stroke="#111" stroke-width=".4"/>')
 mlink([(160, 221), (160, 207.8)])   # mechanical link from the coil to both contacts
 wire('100', [(140, 207), (134, 207), (134, 186), (140, 186)], label=False); ftag(140, 186, '100 SV 0.75 → relay 102:31 (ignition sheet)')
-# 96 from switch 61:S (the 1979 print leaves out S to 58 (D8)) down between 88 and 91, along through 58 (D8) pin 3,
-# down right of 67 across 95a and 98, and under 67 into 86; labelled on the run under 67, the part the print draws
+# 96 from switch 61:S (the 1979 print leaves out S to 58 (D8)) down between 88 and 91 through 58 (D8) pin 3 (probably:
+# it leaves the frame between pins 3 and 4 and jogs under 3), along, down right of 67 across 95a and 98, and under 67
+# into 86; labelled on the run under 67, the part the print draws
 Y96, X96 = 173, 220
-wire('96', [(129, YB), (129, Y96), (X96, Y96), (X96, 238), (170, 238), (170, 232)], 186, 236.5)
-def pin58(x, y, name, pin):
-    """One pin of connector 58 on a horizontal run, as on the power sheet: grey block with the pin's two ends, name above, pin below."""
-    A(f'<rect x="{x}" y="{y - 4}" width="4" height="8" fill="#ddd" stroke="#111" stroke-width=".5"/>'); dot(x, y); dot(x + 4, y)
-    txt(x + 2, y - 5.7, name, 2.2, 'middle', w='bold'); txt(x + 2, y + 8.2, pin, 2.0, 'middle', fill='#555')
-pin58(198, Y96, '58 stalks', 'pin 3')   # stalk switch connector 58 (the book's 58 at D8)
+wire('96', [(129, YB), (129, Y58)], label=False)
+wire('96', [(129, Y58 + 6), (129, Y96), (X96, Y96), (X96, 238), (170, 238), (170, 232)], 186, 236.5)
+# stalk switch connector 58 (the book's 58 at D8), drawn in two parts: a bar under 61 across 88, 96, 91 and 85
+# (pins 2-5, as the print spaces them: a wider gap before 5) and the upright bar right of it across 84, 86, 87
+bar58(117, Y58, 45, 6, ((121, Y58 + 3, '2', False), (129, Y58 + 3, '3', True), (136, Y58 + 3, '4', False), (158, Y58 + 3, '5', False)))
+txt(147, Y58 - 1.7, '58 stalks', 2.2, 'middle', w='bold')
+bar58(XB, 52.5, 6, 23.5, ((XB + 3, 56.5, '8', False), (XB + 3, 64, '7', False), (XB + 3, 72, '6', False)))
+txt(XB + 3, 50.8, '58 stalks', 2.2, 'middle', w='bold')
 # 100a: a jumper outside the relay from 85 round to 87's lead, T-joined as the 1979 print draws it (1977: the full loop),
 # so 100 SV earths the coil through 87; it crosses 95 without joining
 wire('100a', [(150, 232), (150, 238), (134, 238), (134, 207)], label=False); dot(134, 207); txt(135.6, 242.2, '100a SV 0.75', 2.1)
@@ -357,13 +387,13 @@ notes = [f'Wipers run from fuse 4 on the ignition-on bar: 85 BR to the switch (5
          'Motor 62: 87 GN (3) and 86 RD (5), through stalk switch connector 58, feed the fast and slow brushes (probably 53b, 53); '
          'the third (common) brush is earthed to the housing. The line from M to the top wall is probably the drive, not a wire.',
          'The park changeover on 2 (88a) rests on 1 (earth), which shorts the rotor to stop it, and swings to 4 (85a BR, +). '
-         '89 SV loops from 1 to the housing corner; 90 BL leaves there, probably for joint 158.',
+         '89 SV loops from 1 to the housing corner; 90 BL leaves there for joint 158.',
          'Switch 61: lever at rest (0), a dashed line through the pivot for each notch (1 intermittent, 2 slow, 3 fast). '
          'White slots insulate the lever’s arms: its 31b and 53a sides join apart. Pulling (4) adds S and 54c to the 53a group.',
          'The park link from the lever (up, over and down) stops short of 53 (grey: probably joined; park, braking and interval need it). '
          'P–Q, between the 54c and S lines, is drawn closed, which would run the washer at fast: probably open (check D10).',
-         'All of switch 61’s wires pass stalk switch connector 58 (85, 86, 87 and the rest); only 96’s pin (3) is drawn. '
-         '96 GR probably starts at S.',
+         'All of switch 61’s wires pass stalk switch connector 58 (pins 2–8, our own count; drawn in two parts). 96 GR probably starts at S and passes pin 3; '
+         '182 BR/VT (instruments) leaves 85 on the fuse side of pin 5.',
          'Headlight wipers: unfused tap 94 BR from bar 3–6, a 3 A glass fuse in holder 65, relay 67. '
          'Outside 67, 100a SV joins 85 to 87, so 100 SV earths the coil.',
          'Relay 67: 88 is + from the 3 A fuse; 95a RD takes it to upper plug row 2 (probably) and 95b RD on to lower row 2 (the park switches); '
@@ -371,6 +401,6 @@ notes = [f'Wipers run from fuse 4 on the ignition-on bar: 85 BR to the switch (5
          '97 BR runs from upper plug row 3 to lower plug row 1. Both motors run together (check E10), so the upper motor must pass the start feed on: '
          'probably a link from row 1 to row 3 inside it (not drawn).',
          'Not RHD-specific: circuits should match the car, but harness routing and part positions may differ. '
-         'Light-grey terminal labels are probable: on 61 31b, 54c, INT, 53, 53b; on 83 INT.']
+         'Light-grey terminal labels are probable: on 61 31b, 54c, INT, 53, 53b; on 83 INT; on 58 pin 3.']
 for j, n in enumerate(notes): txt(lx + 108, ly + 3.45 + j * 3.25, n, 2.3, fill='#333')   # 11 lines: 3.25 pitch fits the box
 save('wipers.svg')
