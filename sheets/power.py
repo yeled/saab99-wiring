@@ -7,12 +7,7 @@ and earth joint 158, where the earth returns of several circuits meet. Wire
 identity, colour, size and status come from data/wires.csv.
 """
 import math
-from common import *
-
-STUB = [False]              # set when this sheet draws a stub (open circle); the legend shows that sample only then
-def wire(cable, *a, _wire=wire, **k):
-    STUB[0] |= WIRES[cable]['status'] == 'stub'
-    _wire(cable, *a, **k)
+from common import *                       # common.wire() sets STUB when it draws a stub; the legend reads it
 
 header('Saab 99 Turbo, model 1979 — Power distribution')   # source: Service Manual 1975-1980, p. 371-28/29 (PDF p. 406-407)
 
@@ -31,16 +26,22 @@ def rowy(r): return 66 + 9 * r + (9 if r >= first_row[3] else 0) + (9 if r >= fi
 DEST = {'42': '14 L rear lamp: tail', '43': '13 L front parking light',   # Combi Coupé: both plate lamps probably on 44
         '44': '14 R rear lamp: tail; 15 number-plate lamps (probably)', '45': '13 R front parking light',   # no 1979 CC page
         '135': '31 Reversing light switch, via 58 brake/reversing',
-        '85': '61 Wiper switch via 58 stalks, where 182 → 47 (instruments sheet)', '85a': '62 Wiper motor, terminal 4', '85b': '83 Wiper interval relay, terminal 15',
-        '380': '140 speed transmitter, fuel boost (ignition sheet)', '140': '64 Seat heating, via 58 brake/reversing, 60 seat feed, 59 seat heater (interior sheet)',
-        '380a': '137 throttle valve switch, fuel boost', '220': '117 corner lamp switch (lighting sheet)',
-        '103': '35 Ventilator fan switch',
+        '85': '61 Wiper switch via 58 stalks, where 182 → 47 (instruments sheet)', '85a': '62 Wiper motor, terminal 4', '85b': '83 Interval relay, terminal 15',
+        '380': '140 Speed transmitter, fuel boost', '140': '64 Seat heating, via 58 brake/reversing, 60 seat feed, 59 seat heater',
+        '380a': '137 Throttle switch, fuel boost', '220': '117 Corner lamp switch',
+        '103': '35 Fan switch',
         '110': '38 Radiator fan relay 30/51', '113': '38 Radiator fan relay 86 (coil)',
-        '210': '113 Heated rear window relay 30', '126': 'lighter, clock, interior light (160 GL)',
-        '260': '102 Fuel pump relay 30', '70': '23 Indicator/hazard flasher unit 49', '131': '29 Brake light switch'}
-NOTE = {'42': 'lighting sheet', '43': 'lighting sheet', '44': 'lighting sheet', '45': 'lighting sheet'}
-TAGW = {'44': 69, '85': 83.5}   # w from the rendered text: tag()'s estimate would run 85's into 118's riser (x 319)
-                                 # and push 44's grey note onto horn 40
+        '210': '113 Heated window relay 30', '126': 'lighter, clock, interior light (160 GL)',
+        '260': '102 Fuel pump relay 30', '70': '23 Flasher unit 49', '131': '29 Brake light switch'}
+DEST2 = {'44': 'at 58 tail lamps: 50 GN → 16 Rheostat (instruments sheet)',     # a second line: branches that leave
+         '140': 'at 58: 214 BL → 116 Heated window switch (climate sheet), on to the tachometer; '   # the fuse's cable
+                'at 60: 150 GL → seat belt warning (interior sheet)'}            # on the way to the first destination
+SHEET = {'42': 'lighting', '43': 'lighting', '44': 'lighting', '45': 'lighting', '135': 'signals', '85': 'wipers',
+         '85a': 'wipers', '85b': 'wipers', '380': 'ignition', '140': 'interior', '380a': 'ignition', '220': 'lighting',
+         '103': 'climate', '110': 'climate', '113': 'climate', '210': 'climate', '126': 'radio', '260': 'ignition',
+         '70': 'signals', '131': 'signals'}   # the first destination's sheet, grey before the tag; branches name theirs inline
+TAGW = {'44': 70.5, '85': 83.5, '140': 154.8}   # w from the rendered text: tag()'s estimate would run 85's into 118's riser
+                                                # (x 319); 44's two-line box ends at x 300.5, 4.5 short of 120 SV (x 306)
 BARS = [(1, 2, 'Bar 1–2 · parking and tail lights, fed from light switch 4'),
         (3, 6, 'Bar 3–6 · live with ignition on, fed from relay 21'),
         (7, 12, 'Bar 7–12 · always live, fed from battery / alternator')]
@@ -64,8 +65,14 @@ for n, outs in OUTS.items():
             HORN_Y = yy; wire(cab, [(176, yy), (HX, yy)], 180, yy - 1.5); dot(176, yy); continue
         wire(cab, [(176, yy), (230, yy)], 180, yy - 1.5); dot(176, yy)
         st = WIRES[cab]['status']
-        end = tag(232 if st == 'stub' else 230, yy, '→ ' + DEST[cab], w=TAGW.get(cab), dashed=(st == 'open'))
-        if cab in NOTE: txt(end + 2.5, yy + 1, NOTE[cab], 2.3, fill='#666')
+        tx = 232 if st == 'stub' else 230
+        txt(tx - 2, yy - 1.2 - core_width(cab) / 2, f'({SHEET[cab]} sheet)', 2.2, 'end', fill='#666')   # above the wire,
+        if cab in DEST2:                                                                 # clear of it however heavy
+            dash = ' stroke-dasharray="1.5 1"' if st == 'open' else ''
+            A(f'<rect x="{tx}" y="{yy - 4.45}" width="{TAGW[cab]}" height="8.9" rx="1" fill="#fff" stroke="#444" stroke-width=".4"{dash}/>')
+            txt(tx + 1.5, yy - .75, '→ ' + DEST[cab], 2.6); txt(tx + 1.5, yy + 2.8, DEST2[cab], 2.6)
+        else:
+            tag(tx, yy, '→ ' + DEST[cab], w=TAGW.get(cab), dashed=(st == 'open'))
 
 # ---- ignition switch 20 and connector 58 ---------------------------------
 # The lock as book photo P8 prints it (the p.407 scan and the 1980 print on p.411 agree): a round housing, a heavy key
@@ -142,15 +149,15 @@ wire('7', [(57, 64), (57, 74), (64, 74)], label=False)
 X7, X10 = 145, 139
 Y7, Y10 = rowy(first_row[7]) - 3.5, rowy(first_row[7]) + 3
 wire('7', [(68, 74), (X7, 74), (X7, Y7), (BX, Y7)], X7 - 1.6, 112, rot=-90)   # label above 11 VT, where 10 isn't beside it
-wire('40', [(68, 74), (72, 79), (84, 79)], label=False); tag(84, 79, '40 GR 1.0 → 10 Light switch 3')
+wire('40', [(68, 74), (72, 79), (84, 79)], label=False); tag(84, 79, '40 GR 1.0 → 10 Light switch 3 (lighting sheet)', w=56)
 P30, P1, P6 = 74, 100, 125                 # pin heights: row 4 (30, level with 7's row 3), rows 1-2 (122, 12), 123's row 6
 wire('30', [(50, 64), (50, P30 - 2)], label=False)
-wire('30', [(50, P30 + 2), (50, 87), (84, 87)], label=False); tag(84, 87, '30 RD 1.0 → 10 Light switch 2')
+wire('30', [(50, P30 + 2), (50, 87), (84, 87)], label=False); tag(84, 87, '30 RD 1.0 → 10 Light switch 2 (lighting sheet)', w=56)   # w: 5 clear of 7 GR (X7)
 wire('340', [(50, P30 + 2), (47, P30 + 5), (47, 95), (84, 95)], label=False); tag(84, 95, '340 RD 0.75 → 122 radio (radio sheet)')
 wire('123', [(32, 64), (32, P6 - 2)], label=False)
-wire('123', [(32, P6 + 2), (32, 161), (40, 161)], label=False); tag(40, 161, '15: 123 GN/VT 1.5 → 147 ballast resistor, coil (ignition sheet)')
+wire('123', [(32, P6 + 2), (32, 161), (40, 161)], label=False); tag(40, 161, '15: 123 GN/VT 1.5 → 147 Ballast resistor, coil (ignition sheet)')
 wire('122', [(23, 64), (23, P1 - 2)], label=False)
-wire('122', [(23, P1 + 2), (23, 169), (40, 169)], label=False); tag(40, 169, '50: 122 GL 2.5 → 89 start relay (ignition sheet)')
+wire('122', [(23, P1 + 2), (23, 169), (40, 169)], label=False); tag(40, 169, '50: 122 GL 2.5 → 89 Start relay (ignition sheet)')
 for x, y, w in ((50, P30, 7), (23, P1, 8), (41, P1, 8), (32, P6, 8)): pin_v(x, y, w)   # 8 across, as 7's; 30's 7, clear of 7's riser
 txt(46.8, P1 + 1.2, '58 ign. switch', 2.2, w='bold')   # right of 12's pin
 txt(16.6, P1, '58 ign. switch', 2.2, 'middle', w='bold', rot=-90)   # 122's pin: left of it, between the frame and the block
@@ -182,11 +189,13 @@ tag(40, 153, '→ 113:85 (climate sheet) → 212 SV → earth joint 158')
 wire('263', [(80, 134), (77, 137), (77, 145), (79, 145)], label=False); tag(79, 145, '263 SV 0.75 ← 102:31 (ignition sheet)')
 wire('11', [(114, 116), (BX, 116)], 117, 114.5)
 wire('10', [(114, 134), (X10, 134), (X10, Y10), (BX, Y10)], 117, 132.5)
-wire('94', [(BX, 180), (118, 180)], 118.5, 178.5); tag(116, 180, '→ 65 fuse holder, 3 A → 67 Headlight wiper relay', anchor='end')
-wire('41', [(BX, 68), (118, 68)], 120, 66.5); tag(116, 68, '10 Light switch 4 (parking) →', anchor='end')
-for cab, y, dest in (('20', 218.5, '→ 8 Lighting relay 30'), ('280', 225, '→ 73 Service outlet (ignition sheet)'),   # 3 mm or more off
-                     ('202', 232.5, '→ 89 Start relay 30')):   # the fuse feeds (F8 228, F9 237), so none reads as fused by one
-    wire(cab, [(BX, y), (118, y)], 120, y - 1.5); tag(116, y, dest, anchor='end')
+wire('94', [(BX, 180), (118, 180)], 118.5, 178.5)
+tag(116, 180, '→ 65 Fuse holder, 3 A → 67 Headlight wiper relay (wipers sheet)', w=78, anchor='end')
+wire('41', [(BX, 68), (118, 68)], 120, 66.5); tag(116, 68, '10 Light switch 4 (lighting sheet) →', w=43.5, anchor='end')   # from x 72.5: clear of 58's pin block (x 64–68) and 7 GR (x 57)
+for cab, y, dest, w in (('20', 218.5, '→ 8 Lighting relay 30 (lighting sheet)', 45.4),   # 3 mm or more off the fuse feeds
+                        ('280', 225, '→ 73 Service outlet (ignition sheet)', 43.5),       # (F8 228, F9 237), so none reads
+                        ('202', 232.5, '→ 89 Start relay 30 (ignition sheet)', 43.2)):    # as fused by one; w: the text's
+    wire(cab, [(BX, y), (118, y)], 120, y - 1.5); tag(116, y, dest, w=w, anchor='end')     # width + 3
 for x in IG.values(): dot(x, 64)                            # terminal dots on top of the wires, so heavy ones don't hide them
 for x, y in ((64, 74), (68, 74), (80, 116), (80, 134), (114, 116), (114, 134), (50, P30 - 2), (50, P30 + 2), (23, P1 - 2),
              (23, P1 + 2), (41, P1 - 2), (41, P1 + 2), (32, P6 - 2), (32, P6 + 2)): dot(x, y)
@@ -276,14 +285,14 @@ C1, C2, C3 = 377, 385, 393                                 # block columns
 TY, BY = 243, 250                                          # block rows
 for y in (TY, BY): A(f'<path d="M{C1},{y} H{C3}" stroke="#111" stroke-width=".6"/>')
 for x in (C1, C2, C3): A(f'<path d="M{x},{TY} V{BY}" stroke="#111" stroke-width=".6"/>')
-J = {'201': '201 SV 0.75 ← 89:85 start relay coil (ignition sheet)',
-     '212': '212 SV 0.75 ← 113:85 heated rear window relay (climate sheet)',
+J = {'201': '201 SV 0.75 ← 89:85 Start relay coil (ignition sheet)',
+     '212': '212 SV 0.75 ← 113:85 Heated window relay (climate sheet)',
      '281': '281 SV 1.5 ← 73 Service outlet, pin 2 (ignition sheet)',
      '92': '92 SV 1.0 ← 63 Washer pump (wipers sheet)',
      '90': '90 BL 1.0 ← 62 Wiper motor housing (wipers sheet)',
      '107': '107 SV 2.5 ← 36 Heater fan motor, via 57 heater fan (climate sheet)',
      '192': '192 SV 0.75 ← 42 Brake warning switch (instruments sheet), with 381 SV from 140 (ignition sheet)',
-     '83': '83 SV 0.75 ← 83 Wiper interval relay (wipers sheet)'}
+     '83': '83 SV 0.75 ← 83 Interval relay (wipers sheet)'}
 ROUTE = {'201': [(C3 + 2.5, TY), (C3 + 8, TY), (C3 + 8, 205), (TE, 205)],       # out of T3's side, up and back over
          '212': [(C3, TY - 1.5), (C3, 212), (TE, 212)],
          '281': [(C1 + 1.3, TY - 1.5), (C1 + 1.3, 229), (TE, 229)],
