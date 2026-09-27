@@ -7,7 +7,7 @@ lives in CSV files, and the A3 sheets and A0 poster are generated from them.
 | Folder | Car | State |
 |---|---|---|
 | [`turbo-1979/`](turbo-1979/README.md) | 1979 Saab 99 Turbo, 3-door Combi Coupé, UK, right-hand drive | v1.0: complete as a drawing of the 1979 diagram; being checked on the car |
-| `le-1974/` | 1974 Saab 99 LE, 4-door, automatic, D-Jetronic fuel injection, UK, right-hand drive | Started |
+| [`le-1974/`](le-1974/README.md) | 1974 Saab 99 LE, 4-door, automatic, D-Jetronic fuel injection, UK, right-hand drive | Started: sources mapped |
 
 ## Layout
 
