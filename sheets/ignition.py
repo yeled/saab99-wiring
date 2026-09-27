@@ -17,7 +17,7 @@ def mtag(x, y, lines, w, size=2.2, anchor='start'):
 # ---- ignition switch and starter ----------------------------------------
 box(18, 38, 40, 32); name(21, 44, '20', 'Ignition switch')
 for t, y in (('30', 44), ('15', 54), ('50', 64)): dot(58, y); txt(56, y + 1, t, 2.4, 'end')
-wire('7', [(58, 44), (66, 44)], label=False); tag(68, 44, '← 7 GR 2.5 from bar 7–12')
+wire('7', [(58, 44), (66, 44)], label=False); mtag(68, 44, ('7 GR 2.5 ← bar 7–12', '(power sheet)'), w=28.1, size=2.6)
 wire('123', [(58, 54), (146, 54)], 70, 52.5); dot(58, 54)           # 15 on top of its 1.5 mm² lead
 # 123 reaches engine connector 58 pin 4 through door switch connector 58 (58 (A9)) row 6, the bottom row (scan p.407:
 # up x 5654 from 20:15 into row 6, labelled on its left; book photos IMG_4700, P8). Drawn like pin 4: bold name above, row below.
@@ -38,7 +38,7 @@ A('<rect x="16" y="147" width="2.4" height="4" fill="#fff" stroke="#111" stroke-
 dot(35, 134); txt(33.6, 137.4, '30', 2.1, 'end', fill='#555')
 for t, y in (('50', 141.5), ('16', 156.5)): dot(52, y); txt(50, y + .8, t, 2.1, 'end', fill='#555')
 # 1 RD 16.0 draws 4 mm wide: a longer stub, so it reads as a lead turning to its tag rather than a lump on the wall
-wire('1', [(35, 134), (35, 127), (45, 127)], label=False); tag(47, 127, '1 RD 16.0 ← battery +', size=2.4); dot(35, 134)
+wire('1', [(35, 134), (35, 127), (45, 127)], label=False); mtag(47, 127, ('1 RD 16.0 ← battery +', '(power sheet)'), w=27.4, size=2.4); dot(35, 134)
 
 # relay 89, drawn upside down (manual: 85, 87, 87a on the top edge; 86, 30 on the bottom), contacts at rest as printed
 box(88, 90, 32, 32)
@@ -57,7 +57,7 @@ blade(107.4, 101.3, 108.5, 110.5); blade(112.2, 101.3, 113.7, 110.5)   # both op
 mlink([cr, (113.4, cr[1])])
 # 201 SV: relay 89's coil earth, to earth joint 158 (power sheet); round to the empty space left of the relay
 wire('201', [(96, 122), (96, 125.5), (84, 125.5), (84, 118), (80, 118)], label=False); tag(78, 118, '201 SV 0.75 → earth joint 158 (power sheet)', w=55, anchor='end')
-wire('202', [(112, 90), (112, 84), (118, 84)], label=False); tag(120, 84, '202 GR 1.5 ← bar 7–12 (always live)'); dot(112, 90)   # 30 on top
+wire('202', [(112, 90), (112, 83), (118, 83)], label=False); mtag(120, 83, ('202 GR 1.5 ← bar 7–12 (always live)', '(power sheet)'), w=46, size=2.6); dot(112, 90)   # 30 on top
 wire('122a', [(104, 122), (104, 141.5), (52, 141.5)], 72, 139.8); dot(104, 122); dot(52, 141.5)   # 87 and 50 on top of it
 # 271: 89:87 to 92's heater through 58/1. Under 394, up into the band below 124, right over the pump and down the strip
 # between the injection parts and 284's riser (284 wraps 102 and the injection parts, so its bottom run crosses this drop
@@ -145,7 +145,7 @@ inner([T87, (242.5, 150.4)]); contact(242.5, 151.2); contact(242.5, 164.5); inne
 blade(242.7, 163.8, 245.5, 152.5)                                    # 30-87: open at rest
 inner([cr, (237, cr[1])]); mlink([(237, cr[1]), (244, cr[1])])
 inner([(224.5, 165.5), TP1]); inner([(224.5, 172.8), TP2])           # box to the pair; the two circles are drawn joined
-wire('260', [T30, (242.5, 190), (247, 190)], label=False); tag(249, 190, '260 GR 1.5 ← fuse 10', size=2.4); dot(*T30)   # 30 on top
+wire('260', [T30, (242.5, 190), (247, 190)], label=False); mtag(249, 190, ('260 GR 1.5 ← fuse 10', '(power sheet)'), w=27.3, size=2.4); dot(*T30)   # 30 on top
 # 284a (TP1 to service outlet 73 pin 5) is drawn with 73, lower left
 # pressure switch 144: contact drawn closed, as the manual prints it
 box(160, 151, 20, 10); inner([(160, 156), (163.2, 156)]); inner([(176.8, 156), (180, 156)])
@@ -232,7 +232,7 @@ txt(80 + FB, 187, 'High-speed fuel boost', 2.8, w='bold')             # 1979 Tur
 txt(80 + FB, 191.3, 'Richens the mixture above about 130 km/h (140) or at 62° throttle (137).', 2.1, fill='#555')
 box(118 + FB, 194, 30, 14); txt(133 + FB, 200.3, '140', 2.8, 'middle', w='bold'); txt(133 + FB, 204.8, 'Speed transmitter', 2.0, 'middle')   # the 1979 legend numbers it 151
 dot(118 + FB, 201); tlabel(119.5 + FB, 199.7, '15'); dot(148 + FB, 198); tlabel(146.5 + FB, 197.2, 'W', 'end')
-wire('380', [(114 + FB, 201), (118 + FB, 201)], label=False); tag(82 + FB, 201, '380 GL 1.0 ← fuse 5')
+wire('380', [(114 + FB, 201), (118 + FB, 201)], label=False); mtag(112 + FB, 201, ('380 GL 1.0 ← fuse 5', '(power sheet)'), w=28.9, size=2.6, anchor='end')
 # 381 SV: 140's earth. Scan p.407 and book photos: down from -31, right, into brake warning switch 42's corner by its
 # earth-side lead, so it reaches joint 158 through 192 SV (power sheet). -31 sits near the left corner and 142 is set
 # right, so the tag has room below 140 before 383's riser. Two lines, since 42 is drawn on the instruments sheet and 192
@@ -254,7 +254,7 @@ box(126 + FB, 219, 14, 12); dot(126 + FB, 225); dot(140 + FB, 225)
 inner([(126 + FB, 225), (128.2 + FB, 225)]); contact(129 + FB, 225); contact(137 + FB, 225); inner([(137.8 + FB, 225), (140 + FB, 225)])
 blade(129.6 + FB, 224.6, 136.6 + FB, 221.6)
 txt(120 + FB, 235, '<tspan font-weight="bold">137</tspan> Throttle switch, 62°', 2.4)
-wire('380a', [(114 + FB, 225), (126 + FB, 225)], label=False); tag(82 + FB, 225, '380a GL 1.0 ← fuse 5')
+wire('380a', [(114 + FB, 225), (126 + FB, 225)], label=False); mtag(112 + FB, 225, ('380a GL 1.0 ← fuse 5', '(power sheet)'), w=28.9, size=2.6, anchor='end')
 wire('383', [(140 + FB, 225), (X142 - 5, 225), (X142 - 5, 198)], 150 + FB, 223.5); dot(X142 - 5, 198)   # joins 382 at 142's feed terminal: one contact on the car (E12)
 
 # ---- service outlet 73 (TSI), in the free corner under the starter ----------------------------------
