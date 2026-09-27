@@ -3,6 +3,11 @@
 One of the cars in this repo (see the [top-level README](../README.md)): a 1974 Saab 99 LE,
 4-door saloon, automatic transmission, Bosch D-Jetronic fuel injection, UK, right-hand drive.
 
+Its chassis is a 1973 (model year 1973). It is drawn from the 1974 diagrams; wherever the car
+turns out to differ, the difference is compared with the 1973 drawings. Fitted: seat heating and
+cigarette lighter; the clock has been replaced by an aftermarket rev counter; no headlamp wipers,
+heated rear window or radio.
+
 **State: started.** The sources in the Saab 99 Service Manual 1969–1974 have been mapped; the
 wiring is not traced yet.
 
