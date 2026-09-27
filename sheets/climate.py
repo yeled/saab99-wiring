@@ -78,7 +78,7 @@ wire('114', [(144, 72), (196, 72), (196, 88), (218, 88)], 160, 70.5); conn(220, 
 wire('114a', [(222, 88), (262, 88)], 231, 86.5)
 box(262, 82, 20, 12); A('<path d="M266,90 l8,-5 M274,88 h6" stroke="#111" stroke-width=".5"/>')
 # 39's earth side is not a local earth: 115 SV runs to the left headlamp's common and earths through its 28 SV
-wire('115', [(282, 88), (292, 88)], label=False); tag(294, 88, '115 SV 0.75 ← left headlamp common; earth via 28 SV (lighting sheet)', w=71.9, size=2.2)
+wire('115', [(282, 88), (292, 88)], label=False); tag(294, 88, '115 SV 0.75 → left headlamp common; earth via 28 SV (lighting sheet)', w=71.9, size=2.2)
 txt(262, 104, '<tspan font-weight="bold">39</tspan> Thermostat switch: closes when hot', 2.5)
 
 # ---- heater fan ------------------------------------------------------------------

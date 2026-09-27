@@ -175,7 +175,7 @@ wire('69', [(170, 64.8), (178, 64.8), (178, 70)], label=False); earth(178, 70)
 txt(180.5, 68.8, lab('69'), 2.1)
 txt(182.5, 72.9, 'earth point shared', 2.0, fill='#555'); txt(182.5, 75.6, 'with 129, 157, 341 SV', 2.0, fill='#555')
 wire('52', [(170, 64.8), (174, 60.8), (174, 52), (177, 52)], label=False)
-mtag(177, 52, (f"{lab('52')} → panel light", 'connector 59: instrument', 'earth 179 and the panel', 'lamps (instruments sheet)'), w=30)   # w from the rendered text
+mtag(177, 52, (f"{lab('52')} ← panel light", 'connector 59: instrument', 'earth 179 and the panel', 'lamps (instruments sheet)'), w=30)   # w from the rendered text
 
 # 24 indicator switch as printed: 54 at the top, a lever hanging from its pivot, centre-off between R (left) and L.
 box(210, 48, 30, 40); txt(243, 68, '24 Indicator switch', 2.4, w='bold')
