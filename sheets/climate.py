@@ -27,6 +27,13 @@ def fcontact(x, y):
 def redot(*pts):
     """Terminal dots drawn again over the wire ends: a 1.5 or 2.5 wire is wider than a dot and would swallow it."""
     for x, y in pts: dot(x, y)
+def tag2(x, y, lines, w, size=2.2, anchor='start'):
+    """Tag of two or more lines, laid out as lighting.py's ltag(); (x, y) as for tag(), w its width."""
+    x0 = x if anchor == 'start' else x - w
+    ls = round(1.36 * size, 2); h = round(len(lines) * ls + 1.8, 2)
+    A(f'<rect x="{x0}" y="{round(y - h / 2, 2)}" width="{w}" height="{h}" rx="1" fill="#fff" stroke="#444" stroke-width=".4"/>')
+    for i, s in enumerate(lines):
+        txt(x0 + 1.5, round(y - (len(lines) - 1) * ls / 2 + i * ls + .36 * size, 2), s, size)
 WORK = [False]  # set when work() draws; the legend then shows its sample
 def work(pts):
     """A switch's other positions, drawn short-dashed as the manual prints them (not 'not traced'; DASHED stays off)."""
@@ -57,11 +64,17 @@ inner([(110, 58), (120.2, 58)]); contact(121, 58); contact(133, 58); inner([(133
 blade(121.6, 57.5, 132.4, 54.6)
 coil(124, 64, 6, 16); inner([(110, 72), (124, 72)]); inner([(130, 72), (144, 72)]); mlink([(127, 64), (127, 56.5)])
 wire('110', [(54, y7), (57, 58), (110, 58)], 62, 56.5); wire('113', [(54, y7), (57, 66), (80, 66), (80, 72), (110, 72)], 62, 64.5)
-wire('111', [(144, 58), (236, 58)], 170, 56.5); conn(240, 58, 8, '59 radiator fan')
+# radiator fan connector 59, two pins as printed: 112 SV on the upper, 111 GN on the lower; the harness is on its left.
+# 37 has no earth of its own: 112 SV 1.5 runs from the upper pin to the central earth star (scan p.407, book photo P5).
+# The pins are 14 apart so 112 drops into its earth clear of 111; both motor leads go straight into 37's rim.
+wire('111', [(144, 58), (238, 58)], 170, 56.5)
+wire('112', [(238, 44), (200, 44), (200, 47.5)], 214, 42.5); earth(200, 47.5); txt(204.5, 52.2, 'central earth star', 2.2, fill='#555')
+conn(240, 51, 20, '59 radiator fan')
 redot((54, y7), (110, 58), (144, 58))
-A('<path d="M242,58 H262" stroke="#111" stroke-width=".6"/>'); motor(270, 58)
-txt(280, 56, '<tspan font-weight="bold">37</tspan> Radiator fan motor', 2.7); A('<path d="M270,65 v5" stroke="#111" stroke-width=".6"/>'); earth(270, 70)
-wire('114', [(144, 72), (196, 72), (196, 88), (216, 88)], 160, 70.5); conn(220, 88, 6, '60 thermostat')
+xr = round(273 - (9 ** 2 - 7 ** 2) ** .5, 2)                     # 37's rim at the pin heights (centre 273, 51, r 9)
+lead([(242, 44), (xr, 44)]); lead([(242, 58), (xr, 58)]); motor(273, 51, 9)
+txt(285.5, 52, '<tspan font-weight="bold">37</tspan> Radiator fan motor', 2.7)
+wire('114', [(144, 72), (196, 72), (196, 88), (218, 88)], 160, 70.5); conn(220, 88, 6, '60 thermostat')
 wire('114a', [(222, 88), (262, 88)], 231, 86.5)
 box(262, 82, 20, 12); A('<path d="M266,90 l8,-5 M274,88 h6" stroke="#111" stroke-width=".5"/>')
 # 39's earth side is not a local earth: 115 SV runs to the left headlamp's common and earths through its 28 SV
@@ -129,16 +142,20 @@ contact(209, 207.8); inner([(209.8, 207.8), (211.4, 207.8)]); inner([(209, 208.6
 fcontact(214.7, 207.8); inner([(214.7, 208.6), (214.7, 212.7), (211.6, 212.7), (211.6, 220)])
 blade(199, 212.5, 214.7, 203.7)
 wire('213', [(202.8, 220), (202.8, 237), (137, 237), (137, 231)], 145, 235.5)
-wire('215', [(193.9, 220), (193.9, 225), (190, 225)], label=False); tag(188, 225, f'215 SV 0.75 → lighter 48 → earth', w=36, size=2.2, anchor='end')
-# the right terminal's inverted V: 203 drawn first so 214's blue sits on top at the apex; 214's corner falls inside a dash
+# 215 earths the lamp at lighter 48's earth terminal (with the clock's 128); 129 SV goes on to earth (radio sheet).
+# Two lines: one would reach relay 113; its top clears 116's box by 2.
+wire('215', [(193.9, 220), (193.9, 226), (190, 226)], label=False)
+tag2(188, 226, ['215 SV 0.75 → lighter 48’s earth,', 'then 129 SV to earth (radio sheet)'], 36.6, anchor='end')
+# the right terminal's inverted V: 203 drawn first so 214's blue sits on top at the apex
 wire('203', [(211.6, 220), (209.8, 222), (209.8, 232.6), (228, 232.6)], label=False); tag(230, 232.6, f'203 BR 0.75 → tachometer 110 (instruments sheet)', w=53.2, size=2.2)
-# 214 still dashed (not seen on the car); probably +15 from fuse 5, tapped off 140 GL on the fuse side of 58 (E12), check D14
+# 214: +15 from fuse 5, joined to 140 GL at the fuse-side pin of 58 (E12) row 1; read end to end on the 1979 scan
+# (p.407) and book photo IMG_4708 (27 Sep), the same as the 1977 Turbo print. On the car: check D14
 wire('214', [(211.6, 220), (213.4, 222), (213.4, 225.8), (228, 225.8)], label=False)
-tag(230, 225.8, '214 BL 0.75 ← fuse 5, off 140 GL at brake and reversing light connector 58 (interior sheet); probably: check D14', w=112.1, size=2.2, dashed=True)
-# 211 rises right of 214's tag to the window; on its way it passes pin 5 of door switch connector 58 (58 (A9)), drawn as
+tag(230, 225.8, '214 BL 0.75 ← fuse 5, with 140 GL at brake and reversing light connector 58 (interior sheet)', w=92.3, size=2.2)
+# 211 rises right of 214's tag to the window; on its way it passes row 5 of door switch connector 58 (58 (A9)), drawn as
 # the other connectors here: grey block over the wire, dots on both edges, caption above (the notes box is below)
 wire('211', [(116, 231), (116, 243), (348, 243), (348, 215), (356, 215)], 240, 241.5)
-conn(302, 243, 8, '58 door switches, pin 5')
+conn(302, 243, 8, '58 door switches, row 5')
 redot((54, y8), (116, 203), (116, 231), (300, 243), (304, 243))
 box(356, 210, 30, 10); A('<path d="M359,215 l2,-2 l2,4 l2,-4 l2,4 l2,-4 l2,4 l2,-4 l2,4 l2,-4 l2,4 l2,-4 l2,2" fill="none" stroke="#111" stroke-width=".4"/>')
 A('<path d="M386,215 h6 v4" fill="none" stroke="#111" stroke-width=".6"/>'); earth(392, 219); txt(356, 229, '<tspan font-weight="bold">115</tspan> Heated rear window', 2.6)
@@ -163,13 +180,13 @@ def r_work(y): work([(x, y - 1), (x + 9, y - 1)]); txt(x + 11, y, 'short dashes 
 rows = [lambda y: size_legend(x, y), r_traced] + [r_tick] * TICKED[0] + [lambda y: probable_legend(x, y - 1)] * PROBABLE[0] + [r_work] * WORK[0]
 y0, y1 = ly + 17, ly + 34.8
 for k, row in enumerate(rows): row(y0 + k * min(6, (y1 - y0) / (len(rows) - 1)))
-notes = ['Radiator fan: relay 38 (drawn at rest, contact open) is fed from fuse 7 on the always-live bar; thermostat switch 39 earths its coil through 115 SV and the left',
-         'headlamp’s earth, 28 SV, so the drawing lets the fan run after the engine is switched off. 114a is drawn BL; it may be SV (black) on the car: check E14.',
-         'Heater fan: fuse 6 is on the ignition-on bar. Switch 35 rests on its unwired terminal (probably off); its short-dashed lines are its other positions: 8 feeds the',
-         'motor directly; 6 goes through resistor 74, whose far lead lands on heater fan connector 57’s corner (probably row 1; drawn grey). The motor returns through 57 row 3 on 107 SV to joint 158.',
-         'Heated rear window: fuse 8 (always live) feeds relay 113 (at rest, open); switch 116, drawn off, energises it through 213 BL. Its right terminal takes the feed 214 BL (probably from fuse 5 on the ignition-on bar, off 140 GL: check D14)',
-         'and 203 to the tachometer; its lamp is probably the “on” indicator. 113:85 also takes the earths 13 SV (relay 8) and 33 SV (relay 21); 212 SV carries all three earths (relays 113, 8 and 21) to earth joint 158.',
-         'Combi Coupé: the heated window is in the tailgate (probably about 200 W); its feed 211 passes door switch connector 58 (pin 5) and may also pass number-plate connector 59 (check R5).',
-         'Not RHD-specific: circuits should match the car, but harness routing and part positions may differ.']
+notes = ['Radiator fan: relay 38 (drawn at rest, contact open) is fed from fuse 7 on the always-live bar. Motor 37 has no earth of its own: 112 SV takes it through radiator fan connector 59 to the',
+         'central earth star. Thermostat switch 39 earths the relay coil through 115 SV and the left headlamp’s earth, 28 SV, so the drawing lets the fan run after the engine is switched off. 114a is drawn BL;',
+         'it may be SV (black) on the car: check E14. Heater fan: fuse 6 is on the ignition-on bar. Switch 35 rests on its unwired terminal (probably off); its short-dashed lines are its other positions: 8 feeds',
+         'the motor directly; 6 goes through resistor 74, whose far lead lands on heater fan connector 57’s corner (probably row 1; drawn grey). The motor returns through 57 row 3 on 107 SV to joint 158.',
+         'Heated rear window: fuse 8 (always live) feeds relay 113 (at rest, open); switch 116, drawn off, energises it through 213 BL. 113:85 also takes the earths 13 SV (relay 8) and 33 SV (relay 21);',
+         '212 SV carries all three to earth joint 158. 116’s right terminal takes the feed 214 BL from fuse 5 on the ignition-on bar, joined to 140 GL at brake and reversing light connector 58 (check D14),',
+         'and passes it on 203 to the tachometer; its lamp is probably the “on” indicator and earths on 215 SV through lighter 48. Combi Coupé: the heated window is in the tailgate (probably about 200 W);',
+         'its feed 211 passes door switch connector 58 (row 5) and may also pass number-plate connector 59 (check R5). Not RHD-specific: circuits should match the car, but harness routing and part positions may differ.']
 for j, n in enumerate(notes): txt(lx + 108, ly + 6 + j * 4.1, n, 2.35, fill='#333')   # 8 lines: 4.1 pitch fits the box
 save('climate.svg')
