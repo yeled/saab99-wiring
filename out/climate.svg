@@ -39,23 +39,28 @@
 <path d="M54,62 L57,66 L80,66 L80,72 L110,72" fill="none" stroke="#d42020" stroke-width="0.5" stroke-linejoin="round"/>
 <rect x="61.4" y="61.5" width="19.02" height="3.6" fill="#fff" opacity=".85"/>
 <text x="62" y="64.5" font-size="2.8" text-anchor="start" font-weight="normal" fill="#111">113 RD 0.75</text>
-<path d="M144,58 L236,58" fill="none" stroke="#222" stroke-width="2.2" stroke-linejoin="round"/>
-<path d="M144,58 L236,58" fill="none" stroke="#1e9e3e" stroke-width="1.6" stroke-linejoin="round"/>
+<path d="M144,58 L238,58" fill="none" stroke="#222" stroke-width="2.2" stroke-linejoin="round"/>
+<path d="M144,58 L238,58" fill="none" stroke="#1e9e3e" stroke-width="1.6" stroke-linejoin="round"/>
 <rect x="169.4" y="53.25" width="17.400000000000002" height="3.6" fill="#fff" opacity=".85"/>
 <text x="170" y="56.25" font-size="2.8" text-anchor="start" font-weight="normal" fill="#111">111 GN 1.5</text>
-<rect x="238" y="54.0" width="4" height="8" fill="#ddd" stroke="#111" stroke-width=".5"/>
-<text x="240" y="52.5" font-size="2.2" text-anchor="middle" font-weight="normal" fill="#555">59 radiator fan</text>
+<path d="M238,44 L200,44 L200,47.5" fill="none" stroke="#222" stroke-width="2.2" stroke-linejoin="round"/>
+<path d="M238,44 L200,44 L200,47.5" fill="none" stroke="#111111" stroke-width="1.6" stroke-linejoin="round"/>
+<rect x="213.4" y="39.25" width="17.400000000000002" height="3.6" fill="#fff" opacity=".85"/>
+<text x="214" y="42.25" font-size="2.8" text-anchor="start" font-weight="normal" fill="#111">112 SV 1.5</text>
+<path d="M200,47.5 v3 M197,50.5 h6 M198,51.8 h4 M199,53.1 h2" stroke="#111" stroke-width=".5" fill="none"/>
+<text x="204.5" y="52.2" font-size="2.2" text-anchor="start" font-weight="normal" fill="#555">central earth star</text>
+<rect x="238" y="41.0" width="4" height="20" fill="#ddd" stroke="#111" stroke-width=".5"/>
+<text x="240" y="39.5" font-size="2.2" text-anchor="middle" font-weight="normal" fill="#555">59 radiator fan</text>
 <circle cx="54" cy="62" r="1.4" fill="#111"/>
 <circle cx="110" cy="58" r="1.4" fill="#111"/>
 <circle cx="144" cy="58" r="1.4" fill="#111"/>
-<path d="M242,58 H262" stroke="#111" stroke-width=".6"/>
-<circle cx="270" cy="58" r="7" fill="#fff" stroke="#111" stroke-width=".7"/>
-<text x="270" y="59.2" font-size="3" text-anchor="middle" font-weight="bold" fill="#111">M</text>
-<text x="280" y="56" font-size="2.7" text-anchor="start" font-weight="normal" fill="#111"><tspan font-weight="bold">37</tspan> Radiator fan motor</text>
-<path d="M270,65 v5" stroke="#111" stroke-width=".6"/>
-<path d="M270,70 v3 M267,73 h6 M268,74.3 h4 M269,75.6 h2" stroke="#111" stroke-width=".5" fill="none"/>
-<path d="M144,72 L196,72 L196,88 L216,88" fill="none" stroke="#222" stroke-width="0.9" stroke-linejoin="round"/>
-<path d="M144,72 L196,72 L196,88 L216,88" fill="none" stroke="#111111" stroke-width="0.5" stroke-linejoin="round"/>
+<path d="M242,44 L267.34,44" fill="none" stroke="#111" stroke-width=".6" stroke-linejoin="round"/>
+<path d="M242,58 L267.34,58" fill="none" stroke="#111" stroke-width=".6" stroke-linejoin="round"/>
+<circle cx="273" cy="51" r="9" fill="#fff" stroke="#111" stroke-width=".7"/>
+<text x="273" y="52.2" font-size="3" text-anchor="middle" font-weight="bold" fill="#111">M</text>
+<text x="285.5" y="52" font-size="2.7" text-anchor="start" font-weight="normal" fill="#111"><tspan font-weight="bold">37</tspan> Radiator fan motor</text>
+<path d="M144,72 L196,72 L196,88 L218,88" fill="none" stroke="#222" stroke-width="0.9" stroke-linejoin="round"/>
+<path d="M144,72 L196,72 L196,88 L218,88" fill="none" stroke="#111111" stroke-width="0.5" stroke-linejoin="round"/>
 <rect x="159.4" y="67.5" width="19.02" height="3.6" fill="#fff" opacity=".85"/>
 <text x="160" y="70.5" font-size="2.8" text-anchor="start" font-weight="normal" fill="#111">114 SV 0.75</text>
 <rect x="218" y="85.0" width="4" height="6" fill="#ddd" stroke="#111" stroke-width=".5"/>
@@ -226,24 +231,25 @@
 <path d="M202.8,220 L202.8,237 L137,237 L137,231" fill="none" stroke="#1f5fbf" stroke-width="0.5" stroke-linejoin="round"/>
 <rect x="144.4" y="232.5" width="19.02" height="3.6" fill="#fff" opacity=".85"/>
 <text x="145" y="235.5" font-size="2.8" text-anchor="start" font-weight="normal" fill="#111">213 BL 0.75</text>
-<path d="M193.9,220 L193.9,225 L190,225" fill="none" stroke="#222" stroke-width="0.9" stroke-linejoin="round"/>
-<path d="M193.9,220 L193.9,225 L190,225" fill="none" stroke="#111111" stroke-width="0.5" stroke-linejoin="round"/>
-<rect x="152" y="222.4" width="36" height="5.2" rx="1" fill="#fff" stroke="#444" stroke-width=".4"/>
-<text x="153.5" y="226" font-size="2.2" text-anchor="start" font-weight="normal" fill="#111">215 SV 0.75 <tspan font-family="Arial">→</tspan> lighter 48 <tspan font-family="Arial">→</tspan> earth</text>
+<path d="M193.9,220 L193.9,226 L190,226" fill="none" stroke="#222" stroke-width="0.9" stroke-linejoin="round"/>
+<path d="M193.9,220 L193.9,226 L190,226" fill="none" stroke="#111111" stroke-width="0.5" stroke-linejoin="round"/>
+<rect x="151.4" y="222.11" width="36.6" height="7.78" rx="1" fill="#fff" stroke="#444" stroke-width=".4"/>
+<text x="152.9" y="225.3" font-size="2.2" text-anchor="start" font-weight="normal" fill="#111">215 SV 0.75 <tspan font-family="Arial">→</tspan> lighter 48’s earth,</text>
+<text x="152.9" y="228.29" font-size="2.2" text-anchor="start" font-weight="normal" fill="#111">then 129 SV to earth (radio sheet)</text>
 <path d="M211.6,220 L209.8,222 L209.8,232.6 L228,232.6" fill="none" stroke="#222" stroke-width="0.9" stroke-linejoin="round"/>
 <path d="M211.6,220 L209.8,222 L209.8,232.6 L228,232.6" fill="none" stroke="#7a4a1c" stroke-width="0.5" stroke-linejoin="round"/>
 <rect x="230" y="230.0" width="53.2" height="5.2" rx="1" fill="#fff" stroke="#444" stroke-width=".4"/>
 <text x="231.5" y="233.6" font-size="2.2" text-anchor="start" font-weight="normal" fill="#111">203 BR 0.75 <tspan font-family="Arial">→</tspan> tachometer 110 (instruments sheet)</text>
-<path d="M211.6,220 L213.4,222 L213.4,225.8 L228,225.8" fill="none" stroke="#222" stroke-width="0.9" stroke-linejoin="round" stroke-dasharray="3 2"/>
-<path d="M211.6,220 L213.4,222 L213.4,225.8 L228,225.8" fill="none" stroke="#1f5fbf" stroke-width="0.5" stroke-linejoin="round" stroke-dasharray="3 2"/>
-<rect x="230" y="223.20000000000002" width="112.1" height="5.2" rx="1" fill="#fff" stroke="#444" stroke-width=".4" stroke-dasharray="1.5 1"/>
-<text x="231.5" y="226.8" font-size="2.2" text-anchor="start" font-weight="normal" fill="#111">214 BL 0.75 <tspan font-family="Arial">←</tspan> fuse 5, off 140 GL at brake and reversing light connector 58 (interior sheet); probably: check D14</text>
+<path d="M211.6,220 L213.4,222 L213.4,225.8 L228,225.8" fill="none" stroke="#222" stroke-width="0.9" stroke-linejoin="round"/>
+<path d="M211.6,220 L213.4,222 L213.4,225.8 L228,225.8" fill="none" stroke="#1f5fbf" stroke-width="0.5" stroke-linejoin="round"/>
+<rect x="230" y="223.20000000000002" width="92.3" height="5.2" rx="1" fill="#fff" stroke="#444" stroke-width=".4"/>
+<text x="231.5" y="226.8" font-size="2.2" text-anchor="start" font-weight="normal" fill="#111">214 BL 0.75 <tspan font-family="Arial">←</tspan> fuse 5, with 140 GL at brake and reversing light connector 58 (interior sheet)</text>
 <path d="M116,231 L116,243 L348,243 L348,215 L356,215" fill="none" stroke="#222" stroke-width="2.9" stroke-linejoin="round"/>
 <path d="M116,231 L116,243 L348,243 L348,215 L356,215" fill="none" stroke="#f2c500" stroke-width="2.3" stroke-linejoin="round"/>
 <rect x="239.4" y="237.9" width="17.400000000000002" height="3.6" fill="#fff" opacity=".85"/>
 <text x="240" y="240.9" font-size="2.8" text-anchor="start" font-weight="normal" fill="#111">211 GL 2.5</text>
 <rect x="300" y="239.0" width="4" height="8" fill="#ddd" stroke="#111" stroke-width=".5"/>
-<text x="302" y="237.5" font-size="2.2" text-anchor="middle" font-weight="normal" fill="#555">58 door switches, pin 5</text>
+<text x="302" y="237.5" font-size="2.2" text-anchor="middle" font-weight="normal" fill="#555">58 door switches, row 5</text>
 <circle cx="54" cy="196" r="1.75" fill="#111"/>
 <circle cx="116" cy="203" r="1.75" fill="#111"/>
 <circle cx="116" cy="231" r="1.75" fill="#111"/>
@@ -282,20 +288,18 @@
 <text x="99.0" y="267.0" font-size="2.4" text-anchor="start" font-weight="normal" fill="#111">4.0</text>
 <path d="M22,271.93333333333334 h9" stroke="#222" stroke-width="1.7"/>
 <text x="33" y="272.93333333333334" font-size="2.4" text-anchor="start" font-weight="normal" fill="#111">traced (cable no. read)</text>
-<path d="M70,271.93333333333334 h9" stroke="#222" stroke-width="1.7" stroke-dasharray="3 2"/>
-<text x="81" y="272.93333333333334" font-size="2.4" text-anchor="start" font-weight="normal" fill="#111">not traced yet</text>
 <circle cx="23" cy="277.867" r=".8" fill="#fff" stroke="#888" stroke-width=".35"/>
 <circle cx="30" cy="277.867" r=".8" fill="#fff" stroke="#888" stroke-width=".35"/>
 <path d="M23.7,277.567 L29.6,275.467" stroke="#888" stroke-width=".75" stroke-linecap="round"/>
 <text x="33" y="278.8666666666667" font-size="2.4" text-anchor="start" font-weight="normal" fill="#111">grey inside a part: probably</text>
 <path d="M22,283.8 L31,283.8" fill="none" stroke="#111" stroke-width=".4" stroke-dasharray=".8 .6"/>
 <text x="33" y="284.8" font-size="2.4" text-anchor="start" font-weight="normal" fill="#111">short dashes inside a switch: its other positions</text>
-<text x="126" y="256.0" font-size="2.35" text-anchor="start" font-weight="normal" fill="#333">Radiator fan: relay 38 (drawn at rest, contact open) is fed from fuse 7 on the always-live bar; thermostat switch 39 earths its coil through 115 SV and the left</text>
-<text x="126" y="260.1" font-size="2.35" text-anchor="start" font-weight="normal" fill="#333">headlamp’s earth, 28 SV, so the drawing lets the fan run after the engine is switched off. 114a is drawn BL; it may be SV (black) on the car: check E14.</text>
-<text x="126" y="264.2" font-size="2.35" text-anchor="start" font-weight="normal" fill="#333">Heater fan: fuse 6 is on the ignition-on bar. Switch 35 rests on its unwired terminal (probably off); its short-dashed lines are its other positions: 8 feeds the</text>
-<text x="126" y="268.3" font-size="2.35" text-anchor="start" font-weight="normal" fill="#333">motor directly; 6 goes through resistor 74, whose far lead lands on heater fan connector 57’s corner (probably row 1; drawn grey). The motor returns through 57 row 3 on 107 SV to joint 158.</text>
-<text x="126" y="272.4" font-size="2.35" text-anchor="start" font-weight="normal" fill="#333">Heated rear window: fuse 8 (always live) feeds relay 113 (at rest, open); switch 116, drawn off, energises it through 213 BL. Its right terminal takes the feed 214 BL (probably from fuse 5 on the ignition-on bar, off 140 GL: check D14)</text>
-<text x="126" y="276.5" font-size="2.35" text-anchor="start" font-weight="normal" fill="#333">and 203 to the tachometer; its lamp is probably the “on” indicator. 113:85 also takes the earths 13 SV (relay 8) and 33 SV (relay 21); 212 SV carries all three earths (relays 113, 8 and 21) to earth joint 158.</text>
-<text x="126" y="280.6" font-size="2.35" text-anchor="start" font-weight="normal" fill="#333">Combi Coupé: the heated window is in the tailgate (probably about 200 W); its feed 211 passes door switch connector 58 (pin 5) and may also pass number-plate connector 59 (check R5).</text>
-<text x="126" y="284.7" font-size="2.35" text-anchor="start" font-weight="normal" fill="#333">Not RHD-specific: circuits should match the car, but harness routing and part positions may differ.</text>
+<text x="126" y="256.0" font-size="2.35" text-anchor="start" font-weight="normal" fill="#333">Radiator fan: relay 38 (drawn at rest, contact open) is fed from fuse 7 on the always-live bar. Motor 37 has no earth of its own: 112 SV takes it through radiator fan connector 59 to the</text>
+<text x="126" y="260.1" font-size="2.35" text-anchor="start" font-weight="normal" fill="#333">central earth star. Thermostat switch 39 earths the relay coil through 115 SV and the left headlamp’s earth, 28 SV, so the drawing lets the fan run after the engine is switched off. 114a is drawn BL;</text>
+<text x="126" y="264.2" font-size="2.35" text-anchor="start" font-weight="normal" fill="#333">it may be SV (black) on the car: check E14. Heater fan: fuse 6 is on the ignition-on bar. Switch 35 rests on its unwired terminal (probably off); its short-dashed lines are its other positions: 8 feeds</text>
+<text x="126" y="268.3" font-size="2.35" text-anchor="start" font-weight="normal" fill="#333">the motor directly; 6 goes through resistor 74, whose far lead lands on heater fan connector 57’s corner (probably row 1; drawn grey). The motor returns through 57 row 3 on 107 SV to joint 158.</text>
+<text x="126" y="272.4" font-size="2.35" text-anchor="start" font-weight="normal" fill="#333">Heated rear window: fuse 8 (always live) feeds relay 113 (at rest, open); switch 116, drawn off, energises it through 213 BL. 113:85 also takes the earths 13 SV (relay 8) and 33 SV (relay 21);</text>
+<text x="126" y="276.5" font-size="2.35" text-anchor="start" font-weight="normal" fill="#333">212 SV carries all three to earth joint 158. 116’s right terminal takes the feed 214 BL from fuse 5 on the ignition-on bar, joined to 140 GL at brake and reversing light connector 58 (check D14),</text>
+<text x="126" y="280.6" font-size="2.35" text-anchor="start" font-weight="normal" fill="#333">and passes it on 203 to the tachometer; its lamp is probably the “on” indicator and earths on 215 SV through lighter 48. Combi Coupé: the heated window is in the tailgate (probably about 200 W);</text>
+<text x="126" y="284.7" font-size="2.35" text-anchor="start" font-weight="normal" fill="#333">its feed 211 passes door switch connector 58 (row 5) and may also pass number-plate connector 59 (check R5). Not RHD-specific: circuits should match the car, but harness routing and part positions may differ.</text>
 </svg>

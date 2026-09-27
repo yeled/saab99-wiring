@@ -131,10 +131,11 @@
 <text x="184.5" y="101.3" font-size="2" text-anchor="start" font-weight="normal" fill="#555">220 may be GL (check E19b)</text>
 <path d="M175,88 L183,88" fill="none" stroke="#222" stroke-width="0.9" stroke-linejoin="round" stroke-dasharray="3 2"/>
 <path d="M175,88 L183,88" fill="none" stroke="#111111" stroke-width="0.5" stroke-linejoin="round" stroke-dasharray="3 2"/>
-<rect x="183" y="82.61" width="28.2" height="10.77" rx="1" fill="#fff" stroke="#444" stroke-width=".4"/>
-<text x="184.5" y="85.8" font-size="2.2" text-anchor="start" font-weight="normal" fill="#111">223 SV 0.75 <tspan font-family="Arial">→</tspan> clock 49</text>
-<text x="184.5" y="88.79" font-size="2.2" text-anchor="start" font-weight="normal" fill="#111">earth, with 128 SV</text>
-<text x="184.5" y="91.78" font-size="2.2" text-anchor="start" font-weight="normal" fill="#111">(radio sheet)</text>
+<rect x="183" y="82.12" width="28.2" height="13.76" rx="1" fill="#fff" stroke="#444" stroke-width=".4"/>
+<text x="184.5" y="85.31" font-size="2.2" text-anchor="start" font-weight="normal" fill="#111">223 SV 0.75 <tspan font-family="Arial">→</tspan> clock 49</text>
+<text x="184.5" y="88.3" font-size="2.2" text-anchor="start" font-weight="normal" fill="#111">earth, with 128 SV,</text>
+<text x="184.5" y="91.29" font-size="2.2" text-anchor="start" font-weight="normal" fill="#111">then via 48 and 129</text>
+<text x="184.5" y="94.28" font-size="2.2" text-anchor="start" font-weight="normal" fill="#111">to earth (radio sheet)</text>
 <path d="M157,101 L86,101" fill="none" stroke="#222" stroke-width="0.75" stroke-linejoin="round" stroke-dasharray="3 2"/>
 <path d="M157,101 L86,101" fill="none" stroke="#7a4a1c" stroke-width="0.35" stroke-linejoin="round" stroke-dasharray="3 2"/>
 <rect x="125.4" y="96.0" width="22.26" height="3.6" fill="#fff" opacity=".85"/>
@@ -253,10 +254,15 @@
 <text x="189.86" y="244" font-size="2.8" text-anchor="start" font-weight="normal" fill="#111" transform="rotate(-90 189.86 244)">13 SV 0.75</text>
 <rect x="106.93599999999999" y="249.4" width="67.06400000000001" height="5.2" rx="1" fill="#fff" stroke="#444" stroke-width=".4"/>
 <text x="108.43599999999999" y="253" font-size="2.2" text-anchor="start" font-weight="normal" fill="#111"><tspan font-family="Arial">→</tspan> 113:85 (climate sheet), earth via 212 SV and joint 158</text>
-<path d="M178.08,224 L178.08,264" fill="none" stroke="#222" stroke-width="0.9" stroke-linejoin="round"/>
-<path d="M178.08,224 L178.08,264" fill="none" stroke="#ffffff" stroke-width="0.5" stroke-linejoin="round"/>
+<path d="M178.08,224 L178.08,235" fill="none" stroke="#222" stroke-width="0.9" stroke-linejoin="round"/>
+<path d="M178.08,224 L178.08,235" fill="none" stroke="#ffffff" stroke-width="0.5" stroke-linejoin="round"/>
+<path d="M178.08,241 L178.08,264" fill="none" stroke="#222" stroke-width="0.9" stroke-linejoin="round"/>
+<path d="M178.08,241 L178.08,264" fill="none" stroke="#ffffff" stroke-width="0.5" stroke-linejoin="round"/>
 <rect x="158.9" y="256.0" width="17.400000000000002" height="3.6" fill="#fff" opacity=".85"/>
 <text x="159.5" y="259" font-size="2.8" text-anchor="start" font-weight="normal" fill="#111">32 VT 0.75</text>
+<rect x="175.08" y="235" width="6" height="6" fill="#ddd" stroke="#111" stroke-width=".6"/>
+<text x="178.08" y="238.65" font-size="1.8" text-anchor="middle" font-weight="normal" fill="#555">9</text>
+<text x="173.58" y="238.75" font-size="2.0" text-anchor="end" font-weight="normal" fill="#555">58 stalks</text>
 <rect x="140" y="264" width="58" height="18" rx="1.2" fill="#fafafa" stroke="#111" stroke-width="0.8"/>
 <text x="143" y="269.5" font-size="4" text-anchor="start" font-weight="bold" fill="#111">9</text>
 <text x="148" y="269.5" font-size="2.7" text-anchor="start" font-weight="normal" fill="#111">Dip/flash stalk</text>
@@ -524,6 +530,8 @@
 <circle cx="255" cy="178" r="1.0" fill="#111"/>
 <circle cx="150" cy="149" r="1.0" fill="#111"/>
 <circle cx="178.08" cy="264" r="1.0" fill="#111"/>
+<circle cx="178.08" cy="235" r="1.0" fill="#111"/>
+<circle cx="178.08" cy="241" r="1.0" fill="#111"/>
 <circle cx="198" cy="273" r="1.0" fill="#111"/>
 <circle cx="51.98" cy="69" r="1.0" fill="#111"/>
 <circle cx="51.98" cy="75" r="1.0" fill="#111"/>
