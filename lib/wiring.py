@@ -1,6 +1,9 @@
-"""Shared drawing helpers for the wiring sheets (SVG, units in mm)."""
+"""Shared drawing helpers for the wiring sheets of every car in this repo (SVG, units in mm).
+
+A car's sheets import it through their own sheets/common.py, which sets WIRING_CAR_DIR to the car's folder:
+the data is read from <car>/data and the sheets are written to <car>/out."""
 import csv, os
-ROOT = os.path.join(os.path.dirname(__file__), '..')
+ROOT = os.environ['WIRING_CAR_DIR']
 WIRES = {r['cable']: r for r in csv.DictReader(open(os.path.join(ROOT, 'data', 'wires.csv')))}
 FUSES = {int(r['fuse']): r for r in csv.DictReader(open(os.path.join(ROOT, 'data', 'fuses.csv')))}
 

@@ -2,7 +2,7 @@ cache/
 __pycache__/
 *.png
 source/
-out/*.pdf
+*/out/*.pdf
 docs/
 venv/
 .DS_Store
