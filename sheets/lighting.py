@@ -151,9 +151,11 @@ def lab(c):
     r = WIRES[c]; return f"{c.split('#')[0]} {r['colour']} {r['mm2']}"
 
 
-def ltag(c, x, y, dest, size=2.2, anchor='start', dashed=False):
+def ltag(c, x, y, dest, size=2.2, anchor='start', dashed=None):
     """Tag at the end of cable c carrying its label and where it goes, for wires too short for their own label;
-    '\\n' in dest starts a second line. A cable checked on the car gets its tick at the end of the first line."""
+    '\\n' in dest starts a second line. A cable checked on the car gets its tick at the end of the first line.
+    The box is dashed when the cable is (status open), as the other sheets' tags for it are."""
+    if dashed is None: dashed = WIRES[c]['status'] == 'open'
     lines = f'{lab(c)} {dest}'.split('\n')
     car = WIRES[c]['status'] == 'car'
     w = round(max(len(s) for s in lines) * size * .52 + 3 + (3.5 if car else 0), 1)
@@ -163,6 +165,7 @@ def ltag(c, x, y, dest, size=2.2, anchor='start', dashed=False):
     else:
         ls = round(1.36 * size, 2); h = round(len(lines) * ls + 1.8, 2)
         dash = ' stroke-dasharray="1.5 1"' if dashed else ''
+        if dashed: DASHED[0] = True                  # as tag() does for one line
         A(f'<rect x="{x0}" y="{round(y - h / 2, 2)}" width="{w}" height="{h}" rx="1" fill="#fff" stroke="#444" stroke-width=".4"{dash}/>')
         for i, s in enumerate(lines):
             txt(x0 + 1.5, round(y - (len(lines) - 1) * ls / 2 + i * ls + .36 * size, 2), s, size)
@@ -174,7 +177,7 @@ mL, dL, cL, dropL = headlamp(240, '11/12 Headlamp L', drop=True)
 wire('29', [cR, (26, 72), (26, 78)], 14, 69.3); earth(26, 78)
 wire('28', [cL, (26, 240), (26, 246)], 14, 237.3); earth(26, 246)                  # the left headlamp's own earth
 wire('115', [dropL, (dropL[0], 262), (44, 262)], label=False)                        # from the common node, as printed
-ltag('115', 44, 262, '→ 39 radiator fan thermostat (climate sheet)')
+ltag('115', 44, 262, '← 39 Thermostat switch (climate sheet)')
 pR, pRb, kR, vR, eR = front_housing(138, 'R', 28)
 pL, pLb, kL, vL, eL = front_housing(191, 'L', 27)
 wire('361', [eR, (24, 138), (24, 161), (28, 161)], label=False)
@@ -476,6 +479,12 @@ conn58(yR, '1'); conn58(yL, '2')
 wire('44', [(255, 125), (255, yR), (x58, yR)], 262, yR - 1.5)
 wire('44', [(x58 + 6, yR), (xp, yR)], label=False)                                  # to 59's body-side pin
 wire('44', [(xp, yR), (xL, yR)], label=False)                                       # from the same pin to the right tail bulb
+# 50 GN to the panel lighting (instruments sheet): as printed, a short diagonal off row 1's fuse side just below the
+# pin; its join is hidden in the manual's frame, so the link is grey (as 126a at row 3 on the radio sheet). The run
+# drops between 41 GN (x 304) and the block into a tag clear of 59's caption and 47's riser (x 337).
+inner([(x58, yR), (x58 - 2.5, yR + 2.5)], grey=True)
+wire('50', [(x58 - 2.5, yR + 2.5), (x58 - 2.5, 131), (x58 - .5, 131)], label=False)
+ltag('50', x58 - .5, 131, '→\nrheostat 16,\npanel lighting\n(instruments sheet)')
 wire('42', [(255, 178), (255, yL), (x58, yL)], 262, yL - 1.5)
 wire('42', [(x58 + 6, yL), (xL, yL)], label=False)
 # 59: two pins, no numbers printed, hanging from the 44 run: body side up, tailgate side down. The used pin runs from
@@ -513,9 +522,12 @@ for i, (k, n) in enumerate([('BL', 'Blue'), ('BR', 'Brown'), ('GL', 'Yellow'), (
 x, y = lx + 97, ly + 9.5
 A(f'<path d="M{x},{y - 1} h9" stroke="#222" stroke-width="1.7"/>'); txt(x + 11, y, 'traced (cable no. read)', 2.4)
 if DASHED[0]: A(f'<path d="M{x},{y + 4} h9" stroke="#222" stroke-width="1.7" stroke-dasharray="3 2"/>'); txt(x + 11, y + 5, 'not traced yet', 2.4)
-A(f'<path d="M{x},{y + 9} h7" stroke="#222" stroke-width=".8"/><circle cx="{x + 8.3}" cy="{y + 9}" r="1.3" fill="#fff" stroke="#222" stroke-width=".5"/>')
-txt(x + 11, y + 10, 'ends on diagram', 2.4)
-if TICKED[0]: tick(x + 33, y + 9.3); txt(x + 37, y + 10, 'checked on the car', 2.4)
+if STUB[0]:
+    A(f'<path d="M{x},{y + 9} h7" stroke="#222" stroke-width=".8"/><circle cx="{x + 8.3}" cy="{y + 9}" r="1.3" fill="#fff" stroke="#222" stroke-width=".5"/>')
+    txt(x + 11, y + 10, 'ends on diagram', 2.4)
+if TICKED[0]:                                # beside the stub sample, or in its place when the sheet has no stub (as power)
+    tx, gx = (x + 33, x + 37) if STUB[0] else (x + 3, x + 11)
+    tick(tx, y + 9.3); txt(gx, y + 10, 'checked on the car', 2.4)
 probable_legend(lx + 4, ly + 19)
 gx, gy = lx + 47, ly + 19                    # ghost blade sample, right of the grey one: open at rest, dashed where it goes
 A(f'<path d="M{gx + 1.7},{gy - .3} L{gx + 7.2},{gy - .3}" fill="none" {GHOST}/>'); contact(gx + 1, gy); contact(gx + 8, gy)
