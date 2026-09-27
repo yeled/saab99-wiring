@@ -206,11 +206,14 @@ blade(kx + 9.5, ky + 13.5, kx + 16, ky + 20)                                    
 # 220 and 223 are 8 mm stubs into tags that end by x 212, clear of 221a's riser to 10:6 (x 216)
 wire('220', [(kx + 18, ky + 25), (kx + 26, ky + 25)], label=False); ltag('220', kx + 26, ky + 25, '← fuse 5\n(power sheet)')
 txt(kx + 27.5, ky + 19.3, '220 may be GL (check E19b)', 2, fill='#555')   # 1979 GL print: 220 GL 0.5
-wire('223', [(kx + 18, ky + 6), (kx + 26, ky + 6)], label=False)                    # 1977 print: to clock 49's earth
-ltag('223', kx + 26, ky + 6, '→ clock 49\nearth, with 128 SV\n(radio sheet)')           # clock 49 and 128: radio sheet
+# 223 (1977 print only): onto clock 49's earth terminal where 128 SV starts, then 128 to lighter 48's earth node and
+# 129 SV to the F10 earth point (1977 p.53 re-checked 27 Sep; the radio sheet ends 223 in a dashed tag at 49). The tag
+# is centred 1 mm below the stub, clear of 117's caption above.
+wire('223', [(kx + 18, ky + 6), (kx + 26, ky + 6)], label=False)
+ltag('223', kx + 26, ky + 7, '→ clock 49\nearth, with 128 SV,\nthen via 48 and 129\nto earth (radio sheet)')
 # 221 through pin 2 of the front 4-pole connector 58 (E2) (1979 GL print) on to the left housing; 222a branches off
 # the same pin's lead for the right one. The 1979 Turbo print draws pin 2 with no leads. Pins 1 and 3 are only
-# captioned (their leads are on the signals sheet); pin 4's 139/139a are drawn below.
+# captioned (118 is drawn on the power sheet, 77 on the signals sheet); pin 4's 139/139a are drawn below.
 wire('221', [(kx, ky + 19), (86, ky + 19)], 126, ky + 17)
 wire('221', [(80, ky + 19), (14.5, ky + 19), (14.5, 171), (kL[0], 171), kL], 17.5, 169)
 # 222a: square off 221 at a junction 4 mm from the pin (in 221's first gap), 6 mm down, left, down into housing R.
@@ -316,15 +319,19 @@ box(150, 141, 46, 16)
 lamp(158, 149, r=3.2); inner([(150, 149), (154.8, 149)]); txt(164, 147, '47 Instrument', 2.6, w='bold'); txt(164, 151, 'main-beam', 2.3); txt(164, 154.4, 'warning lamp', 2.3)
 wire('13', [(bt['31'], yb), (bt['31'], 252), (174, 252)], bt['31'] + 4.3, yb + 20, rot=-90)
 tag(174, 252, '→ 113:85 (climate sheet), earth via 212 SV and joint 158', size=2.2, anchor='end')
-wire('32', [(bt['S'], yb), (bt['S'], 264)], 159.5, 259)
+# 32 passes stalk switch connector 58 (the book's 58 at D8) at pin 9 (connectors.csv 58,D8,9: book photo IMG_4723,
+# scan p.407): a pin block on its riser, as the tail lamp connector's (conn58), named to its left
+Y32 = 238                                                                          # the block's centre
+wire('32', [(bt['S'], yb), (bt['S'], Y32 - 3)], label=False)
+wire('32', [(bt['S'], Y32 + 3), (bt['S'], 264)], 159.5, 259)
+A(f'<rect x="{bt["S"] - 3}" y="{Y32 - 3}" width="6" height="6" fill="#ddd" stroke="#111" stroke-width=".6"/>')
+tlabel(bt['S'], Y32 + .65, '9', 'middle'); txt(bt['S'] - 4.5, Y32 + .75, '58 stalks', 2.0, 'end', fill='#555')
 box(140, 264, 58, 18)
 txt(143, 269.5, '9', 4, w='bold'); txt(148, 269.5, 'Dip/flash stalk', 2.7)
 txt(143, 274, 'pulse on S toggles dip/main;', 2.3, fill='#555'); txt(143, 277.3, 'flash works with ignition off', 2.3, fill='#555')
 # 9 as printed (book photo P8, scan F9): one contact, open at rest. The blade pivots on the relay side (32 VT from S,
 # via 58 (D8) pin 9) and rises toward the fixed contact on the earth side; both at mid-height. The book prints the
-# earth lead 32 VT 0.75 as well, so it is drawn and labelled as 32. Stopgap: it uses 32's row (8:S to 9), so a 'car'
-# tick or 'open' dash on 32 would show here too. When data/wires.csv gets 32#earth (VT 0.75, 9 to earth), change
-# this to wire('32#earth', ...); the drawing does not change.
+# earth lead 32 VT 0.75 as well: its own row, 32#earth, printed as 32.
 y9 = 273
 inner([(bt['S'], 264), (bt['S'], y9 - .8)]); contact(bt['S'], y9)
 blade_to((bt['S'], y9), (190.6, y9 - 3.4), back=0)                                 # free end short of, above, the fixed contact
@@ -488,7 +495,7 @@ for p in ((xL, yR), (xL, yL), (x58, yR), (x58 + 6, yR), (x58, yL), (x58 + 6, yL)
 
 # terminal dots and junctions go on top of the wires that end on them
 for p in [(x, yb) for x in bt.values()] + [(324, 36), (324, 48), (345, 36), (345, 48), (255, 125), (255, 178),
-                                           (150, 149), (bt['S'], 264), (198, y9), mR, dR, cR, mL, dL, cL, dropL, pR, pL,
+                                           (150, 149), (bt['S'], 264), (bt['S'], Y32 - 3), (bt['S'], Y32 + 3), (198, y9), mR, dR, cR, mL, dL, cL, dropL, pR, pL,
                                            kR, kL, vR, vL, eR, eL, (80, ky + 19), (86, ky + 19), (76, ky + 19), T['6'],
                                            (80, ky + 27), (86, ky + 27), (kx, ky + 19), (kx + 18, ky + 6), (kx + 18, ky + 25), (kx + 8, ky + 30)]:
     dot(*p)
