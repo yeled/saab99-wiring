@@ -22,10 +22,10 @@ for k, x in P.items():
     dot(x, 86); txt(x, 81, k, 2.4, 'middle')
 txt(230, 92.5, '4, 8 unused', 2.1, 'middle', fill='#777')
 wire('341', [(175, 86), (175, 98)], label=False); earth(175, 98); txt(175, 108.2, '341 SV 0.75', 2.2, 'middle')
-wire('345', [(215, 86), (215, 130), (296, 130)], 240, 128.5)
-wire('344', [(195, 86), (195, 140), (296, 140)], 240, 138.5)
-wire('343', [(205, 86), (205, 170), (296, 170)], 240, 168.5)
-wire('342', [(185, 86), (185, 180), (296, 180)], 240, 178.5)
+wire('345', [(215, 86), (215, 130), (298, 130)], 240, 128.5)
+wire('344', [(195, 86), (195, 140), (298, 140)], 240, 138.5)
+wire('343', [(205, 86), (205, 170), (298, 170)], 240, 168.5)
+wire('342', [(185, 86), (185, 180), (298, 180)], 240, 178.5)
 conn(300, 135, 16, 'right speaker connector 59'); conn(300, 175, 16, 'left speaker connector 59')
 for y1, y2 in ((130, 140), (170, 180)):
     A(f'<path d="M302,{y1} H330 M302,{y2} H330" stroke="#111" stroke-width=".6"/>')
@@ -44,16 +44,33 @@ fa, fb = fuse(32, 220.8, 10, 2.4); inner([(24.8, 222), fa]); inner([fb, (54, 222
 # same pin, and 126a BL leaving on the fuse side, its join to the pin hidden in the manual's frame (grey)
 A('<rect x="129" y="215" width="12" height="14" fill="#ddd" stroke="#111" stroke-width=".5"/>'); txt(135, 213.3, '58 tail lamps', 2.2, 'middle', fill='#555')
 wire('126', [(54, 222), (132.5, 222)], 60, 220.5)
-wire('160', [(137.5, 222), (145, 222), (145, 209), (124, 209)], label=False); tag(124, 209, '160 GL 0.75 to the interior lights (interior sheet)', size=2.4, anchor='end')
-wire('126a', [(128.4, 226.1), (126.5, 228), (126.5, 238), (180, 238), (180, 222), (200, 222)], 140, 236.5)
+wire('160', [(137.5, 222), (145, 222), (145, 209), (124, 209)], label=False)
+tag(124, 209, '160 GL 0.75 → ignition switch light 52 (interior sheet)', w=59.2, size=2.4, anchor='end')   # 52's top node; 161 GL goes on to the dome light
+wire('126a', [(128.4, 226.1), (126.5, 228), (126.5, 238), (180, 238), (180, 222), (202, 222)], 140, 236.5)   # end under 48's disc
 A('<rect x="129" y="215" width="12" height="14" fill="none" stroke="#111" stroke-width=".5"/>')   # frame over the wire ends
 inner([(132.5, 222), (137.5, 222)]); inner([(132.5, 222), (128.4, 226.1)], grey=True); dot(132.5, 222); dot(137.5, 222)
-A('<circle cx="208" cy="222" r="7" fill="#111"/>'); txt(218, 223, '<tspan font-weight="bold">48</tspan> Cigarette lighter', 2.8)
-wire('215', [(208, 229), (208, 234)], 212.5, 237); earth(208, 234)   # labels clear of the earth bar's end (x 211)
+# Lighter 48's earth terminal (unnumbered, its right rim) gathers 128 SV from the clock and 215 SV from heated window
+# switch 116's lamp; 129 SV 1.0 takes all three on to the earth point shared with 341, 69 and 157 (scan p.407, IMG_4701,
+# IMG_4707). As printed, 215 meets the rim on a short diagonal from above, 129 leaves straight right and 128 comes in
+# on a short diagonal from below. The print has the clock below the lighter and this sheet has it above, so the node is
+# mirrored top to bottom: 128 on the upper diagonal, 129 straight right to its earth, 215 on the lower diagonal. The
+# clock's earth terminal is on its rim below and right of centre; 223 (dashed: the corner lamp circuit, 1977 Turbo print
+# only, not on the 1979 page) lands there with 128's start. The wires go down before the two bodies, so the rims cover
+# their ends.
+T49 = (round(208 + 8 * .7071, 2), round(192 + 8 * .7071, 2))       # clock rim, 45 deg below right: 128 leaves radially
+N48 = (215, 222)                                                     # lighter's right rim
+wire('223', [T49, (226, T49[1])], label=False)
+tag(228, T49[1], '223 SV 0.75 ← corner lamp switch 117’s pilot lamp (lighting sheet)', w=67.6, size=2.2, dashed=True)
+wire('128', [T49, (221, round(T49[1] + 221 - T49[0], 2)), (221, 216), N48], 223.5, 211.5)
+wire('129', [N48, (244, 222)], 226, 220.5); earth(244, 222)
+txt(249, 226.4, 'earth point shared with 69, 157, 341 SV', 2.2, fill='#555')
+wire('215', [N48, (221, 228), (221, 236), (228, 236)], label=False)
+tag(230, 236, '215 SV 0.75 ← heated window switch 116’s lamp (climate sheet)', w=66, size=2.2)
+A('<circle cx="208" cy="222" r="7" fill="#111"/>'); txt(188.5, 212.2, '<tspan font-weight="bold">48</tspan> Cigarette lighter', 2.8)
 A('<circle cx="208" cy="192" r="8" fill="#fff" stroke="#111" stroke-width=".7"/><path d="M208,192 v-5 M208,192 h4" stroke="#111" stroke-width=".5"/>')
-txt(219, 193, '<tspan font-weight="bold">49</tspan> Clock', 2.8)
+txt(218.5, 190.2, '<tspan font-weight="bold">49</tspan> Clock', 2.8)
+dot(*T49); dot(*N48)
 wire('127', [(200, 192), (180, 192), (180, 222)], 181, 190.5); dot(180, 222)
-wire('128', [(208, 200), (208, 205)], 212.5, 207.5); earth(208, 205)
 
 # ---- legend and notes ---------------------------------------------------------------
 lx, ly = 18, 250
@@ -74,11 +91,12 @@ if probable_legend(x, y + 5): y += 6
 if TICKED[0] and DASHED[0]:                           # else after the grey sample (4th colour column), or a row of its own
     if PROBABLE[0]: ticked(x + 69, y)
     else: y += 6; ticked(x, y)
-notes = ['Speaker polarity: 342 and 344 to +, 343 and 345 to −. Junction box 122’s pins are drawn in their physical order.',
+notes = ['Speaker polarity: 342 and 344 to +, 343 and 345 to −; left and right as on this car (check I1): right-hand 344/345, left-hand 342/343. Junction box 122’s pins are drawn in their physical order.',
          'The radio’s + (340 RD) comes from ignition switch X, so it’s live only with the key on (check D1: dead with the key out).',
-         'Left and right as on this car (check I1): right-hand speaker 344/345, left-hand 342/343.',
-         'Fuse 9 (lid: cigar lighter, compartment light, clock): 126 BL enters tail lamp connector 58 and leaves the same pin as 160 GL to the interior lights.',
+         'Fuse 9 (lid: cigar lighter, compartment light, clock): 126 BL enters tail lamp connector 58 and leaves the same pin as 160 GL to ignition switch light 52 and the interior lights.',
          '126a BL to the lighter probably joins that pin on the fuse side, so the link is drawn grey. The clock’s 127 BL takes off 126a.',
+         'Lighter 48’s earth terminal gathers 128 SV (clock) and 215 SV (heated window switch lamp); 129 SV 1.0 takes them to the earth point shared with 69, 157 and 341 SV (the radio’s earth).',
+         '223 SV (dashed, like the rest of the corner lamp circuit on the lighting sheet): corner lamp switch 117’s pilot lamp earths on the clock’s earth terminal with 128 SV; not confirmed on the car yet (check D11).',
          'Where junction box 122 sits on this RHD car is not known yet (check D6); on LHD cars it is in the right-hand trim panel under the dash.']
-for j, n in enumerate(notes): txt(lx + 108, ly + 6 + j * 5.4, n, 2.35, fill='#333')
+for j, n in enumerate(notes): txt(lx + 108, ly + 6 + j * 4.8, n, 2.35, fill='#333')   # 7 lines: 4.8 pitch fits the box
 save('radio.svg')
