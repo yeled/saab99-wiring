@@ -1,100 +1,101 @@
-no,name,grid
-1,Battery,B2
-2,Alternator,B3
-4,Starter motor,B2
-5,Ignition coil,B5
-6,Ignition distributor,A5
-8,Lighting relay,C7
-9,Headlight dimmer/flasher switch,F9
-10,Light switch,C8
-11,High beam,B1 E1
-12,Low beam,B1 E1
-13,Front parking light,A1 F1
-14,Tail light,A13 F13
-15,Number plate light,A13 F13
-16,"Rheostat switch, instrument panel illumination",C11
-17,Switch light,D11
-18,Instrument panel light,D11
-19,Glove compartment and heater control lights,E11
-20,Ignition switch,B9
-21,Ignition switch relay,B6
-22,Fuse box,C13 D5 D13
-23,Direction indicator flasher unit,F10
-24,Direction indicator switch,D10
-25,Hazard warning flasher switch,D10
-27,"Direction indicator lights, L",F1 F13
-28,"Direction indicator lights, R",A1 A13
-29,Brake light switch,E11
-30,Brake lights,A13 F13
-31,Reversing light switch,E12
-32,Reversing lights,A13 F13
-33,Choke warning light,C10
-34,Choke control switch,C10
-35,Ventilator fan switch,F11
-36,Ventilator fan motor,F12
-37,Radiator fan motor,D1
-38,Radiator fan relay,B6
-39,Radiator fan thermostat switch,E2
-40,Horn,D1 E1
-41,Horn switch,D8
-42,Brake warning switch,E11
-43,Handbrake switch,C9
-44,Oil warning switch,A2
-45,Temperature transmitter,A2
-46,Fuel level transmitter,C12
-47,"Combination instrument: fuel gauge, fuel/oil/charging/brake warning lights, temperature gauge, high beam indicator, direction indicator light",C9
-48,Cigarette lighter,C11
-49,Clock,C11
-50,"Dome light, door pillar",A10
-51,"Dome light, rear view mirror",A10
-52,Ignition switch light,A9
-53,Interior lighting switch,A9
-54,"Door switch, interior lighting",A9 A11 B11
-55,Luggage compartment light,A10
-56,Luggage compartment light switch,A10
-57,3-pole connector,A10 B12 C12 F11
-58,12-pole connector,A4 B9 B11 C8 D8 D14 E2 E12
-59,2-pole connector,A7 A9 B12 D2 D11 D12 F6 F7
-60,1-pole connector,A7 A9 B10 C12 C13 D3 E4 E7
-61,Wiper system switch,D9 D14
-62,Windshield wiper motor,D13 F4
-63,Washer motor,E13 F4
-64,Seat heating element with thermostat,A6
-65,"Fuse holder, headlight wiper",C4
-66,Headlight wiper motor,E3 F3
-67,"Relay, headlight wiper motor",B4
-69,Seat contact,A8
-70,"Seat belt contact, L",A8
-71,"Seat belt contact, R",A8
-72,"Lamp, seat belt warning system",D12
-73,"Service outlet, ignition",D4
-74,"Resistance, low speed, ventilator fan",F11
-83,"Interval relay, wipers",D8 D13
-89,Start inhibitor relay,B13 C4
-90,Start inhibitor and reversing light switch,C2
-91,Selector indicator light,C9
-92,Thermo time switch,A3
-94,Starter valve,A4
-95,Auxiliary air regulator,B2
-96,Warming-up regulator,A2
-102,Fuel pump relay,C5
-103,Fuel pump,C12
-110,Tachometer,C11
-113,"Relay, electrically heated rear window",D6
-115,Electrically heated rear window,D12
-116,"Switch, electrically heated rear window",A11
-117,"Switch, corner lamp",C8 D8
-118,Corner lamp,A1 F1
-122,8-pole connector,F7
-123,4-pole connector,F7
-130,"Loudspeaker, R",F8
-131,"Loudspeaker, L",F6
-137,Throttle valve switch,E11
-142,Solenoid valve,E3
-144,Pressure switch,B5
-146,"Electronic control unit, ignition system",A6
-147,Compensating resistor,A4
-151,Speed transmitter,E11
-156,Reversing light relay,B5 C13
-157,Spark plugs,A5
-158,"Joint, earth cable",D6 E13
+no,name,grid,notes
+1,Battery,B2,
+2,Alternator,B3,
+4,Starter motor,B2,
+5,Ignition coil,B5,
+6,Ignition distributor,A5,
+8,Lighting relay,C7,
+9,Headlight dimmer/flasher switch,F9,
+10,Light switch,C8,
+11,High beam,B1 E1,
+12,Low beam,B1 E1,
+13,Front parking light,A1 F1,
+14,Tail light,A13 F13,
+15,Number plate light,A13 F13,
+16,"Rheostat switch, instrument panel illumination",C11,
+17,Switch light,D11,
+18,Instrument panel light,D11,
+19,Glove compartment and heater control lights,E11,
+20,Ignition switch,B9,
+21,Ignition switch relay,B6,
+22,Fuse box,C13 D5 D13,C13 and D13 are the GL print p.405 Automatic inset (not on the 1979 Turbo print p.407); the Turbo fuse box is at D5 only
+23,Direction indicator flasher unit,F10,
+24,Direction indicator switch,D10,
+25,Hazard warning flasher switch,D10,
+27,"Direction indicator lights, L",F1 F13,
+28,"Direction indicator lights, R",A1 A13,
+29,Brake light switch,E11,
+30,Brake lights,A13 F13,
+31,Reversing light switch,E12,
+32,Reversing lights,A13 F13,
+33,Choke warning light,C10,"Not on the 1979 Turbo print (C10 there holds only 47 and its wires); the legend p.406 is the 1979 GL legend (p.404) reprinted, and this grid square is from the GL print p.405 (under 47, beside 34)"
+34,Choke control switch,C10,"Not on the 1979 Turbo print; the legend p.406 is the 1979 GL legend (p.404) reprinted, and this grid square is from the GL print p.405 (under 47, beside 33)"
+35,Ventilator fan switch,F11,
+36,Ventilator fan motor,F12,
+37,Radiator fan motor,D1,
+38,Radiator fan relay,B6,
+39,Radiator fan thermostat switch,E2,
+40,Horn,D1 E1,
+41,Horn switch,D8,
+42,Brake warning switch,E11,
+43,Handbrake switch,C9,
+44,Oil warning switch,A2,
+45,Temperature transmitter,A2,
+46,Fuel level transmitter,C12,
+47,"Combination instrument: fuel gauge, fuel/oil/charging/brake warning lights, temperature gauge, high beam indicator, direction indicator light",C9,
+48,Cigarette lighter,C11,
+49,Clock,C11,
+50,"Dome light, door pillar",A10,
+51,"Dome light, rear view mirror",A10,
+52,Ignition switch light,A9,
+53,Interior lighting switch,A9,
+54,"Door switch, interior lighting",A9 A11 B11,
+55,Luggage compartment light,A10,
+56,Luggage compartment light switch,A10,
+57,3-pole connector,A10 B12 C12 F11,
+58,12-pole connector,A4 B9 B11 C8 D8 D14 E2 E12,"D14: on neither 1979 print (source not found). Data ids differ from the legend squares: 58 (A9) is the legend B9 block (door switches), 58 (B9) the legend C8 block (ignition switch); 58 (A4), (B11), (D8), (E2), (E12) match"
+59,2-pole connector,A7 A9 B12 D2 D11 D12 F6 F7,"B12: on neither 1979 print. Data ids follow the legend squares: 59 (A9) is the seat belt contacts (box on the column 8/9 line, label in A9; written 59 (A8) before 27 Sep), 59 (D12) the seat belt lamp (written 59 (C12) before 27 Sep). Also 59 (CC) (Combi Coupé, not on p.407) and 59 (D11) (panel lights)"
+60,1-pole connector,A7 A9 B10 C12 C13 D3 E4 E7,"C13 (GL Automatic inset), E4 (GL print, on 382 BL beside the GL print's 142) and E7 (GL print, on 37a BR/VT) are not on the 1979 Turbo print, whose 60s are A7, A9, B10, C12 and D3 (the D3 box sits on the D/E line)"
+61,Wiper system switch,D9 D14,D14: on neither 1979 print; the Turbo switch is at D9
+62,Windshield wiper motor,D13 F4,D13: on neither 1979 print; the Turbo motor is at F4
+63,Washer motor,E13 F4,E13: on neither 1979 print; the Turbo pump is at F4
+64,Seat heating element with thermostat,A6,
+65,"Fuse holder, headlight wiper",C4,
+66,Headlight wiper motor,E3 F3,
+67,"Relay, headlight wiper motor",B4,
+69,Seat contact,A8,
+70,"Seat belt contact, L",A8,
+71,"Seat belt contact, R",A8,
+72,"Lamp, seat belt warning system",D12,
+73,"Service outlet, ignition",D4,
+74,"Resistance, low speed, ventilator fan",F11,
+83,"Interval relay, wipers",D8 D13,D13: on neither 1979 print; the Turbo relay is at D8
+89,Start inhibitor relay,B13 C4,B13 is the GL print p.405 Automatic inset; the Turbo relay is at C4
+90,Start inhibitor and reversing light switch,C2,"Not on the 1979 Turbo print (C2 is blank there); the legend p.406 is the 1979 GL legend (p.404) reprinted, and this grid square is from the GL print p.405 (dashed box, automatic only)"
+91,Selector indicator light,C9,"Not on the 1979 Turbo print (C9 there holds 43 and the left of 47; the ignition-switch 58 block is C8); the legend p.406 is the 1979 GL legend (p.404) reprinted, and this grid square is from the GL print p.405 (lamp beside 43 on 206 GN)"
+92,Thermo time switch,A3,
+94,Starter valve,A4,
+95,Auxiliary air regulator,B2,
+96,Warming-up regulator,A2,
+102,Fuel pump relay,C5,
+103,Fuel pump,C12,
+110,Tachometer,C11,
+113,"Relay, electrically heated rear window",D6,
+115,Electrically heated rear window,D12,
+116,"Switch, electrically heated rear window",A11,
+117,"Switch, corner lamp",C8 D8,Not drawn on the 1979 Turbo print (book photo P1; 58 (E2) pin 2 is bare); drawn dashed on the lighting sheet from the 1977 Turbo diagram; on the car (E19)
+118,Corner lamp,A1 F1,"Not drawn on the 1979 Turbo print; the 21 W filament of the front parking bulb, drawn grey from the 1977 Turbo diagram (E19, E21)"
+122,8-pole connector,F7,
+123,4-pole connector,E3 F3,"Grid corrected from the legend's F7 (the square of 122, 8-pole) to where p.407 draws the two plugs; the 1980 legend p.410 also says E3, F3"
+130,"Loudspeaker, R",F8,
+131,"Loudspeaker, L",F6,
+137,Throttle valve switch,E11,
+140,"Speed transmitter, fuel boost",E11,"Printed 140 on the 1979 Turbo print (box x 6610-6756, y 2710-2855, straddling the D11/E11 line; label 140 in E11); the legend p.406 lists it as 151. Not the cable 140 GL (seat heating feed)"
+142,Solenoid valve,E3,
+144,Pressure switch,B5,
+146,"Electronic control unit, ignition system",A6,
+147,Compensating resistor,A4,
+151,Speed transmitter,E11,"The 1979 Turbo print labels this box 140 (D11/E11: 15, W, -31; 380 GL, 382 BL, 381 SV); the 1979 GL print p.405 labels the same box 151. Data and sheets use 140"
+156,Reversing light relay,B5 C13,"Not on the 1979 Turbo print; the legend p.406 is the 1979 GL legend (p.404) reprinted, and this grid square is from the GL print p.405 (relay box between 89 and 102, B5) and its Automatic inset (C13). The Turbo print leaves the square between 89 and 102 empty (C5), probably 156's slot (the GL print is the only evidence); the car's fuse box lid calls that slot 'injection' and it is empty (check F0)"
+157,Spark plugs,A5,
+158,"Joint, earth cable",D6 E13,E13: on neither 1979 print (the 1980 legend keeps it); the joint is at D6

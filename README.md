@@ -16,7 +16,7 @@ wire's status in the CSV and the sheet updates.
 
 | Path | What it is |
 |---|---|
-| `data/components.csv` | Component legend from p. 371-28: number, name, grid square |
+| `data/components.csv` | Component legend from p. 371-28: number, name, grid square, notes |
 | `data/wires.csv` | One row per cable: number, colour, mm², from, to, status, evidence, notes |
 | `data/fuses.csv` | One row per fuse: rating, supply bar, status, notes |
 | `data/connectors.csv` | Pin maps for in-line connectors: both sides of each pin |
