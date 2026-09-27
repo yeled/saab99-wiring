@@ -11,8 +11,9 @@
 <text x="56" y="65" font-size="2.4" text-anchor="end" font-weight="normal" fill="#111">50</text>
 <path d="M58,44 L66,44" fill="none" stroke="#222" stroke-width="2.9" stroke-linejoin="round"/>
 <path d="M58,44 L66,44" fill="none" stroke="#8a8a8a" stroke-width="2.3" stroke-linejoin="round"/>
-<rect x="68" y="41.4" width="35.44800000000001" height="5.2" rx="1" fill="#fff" stroke="#444" stroke-width=".4"/>
-<text x="69.5" y="45" font-size="2.6" text-anchor="start" font-weight="normal" fill="#111"><tspan font-family="Arial">←</tspan> 7 GR 2.5 from bar 7–12</text>
+<rect x="68" y="39.56" width="28.1" height="8.88" rx="1" fill="#fff" stroke="#444" stroke-width=".4"/>
+<text x="69.5" y="43.17" font-size="2.6" text-anchor="start" font-weight="normal" fill="#111">7 GR 2.5 <tspan font-family="Arial">←</tspan> bar 7–12</text>
+<text x="69.5" y="46.71" font-size="2.6" text-anchor="start" font-weight="normal" fill="#111">(power sheet)</text>
 <path d="M58,54 L146,54" fill="none" stroke="#222" stroke-width="2.2" stroke-linejoin="round"/>
 <path d="M58,54 L146,54" fill="none" stroke="#1e9e3e" stroke-width="1.6" stroke-linejoin="round"/>
 <path d="M58,54 L146,54" fill="none" stroke="#ffffff" stroke-width="0.72" stroke-dasharray="1.2 1.2"/>
@@ -46,8 +47,9 @@
 <text x="50" y="157.3" font-size="2.1" text-anchor="end" font-weight="normal" fill="#555">16</text>
 <path d="M35,134 L35,127 L45,127" fill="none" stroke="#222" stroke-width="4" stroke-linejoin="round"/>
 <path d="M35,134 L35,127 L45,127" fill="none" stroke="#d42020" stroke-width="3.4" stroke-linejoin="round"/>
-<rect x="47" y="124.4" width="29.208" height="5.2" rx="1" fill="#fff" stroke="#444" stroke-width=".4"/>
-<text x="48.5" y="128" font-size="2.4" text-anchor="start" font-weight="normal" fill="#111">1 RD 16.0 <tspan font-family="Arial">←</tspan> battery +</text>
+<rect x="47" y="122.84" width="27.4" height="8.32" rx="1" fill="#fff" stroke="#444" stroke-width=".4"/>
+<text x="48.5" y="126.23" font-size="2.4" text-anchor="start" font-weight="normal" fill="#111">1 RD 16.0 <tspan font-family="Arial">←</tspan> battery +</text>
+<text x="48.5" y="129.49" font-size="2.4" text-anchor="start" font-weight="normal" fill="#111">(power sheet)</text>
 <circle cx="35" cy="134" r="2.3" fill="#111"/>
 <rect x="88" y="90" width="32" height="32" rx="1.2" fill="#fafafa" stroke="#111" stroke-width="0.8"/>
 <text x="123.5" y="103.5" font-size="3.2" text-anchor="start" font-weight="bold" fill="#111">89</text>
@@ -80,10 +82,11 @@
 <path d="M96,122 L96,125.5 L84,125.5 L84,118 L80,118" fill="none" stroke="#111111" stroke-width="0.5" stroke-linejoin="round"/>
 <rect x="23" y="115.4" width="55" height="5.2" rx="1" fill="#fff" stroke="#444" stroke-width=".4"/>
 <text x="24.5" y="119" font-size="2.6" text-anchor="start" font-weight="normal" fill="#111">201 SV 0.75 <tspan font-family="Arial">→</tspan> earth joint 158 (power sheet)</text>
-<path d="M112,90 L112,84 L118,84" fill="none" stroke="#222" stroke-width="2.2" stroke-linejoin="round"/>
-<path d="M112,90 L112,84 L118,84" fill="none" stroke="#8a8a8a" stroke-width="1.6" stroke-linejoin="round"/>
-<rect x="120" y="81.4" width="50.32" height="5.2" rx="1" fill="#fff" stroke="#444" stroke-width=".4"/>
-<text x="121.5" y="85" font-size="2.6" text-anchor="start" font-weight="normal" fill="#111">202 GR 1.5 <tspan font-family="Arial">←</tspan> bar 7–12 (always live)</text>
+<path d="M112,90 L112,83 L118,83" fill="none" stroke="#222" stroke-width="2.2" stroke-linejoin="round"/>
+<path d="M112,90 L112,83 L118,83" fill="none" stroke="#8a8a8a" stroke-width="1.6" stroke-linejoin="round"/>
+<rect x="120" y="78.56" width="46" height="8.88" rx="1" fill="#fff" stroke="#444" stroke-width=".4"/>
+<text x="121.5" y="82.17" font-size="2.6" text-anchor="start" font-weight="normal" fill="#111">202 GR 1.5 <tspan font-family="Arial">←</tspan> bar 7–12 (always live)</text>
+<text x="121.5" y="85.71" font-size="2.6" text-anchor="start" font-weight="normal" fill="#111">(power sheet)</text>
 <circle cx="112" cy="90" r="1.4" fill="#111"/>
 <path d="M104,122 L104,141.5 L52,141.5" fill="none" stroke="#222" stroke-width="2.9" stroke-linejoin="round"/>
 <path d="M104,122 L104,141.5 L52,141.5" fill="none" stroke="#f2c500" stroke-width="2.3" stroke-linejoin="round"/>
@@ -244,8 +247,9 @@
 <path d="M224.5,172.8 L227.5,176" fill="none" stroke="#111" stroke-width=".4"/>
 <path d="M242.5,176 L242.5,190 L247,190" fill="none" stroke="#222" stroke-width="2.2" stroke-linejoin="round"/>
 <path d="M242.5,176 L242.5,190 L247,190" fill="none" stroke="#8a8a8a" stroke-width="1.6" stroke-linejoin="round"/>
-<rect x="249" y="187.4" width="27.96" height="5.2" rx="1" fill="#fff" stroke="#444" stroke-width=".4"/>
-<text x="250.5" y="191" font-size="2.4" text-anchor="start" font-weight="normal" fill="#111">260 GR 1.5 <tspan font-family="Arial">←</tspan> fuse 10</text>
+<rect x="249" y="185.84" width="27.3" height="8.32" rx="1" fill="#fff" stroke="#444" stroke-width=".4"/>
+<text x="250.5" y="189.23" font-size="2.4" text-anchor="start" font-weight="normal" fill="#111">260 GR 1.5 <tspan font-family="Arial">←</tspan> fuse 10</text>
+<text x="250.5" y="192.49" font-size="2.4" text-anchor="start" font-weight="normal" fill="#111">(power sheet)</text>
 <circle cx="242.5" cy="176" r="1.4" fill="#111"/>
 <rect x="160" y="151" width="20" height="10" rx="1.2" fill="#fafafa" stroke="#111" stroke-width="0.8"/>
 <path d="M160,156 L163.2,156" fill="none" stroke="#111" stroke-width=".4"/>
@@ -388,8 +392,9 @@
 <text x="151.5" y="197.2" font-size="1.8" text-anchor="end" font-weight="normal" fill="#555">W</text>
 <path d="M119,201 L123,201" fill="none" stroke="#222" stroke-width="1.7" stroke-linejoin="round"/>
 <path d="M119,201 L123,201" fill="none" stroke="#f2c500" stroke-width="1.1" stroke-linejoin="round"/>
-<rect x="87" y="198.4" width="28.688" height="5.2" rx="1" fill="#fff" stroke="#444" stroke-width=".4"/>
-<text x="88.5" y="202" font-size="2.6" text-anchor="start" font-weight="normal" fill="#111">380 GL 1.0 <tspan font-family="Arial">←</tspan> fuse 5</text>
+<rect x="88.1" y="196.56" width="28.9" height="8.88" rx="1" fill="#fff" stroke="#444" stroke-width=".4"/>
+<text x="89.6" y="200.17" font-size="2.6" text-anchor="start" font-weight="normal" fill="#111">380 GL 1.0 <tspan font-family="Arial">←</tspan> fuse 5</text>
+<text x="89.6" y="203.71" font-size="2.6" text-anchor="start" font-weight="normal" fill="#111">(power sheet)</text>
 <path d="M128,208 L128,213.5 L131,213.5" fill="none" stroke="#222" stroke-width="0.9" stroke-linejoin="round"/>
 <path d="M128,208 L128,213.5 L131,213.5" fill="none" stroke="#111111" stroke-width="0.5" stroke-linejoin="round"/>
 <circle cx="128" cy="208" r="1.0" fill="#111"/>
@@ -423,8 +428,9 @@
 <text x="125" y="235" font-size="2.4" text-anchor="start" font-weight="normal" fill="#111"><tspan font-weight="bold">137</tspan> Throttle switch, 62°</text>
 <path d="M119,225 L131,225" fill="none" stroke="#222" stroke-width="1.7" stroke-linejoin="round"/>
 <path d="M119,225 L131,225" fill="none" stroke="#f2c500" stroke-width="1.1" stroke-linejoin="round"/>
-<rect x="87" y="222.4" width="30.04" height="5.2" rx="1" fill="#fff" stroke="#444" stroke-width=".4"/>
-<text x="88.5" y="226" font-size="2.6" text-anchor="start" font-weight="normal" fill="#111">380a GL 1.0 <tspan font-family="Arial">←</tspan> fuse 5</text>
+<rect x="88.1" y="220.56" width="28.9" height="8.88" rx="1" fill="#fff" stroke="#444" stroke-width=".4"/>
+<text x="89.6" y="224.17" font-size="2.6" text-anchor="start" font-weight="normal" fill="#111">380a GL 1.0 <tspan font-family="Arial">←</tspan> fuse 5</text>
+<text x="89.6" y="227.71" font-size="2.6" text-anchor="start" font-weight="normal" fill="#111">(power sheet)</text>
 <path d="M145,225 L217,225 L217,198" fill="none" stroke="#222" stroke-width="0.9" stroke-linejoin="round"/>
 <path d="M145,225 L217,225 L217,198" fill="none" stroke="#8a8a8a" stroke-width="0.5" stroke-linejoin="round"/>
 <rect x="154.4" y="220.5" width="19.02" height="3.6" fill="#fff" opacity=".85"/>

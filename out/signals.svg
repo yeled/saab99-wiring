@@ -73,7 +73,7 @@
 <path d="M170,64.8 L174,60.8 L174,52 L177,52" fill="none" stroke="#222" stroke-width="0.9" stroke-linejoin="round"/>
 <path d="M170,64.8 L174,60.8 L174,52 L177,52" fill="none" stroke="#111111" stroke-width="0.5" stroke-linejoin="round"/>
 <rect x="177" y="45.66" width="30" height="12.68" rx="1" fill="#fff" stroke="#444" stroke-width=".4"/>
-<text x="178.5" y="48.64" font-size="2.0" text-anchor="start" font-weight="normal" fill="#111">52 SV 0.75 <tspan font-family="Arial">→</tspan> panel light</text>
+<text x="178.5" y="48.64" font-size="2.0" text-anchor="start" font-weight="normal" fill="#111">52 SV 0.75 <tspan font-family="Arial">←</tspan> panel light</text>
 <text x="178.5" y="51.36" font-size="2.0" text-anchor="start" font-weight="normal" fill="#111">connector 59: instrument</text>
 <text x="178.5" y="54.08" font-size="2.0" text-anchor="start" font-weight="normal" fill="#111">earth 179 and the panel</text>
 <text x="178.5" y="56.8" font-size="2.0" text-anchor="start" font-weight="normal" fill="#111">lamps (instruments sheet)</text>
