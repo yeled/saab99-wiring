@@ -1,0 +1,230 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="420mm" height="297mm" viewBox="0 0 420 297" font-family="Helvetica, Arial, sans-serif">
+<rect width="420" height="297" fill="#fff"/><rect x="8" y="8" width="404" height="281" fill="none" stroke="#111" stroke-width=".6"/>
+<text x="14" y="19" font-size="6" text-anchor="start" font-weight="bold" fill="#111">Saab 99 LE, model 1974 — Wipers and washers</text>
+<rect x="36" y="75" width="68" height="86" rx="1.2" fill="#fafafa" stroke="#111" stroke-width="0.8"/>
+<text x="36" y="72" font-size="2.7" text-anchor="start" font-weight="normal" fill="#111"><tspan font-weight="bold">62</tspan> Two-speed wiper motor</text>
+<circle cx="64" cy="104" r="11" fill="#fff" stroke="#111" stroke-width=".7"/>
+<text x="64" y="105.2" font-size="3" text-anchor="middle" font-weight="bold" fill="#111">M</text>
+<rect x="0" y="-0.75" width="2.6" height="1.5" fill="#fff" stroke="#111" stroke-width=".4" transform="translate(71.78 96.22) rotate(-45)"/>
+<rect x="0" y="-0.75" width="2.6" height="1.5" fill="#fff" stroke="#111" stroke-width=".4" transform="translate(75.00 104.00) rotate(0)"/>
+<rect x="0" y="-0.75" width="2.6" height="1.5" fill="#fff" stroke="#111" stroke-width=".4" transform="translate(53.00 104.00) rotate(-180)"/>
+<path d="M73.62,94.38 L80,88 L104,88" fill="none" stroke="#111" stroke-width=".4"/>
+<path d="M77.6,104 L104,104" fill="none" stroke="#111" stroke-width=".4"/>
+<path d="M50.4,104 L36,104" fill="none" stroke="#111" stroke-width=".4"/>
+<circle cx="36" cy="104" r="0.75" fill="#111"/>
+<path d="M37.4,76.4 L56.22,96.22" stroke="#111" stroke-width="1.5" stroke-linecap="round"/><path d="M37.4,76.4 L56.22,96.22" stroke="#fff" stroke-width=".6" stroke-linecap="round"/>
+<path d="M56.222,96.222 L60.8,100.8" fill="none" stroke="#111" stroke-width=".4"/>
+<path d="M104,120 L90.8,120" fill="none" stroke="#111" stroke-width=".4"/>
+<path d="M104,136 L90.8,136" fill="none" stroke="#111" stroke-width=".4"/>
+<path d="M104,152 L82,152 L82,128.8" fill="none" stroke="#111" stroke-width=".4"/>
+<circle cx="90" cy="120" r=".8" fill="#fff" stroke="#111" stroke-width=".35"/>
+<circle cx="90" cy="136" r=".8" fill="#fff" stroke="#111" stroke-width=".35"/>
+<circle cx="82" cy="128" r=".8" fill="#fff" stroke="#111" stroke-width=".35"/>
+<path d="M82.495,128.495 L89.47,135.47" stroke="#111" stroke-width=".75" stroke-linecap="round"/>
+<text x="102.6" y="86.7" font-size="1.8" text-anchor="end" font-weight="normal" fill="#555">3</text>
+<text x="102.6" y="102.7" font-size="1.8" text-anchor="end" font-weight="normal" fill="#555">5</text>
+<text x="102.6" y="118.7" font-size="1.8" text-anchor="end" font-weight="normal" fill="#555">4</text>
+<text x="102.6" y="134.7" font-size="1.8" text-anchor="end" font-weight="normal" fill="#555">1</text>
+<text x="102.6" y="150.7" font-size="1.8" text-anchor="end" font-weight="normal" fill="#555">2</text>
+<path d="M104,88 L176,88" fill="none" stroke="#222" stroke-width="1.7" stroke-linejoin="round"/>
+<path d="M104,88 L176,88" fill="none" stroke="#1e9e3e" stroke-width="1.1" stroke-linejoin="round"/>
+<rect x="119.4" y="83.4" width="15.780000000000001" height="3.6" fill="#fff" opacity=".85"/>
+<text x="120" y="86.4" font-size="2.8" text-anchor="start" font-weight="normal" fill="#111">16 GN 1.0</text>
+<path d="M104,104 L176,104" fill="none" stroke="#222" stroke-width="1.7" stroke-linejoin="round"/>
+<path d="M104,104 L176,104" fill="none" stroke="#d42020" stroke-width="1.1" stroke-linejoin="round"/>
+<rect x="119.4" y="99.4" width="15.780000000000001" height="3.6" fill="#fff" opacity=".85"/>
+<text x="120" y="102.4" font-size="2.8" text-anchor="start" font-weight="normal" fill="#111">15 RD 1.0</text>
+<path d="M104,120 L176,120" fill="none" stroke="#222" stroke-width="1.7" stroke-linejoin="round"/>
+<path d="M104,120 L176,120" fill="none" stroke="#8a8a8a" stroke-width="1.1" stroke-linejoin="round"/>
+<rect x="119.4" y="115.4" width="15.780000000000001" height="3.6" fill="#fff" opacity=".85"/>
+<text x="120" y="118.4" font-size="2.8" text-anchor="start" font-weight="normal" fill="#111">17 GR 1.0</text>
+<path d="M104,136 L176,136" fill="none" stroke="#222" stroke-width="1.7" stroke-linejoin="round"/>
+<path d="M104,136 L176,136" fill="none" stroke="#1f5fbf" stroke-width="1.1" stroke-linejoin="round"/>
+<rect x="119.4" y="131.4" width="15.780000000000001" height="3.6" fill="#fff" opacity=".85"/>
+<text x="120" y="134.4" font-size="2.8" text-anchor="start" font-weight="normal" fill="#111">18 BL 1.0</text>
+<path d="M104,152 H110 V104" fill="none" stroke="#111" stroke-width=".6" stroke-linejoin="round"/>
+<path d="M70,161 L70,181" fill="none" stroke="#222" stroke-width="1.7" stroke-linejoin="round"/>
+<path d="M70,161 L70,181" fill="none" stroke="#111111" stroke-width="1.1" stroke-linejoin="round"/>
+<text x="67.9" y="179.5" font-size="2.8" text-anchor="start" font-weight="normal" fill="#111" transform="rotate(-90 67.9 179.5)">175 SV 1.0</text>
+<path d="M70,181 v3 M67,184 h6 M68,185.3 h4 M69,186.6 h2" stroke="#111" stroke-width=".5" fill="none"/>
+<text x="76" y="183.4" font-size="2.2" text-anchor="start" font-weight="normal" fill="#555">the same earth point as the heater fan motor’s</text>
+<text x="76" y="186.6" font-size="2.2" text-anchor="start" font-weight="normal" fill="#555">138 SV (climate sheet)</text>
+<rect x="14" y="176.84" width="25.0" height="8.32" rx="1" fill="#fff" stroke="#444" stroke-width=".4"/>
+<text x="15.5" y="180.23" font-size="2.4" text-anchor="start" font-weight="normal" fill="#111">89 GL 0.75 <tspan font-family="Arial">←</tspan> fuse 9</text>
+<text x="15.5" y="183.49" font-size="2.4" text-anchor="start" font-weight="normal" fill="#111">(power sheet)</text>
+<path d="M39.0,181 L46,181 L46,194.5" fill="none" stroke="#222" stroke-width="0.9" stroke-linejoin="round"/>
+<path d="M39.0,181 L46,181 L46,194.5" fill="none" stroke="#f2c500" stroke-width="0.5" stroke-linejoin="round"/>
+<path d="M46,207.5 L46,219 L150,219 L150,152 L176,152" fill="none" stroke="#222" stroke-width="0.9" stroke-linejoin="round"/>
+<path d="M46,207.5 L46,219 L150,219 L150,152 L176,152" fill="none" stroke="#111111" stroke-width="0.5" stroke-linejoin="round"/>
+<rect x="91.4" y="214.4" width="17.400000000000002" height="3.6" fill="#fff" opacity=".85"/>
+<text x="92" y="217.4" font-size="2.8" text-anchor="start" font-weight="normal" fill="#111">88 SV 0.75</text>
+<rect x="34.5" y="195.47" width="10.50" height="3.25" fill="#fff" stroke="#111" stroke-width=".6"/>
+<circle cx="46" cy="201" r="6.5" fill="#fff" stroke="#111" stroke-width=".7"/><circle cx="46" cy="201" r="2.6" fill="#fff" stroke="#111" stroke-width=".5"/>
+<text x="55.5" y="202" font-size="2.7" text-anchor="start" font-weight="normal" fill="#111"><tspan font-weight="bold">63</tspan> Washer motor</text>
+<rect x="122" y="69.47" width="39.3" height="5.06" rx="1" fill="#fff" stroke="#444" stroke-width=".4"/>
+<text x="123.5" y="72.86" font-size="2.4" text-anchor="start" font-weight="normal" fill="#111">14 BR 1.0 <tspan font-family="Arial">←</tspan> fuse 9 (power sheet)</text>
+<path d="M161.3,72 L176,72" fill="none" stroke="#222" stroke-width="1.7" stroke-linejoin="round"/>
+<path d="M161.3,72 L176,72" fill="none" stroke="#7a4a1c" stroke-width="1.1" stroke-linejoin="round"/>
+<path d="M176,72 L171,67 L171,52 L168,52" fill="none" stroke="#222" stroke-width="0.9" stroke-linejoin="round"/>
+<path d="M176,72 L171,67 L171,52 L168,52" fill="none" stroke="#d42020" stroke-width="0.5" stroke-linejoin="round"/>
+<path d="M176,72 L171,67 L171,52 L168,52" fill="none" stroke="#ffffff" stroke-width="0.3" stroke-dasharray="1.2 1.2"/>
+<rect x="119.5" y="48.11" width="48.5" height="7.78" rx="1" fill="#fff" stroke="#444" stroke-width=".4"/>
+<text x="121.0" y="51.3" font-size="2.2" text-anchor="start" font-weight="normal" fill="#111">32 RD/VT 0.75 <tspan font-family="Arial">→</tspan> combination instrument 47:2,</text>
+<text x="121.0" y="54.29" font-size="2.2" text-anchor="start" font-weight="normal" fill="#111">its supply (instruments sheet)</text>
+<text x="174" y="58.5" font-size="2.0" text-anchor="start" font-weight="normal" fill="#888">choke warning lamp’s feed 146 BR:</text>
+<text x="174" y="61.3" font-size="2.0" text-anchor="start" font-weight="normal" fill="#888">probably not fitted (instruments sheet)</text>
+<rect x="238" y="66" width="130" height="62.5" rx="1.2" fill="#fafafa" stroke="#111" stroke-width="0.8"/>
+<text x="252" y="63" font-size="2.7" text-anchor="start" font-weight="normal" fill="#111"><tspan font-weight="bold">61</tspan> Wiper switch</text>
+<path d="M258.00,104.00 L349.36,92.06" fill="none" stroke="#999" stroke-width=".3" stroke-dasharray=".8 .6"/>
+<path d="M257.55,88.00 L347.55,108.04" fill="none" stroke="#999" stroke-width=".3" stroke-dasharray=".8 .6"/>
+<path d="M262.55,77.82 L343.45,118.42" fill="none" stroke="#999" stroke-width=".3" stroke-dasharray=".8 .6"/>
+<path d="M238,72 L275.27,72 L275.27,84.2" fill="none" stroke="#111" stroke-width=".4"/>
+<path d="M275.27,84.2 L272.09,91.24 L272.55,102.1 L275.73,112.7" fill="none" stroke="#111" stroke-width=".4"/>
+<path d="M238,88 L257.55,88" fill="none" stroke="#111" stroke-width=".4"/>
+<path d="M257.55,88 L262.55,77.82" fill="none" stroke="#111" stroke-width=".4"/>
+<path d="M238,104 L258,104" fill="none" stroke="#111" stroke-width=".4"/>
+<path d="M238,120 L262.09,120" fill="none" stroke="#111" stroke-width=".4"/>
+<path d="M323,63 L323,87.42" fill="none" stroke="#111" stroke-width=".4"/>
+<circle cx="323.0" cy="66" r="0.75" fill="#111"/>
+<path d="M323.0,63 v-3 M320.0,60 h6 M321.0,58.7 h4 M322.0,57.4 h2" stroke="#111" stroke-width=".5" fill="none"/>
+<path d="M323,87.42 L326.18,103.28 L324.36,108.84" fill="none" stroke="#111" stroke-width=".4"/>
+<path d="M337.09,105.71 L333.91,113.63 L334.82,122.4" fill="none" stroke="#111" stroke-width=".4"/>
+<path d="M334.82,122.4 L334.82,128.5" fill="none" stroke="#111" stroke-width=".4"/>
+<path d="M343.45,118.42 L343.45,128.5" fill="none" stroke="#111" stroke-width=".4"/>
+<path d="M341.64,77.45 L368,77.45" fill="none" stroke="#111" stroke-width=".4"/>
+<path d="M356.18,99.66 L368,99.66" fill="none" stroke="#111" stroke-width=".4"/>
+<circle cx="368" cy="99.66" r="0.75" fill="#111"/>
+<path d="M262.707,119.67 L275.73,112.7" stroke="#111" stroke-width=".75" stroke-linecap="round"/>
+<path d="M275.73,112.7 L323.0,87.42" stroke="#111" stroke-width="1.3"/><path d="M276.79,112.13 L321.94,87.99" stroke="#fff" stroke-width=".4"/>
+<path d="M323,87.42 L340.979,77.804" stroke="#111" stroke-width=".75" stroke-linecap="round"/>
+<circle cx="257.55" cy="88" r=".8" fill="#fff" stroke="#111" stroke-width=".35"/>
+<circle cx="258" cy="104" r=".8" fill="#fff" stroke="#111" stroke-width=".35"/>
+<circle cx="262.09" cy="120" r=".8" fill="#fff" stroke="#111" stroke-width=".35"/>
+<circle cx="262.55" cy="77.82" r=".8" fill="#fff" stroke="#111" stroke-width=".35"/>
+<circle cx="275.27" cy="84.2" r=".8" fill="#fff" stroke="#111" stroke-width=".35"/>
+<circle cx="272.09" cy="91.24" r=".8" fill="#fff" stroke="#111" stroke-width=".35"/>
+<circle cx="272.55" cy="102.1" r=".8" fill="#fff" stroke="#111" stroke-width=".35"/>
+<circle cx="275.73" cy="112.7" r=".8" fill="#fff" stroke="#111" stroke-width=".35"/>
+<circle cx="323" cy="87.42" r=".8" fill="#fff" stroke="#111" stroke-width=".35"/>
+<circle cx="341.64" cy="77.45" r=".8" fill="#fff" stroke="#111" stroke-width=".35"/>
+<circle cx="326.18" cy="103.28" r=".8" fill="#fff" stroke="#111" stroke-width=".35"/>
+<circle cx="337.09" cy="105.71" r=".8" fill="#fff" stroke="#111" stroke-width=".35"/>
+<circle cx="324.36" cy="108.84" r=".8" fill="#fff" stroke="#111" stroke-width=".35"/>
+<circle cx="333.91" cy="113.63" r=".8" fill="#fff" stroke="#111" stroke-width=".35"/>
+<circle cx="334.82" cy="122.4" r=".8" fill="#fff" stroke="#111" stroke-width=".35"/>
+<circle cx="343.45" cy="118.42" r=".8" fill="#fff" stroke="#111" stroke-width=".35"/>
+<circle cx="356.18" cy="99.66" r=".8" fill="#fff" stroke="#111" stroke-width=".35"/>
+<text x="239.6" y="86.7" font-size="1.8" text-anchor="start" font-weight="normal" fill="#555">53b</text>
+<text x="239.6" y="102.7" font-size="1.8" text-anchor="start" font-weight="normal" fill="#555">53</text>
+<text x="239.6" y="118.7" font-size="1.8" text-anchor="start" font-weight="normal" fill="#555">53a</text>
+<text x="276.87" y="75.6" font-size="1.8" text-anchor="start" font-weight="normal" fill="#555">54</text>
+<text x="366.4" y="76.15" font-size="1.8" text-anchor="end" font-weight="normal" fill="#555">31b</text>
+<text x="333.32" y="124.0" font-size="1.8" text-anchor="end" font-weight="normal" fill="#555">S</text>
+<text x="345.05" y="126.9" font-size="1.8" text-anchor="start" font-weight="normal" fill="#555"><tspan font-style="italic">washer</tspan></text>
+<text x="350.56" y="92.66" font-size="1.8" text-anchor="start" font-weight="normal" fill="#888">slow</text>
+<text x="348.75" y="108.94000000000001" font-size="1.8" text-anchor="start" font-weight="normal" fill="#888">fast</text>
+<text x="305.54" y="101.97" font-size="1.8" text-anchor="start" font-weight="normal" fill="#888" transform="rotate(26.6 305.54 101.97)">fast + washer</text>
+<path d="M180,72 L238,72" fill="none" stroke="#222" stroke-width="1.7" stroke-linejoin="round"/>
+<path d="M180,72 L238,72" fill="none" stroke="#7a4a1c" stroke-width="1.1" stroke-linejoin="round"/>
+<rect x="191.4" y="67.4" width="17.400000000000002" height="3.6" fill="#fff" opacity=".85"/>
+<text x="192" y="70.4" font-size="2.8" text-anchor="start" font-weight="normal" fill="#111">14e BR 1.0</text>
+<path d="M180,88 L238,88" fill="none" stroke="#222" stroke-width="1.7" stroke-linejoin="round"/>
+<path d="M180,88 L238,88" fill="none" stroke="#1e9e3e" stroke-width="1.1" stroke-linejoin="round"/>
+<rect x="191.4" y="83.4" width="17.400000000000002" height="3.6" fill="#fff" opacity=".85"/>
+<text x="192" y="86.4" font-size="2.8" text-anchor="start" font-weight="normal" fill="#111">16e GN 1.0</text>
+<path d="M180,104 L238,104" fill="none" stroke="#222" stroke-width="1.7" stroke-linejoin="round"/>
+<path d="M180,104 L238,104" fill="none" stroke="#d42020" stroke-width="1.1" stroke-linejoin="round"/>
+<rect x="191.4" y="99.4" width="17.400000000000002" height="3.6" fill="#fff" opacity=".85"/>
+<text x="192" y="102.4" font-size="2.8" text-anchor="start" font-weight="normal" fill="#111">15e RD 1.0</text>
+<path d="M180,120 L238,120" fill="none" stroke="#222" stroke-width="1.7" stroke-linejoin="round"/>
+<path d="M180,120 L238,120" fill="none" stroke="#8a8a8a" stroke-width="1.1" stroke-linejoin="round"/>
+<rect x="191.4" y="115.4" width="17.400000000000002" height="3.6" fill="#fff" opacity=".85"/>
+<text x="192" y="118.4" font-size="2.8" text-anchor="start" font-weight="normal" fill="#111">17e GR 1.0</text>
+<path d="M180,136 L377,136 L377,77.45 L368,77.45" fill="none" stroke="#222" stroke-width="1.7" stroke-linejoin="round"/>
+<path d="M180,136 L377,136 L377,77.45 L368,77.45" fill="none" stroke="#1f5fbf" stroke-width="1.1" stroke-linejoin="round"/>
+<rect x="191.4" y="131.4" width="17.400000000000002" height="3.6" fill="#fff" opacity=".85"/>
+<text x="192" y="134.4" font-size="2.8" text-anchor="start" font-weight="normal" fill="#111">18e BL 1.0</text>
+<path d="M180,152 L343.45,152 L343.45,128.5" fill="none" stroke="#222" stroke-width="0.9" stroke-linejoin="round"/>
+<path d="M180,152 L343.45,152 L343.45,128.5" fill="none" stroke="#111111" stroke-width="0.5" stroke-linejoin="round"/>
+<rect x="191.4" y="147.4" width="19.02" height="3.6" fill="#fff" opacity=".85"/>
+<text x="192" y="150.4" font-size="2.8" text-anchor="start" font-weight="normal" fill="#111">88e SV 0.75</text>
+<rect x="176" y="68" width="4" height="88" fill="#ddd" stroke="#111" stroke-width=".5"/>
+<text x="178" y="72.65" font-size="1.8" text-anchor="middle" font-weight="normal" fill="#555">1</text>
+<circle cx="176" cy="72" r="1.0" fill="#111"/>
+<circle cx="180" cy="72" r="1.0" fill="#111"/>
+<text x="178" y="88.65" font-size="1.8" text-anchor="middle" font-weight="normal" fill="#555">2</text>
+<circle cx="176" cy="88" r="1.0" fill="#111"/>
+<circle cx="180" cy="88" r="1.0" fill="#111"/>
+<text x="178" y="104.65" font-size="1.8" text-anchor="middle" font-weight="normal" fill="#555">3</text>
+<circle cx="176" cy="104" r="1.0" fill="#111"/>
+<circle cx="180" cy="104" r="1.0" fill="#111"/>
+<text x="178" y="120.65" font-size="1.8" text-anchor="middle" font-weight="normal" fill="#555">4</text>
+<circle cx="176" cy="120" r="1.0" fill="#111"/>
+<circle cx="180" cy="120" r="1.0" fill="#111"/>
+<text x="178" y="136.65" font-size="1.8" text-anchor="middle" font-weight="normal" fill="#555">5</text>
+<circle cx="176" cy="136" r="1.0" fill="#111"/>
+<circle cx="180" cy="136" r="1.0" fill="#111"/>
+<text x="178" y="152.65" font-size="1.8" text-anchor="middle" font-weight="normal" fill="#555">6</text>
+<circle cx="176" cy="152" r="1.0" fill="#111"/>
+<circle cx="180" cy="152" r="1.0" fill="#111"/>
+<text x="178" y="159.6" font-size="2.2" text-anchor="middle" font-weight="bold" fill="#111">58 wiper switch</text>
+<circle cx="104" cy="88" r="1.0" fill="#111"/>
+<circle cx="104" cy="104" r="1.0" fill="#111"/>
+<circle cx="104" cy="120" r="1.0" fill="#111"/>
+<circle cx="104" cy="136" r="1.0" fill="#111"/>
+<circle cx="104" cy="152" r="1.0" fill="#111"/>
+<circle cx="110" cy="104" r="1.0" fill="#111"/>
+<circle cx="70" cy="161" r="1.0" fill="#111"/>
+<circle cx="238" cy="72" r="1.0" fill="#111"/>
+<circle cx="238" cy="88" r="1.0" fill="#111"/>
+<circle cx="238" cy="104" r="1.0" fill="#111"/>
+<circle cx="238" cy="120" r="1.0" fill="#111"/>
+<circle cx="368" cy="77.45" r="1.0" fill="#111"/>
+<circle cx="334.82" cy="128.5" r="1.0" fill="#111"/>
+<circle cx="343.45" cy="128.5" r="1.0" fill="#111"/>
+<text x="336.02" y="131.9" font-size="1.8" text-anchor="end" font-weight="normal" fill="#888">S: not used (headlamp wipers not fitted)</text>
+<circle cx="46" cy="194.5" r="1.0" fill="#111"/>
+<circle cx="46" cy="207.5" r="1.0" fill="#111"/>
+<rect x="18" y="244" width="389" height="41" rx="1.2" fill="#fff" stroke="#111" stroke-width="0.5"/>
+<path d="M22,249 h7" stroke="#222" stroke-width="1.7"/><path d="M22,249 h7" stroke="#1f5fbf" stroke-width="1.1"/>
+<text x="31" y="250" font-size="2.5" text-anchor="start" font-weight="normal" fill="#111">BL Blue</text>
+<path d="M45,249 h7" stroke="#222" stroke-width="1.7"/><path d="M45,249 h7" stroke="#7a4a1c" stroke-width="1.1"/>
+<text x="54" y="250" font-size="2.5" text-anchor="start" font-weight="normal" fill="#111">BR Brown</text>
+<path d="M68,249 h7" stroke="#222" stroke-width="1.7"/><path d="M68,249 h7" stroke="#f2c500" stroke-width="1.1"/>
+<text x="77" y="250" font-size="2.5" text-anchor="start" font-weight="normal" fill="#111">GL Yellow</text>
+<path d="M91,249 h7" stroke="#222" stroke-width="1.7"/><path d="M91,249 h7" stroke="#1e9e3e" stroke-width="1.1"/>
+<text x="100" y="250" font-size="2.5" text-anchor="start" font-weight="normal" fill="#111">GN Green</text>
+<path d="M22,254 h7" stroke="#222" stroke-width="1.7"/><path d="M22,254 h7" stroke="#8a8a8a" stroke-width="1.1"/>
+<text x="31" y="255" font-size="2.5" text-anchor="start" font-weight="normal" fill="#111">GR Grey</text>
+<path d="M45,254 h7" stroke="#222" stroke-width="1.7"/><path d="M45,254 h7" stroke="#d42020" stroke-width="1.1"/>
+<text x="54" y="255" font-size="2.5" text-anchor="start" font-weight="normal" fill="#111">RD Red</text>
+<path d="M68,254 h7" stroke="#222" stroke-width="1.7"/><path d="M68,254 h7" stroke="#111111" stroke-width="1.1"/>
+<text x="77" y="255" font-size="2.5" text-anchor="start" font-weight="normal" fill="#111">SV Black</text>
+<path d="M91,254 h7" stroke="#222" stroke-width="1.7"/><path d="M91,254 h7" stroke="#ffffff" stroke-width="1.1"/>
+<text x="100" y="255" font-size="2.5" text-anchor="start" font-weight="normal" fill="#111">VT White</text>
+<text x="22" y="262" font-size="2.4" text-anchor="start" font-weight="normal" fill="#111">cable size, mm²:</text>
+<path d="M44,261 h7" stroke="#222" stroke-width="0.9"/>
+<text x="52.5" y="262" font-size="2.4" text-anchor="start" font-weight="normal" fill="#111">0.75</text>
+<path d="M59.5,261 h7" stroke="#222" stroke-width="2.2"/>
+<text x="68.0" y="262" font-size="2.4" text-anchor="start" font-weight="normal" fill="#111">1.5</text>
+<path d="M75.0,261 h7" stroke="#222" stroke-width="2.9"/>
+<text x="83.5" y="262" font-size="2.4" text-anchor="start" font-weight="normal" fill="#111">2.5</text>
+<path d="M90.5,261 h7" stroke="#222" stroke-width="3.4"/>
+<text x="99.0" y="262" font-size="2.4" text-anchor="start" font-weight="normal" fill="#111">4.0</text>
+<path d="M22,267 h9" stroke="#222" stroke-width="1.7"/>
+<text x="33" y="268" font-size="2.4" text-anchor="start" font-weight="normal" fill="#111">traced (cable no. read)</text>
+<circle cx="23" cy="273" r=".8" fill="#fff" stroke="#888" stroke-width=".35"/>
+<circle cx="30" cy="273" r=".8" fill="#fff" stroke="#888" stroke-width=".35"/>
+<path d="M23.7,272.7 L29.6,270.6" stroke="#888" stroke-width=".75" stroke-linecap="round"/>
+<text x="33" y="274" font-size="2.4" text-anchor="start" font-weight="normal" fill="#111">grey inside a part: probably</text>
+<path d="M22,278 h9" stroke="#999" stroke-width=".3" stroke-dasharray=".8 .6"/>
+<text x="33" y="279" font-size="2.4" text-anchor="start" font-weight="normal" fill="#111">switch position line (the lever’s other positions)</text>
+<text x="119" y="249.2" font-size="2.3" text-anchor="start" font-weight="normal" fill="#333">Fuse 9 (ignition on) feeds the wipers through 14 BR to 58 wiper switch, pin 1 (pins numbered from the top: our count), and the washer motor through 89 GL. The washer motor is switched to earth by the wiper switch: 88 SV, pin 6, 88e SV.</text>
+<text x="119" y="253.4" font-size="2.3" text-anchor="start" font-weight="normal" fill="#333">Wiper motor 62: 16 GN on 3 feeds the fast brush and 15 RD on 5 the slow one; the third brush is on the housing, earthed by 175 SV. The bar from M to the housing’s corner is probably the drive, not a wire.</text>
+<text x="119" y="257.6" font-size="2.3" text-anchor="start" font-weight="normal" fill="#333">Parking: the motor’s change-over 2, joined to 5 outside the motor, rests on 1 (18 BL to the switch’s 31b) and swings to 4 (17 GR to 53a). Switched off, 61 feeds 53a and earths 31b, so away from park the motor probably runs on slow through 4, and at park 1 earths the slow brush</text>
+<text x="121" y="261.0" font-size="2.3" text-anchor="start" font-weight="normal" fill="#333">and brakes it.</text>
+<text x="119" y="265.2" font-size="2.3" text-anchor="start" font-weight="normal" fill="#333">Switch 61 is drawn at rest (off): its lever joins 54 to 53a and the earthed pivot to 31b. Grey dashed lines: its other positions, probably slow (54 to 53), fast (54 to 53b) and fast with the washer (54 to the upper 53b finger, and the washer terminal earthed).</text>
+<text x="119" y="269.4" font-size="2.3" text-anchor="start" font-weight="normal" fill="#333">61’s washer terminal: its number is not known; ‘washer’ is our name for it. The contact tied to 61’s housing (earth) is not named.</text>
+<text x="119" y="273.6" font-size="2.3" text-anchor="start" font-weight="normal" fill="#333">18e BL runs under the switch and up its right side into 31b, crossing 88e SV.</text>
+<text x="119" y="277.8" font-size="2.3" text-anchor="start" font-weight="normal" fill="#333">Headlamp wipers: not fitted on this car; switch 61’s S, which would switch their relay, has nothing on it.</text>
+</svg>

@@ -1,0 +1,289 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="420mm" height="297mm" viewBox="0 0 420 297" font-family="Helvetica, Arial, sans-serif">
+<rect width="420" height="297" fill="#fff"/><rect x="8" y="8" width="404" height="281" fill="none" stroke="#111" stroke-width=".6"/>
+<text x="14" y="19" font-size="6" text-anchor="start" font-weight="bold" fill="#111">Saab 99 LE, model 1974 — Interior lights and seat heating</text>
+<text x="18" y="40" font-size="3.4" text-anchor="start" font-weight="bold" fill="#111">Seat heating</text>
+<rect x="14" y="55.4" width="43.61" height="5.2" rx="1" fill="#fff" stroke="#444" stroke-width=".4"/>
+<text x="15.5" y="59" font-size="2.6" text-anchor="start" font-weight="normal" fill="#111">93 GL 1.0 <tspan font-family="Arial">←</tspan> fuse 11 (power sheet)</text>
+<rect x="68" y="55.0" width="4" height="6" fill="#ddd"/>
+<text x="70" y="65.4" font-size="2.2" text-anchor="middle" font-weight="normal" fill="#555">58 seat heating</text>
+<rect x="92" y="55.0" width="4" height="6" fill="#ddd"/>
+<text x="94" y="65.4" font-size="2.2" text-anchor="middle" font-weight="normal" fill="#555">60 seat feed</text>
+<rect x="115" y="62" width="12" height="8" fill="#ddd"/>
+<text x="113.5" y="69.2" font-size="2.2" text-anchor="end" font-weight="normal" fill="#555">59 seat heater</text>
+<path d="M57.61,58 L68,58" fill="none" stroke="#222" stroke-width="1.7" stroke-linejoin="round"/>
+<path d="M57.61,58 L68,58" fill="none" stroke="#f2c500" stroke-width="1.1" stroke-linejoin="round"/>
+<path d="M72,58 L92,58" fill="none" stroke="#222" stroke-width="1.7" stroke-linejoin="round"/>
+<path d="M72,58 L92,58" fill="none" stroke="#f2c500" stroke-width="1.1" stroke-linejoin="round"/>
+<rect x="73.0" y="53.5" width="17.400000000000002" height="3.6" fill="#fff" opacity=".85"/>
+<text x="73.6" y="56.5" font-size="2.8" text-anchor="start" font-weight="normal" fill="#111">93e GL 1.0</text>
+<path d="M96,58 L118,58 L118,62" fill="none" stroke="#222" stroke-width="0.9" stroke-linejoin="round"/>
+<path d="M96,58 L118,58 L118,62" fill="none" stroke="#f2c500" stroke-width="0.5" stroke-linejoin="round"/>
+<rect x="97.0" y="53.5" width="19.02" height="3.6" fill="#fff" opacity=".85"/>
+<text x="97.6" y="56.5" font-size="2.8" text-anchor="start" font-weight="normal" fill="#111">93f GL 0.75</text>
+<path d="M124,62 L124,50 L144,50 L144,80" fill="none" stroke="#222" stroke-width="1.7" stroke-linejoin="round"/>
+<path d="M124,62 L124,50 L144,50 L144,80" fill="none" stroke="#111111" stroke-width="1.1" stroke-linejoin="round"/>
+<text x="142.6" y="75" font-size="2.8" text-anchor="start" font-weight="normal" fill="#111" transform="rotate(-90 142.6 75)">94 SV 1.0</text>
+<path d="M144,80 v3 M141,83 h6 M142,84.3 h4 M143,85.6 h2" stroke="#111" stroke-width=".5" fill="none"/>
+<text x="144" y="91" font-size="2.2" text-anchor="middle" font-weight="normal" fill="#555">same earth point as</text>
+<text x="144" y="94.4" font-size="2.2" text-anchor="middle" font-weight="normal" fill="#555">120 SV 0.75 from switch 53</text>
+<path d="M118,70 L118,76 L70,76 L70,88" fill="none" stroke="#111" stroke-width=".6" stroke-linejoin="round"/>
+<path d="M124,70 L124,88" fill="none" stroke="#111" stroke-width=".6" stroke-linejoin="round"/>
+<path d="M70,88 L72.2,88 L72.2,92 L74.43,92 L74.43,88 L76.66,88 L76.66,92 L78.89,92 L78.89,88 L81.11,88 L81.11,92 L83.34,92 L83.34,88 L85.57,88 L85.57,92 L87.8,92 L87.8,88 L90,88" fill="none" stroke="#111" stroke-width=".45" stroke-linejoin="round"/>
+<path d="M104,88 L106.2,88 L106.2,92 L108.43,92 L108.43,88 L110.66,88 L110.66,92 L112.89,92 L112.89,88 L115.11,88 L115.11,92 L117.34,92 L117.34,88 L119.57,88 L119.57,92 L121.8,92 L121.8,88 L124,88" fill="none" stroke="#111" stroke-width=".45" stroke-linejoin="round"/>
+<rect x="90" y="79" width="14" height="15" fill="#fff" stroke="#111" stroke-width=".6"/>
+<path d="M90,84 H104" stroke="#111" stroke-width=".4"/>
+<text x="97.0" y="82.7" font-size="2.4" text-anchor="middle" font-weight="normal" fill="#111">C°</text>
+<path d="M90,88 L92.2,88" fill="none" stroke="#111" stroke-width=".4"/>
+<path d="M101.8,88 L104,88" fill="none" stroke="#111" stroke-width=".4"/>
+<circle cx="93" cy="88" r=".8" fill="#fff" stroke="#111" stroke-width=".35"/>
+<circle cx="101" cy="88" r=".8" fill="#fff" stroke="#111" stroke-width=".35"/>
+<path d="M93.6,87.5 L100.3,85.6 L100.43,87.43" fill="none" stroke="#111" stroke-width=".75" stroke-linecap="round" stroke-linejoin="round"/>
+<text x="73.73" y="100" font-size="2.6" text-anchor="start" font-weight="normal" fill="#111"><tspan font-weight="bold">64</tspan> Seat heating element with thermostat</text>
+<text x="18" y="109.0" font-size="2.2" text-anchor="start" font-weight="normal" fill="#555">Fed with the ignition on (fuse 11). The thermostat is inside the</text>
+<text x="18" y="112.4" font-size="2.2" text-anchor="start" font-weight="normal" fill="#555">element, drawn closed (it is closed while cold, probably).</text>
+<text x="18" y="115.8" font-size="2.2" text-anchor="start" font-weight="normal" fill="#555">Which seat or seats it heats, and whether there is a switch: check I2.</text>
+<text x="160" y="40" font-size="3.4" text-anchor="start" font-weight="bold" fill="#111">Interior lights</text>
+<text x="160" y="46" font-size="2.2" text-anchor="start" font-weight="normal" fill="#555">Fed from fuse 7 (always live). Lamps 50, 51 and 52 return through dome light 50’s switch: on (to earth), off (as drawn) or door (to the door line).</text>
+<text x="160" y="49.4" font-size="2.2" text-anchor="start" font-weight="normal" fill="#555">Each door contact 54 and switch 53 earth that door line in parallel: an open door, or 53 closed, lights them while 50’s switch is at door.</text>
+<rect x="212" y="75.0" width="4" height="6" fill="#ddd"/>
+<text x="214" y="85.4" font-size="2.2" text-anchor="middle" font-weight="normal" fill="#555">58 interior feed</text>
+<rect x="160" y="75.4" width="42.16" height="5.2" rx="1" fill="#fff" stroke="#444" stroke-width=".4"/>
+<text x="161.5" y="79" font-size="2.6" text-anchor="start" font-weight="normal" fill="#111">64 GL 1.0 <tspan font-family="Arial">←</tspan> fuse 7 (power sheet)</text>
+<path d="M202.16,78 L212,78" fill="none" stroke="#222" stroke-width="1.7" stroke-linejoin="round"/>
+<path d="M202.16,78 L212,78" fill="none" stroke="#f2c500" stroke-width="1.1" stroke-linejoin="round"/>
+<path d="M212,78 L209,75 L209,66 L205,66" fill="none" stroke="#222" stroke-width="1.7" stroke-linejoin="round"/>
+<path d="M212,78 L209,75 L209,66 L205,66" fill="none" stroke="#1f5fbf" stroke-width="1.1" stroke-linejoin="round"/>
+<rect x="165.44" y="61.56" width="39.56" height="8.88" rx="1" fill="#fff" stroke="#444" stroke-width=".4"/>
+<text x="166.94" y="65.17" font-size="2.6" text-anchor="start" font-weight="normal" fill="#111">80 BL 1.0 <tspan font-family="Arial">→</tspan> cigarette lighter 48</text>
+<text x="166.94" y="68.71" font-size="2.6" text-anchor="start" font-weight="normal" fill="#111">(instruments sheet)</text>
+<path d="M216,78 L240,78 L240,118.5" fill="none" stroke="#222" stroke-width="0.9" stroke-linejoin="round"/>
+<path d="M216,78 L240,78 L240,118.5" fill="none" stroke="#f2c500" stroke-width="0.5" stroke-linejoin="round"/>
+<rect x="217.9" y="73.5" width="17.400000000000002" height="3.6" fill="#fff" opacity=".85"/>
+<text x="218.5" y="76.5" font-size="2.8" text-anchor="start" font-weight="normal" fill="#111">65 GL 0.75</text>
+<path d="M240,115 L270,115" fill="none" stroke="#222" stroke-width="0.9" stroke-linejoin="round"/>
+<path d="M240,115 L270,115" fill="none" stroke="#f2c500" stroke-width="0.5" stroke-linejoin="round"/>
+<rect x="243.4" y="110.5" width="19.02" height="3.6" fill="#fff" opacity=".85"/>
+<text x="244" y="113.5" font-size="2.8" text-anchor="start" font-weight="normal" fill="#111">65e GL 0.75</text>
+<circle cx="240" cy="122" r="3.5" fill="#fff" stroke="#111" stroke-width=".6"/>
+<path d="M237.55,119.55 L242.45,124.45 M237.55,124.45 L242.45,119.55" stroke="#111" stroke-width=".45"/>
+<text x="209.07" y="123" font-size="2.6" text-anchor="start" font-weight="normal" fill="#111"><tspan font-weight="bold">52</tspan> Ignition switch light</text>
+<path d="M240,125.5 L240,132 L299,132 L299,126.0" fill="none" stroke="#222" stroke-width="0.9" stroke-linejoin="round"/>
+<path d="M240,125.5 L240,132 L299,132 L299,126.0" fill="none" stroke="#1f5fbf" stroke-width="0.5" stroke-linejoin="round"/>
+<rect x="249.4" y="127.5" width="19.02" height="3.6" fill="#fff" opacity=".85"/>
+<text x="250" y="130.5" font-size="2.8" text-anchor="start" font-weight="normal" fill="#111">66e BL 0.75</text>
+<circle cx="282" cy="64" r="3.5" fill="#fff" stroke="#111" stroke-width=".6"/>
+<path d="M279.55,61.55 L284.45,66.45 M279.55,66.45 L284.45,61.55" stroke="#111" stroke-width=".45"/>
+<text x="274.12" y="58.5" font-size="2.6" text-anchor="start" font-weight="normal" fill="#111"><tspan font-weight="bold">55</tspan> Trunk light</text>
+<path d="M278.5,64 L274,64 L274,106.515" fill="none" stroke="#222" stroke-width="0.9" stroke-linejoin="round"/>
+<path d="M278.5,64 L274,64 L274,106.515" fill="none" stroke="#8a8a8a" stroke-width="0.5" stroke-linejoin="round"/>
+<text x="272.6" y="100" font-size="2.8" text-anchor="start" font-weight="normal" fill="#111" transform="rotate(-90 272.6 100)">121 GR 0.75</text>
+<circle cx="340" cy="64" r="5" fill="#fff" stroke="#111" stroke-width=".6"/>
+<path d="M335,64 L336.9,64" fill="none" stroke="#111" stroke-width=".4"/>
+<path d="M343.1,64 L345,64" fill="none" stroke="#111" stroke-width=".4"/>
+<circle cx="337.7" cy="64" r=".8" fill="#fff" stroke="#111" stroke-width=".35"/>
+<circle cx="342.3" cy="64" r=".8" fill="#fff" stroke="#111" stroke-width=".35"/>
+<path d="M337.7,63.2 L337.7,62.3 L342.3,62.3 L342.3,63.2" fill="none" stroke="#111" stroke-width=".75" stroke-linejoin="round"/>
+<path d="M340,62.3 V60.3 M338.9,60.3 H341.1" stroke="#111" stroke-width=".45"/>
+<path d="M285.5,64 L335,64" fill="none" stroke="#222" stroke-width="0.9" stroke-linejoin="round"/>
+<path d="M285.5,64 L335,64" fill="none" stroke="#1f5fbf" stroke-width="0.5" stroke-linejoin="round"/>
+<rect x="289.4" y="59.5" width="19.02" height="3.6" fill="#fff" opacity=".85"/>
+<text x="290" y="62.5" font-size="2.8" text-anchor="start" font-weight="normal" fill="#111">123 BL 0.75</text>
+<path d="M345,64 L352,64" fill="none" stroke="#111" stroke-width=".6" stroke-linejoin="round"/>
+<path d="M352,64 v3 M349,67 h6 M350,68.3 h4 M351,69.6 h2" stroke="#111" stroke-width=".5" fill="none"/>
+<text x="327.57" y="56.5" font-size="2.6" text-anchor="start" font-weight="normal" fill="#111"><tspan font-weight="bold">56</tspan> Trunk light contact</text>
+<text x="356" y="65.1" font-size="2.2" text-anchor="start" font-weight="normal" fill="#555">at the left hinge; switches 55 on its earth side</text>
+<circle cx="292" cy="80" r="3.5" fill="#fff" stroke="#111" stroke-width=".6"/>
+<path d="M289.55,77.55 L294.45,82.45 M289.55,82.45 L294.45,77.55" stroke="#111" stroke-width=".45"/>
+<text x="303" y="81" font-size="2.6" text-anchor="start" font-weight="normal" fill="#111"><tspan font-weight="bold">51</tspan> Dome light, forward (at the mirror)</text>
+<path d="M288.5,80 L284.5,80 L284.5,104.0" fill="none" stroke="#222" stroke-width="0.9" stroke-linejoin="round"/>
+<path d="M288.5,80 L284.5,80 L284.5,104.0" fill="none" stroke="#111111" stroke-width="0.5" stroke-linejoin="round"/>
+<text x="283.1" y="102" font-size="2.8" text-anchor="start" font-weight="normal" fill="#111" transform="rotate(-90 283.1 102)">65f SV 0.75</text>
+<path d="M295.5,80 L299,80 L299,104.0" fill="none" stroke="#222" stroke-width="0.9" stroke-linejoin="round"/>
+<path d="M295.5,80 L299,80 L299,104.0" fill="none" stroke="#111111" stroke-width="0.5" stroke-linejoin="round"/>
+<text x="297.6" y="102" font-size="2.8" text-anchor="start" font-weight="normal" fill="#111" transform="rotate(-90 297.6 102)">66f SV 0.75</text>
+<rect x="270" y="104.0" width="48" height="22" rx="11.0" fill="#fdfdfd" stroke="#111" stroke-width=".8"/>
+<path d="M270,115 L286.5,115" fill="none" stroke="#111" stroke-width=".4"/>
+<path d="M274,106.515 L284.5,115" fill="none" stroke="#111" stroke-width=".4"/>
+<path d="M284.5,104 L284.5,115" fill="none" stroke="#111" stroke-width=".4"/>
+<circle cx="284.5" cy="115" r=".6" fill="#111"/>
+<circle cx="290" cy="115" r="3.5" fill="#fff" stroke="#111" stroke-width=".6"/>
+<path d="M287.55,112.55 L292.45,117.45 M287.55,117.45 L292.45,112.55" stroke="#111" stroke-width=".45"/>
+<path d="M293.5,115 L298.2,115" fill="none" stroke="#111" stroke-width=".4"/>
+<circle cx="299" cy="115" r=".8" fill="#fff" stroke="#111" stroke-width=".35"/>
+<path d="M299,104 L299,114.2" fill="none" stroke="#111" stroke-width=".4"/>
+<path d="M299,115.8 L299,126" fill="none" stroke="#111" stroke-width=".4"/>
+<path d="M299.7,115 L308.6,115" stroke="#111" stroke-width=".75" stroke-linecap="round"/>
+<circle cx="309" cy="109" r=".8" fill="#fff" stroke="#111" stroke-width=".35"/>
+<circle cx="309" cy="121" r=".8" fill="#fff" stroke="#111" stroke-width=".35"/>
+<path d="M309.8,109 L316.22,109" fill="none" stroke="#111" stroke-width=".4"/>
+<path d="M309.8,121 L316.22,121" fill="none" stroke="#111" stroke-width=".4"/>
+<path d="M309,121.8 L309,125.817" fill="none" stroke="#111" stroke-width=".4"/>
+<path d="M316.22,109 L326,109" fill="none" stroke="#111" stroke-width=".6" stroke-linejoin="round"/>
+<path d="M326,109 v3 M323,112 h6 M324,113.3 h4 M325,114.6 h2" stroke="#111" stroke-width=".5" fill="none"/>
+<text x="322" y="97" font-size="2.6" text-anchor="start" font-weight="normal" fill="#111"><tspan font-weight="bold">50</tspan> Dome light, middle</text>
+<text x="322" y="100.4" font-size="2.2" text-anchor="start" font-weight="normal" fill="#555">switch: on (earth) / off (as drawn) / door</text>
+<path d="M316.22,121 L381,121" fill="none" stroke="#222" stroke-width="0.9" stroke-linejoin="round"/>
+<path d="M316.22,121 L381,121" fill="none" stroke="#111111" stroke-width="0.5" stroke-linejoin="round"/>
+<rect x="321.4" y="116.5" width="20.64" height="3.6" fill="#fff" opacity=".85"/>
+<text x="322" y="119.5" font-size="2.8" text-anchor="start" font-weight="normal" fill="#111">66be SV 0.75</text>
+<path d="M309,125.817 L316,132.817 L316,141 L381,141" fill="none" stroke="#222" stroke-width="0.9" stroke-linejoin="round"/>
+<path d="M309,125.817 L316,132.817 L316,141 L381,141" fill="none" stroke="#111111" stroke-width="0.5" stroke-linejoin="round"/>
+<rect x="321.4" y="136.5" width="20.64" height="3.6" fill="#fff" opacity=".85"/>
+<text x="322" y="139.5" font-size="2.8" text-anchor="start" font-weight="normal" fill="#111">66ae SV 0.75</text>
+<rect x="306.0" y="149" width="6" height="4" fill="#ddd"/>
+<text x="304.5" y="152.2" font-size="2.2" text-anchor="end" font-weight="normal" fill="#555">60 interior switch</text>
+<path d="M309,125.817 L309,149" fill="none" stroke="#222" stroke-width="0.9" stroke-linejoin="round"/>
+<path d="M309,125.817 L309,149" fill="none" stroke="#111111" stroke-width="0.5" stroke-linejoin="round"/>
+<text x="307.6" y="147" font-size="2.8" text-anchor="start" font-weight="normal" fill="#111" transform="rotate(-90 307.6 147)">66g SV 0.75</text>
+<path d="M309,153 L309,180" fill="none" stroke="#222" stroke-width="0.9" stroke-linejoin="round"/>
+<path d="M309,153 L309,180" fill="none" stroke="#111111" stroke-width="0.5" stroke-linejoin="round"/>
+<text x="307.6" y="172.5" font-size="2.8" text-anchor="start" font-weight="normal" fill="#111" transform="rotate(-90 307.6 172.5)">66 SV 0.75</text>
+<circle cx="303" cy="180" r="6" fill="#fff" stroke="#111" stroke-width=".6"/>
+<circle cx="306.8" cy="180" r=".8" fill="#fff" stroke="#111" stroke-width=".35"/>
+<path d="M307.6,180 L309,180" fill="none" stroke="#111" stroke-width=".4"/>
+<circle cx="299" cy="181.5" r=".8" fill="#fff" stroke="#111" stroke-width=".35"/>
+<path d="M299,182.3 L299,184.472" fill="none" stroke="#111" stroke-width=".4"/>
+<path d="M306.1,179.6 L299.6,176.4" stroke="#111" stroke-width=".75" stroke-linecap="round"/>
+<text x="266.89" y="175" font-size="2.6" text-anchor="start" font-weight="normal" fill="#111"><tspan font-weight="bold">53</tspan> Interior lighting switch</text>
+<path d="M299,184.472 L299,205" fill="none" stroke="#222" stroke-width="0.9" stroke-linejoin="round"/>
+<path d="M299,184.472 L299,205" fill="none" stroke="#111111" stroke-width="0.5" stroke-linejoin="round"/>
+<text x="297.6" y="203" font-size="2.8" text-anchor="start" font-weight="normal" fill="#111" transform="rotate(-90 297.6 203)">120 SV 0.75</text>
+<path d="M299,205 v3 M296,208 h6 M297,209.3 h4 M298,210.6 h2" stroke="#111" stroke-width=".5" fill="none"/>
+<text x="299" y="216" font-size="2.2" text-anchor="middle" font-weight="normal" fill="#555">same earth point as 94 SV 1.0</text>
+<text x="299" y="219.4" font-size="2.2" text-anchor="middle" font-weight="normal" fill="#555">(seat heating)</text>
+<rect x="336" y="177.0" width="4" height="6" fill="#ddd"/>
+<text x="334" y="186.8" font-size="2.2" text-anchor="end" font-weight="normal" fill="#555">58 door contacts</text>
+<path d="M309,180 L336,180" fill="none" stroke="#222" stroke-width="0.9" stroke-linejoin="round"/>
+<path d="M309,180 L336,180" fill="none" stroke="#111111" stroke-width="0.5" stroke-linejoin="round"/>
+<rect x="311.4" y="175.5" width="19.02" height="3.6" fill="#fff" opacity=".85"/>
+<text x="312" y="178.5" font-size="2.8" text-anchor="start" font-weight="normal" fill="#111">122 SV 0.75</text>
+<path d="M340,180 L343,177 L343,166 L381,166" fill="none" stroke="#222" stroke-width="0.9" stroke-linejoin="round"/>
+<path d="M340,180 L343,177 L343,166 L381,166" fill="none" stroke="#111111" stroke-width="0.5" stroke-linejoin="round"/>
+<rect x="347.4" y="161.5" width="20.64" height="3.6" fill="#fff" opacity=".85"/>
+<text x="348" y="164.5" font-size="2.8" text-anchor="start" font-weight="normal" fill="#111">122b SV 0.75</text>
+<path d="M340,180 L343,183 L343,191 L381,191" fill="none" stroke="#222" stroke-width="0.9" stroke-linejoin="round"/>
+<path d="M340,180 L343,183 L343,191 L381,191" fill="none" stroke="#111111" stroke-width="0.5" stroke-linejoin="round"/>
+<rect x="347.4" y="186.5" width="20.64" height="3.6" fill="#fff" opacity=".85"/>
+<text x="348" y="189.5" font-size="2.8" text-anchor="start" font-weight="normal" fill="#111">122a SV 0.75</text>
+<circle cx="386" cy="121" r="5" fill="#fff" stroke="#111" stroke-width=".6"/>
+<path d="M381,121 L382.9,121" fill="none" stroke="#111" stroke-width=".4"/>
+<path d="M389.1,121 L391,121" fill="none" stroke="#111" stroke-width=".4"/>
+<circle cx="383.7" cy="121" r=".8" fill="#fff" stroke="#111" stroke-width=".35"/>
+<circle cx="388.3" cy="121" r=".8" fill="#fff" stroke="#111" stroke-width=".35"/>
+<path d="M383.7,120.2 L383.7,119.3 L388.3,119.3 L388.3,120.2" fill="none" stroke="#111" stroke-width=".75" stroke-linejoin="round"/>
+<path d="M386,119.3 V117.3 M384.9,117.3 H387.1" stroke="#111" stroke-width=".45"/>
+<path d="M391,121 L397,121" fill="none" stroke="#111" stroke-width=".6" stroke-linejoin="round"/>
+<path d="M397,121 v3 M394,124 h6 M395,125.3 h4 M396,126.6 h2" stroke="#111" stroke-width=".5" fill="none"/>
+<circle cx="386" cy="141" r="5" fill="#fff" stroke="#111" stroke-width=".6"/>
+<path d="M381,141 L382.9,141" fill="none" stroke="#111" stroke-width=".4"/>
+<path d="M389.1,141 L391,141" fill="none" stroke="#111" stroke-width=".4"/>
+<circle cx="383.7" cy="141" r=".8" fill="#fff" stroke="#111" stroke-width=".35"/>
+<circle cx="388.3" cy="141" r=".8" fill="#fff" stroke="#111" stroke-width=".35"/>
+<path d="M383.7,140.2 L383.7,139.3 L388.3,139.3 L388.3,140.2" fill="none" stroke="#111" stroke-width=".75" stroke-linejoin="round"/>
+<path d="M386,139.3 V137.3 M384.9,137.3 H387.1" stroke="#111" stroke-width=".45"/>
+<path d="M391,141 L397,141" fill="none" stroke="#111" stroke-width=".6" stroke-linejoin="round"/>
+<path d="M397,141 v3 M394,144 h6 M395,145.3 h4 M396,146.6 h2" stroke="#111" stroke-width=".5" fill="none"/>
+<circle cx="386" cy="166" r="5" fill="#fff" stroke="#111" stroke-width=".6"/>
+<path d="M381,166 L382.9,166" fill="none" stroke="#111" stroke-width=".4"/>
+<path d="M389.1,166 L391,166" fill="none" stroke="#111" stroke-width=".4"/>
+<circle cx="383.7" cy="166" r=".8" fill="#fff" stroke="#111" stroke-width=".35"/>
+<circle cx="388.3" cy="166" r=".8" fill="#fff" stroke="#111" stroke-width=".35"/>
+<path d="M383.7,165.2 L383.7,164.3 L388.3,164.3 L388.3,165.2" fill="none" stroke="#111" stroke-width=".75" stroke-linejoin="round"/>
+<path d="M386,164.3 V162.3 M384.9,162.3 H387.1" stroke="#111" stroke-width=".45"/>
+<path d="M391,166 L397,166" fill="none" stroke="#111" stroke-width=".6" stroke-linejoin="round"/>
+<path d="M397,166 v3 M394,169 h6 M395,170.3 h4 M396,171.6 h2" stroke="#111" stroke-width=".5" fill="none"/>
+<circle cx="386" cy="191" r="5" fill="#fff" stroke="#111" stroke-width=".6"/>
+<path d="M381,191 L382.9,191" fill="none" stroke="#111" stroke-width=".4"/>
+<path d="M389.1,191 L391,191" fill="none" stroke="#111" stroke-width=".4"/>
+<circle cx="383.7" cy="191" r=".8" fill="#fff" stroke="#111" stroke-width=".35"/>
+<circle cx="388.3" cy="191" r=".8" fill="#fff" stroke="#111" stroke-width=".35"/>
+<path d="M383.7,190.2 L383.7,189.3 L388.3,189.3 L388.3,190.2" fill="none" stroke="#111" stroke-width=".75" stroke-linejoin="round"/>
+<path d="M386,189.3 V187.3 M384.9,187.3 H387.1" stroke="#111" stroke-width=".45"/>
+<path d="M391,191 L397,191" fill="none" stroke="#111" stroke-width=".6" stroke-linejoin="round"/>
+<path d="M397,191 v3 M394,194 h6 M395,195.3 h4 M396,196.6 h2" stroke="#111" stroke-width=".5" fill="none"/>
+<text x="379.17" y="112" font-size="2.6" text-anchor="start" font-weight="normal" fill="#111"><tspan font-weight="bold">54</tspan> Door contacts</text>
+<text x="389" y="204" font-size="2.2" text-anchor="middle" font-weight="normal" fill="#555">which two are the</text>
+<text x="389" y="207.4" font-size="2.2" text-anchor="middle" font-weight="normal" fill="#555">rear doors: check I1</text>
+<circle cx="270" cy="115" r="1.0" fill="#111"/>
+<circle cx="274" cy="106.515" r="1.0" fill="#111"/>
+<circle cx="284.5" cy="104.0" r="1.0" fill="#111"/>
+<circle cx="299" cy="104.0" r="1.0" fill="#111"/>
+<circle cx="299" cy="126.0" r="1.0" fill="#111"/>
+<circle cx="316.22" cy="109" r="1.0" fill="#111"/>
+<circle cx="316.22" cy="121" r="1.0" fill="#111"/>
+<circle cx="309" cy="125.817" r="1.0" fill="#111"/>
+<circle cx="240" cy="115" r="1.0" fill="#111"/>
+<circle cx="309" cy="180" r="1.0" fill="#111"/>
+<circle cx="299" cy="184.472" r="1.0" fill="#111"/>
+<circle cx="335" cy="64" r="1.0" fill="#111"/>
+<circle cx="345" cy="64" r="1.0" fill="#111"/>
+<circle cx="381" cy="121" r="1.0" fill="#111"/>
+<circle cx="391" cy="121" r="1.0" fill="#111"/>
+<circle cx="381" cy="141" r="1.0" fill="#111"/>
+<circle cx="391" cy="141" r="1.0" fill="#111"/>
+<circle cx="381" cy="166" r="1.0" fill="#111"/>
+<circle cx="391" cy="166" r="1.0" fill="#111"/>
+<circle cx="381" cy="191" r="1.0" fill="#111"/>
+<circle cx="391" cy="191" r="1.0" fill="#111"/>
+<rect x="68" y="55.0" width="4" height="6" fill="none" stroke="#111" stroke-width=".5"/>
+<path d="M68,58 L72,58" fill="none" stroke="#111" stroke-width=".4"/>
+<circle cx="68" cy="58" r="1.0" fill="#111"/>
+<circle cx="72" cy="58" r="1.0" fill="#111"/>
+<rect x="92" y="55.0" width="4" height="6" fill="none" stroke="#111" stroke-width=".5"/>
+<path d="M92,58 L96,58" fill="none" stroke="#111" stroke-width=".4"/>
+<circle cx="92" cy="58" r="1.0" fill="#111"/>
+<circle cx="96" cy="58" r="1.0" fill="#111"/>
+<rect x="115" y="62" width="12" height="8" fill="none" stroke="#111" stroke-width=".5"/>
+<path d="M118,62 L118,70" fill="none" stroke="#111" stroke-width=".4"/>
+<circle cx="118" cy="62" r="1.0" fill="#111"/>
+<circle cx="118" cy="70" r="1.0" fill="#111"/>
+<path d="M124,62 L124,70" fill="none" stroke="#111" stroke-width=".4"/>
+<circle cx="124" cy="62" r="1.0" fill="#111"/>
+<circle cx="124" cy="70" r="1.0" fill="#111"/>
+<rect x="212" y="75.0" width="4" height="6" fill="none" stroke="#111" stroke-width=".5"/>
+<path d="M212,78 L216,78" fill="none" stroke="#111" stroke-width=".4"/>
+<circle cx="212" cy="78" r="1.0" fill="#111"/>
+<circle cx="216" cy="78" r="1.0" fill="#111"/>
+<rect x="306.0" y="149" width="6" height="4" fill="none" stroke="#111" stroke-width=".5"/>
+<path d="M309,149 L309,153" fill="none" stroke="#111" stroke-width=".4"/>
+<circle cx="309" cy="149" r="1.0" fill="#111"/>
+<circle cx="309" cy="153" r="1.0" fill="#111"/>
+<rect x="336" y="177.0" width="4" height="6" fill="none" stroke="#111" stroke-width=".5"/>
+<path d="M336,180 L340,180" fill="none" stroke="#111" stroke-width=".4"/>
+<circle cx="336" cy="180" r="1.0" fill="#111"/>
+<circle cx="340" cy="180" r="1.0" fill="#111"/>
+<rect x="12" y="252" width="396" height="32" rx="1.2" fill="#fff" stroke="#111" stroke-width="0.5"/>
+<path d="M16,257 h7" stroke="#222" stroke-width="1.7"/><path d="M16,257 h7" stroke="#1f5fbf" stroke-width="1.1"/>
+<text x="25" y="258" font-size="2.5" text-anchor="start" font-weight="normal" fill="#111">BL Blue</text>
+<path d="M39,257 h7" stroke="#222" stroke-width="1.7"/><path d="M39,257 h7" stroke="#7a4a1c" stroke-width="1.1"/>
+<text x="48" y="258" font-size="2.5" text-anchor="start" font-weight="normal" fill="#111">BR Brown</text>
+<path d="M62,257 h7" stroke="#222" stroke-width="1.7"/><path d="M62,257 h7" stroke="#f2c500" stroke-width="1.1"/>
+<text x="71" y="258" font-size="2.5" text-anchor="start" font-weight="normal" fill="#111">GL Yellow</text>
+<path d="M85,257 h7" stroke="#222" stroke-width="1.7"/><path d="M85,257 h7" stroke="#1e9e3e" stroke-width="1.1"/>
+<text x="94" y="258" font-size="2.5" text-anchor="start" font-weight="normal" fill="#111">GN Green</text>
+<path d="M16,262 h7" stroke="#222" stroke-width="1.7"/><path d="M16,262 h7" stroke="#8a8a8a" stroke-width="1.1"/>
+<text x="25" y="263" font-size="2.5" text-anchor="start" font-weight="normal" fill="#111">GR Grey</text>
+<path d="M39,262 h7" stroke="#222" stroke-width="1.7"/><path d="M39,262 h7" stroke="#d42020" stroke-width="1.1"/>
+<text x="48" y="263" font-size="2.5" text-anchor="start" font-weight="normal" fill="#111">RD Red</text>
+<path d="M62,262 h7" stroke="#222" stroke-width="1.7"/><path d="M62,262 h7" stroke="#111111" stroke-width="1.1"/>
+<text x="71" y="263" font-size="2.5" text-anchor="start" font-weight="normal" fill="#111">SV Black</text>
+<path d="M85,262 h7" stroke="#222" stroke-width="1.7"/><path d="M85,262 h7" stroke="#ffffff" stroke-width="1.1"/>
+<text x="94" y="263" font-size="2.5" text-anchor="start" font-weight="normal" fill="#111">VT White</text>
+<text x="16" y="270" font-size="2.4" text-anchor="start" font-weight="normal" fill="#111">cable size, mm²:</text>
+<path d="M38,269 h7" stroke="#222" stroke-width="0.9"/>
+<text x="46.5" y="270" font-size="2.4" text-anchor="start" font-weight="normal" fill="#111">0.75</text>
+<path d="M53.5,269 h7" stroke="#222" stroke-width="2.2"/>
+<text x="62.0" y="270" font-size="2.4" text-anchor="start" font-weight="normal" fill="#111">1.5</text>
+<path d="M69.0,269 h7" stroke="#222" stroke-width="2.9"/>
+<text x="77.5" y="270" font-size="2.4" text-anchor="start" font-weight="normal" fill="#111">2.5</text>
+<path d="M84.5,269 h7" stroke="#222" stroke-width="3.4"/>
+<text x="93.0" y="270" font-size="2.4" text-anchor="start" font-weight="normal" fill="#111">4.0</text>
+<path d="M16,275 h9" stroke="#222" stroke-width="1.7"/>
+<text x="27" y="276" font-size="2.4" text-anchor="start" font-weight="normal" fill="#111">traced (cable no. read)</text>
+<text x="120" y="257.6" font-size="2.35" text-anchor="start" font-weight="normal" fill="#333">The door line is one line: 66be, 66ae and 66g SV 0.75 from dome light 50; 66 and 122 SV 0.75 on switch 53’s pivot; 122b and 122a SV 0.75 beyond 58 door contacts.</text>
+<text x="120" y="262.2" font-size="2.35" text-anchor="start" font-weight="normal" fill="#333">Door contacts 54 and trunk light contact 56 are drawn closed: plunger out, with the door or lid open (probably).</text>
+<text x="120" y="266.8" font-size="2.35" text-anchor="start" font-weight="normal" fill="#333">Which two door contacts are the rear doors is still to be checked (check I1).</text>
+<text x="120" y="271.4" font-size="2.35" text-anchor="start" font-weight="normal" fill="#333">64 GL 1.0 (fuse 7 to the interior lights) is a cable, not part 64, the seat heating element.</text>
+<text x="120" y="276.0" font-size="2.35" text-anchor="start" font-weight="normal" fill="#333">Seat heating: its return 94 SV 1.0 is drawn to an earth of its own here, but it shares one earth point with 120 SV 0.75 from switch 53.</text>
+<text x="120" y="280.6" font-size="2.35" text-anchor="start" font-weight="normal" fill="#333">Thin black lines without a label: leads with no cable number.</text>
+</svg>
