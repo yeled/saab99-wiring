@@ -8,8 +8,28 @@ turns out to differ, the difference is compared with the 1973 drawings. Fitted: 
 cigarette lighter; the clock has been replaced by an aftermarket rev counter; no headlamp wipers,
 heated rear window or radio.
 
-**State: started.** The sources in the Saab 99 Service Manual 1969–1974 have been mapped; the
-wiring is not traced yet.
+**State: drawn, being checked on the car.** All 206 cables of the 1974 diagram and its injection
+and automatic details are traced, each reading re-checked, and cross-checked against photographs
+of a printed copy of the manual. Nine A3 sheets and an A0 poster are drawn from the data:
+
+| Sheet | What |
+|---|---|
+| `power` | Battery, alternator and regulator, ignition switch and its relay, the fuse box with every fuse's loads, horn |
+| `ignition` | Coil, ballast resistor, distributor, starter; the automatic's start inhibitor relay and switch |
+| `injection` | D-Jetronic: control unit, injectors, sensors, throttle switch, trigger contacts, master and pump relays, fuel pump, cold start |
+| `lighting` | Lighting relay, dimmer/flasher stalk, light switch, headlamps, parking, tail and number-plate lights |
+| `instruments` | Combination instrument and its senders, panel lighting, cigarette lighter |
+| `signals` | Indicators, hazards, stop and reversing lights |
+| `wipers` | Windscreen wipers and washer |
+| `climate` | Heater fan and radiator fan |
+| `interior` | Dome and trunk lights, door contacts, seat heating |
+
+Parts this car doesn't have (headlamp wipers, the clock, the carburettor's choke lamp) are left
+off the sheets with a note; their wires stay in `data/`.
+
+Build from this folder, poster last:
+
+    for s in power ignition injection lighting instruments signals wipers climate interior poster; do python3 sheets/$s.py; done
 
 ## Sources
 
