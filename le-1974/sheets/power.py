@@ -145,7 +145,7 @@ note(66, 33, ('30 battery; 50 start;', '15, 54 and X probably live with the key 
 P1X = 90
 wire('118', [(58, SW_Y), (62, 52), (P1X - 2.5, 52)], 63.2, 50.5)
 wire('118e', [(P1X + 2.5, 52), (98, 52)], label=False)
-tag(98, 52, '118e GN/VT 1.0 → ballast resistor 6 (ignition sheet)', w=62.3)
+tag(98, 52, '118e GN/VT 1.0 → joint by the coil, rev counter (ignition sheet)', w=75.2)
 BLOCKS.append(lambda: pin_h(P1X, 52, n='1')); DOTS += [(P1X - 2.5, 52), (P1X + 2.5, 52)]
 txt(P1X, 47.6, '58 ign. switch', 2.2, 'middle', w='bold')
 wire('54bf', [(58, SW_Y), (58, 60), (66, 60)], label=False)
