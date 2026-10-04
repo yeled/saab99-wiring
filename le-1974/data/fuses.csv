@@ -1,1 +1,13 @@
 fuse,rating,bar,status,notes
+1,8 A,1-2,manual,"fed from lighting relay 8:56a (44 GR 1.5): dipped beams; out 44b GL 1.5 to the right dipped filament; book photo P1 (source/photos/book-P1-fusebox-371-23.jpg, 4 Oct 2026)"
+2,8 A,1-2,manual,"out 44a GR 1.0 to the left dipped filament; book photo P1 (source/photos/book-P1-fusebox-371-23.jpg, 4 Oct 2026)"
+3,8 A,3-4,manual,"bar fed from light switch 10:5 (50 GN 1.0): parking and tail lights; outputs 54 GN and 58 GN; book photo P1 (source/photos/book-P1-fusebox-371-23.jpg, 4 Oct 2026)"
+4,8 A,3-4,manual,"outputs 57 BL and 53 BL; book photo P1 (source/photos/book-P1-fusebox-371-23.jpg, 4 Oct 2026)"
+5,8 A,5-8,manual,"bar fed from alternator B+ (74e GR 6.0), always live; also 142 GR 1.5 to relay 8:30 and 4 GR 1.5 to ignition switch 30; out 28 RD 1.0 to the stop light switch 29; book photo P1 (source/photos/book-P1-fusebox-371-23.jpg, 4 Oct 2026)"
+6,8 A,5-8,manual,"out 36 GR 1.5 to radiator fan relay 38:30/51; book photo P1 (source/photos/book-P1-fusebox-371-23.jpg, 4 Oct 2026)"
+7,8 A,5-8,manual,"91 GR 4.0 to ignition switch relay 21:30/51 leaves this bar here; out 64 GL 1.0; book photo P1 (source/photos/book-P1-fusebox-371-23.jpg, 4 Oct 2026)"
+8,8 A,5-8,manual,"outputs 185 GR 1.5 (fuel pump relay) and 21 RD/VT 1.0 (flasher 23); book photo P1 (source/photos/book-P1-fusebox-371-23.jpg, 4 Oct 2026)"
+9,8 A,9-11,manual,"bar fed from ignition switch relay 21:87 (92 VT 4.0): ignition on; outputs 14 BR, 89 GL (washer), 148 RD; book photo P1 (source/photos/book-P1-fusebox-371-23.jpg, 4 Oct 2026)"
+10,8 A,9-11,manual,"77 RD 0.75 to the 3 A holder 65 taps the bar at this fuse; out 20 BL 2.5 to the heater fan switch 35; book photo P1 (source/photos/book-P1-fusebox-371-23.jpg, 4 Oct 2026)"
+11,8 A,9-11,manual,"outputs 95e VT (reversing lights via the inhibitor switch), 67 RD, 93 GL; book photo P1 (source/photos/book-P1-fusebox-371-23.jpg, 4 Oct 2026)"
+12,8 A,,manual,"connected to nothing on either side: spare (probably the extra-equipment fuse); what the fuse lid says: check F2; book photo P1 (source/photos/book-P1-fusebox-371-23.jpg, 4 Oct 2026)"
