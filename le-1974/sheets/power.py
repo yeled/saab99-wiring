@@ -104,7 +104,7 @@ for n, outs in OUTS.items():
         A(f'<path d="M153.8,{y} H156 M170,{y} H172.2" stroke="#111" stroke-width=".6"/>')
         contact(153, y); contact(173, y)
         txt(163, y - 3.2, fuse_label(n), 2.4, 'middle')
-        txt(176, y + .9, 'spare: connected to nothing (check F2)', 2.4, fill='#444')
+        txt(176, y + .9, 'spare: connected to nothing; probably the empty holder on this car', 2.4, fill='#444')
         txt(156, y + 7.3, 'Headlamp wipers (their own 3 A fuse, fed from bar 9–11): not fitted on this car.', 2.4, fill='#444')
         continue
     ys = [rowy(first_row[n] + i) for i in range(len(outs))]
