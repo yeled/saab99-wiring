@@ -64,8 +64,9 @@ A(f'<circle cx="{DX}" cy="{DY}" r="1.3" fill="#fff" stroke="#111" stroke-width="
 wire('7', [(DX, DY + DR), (DX, 74), (84, 74), (84, CY1)], 48, 72.5)
 
 # ---- ballast resistor 6 (top) ------------------------------------------------------------
-# P7/P6a: a meander in a box. Left end: 119 (to coil 15) and 119e (from starter 16). Right end: 118e (from the
-# ignition switch), 181 (to master relay 101, injection detail) and 195g (to switch 90:1, automatic detail).
+# P7/P6a: a meander in a box. Left end: 119 (to coil 15) and 119e (from starter 16). Right end, as the factory drew
+# it: 118e (from the ignition switch), 181 (to master relay 101, injection detail) and 195g (to switch 90:1, automatic
+# detail); on this car the rev counter's brown lead instead (below).
 BL, BR, BY = 117, 150, 46                                         # the two end nodes, outside the box
 box(121, 42, 25, 8)
 A('<path d="M117,46 H124.5 V44 H127 V48 H129.5 V44 H132 V48 H134.5 V44 H137 V48 H139.5 V44 H142 V46 H150" '
@@ -73,17 +74,32 @@ A('<path d="M117,46 H124.5 V44 H127 V48 H129.5 V44 H132 V48 H134.5 V44 H137 V48 
 name(121, 38, '6', 'Ballast resistor')
 wire('119', [(BL, BY), (CX1, BY)], 97.5, 44.5)
 wire('119e', [(BL, BY), (BL, 205), (112, 205)], BL - 1.4, 192, rot=-90)
-wire('118e', [(298, BY), (BR, BY)], 196, 44.5)
+# On the car (check D1; Charlie, 4 Oct 2026; data rev, rev-SV, rev-BR): the aftermarket rev counter (a Faria
+# tachometer) sits in series in the coil's feed. 118e, 181 and 195g no longer reach the resistor: they meet the rev
+# counter's black lead at a loose joint by the coil (J), and its brown lead is the only lead on the resistor's feed end.
+JX, GX, GR_ = 171, 160.5, 5                                       # the joint; the rev counter's centre and radius
+wire('118e', [(298, BY), (JX, BY)], 232, 44.5)
 ttag(300, BY, '118e GN/VT 1.0 ← ignition switch 20:15, via 58 ign. switch (power sheet)')
-wire('181', [(BR, BY), (BR, 32), (156, 32)], label=False)
-ttag(158, 32, '181 GN/VT 0.75 → master relay 101:86, coil (injection sheet)')
-wire('195g', [(BR, BY), (BR, 98)], BR - 1.4, 92, rot=-90)
-# The rev counter (car check D1, Charlie 4 Oct 2026; memory/findings.md): a Faria tachometer in series between the
-# green-and-white lead and this end of the ballast. Not in data yet (component and its red/black harness leads to add,
-# status car), so not drawn: a note until it is. Which of 118e, 181 and 195g pass through it is still open.
-note(156, 52.5, ('On the car an aftermarket rev counter is wired in series at this end of the ballast resistor, between the',
-                 'resistor and its green-and-white feed (check D1). Not drawn yet: which of the green-and-white leads here',
-                 'go through it is still open.'), size=2.1, fill='#555', step=3.0)
+wire('181', [(JX, BY), (JX, 32), (JX + 2, 32)], label=False)
+ttag(JX + 2, 32, '181 GN/VT 0.75 → master relay 101:86, coil (injection sheet)')
+wire('195g', [(JX, BY), (JX, 62), (BR, 62), (BR, 98)], BR - 1.4, 94, rot=-90)
+wire('rev-SV', [(JX, BY), (GX + GR_, BY)], label=False)            # black lead: from the joint to the meter
+wire('rev-BR', [(GX - GR_, BY), (BR, BY)], label=False)            # brown lead: from the meter back to the resistor
+A(f'<circle cx="{GX}" cy="{BY}" r="{GR_}" fill="#fff" stroke="#111" stroke-width=".7"/>')
+for k in range(7):                                                  # a gauge face: scale ticks over the top, a needle
+    import math
+    t = math.radians(200 + k * 140 / 6)
+    A(f'<path d="M{GX + 3.6 * math.cos(t):.2f},{BY + 3.6 * math.sin(t):.2f} L{GX + 4.4 * math.cos(t):.2f},'
+      f'{BY + 4.4 * math.sin(t):.2f}" stroke="#111" stroke-width=".3"/>')
+A(f'<path d="M{GX},{BY} L{GX + 2.4},{BY - 2.4}" stroke="#111" stroke-width=".45"/><circle cx="{GX}" cy="{BY}" r=".5" fill="#111"/>')
+dot(JX, BY)                                                         # the joint: four leads meet here
+tick(152.6, 43.3); tick(167.6, 43.3)                                # both leads checked on the car
+txt(GX, 54.6, 'rev counter', 2.3, 'middle')
+note(176, 52.5, ('Rev counter: aftermarket, in the dashboard where the clock was (check D1), wired in series with the coil’s feed.',
+                 'The ignition feed 118e, 181 and 195g meet at a joint by the coil; the rev counter’s black lead takes the current',
+                 'to the meter and its brown lead brings it back to the resistor, the only lead on that end. If a lead comes off with',
+                 'the engine running, it stops; while cranking, 119e still feeds the coil straight from the starter.'),
+     size=2.1, fill='#555', step=3.0)
 
 # ---- gear indicator light 91 (top band) ---------------------------------------------------
 LX, LY = 258, 32
