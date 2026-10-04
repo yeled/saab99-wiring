@@ -78,3 +78,4 @@ rear block R,Rear right terminal block 28/14/30/32/15,"A14-B14 (3870-3945,960-12
 rear block L,Rear left terminal block 15/32/30/14/27,"F14 (3830-3900,2415-2640)","15 (55a stub, jumpered to 14), 32 (97, 98), 30 (28e, 28f), 14 (53a), 27 (25a)"
 earth (dash),"Dash earth, drawn as a double arrowhead","D11 (3105,1855)","107 SV, 108 SV, 26 SV converge; symbol differs from the hatched earths"
 earth (harness star),Injection harness earth (arrow),"S 3783 (p.347 320,590)","211, 226-229, 232, 235; Bosch ring terminal 11-26-27-28-29-32"
+rev,"Rev counter (aftermarket Faria tachometer, in the clock's place)",on the car only,"+ and - studs (which lead is on which is not known); wired in series with the coil's feed at the ballast resistor's feed end, by Faria's 'Saab 1974 only' sheet: no feed, earth or light of its own (Charlie, 4 Oct 2026; check D1)"
