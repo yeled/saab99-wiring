@@ -44,7 +44,7 @@ PROBABLE = [False]  # set when a part's internals are drawn grey (probable); pro
 # Core width (mm) by cable size (mm2): exaggerated at the thin end so a size step shows at a glance (0.75 well under
 # 1.0), sloping off above 2.5 so the main feeds stay lines, not bands; the black outline adds edge(cw).
 # The book draws every line alike: this is ours. Unknown sizes draw as 1.0.
-WIDTH = {0.5: .35, 0.75: .5, 1.0: 1.1, 1.5: 1.6, 2.5: 2.3, 4.0: 2.8, 16.0: 3.4}
+WIDTH = {0.5: .35, 0.75: .5, 1.0: 1.1, 1.5: 1.6, 2.5: 2.3, 4.0: 2.8, 6.0: 3.1, 16.0: 3.4}
 def edge(cw): return .4 if cw < 1 else .6     # outline added to the core: thinner below 1.0 so the colour still shows
 def core_width(cable):
     try: return WIDTH.get(float(WIRES[cable]['mm2']), 1.1)
