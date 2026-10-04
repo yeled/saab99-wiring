@@ -237,7 +237,7 @@ wire('42a', [T8['F'], (T8['F'][0], 106), (68, 106), (68, mL[1]), mL], 84, 104.3)
 wire('42b', [uL, (uL[0], 172), (60, 172), (60, mR[1]), mR], 58.6, 152, rot=-90)
 DOTS += [mR, mL, uL]
 wire('41', [T8['F'], (T8['F'][0] + 5, ry - 5), (T8['F'][0] + 5, 100), (142, 100)], label=False)
-mtag(142, 100, ['41 BL/VT 0.75 → high-beam indicator,', 'combination instrument 47:7', '(instruments sheet)'])
+mtag(142, 100, ['41 BL/VT 0.75 → main-beam indicator,', 'combination instrument 47:7', '(instruments sheet)'])
 wire('44', [T8['56a'], (106, T8['56a'][1])], label=False)
 mtag(106, T8['56a'][1], ['44 GR 1.5 → bar 1–2:', 'fuses 1 and 2 (power sheet)'], anchor='end')
 wire('142', [T8['30'], (106, T8['30'][1])], label=False)
