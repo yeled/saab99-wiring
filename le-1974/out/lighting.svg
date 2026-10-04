@@ -140,8 +140,8 @@
 <path d="M134,122 L139,117 L139,100 L142,100" fill="none" stroke="#222" stroke-width="0.9" stroke-linejoin="round"/>
 <path d="M134,122 L139,117 L139,100 L142,100" fill="none" stroke="#1f5fbf" stroke-width="0.5" stroke-linejoin="round"/>
 <path d="M134,122 L139,117 L139,100 L142,100" fill="none" stroke="#ffffff" stroke-width="0.3" stroke-dasharray="1.2 1.2"/>
-<rect x="142" y="94.61" width="40.6" height="10.77" rx="1" fill="#fff" stroke="#444" stroke-width=".4"/>
-<text x="143.5" y="97.8" font-size="2.2" text-anchor="start" font-weight="normal" fill="#111">41 BL/VT 0.75 <tspan font-family="Arial">→</tspan> high-beam indicator,</text>
+<rect x="142" y="94.61" width="41.2" height="10.77" rx="1" fill="#fff" stroke="#444" stroke-width=".4"/>
+<text x="143.5" y="97.8" font-size="2.2" text-anchor="start" font-weight="normal" fill="#111">41 BL/VT 0.75 <tspan font-family="Arial">→</tspan> main-beam indicator,</text>
 <text x="143.5" y="100.79" font-size="2.2" text-anchor="start" font-weight="normal" fill="#111">combination instrument 47:7</text>
 <text x="143.5" y="103.78" font-size="2.2" text-anchor="start" font-weight="normal" fill="#111">(instruments sheet)</text>
 <path d="M112,130 L106,130" fill="none" stroke="#222" stroke-width="2.2" stroke-linejoin="round"/>
