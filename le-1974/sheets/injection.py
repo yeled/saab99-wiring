@@ -285,7 +285,7 @@ T(*M85)
 wire('234', [(170, M30[1]), M30], 174, M30[1] - 1.3)
 ftag(170, M30[1], '234 RD 2.5 ← starter 30, battery + (power sheet)', anchor='end')
 wire('181', [(170, M86[1]), M86], 174, M86[1] - 1.3)
-mtag(170, M86[1], ['181 GN/VT 0.75 ← ballast resistor 6,', 'ignition-switch end (ignition sheet)'], anchor='end')
+mtag(170, M86[1], ['181 GN/VT 0.75 ← ignition feed joint', 'by the coil (ignition sheet)'], anchor='end')
 T(*M30); T(*M86)
 
 # ---- fuel pump 103 -------------------------------------------------------------------------------------------------
