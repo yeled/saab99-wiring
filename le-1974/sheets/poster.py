@@ -41,7 +41,9 @@ def scope_ids(body, key):
     return re.sub(r'(href="#)([^"]+)', ref, body)
 
 rows = list(csv.DictReader(open(os.path.join(ROOT, 'data', 'wires.csv'))))
-printed = {w['cable']: f"{w['cable'].split('#')[0]} {w['colour']}" for w in rows if not w['cable'].startswith('?')}
+# aftermarket leads (the rev counter's) have no cable number, so no label to find: drawn, not printed
+printed = {w['cable']: f"{w['cable'].split('#')[0]} {w['colour']}" for w in rows
+           if not w['cable'].startswith('?') and not w['notes'].startswith('aftermarket, no cable number')}
 def prints(svg, cable):   # a wire label, tag or caption starts its text with '<no> <colour>'; a mention inside a note does not
     return re.search(r'>' + re.escape(printed[cable]) + r'(?=[\s:<])', svg) is not None
 
