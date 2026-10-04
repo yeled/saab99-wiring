@@ -308,9 +308,9 @@
 <path d="M170,236 L214,236" fill="none" stroke="#ffffff" stroke-width="0.3" stroke-dasharray="1.2 1.2"/>
 <rect x="173.4" y="231.7" width="23.88" height="3.6" fill="#fff" opacity=".85"/>
 <text x="174" y="234.7" font-size="2.8" text-anchor="start" font-weight="normal" fill="#111">181 GN/VT 0.75</text>
-<rect x="127.6" y="231.84" width="42.4" height="8.32" rx="1" fill="#fff" stroke="#444" stroke-width=".4"/>
-<text x="129.1" y="235.23" font-size="2.4" text-anchor="start" font-weight="normal" fill="#111">181 GN/VT 0.75 <tspan font-family="Arial">←</tspan> ballast resistor 6,</text>
-<text x="129.1" y="238.49" font-size="2.4" text-anchor="start" font-weight="normal" fill="#111">ignition-switch end (ignition sheet)</text>
+<rect x="127.7" y="231.84" width="42.3" height="8.32" rx="1" fill="#fff" stroke="#444" stroke-width=".4"/>
+<text x="129.2" y="235.23" font-size="2.4" text-anchor="start" font-weight="normal" fill="#111">181 GN/VT 0.75 <tspan font-family="Arial">←</tspan> ignition feed joint</text>
+<text x="129.2" y="238.49" font-size="2.4" text-anchor="start" font-weight="normal" fill="#111">by the coil (ignition sheet)</text>
 <rect x="367" y="205" width="10" height="3.6" fill="#fafafa" stroke="#111" stroke-width=".8"/>
 <circle cx="378" cy="214" r="7" fill="#fff" stroke="#111" stroke-width=".8"/><circle cx="378" cy="214" r="2.6" fill="#fff" stroke="#111" stroke-width=".6"/>
 <text x="366" y="225.5" font-size="2.6" text-anchor="start" font-weight="normal" fill="#111"><tspan font-weight="bold">103</tspan> Fuel pump</text>
